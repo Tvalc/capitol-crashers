@@ -5,28 +5,49 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Capitol Crashers</title>
   <link rel="canonical" href="https://capitolcrashers.com/" />
-  <meta
-    name="description"
-    content="Capitol Crashers is the next original browser game from Political Arcades."
-  />
+  <meta name="description" content="Capitol Crashers is the first machine on at Political Arcades. A belt-scroller you play in the browser." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Bungee&family=Share+Tech+Mono&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-  <header class="topbar">
-    <a class="brand" href="https://politicalarcades.com/">Political Arcades</a>
-    <a class="patreon" href="https://www.patreon.com/c/PoliticalArcades" target="_blank" rel="noopener noreferrer">Support on Patreon</a>
-  </header>
+  <div class="pit">
+    <p class="back"><a href="https://politicalarcades.com/">← Political Arcades</a></p>
 
-  <main class="wrap">
-    <p class="eyebrow">Coming soon</p>
-    <h1>Capitol<br />Crashers</h1>
-    <p class="lede">The next Political Arcades game. This page is the front door. The build is still in the shop.</p>
-    <p class="lede">If you want it sooner, back Political Arcades on Patreon.</p>
-  </main>
+    <section class="machine">
+      <div class="side" aria-hidden="true">
+        <img src="art/side.jpg" alt="" />
+      </div>
 
-  <footer class="site-foot">
-    <p>Capitol Crashers is an original game from Political Arcades. It is not affiliated with any other publisher.</p>
-    <p><a href="privacy.html">Privacy</a> · <a href="https://streetsofage.com/">Play Streets of Age</a></p>
-  </footer>
+      <div class="body">
+        <header class="marquee">
+          <p>Political Arcades · machine 01</p>
+          <h1>Capitol Crashers</h1>
+        </header>
+
+        <div class="bezel">
+          <img src="art/attract.jpg" alt="Night rally outside the Capitol, the attract art for Capitol Crashers" />
+          <div class="scan"></div>
+          <div class="attract">
+            <p class="credit">1 credit</p>
+            <a class="start" href="play/">Start</a>
+            <p class="how">Arrows or WASD. J light, K heavy, L special, Space jump.</p>
+          </div>
+        </div>
+
+        <div class="panel">
+          <span class="lamp"></span>
+          <p>Ready. The other machines on the floor are still dark.</p>
+          <a class="patreon" href="https://www.patreon.com/c/PoliticalArcades" target="_blank" rel="noopener noreferrer">Support on Patreon</a>
+        </div>
+      </div>
+    </section>
+
+    <footer class="site-foot">
+      <p>Capitol Crashers is an original belt-scroller. It is not affiliated with any other publisher.</p>
+      <p><a href="privacy.html">Privacy</a></p>
+    </footer>
+  </div>
 </body>
 </html>

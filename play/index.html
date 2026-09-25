@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Capitol Crashers</title>
+  <link rel="canonical" href="https://capitolcrashers.com/play/" />
+  <meta
+    name="description"
+    content="Capitol Crashers is the first machine on at Political Arcades. Walk the lane, chain hits, and carry the bag through three blocks."
+  />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="../">Capitol Crashers</a>
+    <a class="patreon" data-patreon hidden target="_blank" rel="noopener noreferrer">Support on Patreon</a>
+  </header>
+
+  <aside class="ad-slot" id="ad-slot" hidden>
+    <p class="ad-label">Ad</p>
+  </aside>
+
+  <main class="stage">
+    <canvas id="game" width="1280" height="720" tabindex="0" aria-label="Capitol Crashers"></canvas>
+
+    <section class="card" id="title-panel">
+      <p class="eyebrow">Political Arcades · machine 01</p>
+      <h1>Capitol<br />Crashers</h1>
+      <p class="tag">Two couriers. Three blocks. The bag still has to move.</p>
+      <ul class="how">
+        <li>Arrows or WASD move. Double-tap forward to dash, then J to strike.</li>
+        <li>J light combo, K heavy, L special, Space jump.</li>
+        <li>Walk over a pipe or bottle to take it. J swings a pipe. K throws it.</li>
+      </ul>
+      <div class="actions">
+        <button type="button" class="play" id="start">Start the shift</button>
+        <a class="patreon" data-patreon hidden target="_blank" rel="noopener noreferrer">Support on Patreon</a>
+      </div>
+    </section>
+
+    <section class="card" id="select-panel" hidden>
+      <p class="eyebrow">Who carries it</p>
+      <h2>Pick a courier</h2>
+      <div class="roster">
+        <button type="button" class="fighter on" id="pick-rook" data-id="rook">
+          <strong>Rook</strong>
+          <span>Long reach, heavy hits, slow feet. Wider combo window.</span>
+        </button>
+        <button type="button" class="fighter" id="pick-flick" data-id="flick">
+          <strong>Flick</strong>
+          <span>Fast feet, short combo window, lighter hits.</span>
+        </button>
+      </div>
+      <p class="hint">Left and right to choose. Enter to start.</p>
+      <button type="button" class="play" id="run">Take the bag</button>
+    </section>
+
+    <section class="card slim" id="clear-panel" hidden>
+      <p class="eyebrow">Block clear</p>
+      <h2 id="clear-title">Dock clear</h2>
+      <p id="clear-copy"></p>
+    </section>
+
+    <section class="card" id="end-panel" hidden>
+      <p class="eyebrow">Shift over</p>
+      <h2>The bag made it</h2>
+      <p id="end-copy"></p>
+      <div class="actions">
+        <button type="button" class="play" id="end-again">Back to the alley</button>
+        <a class="patreon" data-patreon hidden target="_blank" rel="noopener noreferrer">Support on Patreon</a>
+      </div>
+    </section>
+
+    <section class="card" id="over-panel" hidden>
+      <p class="eyebrow">Down</p>
+      <h2>The relay broke</h2>
+      <p id="over-copy"></p>
+      <div class="actions">
+        <button type="button" class="play" id="over-again">Back to the alley</button>
+        <a class="patreon" data-patreon hidden target="_blank" rel="noopener noreferrer">Support on Patreon</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-foot">
+    <p>Capitol Crashers is an original game on the floor at <a href="https://politicalarcades.com/">Political Arcades</a>. It is not affiliated with any other publisher.</p>
+    <p><a href="privacy.html">Privacy</a></p>
+  </footer>
+  <script type="module" src="src/main.js"></script>
+  <script type="module" src="site.js"></script>
+</body>
+</html>
