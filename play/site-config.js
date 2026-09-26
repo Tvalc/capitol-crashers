@@ -4,6 +4,6 @@
 // adsenseSlot: the display-ad unit id for the banner above the game
 export const SITE = {
   patreonUrl: "https://www.patreon.com/c/PoliticalArcades",
-  adsenseClient: "",
+  adsenseClient: "ca-pub-4763096707547154",
   adsenseSlot: "",
 };
