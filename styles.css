@@ -379,6 +379,10 @@ body {
 
 .go:hover { transform: translateY(1px); box-shadow: 0 7px 0 #8a2048; }
 
+.go.comic { background: var(--amber); color: #1a1206; box-shadow: 0 8px 0 #8a6412; }
+
+.go.comic:hover { box-shadow: 0 7px 0 #8a6412; }
+
 .patreon {
   background: #ff424d;
   color: #1a0d09;
