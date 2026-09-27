@@ -1,0 +1,97 @@
+.touch {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  margin-top: 14px;
+  padding: 0 4px;
+  -webkit-user-select: none;
+  user-select: none;
+  -webkit-touch-callout: none;
+}
+
+.touch[hidden], .touch.idle { display: none; }
+
+.touch-pad {
+  position: relative;
+  flex: none;
+  width: 132px;
+  height: 132px;
+  border-radius: 50%;
+  background:
+    radial-gradient(circle, rgba(255, 255, 255, 0.05) 0 38%, transparent 39%),
+    rgba(255, 255, 255, 0.07);
+  border: 2px solid rgba(255, 255, 255, 0.22);
+  touch-action: none;
+}
+
+.touch-nub {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 56px;
+  height: 56px;
+  margin: -28px 0 0 -28px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.28);
+  border: 2px solid rgba(255, 255, 255, 0.5);
+  pointer-events: none;
+}
+
+.touch-buttons {
+  display: grid;
+  grid-template-columns: repeat(2, 68px);
+  gap: 12px;
+}
+
+.touch-btn {
+  width: 68px;
+  height: 68px;
+  border-radius: 50%;
+  border: 2px solid rgba(0, 0, 0, 0.5);
+  background: #3a3f4c;
+  color: #fff;
+  font: 800 13px/1.1 system-ui, sans-serif;
+  letter-spacing: 0.02em;
+  box-shadow: 0 5px 0 rgba(0, 0, 0, 0.45);
+  touch-action: none;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.touch-btn.down { transform: translateY(3px); box-shadow: 0 2px 0 rgba(0, 0, 0, 0.45); }
+
+.touch-btn.pink { background: #ef4f7a; }
+.touch-btn.gold { background: #f0b429; color: #1a1206; }
+.touch-btn.blue { background: #3f8ef0; }
+.touch-btn.cream { background: #efe7d6; color: #1a1206; }
+.touch-btn.wide { grid-column: span 2; width: auto; border-radius: 999px; }
+
+/* Landscape phones: float the controls over the bottom corners of the game. */
+@media (orientation: landscape) and (max-height: 520px) {
+  .has-touch .stage { position: relative; }
+
+  .has-touch canvas {
+    width: auto;
+    max-width: 100%;
+    max-height: calc(100dvh - 24px);
+    margin: 0 auto;
+  }
+
+  .has-touch .topbar { display: none; }
+
+  .touch {
+    position: fixed;
+    z-index: 5;
+    left: max(12px, env(safe-area-inset-left));
+    right: max(12px, env(safe-area-inset-right));
+    bottom: max(10px, env(safe-area-inset-bottom));
+    margin: 0;
+    pointer-events: none;
+    opacity: 0.8;
+  }
+
+  .touch-pad, .touch-btn { pointer-events: auto; }
+  .touch-pad { width: 116px; height: 116px; }
+  .touch-buttons { grid-template-columns: repeat(2, 58px); gap: 10px; }
+  .touch-btn { width: 58px; height: 58px; font-size: 11px; letter-spacing: 0; }
+}

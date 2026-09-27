@@ -258,6 +258,7 @@ function boot() {
     endPanel.hidden = game.mode !== "ending";
     overPanel.hidden = game.mode !== "gameover";
     storyPanel.hidden = game.mode !== "story";
+    touchBar?.classList.toggle("idle", game.mode !== "play");
     if (game.mode === "story" && shownStory !== game.storyId) {
       shownStory = game.storyId;
       renderStory(PANELS[game.storyId]);
@@ -311,6 +312,21 @@ function boot() {
     game.stage = cloneStage(0);
     game.player = null;
     game.enemies = [];
+  });
+
+  const touchBar = window.mountTouchControls?.(document.querySelector(".stage"), {
+    pad: {
+      left: { key: "ArrowLeft", code: "ArrowLeft" },
+      right: { key: "ArrowRight", code: "ArrowRight" },
+      up: { key: "ArrowUp", code: "ArrowUp" },
+      down: { key: "ArrowDown", code: "ArrowDown" },
+    },
+    buttons: [
+      { label: "Light", key: "j", code: "KeyJ", tone: "pink" },
+      { label: "Heavy", key: "k", code: "KeyK", tone: "gold" },
+      { label: "Special", key: "l", code: "KeyL", tone: "blue" },
+      { label: "Jump", key: " ", code: "Space", tone: "cream" },
+    ],
   });
 
   let last = performance.now();
