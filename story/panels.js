@@ -48,7 +48,7 @@ export const PAGES = [
           { text: "His father came from Alexandria, Egypt, in 1979 to earn an engineering Ph.D. at Wayne State.", pos: "bl" },
         ],
         cites: [3, 4],
-        prompt: "Landscape 4:3. Early-1980s Detroit in autumn: a young Egyptian man with a mustache, carrying engineering books, walks past Wayne State University's buildings with the Detroit skyline behind. Faded ghost-image of the Alexandria waterfront and lighthouse in the sky above him. Cool blue dusk with red and cyan neon accents.",
+        prompt: "Landscape 4:3. Early-1980s Detroit in autumn: a young Egyptian man with a mustache, carrying engineering books, walks past Wayne State University's buildings with the Detroit skyline behind. Faded ghost-image of the Alexandria waterfront and lighthouse in the sky above him. Cool blue dusk with teal and cyan neon accents.",
       },
       {
         id: "p03",

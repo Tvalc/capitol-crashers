@@ -9,7 +9,7 @@
   --gold: #ffc21a;
   --queens: #1f3a6e;
   --queens-hi: #e2b657;
-  --detroit: #8e2a22;
+  --detroit: #0e5f66;
   --detroit-hi: #7ec8e3;
   --both: #3a1f5c;
   --caption: #fff3b0;
@@ -209,7 +209,7 @@ figure.panel { margin: 0; }
 }
 
 .panel.queens { --tone-a: #2b4f94; --tone-b: #0f1d3d; }
-.panel.detroit { --tone-a: #b33a2e; --tone-b: #3a0f0c; }
+.panel.detroit { --tone-a: #13808a; --tone-b: #04272c; }
 .panel.both { --tone-a: #5b2a8c; --tone-b: #140a2a; }
 
 /* Where-are-we tag */

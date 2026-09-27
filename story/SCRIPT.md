@@ -36,7 +36,7 @@ Keep all lettering out of the art. Captions and speech bubbles are added by the 
 
 **Makko prompt:**
 
-> Landscape 4:3. Early-1980s Detroit in autumn: a young Egyptian man with a mustache, carrying engineering books, walks past Wayne State University's buildings with the Detroit skyline behind. Faded ghost-image of the Alexandria waterfront and lighthouse in the sky above him. Cool blue dusk with red and cyan neon accents.
+> Landscape 4:3. Early-1980s Detroit in autumn: a young Egyptian man with a mustache, carrying engineering books, walks past Wayne State University's buildings with the Detroit skyline behind. Faded ghost-image of the Alexandria waterfront and lighthouse in the sky above him. Cool blue dusk with teal and cyan neon accents.
 
 ### p03 · Three-sport captain (Bloomfield Hills)
 
