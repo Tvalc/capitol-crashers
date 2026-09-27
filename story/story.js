@@ -1,6 +1,12 @@
-import { PAGES, PLANKS, SOURCES } from "./panels.js";
+// Renders one issue of the comic. The page names its data file in
+// <body data-issue="...">, relative to this script; Issue #1 is panels.js.
+import { ISSUES } from "./issues.js";
 
-const ART_DIR = "../art/story/";
+const here = (path) => new URL(path, import.meta.url).href;
+const ART_DIR = here("../art/story/");
+const issueFile = document.body.dataset.issue || "panels.js";
+const { PAGES, PLANKS = [], SOURCES = [], BACK } = await import(here(`./${issueFile}`));
+
 const book = document.getElementById("book");
 const planksHost = document.getElementById("planks");
 const sourcesHost = document.getElementById("sources");
@@ -12,11 +18,37 @@ function el(tag, className, text) {
   return node;
 }
 
-function renderPanel(panel) {
+function citeLink(className, cites) {
+  const cite = el("a", className, `src ${cites.join(", ")}`);
+  cite.href = `#src-${cites[0]}`;
+  cite.setAttribute("aria-label", `Sources ${cites.join(", ")}`);
+  return cite;
+}
+
+function panelShell(panel) {
   const size = panel.size && panel.size !== "wide" ? ` ${panel.size}` : "";
-  const extra = `${panel.tall ? " tall" : ""}${panel.splash ? " splash" : ""}`;
+  const extra = `${panel.tall ? " tall" : ""}${panel.splash ? " splash" : ""}${panel.type === "stat" ? " stat" : ""}`;
   const node = el("figure", `panel ${panel.where}${size}${extra}`);
   node.id = panel.id;
+  return node;
+}
+
+// A "by the numbers" panel: one big figure and what it means. Needs no art.
+function renderStat(panel) {
+  const node = panelShell(panel);
+  const body = el("div", "stat-body");
+  body.append(el("strong", `stat-big${panel.big.length > 6 ? " long" : ""}`, panel.big));
+  body.append(el("p", "stat-label", panel.label));
+  if (panel.sub) body.append(el("p", "stat-sub", panel.sub));
+  node.append(body);
+  if (panel.tag) node.append(el("span", "tag", panel.tag));
+  if (panel.cites?.length) node.append(citeLink("cite", panel.cites));
+  return node;
+}
+
+function renderPanel(panel) {
+  if (panel.type === "stat") return renderStat(panel);
+  const node = panelShell(panel);
 
   if (panel.art) {
     const img = el("img");
@@ -47,14 +79,7 @@ function renderPanel(panel) {
   }
 
   if (panel.sfx) node.append(el("span", "sfx", panel.sfx.text));
-
-  if (panel.cites && panel.cites.length) {
-    const cite = el("a", "cite", `src ${panel.cites.join(", ")}`);
-    cite.href = `#src-${panel.cites[0]}`;
-    cite.setAttribute("aria-label", `Sources ${panel.cites.join(", ")}`);
-    node.append(cite);
-  }
-
+  if (panel.cites?.length) node.append(citeLink("cite", panel.cites));
   return node;
 }
 
@@ -66,24 +91,29 @@ for (const page of PAGES) {
     head.append(document.createTextNode(page.chapter));
     section.append(head);
   }
+  if (page.intro) section.append(el("p", "chapter-intro", page.intro));
   const grid = el("div", "grid");
   for (const panel of page.panels) grid.append(renderPanel(panel));
   section.append(grid);
   book.append(section);
 }
 
+if (BACK) {
+  const head = document.getElementById("back-head");
+  head.replaceChildren(el("span", "", BACK.label), document.createTextNode(BACK.title));
+  if (BACK.intro) head.after(el("p", "chapter-intro", BACK.intro));
+}
+
 for (const plank of PLANKS) {
   const card = el("article", `plank ${plank.where}`);
+  if (plank.status) card.append(el("span", `status ${plank.status.replace(/\s+/g, "-").toLowerCase()}`, plank.status));
   card.append(el("small", "", plank.who));
   card.append(el("h3", "", plank.title));
   card.append(el("p", "", plank.text));
-  if (plank.cites) {
-    const cite = el("a", "plank-cite", `src ${plank.cites.join(", ")}`);
-    cite.href = `#src-${plank.cites[0]}`;
-    card.append(cite);
-  }
+  if (plank.cites) card.append(citeLink("plank-cite", plank.cites));
   planksHost.append(card);
 }
+if (!PLANKS.length) planksHost.closest(".book").remove();
 
 for (const source of SOURCES) {
   const item = el("li");
@@ -96,4 +126,18 @@ for (const source of SOURCES) {
   link.rel = "noopener noreferrer";
   item.append(link);
   sourcesHost.append(item);
+}
+
+// "More issues" shelf, skipping the one on screen.
+const shelf = document.getElementById("issues");
+if (shelf) {
+  for (const issue of ISSUES) {
+    if (issue.file === issueFile) continue;
+    const card = el("a", `issue-card ${issue.where}`);
+    card.href = here(issue.path);
+    card.append(el("small", "", `Issue #${issue.n}`));
+    card.append(el("strong", "", issue.title));
+    card.append(el("span", "", issue.dek));
+    shelf.append(card);
+  }
 }
