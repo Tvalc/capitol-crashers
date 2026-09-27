@@ -1,4 +1,4 @@
-import { poseFor } from "./fighters.js";
+import { FIGHTERS, poseFor } from "./fighters.js";
 import { WORLD } from "./stages.js";
 
 function roundRect(ctx, x, y, w, h, r) {
@@ -45,9 +45,8 @@ export function draw(ctx, game) {
 }
 
 function preview(id, x, game) {
-  const colors = id === "flick"
-    ? { body: "#c4493a", trim: "#7ec8e3", skin: "#d39a6c", pants: "#241c30", bag: "#8d6a45", hat: "tail" }
-    : { body: "#3d5a80", trim: "#e2b657", skin: "#e4b48a", pants: "#1c2430", bag: "#c4a574", hat: "cap" };
+  const { body, trim, skin, pants, bag, hat } = FIGHTERS[id] || FIGHTERS.rook;
+  const colors = { body, trim, skin, pants, bag, hat };
   return {
     x,
     y: 590,

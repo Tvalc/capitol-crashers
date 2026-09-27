@@ -7,12 +7,12 @@
   --neon: #ff2e88;
   --cyan: #29c6e8;
   --gold: #ffc21a;
-  --queens: #1f3a6e;
-  --queens-hi: #e2b657;
-  --detroit: #0e5f66;
-  --detroit-hi: #7ec8e3;
+  --queens: #ffc61a;
+  --queens-hi: #ffc61a;
+  --detroit: #0076b6;
+  --detroit-hi: #c8d0d8;
   --both: #3a1f5c;
-  --caption: #fff3b0;
+  --caption: #fdf8ec;
   --gutter: 14px;
   --rule: 4px;
 }
@@ -208,8 +208,8 @@ figure.panel { margin: 0; }
   text-shadow: 3px 3px 0 rgba(0, 0, 0, 0.55);
 }
 
-.panel.queens { --tone-a: #2b4f94; --tone-b: #0f1d3d; }
-.panel.detroit { --tone-a: #13808a; --tone-b: #04272c; }
+.panel.queens { --tone-a: #c99a0e; --tone-b: #1c1608; }
+.panel.detroit { --tone-a: #0076b6; --tone-b: #04223a; }
 .panel.both { --tone-a: #5b2a8c; --tone-b: #140a2a; }
 
 /* Where-are-we tag */
@@ -316,7 +316,7 @@ figure.panel { margin: 0; }
   pointer-events: none;
 }
 
-.sfx { top: 46%; right: 6%; }
+.sfx { top: 58%; right: 6%; }
 
 .cite {
   position: absolute;
