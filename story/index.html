@@ -18,7 +18,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Bangers&family=Comic+Neue:wght@700&family=Share+Tech+Mono&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="story.css" />
 </head>
-<body>
+<body data-issue="panels.js">
   <header class="topbar">
     <a href="../">← Capitol Crashers</a>
     <a href="../play/">Play</a>
@@ -37,9 +37,14 @@
 
   <section class="book">
     <section class="page">
-      <h2 class="chapter"><span>Back matter</span>What they're fighting for</h2>
+      <h2 class="chapter" id="back-head"><span>Back matter</span>What they're fighting for</h2>
       <div class="planks" id="planks"></div>
     </section>
+  </section>
+
+  <section class="book shelf-wrap">
+    <h2 class="chapter"><span>Keep reading</span>More issues</h2>
+    <nav class="shelf" id="issues" aria-label="More issues"></nav>
   </section>
 
   <footer class="end">
