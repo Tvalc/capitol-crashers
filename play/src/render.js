@@ -34,8 +34,8 @@ export function draw(ctx, game) {
   }
   if (game.player) sprites.push({ y: game.player.y, draw: () => drawPerson(ctx, game.player, cam, game) });
   if (!game.player && (game.mode === "title" || game.mode === "select")) {
-    sprites.push({ y: 600, draw: () => drawPerson(ctx, preview("rook", 190, game), cam, game) });
-    sprites.push({ y: 600, draw: () => drawPerson(ctx, preview("flick", 1090, game), cam, game) });
+    sprites.push({ y: 600, draw: () => drawPerson(ctx, preview("mamdani", 190, game), cam, game) });
+    sprites.push({ y: 600, draw: () => drawPerson(ctx, preview("sayed", 1090, game), cam, game) });
   }
   sprites.sort((a, b) => a.y - b.y);
   for (const sprite of sprites) sprite.draw();
@@ -45,13 +45,13 @@ export function draw(ctx, game) {
 }
 
 function preview(id, x, game) {
-  const { body, trim, skin, pants, bag, hat } = FIGHTERS[id] || FIGHTERS.rook;
-  const colors = { body, trim, skin, pants, bag, hat };
+  const { body, trim, skin, pants, bag, hat, hair } = FIGHTERS[id] || FIGHTERS.mamdani;
+  const colors = { body, trim, skin, pants, bag, hat, hair };
   return {
     x,
     y: 590,
     z: 0,
-    facing: id === "flick" ? -1 : 1,
+    facing: id === "sayed" ? -1 : 1,
     state: "walk",
     anim: game.time,
     scale: 1,
@@ -260,6 +260,13 @@ function drawPerson(ctx, ent, cam, game) {
     ctx.fill();
   }
   if (colors.hat === "tail") ctx.fillRect(-26, -96, 18, 5);
+  if (colors.hat === "hair") {
+    ctx.fillStyle = ink || colors.hair;
+    ctx.beginPath();
+    ctx.arc(lean * 0.15, -95, 14.5, Math.PI * 1.05, Math.PI * 1.95);
+    ctx.fill();
+    ctx.fillRect(lean * 0.15 - 14, -98, 7, 10);
+  }
 
   const punch = pose.punch || 0;
   ctx.fillStyle = ink || colors.skin;
