@@ -191,9 +191,11 @@ body {
     0 0 0 3px #2a241c;
 }
 
-.crt { width: 100%; height: 100%; }
+.crt { display: block; width: 100%; height: 100%; }
 
-.crt svg { width: 100%; height: 100%; display: block; }
+.crt img { width: 100%; height: 100%; object-fit: cover; display: block; }
+
+.crt:focus-visible { outline: 3px solid #f0c14a; outline-offset: -8px; }
 
 .scan {
   position: absolute;
@@ -209,22 +211,6 @@ body {
   background: linear-gradient(115deg, rgba(255, 255, 255, 0.14), transparent 28%, transparent 70%, rgba(255, 77, 141, 0.08));
   pointer-events: none;
 }
-
-.start {
-  position: absolute;
-  right: 16px;
-  bottom: 14px;
-  padding: 12px 18px;
-  border-radius: 999px;
-  background: #f0c14a;
-  color: #1a1206;
-  font-family: Bungee, sans-serif;
-  text-decoration: none;
-  box-shadow: 0 8px 0 #8a6412, 0 0 24px rgba(240, 193, 74, 0.45);
-  animation: press 1.6s ease-in-out infinite;
-}
-
-.start:hover { animation: none; transform: translateY(2px); box-shadow: 0 6px 0 #8a6412; }
 
 .cpanel {
   display: flex;
@@ -504,11 +490,6 @@ body {
   50% { opacity: 0.45; }
 }
 
-@keyframes press {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(3px); box-shadow: 0 5px 0 #8a6412, 0 0 18px rgba(240, 193, 74, 0.35); }
-}
-
 @keyframes roll {
   from { background-position: 0 0; }
   to { background-position: 0 8px; }
@@ -532,5 +513,5 @@ body {
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .lamp, .speaker span, .bulbs i, .scan, .start, .j, .k, .joy i { animation: none; }
+  .lamp, .speaker span, .bulbs i, .scan, .j, .k, .joy i { animation: none; }
 }
