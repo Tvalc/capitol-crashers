@@ -6,11 +6,14 @@ import { fighterById, makePlayer, updatePlayer } from "./player.js";
 import { draw } from "./render.js";
 import { cloneStage, STAGES, WORLD } from "./stages.js";
 import { updatePickups, updateProjectiles } from "./weapons.js";
+import { PAGES } from "../../story/panels.js";
+
+const PANELS = Object.fromEntries(PAGES.flatMap((page) => page.panels).map((panel) => [panel.id, panel]));
 
 export function createGame() {
   return {
     mode: "title",
-    fighterId: "rook",
+    fighterId: "mamdani",
     stageIndex: 0,
     stage: cloneStage(0),
     lives: 3,
@@ -33,6 +36,8 @@ export function createGame() {
     clearT: 0,
     banner: "",
     bannerT: 0,
+    storyId: null,
+    storyThen: null,
   };
 }
 
@@ -48,6 +53,25 @@ export function beginRun(game, fighterId) {
   game.shake = 0;
   game.player = makePlayer(fighterById(fighterId), 240, 560);
   startStage(game);
+  showStory(game, game.player.fighter.story?.intro, "play");
+}
+
+// Pause on a comic panel from the story, then switch to `then` on continue.
+export function showStory(game, id, then) {
+  if (!id || !PANELS[id]) {
+    game.mode = then;
+    return;
+  }
+  game.mode = "story";
+  game.storyId = id;
+  game.storyThen = then;
+}
+
+export function continueStory(game) {
+  if (game.mode !== "story") return;
+  game.mode = game.storyThen;
+  game.storyId = null;
+  game.storyThen = null;
 }
 
 export function startStage(game) {
@@ -116,12 +140,14 @@ export function updateGame(game, input, dt) {
 }
 
 function advance(game) {
+  const story = game.player.fighter.story || {};
   if (game.stageIndex >= STAGES.length - 1) {
-    game.mode = "ending";
+    showStory(game, story.end, "ending");
     return;
   }
   game.stageIndex += 1;
   startStage(game);
+  showStory(game, story.beats?.[game.stageIndex - 1], "play");
 }
 
 function updateWaves(game) {
@@ -186,6 +212,44 @@ function boot() {
   const clearPanel = document.getElementById("clear-panel");
   const endPanel = document.getElementById("end-panel");
   const overPanel = document.getElementById("over-panel");
+  const storyPanel = document.getElementById("story-panel");
+  let shownStory = null;
+
+  function renderStory(panel) {
+    const frame = document.getElementById("story-frame");
+    frame.className = `story-frame ${panel.where}`;
+    frame.replaceChildren();
+    if (panel.art) {
+      const img = document.createElement("img");
+      img.src = `../art/story/${panel.art}`;
+      img.alt = panel.alt || panel.scene;
+      frame.append(img);
+    } else {
+      const scene = document.createElement("b");
+      scene.textContent = panel.scene;
+      scene.setAttribute("role", "img");
+      scene.setAttribute("aria-label", panel.alt || panel.scene);
+      frame.append(scene);
+    }
+    const tag = document.createElement("span");
+    tag.className = "story-tag";
+    tag.textContent = panel.tag;
+    frame.append(tag);
+    const copy = document.getElementById("story-copy");
+    copy.replaceChildren();
+    for (const cap of panel.captions || []) {
+      const line = document.createElement("p");
+      line.textContent = cap.text;
+      copy.append(line);
+    }
+    for (const bubble of panel.bubbles || []) {
+      const quote = document.createElement("p");
+      quote.className = "story-quote";
+      quote.textContent = `${bubble.who ? `${bubble.who}: ` : ""}“${bubble.text}”`;
+      copy.append(quote);
+    }
+    document.getElementById("story-more").href = `../story/#${panel.id}`;
+  }
 
   function sync() {
     titlePanel.hidden = game.mode !== "title";
@@ -193,6 +257,12 @@ function boot() {
     clearPanel.hidden = !(game.mode === "play" && game.clearT > 0);
     endPanel.hidden = game.mode !== "ending";
     overPanel.hidden = game.mode !== "gameover";
+    storyPanel.hidden = game.mode !== "story";
+    if (game.mode === "story" && shownStory !== game.storyId) {
+      shownStory = game.storyId;
+      renderStory(PANELS[game.storyId]);
+    }
+    if (game.mode !== "story") shownStory = null;
     document.querySelectorAll(".fighter").forEach((button) => {
       button.classList.toggle("on", button.dataset.id === game.fighterId);
     });
@@ -202,10 +272,10 @@ function boot() {
     }
     if (game.mode === "ending") {
       document.getElementById("end-copy").textContent =
-        `${game.player?.name || "The courier"} got the bag across. Score ${game.score}.`;
+        `${game.player?.name || "You"} made it to the Capitol. Score ${game.score}.`;
     }
     if (game.mode === "gameover") {
-      document.getElementById("over-copy").textContent = `Score ${game.score}. The alley keeps the bag.`;
+      document.getElementById("over-copy").textContent = `Score ${game.score}. Get up. The Capitol is still there.`;
     }
   }
 
@@ -224,6 +294,11 @@ function boot() {
   document.getElementById("run").addEventListener("click", () => {
     unlock();
     beginRun(game, game.fighterId);
+  });
+  document.getElementById("story-next").addEventListener("click", () => {
+    unlock();
+    play("ui");
+    continueStory(game);
   });
   document.getElementById("end-again").addEventListener("click", () => {
     game.mode = "title";
@@ -248,12 +323,15 @@ function boot() {
       play("ui");
       game.mode = "select";
     } else if (game.mode === "select") {
-      const order = ["rook", "flick"];
+      const order = ["mamdani", "sayed"];
       let index = order.indexOf(game.fighterId);
       if (snap.justLeft) index = (index + order.length - 1) % order.length;
       if (snap.justRight) index = (index + 1) % order.length;
       game.fighterId = order[index];
       if (snap.confirm) beginRun(game, game.fighterId);
+    } else if (game.mode === "story" && snap.confirm) {
+      play("ui");
+      continueStory(game);
     } else if ((game.mode === "ending" || game.mode === "gameover") && snap.confirm) {
       game.mode = "title";
       game.stage = cloneStage(0);

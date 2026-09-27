@@ -8,9 +8,9 @@ export const WORLD = {
 
 const dock = {
   id: "dock",
-  name: "Dock",
-  line: "Night shift on the loading dock.",
-  clear: "The dock is quiet. The market is not.",
+  name: "Queens Waterfront",
+  line: "Night on the Astoria waterfront.",
+  clear: "Queens is behind you. Detroit is next.",
   length: 4200,
   sky0: "#1b2436",
   sky1: "#44556f",
@@ -40,7 +40,7 @@ const dock = {
     {
       at: 2580,
       boss: true,
-      bossName: "Crane",
+      bossName: "The Landlord",
       group: [{ kind: "crane", dx: 180, y: 560 }],
     },
   ],
@@ -57,9 +57,9 @@ const dock = {
 
 const market = {
   id: "market",
-  name: "Market",
-  line: "The night market keeps its own rules.",
-  clear: "Stalls closed. The roof is the last handoff.",
+  name: "Eastern Market",
+  line: "Detroit's Eastern Market, after hours.",
+  clear: "One block left. The Capitol is in sight.",
   length: 4200,
   sky0: "#2a1c2e",
   sky1: "#6a3a48",
@@ -89,7 +89,7 @@ const market = {
     {
       at: 2600,
       boss: true,
-      bossName: "Mara",
+      bossName: "Super PAC",
       group: [{ kind: "mara", dx: 220, y: 560 }],
     },
   ],
@@ -107,9 +107,9 @@ const market = {
 
 const roof = {
   id: "roof",
-  name: "Roof",
-  line: "Last handoff is on the roof.",
-  clear: "The bag is on the far ledge.",
+  name: "Capitol Rooftops",
+  line: "The last block before the Capitol.",
+  clear: "The Capitol steps are right there.",
   length: 4200,
   sky0: "#101622",
   sky1: "#24344a",
@@ -140,7 +140,7 @@ const roof = {
     {
       at: 2680,
       boss: true,
-      bossName: "Signal",
+      bossName: "The Lobbyist",
       group: [{ kind: "signal", dx: 200, y: 560 }],
     },
   ],

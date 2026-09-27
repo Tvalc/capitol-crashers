@@ -49,7 +49,7 @@ const KINDS = {
     hat: "tail",
   },
   crane: {
-    name: "Crane",
+    name: "The Landlord",
     hp: 260,
     speed: 44,
     w: 72,
@@ -65,7 +65,7 @@ const KINDS = {
     hat: "helm",
   },
   mara: {
-    name: "Mara",
+    name: "Super PAC",
     hp: 200,
     speed: 86,
     w: 48,
@@ -81,7 +81,7 @@ const KINDS = {
     hat: "tail",
   },
   signal: {
-    name: "Signal",
+    name: "The Lobbyist",
     hp: 220,
     speed: 132,
     w: 46,
