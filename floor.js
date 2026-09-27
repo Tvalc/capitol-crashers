@@ -20,7 +20,6 @@ async function boot() {
   if (document.fonts && document.fonts.ready) {
     try { await document.fonts.ready; } catch (err) { /* still play */ }
   }
-  play("attract", "attract", "xMidYMid slice");
   play("coin", "coin", "xMidYMid meet");
 }
 
