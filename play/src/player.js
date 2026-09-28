@@ -45,6 +45,78 @@ const MOVES = {
   },
 };
 
+function lungeSpec(player) {
+  if (player.kind === "sayed") {
+    return {
+      startup: 0.06,
+      active: 0.07,
+      recover: 0.18,
+      dmg: 11,
+      kb: 320,
+      lift: 520,
+      knockdown: true,
+      kind: "heavy",
+      lunge: 2.6,
+      lungeFor: 0.1,
+      reachAdd: 8,
+      ownBox: true,
+      hitstop: 0.05,
+      points: 140,
+    };
+  }
+  return {
+    startup: 0.18,
+    active: 0.12,
+    recover: 0.32,
+    dmg: 16,
+    kb: 400,
+    lift: 540,
+    knockdown: true,
+    kind: "heavy",
+    lunge: 1.7,
+    lungeFor: 0.16,
+    reachAdd: 34,
+    ownBox: true,
+    hitstop: 0.07,
+    shake: 8,
+    points: 170,
+  };
+}
+
+function reversalSpec(player) {
+  if (player.kind === "sayed") {
+    return {
+      startup: 0.05,
+      active: 0.07,
+      recover: 0.2,
+      dmg: 10,
+      kb: 300,
+      lift: 520,
+      knockdown: true,
+      kind: "heavy",
+      reachAdd: -6,
+      ownBox: true,
+      hitstop: 0.05,
+      points: 140,
+    };
+  }
+  return {
+    startup: 0.12,
+    active: 0.1,
+    recover: 0.28,
+    dmg: 13,
+    kb: 340,
+    lift: 520,
+    knockdown: true,
+    kind: "heavy",
+    reachAdd: 10,
+    ownBox: true,
+    hitstop: 0.06,
+    shake: 7,
+    points: 160,
+  };
+}
+
 function specialSpec(player) {
   if (player.kind === "sayed") {
     return {
@@ -166,13 +238,13 @@ function pipeMul(player) {
 }
 
 function swing(player, game, spec) {
-  const kick = player.kind === "sayed" && !spec.radial;
+  const kick = player.kind === "sayed" && !spec.radial && !spec.ownBox;
   const connected = melee(game, player, {
     dmg: spec.dmg * player.fighter.power * pipeMul(player),
     kb: spec.kb,
     lift: spec.lift,
     knockdown: spec.knockdown,
-    reach: kick ? 300 : (spec.radial ? 40 : reachOf(player)),
+    reach: kick ? 300 : (spec.radial ? 40 : reachOf(player) + (spec.reachAdd || 0)),
     rx: kick ? 78 : spec.rx,
     ry: kick ? 56 : spec.ry,
     z: kick ? 58 : spec.z,
@@ -257,7 +329,8 @@ function startMove(player, name) {
   player.swingHits = new Set();
   player.vx = 0;
   player.vy = 0;
-  if (name === "heavy") play("heavy");
+  if (name === "heavy" || name === "lunge" || name === "reversal") play("heavy");
+  if (name === "reversal") player.invuln = Math.max(player.invuln, player.kind === "sayed" ? 0.08 : 0.12);
   if (name === "dashatk") play("dash");
 }
 
@@ -293,6 +366,10 @@ function tryOffense(player, game, input) {
       launchHeld(game, player);
       player.state = "throw";
       player.stateT = 0;
+    } else if (input.x === -player.facing) {
+      startMove(player, "reversal");
+    } else if (input.x === player.facing) {
+      startMove(player, "lunge");
     } else {
       startMove(player, "heavy");
     }
@@ -376,8 +453,15 @@ function updateLight(player, game, dt) {
   if (player.stateT >= linkAt + player.fighter.comboWindow) endMove(player);
 }
 
+function moveSpec(player) {
+  if (player.state === "special") return specialSpec(player);
+  if (player.state === "lunge") return lungeSpec(player);
+  if (player.state === "reversal") return reversalSpec(player);
+  return MOVES[player.state];
+}
+
 function updateTimed(player, game, dt) {
-  const spec = player.state === "special" ? specialSpec(player) : MOVES[player.state];
+  const spec = moveSpec(player);
   player.stateT += dt;
   if (spec.lunge && player.stateT < spec.lungeFor) {
     player.vx = player.facing * player.fighter.speed * spec.lunge;
@@ -527,7 +611,10 @@ export function updatePlayer(player, game, input, dt) {
   takeTap(player, input, game.time);
 
   if (updateBody(player, dt)) {
-    if (player.state === "dead" && player.deadT <= 0 && !player.cashed && game.mode === "play") {
+    if (player.state === "getup" && player.bufferLight > 0 && player.hurtT < 0.16) {
+      player.bufferLight = 0;
+      startMove(player, "reversal");
+    } else if (player.state === "dead" && player.deadT <= 0 && !player.cashed && game.mode === "play") {
       player.cashed = true;
       game.lives -= 1;
       if (game.lives <= 0) game.mode = "gameover";
@@ -548,7 +635,7 @@ export function updatePlayer(player, game, input, dt) {
     updateLight(player, game, dt);
     return;
   }
-  if (player.state === "heavy" || player.state === "dashatk" || player.state === "special") {
+  if (player.state === "heavy" || player.state === "dashatk" || player.state === "special" || player.state === "lunge" || player.state === "reversal") {
     updateTimed(player, game, dt);
     return;
   }

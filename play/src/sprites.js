@@ -52,11 +52,11 @@ export function loadSprites() {
 
 function loadOne(sprite, clip, name) {
   const image = new Image();
-  const dataPromise = fetch(`assets/sprites/${name}.json?v=art`).then((res) => res.json());
+  const dataPromise = fetch(`assets/sprites/${name}.json?v=gap`).then((res) => res.json());
   const imagePromise = new Promise((resolve, reject) => {
     image.onload = () => resolve(image);
     image.onerror = reject;
-    image.src = `assets/sprites/${name}.webp?v=art`;
+    image.src = `assets/sprites/${name}.webp?v=gap`;
   });
   return Promise.all([dataPromise, imagePromise]).then(([data, img]) => {
     const frames = Object.values(data.frames).sort((a, b) => a.frame.x - b.frame.x);
@@ -82,7 +82,8 @@ export function clipFor(state) {
   if (state === "special") return "cast";
   if (
     state === "light" || state === "heavy" || state === "attack" ||
-    state === "dashatk" || state === "grab" || state === "throw" || state === "windup"
+    state === "dashatk" || state === "lunge" || state === "reversal" ||
+    state === "grab" || state === "throw" || state === "windup"
   ) return "attack";
   return "idle";
 }
@@ -99,6 +100,8 @@ function attackWindow(ent) {
   if (ent.team === "player" && (ent.kind === "abdul" || ent.kind === "sayed")) {
     const link = ent.fighter?.comboWindow || 0.2;
     if (ent.state === "special") return { startup: 0.1, active: 0.08, total: 0.58 };
+    if (ent.state === "lunge") return { startup: 0.06, active: 0.07, total: 0.31 };
+    if (ent.state === "reversal") return { startup: 0.05, active: 0.07, total: 0.32 };
     if (ent.state === "heavy") return { startup: 0.1, active: 0.08, total: 0.36 };
     if (ent.state === "dashatk") return { startup: 0.07, active: 0.07, total: 0.3 };
     if (ent.state === "jatk") return { startup: 0.08, active: 0.07, total: 0.28 };
@@ -111,6 +114,8 @@ function attackWindow(ent) {
     if (ent.state === "heavy") return { startup: 0.28, active: 0.14, total: 0.8 };
     if (ent.state === "dashatk") return { startup: 0.14, active: 0.12, total: 0.54 };
     if (ent.state === "special") return { startup: 0.14, active: 0.12, total: 0.68 };
+    if (ent.state === "lunge") return { startup: 0.18, active: 0.12, total: 0.62 };
+    if (ent.state === "reversal") return { startup: 0.12, active: 0.1, total: 0.5 };
     if (ent.state === "jatk") return { startup: 0.12, active: 0.12, total: 0.4 };
     if (ent.state === "throw" || ent.state === "grab") return { startup: 0.16, active: 0.14, total: 0.56 };
     if (ent.combo === 2) return { startup: 0.24, active: 0.14, total: 0.38 + link };
@@ -118,13 +123,29 @@ function attackWindow(ent) {
     return { startup: 0.2, active: 0.12, total: 0.32 + link };
   }
   if (ent.kind === "trump") {
+    if (ent.swingHigh) return { startup: 0.62, active: 0.12, total: 1.05 };
     const late = ent.phase2 ? 0.28 : 0.46;
     return { startup: late, active: 0.1, total: ent.phase2 ? 0.62 : 0.86 };
   }
-  if (ent.kind === "greene") return { startup: 0.42, active: 0.12, total: 0.92 };
+  if (ent.kind === "greene") return { startup: 0.4, active: 0.12, total: 0.72 };
   if (ent.kind === "cruz" && ent.state === "windup") return { startup: 0.28, active: 0.04, total: 0.32 };
   if (ent.kind === "vance") return { startup: 0.08, active: 0.16, total: 0.32 };
   return { startup: 0.18, active: 0.08, total: 0.48 };
+}
+
+function contactAt(ent, count) {
+  let frac = 0.42;
+  if (ent.state === "dashatk" || ent.state === "lunge") frac = 0.28;
+  else if (ent.state === "heavy") frac = 0.62;
+  else if (ent.state === "reversal") frac = 0.18;
+  else if (ent.state === "throw") frac = 0.78;
+  else if (ent.state === "grab") frac = 0.16;
+  else if (ent.state === "light") {
+    if (ent.combo === 2) frac = 0.7;
+    else if (ent.combo === 1) frac = 0.5;
+    else frac = 0.32;
+  }
+  return Math.min(count - 2, Math.max(1, Math.round(count * frac)));
 }
 
 function poseIndex(ent, count, clip) {
@@ -140,7 +161,7 @@ function poseIndex(ent, count, clip) {
   else if (clip === "death") window = { startup: 0.06, active: 0.14, total: 0.9 };
   else if (clip === "cast") window = attackWindow({ ...ent, state: ent.state === "special" ? "special" : ent.state });
   else window = attackWindow(ent);
-  const contact = Math.min(count - 2, Math.max(2, Math.round(count * 0.42)));
+  const contact = contactAt(ent, count);
   if (t <= window.startup) {
     const u = window.startup <= 0 ? 1 : t / window.startup;
     return Math.max(0, Math.min(contact, Math.floor(u * contact)));

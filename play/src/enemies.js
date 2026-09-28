@@ -268,7 +268,7 @@ function updateGrunt(enemy, game, dt) {
     enemy.stateT += dt;
     enemy.vx = 0;
     enemy.vy = 0;
-    if (!enemy.spawned && enemy.stateT >= 0.26) {
+    if (!enemy.spawned && enemy.stateT >= 0.4) {
       enemy.spawned = true;
       melee(game, enemy, {
         dmg: enemy.dmg,
@@ -280,7 +280,7 @@ function updateGrunt(enemy, game, dt) {
         hitstop: 0.04,
       });
     }
-    if (enemy.stateT >= 0.58) {
+    if (enemy.stateT >= 0.72) {
       enemy.state = "idle";
       enemy.spawned = false;
       enemy.attackCd = 0.55;
@@ -375,19 +375,22 @@ function updateThrower(enemy, game, dt) {
 function updateCrane(enemy, game, dt) {
   const player = game.player;
   if (enemy.state === "attack") {
-    const hitAt = enemy.phase2 ? 0.28 : 0.46;
-    const endAt = enemy.phase2 ? 0.62 : 0.86;
+    const high = enemy.swingHigh;
+    const hitAt = high ? 0.62 : (enemy.phase2 ? 0.28 : 0.46);
+    const endAt = high ? 1.05 : (enemy.phase2 ? 0.62 : 0.86);
     enemy.stateT += dt;
     if (!enemy.spawned && enemy.stateT >= hitAt) {
       enemy.spawned = true;
       melee(game, enemy, {
         dmg: enemy.dmg,
-        kb: 280,
-        lift: 40,
-        reach: enemy.reach,
-        rx: enemy.reach * 0.62,
-        ry: 40,
-        low: true,
+        kb: high ? 320 : 280,
+        lift: high ? 80 : 40,
+        reach: enemy.reach + (high ? 24 : 0),
+        rx: enemy.reach * (high ? 0.48 : 0.62),
+        ry: high ? 34 : 40,
+        z: high ? 78 : undefined,
+        rz: high ? 86 : undefined,
+        low: !high,
         already: enemy.swingHits,
         kind: "heavy",
         hitstop: 0.07,
@@ -405,7 +408,9 @@ function updateCrane(enemy, game, dt) {
   const dx = Math.abs(player.x - enemy.x);
   const dy = Math.abs(player.y - enemy.y);
   face(enemy, player);
-  if (dx < enemy.reach && dy < 36 && enemy.attackCd <= 0) {
+  if (dx < enemy.reach + (enemy.swingHigh ? 24 : 0) && dy < 36 && enemy.attackCd <= 0) {
+    enemy.swingN = (enemy.swingN || 0) + 1;
+    enemy.swingHigh = enemy.swingN % 2 === 0;
     enemy.state = "attack";
     enemy.stateT = 0;
     enemy.spawned = false;
