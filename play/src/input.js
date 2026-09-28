@@ -16,6 +16,7 @@ export function blankInput() {
     light: false,
     heavy: false,
     special: false,
+    grab: false,
     jump: false,
     confirm: false,
   };
@@ -59,6 +60,7 @@ export function createInput() {
         light: just.has("KeyJ"),
         heavy: just.has("KeyK"),
         special: just.has("KeyL"),
+        grab: just.has("KeyG"),
         jump: just.has("Space"),
         confirm: just.has("Enter") || just.has("Space"),
       };

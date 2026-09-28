@@ -1,8 +1,8 @@
 import { play, unlock } from "./audio.js";
 import { separate, tickToss, wallBounce } from "./combat.js?v=fight2";
 import { makeEnemy, updateEnemy } from "./enemies.js?v=gap2";
-import { blankInput, createInput } from "./input.js";
-import { fighterById, makePlayer, updatePlayer } from "./player.js?v=grab";
+import { blankInput, createInput } from "./input.js?v=grab2";
+import { fighterById, makePlayer, updatePlayer } from "./player.js?v=grab2";
 import { draw } from "./render.js?v=gap2";
 import { cloneStage, STAGES, WORLD } from "./stages.js?v=art";
 import { updatePickups, updateProjectiles } from "./weapons.js?v=fight2";
@@ -334,6 +334,7 @@ function boot() {
     buttons: [
       { label: "Light", key: "j", code: "KeyJ", tone: "pink" },
       { label: "Heavy", key: "k", code: "KeyK", tone: "gold" },
+      { label: "Grab", key: "g", code: "KeyG", tone: "gold" },
       { label: "Special", key: "l", code: "KeyL", tone: "blue" },
       { label: "Jump", key: " ", code: "Space", tone: "cream" },
     ],
@@ -344,7 +345,7 @@ function boot() {
     const dt = (now - last) / 1000;
     last = now;
     const snap = input.snapshot();
-    if (snap.light || snap.heavy || snap.special || snap.jump || snap.confirm || snap.x || snap.y) unlock();
+    if (snap.light || snap.heavy || snap.special || snap.grab || snap.jump || snap.confirm || snap.x || snap.y) unlock();
     if (game.mode === "title" && snap.confirm) {
       play("ui");
       game.mode = "select";

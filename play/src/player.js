@@ -185,10 +185,12 @@ export function makePlayer(fighter, x, y) {
     bufferHeavy: 0,
     bufferSpecial: 0,
     bufferJump: 0,
+    bufferGrab: 0,
     lastTapL: -10,
     lastTapR: -10,
     wantDash: 0,
     deadT: 0,
+    grabCd: 0,
     cashed: false,
     colors: fighter,
   };
@@ -199,10 +201,12 @@ function buffer(player, input, dt) {
   player.bufferHeavy = Math.max(0, player.bufferHeavy - dt);
   player.bufferSpecial = Math.max(0, player.bufferSpecial - dt);
   player.bufferJump = Math.max(0, player.bufferJump - dt);
+  player.bufferGrab = Math.max(0, player.bufferGrab - dt);
   if (input.light) player.bufferLight = 0.14;
   if (input.heavy) player.bufferHeavy = 0.14;
   if (input.special) player.bufferSpecial = 0.14;
   if (input.jump) player.bufferJump = 0.12;
+  if (input.grab) player.bufferGrab = 0.16;
 }
 
 function noteTap(player, time, dir, lastTap, savedFacing) {
@@ -268,17 +272,17 @@ function endMove(player) {
   player.vy = 0;
 }
 
-function grabTarget(game, player) {
+function grabTarget(game, player, reach = 100) {
   let best = null;
-  let bestDx = 120;
+  let bestDx = reach;
   for (const enemy of game.enemies) {
-    if (!enemy.alive || enemy.z > 16) continue;
+    if (!enemy.alive || enemy.isBoss || enemy.z > 16) continue;
     if (enemy.state === "down" || enemy.state === "air" || enemy.state === "dead" || enemy.state === "grabbed") continue;
     const dx = (enemy.x - player.x) * player.facing;
     const dy = Math.abs(enemy.y - player.y);
-    if (dx > -24 && dx < bestDx && dy < 72) {
+    if (dx > -36 && dx < bestDx && dy < 70) {
       best = enemy;
-      bestDx = dx < 0 ? 0 : dx;
+      bestDx = Math.max(0, dx);
     }
   }
   return best;
@@ -289,6 +293,7 @@ function startGrab(game, player, enemy) {
   player.stateT = 0;
   player.grabId = enemy.id;
   player.grabHits = 0;
+  player.bufferGrab = 0;
   player.vx = 0;
   player.vy = 0;
   enemy.state = "grabbed";
@@ -378,28 +383,6 @@ function tryOffense(player, game, input) {
   }
   if (player.bufferLight > 0) {
     player.bufferLight = 0;
-    if (!player.holding || player.holding.kind === "pipe") {
-      const enemy = grabTarget(game, player);
-      if (enemy?.isBoss) {
-        melee(game, player, {
-          dmg: 4,
-          kb: 30,
-          lift: 0,
-          reach: 56,
-          kind: "light",
-          points: 40,
-          hitstop: 0.03,
-          already: new Set(),
-        });
-        player.state = "throw";
-        player.stateT = 0;
-        return true;
-      }
-      if (enemy) {
-        startGrab(game, player, enemy);
-        return true;
-      }
-    }
     if (player.state === "dash") {
       startMove(player, "dashatk");
       return true;
@@ -415,6 +398,14 @@ function tryOffense(player, game, input) {
     return true;
   }
   return false;
+}
+
+function tryGrab(player, game, reach) {
+  if (player.grabCd > 0 || player.z > 8) return false;
+  const enemy = grabTarget(game, player, reach);
+  if (!enemy) return false;
+  startGrab(game, player, enemy);
+  return true;
 }
 
 function steer(player, input, time) {
@@ -521,6 +512,7 @@ function updateGrab(player, game, input, dt) {
   player.vy = 0;
   if (!enemy || !enemy.alive) {
     player.grabId = null;
+    player.grabCd = 0.55;
     player.state = "idle";
     return;
   }
@@ -551,6 +543,7 @@ function updateGrab(player, game, input, dt) {
     const dir = input.x === -player.facing ? -player.facing : player.facing;
     player.bufferLight = 0;
     player.bufferHeavy = 0;
+    player.grabCd = 0.55;
     enemy.state = "idle";
     enemy.alive = true;
     applyThrow(game, player, enemy, dir);
@@ -614,6 +607,7 @@ function respawn(game) {
 
 export function updatePlayer(player, game, input, dt) {
   player.anim += dt;
+  if (player.grabCd > 0) player.grabCd = Math.max(0, player.grabCd - dt);
   buffer(player, input, dt);
   takeTap(player, input, game.time);
 
@@ -680,6 +674,11 @@ export function updatePlayer(player, game, input, dt) {
     return;
   }
 
+  if (player.bufferGrab > 0 && (player.state === "idle" || player.state === "walk" || player.state === "dash")) {
+    player.bufferGrab = 0;
+    if (tryGrab(player, game, 190)) return;
+  }
+
   if (player.state === "dash") {
     if (tryOffense(player, game, input)) return;
     const holding = input.x === player.facing;
@@ -697,6 +696,7 @@ export function updatePlayer(player, game, input, dt) {
 
   if (tryOffense(player, game, input)) return;
   steer(player, input, game.time);
+  if ((player.state === "idle" || player.state === "walk") && tryGrab(player, game, 88)) return;
   integrate(player, dt);
 }
 
