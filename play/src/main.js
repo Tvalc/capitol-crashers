@@ -2,7 +2,7 @@ import { play, unlock } from "./audio.js";
 import { separate, tickToss, wallBounce } from "./combat.js?v=fight2";
 import { makeEnemy, updateEnemy } from "./enemies.js?v=gap2";
 import { blankInput, createInput } from "./input.js";
-import { fighterById, makePlayer, updatePlayer } from "./player.js?v=gap2";
+import { fighterById, makePlayer, updatePlayer } from "./player.js?v=grab";
 import { draw } from "./render.js?v=gap2";
 import { cloneStage, STAGES, WORLD } from "./stages.js?v=art";
 import { updatePickups, updateProjectiles } from "./weapons.js?v=fight2";

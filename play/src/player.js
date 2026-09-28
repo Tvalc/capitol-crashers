@@ -270,21 +270,21 @@ function endMove(player) {
 
 function grabTarget(game, player) {
   let best = null;
-  let bestDx = 78;
+  let bestDx = 120;
   for (const enemy of game.enemies) {
-    if (!enemy.alive || enemy.z > 12) continue;
-    if (enemy.state === "down" || enemy.state === "air" || enemy.state === "dead") continue;
+    if (!enemy.alive || enemy.z > 16) continue;
+    if (enemy.state === "down" || enemy.state === "air" || enemy.state === "dead" || enemy.state === "grabbed") continue;
     const dx = (enemy.x - player.x) * player.facing;
     const dy = Math.abs(enemy.y - player.y);
-    if (dx > 8 && dx < bestDx && dy < 30) {
+    if (dx > -24 && dx < bestDx && dy < 72) {
       best = enemy;
-      bestDx = dx;
+      bestDx = dx < 0 ? 0 : dx;
     }
   }
   return best;
 }
 
-function startGrab(player, enemy) {
+function startGrab(game, player, enemy) {
   player.state = "grab";
   player.stateT = 0;
   player.grabId = enemy.id;
@@ -354,8 +354,7 @@ function tryOffense(player, game, input) {
     startSpecial(player);
     return true;
   }
-  if (player.holding?.kind === "bottle" && (player.bufferLight > 0 || player.bufferHeavy > 0)) {
-    player.bufferLight = 0;
+  if (player.holding?.kind === "bottle" && player.bufferHeavy > 0) {
     player.bufferHeavy = 0;
     launchHeld(game, player);
     player.state = "throw";
@@ -379,11 +378,7 @@ function tryOffense(player, game, input) {
   }
   if (player.bufferLight > 0) {
     player.bufferLight = 0;
-    if (player.state === "dash") {
-      startMove(player, "dashatk");
-      return true;
-    }
-    if (!player.holding) {
+    if (!player.holding || player.holding.kind === "pipe") {
       const enemy = grabTarget(game, player);
       if (enemy?.isBoss) {
         melee(game, player, {
@@ -401,9 +396,19 @@ function tryOffense(player, game, input) {
         return true;
       }
       if (enemy) {
-        startGrab(player, enemy);
+        startGrab(game, player, enemy);
         return true;
       }
+    }
+    if (player.state === "dash") {
+      startMove(player, "dashatk");
+      return true;
+    }
+    if (player.holding?.kind === "bottle") {
+      launchHeld(game, player);
+      player.state = "throw";
+      player.stateT = 0;
+      return true;
     }
     startMove(player, "light");
     player.combo = 0;
