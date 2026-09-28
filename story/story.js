@@ -18,41 +18,50 @@ function renderPanel(panel) {
   const node = el("figure", `panel ${panel.where}${size}${extra}`);
   node.id = panel.id;
 
+  const frame = el("div", "frame");
+
   if (panel.art) {
     const img = el("img");
     img.src = ART_DIR + panel.art;
     img.alt = panel.alt || panel.scene;
     img.loading = "lazy";
     img.decoding = "async";
-    node.append(img);
+    frame.append(img);
   } else {
     const scene = el("div", "scene");
     scene.setAttribute("role", "img");
     scene.setAttribute("aria-label", panel.alt || panel.scene);
     scene.append(el("b", "", panel.scene));
-    node.append(scene);
+    frame.append(scene);
   }
 
-  if (panel.tag) node.append(el("span", "tag", panel.tag));
-
-  for (const cap of panel.captions || []) {
-    node.append(el("p", `caption ${cap.pos || "tl"}`, cap.text));
-  }
+  if (panel.tag) frame.append(el("span", "tag", panel.tag));
 
   for (const line of panel.bubbles || []) {
     const bubble = el("p", `bubble ${line.pos || "left high"}${line.shout ? " shout" : ""}`);
     if (line.who) bubble.append(el("span", "who", line.who));
     bubble.append(document.createTextNode(line.text));
-    node.append(bubble);
+    frame.append(bubble);
   }
 
-  if (panel.sfx) node.append(el("span", "sfx", panel.sfx.text));
+  if (panel.sfx) frame.append(el("span", "sfx", panel.sfx.text));
 
   if (panel.cites && panel.cites.length) {
     const cite = el("a", "cite", `src ${panel.cites.join(", ")}`);
     cite.href = `#src-${panel.cites[0]}`;
     cite.setAttribute("aria-label", `Sources ${panel.cites.join(", ")}`);
-    node.append(cite);
+    frame.append(cite);
+  }
+
+  node.append(frame);
+
+  const captions = panel.captions || [];
+  if (captions.length) {
+    const lettering = el("figcaption", "lettering");
+    for (const cap of captions) {
+      lettering.append(el("p", "caption", cap.text));
+    }
+    node.append(lettering);
   }
 
   return node;

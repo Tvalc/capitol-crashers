@@ -147,9 +147,11 @@ a { color: inherit; }
 figure.panel { margin: 0; }
 
 .panel {
-  position: relative;
+  display: flex;
+  flex-direction: column;
   grid-column: span 6;
-  min-height: 260px;
+  min-height: 0;
+  height: 100%;
   border: var(--rule) solid var(--ink);
   background: var(--ink);
   overflow: hidden;
@@ -160,10 +162,20 @@ figure.panel { margin: 0; }
 .panel.third { grid-column: span 2; }
 .panel.two-thirds { grid-column: span 4; }
 .panel.tall { grid-row: span 2; }
-.panel.splash { min-height: 420px; }
-.panel.third { min-height: 380px; }
 
-.panel > img {
+.frame {
+  position: relative;
+  flex: 1 1 auto;
+  min-height: 320px;
+  overflow: hidden;
+  background: var(--ink);
+}
+
+.panel.splash .frame { min-height: 460px; }
+.panel.third .frame { min-height: 400px; }
+.panel.tall .frame { min-height: 520px; }
+
+.frame > img {
   position: absolute;
   inset: 0;
   width: 100%;
@@ -173,7 +185,7 @@ figure.panel { margin: 0; }
 
 /* Placeholder art: an intentional, flat "pencils" panel until the Makko art lands. */
 
-.panel .scene {
+.frame .scene {
   position: absolute;
   inset: 0;
   display: grid;
@@ -232,12 +244,21 @@ figure.panel { margin: 0; }
 .detroit .tag { background: var(--detroit-hi); }
 .both .tag { background: var(--neon); color: #fff; }
 
-/* Lettering */
+/* Lettering. Captions sit under the art so they don't cover the panel. */
 
-.caption, .bubble, .sfx { position: absolute; z-index: 2; }
+.lettering {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 8px;
+  background: var(--paper-deep);
+  border-top: var(--rule) solid var(--ink);
+}
+
+.bubble, .sfx { position: absolute; z-index: 2; }
 
 .caption {
-  max-width: min(72%, 420px);
+  margin: 0;
   padding: 8px 11px;
   background: var(--caption);
   border: 3px solid var(--ink);
@@ -247,11 +268,6 @@ figure.panel { margin: 0; }
   text-transform: uppercase;
   box-shadow: 3px 3px 0 var(--ink);
 }
-
-.caption.tl { top: 10px; left: 10px; }
-.caption.bl { bottom: 10px; left: 10px; }
-.caption.br { bottom: 10px; right: 10px; }
-.caption.tr { top: 38px; right: 10px; }
 
 .bubble {
   max-width: min(62%, 320px);
@@ -449,12 +465,11 @@ figure.panel { margin: 0; }
   .grid { grid-template-columns: repeat(2, 1fr); }
   .cover .masthead { position: static; padding: 14px 14px 16px; background: #0b0718; }
   .cover h1 { font-size: 44px; }
-  .panel, .panel.half, .panel.two-thirds { grid-column: span 2; }
-  .panel.third { grid-column: span 2; min-height: 300px; }
+  .panel, .panel.half, .panel.two-thirds, .panel.third { grid-column: span 2; }
   .panel.tall { grid-row: span 1; }
-  .panel { min-height: 340px; }
-  .panel.splash { min-height: 360px; }
-  .caption { font-size: 13px; max-width: 86%; }
+  .frame, .panel.third .frame, .panel.tall .frame { min-height: 260px; }
+  .panel.splash .frame { min-height: 320px; }
+  .caption { font-size: 13px; }
   .bubble { font-size: 13px; max-width: 72%; }
   .cover { box-shadow: 6px 6px 0 var(--ink); }
 }
