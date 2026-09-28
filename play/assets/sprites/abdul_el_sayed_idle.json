@@ -1,0 +1,295 @@
+{
+  "frames": {
+    "abdul_el_sayed_idle_000.webp": {
+      "frame": {
+        "x": 2,
+        "y": 2,
+        "w": 161,
+        "h": 256
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 161,
+        "h": 256
+      },
+      "sourceSize": {
+        "w": 161,
+        "h": 256
+      },
+      "duration": 83
+    },
+    "abdul_el_sayed_idle_001.webp": {
+      "frame": {
+        "x": 165,
+        "y": 2,
+        "w": 161,
+        "h": 256
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 161,
+        "h": 256
+      },
+      "sourceSize": {
+        "w": 161,
+        "h": 256
+      },
+      "duration": 83
+    },
+    "abdul_el_sayed_idle_002.webp": {
+      "frame": {
+        "x": 328,
+        "y": 2,
+        "w": 161,
+        "h": 256
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 161,
+        "h": 256
+      },
+      "sourceSize": {
+        "w": 161,
+        "h": 256
+      },
+      "duration": 83
+    },
+    "abdul_el_sayed_idle_003.webp": {
+      "frame": {
+        "x": 491,
+        "y": 2,
+        "w": 161,
+        "h": 256
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 161,
+        "h": 256
+      },
+      "sourceSize": {
+        "w": 161,
+        "h": 256
+      },
+      "duration": 83
+    },
+    "abdul_el_sayed_idle_004.webp": {
+      "frame": {
+        "x": 654,
+        "y": 2,
+        "w": 161,
+        "h": 256
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 161,
+        "h": 256
+      },
+      "sourceSize": {
+        "w": 161,
+        "h": 256
+      },
+      "duration": 83
+    },
+    "abdul_el_sayed_idle_005.webp": {
+      "frame": {
+        "x": 817,
+        "y": 2,
+        "w": 161,
+        "h": 256
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 161,
+        "h": 256
+      },
+      "sourceSize": {
+        "w": 161,
+        "h": 256
+      },
+      "duration": 83
+    },
+    "abdul_el_sayed_idle_006.webp": {
+      "frame": {
+        "x": 980,
+        "y": 2,
+        "w": 161,
+        "h": 256
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 161,
+        "h": 256
+      },
+      "sourceSize": {
+        "w": 161,
+        "h": 256
+      },
+      "duration": 83
+    },
+    "abdul_el_sayed_idle_007.webp": {
+      "frame": {
+        "x": 1143,
+        "y": 2,
+        "w": 161,
+        "h": 256
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 161,
+        "h": 256
+      },
+      "sourceSize": {
+        "w": 161,
+        "h": 256
+      },
+      "duration": 83
+    },
+    "abdul_el_sayed_idle_008.webp": {
+      "frame": {
+        "x": 1306,
+        "y": 2,
+        "w": 161,
+        "h": 256
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 161,
+        "h": 256
+      },
+      "sourceSize": {
+        "w": 161,
+        "h": 256
+      },
+      "duration": 83
+    },
+    "abdul_el_sayed_idle_009.webp": {
+      "frame": {
+        "x": 1469,
+        "y": 2,
+        "w": 161,
+        "h": 256
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 161,
+        "h": 256
+      },
+      "sourceSize": {
+        "w": 161,
+        "h": 256
+      },
+      "duration": 83
+    },
+    "abdul_el_sayed_idle_010.webp": {
+      "frame": {
+        "x": 1632,
+        "y": 2,
+        "w": 161,
+        "h": 256
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 161,
+        "h": 256
+      },
+      "sourceSize": {
+        "w": 161,
+        "h": 256
+      },
+      "duration": 83
+    },
+    "abdul_el_sayed_idle_011.webp": {
+      "frame": {
+        "x": 1795,
+        "y": 2,
+        "w": 161,
+        "h": 256
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 161,
+        "h": 256
+      },
+      "sourceSize": {
+        "w": 161,
+        "h": 256
+      },
+      "duration": 83
+    }
+  },
+  "meta": {
+    "app": "MAKKO Sprite Studio",
+    "version": "1.0.0",
+    "image": "abdul_el_sayed_idle.webp",
+    "format": "RGBA8888",
+    "size": {
+      "w": 1958,
+      "h": 260
+    },
+    "scale": "1",
+    "frameTags": [
+      {
+        "name": "Abdul El-Sayed Idle",
+        "from": 0,
+        "to": 11,
+        "direction": "forward"
+      }
+    ],
+    "anchor": {
+      "x": 80.5,
+      "y": 258,
+      "normalized": {
+        "x": 0.5,
+        "y": 1
+      },
+      "strategy": "bottom-center"
+    },
+    "referenceAlignment": {
+      "referenceBounds": {
+        "width": 61,
+        "height": 255
+      },
+      "frameBounds": {
+        "width": 65,
+        "height": 256
+      },
+      "normalized": true
+    }
+  }
+}

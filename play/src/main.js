@@ -1,11 +1,12 @@
 import { play, unlock } from "./audio.js";
 import { separate } from "./combat.js";
-import { makeEnemy, updateEnemy } from "./enemies.js";
+import { makeEnemy, updateEnemy } from "./enemies.js?v=art";
 import { blankInput, createInput } from "./input.js";
-import { fighterById, makePlayer, updatePlayer } from "./player.js";
-import { draw } from "./render.js";
-import { cloneStage, STAGES, WORLD } from "./stages.js";
+import { fighterById, makePlayer, updatePlayer } from "./player.js?v=art";
+import { draw } from "./render.js?v=art";
+import { cloneStage, STAGES, WORLD } from "./stages.js?v=art";
 import { updatePickups, updateProjectiles } from "./weapons.js";
+import { loadSprites } from "./sprites.js?v=art";
 import { PAGES } from "../../story/panels.js";
 
 const PANELS = Object.fromEntries(PAGES.flatMap((page) => page.panels).map((panel) => [panel.id, panel]));
@@ -170,7 +171,13 @@ function updateWaves(game) {
     game.lockCam = desired;
     const base = desired + 760;
     for (const member of wave.group) {
-      game.enemies.push(makeEnemy(member.kind, base + member.dx, member.y));
+      const enemy = makeEnemy(member.kind, base + member.dx, member.y);
+      if (wave.boss) {
+        enemy.isBoss = true;
+        enemy.hp = Math.max(enemy.hp, 220);
+        enemy.hpMax = enemy.hp;
+      }
+      game.enemies.push(enemy);
     }
     if (wave.boss) {
       game.banner = wave.bossName;
@@ -207,6 +214,7 @@ function boot() {
   const ctx = canvas.getContext("2d");
   const input = createInput();
   const game = createGame();
+  loadSprites();
   const titlePanel = document.getElementById("title-panel");
   const selectPanel = document.getElementById("select-panel");
   const clearPanel = document.getElementById("clear-panel");

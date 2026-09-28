@@ -1,12 +1,18 @@
 import { play } from "./audio.js";
-import { FIGHTERS } from "./fighters.js";
+import { FIGHTERS } from "./fighters.js?v=art";
 import { integrate, melee, spendSpecial, updateBody } from "./combat.js";
 import { finishWeapon, launchHeld, noteWeaponSwing } from "./weapons.js";
 
 const LIGHTS = [
-  { startup: 0.05, active: 0.05, dmg: 7, kb: 130, lift: 0 },
-  { startup: 0.045, active: 0.05, dmg: 8, kb: 150, lift: 0 },
-  { startup: 0.06, active: 0.07, dmg: 12, kb: 340, lift: 200 },
+  { startup: 0.2, active: 0.12, dmg: 7, kb: 180, lift: 0 },
+  { startup: 0.18, active: 0.12, dmg: 8, kb: 200, lift: 0 },
+  { startup: 0.24, active: 0.14, dmg: 12, kb: 340, lift: 200 },
+];
+
+const KICKS = [
+  { startup: 0.08, active: 0.07, dmg: 7, kb: 180, lift: 0 },
+  { startup: 0.07, active: 0.07, dmg: 8, kb: 200, lift: 0 },
+  { startup: 0.1, active: 0.08, dmg: 12, kb: 340, lift: 200 },
 ];
 
 const MOVES = {
@@ -133,14 +139,16 @@ function pipeMul(player) {
 }
 
 function swing(player, game, spec) {
+  const kick = player.kind === "sayed" && !spec.radial;
   const connected = melee(game, player, {
     dmg: spec.dmg * player.fighter.power * pipeMul(player),
     kb: spec.kb,
     lift: spec.lift,
-    reach: spec.radial ? 40 : reachOf(player),
-    rx: spec.rx,
-    ry: spec.ry,
-    rz: spec.rz,
+    reach: kick ? 300 : (spec.radial ? 40 : reachOf(player)),
+    rx: kick ? 78 : spec.rx,
+    ry: kick ? 56 : spec.ry,
+    z: kick ? 58 : spec.z,
+    rz: kick ? 52 : spec.rz,
     radial: spec.radial,
     kind: spec.kind,
     points: spec.points,
@@ -293,7 +301,8 @@ function steer(player, input) {
 }
 
 function updateLight(player, game, dt) {
-  const step = LIGHTS[player.combo] || LIGHTS[0];
+  const table = player.kind === "sayed" ? KICKS : LIGHTS;
+  const step = table[player.combo] || table[0];
   player.stateT += dt;
   player.vx = 0;
   player.vy = 0;
@@ -354,7 +363,7 @@ function updateJump(player, game, input, dt) {
   integrate(player, dt);
   if (player.state === "jatk") {
     player.jatkT += dt;
-    if (!player.spawned && player.jatkT >= 0.04) {
+    if (!player.spawned && player.jatkT >= (player.kind === "sayed" ? 0.08 : 0.04)) {
       player.spawned = true;
       swing(player, game, { dmg: 10, kb: 200, lift: 40, kind: "light", points: 120, reach: reachOf(player) });
     }

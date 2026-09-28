@@ -7,10 +7,10 @@ export const WORLD = {
 };
 
 const dock = {
-  id: "dock",
-  name: "Queens Waterfront",
-  line: "Night on the Astoria waterfront.",
-  clear: "Queens is behind you. Detroit is next.",
+  id: "rally",
+  name: "Street rally",
+  line: "Night fight on the rally street.",
+  clear: "The rally breaks. The studio is next.",
   length: 4200,
   sky0: "#1b2436",
   sky1: "#44556f",
@@ -23,25 +23,21 @@ const dock = {
     {
       at: 640,
       group: [
-        { kind: "grunt", dx: 40, y: 490 },
-        { kind: "grunt", dx: 160, y: 570 },
-        { kind: "grunt", dx: 110, y: 640 },
+        { kind: "greene", dx: 40, y: 520 },
+        { kind: "cruz", dx: 180, y: 600 },
       ],
     },
     {
       at: 1560,
       group: [
-        { kind: "grunt", dx: 20, y: 500 },
-        { kind: "rusher", dx: 180, y: 560 },
-        { kind: "rusher", dx: 90, y: 630 },
-        { kind: "grunt", dx: 240, y: 520 },
+        { kind: "vance", dx: 80, y: 560 },
       ],
     },
     {
       at: 2580,
       boss: true,
-      bossName: "The Landlord",
-      group: [{ kind: "crane", dx: 180, y: 560 }],
+      bossName: "Donald Trump",
+      group: [{ kind: "trump", dx: 180, y: 560 }],
     },
   ],
   pickups: [
@@ -56,10 +52,10 @@ const dock = {
 };
 
 const market = {
-  id: "market",
-  name: "Eastern Market",
-  line: "Detroit's Eastern Market, after hours.",
-  clear: "One block left. The Capitol is in sight.",
+  id: "studio",
+  name: "Cable studio",
+  line: "The studio lights stay on.",
+  clear: "The set goes dark. The capitol is last.",
   length: 4200,
   sky0: "#2a1c2e",
   sky1: "#6a3a48",
@@ -72,25 +68,22 @@ const market = {
     {
       at: 620,
       group: [
-        { kind: "grunt", dx: 30, y: 500 },
-        { kind: "thrower", dx: 220, y: 560 },
-        { kind: "grunt", dx: 100, y: 630 },
+        { kind: "cruz", dx: 40, y: 520 },
+        { kind: "greene", dx: 200, y: 600 },
       ],
     },
     {
       at: 1580,
       group: [
-        { kind: "thrower", dx: 200, y: 490 },
-        { kind: "rusher", dx: 40, y: 560 },
-        { kind: "thrower", dx: 260, y: 630 },
-        { kind: "rusher", dx: 120, y: 520 },
+        { kind: "greene", dx: 60, y: 540 },
+        { kind: "cruz", dx: 200, y: 610 },
       ],
     },
     {
       at: 2600,
       boss: true,
-      bossName: "Super PAC",
-      group: [{ kind: "mara", dx: 220, y: 560 }],
+      bossName: "JD Vance",
+      group: [{ kind: "vance", dx: 200, y: 560 }],
     },
   ],
   pickups: [
@@ -106,10 +99,10 @@ const market = {
 };
 
 const roof = {
-  id: "roof",
-  name: "Capitol Rooftops",
-  line: "The last block before the Capitol.",
-  clear: "The Capitol steps are right there.",
+  id: "capitol",
+  name: "Capitol approach",
+  line: "The last fight is on the capitol approach.",
+  clear: "The approach is clear.",
   length: 4200,
   sky0: "#101622",
   sky1: "#24344a",
@@ -122,26 +115,22 @@ const roof = {
     {
       at: 700,
       group: [
-        { kind: "rusher", dx: 30, y: 500 },
-        { kind: "grunt", dx: 140, y: 570 },
-        { kind: "rusher", dx: 220, y: 630 },
-        { kind: "grunt", dx: 80, y: 530 },
+        { kind: "greene", dx: 40, y: 520 },
+        { kind: "cruz", dx: 190, y: 600 },
       ],
     },
     {
       at: 1680,
       group: [
-        { kind: "thrower", dx: 240, y: 490 },
-        { kind: "grunt", dx: 40, y: 560 },
-        { kind: "thrower", dx: 180, y: 640 },
-        { kind: "rusher", dx: 100, y: 520 },
+        { kind: "cruz", dx: 50, y: 540 },
+        { kind: "greene", dx: 210, y: 610 },
       ],
     },
     {
       at: 2680,
       boss: true,
-      bossName: "The Lobbyist",
-      group: [{ kind: "signal", dx: 200, y: 560 }],
+      bossName: "Ted Cruz",
+      group: [{ kind: "cruz", dx: 180, y: 560 }],
     },
   ],
   pickups: [

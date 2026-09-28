@@ -1,5 +1,5 @@
 import { play } from "./audio.js";
-import { WORLD } from "./stages.js";
+import { WORLD } from "./stages.js?v=art";
 
 export function integrate(ent, dt) {
   ent.z += ent.vz * dt;

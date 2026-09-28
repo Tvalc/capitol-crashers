@@ -1,0 +1,276 @@
+{
+  "frames": {
+    "ted_cruz_hit_000.webp": {
+      "frame": {
+        "x": 2,
+        "y": 2,
+        "w": 198,
+        "h": 256
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 198,
+        "h": 256
+      },
+      "sourceSize": {
+        "w": 198,
+        "h": 256
+      },
+      "duration": 83
+    },
+    "ted_cruz_hit_001.webp": {
+      "frame": {
+        "x": 202,
+        "y": 2,
+        "w": 198,
+        "h": 256
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 198,
+        "h": 256
+      },
+      "sourceSize": {
+        "w": 198,
+        "h": 256
+      },
+      "duration": 83
+    },
+    "ted_cruz_hit_002.webp": {
+      "frame": {
+        "x": 402,
+        "y": 2,
+        "w": 198,
+        "h": 256
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 198,
+        "h": 256
+      },
+      "sourceSize": {
+        "w": 198,
+        "h": 256
+      },
+      "duration": 83
+    },
+    "ted_cruz_hit_003.webp": {
+      "frame": {
+        "x": 602,
+        "y": 2,
+        "w": 198,
+        "h": 256
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 198,
+        "h": 256
+      },
+      "sourceSize": {
+        "w": 198,
+        "h": 256
+      },
+      "duration": 83
+    },
+    "ted_cruz_hit_004.webp": {
+      "frame": {
+        "x": 802,
+        "y": 2,
+        "w": 198,
+        "h": 256
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 198,
+        "h": 256
+      },
+      "sourceSize": {
+        "w": 198,
+        "h": 256
+      },
+      "duration": 83
+    },
+    "ted_cruz_hit_005.webp": {
+      "frame": {
+        "x": 1002,
+        "y": 2,
+        "w": 198,
+        "h": 256
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 198,
+        "h": 256
+      },
+      "sourceSize": {
+        "w": 198,
+        "h": 256
+      },
+      "duration": 83
+    },
+    "ted_cruz_hit_006.webp": {
+      "frame": {
+        "x": 1202,
+        "y": 2,
+        "w": 198,
+        "h": 256
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 198,
+        "h": 256
+      },
+      "sourceSize": {
+        "w": 198,
+        "h": 256
+      },
+      "duration": 83
+    },
+    "ted_cruz_hit_007.webp": {
+      "frame": {
+        "x": 1402,
+        "y": 2,
+        "w": 198,
+        "h": 256
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 198,
+        "h": 256
+      },
+      "sourceSize": {
+        "w": 198,
+        "h": 256
+      },
+      "duration": 83
+    },
+    "ted_cruz_hit_008.webp": {
+      "frame": {
+        "x": 1602,
+        "y": 2,
+        "w": 198,
+        "h": 256
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 198,
+        "h": 256
+      },
+      "sourceSize": {
+        "w": 198,
+        "h": 256
+      },
+      "duration": 83
+    },
+    "ted_cruz_hit_009.webp": {
+      "frame": {
+        "x": 1802,
+        "y": 2,
+        "w": 198,
+        "h": 256
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 198,
+        "h": 256
+      },
+      "sourceSize": {
+        "w": 198,
+        "h": 256
+      },
+      "duration": 83
+    },
+    "ted_cruz_hit_010.webp": {
+      "frame": {
+        "x": 2002,
+        "y": 2,
+        "w": 198,
+        "h": 256
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 198,
+        "h": 256
+      },
+      "sourceSize": {
+        "w": 198,
+        "h": 256
+      },
+      "duration": 83
+    },
+    "ted_cruz_hit_011.webp": {
+      "frame": {
+        "x": 2202,
+        "y": 2,
+        "w": 198,
+        "h": 256
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 198,
+        "h": 256
+      },
+      "sourceSize": {
+        "w": 198,
+        "h": 256
+      },
+      "duration": 83
+    }
+  },
+  "meta": {
+    "app": "bake",
+    "version": "1",
+    "format": "RGBA8888",
+    "scale": "1",
+    "image": "ted_cruz_hit.webp",
+    "size": {
+      "w": 2402,
+      "h": 260
+    },
+    "anchor": {
+      "x": 99.0,
+      "y": 258,
+      "normalized": {
+        "x": 0.5,
+        "y": 1
+      },
+      "strategy": "bottom-center"
+    }
+  }
+}

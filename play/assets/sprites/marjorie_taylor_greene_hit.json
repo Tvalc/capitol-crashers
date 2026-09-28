@@ -1,0 +1,276 @@
+{
+  "frames": {
+    "marjorie_taylor_greene_hit_000.webp": {
+      "frame": {
+        "x": 2,
+        "y": 2,
+        "w": 171,
+        "h": 256
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 171,
+        "h": 256
+      },
+      "sourceSize": {
+        "w": 171,
+        "h": 256
+      },
+      "duration": 83
+    },
+    "marjorie_taylor_greene_hit_001.webp": {
+      "frame": {
+        "x": 175,
+        "y": 2,
+        "w": 171,
+        "h": 256
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 171,
+        "h": 256
+      },
+      "sourceSize": {
+        "w": 171,
+        "h": 256
+      },
+      "duration": 83
+    },
+    "marjorie_taylor_greene_hit_002.webp": {
+      "frame": {
+        "x": 348,
+        "y": 2,
+        "w": 171,
+        "h": 256
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 171,
+        "h": 256
+      },
+      "sourceSize": {
+        "w": 171,
+        "h": 256
+      },
+      "duration": 83
+    },
+    "marjorie_taylor_greene_hit_003.webp": {
+      "frame": {
+        "x": 521,
+        "y": 2,
+        "w": 171,
+        "h": 256
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 171,
+        "h": 256
+      },
+      "sourceSize": {
+        "w": 171,
+        "h": 256
+      },
+      "duration": 83
+    },
+    "marjorie_taylor_greene_hit_004.webp": {
+      "frame": {
+        "x": 694,
+        "y": 2,
+        "w": 171,
+        "h": 256
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 171,
+        "h": 256
+      },
+      "sourceSize": {
+        "w": 171,
+        "h": 256
+      },
+      "duration": 83
+    },
+    "marjorie_taylor_greene_hit_005.webp": {
+      "frame": {
+        "x": 867,
+        "y": 2,
+        "w": 171,
+        "h": 256
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 171,
+        "h": 256
+      },
+      "sourceSize": {
+        "w": 171,
+        "h": 256
+      },
+      "duration": 83
+    },
+    "marjorie_taylor_greene_hit_006.webp": {
+      "frame": {
+        "x": 1040,
+        "y": 2,
+        "w": 171,
+        "h": 256
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 171,
+        "h": 256
+      },
+      "sourceSize": {
+        "w": 171,
+        "h": 256
+      },
+      "duration": 83
+    },
+    "marjorie_taylor_greene_hit_007.webp": {
+      "frame": {
+        "x": 1213,
+        "y": 2,
+        "w": 171,
+        "h": 256
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 171,
+        "h": 256
+      },
+      "sourceSize": {
+        "w": 171,
+        "h": 256
+      },
+      "duration": 83
+    },
+    "marjorie_taylor_greene_hit_008.webp": {
+      "frame": {
+        "x": 1386,
+        "y": 2,
+        "w": 171,
+        "h": 256
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 171,
+        "h": 256
+      },
+      "sourceSize": {
+        "w": 171,
+        "h": 256
+      },
+      "duration": 83
+    },
+    "marjorie_taylor_greene_hit_009.webp": {
+      "frame": {
+        "x": 1559,
+        "y": 2,
+        "w": 171,
+        "h": 256
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 171,
+        "h": 256
+      },
+      "sourceSize": {
+        "w": 171,
+        "h": 256
+      },
+      "duration": 83
+    },
+    "marjorie_taylor_greene_hit_010.webp": {
+      "frame": {
+        "x": 1732,
+        "y": 2,
+        "w": 171,
+        "h": 256
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 171,
+        "h": 256
+      },
+      "sourceSize": {
+        "w": 171,
+        "h": 256
+      },
+      "duration": 83
+    },
+    "marjorie_taylor_greene_hit_011.webp": {
+      "frame": {
+        "x": 1905,
+        "y": 2,
+        "w": 171,
+        "h": 256
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 171,
+        "h": 256
+      },
+      "sourceSize": {
+        "w": 171,
+        "h": 256
+      },
+      "duration": 83
+    }
+  },
+  "meta": {
+    "app": "bake",
+    "version": "1",
+    "format": "RGBA8888",
+    "scale": "1",
+    "image": "marjorie_taylor_greene_hit.webp",
+    "size": {
+      "w": 2078,
+      "h": 260
+    },
+    "anchor": {
+      "x": 85.5,
+      "y": 258,
+      "normalized": {
+        "x": 0.5,
+        "y": 1
+      },
+      "strategy": "bottom-center"
+    }
+  }
+}

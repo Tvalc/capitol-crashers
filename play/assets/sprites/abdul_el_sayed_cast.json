@@ -1,0 +1,169 @@
+{
+  "frames": {
+    "abdul_el_sayed_cast_000.webp": {
+      "frame": {
+        "x": 2,
+        "y": 2,
+        "w": 283,
+        "h": 250
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 283,
+        "h": 250
+      },
+      "sourceSize": {
+        "w": 283,
+        "h": 250
+      },
+      "duration": 80
+    },
+    "abdul_el_sayed_cast_001.webp": {
+      "frame": {
+        "x": 287,
+        "y": 2,
+        "w": 283,
+        "h": 250
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 283,
+        "h": 250
+      },
+      "sourceSize": {
+        "w": 283,
+        "h": 250
+      },
+      "duration": 80
+    },
+    "abdul_el_sayed_cast_002.webp": {
+      "frame": {
+        "x": 572,
+        "y": 2,
+        "w": 283,
+        "h": 250
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 283,
+        "h": 250
+      },
+      "sourceSize": {
+        "w": 283,
+        "h": 250
+      },
+      "duration": 80
+    },
+    "abdul_el_sayed_cast_003.webp": {
+      "frame": {
+        "x": 857,
+        "y": 2,
+        "w": 283,
+        "h": 250
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 283,
+        "h": 250
+      },
+      "sourceSize": {
+        "w": 283,
+        "h": 250
+      },
+      "duration": 80
+    },
+    "abdul_el_sayed_cast_004.webp": {
+      "frame": {
+        "x": 1142,
+        "y": 2,
+        "w": 283,
+        "h": 250
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 283,
+        "h": 250
+      },
+      "sourceSize": {
+        "w": 283,
+        "h": 250
+      },
+      "duration": 80
+    },
+    "abdul_el_sayed_cast_005.webp": {
+      "frame": {
+        "x": 1427,
+        "y": 2,
+        "w": 283,
+        "h": 250
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 283,
+        "h": 250
+      },
+      "sourceSize": {
+        "w": 283,
+        "h": 250
+      },
+      "duration": 80
+    }
+  },
+  "meta": {
+    "app": "MAKKO Sprite Studio",
+    "version": "1.0.0",
+    "image": "abdul_el_sayed_cast.webp",
+    "format": "RGBA8888",
+    "size": {
+      "w": 1712,
+      "h": 254
+    },
+    "scale": "1",
+    "frameTags": [
+      {
+        "name": "Abdul El-Sayed Cast",
+        "from": 0,
+        "to": 11,
+        "direction": "forward"
+      }
+    ],
+    "anchor": {
+      "x": 141.5,
+      "y": 252,
+      "normalized": {
+        "x": 0.5,
+        "y": 1
+      },
+      "strategy": "bottom-center"
+    },
+    "referenceAlignment": {
+      "referenceBounds": {
+        "width": 144,
+        "height": 159
+      },
+      "frameBounds": {
+        "width": 256,
+        "height": 190
+      },
+      "normalized": true
+    }
+  }
+}

@@ -1,5 +1,5 @@
 import { melee, updateBody } from "./combat.js";
-import { WORLD } from "./stages.js";
+import { WORLD } from "./stages.js?v=art";
 import { spawnShot } from "./weapons.js";
 
 const KINDS = {
@@ -96,6 +96,71 @@ const KINDS = {
     pants: "#12151c",
     hat: "cap",
   },
+  greene: {
+    name: "Marjorie Taylor Greene",
+    sprite: "greene",
+    hp: 48,
+    speed: 200,
+    w: 44,
+    h: 96,
+    dmg: 9,
+    reach: 52,
+    scale: 1,
+    body: "#d9d4ea",
+    trim: "#1c1c1c",
+    skin: "#f0c8a8",
+    pants: "#cfc8e4",
+    hat: "none",
+  },
+  cruz: {
+    name: "Ted Cruz",
+    sprite: "cruz",
+    hp: 56,
+    speed: 92,
+    w: 44,
+    h: 96,
+    dmg: 10,
+    reach: 54,
+    scale: 1,
+    body: "#1d3f86",
+    trim: "#c4a15a",
+    skin: "#e4b48a",
+    pants: "#1a2744",
+    hat: "none",
+  },
+  vance: {
+    name: "JD Vance",
+    sprite: "vance",
+    hp: 110,
+    speed: 70,
+    w: 48,
+    h: 100,
+    dmg: 12,
+    reach: 62,
+    scale: 1.08,
+    body: "#243656",
+    trim: "#d7c4a3",
+    skin: "#e0b088",
+    pants: "#1c2430",
+    hat: "none",
+  },
+  trump: {
+    name: "Donald Trump",
+    sprite: "trump",
+    hp: 280,
+    speed: 48,
+    w: 64,
+    h: 110,
+    dmg: 16,
+    reach: 96,
+    scale: 1.2,
+    boss: true,
+    body: "#1d4e89",
+    trim: "#c9a227",
+    skin: "#f0c8a0",
+    pants: "#1a3358",
+    hat: "none",
+  },
 };
 
 let seq = 1;
@@ -106,6 +171,7 @@ export function makeEnemy(kind, x, y) {
     id: `e${seq++}`,
     team: "enemy",
     kind,
+    sprite: stats.sprite || kind,
     name: stats.name,
     x,
     y: clampY(y),
@@ -464,10 +530,10 @@ export function updateEnemy(enemy, game, dt) {
     return;
   }
   checkPhase(enemy, game);
-  if (enemy.kind === "grunt") updateGrunt(enemy, game, dt);
-  else if (enemy.kind === "rusher") updateRusher(enemy, game, dt);
+  if (enemy.kind === "grunt" || enemy.kind === "greene") updateGrunt(enemy, game, dt);
+  else if (enemy.kind === "rusher" || enemy.kind === "cruz") updateRusher(enemy, game, dt);
   else if (enemy.kind === "thrower") updateThrower(enemy, game, dt);
-  else if (enemy.kind === "crane") updateCrane(enemy, game, dt);
-  else if (enemy.kind === "mara") updateMara(enemy, game, dt);
+  else if (enemy.kind === "crane" || enemy.kind === "trump") updateCrane(enemy, game, dt);
+  else if (enemy.kind === "mara" || enemy.kind === "vance") updateMara(enemy, game, dt);
   else if (enemy.kind === "signal") updateSignal(enemy, game, dt);
 }

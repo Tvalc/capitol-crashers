@@ -1,5 +1,6 @@
-import { FIGHTERS, poseFor } from "./fighters.js";
-import { WORLD } from "./stages.js";
+import { FIGHTERS, poseFor } from "./fighters.js?v=art";
+import { drawSprite } from "./sprites.js?v=art";
+import { WORLD } from "./stages.js?v=art";
 
 function roundRect(ctx, x, y, w, h, r) {
   ctx.beginPath();
@@ -61,7 +62,9 @@ function preview(id, x, game) {
     flash: 0,
     invuln: 0,
     holding: null,
-    name: id,
+    fighter: FIGHTERS[id] || FIGHTERS.mamdani,
+    kind: id,
+    name: (FIGHTERS[id] || FIGHTERS.mamdani).name,
     colors,
     w: 42,
     h: 88,
@@ -201,6 +204,22 @@ function drawPerson(ctx, ent, cam, game) {
   const colors = ent.colors;
   const pose = poseFor(ent);
   const flash = ent.flash > 0;
+
+  const spriteScale = sc * 1.05;
+
+  ctx.save();
+  ctx.translate(sx, ent.y);
+  ctx.scale(spriteScale, spriteScale * 0.42);
+  ctx.fillStyle = "rgba(0,0,0,0.35)";
+  ctx.beginPath();
+  ctx.ellipse(0, 8, 54, 18, 0, 0, Math.PI * 2);
+  ctx.fill();
+  ctx.restore();
+
+  if (drawSprite(ctx, ent, sx, spriteScale)) {
+    label(ctx, ent, sx);
+    return;
+  }
 
   ctx.save();
   ctx.translate(sx, ent.y);

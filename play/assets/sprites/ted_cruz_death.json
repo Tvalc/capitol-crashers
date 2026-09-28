@@ -1,0 +1,276 @@
+{
+  "frames": {
+    "ted_cruz_death_000.webp": {
+      "frame": {
+        "x": 2,
+        "y": 2,
+        "w": 291,
+        "h": 256
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 291,
+        "h": 256
+      },
+      "sourceSize": {
+        "w": 291,
+        "h": 256
+      },
+      "duration": 83
+    },
+    "ted_cruz_death_001.webp": {
+      "frame": {
+        "x": 295,
+        "y": 2,
+        "w": 291,
+        "h": 256
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 291,
+        "h": 256
+      },
+      "sourceSize": {
+        "w": 291,
+        "h": 256
+      },
+      "duration": 83
+    },
+    "ted_cruz_death_002.webp": {
+      "frame": {
+        "x": 588,
+        "y": 2,
+        "w": 291,
+        "h": 256
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 291,
+        "h": 256
+      },
+      "sourceSize": {
+        "w": 291,
+        "h": 256
+      },
+      "duration": 83
+    },
+    "ted_cruz_death_003.webp": {
+      "frame": {
+        "x": 881,
+        "y": 2,
+        "w": 291,
+        "h": 256
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 291,
+        "h": 256
+      },
+      "sourceSize": {
+        "w": 291,
+        "h": 256
+      },
+      "duration": 83
+    },
+    "ted_cruz_death_004.webp": {
+      "frame": {
+        "x": 1174,
+        "y": 2,
+        "w": 291,
+        "h": 256
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 291,
+        "h": 256
+      },
+      "sourceSize": {
+        "w": 291,
+        "h": 256
+      },
+      "duration": 83
+    },
+    "ted_cruz_death_005.webp": {
+      "frame": {
+        "x": 1467,
+        "y": 2,
+        "w": 291,
+        "h": 256
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 291,
+        "h": 256
+      },
+      "sourceSize": {
+        "w": 291,
+        "h": 256
+      },
+      "duration": 83
+    },
+    "ted_cruz_death_006.webp": {
+      "frame": {
+        "x": 1760,
+        "y": 2,
+        "w": 291,
+        "h": 256
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 291,
+        "h": 256
+      },
+      "sourceSize": {
+        "w": 291,
+        "h": 256
+      },
+      "duration": 83
+    },
+    "ted_cruz_death_007.webp": {
+      "frame": {
+        "x": 2053,
+        "y": 2,
+        "w": 291,
+        "h": 256
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 291,
+        "h": 256
+      },
+      "sourceSize": {
+        "w": 291,
+        "h": 256
+      },
+      "duration": 83
+    },
+    "ted_cruz_death_008.webp": {
+      "frame": {
+        "x": 2346,
+        "y": 2,
+        "w": 291,
+        "h": 256
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 291,
+        "h": 256
+      },
+      "sourceSize": {
+        "w": 291,
+        "h": 256
+      },
+      "duration": 83
+    },
+    "ted_cruz_death_009.webp": {
+      "frame": {
+        "x": 2639,
+        "y": 2,
+        "w": 291,
+        "h": 256
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 291,
+        "h": 256
+      },
+      "sourceSize": {
+        "w": 291,
+        "h": 256
+      },
+      "duration": 83
+    },
+    "ted_cruz_death_010.webp": {
+      "frame": {
+        "x": 2932,
+        "y": 2,
+        "w": 291,
+        "h": 256
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 291,
+        "h": 256
+      },
+      "sourceSize": {
+        "w": 291,
+        "h": 256
+      },
+      "duration": 83
+    },
+    "ted_cruz_death_011.webp": {
+      "frame": {
+        "x": 3225,
+        "y": 2,
+        "w": 291,
+        "h": 256
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 291,
+        "h": 256
+      },
+      "sourceSize": {
+        "w": 291,
+        "h": 256
+      },
+      "duration": 83
+    }
+  },
+  "meta": {
+    "app": "bake",
+    "version": "1",
+    "format": "RGBA8888",
+    "scale": "1",
+    "image": "ted_cruz_death.webp",
+    "size": {
+      "w": 3518,
+      "h": 260
+    },
+    "anchor": {
+      "x": 145.5,
+      "y": 258,
+      "normalized": {
+        "x": 0.5,
+        "y": 1
+      },
+      "strategy": "bottom-center"
+    }
+  }
+}
