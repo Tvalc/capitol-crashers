@@ -2,7 +2,7 @@ import { play, unlock } from "./audio.js";
 import { separate, tickToss } from "./combat.js?v=fight";
 import { makeEnemy, updateEnemy } from "./enemies.js?v=fight";
 import { blankInput, createInput } from "./input.js";
-import { fighterById, makePlayer, updatePlayer } from "./player.js?v=fight";
+import { fighterById, makePlayer, updatePlayer } from "./player.js?v=step";
 import { draw } from "./render.js?v=fight";
 import { cloneStage, STAGES, WORLD } from "./stages.js?v=art";
 import { updatePickups, updateProjectiles } from "./weapons.js?v=fight";

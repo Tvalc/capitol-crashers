@@ -133,13 +133,26 @@ function buffer(player, input, dt) {
   if (input.jump) player.bufferJump = 0.12;
 }
 
+function noteTap(player, time, dir, lastTap, savedFacing) {
+  if (time - lastTap < 0.22) {
+    player.wantDash = dir;
+    player.dashOrigin = savedFacing;
+  }
+  if (player.facing !== dir) {
+    player.holdFace = player.facing;
+    player.holdFaceDir = dir;
+    player.holdFaceUntil = time + 0.22;
+  }
+  return player.facing;
+}
+
 function takeTap(player, input, time) {
   if (input.justLeft) {
-    if (time - player.lastTapL < 0.22) player.wantDash = -1;
+    player.facingAtTapL = noteTap(player, time, -1, player.lastTapL, player.facingAtTapL ?? player.facing);
     player.lastTapL = time;
   }
   if (input.justRight) {
-    if (time - player.lastTapR < 0.22) player.wantDash = 1;
+    player.facingAtTapR = noteTap(player, time, 1, player.lastTapR, player.facingAtTapR ?? player.facing);
     player.lastTapR = time;
   }
 }
@@ -213,6 +226,9 @@ function startGrab(player, enemy) {
 }
 
 function startBackstep(player) {
+  player.facing = player.dashOrigin || player.facing;
+  player.holdFaceUntil = 0;
+  player.holdFaceDir = 0;
   player.state = "backstep";
   player.stateT = 0;
   player.backArmed = false;
@@ -317,11 +333,13 @@ function tryOffense(player, game, input) {
   return false;
 }
 
-function steer(player, input) {
+function steer(player, input, time) {
   const speed = player.fighter.speed;
   player.vx = input.x * speed;
   player.vy = input.y * speed * 0.72;
-  if (input.x !== 0) player.facing = input.x;
+  const waiting = player.holdFaceDir && input.x === player.holdFaceDir && time < player.holdFaceUntil;
+  if (waiting) player.facing = player.holdFace;
+  else if (input.x !== 0) player.facing = input.x;
   const moving = input.x !== 0 || input.y !== 0;
   player.state = moving ? "walk" : "idle";
 }
@@ -547,9 +565,11 @@ export function updatePlayer(player, game, input, dt) {
   if ((player.state === "idle" || player.state === "walk" || player.state === "dash") && player.wantDash) {
     const tap = player.wantDash;
     player.wantDash = 0;
-    if (tap === -player.facing) startBackstep(player);
+    if (tap === -(player.dashOrigin || player.facing)) startBackstep(player);
     else {
       player.facing = tap;
+      player.holdFaceUntil = 0;
+      player.holdFaceDir = 0;
       player.state = "dash";
       player.dashT = 0.18;
       play("dash");
@@ -566,7 +586,7 @@ export function updatePlayer(player, game, input, dt) {
     const holding = input.x === player.facing;
     if (player.dashT > 0) player.dashT -= dt;
     if (player.dashT <= 0 && !holding) {
-      steer(player, input);
+      steer(player, input, game.time);
       integrate(player, dt);
       return;
     }
@@ -577,7 +597,7 @@ export function updatePlayer(player, game, input, dt) {
   }
 
   if (tryOffense(player, game, input)) return;
-  steer(player, input);
+  steer(player, input, game.time);
   integrate(player, dt);
 }
 
