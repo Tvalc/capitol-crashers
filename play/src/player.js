@@ -1,18 +1,18 @@
 import { play } from "./audio.js";
 import { FIGHTERS } from "./fighters.js?v=art";
-import { integrate, melee, spendSpecial, updateBody } from "./combat.js";
-import { finishWeapon, launchHeld, noteWeaponSwing } from "./weapons.js";
+import { integrate, melee, spendSpecial, updateBody } from "./combat.js?v=fight";
+import { finishWeapon, launchHeld, noteWeaponSwing, spawnBolt } from "./weapons.js?v=fight";
 
 const LIGHTS = [
   { startup: 0.2, active: 0.12, dmg: 7, kb: 180, lift: 0 },
   { startup: 0.18, active: 0.12, dmg: 8, kb: 200, lift: 0 },
-  { startup: 0.24, active: 0.14, dmg: 12, kb: 340, lift: 200 },
+  { startup: 0.24, active: 0.14, dmg: 12, kb: 340, lift: 520, knockdown: true },
 ];
 
 const KICKS = [
   { startup: 0.08, active: 0.07, dmg: 7, kb: 180, lift: 0 },
   { startup: 0.07, active: 0.07, dmg: 8, kb: 200, lift: 0 },
-  { startup: 0.1, active: 0.08, dmg: 12, kb: 340, lift: 200 },
+  { startup: 0.1, active: 0.08, dmg: 12, kb: 340, lift: 520, knockdown: true },
 ];
 
 const MOVES = {
@@ -21,8 +21,9 @@ const MOVES = {
     active: 0.08,
     recover: 0.2,
     dmg: 14,
-    kb: 250,
-    lift: 100,
+    kb: 280,
+    lift: 520,
+    knockdown: true,
     kind: "heavy",
     hitstop: 0.06,
     shake: 7,
@@ -33,31 +34,44 @@ const MOVES = {
     active: 0.08,
     recover: 0.16,
     dmg: 10,
-    kb: 300,
-    lift: 70,
+    kb: 320,
+    lift: 520,
+    knockdown: true,
     kind: "dash",
     lunge: 2.25,
     lungeFor: 0.12,
     hitstop: 0.05,
     points: 130,
   },
-  special: {
-    startup: 0.1,
-    active: 0.18,
-    recover: 0.28,
-    dmg: 22,
-    kb: 420,
-    lift: 240,
-    kind: "special",
-    radial: true,
-    rx: 156,
-    ry: 86,
-    rz: 70,
-    hitstop: 0.1,
-    shake: 11,
-    points: 220,
-  },
 };
+
+function specialSpec(player) {
+  if (player.kind === "sayed") {
+    return {
+      startup: 0.1,
+      active: 0.08,
+      recover: 0.4,
+      bolt: true,
+      kind: "special",
+    };
+  }
+  return {
+    startup: 0.14,
+    active: 0.12,
+    recover: 0.42,
+    dmg: 18,
+    kb: 380,
+    lift: 540,
+    knockdown: true,
+    kind: "special",
+    z: 86,
+    rz: 70,
+    rx: 52,
+    hitstop: 0.08,
+    shake: 9,
+    points: 220,
+  };
+}
 
 export function makePlayer(fighter, x, y) {
   return {
@@ -144,6 +158,7 @@ function swing(player, game, spec) {
     dmg: spec.dmg * player.fighter.power * pipeMul(player),
     kb: spec.kb,
     lift: spec.lift,
+    knockdown: spec.knockdown,
     reach: kick ? 300 : (spec.radial ? 40 : reachOf(player)),
     rx: kick ? 78 : spec.rx,
     ry: kick ? 56 : spec.ry,
@@ -188,6 +203,7 @@ function startGrab(player, enemy) {
   player.state = "grab";
   player.stateT = 0;
   player.grabId = enemy.id;
+  player.grabHits = 0;
   player.vx = 0;
   player.vy = 0;
   enemy.state = "grabbed";
@@ -196,13 +212,23 @@ function startGrab(player, enemy) {
   enemy.vz = 0;
 }
 
+function startBackstep(player) {
+  player.state = "backstep";
+  player.stateT = 0;
+  player.backArmed = false;
+  player.vx = 0;
+  player.vy = 0;
+  play("dash");
+}
+
 function startSpecial(player) {
+  const spec = specialSpec(player);
   spendSpecial(player);
   player.state = "special";
   player.stateT = 0;
   player.spawned = false;
   player.swingHits = new Set();
-  player.invuln = Math.max(player.invuln, 0.28);
+  player.invuln = Math.max(player.invuln, spec.startup);
   player.vx = 0;
   player.vy = 0;
   play("special");
@@ -312,6 +338,7 @@ function updateLight(player, game, dt) {
       dmg: step.dmg,
       kb: step.kb,
       lift: step.lift,
+      knockdown: step.knockdown,
       kind: player.combo === 2 ? "heavy" : "light",
       points: 100 + player.combo * 20,
       hitstop: player.combo === 2 ? 0.07 : 0.045,
@@ -332,7 +359,7 @@ function updateLight(player, game, dt) {
 }
 
 function updateTimed(player, game, dt) {
-  const spec = MOVES[player.state];
+  const spec = player.state === "special" ? specialSpec(player) : MOVES[player.state];
   player.stateT += dt;
   if (spec.lunge && player.stateT < spec.lungeFor) {
     player.vx = player.facing * player.fighter.speed * spec.lunge;
@@ -342,7 +369,8 @@ function updateTimed(player, game, dt) {
   }
   if (!player.spawned && player.stateT >= spec.startup && player.stateT < spec.startup + spec.active + 0.02) {
     player.spawned = true;
-    swing(player, game, spec);
+    if (spec.bolt) spawnBolt(game, player);
+    else swing(player, game, spec);
   }
   if (player.stateT >= spec.startup + spec.active + spec.recover) endMove(player);
 }
@@ -377,7 +405,7 @@ function updateJump(player, game, input, dt) {
   }
 }
 
-function updateGrab(player, game, dt) {
+function updateGrab(player, game, input, dt) {
   const enemy = game.enemies.find((ent) => ent.id === player.grabId);
   player.stateT += dt;
   player.vx = 0;
@@ -391,25 +419,45 @@ function updateGrab(player, game, dt) {
   enemy.y = player.y;
   enemy.z = 0;
   enemy.facing = -player.facing;
-  const throwNow = player.bufferLight > 0 || player.bufferHeavy > 0 || player.stateT > 0.42;
+  const punch = player.bufferLight > 0 && player.grabHits < 3 && player.stateT >= 0.16;
+  if (punch) {
+    player.bufferLight = 0;
+    player.grabHits += 1;
+    player.stateT = 0;
+    melee(game, player, {
+      dmg: 6 * player.fighter.power,
+      kb: 0,
+      lift: 0,
+      reach: 64,
+      kind: "grab",
+      points: 80,
+      hitstop: 0.04,
+      shake: 3,
+      already: new Set(),
+    });
+    return;
+  }
+  const throwNow = player.bufferHeavy > 0 || (player.bufferLight > 0 && player.grabHits >= 3) || player.stateT > 0.9;
   if (throwNow) {
+    const dir = input.x === -player.facing ? -player.facing : player.facing;
     player.bufferLight = 0;
     player.bufferHeavy = 0;
     enemy.state = "idle";
     enemy.alive = true;
-    applyThrow(game, player, enemy);
+    applyThrow(game, player, enemy, dir);
     player.grabId = null;
     player.state = "throw";
     player.stateT = 0;
   }
 }
 
-function applyThrow(game, player, enemy) {
+function applyThrow(game, player, enemy, dir) {
   enemy.state = "hurt";
   melee(game, player, {
     dmg: 10 * player.fighter.power,
-    kb: 380,
-    lift: 460,
+    kb: 420,
+    lift: 520,
+    knockdown: true,
     reach: 64,
     kind: "throw",
     points: 250,
@@ -419,10 +467,33 @@ function applyThrow(game, player, enemy) {
   });
   if (enemy.alive) {
     enemy.state = "air";
-    enemy.vz = 460;
-    enemy.vx = player.facing * 380;
+    enemy.vz = 480;
+    enemy.vx = dir * 460;
+    enemy.juggle = 1;
+    enemy.toss = {
+      life: 0.42,
+      dmg: Math.round(8 * player.fighter.power),
+      facing: dir,
+      hit: new Set([enemy.id]),
+    };
   }
   play("throw");
+}
+
+function updateBackstep(player, dt) {
+  player.stateT += dt;
+  if (!player.backArmed && player.stateT >= 0.05) {
+    player.backArmed = true;
+    player.invuln = Math.max(player.invuln, 0.1);
+  }
+  player.vx = -player.facing * player.fighter.speed * 2.1;
+  player.vy = 0;
+  integrate(player, dt);
+  if (player.stateT >= 0.22) {
+    player.state = "idle";
+    player.vx = 0;
+    player.vy = 0;
+  }
 }
 
 function respawn(game) {
@@ -448,7 +519,11 @@ export function updatePlayer(player, game, input, dt) {
   }
 
   if (player.state === "grab") {
-    updateGrab(player, game, dt);
+    updateGrab(player, game, input, dt);
+    return;
+  }
+  if (player.state === "backstep") {
+    updateBackstep(player, dt);
     return;
   }
   if (player.state === "light") {
@@ -470,20 +545,34 @@ export function updatePlayer(player, game, input, dt) {
   }
 
   if ((player.state === "idle" || player.state === "walk" || player.state === "dash") && player.wantDash) {
-    player.facing = player.wantDash;
+    const tap = player.wantDash;
     player.wantDash = 0;
-    player.state = "dash";
-    player.dashT = 0.18;
-    play("dash");
+    if (tap === -player.facing) startBackstep(player);
+    else {
+      player.facing = tap;
+      player.state = "dash";
+      player.dashT = 0.18;
+      play("dash");
+    }
+  }
+
+  if (player.state === "backstep") {
+    updateBackstep(player, dt);
+    return;
   }
 
   if (player.state === "dash") {
-    player.dashT -= dt;
     if (tryOffense(player, game, input)) return;
+    const holding = input.x === player.facing;
+    if (player.dashT > 0) player.dashT -= dt;
+    if (player.dashT <= 0 && !holding) {
+      steer(player, input);
+      integrate(player, dt);
+      return;
+    }
     player.vx = player.facing * player.fighter.speed * 2.35;
     player.vy = input.y * player.fighter.speed * 0.4;
     integrate(player, dt);
-    if (player.dashT <= 0) steer(player, input);
     return;
   }
 

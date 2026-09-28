@@ -1,5 +1,5 @@
 import { FIGHTERS, poseFor } from "./fighters.js?v=art";
-import { drawSprite } from "./sprites.js?v=art";
+import { drawSprite } from "./sprites.js?v=fight";
 import { WORLD } from "./stages.js?v=art";
 
 function roundRect(ctx, x, y, w, h, r) {
@@ -172,7 +172,12 @@ function drawShot(ctx, shot, cam) {
   ctx.save();
   ctx.translate(x, y);
   ctx.rotate(shot.spin);
-  if (shot.kind === "pipe") {
+  if (shot.kind === "bolt") {
+    ctx.fillStyle = "#1a1a1a";
+    ctx.fillRect(-34, -8, 68, 16);
+    ctx.fillStyle = "#f2d27a";
+    ctx.fillRect(-28, -4, 56, 8);
+  } else if (shot.kind === "pipe") {
     ctx.strokeStyle = "#e8eef8";
     ctx.lineWidth = 6;
     ctx.beginPath();

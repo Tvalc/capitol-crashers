@@ -46,8 +46,9 @@ export function spendSpecial(player) {
 
 export function applyHit(game, spec, target) {
   if (!target || target.state === "dead" || !target.alive) return false;
-  if (target.state === "getup" || target.state === "grabbed") return false;
-  if (target.team === "player" && target.invuln > 0) return false;
+  if (target.state === "getup") return false;
+  if (target.invuln > 0) return false;
+  if (target.state === "grabbed" && spec.kind !== "grab") return false;
 
   let dmg = spec.dmg;
   if (target.armor) dmg *= target.armor;
@@ -68,17 +69,39 @@ export function applyHit(game, spec, target) {
 
   const facing = spec.radial ? Math.sign(target.x - spec.x) || spec.facing || 1 : spec.facing || 1;
   if (game.attackSlot === target.id) game.attackSlot = null;
-  target.vx = facing * spec.kb;
-  target.vy = 0;
-  if (spec.lift > 50 || target.z > 16) {
-    target.state = "air";
-    target.vz = Math.max(spec.lift, 90);
-  } else {
-    target.state = "hurt";
-    target.hurtT = 0.22;
-    target.vz = 0;
+  const grabbed = target.state === "grabbed" && spec.kind === "grab";
+  if (!grabbed) {
+    target.vx = facing * spec.kb;
+    const depth = target.y - (spec.y ?? target.y);
+    target.vy = Math.sign(depth || facing) * Math.min(80, (spec.kb || 0) * 0.18);
+    const up = target.state === "air" || target.z > 20;
+    const launch = spec.knockdown || spec.lift > 50;
+    if (spec.team === "player") {
+      if (launch && !up) {
+        target.state = "air";
+        target.vz = Math.max(spec.lift, 520);
+        target.juggle = 1;
+      } else if (up && (target.juggle || 0) < 2) {
+        target.state = "air";
+        target.juggle = (target.juggle || 0) + 1;
+        if (target.vz < 180) target.vz = 180;
+      } else if (up) {
+        target.state = "air";
+      } else {
+        target.state = "hurt";
+        target.hurtT = 0.22;
+        target.vz = 0;
+      }
+    } else if (launch || target.z > 16) {
+      target.state = "air";
+      target.vz = Math.max(spec.lift, 90);
+    } else {
+      target.state = "hurt";
+      target.hurtT = 0.22;
+      target.vz = 0;
+    }
+    target.stateT = 0;
   }
-  target.stateT = 0;
 
   game.hitstop = Math.max(game.hitstop, spec.hitstop ?? 0.045);
   game.shake = Math.max(game.shake, spec.shake ?? 5);
@@ -130,6 +153,7 @@ export function melee(game, owner, spec) {
     dmg: spec.dmg,
     kb: spec.kb,
     lift: spec.lift ?? 0,
+    knockdown: !!spec.knockdown,
     facing: owner.facing,
     team: owner.team,
     radial: !!spec.radial,
@@ -142,6 +166,7 @@ export function melee(game, owner, spec) {
   let connected = 0;
   for (const target of targets) {
     if (!target || spec.already?.has(target.id)) continue;
+    if (spec.low && target.z > 36) continue;
     if (!overlaps(hit, target)) continue;
     spec.already?.add(target.id);
     if (applyHit(game, hit, target)) connected += 1;
@@ -168,10 +193,14 @@ export function updateBody(ent, dt) {
 
   if (ent.state === "hurt" || ent.state === "air" || ent.state === "down" || ent.state === "getup") {
     const z0 = ent.z;
-    ent.vx *= Math.exp(-2.4 * dt);
+    const drag = ent.state === "air" ? 1.05 : 0.65;
+    ent.vx *= Math.exp(-drag * dt);
+    ent.vy *= Math.exp(-drag * dt);
     integrate(ent, dt);
     if (ent.state === "air" && z0 > 0 && ent.z === 0) {
       ent.state = "down";
+      ent.juggle = 0;
+      ent.toss = null;
       ent.hurtT = ent.team === "player" ? 0.62 : 0.48;
       ent.vx *= 0.25;
     } else if (ent.state === "hurt" || ent.state === "down" || ent.state === "getup") {
@@ -181,7 +210,7 @@ export function updateBody(ent, dt) {
         else if (ent.state === "down") {
           ent.state = "getup";
           ent.hurtT = ent.team === "player" ? 0.34 : 0.26;
-          ent.invuln = Math.max(ent.invuln, ent.team === "player" ? 0.85 : 0.32);
+          ent.invuln = Math.max(ent.invuln, ent.team === "player" ? 0.85 : 0.48);
         } else {
           ent.state = "idle";
           ent.vx = 0;
@@ -193,6 +222,35 @@ export function updateBody(ent, dt) {
   }
 
   return false;
+}
+
+export function tickToss(game, dt) {
+  for (const ent of game.enemies) {
+    if (!ent.toss || ent.state !== "air") continue;
+    ent.toss.life -= dt;
+    const dir = Math.sign(ent.vx) || ent.toss.facing || 1;
+    for (const other of game.enemies) {
+      if (other === ent || !other.alive || ent.toss.hit.has(other.id)) continue;
+      if (other.state === "grabbed" || other.z > 40) continue;
+      if (Math.abs(other.x - ent.x) >= 50 || Math.abs(other.y - ent.y) >= 30) continue;
+      ent.toss.hit.add(other.id);
+      applyHit(game, {
+        x: ent.x,
+        y: ent.y,
+        dmg: ent.toss.dmg,
+        kb: dir * 240,
+        lift: 520,
+        knockdown: true,
+        facing: dir,
+        team: "player",
+        kind: "throw",
+        points: 160,
+        hitstop: 0.05,
+        shake: 6,
+      }, other);
+    }
+    if (ent.toss.life <= 0) ent.toss = null;
+  }
 }
 
 export function separate(list) {

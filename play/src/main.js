@@ -1,12 +1,12 @@
 import { play, unlock } from "./audio.js";
-import { separate } from "./combat.js";
-import { makeEnemy, updateEnemy } from "./enemies.js?v=art";
+import { separate, tickToss } from "./combat.js?v=fight";
+import { makeEnemy, updateEnemy } from "./enemies.js?v=fight";
 import { blankInput, createInput } from "./input.js";
-import { fighterById, makePlayer, updatePlayer } from "./player.js?v=art";
-import { draw } from "./render.js?v=art";
+import { fighterById, makePlayer, updatePlayer } from "./player.js?v=fight";
+import { draw } from "./render.js?v=fight";
 import { cloneStage, STAGES, WORLD } from "./stages.js?v=art";
-import { updatePickups, updateProjectiles } from "./weapons.js";
-import { loadSprites } from "./sprites.js?v=art";
+import { updatePickups, updateProjectiles } from "./weapons.js?v=fight";
+import { loadSprites } from "./sprites.js?v=fight";
 import { PAGES } from "../../story/panels.js";
 
 const PANELS = Object.fromEntries(PAGES.flatMap((page) => page.panels).map((panel) => [panel.id, panel]));
@@ -126,6 +126,7 @@ export function updateGame(game, input, dt) {
   if (game.mode !== "play") return;
 
   for (const enemy of game.enemies) updateEnemy(enemy, game, dt);
+  tickToss(game, dt);
   if (game.pending.length) {
     game.enemies.push(...game.pending);
     game.pending.length = 0;

@@ -77,7 +77,7 @@ export function clipFor(state) {
   if (state === "walk") return "walk";
   if (state === "dash" || state === "charge") return "run";
   if (state === "jump" || state === "jatk") return "jump";
-  if (state === "hurt" || state === "air" || state === "getup") return "hit";
+  if (state === "hurt" || state === "air" || state === "getup" || state === "backstep") return "hit";
   if (state === "down" || state === "dead") return "death";
   if (state === "special") return "cast";
   if (
@@ -98,6 +98,7 @@ function resolveSheet(sprite, clip) {
 function attackWindow(ent) {
   if (ent.team === "player" && (ent.kind === "abdul" || ent.kind === "sayed")) {
     const link = ent.fighter?.comboWindow || 0.2;
+    if (ent.state === "special") return { startup: 0.1, active: 0.08, total: 0.58 };
     if (ent.state === "heavy") return { startup: 0.1, active: 0.08, total: 0.36 };
     if (ent.state === "dashatk") return { startup: 0.07, active: 0.07, total: 0.3 };
     if (ent.state === "jatk") return { startup: 0.08, active: 0.07, total: 0.28 };
@@ -109,7 +110,7 @@ function attackWindow(ent) {
     const link = ent.fighter?.comboWindow || 0.34;
     if (ent.state === "heavy") return { startup: 0.28, active: 0.14, total: 0.8 };
     if (ent.state === "dashatk") return { startup: 0.14, active: 0.12, total: 0.54 };
-    if (ent.state === "special") return { startup: 0.22, active: 0.24, total: 0.88 };
+    if (ent.state === "special") return { startup: 0.14, active: 0.12, total: 0.68 };
     if (ent.state === "jatk") return { startup: 0.12, active: 0.12, total: 0.4 };
     if (ent.state === "throw" || ent.state === "grab") return { startup: 0.16, active: 0.14, total: 0.56 };
     if (ent.combo === 2) return { startup: 0.24, active: 0.14, total: 0.38 + link };
@@ -168,6 +169,10 @@ function gaitIndex(ent, count, clip) {
 function flinchIndex(ent, count) {
   const deep = Math.max(1, Math.min(3, count - 1));
   const t = ent.stateT || 0;
+  if (ent.state === "backstep") {
+    const u = Math.min(1, (ent.stateT || 0) / 0.22);
+    return Math.min(2, Math.floor(u * 3));
+  }
   if (ent.state === "getup") {
     const u = Math.min(1, t / 0.34);
     return Math.min(count - 1, deep + Math.floor(u * (count - deep)));

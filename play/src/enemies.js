@@ -1,6 +1,6 @@
-import { melee, updateBody } from "./combat.js";
+import { melee, updateBody } from "./combat.js?v=fight";
 import { WORLD } from "./stages.js?v=art";
-import { spawnShot } from "./weapons.js";
+import { spawnShot } from "./weapons.js?v=fight";
 
 const KINDS = {
   grunt: {
@@ -317,11 +317,12 @@ function updateRusher(enemy, game, dt) {
     enemy.stateT += dt;
     enemy.vx = enemy.facing * 360;
     enemy.x += enemy.vx * dt;
-    melee(game, enemy, {
+      melee(game, enemy, {
       dmg: enemy.dmg,
       kb: 240,
       lift: 30,
       reach: enemy.reach,
+      low: true,
       already: enemy.swingHits,
       kind: "heavy",
       hitstop: 0.05,
@@ -386,6 +387,7 @@ function updateCrane(enemy, game, dt) {
         reach: enemy.reach,
         rx: enemy.reach * 0.62,
         ry: 40,
+        low: true,
         already: enemy.swingHits,
         kind: "heavy",
         hitstop: 0.07,

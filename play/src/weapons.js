@@ -1,5 +1,5 @@
 import { play } from "./audio.js";
-import { applyHit } from "./combat.js";
+import { applyHit } from "./combat.js?v=fight";
 
 export function launchHeld(game, owner) {
   const held = owner.holding;
@@ -12,6 +12,25 @@ export function launchHeld(game, owner) {
     vz: held.kind === "pipe" ? 30 : 180,
   });
   play("throw");
+}
+
+export function spawnBolt(game, owner) {
+  const facing = owner.facing || 1;
+  game.projectiles.push({
+    kind: "bolt",
+    x: owner.x + facing * 70,
+    y: owner.y,
+    z: 52,
+    vx: facing * 680,
+    vy: 0,
+    vz: 0,
+    team: owner.team,
+    dmg: 16 * (owner.fighter?.power ?? 1),
+    kb: 340,
+    life: 0.4,
+    alive: true,
+    spin: 0,
+  });
 }
 
 export function spawnShot(game, owner, spec) {
@@ -36,7 +55,7 @@ export function updatePickups(game) {
   const player = game.player;
   if (!player?.alive) return;
   if (player.holding) return;
-  if (player.state !== "idle" && player.state !== "walk") return;
+  if (player.state !== "idle" && player.state !== "walk" && player.state !== "dash") return;
   for (const pickup of game.stage.pickups) {
     if (pickup.taken) continue;
     if (Math.abs(pickup.x - player.x) < 32 && Math.abs(pickup.y - player.y) < 28) {
@@ -59,9 +78,11 @@ export function updateProjectiles(game, dt) {
     shot.life -= dt;
     shot.x += shot.vx * dt;
     shot.y += shot.vy * dt;
-    shot.z += shot.vz * dt;
-    shot.vz -= 900 * dt;
-    shot.spin += dt * 8;
+    if (shot.kind !== "bolt") {
+      shot.z += shot.vz * dt;
+      shot.vz -= 900 * dt;
+      shot.spin += dt * 8;
+    }
     if (shot.z <= 0) {
       shot.z = 0;
       shot.vz = 0;
@@ -83,8 +104,9 @@ export function updateProjectiles(game, dt) {
           x: shot.x,
           y: shot.y,
           dmg: shot.dmg,
-          kb: shot.kind === "pipe" ? 260 : 180,
-          lift: 50,
+          kb: shot.kind === "bolt" ? 340 : shot.kind === "pipe" ? 260 : 180,
+          lift: shot.kind === "bolt" ? 520 : 50,
+          knockdown: shot.kind === "bolt",
           facing: Math.sign(shot.vx) || 1,
           team: shot.team,
           kind: "throw",
