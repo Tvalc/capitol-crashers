@@ -1,7 +1,7 @@
 import { play } from "./audio.js";
 import { FIGHTERS } from "./fighters.js?v=art";
-import { integrate, melee, spendSpecial, updateBody } from "./combat.js?v=fight";
-import { finishWeapon, launchHeld, noteWeaponSwing, spawnBolt } from "./weapons.js?v=fight";
+import { integrate, melee, spendSpecial, updateBody } from "./combat.js?v=fight2";
+import { finishWeapon, launchHeld, noteWeaponSwing, spawnBolt } from "./weapons.js?v=fight2";
 
 const LIGHTS = [
   { startup: 0.2, active: 0.12, dmg: 7, kb: 180, lift: 0 },
@@ -270,7 +270,7 @@ function endMove(player) {
 
 function grabTarget(game, player) {
   let best = null;
-  let bestDx = 48;
+  let bestDx = 78;
   for (const enemy of game.enemies) {
     if (!enemy.alive || enemy.z > 12) continue;
     if (enemy.state === "down" || enemy.state === "air" || enemy.state === "dead") continue;
@@ -295,6 +295,8 @@ function startGrab(player, enemy) {
   enemy.vx = 0;
   enemy.vy = 0;
   enemy.vz = 0;
+  game.banner = "K throws. Hold back to throw behind you.";
+  game.bannerT = 1.1;
 }
 
 function startBackstep(player) {
@@ -609,6 +611,11 @@ export function updatePlayer(player, game, input, dt) {
   player.anim += dt;
   buffer(player, input, dt);
   takeTap(player, input, game.time);
+
+  if (player.state === "grabbed") {
+    if (input.light || input.heavy || input.jump) player.grabMash = (player.grabMash || 0) + 1;
+    return;
+  }
 
   if (updateBody(player, dt)) {
     if (player.state === "getup" && player.bufferLight > 0 && player.hurtT < 0.16) {

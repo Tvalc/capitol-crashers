@@ -1,5 +1,5 @@
 import { FIGHTERS, poseFor } from "./fighters.js?v=art";
-import { drawSprite } from "./sprites.js?v=gap";
+import { drawSprite } from "./sprites.js?v=gap2";
 import { WORLD } from "./stages.js?v=art";
 
 function roundRect(ctx, x, y, w, h, r) {

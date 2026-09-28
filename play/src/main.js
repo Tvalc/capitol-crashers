@@ -1,12 +1,12 @@
 import { play, unlock } from "./audio.js";
-import { separate, tickToss } from "./combat.js?v=fight";
-import { makeEnemy, updateEnemy } from "./enemies.js?v=gap";
+import { separate, tickToss, wallBounce } from "./combat.js?v=fight2";
+import { makeEnemy, updateEnemy } from "./enemies.js?v=gap2";
 import { blankInput, createInput } from "./input.js";
-import { fighterById, makePlayer, updatePlayer } from "./player.js?v=gap";
-import { draw } from "./render.js?v=gap";
+import { fighterById, makePlayer, updatePlayer } from "./player.js?v=gap2";
+import { draw } from "./render.js?v=gap2";
 import { cloneStage, STAGES, WORLD } from "./stages.js?v=art";
-import { updatePickups, updateProjectiles } from "./weapons.js?v=fight";
-import { loadSprites } from "./sprites.js?v=gap";
+import { updatePickups, updateProjectiles } from "./weapons.js?v=fight2";
+import { loadSprites } from "./sprites.js?v=gap2";
 import { PAGES } from "../../story/panels.js";
 
 const PANELS = Object.fromEntries(PAGES.flatMap((page) => page.panels).map((panel) => [panel.id, panel]));
@@ -127,6 +127,7 @@ export function updateGame(game, input, dt) {
 
   for (const enemy of game.enemies) updateEnemy(enemy, game, dt);
   tickToss(game, dt);
+  wallBounce(game);
   if (game.pending.length) {
     game.enemies.push(...game.pending);
     game.pending.length = 0;

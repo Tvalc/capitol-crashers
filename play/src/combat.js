@@ -198,11 +198,19 @@ export function updateBody(ent, dt) {
     ent.vy *= Math.exp(-drag * dt);
     integrate(ent, dt);
     if (ent.state === "air" && z0 > 0 && ent.z === 0) {
-      ent.state = "down";
-      ent.juggle = 0;
-      ent.toss = null;
-      ent.hurtT = ent.team === "player" ? 0.62 : 0.48;
-      ent.vx *= 0.25;
+      if (!ent.groundBounced && Math.abs(ent.vx) > 240) {
+        ent.groundBounced = true;
+        ent.vz = 260;
+        ent.vx *= 0.55;
+      } else {
+        ent.state = "down";
+        ent.juggle = 0;
+        ent.toss = null;
+        ent.groundBounced = false;
+        ent.wallBounced = false;
+        ent.hurtT = ent.team === "player" ? 0.62 : 0.48;
+        ent.vx *= 0.25;
+      }
     } else if (ent.state === "hurt" || ent.state === "down" || ent.state === "getup") {
       ent.hurtT -= dt;
       if (ent.hurtT <= 0) {
@@ -250,6 +258,23 @@ export function tickToss(game, dt) {
       }, other);
     }
     if (ent.toss.life <= 0) ent.toss = null;
+  }
+}
+
+export function wallBounce(game) {
+  const minX = (game.cameraX || 0) + 56;
+  const maxX = (game.cameraX || 0) + WORLD.viewW - 72;
+  const bodies = [game.player, ...(game.enemies || [])];
+  for (const ent of bodies) {
+    if (!ent || ent.state !== "air" || ent.z < 24 || ent.wallBounced) continue;
+    if (ent.x > minX && ent.x < maxX) continue;
+    ent.wallBounced = true;
+    const dir = ent.x <= minX ? 1 : -1;
+    ent.vx = dir * Math.max(200, Math.abs(ent.vx) * 0.7);
+    ent.vz = Math.max(ent.vz, 280);
+    if ((ent.juggle || 0) > 1) ent.juggle = 1;
+    if (ent.x < minX) ent.x = minX;
+    if (ent.x > maxX) ent.x = maxX;
   }
 }
 

@@ -25,9 +25,14 @@ const FALLBACK = {
   hit: ["hit", "idle"],
   death: ["death", "hit", "idle"],
   cast: ["cast", "attack", "idle"],
+  lunge: ["lunge", "attack", "idle"],
+  reversal: ["reversal", "attack", "idle"],
+  throw: ["throw", "attack", "idle"],
+  backstep: ["backstep", "hit", "idle"],
+  grab: ["grab", "attack", "idle"],
 };
 
-const ONCE = new Set(["attack", "hit", "death", "cast", "jump"]);
+const ONCE = new Set(["attack", "hit", "death", "cast", "jump", "lunge", "reversal", "throw", "backstep", "grab"]);
 
 const sheets = new Map();
 
@@ -77,7 +82,12 @@ export function clipFor(state) {
   if (state === "walk") return "walk";
   if (state === "dash" || state === "charge") return "run";
   if (state === "jump" || state === "jatk") return "jump";
-  if (state === "hurt" || state === "air" || state === "getup" || state === "backstep") return "hit";
+  if (state === "backstep") return "backstep";
+  if (state === "lunge") return "lunge";
+  if (state === "reversal") return "reversal";
+  if (state === "throw") return "throw";
+  if (state === "grab" || state === "grabbed") return "grab";
+  if (state === "hurt" || state === "air" || state === "getup") return "hit";
   if (state === "down" || state === "dead") return "death";
   if (state === "special") return "cast";
   if (

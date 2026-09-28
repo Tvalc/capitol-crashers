@@ -1,6 +1,6 @@
-import { melee, updateBody } from "./combat.js?v=fight";
+import { melee, updateBody } from "./combat.js?v=fight2";
 import { WORLD } from "./stages.js?v=art";
-import { spawnShot } from "./weapons.js?v=fight";
+import { spawnShot } from "./weapons.js?v=fight2";
 
 const KINDS = {
   grunt: {
@@ -229,6 +229,64 @@ function release(game, enemy) {
   if (game.attackSlot === enemy.id) game.attackSlot = null;
 }
 
+function tryEnemyGrab(enemy, game) {
+  const player = game.player;
+  if (!player?.alive || player.invuln > 0 || player.z > 10) return false;
+  if (player.state === "grabbed" || player.state === "air" || player.state === "down" || player.state === "dead" || player.state === "getup") return false;
+  const dx = (player.x - enemy.x) * enemy.facing;
+  const dy = Math.abs(player.y - enemy.y);
+  if (dx < 12 || dx > 68 || dy > 28) return false;
+  if (!claim(game, enemy)) return false;
+  enemy.state = "grab";
+  enemy.stateT = 0;
+  enemy.vx = 0;
+  enemy.vy = 0;
+  player.state = "grabbed";
+  player.grabMash = 0;
+  player.vx = 0;
+  player.vy = 0;
+  player.vz = 0;
+  player.z = 0;
+  game.banner = "Mash J to break the grab";
+  game.bannerT = 0.8;
+  return true;
+}
+
+function updateEnemyGrab(enemy, game, dt) {
+  const player = game.player;
+  enemy.stateT += dt;
+  enemy.vx = 0;
+  enemy.vy = 0;
+  if (!player || player.state !== "grabbed") {
+    enemy.state = "idle";
+    enemy.attackCd = 0.6;
+    release(game, enemy);
+    return;
+  }
+  player.x = enemy.x + enemy.facing * 54;
+  player.y = enemy.y;
+  player.z = 0;
+  player.facing = -enemy.facing;
+  const broke = (player.grabMash || 0) >= 3;
+  if (broke || enemy.stateT > 0.8) {
+    player.grabMash = 0;
+    if (broke) {
+      player.state = "idle";
+      player.vx = -enemy.facing * 180;
+      player.invuln = Math.max(player.invuln || 0, 0.4);
+    } else {
+      player.state = "air";
+      player.vz = 420;
+      player.vx = enemy.facing * 400;
+      player.hp = Math.max(1, player.hp - enemy.dmg);
+      player.flash = 0.12;
+    }
+    enemy.state = "throw";
+    enemy.stateT = 0;
+    release(game, enemy);
+  }
+}
+
 function face(enemy, player) {
   enemy.facing = player.x >= enemy.x ? 1 : -1;
 }
@@ -261,6 +319,18 @@ function checkPhase(enemy, game) {
 
 function updateGrunt(enemy, game, dt) {
   const player = game.player;
+  if (enemy.state === "grab") {
+    updateEnemyGrab(enemy, game, dt);
+    return;
+  }
+  if (enemy.state === "throw") {
+    enemy.stateT += dt;
+    if (enemy.stateT >= 0.35) {
+      enemy.state = "idle";
+      enemy.attackCd = 0.8;
+    }
+    return;
+  }
   const dx = player.x - enemy.x;
   const dy = player.y - enemy.y;
   face(enemy, player);
@@ -290,6 +360,8 @@ function updateGrunt(enemy, game, dt) {
     return;
   }
   if (Math.abs(dx) < enemy.reach && Math.abs(dy) < 30 && enemy.attackCd <= 0 && claim(game, enemy)) {
+    enemy.swingN = (enemy.swingN || 0) + 1;
+    if (enemy.swingN % 2 === 0 && tryEnemyGrab(enemy, game)) return;
     enemy.state = "attack";
     enemy.stateT = 0;
     enemy.spawned = false;
@@ -302,6 +374,30 @@ function updateGrunt(enemy, game, dt) {
 function updateRusher(enemy, game, dt) {
   const player = game.player;
   face(enemy, player);
+  if (enemy.state === "attack") {
+    enemy.stateT += dt;
+    enemy.vx = 0;
+    if (!enemy.spawned && enemy.stateT >= 0.22) {
+      enemy.spawned = true;
+      melee(game, enemy, {
+        dmg: enemy.dmg,
+        kb: 160,
+        lift: 0,
+        reach: enemy.reach,
+        already: enemy.swingHits,
+        kind: "light",
+        hitstop: 0.04,
+      });
+    }
+    if (enemy.stateT >= 0.5) {
+      enemy.state = "idle";
+      enemy.spawned = false;
+      enemy.attackCd = 0.7;
+      enemy.swingHits = new Set();
+      release(game, enemy);
+    }
+    return;
+  }
   if (enemy.state === "windup") {
     enemy.stateT += dt;
     enemy.vx = 0;
@@ -336,6 +432,13 @@ function updateRusher(enemy, game, dt) {
   }
   const dx = player.x - enemy.x;
   const dy = player.y - enemy.y;
+  if (enemy.attackCd <= 0 && Math.abs(dy) < 30 && Math.abs(dx) < enemy.reach && claim(game, enemy)) {
+    enemy.state = "attack";
+    enemy.stateT = 0;
+    enemy.spawned = false;
+    enemy.swingHits = new Set();
+    return;
+  }
   if (enemy.attackCd <= 0 && Math.abs(dy) < 34 && Math.abs(dx) < 420 && Math.abs(dx) > 70) {
     enemy.state = "windup";
     enemy.stateT = 0;
@@ -424,6 +527,18 @@ function updateMara(enemy, game, dt) {
   const player = game.player;
   const dx = player.x - enemy.x;
   const dy = player.y - enemy.y;
+  if (enemy.state === "grab") {
+    updateEnemyGrab(enemy, game, dt);
+    return;
+  }
+  if (enemy.state === "throw") {
+    enemy.stateT += dt;
+    if (enemy.stateT >= 0.35) {
+      enemy.state = "idle";
+      enemy.attackCd = 1.2;
+    }
+    return;
+  }
   face(enemy, player);
   if (enemy.state === "charge") {
     enemy.stateT += dt;
@@ -445,6 +560,10 @@ function updateMara(enemy, game, dt) {
     return;
   }
   const dist = Math.abs(dx);
+  if (dist < 86 && enemy.attackCd <= 0 && tryEnemyGrab(enemy, game)) {
+    enemy.attackCd = 1.5;
+    return;
+  }
   if (dist < 200) enemy.vx = -enemy.facing * enemy.speed;
   else if (dist > 340) enemy.vx = enemy.facing * enemy.speed;
   else enemy.vx = 0;
