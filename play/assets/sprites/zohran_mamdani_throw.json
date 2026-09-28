@@ -1,0 +1,276 @@
+{
+  "frames": {
+    "zohran_mamdani_throw_000.webp": {
+      "frame": {
+        "x": 2,
+        "y": 2,
+        "w": 268,
+        "h": 256
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 268,
+        "h": 256
+      },
+      "sourceSize": {
+        "w": 268,
+        "h": 256
+      },
+      "duration": 83
+    },
+    "zohran_mamdani_throw_001.webp": {
+      "frame": {
+        "x": 272,
+        "y": 2,
+        "w": 268,
+        "h": 256
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 268,
+        "h": 256
+      },
+      "sourceSize": {
+        "w": 268,
+        "h": 256
+      },
+      "duration": 83
+    },
+    "zohran_mamdani_throw_002.webp": {
+      "frame": {
+        "x": 542,
+        "y": 2,
+        "w": 268,
+        "h": 256
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 268,
+        "h": 256
+      },
+      "sourceSize": {
+        "w": 268,
+        "h": 256
+      },
+      "duration": 83
+    },
+    "zohran_mamdani_throw_003.webp": {
+      "frame": {
+        "x": 812,
+        "y": 2,
+        "w": 268,
+        "h": 256
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 268,
+        "h": 256
+      },
+      "sourceSize": {
+        "w": 268,
+        "h": 256
+      },
+      "duration": 83
+    },
+    "zohran_mamdani_throw_004.webp": {
+      "frame": {
+        "x": 1082,
+        "y": 2,
+        "w": 268,
+        "h": 256
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 268,
+        "h": 256
+      },
+      "sourceSize": {
+        "w": 268,
+        "h": 256
+      },
+      "duration": 83
+    },
+    "zohran_mamdani_throw_005.webp": {
+      "frame": {
+        "x": 1352,
+        "y": 2,
+        "w": 268,
+        "h": 256
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 268,
+        "h": 256
+      },
+      "sourceSize": {
+        "w": 268,
+        "h": 256
+      },
+      "duration": 83
+    },
+    "zohran_mamdani_throw_006.webp": {
+      "frame": {
+        "x": 1622,
+        "y": 2,
+        "w": 268,
+        "h": 256
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 268,
+        "h": 256
+      },
+      "sourceSize": {
+        "w": 268,
+        "h": 256
+      },
+      "duration": 83
+    },
+    "zohran_mamdani_throw_007.webp": {
+      "frame": {
+        "x": 1892,
+        "y": 2,
+        "w": 268,
+        "h": 256
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 268,
+        "h": 256
+      },
+      "sourceSize": {
+        "w": 268,
+        "h": 256
+      },
+      "duration": 83
+    },
+    "zohran_mamdani_throw_008.webp": {
+      "frame": {
+        "x": 2162,
+        "y": 2,
+        "w": 268,
+        "h": 256
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 268,
+        "h": 256
+      },
+      "sourceSize": {
+        "w": 268,
+        "h": 256
+      },
+      "duration": 83
+    },
+    "zohran_mamdani_throw_009.webp": {
+      "frame": {
+        "x": 2432,
+        "y": 2,
+        "w": 268,
+        "h": 256
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 268,
+        "h": 256
+      },
+      "sourceSize": {
+        "w": 268,
+        "h": 256
+      },
+      "duration": 83
+    },
+    "zohran_mamdani_throw_010.webp": {
+      "frame": {
+        "x": 2702,
+        "y": 2,
+        "w": 268,
+        "h": 256
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 268,
+        "h": 256
+      },
+      "sourceSize": {
+        "w": 268,
+        "h": 256
+      },
+      "duration": 83
+    },
+    "zohran_mamdani_throw_011.webp": {
+      "frame": {
+        "x": 2972,
+        "y": 2,
+        "w": 268,
+        "h": 256
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 268,
+        "h": 256
+      },
+      "sourceSize": {
+        "w": 268,
+        "h": 256
+      },
+      "duration": 83
+    }
+  },
+  "meta": {
+    "app": "bake",
+    "version": "1",
+    "format": "RGBA8888",
+    "scale": "1",
+    "image": "zohran_mamdani_throw.webp",
+    "size": {
+      "w": 3242,
+      "h": 260
+    },
+    "anchor": {
+      "x": 134.0,
+      "y": 258,
+      "normalized": {
+        "x": 0.5,
+        "y": 1
+      },
+      "strategy": "bottom-center"
+    }
+  }
+}

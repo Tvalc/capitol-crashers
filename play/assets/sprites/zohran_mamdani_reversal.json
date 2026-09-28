@@ -1,0 +1,276 @@
+{
+  "frames": {
+    "zohran_mamdani_reversal_000.webp": {
+      "frame": {
+        "x": 2,
+        "y": 2,
+        "w": 299,
+        "h": 256
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 299,
+        "h": 256
+      },
+      "sourceSize": {
+        "w": 299,
+        "h": 256
+      },
+      "duration": 83
+    },
+    "zohran_mamdani_reversal_001.webp": {
+      "frame": {
+        "x": 303,
+        "y": 2,
+        "w": 299,
+        "h": 256
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 299,
+        "h": 256
+      },
+      "sourceSize": {
+        "w": 299,
+        "h": 256
+      },
+      "duration": 83
+    },
+    "zohran_mamdani_reversal_002.webp": {
+      "frame": {
+        "x": 604,
+        "y": 2,
+        "w": 299,
+        "h": 256
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 299,
+        "h": 256
+      },
+      "sourceSize": {
+        "w": 299,
+        "h": 256
+      },
+      "duration": 83
+    },
+    "zohran_mamdani_reversal_003.webp": {
+      "frame": {
+        "x": 905,
+        "y": 2,
+        "w": 299,
+        "h": 256
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 299,
+        "h": 256
+      },
+      "sourceSize": {
+        "w": 299,
+        "h": 256
+      },
+      "duration": 83
+    },
+    "zohran_mamdani_reversal_004.webp": {
+      "frame": {
+        "x": 1206,
+        "y": 2,
+        "w": 299,
+        "h": 256
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 299,
+        "h": 256
+      },
+      "sourceSize": {
+        "w": 299,
+        "h": 256
+      },
+      "duration": 83
+    },
+    "zohran_mamdani_reversal_005.webp": {
+      "frame": {
+        "x": 1507,
+        "y": 2,
+        "w": 299,
+        "h": 256
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 299,
+        "h": 256
+      },
+      "sourceSize": {
+        "w": 299,
+        "h": 256
+      },
+      "duration": 83
+    },
+    "zohran_mamdani_reversal_006.webp": {
+      "frame": {
+        "x": 1808,
+        "y": 2,
+        "w": 299,
+        "h": 256
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 299,
+        "h": 256
+      },
+      "sourceSize": {
+        "w": 299,
+        "h": 256
+      },
+      "duration": 83
+    },
+    "zohran_mamdani_reversal_007.webp": {
+      "frame": {
+        "x": 2109,
+        "y": 2,
+        "w": 299,
+        "h": 256
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 299,
+        "h": 256
+      },
+      "sourceSize": {
+        "w": 299,
+        "h": 256
+      },
+      "duration": 83
+    },
+    "zohran_mamdani_reversal_008.webp": {
+      "frame": {
+        "x": 2410,
+        "y": 2,
+        "w": 299,
+        "h": 256
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 299,
+        "h": 256
+      },
+      "sourceSize": {
+        "w": 299,
+        "h": 256
+      },
+      "duration": 83
+    },
+    "zohran_mamdani_reversal_009.webp": {
+      "frame": {
+        "x": 2711,
+        "y": 2,
+        "w": 299,
+        "h": 256
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 299,
+        "h": 256
+      },
+      "sourceSize": {
+        "w": 299,
+        "h": 256
+      },
+      "duration": 83
+    },
+    "zohran_mamdani_reversal_010.webp": {
+      "frame": {
+        "x": 3012,
+        "y": 2,
+        "w": 299,
+        "h": 256
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 299,
+        "h": 256
+      },
+      "sourceSize": {
+        "w": 299,
+        "h": 256
+      },
+      "duration": 83
+    },
+    "zohran_mamdani_reversal_011.webp": {
+      "frame": {
+        "x": 3313,
+        "y": 2,
+        "w": 299,
+        "h": 256
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 299,
+        "h": 256
+      },
+      "sourceSize": {
+        "w": 299,
+        "h": 256
+      },
+      "duration": 83
+    }
+  },
+  "meta": {
+    "app": "bake",
+    "version": "1",
+    "format": "RGBA8888",
+    "scale": "1",
+    "image": "zohran_mamdani_reversal.webp",
+    "size": {
+      "w": 3614,
+      "h": 260
+    },
+    "anchor": {
+      "x": 149.5,
+      "y": 258,
+      "normalized": {
+        "x": 0.5,
+        "y": 1
+      },
+      "strategy": "bottom-center"
+    }
+  }
+}

@@ -1,0 +1,276 @@
+{
+  "frames": {
+    "abdul_el_sayed_throw_000.webp": {
+      "frame": {
+        "x": 2,
+        "y": 2,
+        "w": 314,
+        "h": 256
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 314,
+        "h": 256
+      },
+      "sourceSize": {
+        "w": 314,
+        "h": 256
+      },
+      "duration": 83
+    },
+    "abdul_el_sayed_throw_001.webp": {
+      "frame": {
+        "x": 318,
+        "y": 2,
+        "w": 314,
+        "h": 256
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 314,
+        "h": 256
+      },
+      "sourceSize": {
+        "w": 314,
+        "h": 256
+      },
+      "duration": 83
+    },
+    "abdul_el_sayed_throw_002.webp": {
+      "frame": {
+        "x": 634,
+        "y": 2,
+        "w": 314,
+        "h": 256
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 314,
+        "h": 256
+      },
+      "sourceSize": {
+        "w": 314,
+        "h": 256
+      },
+      "duration": 83
+    },
+    "abdul_el_sayed_throw_003.webp": {
+      "frame": {
+        "x": 950,
+        "y": 2,
+        "w": 314,
+        "h": 256
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 314,
+        "h": 256
+      },
+      "sourceSize": {
+        "w": 314,
+        "h": 256
+      },
+      "duration": 83
+    },
+    "abdul_el_sayed_throw_004.webp": {
+      "frame": {
+        "x": 1266,
+        "y": 2,
+        "w": 314,
+        "h": 256
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 314,
+        "h": 256
+      },
+      "sourceSize": {
+        "w": 314,
+        "h": 256
+      },
+      "duration": 83
+    },
+    "abdul_el_sayed_throw_005.webp": {
+      "frame": {
+        "x": 1582,
+        "y": 2,
+        "w": 314,
+        "h": 256
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 314,
+        "h": 256
+      },
+      "sourceSize": {
+        "w": 314,
+        "h": 256
+      },
+      "duration": 83
+    },
+    "abdul_el_sayed_throw_006.webp": {
+      "frame": {
+        "x": 1898,
+        "y": 2,
+        "w": 314,
+        "h": 256
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 314,
+        "h": 256
+      },
+      "sourceSize": {
+        "w": 314,
+        "h": 256
+      },
+      "duration": 83
+    },
+    "abdul_el_sayed_throw_007.webp": {
+      "frame": {
+        "x": 2214,
+        "y": 2,
+        "w": 314,
+        "h": 256
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 314,
+        "h": 256
+      },
+      "sourceSize": {
+        "w": 314,
+        "h": 256
+      },
+      "duration": 83
+    },
+    "abdul_el_sayed_throw_008.webp": {
+      "frame": {
+        "x": 2530,
+        "y": 2,
+        "w": 314,
+        "h": 256
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 314,
+        "h": 256
+      },
+      "sourceSize": {
+        "w": 314,
+        "h": 256
+      },
+      "duration": 83
+    },
+    "abdul_el_sayed_throw_009.webp": {
+      "frame": {
+        "x": 2846,
+        "y": 2,
+        "w": 314,
+        "h": 256
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 314,
+        "h": 256
+      },
+      "sourceSize": {
+        "w": 314,
+        "h": 256
+      },
+      "duration": 83
+    },
+    "abdul_el_sayed_throw_010.webp": {
+      "frame": {
+        "x": 3162,
+        "y": 2,
+        "w": 314,
+        "h": 256
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 314,
+        "h": 256
+      },
+      "sourceSize": {
+        "w": 314,
+        "h": 256
+      },
+      "duration": 83
+    },
+    "abdul_el_sayed_throw_011.webp": {
+      "frame": {
+        "x": 3478,
+        "y": 2,
+        "w": 314,
+        "h": 256
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 314,
+        "h": 256
+      },
+      "sourceSize": {
+        "w": 314,
+        "h": 256
+      },
+      "duration": 83
+    }
+  },
+  "meta": {
+    "app": "bake",
+    "version": "1",
+    "format": "RGBA8888",
+    "scale": "1",
+    "image": "abdul_el_sayed_throw.webp",
+    "size": {
+      "w": 3794,
+      "h": 260
+    },
+    "anchor": {
+      "x": 157.0,
+      "y": 258,
+      "normalized": {
+        "x": 0.5,
+        "y": 1
+      },
+      "strategy": "bottom-center"
+    }
+  }
+}

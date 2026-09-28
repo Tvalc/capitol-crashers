@@ -1,0 +1,276 @@
+{
+  "frames": {
+    "jd_vance_grab_000.webp": {
+      "frame": {
+        "x": 2,
+        "y": 2,
+        "w": 229,
+        "h": 256
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 229,
+        "h": 256
+      },
+      "sourceSize": {
+        "w": 229,
+        "h": 256
+      },
+      "duration": 83
+    },
+    "jd_vance_grab_001.webp": {
+      "frame": {
+        "x": 233,
+        "y": 2,
+        "w": 229,
+        "h": 256
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 229,
+        "h": 256
+      },
+      "sourceSize": {
+        "w": 229,
+        "h": 256
+      },
+      "duration": 83
+    },
+    "jd_vance_grab_002.webp": {
+      "frame": {
+        "x": 464,
+        "y": 2,
+        "w": 229,
+        "h": 256
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 229,
+        "h": 256
+      },
+      "sourceSize": {
+        "w": 229,
+        "h": 256
+      },
+      "duration": 83
+    },
+    "jd_vance_grab_003.webp": {
+      "frame": {
+        "x": 695,
+        "y": 2,
+        "w": 229,
+        "h": 256
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 229,
+        "h": 256
+      },
+      "sourceSize": {
+        "w": 229,
+        "h": 256
+      },
+      "duration": 83
+    },
+    "jd_vance_grab_004.webp": {
+      "frame": {
+        "x": 926,
+        "y": 2,
+        "w": 229,
+        "h": 256
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 229,
+        "h": 256
+      },
+      "sourceSize": {
+        "w": 229,
+        "h": 256
+      },
+      "duration": 83
+    },
+    "jd_vance_grab_005.webp": {
+      "frame": {
+        "x": 1157,
+        "y": 2,
+        "w": 229,
+        "h": 256
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 229,
+        "h": 256
+      },
+      "sourceSize": {
+        "w": 229,
+        "h": 256
+      },
+      "duration": 83
+    },
+    "jd_vance_grab_006.webp": {
+      "frame": {
+        "x": 1388,
+        "y": 2,
+        "w": 229,
+        "h": 256
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 229,
+        "h": 256
+      },
+      "sourceSize": {
+        "w": 229,
+        "h": 256
+      },
+      "duration": 83
+    },
+    "jd_vance_grab_007.webp": {
+      "frame": {
+        "x": 1619,
+        "y": 2,
+        "w": 229,
+        "h": 256
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 229,
+        "h": 256
+      },
+      "sourceSize": {
+        "w": 229,
+        "h": 256
+      },
+      "duration": 83
+    },
+    "jd_vance_grab_008.webp": {
+      "frame": {
+        "x": 1850,
+        "y": 2,
+        "w": 229,
+        "h": 256
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 229,
+        "h": 256
+      },
+      "sourceSize": {
+        "w": 229,
+        "h": 256
+      },
+      "duration": 83
+    },
+    "jd_vance_grab_009.webp": {
+      "frame": {
+        "x": 2081,
+        "y": 2,
+        "w": 229,
+        "h": 256
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 229,
+        "h": 256
+      },
+      "sourceSize": {
+        "w": 229,
+        "h": 256
+      },
+      "duration": 83
+    },
+    "jd_vance_grab_010.webp": {
+      "frame": {
+        "x": 2312,
+        "y": 2,
+        "w": 229,
+        "h": 256
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 229,
+        "h": 256
+      },
+      "sourceSize": {
+        "w": 229,
+        "h": 256
+      },
+      "duration": 83
+    },
+    "jd_vance_grab_011.webp": {
+      "frame": {
+        "x": 2543,
+        "y": 2,
+        "w": 229,
+        "h": 256
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 229,
+        "h": 256
+      },
+      "sourceSize": {
+        "w": 229,
+        "h": 256
+      },
+      "duration": 83
+    }
+  },
+  "meta": {
+    "app": "bake",
+    "version": "1",
+    "format": "RGBA8888",
+    "scale": "1",
+    "image": "jd_vance_grab.webp",
+    "size": {
+      "w": 2774,
+      "h": 260
+    },
+    "anchor": {
+      "x": 114.5,
+      "y": 258,
+      "normalized": {
+        "x": 0.5,
+        "y": 1
+      },
+      "strategy": "bottom-center"
+    }
+  }
+}

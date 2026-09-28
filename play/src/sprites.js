@@ -1,8 +1,8 @@
 const CLIPS = {
-  zohran: ["idle", "walk", "run", "jump", "attack", "hit", "death", "cast"],
-  abdul: ["idle", "walk", "run", "jump", "attack", "hit", "death", "cast"],
+  zohran: ["idle", "walk", "run", "jump", "attack", "hit", "death", "cast", "grab", "throw", "lunge", "reversal"],
+  abdul: ["idle", "walk", "run", "jump", "attack", "hit", "death", "cast", "grab", "throw", "lunge"],
   trump: ["idle", "walk", "run", "attack", "hit", "death", "cast"],
-  vance: ["idle", "walk", "run", "attack", "hit", "death", "cast"],
+  vance: ["idle", "walk", "run", "attack", "hit", "death", "cast", "grab"],
   greene: ["idle", "run", "attack", "hit", "death"],
   cruz: ["idle", "walk", "run", "attack", "hit", "death"],
 };
@@ -57,11 +57,11 @@ export function loadSprites() {
 
 function loadOne(sprite, clip, name) {
   const image = new Image();
-  const dataPromise = fetch(`assets/sprites/${name}.json?v=gap`).then((res) => res.json());
+  const dataPromise = fetch(`assets/sprites/${name}.json?v=moves`).then((res) => res.json());
   const imagePromise = new Promise((resolve, reject) => {
     image.onload = () => resolve(image);
     image.onerror = reject;
-    image.src = `assets/sprites/${name}.webp?v=gap`;
+    image.src = `assets/sprites/${name}.webp?v=moves`;
   });
   return Promise.all([dataPromise, imagePromise]).then(([data, img]) => {
     const frames = Object.values(data.frames).sort((a, b) => a.frame.x - b.frame.x);
@@ -86,7 +86,9 @@ export function clipFor(state) {
   if (state === "lunge") return "lunge";
   if (state === "reversal") return "reversal";
   if (state === "throw") return "throw";
-  if (state === "grab" || state === "grabbed") return "grab";
+  if (state === "grab") return "grab";
+  if (state === "grabbed") return "hit";
+  if (state === "dashatk") return "lunge";
   if (state === "hurt" || state === "air" || state === "getup") return "hit";
   if (state === "down" || state === "dead") return "death";
   if (state === "special") return "cast";
@@ -145,9 +147,9 @@ function attackWindow(ent) {
 
 function contactAt(ent, count) {
   let frac = 0.42;
-  if (ent.state === "dashatk" || ent.state === "lunge") frac = 0.28;
+  if (ent.state === "dashatk" || ent.state === "lunge") frac = 0.55;
   else if (ent.state === "heavy") frac = 0.62;
-  else if (ent.state === "reversal") frac = 0.18;
+  else if (ent.state === "reversal") frac = 0.8;
   else if (ent.state === "throw") frac = 0.78;
   else if (ent.state === "grab") frac = 0.16;
   else if (ent.state === "light") {

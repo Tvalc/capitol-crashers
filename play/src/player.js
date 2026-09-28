@@ -58,7 +58,7 @@ function lungeSpec(player) {
       kind: "heavy",
       lunge: 2.6,
       lungeFor: 0.1,
-      reachAdd: 8,
+      reachAdd: 33,
       ownBox: true,
       hitstop: 0.05,
       points: 140,

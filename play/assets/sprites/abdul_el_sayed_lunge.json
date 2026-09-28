@@ -1,0 +1,276 @@
+{
+  "frames": {
+    "abdul_el_sayed_lunge_000.webp": {
+      "frame": {
+        "x": 2,
+        "y": 2,
+        "w": 282,
+        "h": 256
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 282,
+        "h": 256
+      },
+      "sourceSize": {
+        "w": 282,
+        "h": 256
+      },
+      "duration": 83
+    },
+    "abdul_el_sayed_lunge_001.webp": {
+      "frame": {
+        "x": 286,
+        "y": 2,
+        "w": 282,
+        "h": 256
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 282,
+        "h": 256
+      },
+      "sourceSize": {
+        "w": 282,
+        "h": 256
+      },
+      "duration": 83
+    },
+    "abdul_el_sayed_lunge_002.webp": {
+      "frame": {
+        "x": 570,
+        "y": 2,
+        "w": 282,
+        "h": 256
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 282,
+        "h": 256
+      },
+      "sourceSize": {
+        "w": 282,
+        "h": 256
+      },
+      "duration": 83
+    },
+    "abdul_el_sayed_lunge_003.webp": {
+      "frame": {
+        "x": 854,
+        "y": 2,
+        "w": 282,
+        "h": 256
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 282,
+        "h": 256
+      },
+      "sourceSize": {
+        "w": 282,
+        "h": 256
+      },
+      "duration": 83
+    },
+    "abdul_el_sayed_lunge_004.webp": {
+      "frame": {
+        "x": 1138,
+        "y": 2,
+        "w": 282,
+        "h": 256
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 282,
+        "h": 256
+      },
+      "sourceSize": {
+        "w": 282,
+        "h": 256
+      },
+      "duration": 83
+    },
+    "abdul_el_sayed_lunge_005.webp": {
+      "frame": {
+        "x": 1422,
+        "y": 2,
+        "w": 282,
+        "h": 256
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 282,
+        "h": 256
+      },
+      "sourceSize": {
+        "w": 282,
+        "h": 256
+      },
+      "duration": 83
+    },
+    "abdul_el_sayed_lunge_006.webp": {
+      "frame": {
+        "x": 1706,
+        "y": 2,
+        "w": 282,
+        "h": 256
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 282,
+        "h": 256
+      },
+      "sourceSize": {
+        "w": 282,
+        "h": 256
+      },
+      "duration": 83
+    },
+    "abdul_el_sayed_lunge_007.webp": {
+      "frame": {
+        "x": 1990,
+        "y": 2,
+        "w": 282,
+        "h": 256
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 282,
+        "h": 256
+      },
+      "sourceSize": {
+        "w": 282,
+        "h": 256
+      },
+      "duration": 83
+    },
+    "abdul_el_sayed_lunge_008.webp": {
+      "frame": {
+        "x": 2274,
+        "y": 2,
+        "w": 282,
+        "h": 256
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 282,
+        "h": 256
+      },
+      "sourceSize": {
+        "w": 282,
+        "h": 256
+      },
+      "duration": 83
+    },
+    "abdul_el_sayed_lunge_009.webp": {
+      "frame": {
+        "x": 2558,
+        "y": 2,
+        "w": 282,
+        "h": 256
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 282,
+        "h": 256
+      },
+      "sourceSize": {
+        "w": 282,
+        "h": 256
+      },
+      "duration": 83
+    },
+    "abdul_el_sayed_lunge_010.webp": {
+      "frame": {
+        "x": 2842,
+        "y": 2,
+        "w": 282,
+        "h": 256
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 282,
+        "h": 256
+      },
+      "sourceSize": {
+        "w": 282,
+        "h": 256
+      },
+      "duration": 83
+    },
+    "abdul_el_sayed_lunge_011.webp": {
+      "frame": {
+        "x": 3126,
+        "y": 2,
+        "w": 282,
+        "h": 256
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 282,
+        "h": 256
+      },
+      "sourceSize": {
+        "w": 282,
+        "h": 256
+      },
+      "duration": 83
+    }
+  },
+  "meta": {
+    "app": "bake",
+    "version": "1",
+    "format": "RGBA8888",
+    "scale": "1",
+    "image": "abdul_el_sayed_lunge.webp",
+    "size": {
+      "w": 3410,
+      "h": 260
+    },
+    "anchor": {
+      "x": 141.0,
+      "y": 258,
+      "normalized": {
+        "x": 0.5,
+        "y": 1
+      },
+      "strategy": "bottom-center"
+    }
+  }
+}

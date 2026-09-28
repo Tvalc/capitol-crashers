@@ -2,11 +2,11 @@ import { play, unlock } from "./audio.js";
 import { separate, tickToss, wallBounce } from "./combat.js?v=fight2";
 import { makeEnemy, updateEnemy } from "./enemies.js?v=gap2";
 import { blankInput, createInput } from "./input.js?v=grab2";
-import { fighterById, makePlayer, updatePlayer } from "./player.js?v=grab2";
-import { draw } from "./render.js?v=gap2";
+import { fighterById, makePlayer, updatePlayer } from "./player.js?v=moves";
+import { draw } from "./render.js?v=moves";
 import { cloneStage, STAGES, WORLD } from "./stages.js?v=art";
 import { updatePickups, updateProjectiles } from "./weapons.js?v=fight2";
-import { loadSprites } from "./sprites.js?v=gap2";
+import { loadSprites } from "./sprites.js?v=moves";
 import { PAGES } from "../../story/panels.js";
 
 const PANELS = Object.fromEntries(PAGES.flatMap((page) => page.panels).map((panel) => [panel.id, panel]));

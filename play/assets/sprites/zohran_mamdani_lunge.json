@@ -1,0 +1,276 @@
+{
+  "frames": {
+    "zohran_mamdani_lunge_000.webp": {
+      "frame": {
+        "x": 2,
+        "y": 2,
+        "w": 257,
+        "h": 256
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 257,
+        "h": 256
+      },
+      "sourceSize": {
+        "w": 257,
+        "h": 256
+      },
+      "duration": 83
+    },
+    "zohran_mamdani_lunge_001.webp": {
+      "frame": {
+        "x": 261,
+        "y": 2,
+        "w": 257,
+        "h": 256
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 257,
+        "h": 256
+      },
+      "sourceSize": {
+        "w": 257,
+        "h": 256
+      },
+      "duration": 83
+    },
+    "zohran_mamdani_lunge_002.webp": {
+      "frame": {
+        "x": 520,
+        "y": 2,
+        "w": 257,
+        "h": 256
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 257,
+        "h": 256
+      },
+      "sourceSize": {
+        "w": 257,
+        "h": 256
+      },
+      "duration": 83
+    },
+    "zohran_mamdani_lunge_003.webp": {
+      "frame": {
+        "x": 779,
+        "y": 2,
+        "w": 257,
+        "h": 256
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 257,
+        "h": 256
+      },
+      "sourceSize": {
+        "w": 257,
+        "h": 256
+      },
+      "duration": 83
+    },
+    "zohran_mamdani_lunge_004.webp": {
+      "frame": {
+        "x": 1038,
+        "y": 2,
+        "w": 257,
+        "h": 256
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 257,
+        "h": 256
+      },
+      "sourceSize": {
+        "w": 257,
+        "h": 256
+      },
+      "duration": 83
+    },
+    "zohran_mamdani_lunge_005.webp": {
+      "frame": {
+        "x": 1297,
+        "y": 2,
+        "w": 257,
+        "h": 256
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 257,
+        "h": 256
+      },
+      "sourceSize": {
+        "w": 257,
+        "h": 256
+      },
+      "duration": 83
+    },
+    "zohran_mamdani_lunge_006.webp": {
+      "frame": {
+        "x": 1556,
+        "y": 2,
+        "w": 257,
+        "h": 256
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 257,
+        "h": 256
+      },
+      "sourceSize": {
+        "w": 257,
+        "h": 256
+      },
+      "duration": 83
+    },
+    "zohran_mamdani_lunge_007.webp": {
+      "frame": {
+        "x": 1815,
+        "y": 2,
+        "w": 257,
+        "h": 256
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 257,
+        "h": 256
+      },
+      "sourceSize": {
+        "w": 257,
+        "h": 256
+      },
+      "duration": 83
+    },
+    "zohran_mamdani_lunge_008.webp": {
+      "frame": {
+        "x": 2074,
+        "y": 2,
+        "w": 257,
+        "h": 256
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 257,
+        "h": 256
+      },
+      "sourceSize": {
+        "w": 257,
+        "h": 256
+      },
+      "duration": 83
+    },
+    "zohran_mamdani_lunge_009.webp": {
+      "frame": {
+        "x": 2333,
+        "y": 2,
+        "w": 257,
+        "h": 256
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 257,
+        "h": 256
+      },
+      "sourceSize": {
+        "w": 257,
+        "h": 256
+      },
+      "duration": 83
+    },
+    "zohran_mamdani_lunge_010.webp": {
+      "frame": {
+        "x": 2592,
+        "y": 2,
+        "w": 257,
+        "h": 256
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 257,
+        "h": 256
+      },
+      "sourceSize": {
+        "w": 257,
+        "h": 256
+      },
+      "duration": 83
+    },
+    "zohran_mamdani_lunge_011.webp": {
+      "frame": {
+        "x": 2851,
+        "y": 2,
+        "w": 257,
+        "h": 256
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 257,
+        "h": 256
+      },
+      "sourceSize": {
+        "w": 257,
+        "h": 256
+      },
+      "duration": 83
+    }
+  },
+  "meta": {
+    "app": "bake",
+    "version": "1",
+    "format": "RGBA8888",
+    "scale": "1",
+    "image": "zohran_mamdani_lunge.webp",
+    "size": {
+      "w": 3110,
+      "h": 260
+    },
+    "anchor": {
+      "x": 128.5,
+      "y": 258,
+      "normalized": {
+        "x": 0.5,
+        "y": 1
+      },
+      "strategy": "bottom-center"
+    }
+  }
+}
