@@ -351,9 +351,15 @@ figure.panel { margin: 0; }
 
 /* Platform cards */
 
+.plank-note {
+  margin: 0 0 16px;
+  max-width: 62ch;
+  font-weight: 700;
+}
+
 .planks {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
   gap: var(--gutter);
 }
 
