@@ -1,5 +1,5 @@
 import { FIGHTERS, poseFor } from "./fighters.js?v=art";
-import { drawSprite } from "./sprites.js?v=moves";
+import { drawSprite } from "./sprites.js?v=swagger";
 import { WORLD } from "./stages.js?v=art";
 
 function roundRect(ctx, x, y, w, h, r) {
@@ -167,6 +167,27 @@ function drawPickup(ctx, pickup, cam) {
 }
 
 function drawShot(ctx, shot, cam) {
+  if (shot.kind === "laser") {
+    const x = shot.x - cam;
+    const warming = shot.age < shot.warn;
+    ctx.save();
+    ctx.strokeStyle = warming ? "rgba(255, 70, 150, 0.55)" : "#fff4fb";
+    ctx.lineWidth = warming ? 4 : 16;
+    ctx.beginPath();
+    ctx.moveTo(x, shot.y - 460);
+    ctx.lineTo(x, shot.y);
+    ctx.stroke();
+    if (!warming) {
+      ctx.strokeStyle = "#ff4d9a";
+      ctx.lineWidth = 6;
+      ctx.beginPath();
+      ctx.moveTo(x, shot.y - 460);
+      ctx.lineTo(x, shot.y);
+      ctx.stroke();
+    }
+    ctx.restore();
+    return;
+  }
   const x = shot.x - cam;
   const y = shot.y - shot.z;
   ctx.save();

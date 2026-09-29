@@ -1,6 +1,6 @@
 import { melee, updateBody } from "./combat.js?v=fight2";
 import { WORLD } from "./stages.js?v=art";
-import { spawnShot } from "./weapons.js?v=fight2";
+import { spawnLaser, spawnShot } from "./weapons.js?v=swagger";
 
 const KINDS = {
   grunt: {
@@ -447,6 +447,361 @@ function updateRusher(enemy, game, dt) {
   approach(enemy, player, dt);
 }
 
+function updateGreene(enemy, game, dt) {
+  const player = game.player;
+  if (enemy.state === "special") {
+    enemy.stateT += dt;
+    enemy.vx = 0;
+    enemy.vy = 0;
+    if (!enemy.spawned && enemy.stateT >= 0.46) {
+      enemy.spawned = true;
+      spawnLaser(game, player.x, player.y, enemy.dmg + 6);
+    }
+    if (enemy.stateT >= 1.15) {
+      enemy.state = "idle";
+      enemy.spawned = false;
+      enemy.attackCd = 1.3;
+    }
+    return;
+  }
+  if (enemy.state === "leap") {
+    enemy.stateT += dt;
+    enemy.z += enemy.vz * dt;
+    enemy.vz -= 1500 * dt;
+    enemy.x += enemy.vx * dt;
+    if (!enemy.spawned && enemy.vz < 0 && enemy.z < 90) {
+      enemy.spawned = true;
+      melee(game, enemy, {
+        dmg: enemy.dmg + 2,
+        kb: 220,
+        lift: 80,
+        reach: enemy.reach + 10,
+        already: enemy.swingHits,
+        kind: "heavy",
+        hitstop: 0.05,
+      });
+    }
+    if (enemy.z <= 0) {
+      enemy.z = 0;
+      enemy.vz = 0;
+      enemy.state = "idle";
+      enemy.spawned = false;
+      enemy.attackCd = 0.65;
+      enemy.swingHits = new Set();
+    }
+    return;
+  }
+  if (enemy.state === "attack") {
+    enemy.stateT += dt;
+    enemy.vx = 0;
+    enemy.vy = 0;
+    if (!enemy.spawned && enemy.stateT >= 0.22) {
+      enemy.spawned = true;
+      melee(game, enemy, {
+        dmg: enemy.dmg,
+        kb: 160,
+        lift: 10,
+        reach: enemy.reach,
+        already: enemy.swingHits,
+        kind: "light",
+        hitstop: 0.04,
+      });
+    }
+    if (enemy.stateT >= 0.55) {
+      enemy.state = "idle";
+      enemy.spawned = false;
+      enemy.attackCd = 0.45;
+      enemy.swingHits = new Set();
+    }
+    return;
+  }
+  const dx = player.x - enemy.x;
+  const dy = Math.abs(player.y - enemy.y);
+  const dist = Math.abs(dx);
+  face(enemy, player);
+  enemy.laserCd = (enemy.laserCd ?? 1.6) - dt;
+  if (enemy.laserCd <= 0 && dist > 120 && dist < 540 && dy < 90) {
+    enemy.laserCd = 4.2;
+    enemy.state = "special";
+    enemy.stateT = 0;
+    enemy.spawned = false;
+    return;
+  }
+  if (enemy.attackCd <= 0 && dist > 80 && dist < 260 && dy < 40) {
+    enemy.state = "leap";
+    enemy.stateT = 0;
+    enemy.z = 0;
+    enemy.vz = 480;
+    enemy.vx = enemy.facing * 260;
+    enemy.spawned = false;
+    enemy.swingHits = new Set();
+    enemy.attackCd = 0.3;
+    return;
+  }
+  if (dist < enemy.reach + 8 && dy < 32 && enemy.attackCd <= 0) {
+    enemy.state = "attack";
+    enemy.stateT = 0;
+    enemy.spawned = false;
+    enemy.swingHits = new Set();
+    return;
+  }
+  enemy.state = "run";
+  enemy.vx = Math.abs(dx) > 8 ? Math.sign(dx) * enemy.speed : 0;
+  enemy.vy = dy > 12 ? Math.sign(player.y - enemy.y) * enemy.speed * 0.85 : 0;
+  enemy.x += enemy.vx * dt;
+  enemy.y = clampY(enemy.y + enemy.vy * dt);
+}
+
+function updateTrump(enemy, game, dt) {
+  const player = game.player;
+  if (enemy.state === "attack") {
+    enemy.stateT += dt;
+    enemy.vx = 0;
+    enemy.vy = 0;
+    if (!enemy.spawned && enemy.stateT >= 0.34) {
+      enemy.spawned = true;
+      melee(game, enemy, {
+        dmg: Math.max(6, enemy.dmg - 6),
+        kb: 80,
+        lift: 0,
+        reach: 48,
+        rx: 26,
+        already: enemy.swingHits,
+        kind: "light",
+        hitstop: 0.03,
+      });
+    }
+    if (enemy.stateT >= 0.72) {
+      enemy.state = "idle";
+      enemy.spawned = false;
+      enemy.attackCd = 0.9;
+      enemy.swingHits = new Set();
+    }
+    return;
+  }
+  if (enemy.state === "doze") {
+    enemy.stateT += dt;
+    enemy.vx = 0;
+    enemy.vy = 0;
+    if (enemy.stateT >= 1.05) enemy.state = "idle";
+    return;
+  }
+  const dx = player.x - enemy.x;
+  const dy = Math.abs(player.y - enemy.y);
+  face(enemy, player);
+  if (Math.abs(dx) < 72 && dy < 34 && enemy.attackCd <= 0) {
+    enemy.state = "attack";
+    enemy.stateT = 0;
+    enemy.spawned = false;
+    enemy.swingHits = new Set();
+    return;
+  }
+  enemy.dozeCd = (enemy.dozeCd ?? 2.2) - dt;
+  if (enemy.dozeCd <= 0 && Math.abs(dx) > 100) {
+    enemy.dozeCd = 3.4;
+    enemy.state = "doze";
+    enemy.stateT = 0;
+    return;
+  }
+  approach(enemy, player, dt, enemy.speed * 0.7);
+}
+
+function updateVance(enemy, game, dt) {
+  const player = game.player;
+  const dx = player.x - enemy.x;
+  const dy = player.y - enemy.y;
+  if (enemy.state === "grab") {
+    updateEnemyGrab(enemy, game, dt);
+    return;
+  }
+  if (enemy.state === "throw") {
+    enemy.stateT += dt;
+    if (enemy.stateT >= 0.35) {
+      enemy.state = "idle";
+      enemy.attackCd = 1.1;
+    }
+    return;
+  }
+  if (enemy.state === "attack") {
+    enemy.stateT += dt;
+    enemy.vx = 0;
+    enemy.vy = 0;
+    if (!enemy.spawned && enemy.stateT >= 0.28) {
+      enemy.spawned = true;
+      melee(game, enemy, {
+        dmg: enemy.dmg,
+        kb: 140,
+        lift: 30,
+        reach: enemy.reach,
+        already: enemy.swingHits,
+        kind: "light",
+        hitstop: 0.04,
+      });
+    }
+    if (enemy.stateT >= 0.7) {
+      enemy.state = "idle";
+      enemy.spawned = false;
+      enemy.attackCd = 0.7;
+      enemy.swingHits = new Set();
+    }
+    return;
+  }
+  if (enemy.state === "charge") {
+    enemy.stateT += dt;
+    enemy.z += enemy.vz * dt;
+    enemy.vz -= 1700 * dt;
+    if (enemy.z < 0) {
+      enemy.z = 0;
+      enemy.vz = 0;
+    }
+    enemy.vx = enemy.facing * 150;
+    enemy.x += enemy.vx * dt;
+    if (!enemy.spawned && enemy.stateT >= 0.16) {
+      enemy.spawned = true;
+      melee(game, enemy, {
+        dmg: enemy.dmg + 1,
+        kb: 180,
+        lift: 40,
+        reach: 64,
+        already: enemy.swingHits,
+        kind: "heavy",
+        hitstop: 0.04,
+      });
+    }
+    if (enemy.stateT >= 0.62) {
+      enemy.state = "idle";
+      enemy.z = 0;
+      enemy.vz = 0;
+      enemy.spawned = false;
+      enemy.attackCd = 1.15;
+      enemy.swingHits = new Set();
+    }
+    return;
+  }
+  face(enemy, player);
+  const dist = Math.abs(dx);
+  const ady = Math.abs(dy);
+  if (dist < 84 && ady < 30 && enemy.attackCd <= 0 && claim(game, enemy)) {
+    enemy.swingN = (enemy.swingN || 0) + 1;
+    if (enemy.swingN % 3 === 0 && tryEnemyGrab(enemy, game)) return;
+    enemy.state = "attack";
+    enemy.stateT = 0;
+    enemy.spawned = false;
+    enemy.swingHits = new Set();
+    return;
+  }
+  enemy.dashCd = (enemy.dashCd ?? 1.4) - dt;
+  if (enemy.dashCd <= 0 && dist > 110 && dist < 340 && ady < 40) {
+    enemy.dashCd = 2.6;
+    enemy.state = "charge";
+    enemy.stateT = 0;
+    enemy.z = 0;
+    enemy.vz = 240;
+    enemy.spawned = false;
+    enemy.swingHits = new Set();
+    return;
+  }
+  enemy.state = Math.abs(dx) > 10 || ady > 14 ? "run" : "idle";
+  enemy.vx = Math.abs(dx) > 10 ? Math.sign(dx) * enemy.speed * 0.85 : 0;
+  enemy.vy = ady > 14 ? Math.sign(dy) * enemy.speed * 0.55 : 0;
+  enemy.x += enemy.vx * dt;
+  enemy.y = clampY(enemy.y + enemy.vy * dt);
+}
+
+function updateCruz(enemy, game, dt) {
+  const player = game.player;
+  face(enemy, player);
+  if (enemy.fleeT > 0) {
+    enemy.fleeT -= dt;
+    enemy.state = "run";
+    enemy.vx = -enemy.facing * enemy.speed * 1.35;
+    enemy.vy = 0;
+    enemy.x += enemy.vx * dt;
+    if (enemy.fleeT <= 0) enemy.state = "idle";
+    return;
+  }
+  if (enemy.state === "attack") {
+    enemy.stateT += dt;
+    enemy.vx = 0;
+    if (!enemy.spawned && enemy.stateT >= 0.36) {
+      enemy.spawned = true;
+      melee(game, enemy, {
+        dmg: enemy.dmg,
+        kb: 140,
+        lift: 0,
+        reach: enemy.reach + 6,
+        low: true,
+        already: enemy.swingHits,
+        kind: "light",
+        hitstop: 0.04,
+      });
+    }
+    if (enemy.stateT >= 0.7) {
+      enemy.state = "idle";
+      enemy.spawned = false;
+      enemy.attackCd = 0.65;
+      enemy.swingHits = new Set();
+      release(game, enemy);
+    }
+    return;
+  }
+  if (enemy.state === "windup") {
+    enemy.stateT += dt;
+    enemy.vx = 0;
+    if (enemy.stateT >= 0.28) {
+      enemy.state = "charge";
+      enemy.stateT = 0;
+      enemy.swingHits = new Set();
+      face(enemy, player);
+    }
+    return;
+  }
+  if (enemy.state === "charge") {
+    enemy.stateT += dt;
+    enemy.vx = enemy.facing * 340;
+    enemy.x += enemy.vx * dt;
+    melee(game, enemy, {
+      dmg: enemy.dmg,
+      kb: 220,
+      lift: 20,
+      reach: enemy.reach,
+      low: true,
+      already: enemy.swingHits,
+      kind: "heavy",
+      hitstop: 0.05,
+    });
+    if (enemy.stateT >= 0.38) {
+      enemy.state = "idle";
+      enemy.attackCd = 1.15;
+      enemy.swingHits = new Set();
+    }
+    return;
+  }
+  const dx = player.x - enemy.x;
+  const dy = player.y - enemy.y;
+  const dist = Math.abs(dx);
+  enemy.fleeCd = (enemy.fleeCd ?? 1.8) - dt;
+  if (enemy.fleeCd <= 0 && dist < 220 && dist > 70 && Math.abs(dy) < 36) {
+    enemy.fleeCd = 3.6;
+    enemy.fleeT = 0.48;
+    enemy.state = "run";
+    return;
+  }
+  if (enemy.attackCd <= 0 && Math.abs(dy) < 30 && dist < enemy.reach && claim(game, enemy)) {
+    enemy.state = "attack";
+    enemy.stateT = 0;
+    enemy.spawned = false;
+    enemy.swingHits = new Set();
+    return;
+  }
+  if (enemy.attackCd <= 0 && Math.abs(dy) < 34 && dist < 400 && dist > 80) {
+    enemy.state = "windup";
+    enemy.stateT = 0;
+    return;
+  }
+  approach(enemy, player, dt, enemy.speed * 1.15);
+}
+
 function updateThrower(enemy, game, dt) {
   const player = game.player;
   const dx = player.x - enemy.x;
@@ -656,10 +1011,14 @@ export function updateEnemy(enemy, game, dt) {
     return;
   }
   checkPhase(enemy, game);
-  if (enemy.kind === "grunt" || enemy.kind === "greene") updateGrunt(enemy, game, dt);
-  else if (enemy.kind === "rusher" || enemy.kind === "cruz") updateRusher(enemy, game, dt);
+  if (enemy.kind === "greene") updateGreene(enemy, game, dt);
+  else if (enemy.kind === "grunt") updateGrunt(enemy, game, dt);
+  else if (enemy.kind === "cruz") updateCruz(enemy, game, dt);
+  else if (enemy.kind === "rusher") updateRusher(enemy, game, dt);
   else if (enemy.kind === "thrower") updateThrower(enemy, game, dt);
-  else if (enemy.kind === "crane" || enemy.kind === "trump") updateCrane(enemy, game, dt);
-  else if (enemy.kind === "mara" || enemy.kind === "vance") updateMara(enemy, game, dt);
+  else if (enemy.kind === "trump") updateTrump(enemy, game, dt);
+  else if (enemy.kind === "crane") updateCrane(enemy, game, dt);
+  else if (enemy.kind === "vance") updateVance(enemy, game, dt);
+  else if (enemy.kind === "mara") updateMara(enemy, game, dt);
   else if (enemy.kind === "signal") updateSignal(enemy, game, dt);
 }

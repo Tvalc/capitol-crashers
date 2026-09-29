@@ -1,1 +1,295 @@
-{"frames":{"donald_trump_walk_d_000.webp":{"frame":{"x":2,"y":2,"w":151,"h":256},"rotated":false,"trimmed":false,"spriteSourceSize":{"x":0,"y":0,"w":151,"h":256},"sourceSize":{"w":151,"h":256},"duration":83},"donald_trump_walk_d_001.webp":{"frame":{"x":157,"y":2,"w":151,"h":256},"rotated":false,"trimmed":false,"spriteSourceSize":{"x":0,"y":0,"w":151,"h":256},"sourceSize":{"w":151,"h":256},"duration":83},"donald_trump_walk_d_002.webp":{"frame":{"x":312,"y":2,"w":151,"h":256},"rotated":false,"trimmed":false,"spriteSourceSize":{"x":0,"y":0,"w":151,"h":256},"sourceSize":{"w":151,"h":256},"duration":83},"donald_trump_walk_d_003.webp":{"frame":{"x":467,"y":2,"w":151,"h":256},"rotated":false,"trimmed":false,"spriteSourceSize":{"x":0,"y":0,"w":151,"h":256},"sourceSize":{"w":151,"h":256},"duration":83},"donald_trump_walk_d_004.webp":{"frame":{"x":622,"y":2,"w":151,"h":256},"rotated":false,"trimmed":false,"spriteSourceSize":{"x":0,"y":0,"w":151,"h":256},"sourceSize":{"w":151,"h":256},"duration":83},"donald_trump_walk_d_005.webp":{"frame":{"x":777,"y":2,"w":151,"h":256},"rotated":false,"trimmed":false,"spriteSourceSize":{"x":0,"y":0,"w":151,"h":256},"sourceSize":{"w":151,"h":256},"duration":83},"donald_trump_walk_d_006.webp":{"frame":{"x":932,"y":2,"w":151,"h":256},"rotated":false,"trimmed":false,"spriteSourceSize":{"x":0,"y":0,"w":151,"h":256},"sourceSize":{"w":151,"h":256},"duration":83},"donald_trump_walk_d_007.webp":{"frame":{"x":1087,"y":2,"w":151,"h":256},"rotated":false,"trimmed":false,"spriteSourceSize":{"x":0,"y":0,"w":151,"h":256},"sourceSize":{"w":151,"h":256},"duration":83},"donald_trump_walk_d_008.webp":{"frame":{"x":1242,"y":2,"w":151,"h":256},"rotated":false,"trimmed":false,"spriteSourceSize":{"x":0,"y":0,"w":151,"h":256},"sourceSize":{"w":151,"h":256},"duration":83},"donald_trump_walk_d_009.webp":{"frame":{"x":1397,"y":2,"w":151,"h":256},"rotated":false,"trimmed":false,"spriteSourceSize":{"x":0,"y":0,"w":151,"h":256},"sourceSize":{"w":151,"h":256},"duration":83},"donald_trump_walk_d_010.webp":{"frame":{"x":1552,"y":2,"w":151,"h":256},"rotated":false,"trimmed":false,"spriteSourceSize":{"x":0,"y":0,"w":151,"h":256},"sourceSize":{"w":151,"h":256},"duration":83},"donald_trump_walk_d_011.webp":{"frame":{"x":1707,"y":2,"w":151,"h":256},"rotated":false,"trimmed":false,"spriteSourceSize":{"x":0,"y":0,"w":151,"h":256},"sourceSize":{"w":151,"h":256},"duration":83}},"meta":{"app":"MAKKO Sprite Studio","version":"1.0.0","image":"donald_trump_walk_d.webp","format":"RGBA8888","size":{"w":1860,"h":260},"scale":"1","frameTags":[{"name":"Donald Trump Walk","from":0,"to":11,"direction":"forward"}],"anchor":{"x":76,"y":254,"normalized":{"x":0.5033112582781457,"y":0.9921875},"strategy":"bottom-center"},"referenceAlignment":{"referenceBounds":{"width":82,"height":254},"frameBounds":{"width":151,"height":256},"normalized":true}}}
+{
+  "frames": {
+    "donald_trump_walk_000.webp": {
+      "frame": {
+        "x": 2,
+        "y": 2,
+        "w": 157,
+        "h": 256
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 157,
+        "h": 256
+      },
+      "sourceSize": {
+        "w": 157,
+        "h": 256
+      },
+      "duration": 83
+    },
+    "donald_trump_walk_001.webp": {
+      "frame": {
+        "x": 161,
+        "y": 2,
+        "w": 157,
+        "h": 256
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 157,
+        "h": 256
+      },
+      "sourceSize": {
+        "w": 157,
+        "h": 256
+      },
+      "duration": 83
+    },
+    "donald_trump_walk_002.webp": {
+      "frame": {
+        "x": 320,
+        "y": 2,
+        "w": 157,
+        "h": 256
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 157,
+        "h": 256
+      },
+      "sourceSize": {
+        "w": 157,
+        "h": 256
+      },
+      "duration": 83
+    },
+    "donald_trump_walk_003.webp": {
+      "frame": {
+        "x": 479,
+        "y": 2,
+        "w": 157,
+        "h": 256
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 157,
+        "h": 256
+      },
+      "sourceSize": {
+        "w": 157,
+        "h": 256
+      },
+      "duration": 83
+    },
+    "donald_trump_walk_004.webp": {
+      "frame": {
+        "x": 638,
+        "y": 2,
+        "w": 157,
+        "h": 256
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 157,
+        "h": 256
+      },
+      "sourceSize": {
+        "w": 157,
+        "h": 256
+      },
+      "duration": 83
+    },
+    "donald_trump_walk_005.webp": {
+      "frame": {
+        "x": 797,
+        "y": 2,
+        "w": 157,
+        "h": 256
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 157,
+        "h": 256
+      },
+      "sourceSize": {
+        "w": 157,
+        "h": 256
+      },
+      "duration": 83
+    },
+    "donald_trump_walk_006.webp": {
+      "frame": {
+        "x": 956,
+        "y": 2,
+        "w": 157,
+        "h": 256
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 157,
+        "h": 256
+      },
+      "sourceSize": {
+        "w": 157,
+        "h": 256
+      },
+      "duration": 83
+    },
+    "donald_trump_walk_007.webp": {
+      "frame": {
+        "x": 1115,
+        "y": 2,
+        "w": 157,
+        "h": 256
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 157,
+        "h": 256
+      },
+      "sourceSize": {
+        "w": 157,
+        "h": 256
+      },
+      "duration": 83
+    },
+    "donald_trump_walk_008.webp": {
+      "frame": {
+        "x": 1274,
+        "y": 2,
+        "w": 157,
+        "h": 256
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 157,
+        "h": 256
+      },
+      "sourceSize": {
+        "w": 157,
+        "h": 256
+      },
+      "duration": 83
+    },
+    "donald_trump_walk_009.webp": {
+      "frame": {
+        "x": 1433,
+        "y": 2,
+        "w": 157,
+        "h": 256
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 157,
+        "h": 256
+      },
+      "sourceSize": {
+        "w": 157,
+        "h": 256
+      },
+      "duration": 83
+    },
+    "donald_trump_walk_010.webp": {
+      "frame": {
+        "x": 1592,
+        "y": 2,
+        "w": 157,
+        "h": 256
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 157,
+        "h": 256
+      },
+      "sourceSize": {
+        "w": 157,
+        "h": 256
+      },
+      "duration": 83
+    },
+    "donald_trump_walk_011.webp": {
+      "frame": {
+        "x": 1751,
+        "y": 2,
+        "w": 157,
+        "h": 256
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 157,
+        "h": 256
+      },
+      "sourceSize": {
+        "w": 157,
+        "h": 256
+      },
+      "duration": 83
+    }
+  },
+  "meta": {
+    "app": "MAKKO Sprite Studio",
+    "version": "1.0.0",
+    "image": "donald_trump_walk.webp",
+    "format": "RGBA8888",
+    "size": {
+      "w": 1910,
+      "h": 260
+    },
+    "scale": "1",
+    "frameTags": [
+      {
+        "name": "Donald Trump Walk",
+        "from": 0,
+        "to": 11,
+        "direction": "forward"
+      }
+    ],
+    "anchor": {
+      "x": 78.5,
+      "y": 258,
+      "normalized": {
+        "x": 0.5,
+        "y": 1
+      },
+      "strategy": "bottom-center"
+    },
+    "referenceAlignment": {
+      "referenceBounds": {
+        "width": 82,
+        "height": 254
+      },
+      "frameBounds": {
+        "width": 151,
+        "height": 256
+      },
+      "normalized": true
+    }
+  }
+}

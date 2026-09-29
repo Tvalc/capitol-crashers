@@ -1,7 +1,7 @@
 import { play } from "./audio.js";
 import { FIGHTERS } from "./fighters.js?v=art";
 import { integrate, melee, spendSpecial, updateBody } from "./combat.js?v=fight2";
-import { finishWeapon, launchHeld, noteWeaponSwing, spawnBolt } from "./weapons.js?v=fight2";
+import { finishWeapon, launchHeld, noteWeaponSwing, spawnBolt } from "./weapons.js?v=swagger";
 
 const LIGHTS = [
   { startup: 0.2, active: 0.12, dmg: 7, kb: 180, lift: 0 },

@@ -1,1 +1,295 @@
-{"frames":{"donald_trump_attack_000.webp":{"frame":{"x":2,"y":2,"w":189,"h":256},"rotated":false,"trimmed":false,"spriteSourceSize":{"x":0,"y":0,"w":189,"h":256},"sourceSize":{"w":189,"h":256},"duration":83},"donald_trump_attack_001.webp":{"frame":{"x":195,"y":2,"w":189,"h":256},"rotated":false,"trimmed":false,"spriteSourceSize":{"x":0,"y":0,"w":189,"h":256},"sourceSize":{"w":189,"h":256},"duration":83},"donald_trump_attack_002.webp":{"frame":{"x":388,"y":2,"w":189,"h":256},"rotated":false,"trimmed":false,"spriteSourceSize":{"x":0,"y":0,"w":189,"h":256},"sourceSize":{"w":189,"h":256},"duration":83},"donald_trump_attack_003.webp":{"frame":{"x":581,"y":2,"w":189,"h":256},"rotated":false,"trimmed":false,"spriteSourceSize":{"x":0,"y":0,"w":189,"h":256},"sourceSize":{"w":189,"h":256},"duration":83},"donald_trump_attack_004.webp":{"frame":{"x":774,"y":2,"w":189,"h":256},"rotated":false,"trimmed":false,"spriteSourceSize":{"x":0,"y":0,"w":189,"h":256},"sourceSize":{"w":189,"h":256},"duration":83},"donald_trump_attack_005.webp":{"frame":{"x":967,"y":2,"w":189,"h":256},"rotated":false,"trimmed":false,"spriteSourceSize":{"x":0,"y":0,"w":189,"h":256},"sourceSize":{"w":189,"h":256},"duration":83},"donald_trump_attack_006.webp":{"frame":{"x":1160,"y":2,"w":189,"h":256},"rotated":false,"trimmed":false,"spriteSourceSize":{"x":0,"y":0,"w":189,"h":256},"sourceSize":{"w":189,"h":256},"duration":83},"donald_trump_attack_007.webp":{"frame":{"x":1353,"y":2,"w":189,"h":256},"rotated":false,"trimmed":false,"spriteSourceSize":{"x":0,"y":0,"w":189,"h":256},"sourceSize":{"w":189,"h":256},"duration":83},"donald_trump_attack_008.webp":{"frame":{"x":1546,"y":2,"w":189,"h":256},"rotated":false,"trimmed":false,"spriteSourceSize":{"x":0,"y":0,"w":189,"h":256},"sourceSize":{"w":189,"h":256},"duration":83},"donald_trump_attack_009.webp":{"frame":{"x":1739,"y":2,"w":189,"h":256},"rotated":false,"trimmed":false,"spriteSourceSize":{"x":0,"y":0,"w":189,"h":256},"sourceSize":{"w":189,"h":256},"duration":83},"donald_trump_attack_010.webp":{"frame":{"x":1932,"y":2,"w":189,"h":256},"rotated":false,"trimmed":false,"spriteSourceSize":{"x":0,"y":0,"w":189,"h":256},"sourceSize":{"w":189,"h":256},"duration":83},"donald_trump_attack_011.webp":{"frame":{"x":2125,"y":2,"w":189,"h":256},"rotated":false,"trimmed":false,"spriteSourceSize":{"x":0,"y":0,"w":189,"h":256},"sourceSize":{"w":189,"h":256},"duration":83}},"meta":{"app":"MAKKO Sprite Studio","version":"1.0.0","image":"donald_trump_attack.webp","format":"RGBA8888","size":{"w":2316,"h":260},"scale":"1","frameTags":[{"name":"Donald Trump Attack","from":0,"to":11,"direction":"forward"}],"anchor":{"x":95,"y":255,"normalized":{"x":0.5026455026455027,"y":0.99609375},"strategy":"bottom-center"},"referenceAlignment":{"referenceBounds":{"width":174,"height":248},"frameBounds":{"width":189,"height":256},"normalized":true}}}
+{
+  "frames": {
+    "donald_trump_attack_000.webp": {
+      "frame": {
+        "x": 2,
+        "y": 2,
+        "w": 243,
+        "h": 256
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 243,
+        "h": 256
+      },
+      "sourceSize": {
+        "w": 243,
+        "h": 256
+      },
+      "duration": 83
+    },
+    "donald_trump_attack_001.webp": {
+      "frame": {
+        "x": 247,
+        "y": 2,
+        "w": 243,
+        "h": 256
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 243,
+        "h": 256
+      },
+      "sourceSize": {
+        "w": 243,
+        "h": 256
+      },
+      "duration": 83
+    },
+    "donald_trump_attack_002.webp": {
+      "frame": {
+        "x": 492,
+        "y": 2,
+        "w": 243,
+        "h": 256
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 243,
+        "h": 256
+      },
+      "sourceSize": {
+        "w": 243,
+        "h": 256
+      },
+      "duration": 83
+    },
+    "donald_trump_attack_003.webp": {
+      "frame": {
+        "x": 737,
+        "y": 2,
+        "w": 243,
+        "h": 256
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 243,
+        "h": 256
+      },
+      "sourceSize": {
+        "w": 243,
+        "h": 256
+      },
+      "duration": 83
+    },
+    "donald_trump_attack_004.webp": {
+      "frame": {
+        "x": 982,
+        "y": 2,
+        "w": 243,
+        "h": 256
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 243,
+        "h": 256
+      },
+      "sourceSize": {
+        "w": 243,
+        "h": 256
+      },
+      "duration": 83
+    },
+    "donald_trump_attack_005.webp": {
+      "frame": {
+        "x": 1227,
+        "y": 2,
+        "w": 243,
+        "h": 256
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 243,
+        "h": 256
+      },
+      "sourceSize": {
+        "w": 243,
+        "h": 256
+      },
+      "duration": 83
+    },
+    "donald_trump_attack_006.webp": {
+      "frame": {
+        "x": 1472,
+        "y": 2,
+        "w": 243,
+        "h": 256
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 243,
+        "h": 256
+      },
+      "sourceSize": {
+        "w": 243,
+        "h": 256
+      },
+      "duration": 83
+    },
+    "donald_trump_attack_007.webp": {
+      "frame": {
+        "x": 1717,
+        "y": 2,
+        "w": 243,
+        "h": 256
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 243,
+        "h": 256
+      },
+      "sourceSize": {
+        "w": 243,
+        "h": 256
+      },
+      "duration": 83
+    },
+    "donald_trump_attack_008.webp": {
+      "frame": {
+        "x": 1962,
+        "y": 2,
+        "w": 243,
+        "h": 256
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 243,
+        "h": 256
+      },
+      "sourceSize": {
+        "w": 243,
+        "h": 256
+      },
+      "duration": 83
+    },
+    "donald_trump_attack_009.webp": {
+      "frame": {
+        "x": 2207,
+        "y": 2,
+        "w": 243,
+        "h": 256
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 243,
+        "h": 256
+      },
+      "sourceSize": {
+        "w": 243,
+        "h": 256
+      },
+      "duration": 83
+    },
+    "donald_trump_attack_010.webp": {
+      "frame": {
+        "x": 2452,
+        "y": 2,
+        "w": 243,
+        "h": 256
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 243,
+        "h": 256
+      },
+      "sourceSize": {
+        "w": 243,
+        "h": 256
+      },
+      "duration": 83
+    },
+    "donald_trump_attack_011.webp": {
+      "frame": {
+        "x": 2697,
+        "y": 2,
+        "w": 243,
+        "h": 256
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 243,
+        "h": 256
+      },
+      "sourceSize": {
+        "w": 243,
+        "h": 256
+      },
+      "duration": 83
+    }
+  },
+  "meta": {
+    "app": "MAKKO Sprite Studio",
+    "version": "1.0.0",
+    "image": "donald_trump_attack.webp",
+    "format": "RGBA8888",
+    "size": {
+      "w": 2942,
+      "h": 260
+    },
+    "scale": "1",
+    "frameTags": [
+      {
+        "name": "Donald Trump Attack",
+        "from": 0,
+        "to": 11,
+        "direction": "forward"
+      }
+    ],
+    "anchor": {
+      "x": 121.5,
+      "y": 258,
+      "normalized": {
+        "x": 0.5,
+        "y": 1
+      },
+      "strategy": "bottom-center"
+    },
+    "referenceAlignment": {
+      "referenceBounds": {
+        "width": 174,
+        "height": 248
+      },
+      "frameBounds": {
+        "width": 189,
+        "height": 256
+      },
+      "normalized": true
+    }
+  }
+}

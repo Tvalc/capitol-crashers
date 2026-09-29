@@ -33,6 +33,27 @@ export function spawnBolt(game, owner) {
   });
 }
 
+export function spawnLaser(game, x, y, dmg) {
+  game.projectiles.push({
+    kind: "laser",
+    x,
+    y,
+    z: 0,
+    vx: 0,
+    vy: 0,
+    vz: 0,
+    team: "enemy",
+    dmg,
+    kb: 260,
+    life: 0.7,
+    age: 0,
+    warn: 0.32,
+    alive: true,
+    spin: 0,
+    hit: false,
+  });
+}
+
 export function spawnShot(game, owner, spec) {
   const facing = owner.facing || 1;
   game.projectiles.push({
@@ -75,6 +96,32 @@ export function updatePickups(game) {
 export function updateProjectiles(game, dt) {
   for (const shot of game.projectiles) {
     if (!shot.alive) continue;
+    if (shot.kind === "laser") {
+      shot.age += dt;
+      shot.life -= dt;
+      if (!shot.hit && shot.age >= shot.warn) {
+        shot.hit = true;
+        const target = game.player;
+        if (target?.alive && Math.abs(shot.x - target.x) < 42 && Math.abs(shot.y - target.y) < 32) {
+          applyHit(game, {
+            x: shot.x,
+            y: shot.y,
+            dmg: shot.dmg,
+            kb: shot.kb,
+            lift: 40,
+            knockdown: false,
+            facing: Math.sign(target.x - shot.x) || 1,
+            team: "enemy",
+            kind: "throw",
+            points: 0,
+            hitstop: 0.06,
+            shake: 7,
+          }, target);
+        }
+      }
+      if (shot.life <= 0) shot.alive = false;
+      continue;
+    }
     shot.life -= dt;
     shot.x += shot.vx * dt;
     shot.y += shot.vy * dt;

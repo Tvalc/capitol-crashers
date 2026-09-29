@@ -3,7 +3,7 @@ const CLIPS = {
   abdul: ["idle", "walk", "run", "jump", "attack", "hit", "death", "cast", "grab", "throw", "lunge"],
   trump: ["idle", "walk", "run", "attack", "hit", "death", "cast"],
   vance: ["idle", "walk", "run", "attack", "hit", "death", "cast", "grab"],
-  greene: ["idle", "run", "attack", "hit", "death"],
+  greene: ["idle", "run", "attack", "hit", "death", "jump", "cast"],
   cruz: ["idle", "walk", "run", "attack", "hit", "death"],
 };
 
@@ -20,7 +20,7 @@ const FALLBACK = {
   idle: ["idle", "walk", "run"],
   walk: ["walk", "idle"],
   run: ["run", "walk", "idle"],
-  jump: ["jump", "idle"],
+  jump: ["jump", "run", "idle"],
   attack: ["attack", "idle"],
   hit: ["hit", "idle"],
   death: ["death", "hit", "idle"],
@@ -57,11 +57,11 @@ export function loadSprites() {
 
 function loadOne(sprite, clip, name) {
   const image = new Image();
-  const dataPromise = fetch(`assets/sprites/${name}.json?v=moves`).then((res) => res.json());
+  const dataPromise = fetch(`assets/sprites/${name}.json?v=swagger`).then((res) => res.json());
   const imagePromise = new Promise((resolve, reject) => {
     image.onload = () => resolve(image);
     image.onerror = reject;
-    image.src = `assets/sprites/${name}.webp?v=moves`;
+    image.src = `assets/sprites/${name}.webp?v=swagger`;
   });
   return Promise.all([dataPromise, imagePromise]).then(([data, img]) => {
     const frames = Object.values(data.frames).sort((a, b) => a.frame.x - b.frame.x);
@@ -81,7 +81,8 @@ export function actorSprite(ent) {
 export function clipFor(state) {
   if (state === "walk") return "walk";
   if (state === "dash" || state === "charge") return "run";
-  if (state === "jump" || state === "jatk") return "jump";
+  if (state === "jump" || state === "jatk" || state === "leap") return "jump";
+  if (state === "doze") return "walk";
   if (state === "backstep") return "backstep";
   if (state === "lunge") return "lunge";
   if (state === "reversal") return "reversal";
@@ -134,19 +135,21 @@ function attackWindow(ent) {
     if (ent.combo === 1) return { startup: 0.18, active: 0.12, total: 0.3 + link };
     return { startup: 0.2, active: 0.12, total: 0.32 + link };
   }
-  if (ent.kind === "trump") {
-    if (ent.swingHigh) return { startup: 0.62, active: 0.12, total: 1.05 };
-    const late = ent.phase2 ? 0.28 : 0.46;
-    return { startup: late, active: 0.1, total: ent.phase2 ? 0.62 : 0.86 };
+  if (ent.kind === "trump") return { startup: 0.34, active: 0.12, total: 0.72 };
+  if (ent.kind === "greene") {
+    if (ent.state === "special") return { startup: 0.46, active: 0.2, total: 1.15 };
+    return { startup: 0.22, active: 0.12, total: 0.55 };
   }
-  if (ent.kind === "greene") return { startup: 0.4, active: 0.12, total: 0.72 };
   if (ent.kind === "cruz" && ent.state === "windup") return { startup: 0.28, active: 0.04, total: 0.32 };
-  if (ent.kind === "vance") return { startup: 0.08, active: 0.16, total: 0.32 };
+  if (ent.kind === "cruz" && ent.state === "attack") return { startup: 0.36, active: 0.12, total: 0.7 };
+  if (ent.kind === "vance") return { startup: 0.28, active: 0.14, total: 0.7 };
   return { startup: 0.18, active: 0.08, total: 0.48 };
 }
 
 function contactAt(ent, count) {
   let frac = 0.42;
+  if (ent.kind === "trump" && ent.state === "attack") frac = 0.72;
+  if (ent.kind === "cruz" && ent.state === "attack") frac = 0.78;
   if (ent.state === "dashatk" || ent.state === "lunge") frac = 0.55;
   else if (ent.state === "heavy") frac = 0.62;
   else if (ent.state === "reversal") frac = 0.8;
@@ -187,10 +190,10 @@ function poseIndex(ent, count, clip) {
 const STEP = {
   zohran: { walk: 0.12, run: 0.055 },
   abdul: { walk: 0.14, run: 0.06 },
-  trump: { walk: 0.095, run: 0.062 },
-  vance: { walk: 0.11, run: 0.068 },
-  cruz: { walk: 0.088, run: 0.06 },
-  greene: { walk: 0.09, run: 0.07 },
+  trump: { walk: 0.18, run: 0.14 },
+  vance: { walk: 0.16, run: 0.1 },
+  cruz: { walk: 0.055, run: 0.04 },
+  greene: { walk: 0.05, run: 0.045 },
 };
 
 function gaitIndex(ent, count, clip) {

@@ -1,10 +1,10 @@
 {
   "frames": {
-    "jd_vance_attack_000.webp": {
+    "marjorie_taylor_greene_jump_000.webp": {
       "frame": {
         "x": 2,
         "y": 2,
-        "w": 204,
+        "w": 299,
         "h": 256
       },
       "rotated": false,
@@ -12,20 +12,20 @@
       "spriteSourceSize": {
         "x": 0,
         "y": 0,
-        "w": 204,
+        "w": 299,
         "h": 256
       },
       "sourceSize": {
-        "w": 204,
+        "w": 299,
         "h": 256
       },
       "duration": 83
     },
-    "jd_vance_attack_001.webp": {
+    "marjorie_taylor_greene_jump_001.webp": {
       "frame": {
-        "x": 208,
+        "x": 303,
         "y": 2,
-        "w": 204,
+        "w": 299,
         "h": 256
       },
       "rotated": false,
@@ -33,20 +33,20 @@
       "spriteSourceSize": {
         "x": 0,
         "y": 0,
-        "w": 204,
+        "w": 299,
         "h": 256
       },
       "sourceSize": {
-        "w": 204,
+        "w": 299,
         "h": 256
       },
       "duration": 83
     },
-    "jd_vance_attack_002.webp": {
+    "marjorie_taylor_greene_jump_002.webp": {
       "frame": {
-        "x": 414,
+        "x": 604,
         "y": 2,
-        "w": 204,
+        "w": 299,
         "h": 256
       },
       "rotated": false,
@@ -54,20 +54,20 @@
       "spriteSourceSize": {
         "x": 0,
         "y": 0,
-        "w": 204,
+        "w": 299,
         "h": 256
       },
       "sourceSize": {
-        "w": 204,
+        "w": 299,
         "h": 256
       },
       "duration": 83
     },
-    "jd_vance_attack_003.webp": {
+    "marjorie_taylor_greene_jump_003.webp": {
       "frame": {
-        "x": 620,
+        "x": 905,
         "y": 2,
-        "w": 204,
+        "w": 299,
         "h": 256
       },
       "rotated": false,
@@ -75,20 +75,20 @@
       "spriteSourceSize": {
         "x": 0,
         "y": 0,
-        "w": 204,
+        "w": 299,
         "h": 256
       },
       "sourceSize": {
-        "w": 204,
+        "w": 299,
         "h": 256
       },
       "duration": 83
     },
-    "jd_vance_attack_004.webp": {
+    "marjorie_taylor_greene_jump_004.webp": {
       "frame": {
-        "x": 826,
+        "x": 1206,
         "y": 2,
-        "w": 204,
+        "w": 299,
         "h": 256
       },
       "rotated": false,
@@ -96,20 +96,20 @@
       "spriteSourceSize": {
         "x": 0,
         "y": 0,
-        "w": 204,
+        "w": 299,
         "h": 256
       },
       "sourceSize": {
-        "w": 204,
+        "w": 299,
         "h": 256
       },
       "duration": 83
     },
-    "jd_vance_attack_005.webp": {
+    "marjorie_taylor_greene_jump_005.webp": {
       "frame": {
-        "x": 1032,
+        "x": 1507,
         "y": 2,
-        "w": 204,
+        "w": 299,
         "h": 256
       },
       "rotated": false,
@@ -117,20 +117,20 @@
       "spriteSourceSize": {
         "x": 0,
         "y": 0,
-        "w": 204,
+        "w": 299,
         "h": 256
       },
       "sourceSize": {
-        "w": 204,
+        "w": 299,
         "h": 256
       },
       "duration": 83
     },
-    "jd_vance_attack_006.webp": {
+    "marjorie_taylor_greene_jump_006.webp": {
       "frame": {
-        "x": 1238,
+        "x": 1808,
         "y": 2,
-        "w": 204,
+        "w": 299,
         "h": 256
       },
       "rotated": false,
@@ -138,20 +138,20 @@
       "spriteSourceSize": {
         "x": 0,
         "y": 0,
-        "w": 204,
+        "w": 299,
         "h": 256
       },
       "sourceSize": {
-        "w": 204,
+        "w": 299,
         "h": 256
       },
       "duration": 83
     },
-    "jd_vance_attack_007.webp": {
+    "marjorie_taylor_greene_jump_007.webp": {
       "frame": {
-        "x": 1444,
+        "x": 2109,
         "y": 2,
-        "w": 204,
+        "w": 299,
         "h": 256
       },
       "rotated": false,
@@ -159,20 +159,20 @@
       "spriteSourceSize": {
         "x": 0,
         "y": 0,
-        "w": 204,
+        "w": 299,
         "h": 256
       },
       "sourceSize": {
-        "w": 204,
+        "w": 299,
         "h": 256
       },
       "duration": 83
     },
-    "jd_vance_attack_008.webp": {
+    "marjorie_taylor_greene_jump_008.webp": {
       "frame": {
-        "x": 1650,
+        "x": 2410,
         "y": 2,
-        "w": 204,
+        "w": 299,
         "h": 256
       },
       "rotated": false,
@@ -180,20 +180,20 @@
       "spriteSourceSize": {
         "x": 0,
         "y": 0,
-        "w": 204,
+        "w": 299,
         "h": 256
       },
       "sourceSize": {
-        "w": 204,
+        "w": 299,
         "h": 256
       },
       "duration": 83
     },
-    "jd_vance_attack_009.webp": {
+    "marjorie_taylor_greene_jump_009.webp": {
       "frame": {
-        "x": 1856,
+        "x": 2711,
         "y": 2,
-        "w": 204,
+        "w": 299,
         "h": 256
       },
       "rotated": false,
@@ -201,20 +201,20 @@
       "spriteSourceSize": {
         "x": 0,
         "y": 0,
-        "w": 204,
+        "w": 299,
         "h": 256
       },
       "sourceSize": {
-        "w": 204,
+        "w": 299,
         "h": 256
       },
       "duration": 83
     },
-    "jd_vance_attack_010.webp": {
+    "marjorie_taylor_greene_jump_010.webp": {
       "frame": {
-        "x": 2062,
+        "x": 3012,
         "y": 2,
-        "w": 204,
+        "w": 299,
         "h": 256
       },
       "rotated": false,
@@ -222,20 +222,20 @@
       "spriteSourceSize": {
         "x": 0,
         "y": 0,
-        "w": 204,
+        "w": 299,
         "h": 256
       },
       "sourceSize": {
-        "w": 204,
+        "w": 299,
         "h": 256
       },
       "duration": 83
     },
-    "jd_vance_attack_011.webp": {
+    "marjorie_taylor_greene_jump_011.webp": {
       "frame": {
-        "x": 2268,
+        "x": 3313,
         "y": 2,
-        "w": 204,
+        "w": 299,
         "h": 256
       },
       "rotated": false,
@@ -243,53 +243,34 @@
       "spriteSourceSize": {
         "x": 0,
         "y": 0,
-        "w": 204,
+        "w": 299,
         "h": 256
       },
       "sourceSize": {
-        "w": 204,
+        "w": 299,
         "h": 256
       },
       "duration": 83
     }
   },
   "meta": {
-    "app": "MAKKO Sprite Studio",
-    "version": "1.0.0",
-    "image": "jd_vance_attack.webp",
+    "app": "bake",
+    "version": "1",
     "format": "RGBA8888",
+    "scale": "1",
+    "image": "marjorie_taylor_greene_jump.webp",
     "size": {
-      "w": 2474,
+      "w": 3614,
       "h": 260
     },
-    "scale": "1",
-    "frameTags": [
-      {
-        "name": "JD Vance Attack",
-        "from": 0,
-        "to": 11,
-        "direction": "forward"
-      }
-    ],
     "anchor": {
-      "x": 102.0,
+      "x": 149.5,
       "y": 258,
       "normalized": {
         "x": 0.5,
         "y": 1
       },
       "strategy": "bottom-center"
-    },
-    "referenceAlignment": {
-      "referenceBounds": {
-        "width": 182,
-        "height": 248
-      },
-      "frameBounds": {
-        "width": 190,
-        "height": 256
-      },
-      "normalized": true
     }
   }
 }
