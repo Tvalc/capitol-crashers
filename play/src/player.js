@@ -458,6 +458,19 @@ function moveSpec(player) {
   return MOVES[player.state];
 }
 
+// Rendering reads the same timings that gameplay uses for damage and recovery.
+export function playerMoveWindow(player) {
+  if (player.state === "throw") return { startup: 0.16, active: 0.04, total: 0.42 };
+  if (player.state === "light") {
+    const table = player.kind === "sayed" ? KICKS : LIGHTS;
+    const step = table[player.combo] || table[0];
+    return { startup: step.startup, active: step.active, total: step.startup + step.active + player.fighter.comboWindow };
+  }
+  const spec = moveSpec(player);
+  if (!spec) return null;
+  return { startup: spec.startup, active: spec.active, total: spec.startup + spec.active + spec.recover };
+}
+
 function updateTimed(player, game, dt) {
   const spec = moveSpec(player);
   player.stateT += dt;
@@ -544,10 +557,8 @@ function updateGrab(player, game, input, dt) {
     player.bufferLight = 0;
     player.bufferHeavy = 0;
     player.grabCd = 0.55;
-    enemy.state = "idle";
-    enemy.alive = true;
-    applyThrow(game, player, enemy, dir);
-    player.grabId = null;
+    player.throwDir = dir;
+    player.spawned = false;
     player.state = "throw";
     player.stateT = 0;
   }
@@ -606,6 +617,12 @@ function respawn(game) {
 }
 
 export function updatePlayer(player, game, input, dt) {
+  // A hit or death can interrupt a grapple. Never strand its target in grabbed.
+  if (player.grabId && player.state !== "grab" && player.state !== "throw") {
+    const held = game.enemies.find(ent => ent.id === player.grabId);
+    if (held?.state === "grabbed") { held.state = "idle"; held.stateT = 0; }
+    player.grabId = null;
+  }
   player.anim += dt;
   if (player.grabCd > 0) player.grabCd = Math.max(0, player.grabCd - dt);
   buffer(player, input, dt);
@@ -647,7 +664,18 @@ export function updatePlayer(player, game, input, dt) {
   }
   if (player.state === "throw") {
     player.stateT += dt;
-    if (player.stateT >= 0.22) endMove(player);
+    const timing = playerMoveWindow(player);
+    const held = game.enemies.find(ent => ent.id === player.grabId);
+    if (held?.alive && !player.spawned) {
+      held.x = player.x + player.facing * 52;
+      held.y = player.y;
+      if (player.stateT >= timing.startup) {
+        player.spawned = true;
+        applyThrow(game, player, held, player.throwDir || player.facing);
+        player.grabId = null;
+      }
+    }
+    if (player.stateT >= timing.total) { player.grabId = null; endMove(player); }
     return;
   }
   if (player.state === "jump" || player.state === "jatk") {

@@ -1,3 +1,5 @@
+import { playerMoveWindow } from "./player.js?v=swagger";
+
 const CLIPS = {
   zohran: ["idle", "walk", "run", "jump", "attack", "hit", "death", "cast", "grab", "throw", "lunge", "reversal"],
   abdul: ["idle", "walk", "run", "jump", "attack", "hit", "death", "cast", "grab", "throw", "lunge"],
@@ -48,29 +50,59 @@ export function loadSprites() {
       jobs.push(loadOne(sprite, clip, name));
     }
   }
-  return Promise.all(jobs).then(() => {
+  return Promise.allSettled(jobs).then((results) => {
     if (sheets.has("greene:run") && !sheets.has("greene:walk")) {
       sheets.set("greene:walk", sheets.get("greene:run"));
     }
+    const failures = results.filter(result => result.status === "rejected");
+    if (failures.length) throw new Error(`${failures.length} animation sheets failed to load.`);
   });
+}
+
+// Arrays carry explicit playback order. Named atlas frames carry sequence numbers;
+// geometry alone cannot recover playback order from a packed multi-row atlas.
+export function readFrames(data, width, height) {
+  let frames;
+  if (Array.isArray(data.frames)) frames = [...data.frames];
+  else {
+    const entries = Object.entries(data.frames || {});
+    const numbered = entries.every(([name]) => /\d+(?:\.[^.]+)?$/.test(name));
+    entries.sort(numbered
+      ? ([a], [b]) => a.localeCompare(b, "en", { numeric: true })
+      : ([, a], [, b]) => a.frame.y - b.frame.y || a.frame.x - b.frame.x);
+    frames = entries.map(([, frame]) => frame);
+  }
+  if (!frames.length) throw new Error("Animation has no frames.");
+  for (const item of frames) {
+    const cell = item.frame;
+    if (!cell || ![cell.x, cell.y, cell.w, cell.h].every(Number.isFinite) ||
+        cell.x < 0 || cell.y < 0 || cell.w <= 0 || cell.h <= 0 ||
+        cell.x + cell.w > width || cell.y + cell.h > height || item.rotated) {
+      throw new Error("Animation contains an invalid or rotated frame.");
+    }
+  }
+  return frames;
 }
 
 function loadOne(sprite, clip, name) {
   const image = new Image();
-  const dataPromise = fetch(`assets/sprites/${name}.json?v=swagger`).then((res) => res.json());
+  const dataPromise = fetch(`assets/sprites/${name}.json?v=swagger`).then((res) => {
+    if (!res.ok) throw new Error(`Could not load ${name}: ${res.status}`);
+    return res.json();
+  });
   const imagePromise = new Promise((resolve, reject) => {
     image.onload = () => resolve(image);
     image.onerror = reject;
     image.src = `assets/sprites/${name}.webp?v=swagger`;
   });
   return Promise.all([dataPromise, imagePromise]).then(([data, img]) => {
-    const frames = Object.values(data.frames).sort((a, b) => a.frame.x - b.frame.x);
+    const frames = readFrames(data, img.naturalWidth, img.naturalHeight);
     sheets.set(clipKey(sprite, clip), {
       image: img,
       frames,
-      anchor: data.meta?.anchor || { x: frames[0].sourceSize.w / 2, y: frames[0].sourceSize.h },
+      anchor: data.meta?.anchor || { x: (frames[0].sourceSize?.w || frames[0].frame.w) / 2, y: frames[0].sourceSize?.h || frames[0].frame.h },
     });
-  }).catch(() => {});
+  });
 }
 
 export function actorSprite(ent) {
@@ -80,7 +112,7 @@ export function actorSprite(ent) {
 
 export function clipFor(state) {
   if (state === "walk") return "walk";
-  if (state === "dash" || state === "charge") return "run";
+  if (state === "run" || state === "dash" || state === "charge") return "run";
   if (state === "jump" || state === "jatk" || state === "leap") return "jump";
   if (state === "doze") return "walk";
   if (state === "backstep") return "backstep";
@@ -110,30 +142,11 @@ function resolveSheet(sprite, clip) {
 }
 
 function attackWindow(ent) {
-  if (ent.team === "player" && (ent.kind === "abdul" || ent.kind === "sayed")) {
-    const link = ent.fighter?.comboWindow || 0.2;
-    if (ent.state === "special") return { startup: 0.1, active: 0.08, total: 0.58 };
-    if (ent.state === "lunge") return { startup: 0.06, active: 0.07, total: 0.31 };
-    if (ent.state === "reversal") return { startup: 0.05, active: 0.07, total: 0.32 };
-    if (ent.state === "heavy") return { startup: 0.1, active: 0.08, total: 0.36 };
-    if (ent.state === "dashatk") return { startup: 0.07, active: 0.07, total: 0.3 };
-    if (ent.state === "jatk") return { startup: 0.08, active: 0.07, total: 0.28 };
-    if (ent.combo === 2) return { startup: 0.1, active: 0.08, total: 0.18 + link };
-    if (ent.combo === 1) return { startup: 0.07, active: 0.07, total: 0.14 + link };
-    return { startup: 0.08, active: 0.07, total: 0.15 + link };
-  }
   if (ent.team === "player") {
-    const link = ent.fighter?.comboWindow || 0.34;
-    if (ent.state === "heavy") return { startup: 0.28, active: 0.14, total: 0.8 };
-    if (ent.state === "dashatk") return { startup: 0.14, active: 0.12, total: 0.54 };
-    if (ent.state === "special") return { startup: 0.14, active: 0.12, total: 0.68 };
-    if (ent.state === "lunge") return { startup: 0.18, active: 0.12, total: 0.62 };
-    if (ent.state === "reversal") return { startup: 0.12, active: 0.1, total: 0.5 };
-    if (ent.state === "jatk") return { startup: 0.12, active: 0.12, total: 0.4 };
-    if (ent.state === "throw" || ent.state === "grab") return { startup: 0.16, active: 0.14, total: 0.56 };
-    if (ent.combo === 2) return { startup: 0.24, active: 0.14, total: 0.38 + link };
-    if (ent.combo === 1) return { startup: 0.18, active: 0.12, total: 0.3 + link };
-    return { startup: 0.2, active: 0.12, total: 0.32 + link };
+    const move = playerMoveWindow(ent);
+    if (move) return move;
+    // Grab and airborne states still need their dedicated asset/event pass.
+    if (ent.state === "grab") return { startup: 0.16, active: 0.14, total: 0.56 };
   }
   if (ent.kind === "trump") return { startup: 0.34, active: 0.12, total: 0.72 };
   if (ent.kind === "greene") {
@@ -163,7 +176,8 @@ function contactAt(ent, count) {
   return Math.min(count - 2, Math.max(1, Math.round(count * frac)));
 }
 
-function poseIndex(ent, count, clip) {
+export function poseIndex(ent, count, clip) {
+  if (count <= 1) return 0;
   if (clip === "jump") {
     const height = Math.max(0, Math.min(1, (ent.z || 0) / 170));
     const rising = (ent.vz || 0) >= 0;
@@ -217,12 +231,17 @@ function flinchIndex(ent, count) {
   return Math.min(deep, Math.floor(u * (deep + 0.99)));
 }
 
+// These exports were normalized to their whole action bounding box, rather
+// than the character's body. Calibrate once per clip, never once per frame.
+export const SPRITE_BODY_SCALE = { cruz: { attack: 0.55 }, vance: { cast: 1.65 } };
+
 export function drawSprite(ctx, ent, sx, sc) {
   const sprite = actorSprite(ent);
   const wanted = clipFor(ent.state);
   const resolved = resolveSheet(sprite, wanted);
   if (!resolved) return false;
   const { sheet, clip } = resolved;
+  sc *= SPRITE_BODY_SCALE[sprite]?.[clip] || 1;
   const count = sheet.frames.length;
   const once = ONCE.has(clip);
   let index;
@@ -231,16 +250,14 @@ export function drawSprite(ctx, ent, sx, sc) {
     index = step ? Math.floor((ent.anim || 0) / step) % count : 0;
   }
   else if (clip === "hit") index = flinchIndex(ent, count);
-  else if (clip === "cast") {
-    const u = Math.min(0.999, (ent.stateT || 0) / 0.48);
-    index = Math.min(count - 1, Math.floor(u * count));
-  }
+  else if (clip === "cast") index = poseIndex(ent, count, clip);
   else if (clip === "walk" || clip === "run") index = gaitIndex(ent, count, clip);
   else if (once) index = poseIndex(ent, count, clip);
   else index = Math.floor((ent.anim || 0) / 0.1) % count;
   if (index < 0) index = 0;
   const frame = sheet.frames[index];
   const cell = frame.frame;
+  const offset = frame.trimmed ? frame.spriteSourceSize : null;
   ctx.save();
   ctx.translate(sx, ent.y - (ent.z || 0));
   ctx.scale(sc * (ent.facing || 1), sc);
@@ -248,7 +265,7 @@ export function drawSprite(ctx, ent, sx, sc) {
   ctx.drawImage(
     sheet.image,
     cell.x, cell.y, cell.w, cell.h,
-    -sheet.anchor.x, -sheet.anchor.y, cell.w, cell.h,
+    -sheet.anchor.x + (offset?.x || 0), -sheet.anchor.y + (offset?.y || 0), cell.w, cell.h,
   );
   ctx.restore();
   return true;

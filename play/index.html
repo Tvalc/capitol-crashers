@@ -23,7 +23,12 @@
     <p class="ad-label">Ad</p>
   </aside>
 
+  <div class="session-controls"><button id="pause-toggle" type="button" hidden>Pause · Esc</button></div>
   <main class="stage">
+    <section class="card" id="pause-panel" hidden aria-labelledby="pause-title">
+      <h2 id="pause-title">Paused</h2><p>Your fight will wait. Resume when you are ready.</p>
+      <div class="actions"><button type="button" class="play" id="resume">Resume</button><button type="button" id="restart-run">Restart run</button><button type="button" id="choose-again">Choose fighter</button></div>
+    </section>
     <canvas id="game" width="1280" height="720" tabindex="0" aria-label="Capitol Crashers"></canvas>
 
     <section class="card" id="title-panel">
@@ -48,11 +53,11 @@
       <div class="roster">
         <button type="button" class="fighter on" id="pick-mamdani" data-id="mamdani">
           <strong>Zohran Mamdani</strong>
-          <span>Fast feet, short combo window, lighter hits. Walked the length of Manhattan in one night.</span>
+          <span>Long reach, heavy hits, slow feet. Walked the length of Manhattan in one night.</span>
         </button>
         <button type="button" class="fighter" id="pick-sayed" data-id="sayed">
           <strong>Abdul El-Sayed</strong>
-          <span>Long reach, heavy hits, slow feet. Captained wrestling, football and lacrosse.</span>
+          <span>Fast feet, short combo window, lighter hits. Captained wrestling, football and lacrosse.</span>
         </button>
       </div>
       <p class="hint">Left and right to choose. Enter to start.</p>

@@ -19,6 +19,7 @@ export function blankInput() {
     grab: false,
     jump: false,
     confirm: false,
+    pause: false,
   };
 }
 
@@ -27,6 +28,8 @@ export function createInput() {
   const just = new Set();
 
   function onDown(e) {
+    // Native controls own their activation; do not also confirm in the game.
+    if (e.target?.closest?.("button, a, input, select, textarea, [contenteditable]")) return;
     if (BLOCK.has(e.code)) e.preventDefault();
     if (!down.has(e.code)) just.add(e.code);
     down.add(e.code);
@@ -36,10 +39,14 @@ export function createInput() {
     down.delete(e.code);
   }
 
+  function clear() { down.clear(); just.clear(); }
+  window.addEventListener("blur", clear);
+  document.addEventListener("visibilitychange", () => { if (document.hidden) clear(); });
   window.addEventListener("keydown", onDown);
   window.addEventListener("keyup", onUp);
 
   return {
+    clear,
     snapshot() {
       const left = [...LEFT].some((c) => down.has(c));
       const right = [...RIGHT].some((c) => down.has(c));
@@ -63,6 +70,7 @@ export function createInput() {
         grab: just.has("KeyG"),
         jump: just.has("Space"),
         confirm: just.has("Enter") || just.has("Space"),
+        pause: just.has("Escape"),
       };
       just.clear();
       return snap;

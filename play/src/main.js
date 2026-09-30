@@ -14,6 +14,7 @@ const PANELS = Object.fromEntries(PAGES.flatMap((page) => page.panels).map((pane
 export function createGame() {
   return {
     mode: "title",
+    paused: false,
     fighterId: "mamdani",
     stageIndex: 0,
     stage: cloneStage(0),
@@ -44,6 +45,7 @@ export function createGame() {
 
 export function beginRun(game, fighterId) {
   game.mode = "play";
+  game.paused = false;
   game.fighterId = fighterId;
   game.stageIndex = 0;
   game.lives = 3;
@@ -95,6 +97,7 @@ export function startStage(game) {
 
 export function updateGame(game, input, dt) {
   dt = Math.min(0.034, Math.max(0, dt) || 0);
+  if (game.paused) return;
   game.time += dt;
   if (game.mode !== "play") return;
 
@@ -216,7 +219,27 @@ function boot() {
   const ctx = canvas.getContext("2d");
   const input = createInput();
   const game = createGame();
-  loadSprites();
+  let assetsReady = false;
+  const startButton = document.getElementById("start");
+  const assetStatus = document.createElement("p");
+  assetStatus.setAttribute("role", "status");
+  startButton.before(assetStatus);
+  async function prepareSprites() {
+    startButton.disabled = true;
+    assetStatus.textContent = "Loading fighters and animations…";
+    try {
+      await loadSprites();
+      assetsReady = true;
+      assetStatus.textContent = "Ready to play.";
+      startButton.textContent = "Step in";
+    } catch (error) {
+      assetStatus.textContent = "Some animations could not load. Check your connection and retry.";
+      startButton.textContent = "Retry loading";
+      console.error(error);
+    }
+    startButton.disabled = false;
+  }
+  prepareSprites();
   const titlePanel = document.getElementById("title-panel");
   const selectPanel = document.getElementById("select-panel");
   const clearPanel = document.getElementById("clear-panel");
@@ -224,6 +247,26 @@ function boot() {
   const overPanel = document.getElementById("over-panel");
   const storyPanel = document.getElementById("story-panel");
   let shownStory = null;
+  const pausePanel = document.getElementById("pause-panel");
+  const pauseToggle = document.getElementById("pause-toggle");
+  function setPaused(value) {
+    if (game.mode !== "play") return;
+    game.paused = value;
+    input.clear();
+    sync();
+    if (value) document.getElementById("resume").focus();
+    else canvas.focus({ preventScroll: true });
+  }
+  pauseToggle.addEventListener("click", () => setPaused(!game.paused));
+  document.getElementById("resume").addEventListener("click", () => setPaused(false));
+  document.getElementById("restart-run").addEventListener("click", () => { input.clear(); beginRun(game, game.fighterId); canvas.focus({ preventScroll: true }); });
+  document.getElementById("choose-again").addEventListener("click", () => { input.clear(); game.paused = false; game.mode = "select"; canvas.focus({ preventScroll: true }); });
+  window.addEventListener("blur", () => setPaused(true));
+  document.addEventListener("visibilitychange", () => { if (document.hidden) setPaused(true); });
+  window.addEventListener("keydown", (e) => { if (e.key === "Escape" && !e.repeat && game.mode === "play") { e.preventDefault(); setPaused(!game.paused); } });
+  document.querySelectorAll(".fighter").forEach(button => {
+    button.querySelector("span").textContent = fighterById(button.dataset.id).blurb;
+  });
 
   function renderStory(panel) {
     const frame = document.getElementById("story-frame");
@@ -262,13 +305,16 @@ function boot() {
   }
 
   function sync() {
+    pausePanel.hidden = !game.paused;
+    pauseToggle.hidden = game.mode !== "play";
+    pauseToggle.textContent = game.paused ? "Resume · Esc" : "Pause · Esc";
     titlePanel.hidden = game.mode !== "title";
     selectPanel.hidden = game.mode !== "select";
     clearPanel.hidden = !(game.mode === "play" && game.clearT > 0);
     endPanel.hidden = game.mode !== "ending";
     overPanel.hidden = game.mode !== "gameover";
     storyPanel.hidden = game.mode !== "story";
-    touchBar?.classList.toggle("idle", game.mode !== "play");
+    touchBar?.classList.toggle("idle", game.mode !== "play" || game.paused);
     if (game.mode === "story" && shownStory !== game.storyId) {
       shownStory = game.storyId;
       renderStory(PANELS[game.storyId]);
@@ -291,6 +337,7 @@ function boot() {
   }
 
   document.getElementById("start").addEventListener("click", () => {
+    if (!assetsReady) { prepareSprites(); return; }
     unlock();
     play("ui");
     game.mode = "select";
@@ -346,7 +393,7 @@ function boot() {
     last = now;
     const snap = input.snapshot();
     if (snap.light || snap.heavy || snap.special || snap.grab || snap.jump || snap.confirm || snap.x || snap.y) unlock();
-    if (game.mode === "title" && snap.confirm) {
+    if (game.mode === "title" && snap.confirm && assetsReady) {
       play("ui");
       game.mode = "select";
     } else if (game.mode === "select") {
