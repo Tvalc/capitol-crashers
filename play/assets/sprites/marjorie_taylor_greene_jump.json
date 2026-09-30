@@ -4,7 +4,7 @@
       "frame": {
         "x": 2,
         "y": 2,
-        "w": 299,
+        "w": 152,
         "h": 256
       },
       "rotated": false,
@@ -12,20 +12,20 @@
       "spriteSourceSize": {
         "x": 0,
         "y": 0,
-        "w": 299,
+        "w": 152,
         "h": 256
       },
       "sourceSize": {
-        "w": 299,
+        "w": 152,
         "h": 256
       },
-      "duration": 83
+      "duration": 80
     },
     "marjorie_taylor_greene_jump_001.webp": {
       "frame": {
-        "x": 303,
+        "x": 156,
         "y": 2,
-        "w": 299,
+        "w": 152,
         "h": 256
       },
       "rotated": false,
@@ -33,20 +33,20 @@
       "spriteSourceSize": {
         "x": 0,
         "y": 0,
-        "w": 299,
+        "w": 152,
         "h": 256
       },
       "sourceSize": {
-        "w": 299,
+        "w": 152,
         "h": 256
       },
-      "duration": 83
+      "duration": 80
     },
     "marjorie_taylor_greene_jump_002.webp": {
       "frame": {
-        "x": 604,
+        "x": 310,
         "y": 2,
-        "w": 299,
+        "w": 152,
         "h": 256
       },
       "rotated": false,
@@ -54,20 +54,20 @@
       "spriteSourceSize": {
         "x": 0,
         "y": 0,
-        "w": 299,
+        "w": 152,
         "h": 256
       },
       "sourceSize": {
-        "w": 299,
+        "w": 152,
         "h": 256
       },
-      "duration": 83
+      "duration": 80
     },
     "marjorie_taylor_greene_jump_003.webp": {
       "frame": {
-        "x": 905,
+        "x": 464,
         "y": 2,
-        "w": 299,
+        "w": 152,
         "h": 256
       },
       "rotated": false,
@@ -75,20 +75,20 @@
       "spriteSourceSize": {
         "x": 0,
         "y": 0,
-        "w": 299,
+        "w": 152,
         "h": 256
       },
       "sourceSize": {
-        "w": 299,
+        "w": 152,
         "h": 256
       },
-      "duration": 83
+      "duration": 80
     },
     "marjorie_taylor_greene_jump_004.webp": {
       "frame": {
-        "x": 1206,
+        "x": 618,
         "y": 2,
-        "w": 299,
+        "w": 152,
         "h": 256
       },
       "rotated": false,
@@ -96,20 +96,20 @@
       "spriteSourceSize": {
         "x": 0,
         "y": 0,
-        "w": 299,
+        "w": 152,
         "h": 256
       },
       "sourceSize": {
-        "w": 299,
+        "w": 152,
         "h": 256
       },
-      "duration": 83
+      "duration": 80
     },
     "marjorie_taylor_greene_jump_005.webp": {
       "frame": {
-        "x": 1507,
+        "x": 772,
         "y": 2,
-        "w": 299,
+        "w": 152,
         "h": 256
       },
       "rotated": false,
@@ -117,20 +117,20 @@
       "spriteSourceSize": {
         "x": 0,
         "y": 0,
-        "w": 299,
+        "w": 152,
         "h": 256
       },
       "sourceSize": {
-        "w": 299,
+        "w": 152,
         "h": 256
       },
-      "duration": 83
+      "duration": 80
     },
     "marjorie_taylor_greene_jump_006.webp": {
       "frame": {
-        "x": 1808,
+        "x": 926,
         "y": 2,
-        "w": 299,
+        "w": 152,
         "h": 256
       },
       "rotated": false,
@@ -138,20 +138,20 @@
       "spriteSourceSize": {
         "x": 0,
         "y": 0,
-        "w": 299,
+        "w": 152,
         "h": 256
       },
       "sourceSize": {
-        "w": 299,
+        "w": 152,
         "h": 256
       },
-      "duration": 83
+      "duration": 80
     },
     "marjorie_taylor_greene_jump_007.webp": {
       "frame": {
-        "x": 2109,
+        "x": 1080,
         "y": 2,
-        "w": 299,
+        "w": 152,
         "h": 256
       },
       "rotated": false,
@@ -159,20 +159,20 @@
       "spriteSourceSize": {
         "x": 0,
         "y": 0,
-        "w": 299,
+        "w": 152,
         "h": 256
       },
       "sourceSize": {
-        "w": 299,
+        "w": 152,
         "h": 256
       },
-      "duration": 83
+      "duration": 80
     },
     "marjorie_taylor_greene_jump_008.webp": {
       "frame": {
-        "x": 2410,
+        "x": 1234,
         "y": 2,
-        "w": 299,
+        "w": 152,
         "h": 256
       },
       "rotated": false,
@@ -180,20 +180,20 @@
       "spriteSourceSize": {
         "x": 0,
         "y": 0,
-        "w": 299,
+        "w": 152,
         "h": 256
       },
       "sourceSize": {
-        "w": 299,
+        "w": 152,
         "h": 256
       },
-      "duration": 83
+      "duration": 80
     },
     "marjorie_taylor_greene_jump_009.webp": {
       "frame": {
-        "x": 2711,
+        "x": 1388,
         "y": 2,
-        "w": 299,
+        "w": 152,
         "h": 256
       },
       "rotated": false,
@@ -201,20 +201,20 @@
       "spriteSourceSize": {
         "x": 0,
         "y": 0,
-        "w": 299,
+        "w": 152,
         "h": 256
       },
       "sourceSize": {
-        "w": 299,
+        "w": 152,
         "h": 256
       },
-      "duration": 83
+      "duration": 80
     },
     "marjorie_taylor_greene_jump_010.webp": {
       "frame": {
-        "x": 3012,
+        "x": 1542,
         "y": 2,
-        "w": 299,
+        "w": 152,
         "h": 256
       },
       "rotated": false,
@@ -222,20 +222,20 @@
       "spriteSourceSize": {
         "x": 0,
         "y": 0,
-        "w": 299,
+        "w": 152,
         "h": 256
       },
       "sourceSize": {
-        "w": 299,
+        "w": 152,
         "h": 256
       },
-      "duration": 83
+      "duration": 80
     },
     "marjorie_taylor_greene_jump_011.webp": {
       "frame": {
-        "x": 3313,
+        "x": 1696,
         "y": 2,
-        "w": 299,
+        "w": 152,
         "h": 256
       },
       "rotated": false,
@@ -243,28 +243,28 @@
       "spriteSourceSize": {
         "x": 0,
         "y": 0,
-        "w": 299,
+        "w": 152,
         "h": 256
       },
       "sourceSize": {
-        "w": 299,
+        "w": 152,
         "h": 256
       },
-      "duration": 83
+      "duration": 80
     }
   },
   "meta": {
     "app": "bake",
     "version": "1",
+    "image": "marjorie_taylor_greene_jump.webp",
     "format": "RGBA8888",
     "scale": "1",
-    "image": "marjorie_taylor_greene_jump.webp",
     "size": {
-      "w": 3614,
+      "w": 1850,
       "h": 260
     },
     "anchor": {
-      "x": 149.5,
+      "x": 76.0,
       "y": 258,
       "normalized": {
         "x": 0.5,

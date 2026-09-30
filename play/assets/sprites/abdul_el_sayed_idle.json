@@ -4,7 +4,7 @@
       "frame": {
         "x": 2,
         "y": 2,
-        "w": 161,
+        "w": 168,
         "h": 256
       },
       "rotated": false,
@@ -12,20 +12,20 @@
       "spriteSourceSize": {
         "x": 0,
         "y": 0,
-        "w": 161,
+        "w": 168,
         "h": 256
       },
       "sourceSize": {
-        "w": 161,
+        "w": 168,
         "h": 256
       },
-      "duration": 83
+      "duration": 160
     },
     "abdul_el_sayed_idle_001.webp": {
       "frame": {
-        "x": 165,
+        "x": 172,
         "y": 2,
-        "w": 161,
+        "w": 168,
         "h": 256
       },
       "rotated": false,
@@ -33,20 +33,20 @@
       "spriteSourceSize": {
         "x": 0,
         "y": 0,
-        "w": 161,
+        "w": 168,
         "h": 256
       },
       "sourceSize": {
-        "w": 161,
+        "w": 168,
         "h": 256
       },
-      "duration": 83
+      "duration": 160
     },
     "abdul_el_sayed_idle_002.webp": {
       "frame": {
-        "x": 328,
+        "x": 342,
         "y": 2,
-        "w": 161,
+        "w": 168,
         "h": 256
       },
       "rotated": false,
@@ -54,20 +54,20 @@
       "spriteSourceSize": {
         "x": 0,
         "y": 0,
-        "w": 161,
+        "w": 168,
         "h": 256
       },
       "sourceSize": {
-        "w": 161,
+        "w": 168,
         "h": 256
       },
-      "duration": 83
+      "duration": 160
     },
     "abdul_el_sayed_idle_003.webp": {
       "frame": {
-        "x": 491,
+        "x": 512,
         "y": 2,
-        "w": 161,
+        "w": 168,
         "h": 256
       },
       "rotated": false,
@@ -75,20 +75,20 @@
       "spriteSourceSize": {
         "x": 0,
         "y": 0,
-        "w": 161,
+        "w": 168,
         "h": 256
       },
       "sourceSize": {
-        "w": 161,
+        "w": 168,
         "h": 256
       },
-      "duration": 83
+      "duration": 160
     },
     "abdul_el_sayed_idle_004.webp": {
       "frame": {
-        "x": 654,
+        "x": 682,
         "y": 2,
-        "w": 161,
+        "w": 168,
         "h": 256
       },
       "rotated": false,
@@ -96,20 +96,20 @@
       "spriteSourceSize": {
         "x": 0,
         "y": 0,
-        "w": 161,
+        "w": 168,
         "h": 256
       },
       "sourceSize": {
-        "w": 161,
+        "w": 168,
         "h": 256
       },
-      "duration": 83
+      "duration": 160
     },
     "abdul_el_sayed_idle_005.webp": {
       "frame": {
-        "x": 817,
+        "x": 852,
         "y": 2,
-        "w": 161,
+        "w": 168,
         "h": 256
       },
       "rotated": false,
@@ -117,20 +117,20 @@
       "spriteSourceSize": {
         "x": 0,
         "y": 0,
-        "w": 161,
+        "w": 168,
         "h": 256
       },
       "sourceSize": {
-        "w": 161,
+        "w": 168,
         "h": 256
       },
-      "duration": 83
+      "duration": 160
     },
     "abdul_el_sayed_idle_006.webp": {
       "frame": {
-        "x": 980,
+        "x": 1022,
         "y": 2,
-        "w": 161,
+        "w": 168,
         "h": 256
       },
       "rotated": false,
@@ -138,20 +138,20 @@
       "spriteSourceSize": {
         "x": 0,
         "y": 0,
-        "w": 161,
+        "w": 168,
         "h": 256
       },
       "sourceSize": {
-        "w": 161,
+        "w": 168,
         "h": 256
       },
-      "duration": 83
+      "duration": 160
     },
     "abdul_el_sayed_idle_007.webp": {
       "frame": {
-        "x": 1143,
+        "x": 1192,
         "y": 2,
-        "w": 161,
+        "w": 168,
         "h": 256
       },
       "rotated": false,
@@ -159,137 +159,34 @@
       "spriteSourceSize": {
         "x": 0,
         "y": 0,
-        "w": 161,
+        "w": 168,
         "h": 256
       },
       "sourceSize": {
-        "w": 161,
+        "w": 168,
         "h": 256
       },
-      "duration": 83
-    },
-    "abdul_el_sayed_idle_008.webp": {
-      "frame": {
-        "x": 1306,
-        "y": 2,
-        "w": 161,
-        "h": 256
-      },
-      "rotated": false,
-      "trimmed": false,
-      "spriteSourceSize": {
-        "x": 0,
-        "y": 0,
-        "w": 161,
-        "h": 256
-      },
-      "sourceSize": {
-        "w": 161,
-        "h": 256
-      },
-      "duration": 83
-    },
-    "abdul_el_sayed_idle_009.webp": {
-      "frame": {
-        "x": 1469,
-        "y": 2,
-        "w": 161,
-        "h": 256
-      },
-      "rotated": false,
-      "trimmed": false,
-      "spriteSourceSize": {
-        "x": 0,
-        "y": 0,
-        "w": 161,
-        "h": 256
-      },
-      "sourceSize": {
-        "w": 161,
-        "h": 256
-      },
-      "duration": 83
-    },
-    "abdul_el_sayed_idle_010.webp": {
-      "frame": {
-        "x": 1632,
-        "y": 2,
-        "w": 161,
-        "h": 256
-      },
-      "rotated": false,
-      "trimmed": false,
-      "spriteSourceSize": {
-        "x": 0,
-        "y": 0,
-        "w": 161,
-        "h": 256
-      },
-      "sourceSize": {
-        "w": 161,
-        "h": 256
-      },
-      "duration": 83
-    },
-    "abdul_el_sayed_idle_011.webp": {
-      "frame": {
-        "x": 1795,
-        "y": 2,
-        "w": 161,
-        "h": 256
-      },
-      "rotated": false,
-      "trimmed": false,
-      "spriteSourceSize": {
-        "x": 0,
-        "y": 0,
-        "w": 161,
-        "h": 256
-      },
-      "sourceSize": {
-        "w": 161,
-        "h": 256
-      },
-      "duration": 83
+      "duration": 160
     }
   },
   "meta": {
-    "app": "MAKKO Sprite Studio",
-    "version": "1.0.0",
+    "app": "bake",
+    "version": "1",
     "image": "abdul_el_sayed_idle.webp",
     "format": "RGBA8888",
+    "scale": "1",
     "size": {
-      "w": 1958,
+      "w": 1362,
       "h": 260
     },
-    "scale": "1",
-    "frameTags": [
-      {
-        "name": "Abdul El-Sayed Idle",
-        "from": 0,
-        "to": 11,
-        "direction": "forward"
-      }
-    ],
     "anchor": {
-      "x": 80.5,
-      "y": 258,
+      "x": 84,
+      "y": 255,
       "normalized": {
         "x": 0.5,
-        "y": 1
+        "y": 0.99609375
       },
       "strategy": "bottom-center"
-    },
-    "referenceAlignment": {
-      "referenceBounds": {
-        "width": 61,
-        "height": 255
-      },
-      "frameBounds": {
-        "width": 65,
-        "height": 256
-      },
-      "normalized": true
     }
   }
 }

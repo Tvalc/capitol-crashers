@@ -4,7 +4,7 @@
       "frame": {
         "x": 2,
         "y": 2,
-        "w": 244,
+        "w": 147,
         "h": 256
       },
       "rotated": false,
@@ -12,20 +12,20 @@
       "spriteSourceSize": {
         "x": 0,
         "y": 0,
-        "w": 244,
+        "w": 147,
         "h": 256
       },
       "sourceSize": {
-        "w": 244,
+        "w": 147,
         "h": 256
       },
-      "duration": 83
+      "duration": 80
     },
     "marjorie_taylor_greene_run_001.webp": {
       "frame": {
-        "x": 248,
+        "x": 151,
         "y": 2,
-        "w": 244,
+        "w": 147,
         "h": 256
       },
       "rotated": false,
@@ -33,20 +33,20 @@
       "spriteSourceSize": {
         "x": 0,
         "y": 0,
-        "w": 244,
+        "w": 147,
         "h": 256
       },
       "sourceSize": {
-        "w": 244,
+        "w": 147,
         "h": 256
       },
-      "duration": 83
+      "duration": 80
     },
     "marjorie_taylor_greene_run_002.webp": {
       "frame": {
-        "x": 494,
+        "x": 300,
         "y": 2,
-        "w": 244,
+        "w": 147,
         "h": 256
       },
       "rotated": false,
@@ -54,20 +54,20 @@
       "spriteSourceSize": {
         "x": 0,
         "y": 0,
-        "w": 244,
+        "w": 147,
         "h": 256
       },
       "sourceSize": {
-        "w": 244,
+        "w": 147,
         "h": 256
       },
-      "duration": 83
+      "duration": 80
     },
     "marjorie_taylor_greene_run_003.webp": {
       "frame": {
-        "x": 740,
+        "x": 449,
         "y": 2,
-        "w": 244,
+        "w": 147,
         "h": 256
       },
       "rotated": false,
@@ -75,20 +75,20 @@
       "spriteSourceSize": {
         "x": 0,
         "y": 0,
-        "w": 244,
+        "w": 147,
         "h": 256
       },
       "sourceSize": {
-        "w": 244,
+        "w": 147,
         "h": 256
       },
-      "duration": 83
+      "duration": 80
     },
     "marjorie_taylor_greene_run_004.webp": {
       "frame": {
-        "x": 986,
+        "x": 598,
         "y": 2,
-        "w": 244,
+        "w": 147,
         "h": 256
       },
       "rotated": false,
@@ -96,20 +96,20 @@
       "spriteSourceSize": {
         "x": 0,
         "y": 0,
-        "w": 244,
+        "w": 147,
         "h": 256
       },
       "sourceSize": {
-        "w": 244,
+        "w": 147,
         "h": 256
       },
-      "duration": 83
+      "duration": 80
     },
     "marjorie_taylor_greene_run_005.webp": {
       "frame": {
-        "x": 1232,
+        "x": 747,
         "y": 2,
-        "w": 244,
+        "w": 147,
         "h": 256
       },
       "rotated": false,
@@ -117,20 +117,20 @@
       "spriteSourceSize": {
         "x": 0,
         "y": 0,
-        "w": 244,
+        "w": 147,
         "h": 256
       },
       "sourceSize": {
-        "w": 244,
+        "w": 147,
         "h": 256
       },
-      "duration": 83
+      "duration": 80
     },
     "marjorie_taylor_greene_run_006.webp": {
       "frame": {
-        "x": 1478,
+        "x": 896,
         "y": 2,
-        "w": 244,
+        "w": 147,
         "h": 256
       },
       "rotated": false,
@@ -138,20 +138,20 @@
       "spriteSourceSize": {
         "x": 0,
         "y": 0,
-        "w": 244,
+        "w": 147,
         "h": 256
       },
       "sourceSize": {
-        "w": 244,
+        "w": 147,
         "h": 256
       },
-      "duration": 83
+      "duration": 80
     },
     "marjorie_taylor_greene_run_007.webp": {
       "frame": {
-        "x": 1724,
+        "x": 1045,
         "y": 2,
-        "w": 244,
+        "w": 147,
         "h": 256
       },
       "rotated": false,
@@ -159,20 +159,20 @@
       "spriteSourceSize": {
         "x": 0,
         "y": 0,
-        "w": 244,
+        "w": 147,
         "h": 256
       },
       "sourceSize": {
-        "w": 244,
+        "w": 147,
         "h": 256
       },
-      "duration": 83
+      "duration": 80
     },
     "marjorie_taylor_greene_run_008.webp": {
       "frame": {
-        "x": 1970,
+        "x": 1194,
         "y": 2,
-        "w": 244,
+        "w": 147,
         "h": 256
       },
       "rotated": false,
@@ -180,20 +180,20 @@
       "spriteSourceSize": {
         "x": 0,
         "y": 0,
-        "w": 244,
+        "w": 147,
         "h": 256
       },
       "sourceSize": {
-        "w": 244,
+        "w": 147,
         "h": 256
       },
-      "duration": 83
+      "duration": 80
     },
     "marjorie_taylor_greene_run_009.webp": {
       "frame": {
-        "x": 2216,
+        "x": 1343,
         "y": 2,
-        "w": 244,
+        "w": 147,
         "h": 256
       },
       "rotated": false,
@@ -201,20 +201,20 @@
       "spriteSourceSize": {
         "x": 0,
         "y": 0,
-        "w": 244,
+        "w": 147,
         "h": 256
       },
       "sourceSize": {
-        "w": 244,
+        "w": 147,
         "h": 256
       },
-      "duration": 83
+      "duration": 80
     },
     "marjorie_taylor_greene_run_010.webp": {
       "frame": {
-        "x": 2462,
+        "x": 1492,
         "y": 2,
-        "w": 244,
+        "w": 147,
         "h": 256
       },
       "rotated": false,
@@ -222,20 +222,20 @@
       "spriteSourceSize": {
         "x": 0,
         "y": 0,
-        "w": 244,
+        "w": 147,
         "h": 256
       },
       "sourceSize": {
-        "w": 244,
+        "w": 147,
         "h": 256
       },
-      "duration": 83
+      "duration": 80
     },
     "marjorie_taylor_greene_run_011.webp": {
       "frame": {
-        "x": 2708,
+        "x": 1641,
         "y": 2,
-        "w": 244,
+        "w": 147,
         "h": 256
       },
       "rotated": false,
@@ -243,53 +243,34 @@
       "spriteSourceSize": {
         "x": 0,
         "y": 0,
-        "w": 244,
+        "w": 147,
         "h": 256
       },
       "sourceSize": {
-        "w": 244,
+        "w": 147,
         "h": 256
       },
-      "duration": 83
+      "duration": 80
     }
   },
   "meta": {
-    "app": "MAKKO Sprite Studio",
-    "version": "1.0.0",
+    "app": "bake",
+    "version": "1",
     "image": "marjorie_taylor_greene_run.webp",
     "format": "RGBA8888",
+    "scale": "1",
     "size": {
-      "w": 2954,
+      "w": 1790,
       "h": 260
     },
-    "scale": "1",
-    "frameTags": [
-      {
-        "name": "Marjorie Taylor Greene Run",
-        "from": 0,
-        "to": 11,
-        "direction": "forward"
-      }
-    ],
     "anchor": {
-      "x": 122.0,
+      "x": 73.5,
       "y": 258,
       "normalized": {
         "x": 0.5,
         "y": 1
       },
       "strategy": "bottom-center"
-    },
-    "referenceAlignment": {
-      "referenceBounds": {
-        "width": 219,
-        "height": 243
-      },
-      "frameBounds": {
-        "width": 224,
-        "height": 256
-      },
-      "normalized": true
     }
   }
 }

@@ -4,7 +4,7 @@
       "frame": {
         "x": 2,
         "y": 2,
-        "w": 232,
+        "w": 142,
         "h": 256
       },
       "rotated": false,
@@ -12,20 +12,20 @@
       "spriteSourceSize": {
         "x": 0,
         "y": 0,
-        "w": 232,
+        "w": 142,
         "h": 256
       },
       "sourceSize": {
-        "w": 232,
+        "w": 142,
         "h": 256
       },
-      "duration": 83
+      "duration": 80
     },
     "ted_cruz_walk_001.webp": {
       "frame": {
-        "x": 236,
+        "x": 146,
         "y": 2,
-        "w": 232,
+        "w": 142,
         "h": 256
       },
       "rotated": false,
@@ -33,20 +33,20 @@
       "spriteSourceSize": {
         "x": 0,
         "y": 0,
-        "w": 232,
+        "w": 142,
         "h": 256
       },
       "sourceSize": {
-        "w": 232,
+        "w": 142,
         "h": 256
       },
-      "duration": 83
+      "duration": 80
     },
     "ted_cruz_walk_002.webp": {
       "frame": {
-        "x": 470,
+        "x": 290,
         "y": 2,
-        "w": 232,
+        "w": 142,
         "h": 256
       },
       "rotated": false,
@@ -54,20 +54,20 @@
       "spriteSourceSize": {
         "x": 0,
         "y": 0,
-        "w": 232,
+        "w": 142,
         "h": 256
       },
       "sourceSize": {
-        "w": 232,
+        "w": 142,
         "h": 256
       },
-      "duration": 83
+      "duration": 80
     },
     "ted_cruz_walk_003.webp": {
       "frame": {
-        "x": 704,
+        "x": 434,
         "y": 2,
-        "w": 232,
+        "w": 142,
         "h": 256
       },
       "rotated": false,
@@ -75,20 +75,20 @@
       "spriteSourceSize": {
         "x": 0,
         "y": 0,
-        "w": 232,
+        "w": 142,
         "h": 256
       },
       "sourceSize": {
-        "w": 232,
+        "w": 142,
         "h": 256
       },
-      "duration": 83
+      "duration": 80
     },
     "ted_cruz_walk_004.webp": {
       "frame": {
-        "x": 938,
+        "x": 578,
         "y": 2,
-        "w": 232,
+        "w": 142,
         "h": 256
       },
       "rotated": false,
@@ -96,20 +96,20 @@
       "spriteSourceSize": {
         "x": 0,
         "y": 0,
-        "w": 232,
+        "w": 142,
         "h": 256
       },
       "sourceSize": {
-        "w": 232,
+        "w": 142,
         "h": 256
       },
-      "duration": 83
+      "duration": 80
     },
     "ted_cruz_walk_005.webp": {
       "frame": {
-        "x": 1172,
+        "x": 722,
         "y": 2,
-        "w": 232,
+        "w": 142,
         "h": 256
       },
       "rotated": false,
@@ -117,20 +117,20 @@
       "spriteSourceSize": {
         "x": 0,
         "y": 0,
-        "w": 232,
+        "w": 142,
         "h": 256
       },
       "sourceSize": {
-        "w": 232,
+        "w": 142,
         "h": 256
       },
-      "duration": 83
+      "duration": 80
     },
     "ted_cruz_walk_006.webp": {
       "frame": {
-        "x": 1406,
+        "x": 866,
         "y": 2,
-        "w": 232,
+        "w": 142,
         "h": 256
       },
       "rotated": false,
@@ -138,20 +138,20 @@
       "spriteSourceSize": {
         "x": 0,
         "y": 0,
-        "w": 232,
+        "w": 142,
         "h": 256
       },
       "sourceSize": {
-        "w": 232,
+        "w": 142,
         "h": 256
       },
-      "duration": 83
+      "duration": 80
     },
     "ted_cruz_walk_007.webp": {
       "frame": {
-        "x": 1640,
+        "x": 1010,
         "y": 2,
-        "w": 232,
+        "w": 142,
         "h": 256
       },
       "rotated": false,
@@ -159,20 +159,20 @@
       "spriteSourceSize": {
         "x": 0,
         "y": 0,
-        "w": 232,
+        "w": 142,
         "h": 256
       },
       "sourceSize": {
-        "w": 232,
+        "w": 142,
         "h": 256
       },
-      "duration": 83
+      "duration": 80
     },
     "ted_cruz_walk_008.webp": {
       "frame": {
-        "x": 1874,
+        "x": 1154,
         "y": 2,
-        "w": 232,
+        "w": 142,
         "h": 256
       },
       "rotated": false,
@@ -180,20 +180,20 @@
       "spriteSourceSize": {
         "x": 0,
         "y": 0,
-        "w": 232,
+        "w": 142,
         "h": 256
       },
       "sourceSize": {
-        "w": 232,
+        "w": 142,
         "h": 256
       },
-      "duration": 83
+      "duration": 80
     },
     "ted_cruz_walk_009.webp": {
       "frame": {
-        "x": 2108,
+        "x": 1298,
         "y": 2,
-        "w": 232,
+        "w": 142,
         "h": 256
       },
       "rotated": false,
@@ -201,20 +201,20 @@
       "spriteSourceSize": {
         "x": 0,
         "y": 0,
-        "w": 232,
+        "w": 142,
         "h": 256
       },
       "sourceSize": {
-        "w": 232,
+        "w": 142,
         "h": 256
       },
-      "duration": 83
+      "duration": 80
     },
     "ted_cruz_walk_010.webp": {
       "frame": {
-        "x": 2342,
+        "x": 1442,
         "y": 2,
-        "w": 232,
+        "w": 142,
         "h": 256
       },
       "rotated": false,
@@ -222,20 +222,20 @@
       "spriteSourceSize": {
         "x": 0,
         "y": 0,
-        "w": 232,
+        "w": 142,
         "h": 256
       },
       "sourceSize": {
-        "w": 232,
+        "w": 142,
         "h": 256
       },
-      "duration": 83
+      "duration": 80
     },
     "ted_cruz_walk_011.webp": {
       "frame": {
-        "x": 2576,
+        "x": 1586,
         "y": 2,
-        "w": 232,
+        "w": 142,
         "h": 256
       },
       "rotated": false,
@@ -243,53 +243,34 @@
       "spriteSourceSize": {
         "x": 0,
         "y": 0,
-        "w": 232,
+        "w": 142,
         "h": 256
       },
       "sourceSize": {
-        "w": 232,
+        "w": 142,
         "h": 256
       },
-      "duration": 83
+      "duration": 80
     }
   },
   "meta": {
-    "app": "MAKKO Sprite Studio",
-    "version": "1.0.0",
+    "app": "bake",
+    "version": "1",
     "image": "ted_cruz_walk.webp",
     "format": "RGBA8888",
+    "scale": "1",
     "size": {
-      "w": 2810,
+      "w": 1730,
       "h": 260
     },
-    "scale": "1",
-    "frameTags": [
-      {
-        "name": "Ted Cruz Walk",
-        "from": 0,
-        "to": 11,
-        "direction": "forward"
-      }
-    ],
     "anchor": {
-      "x": 116.0,
+      "x": 71.0,
       "y": 258,
       "normalized": {
         "x": 0.5,
         "y": 1
       },
       "strategy": "bottom-center"
-    },
-    "referenceAlignment": {
-      "referenceBounds": {
-        "width": 142,
-        "height": 250
-      },
-      "frameBounds": {
-        "width": 167,
-        "height": 256
-      },
-      "normalized": true
     }
   }
 }

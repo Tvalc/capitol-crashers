@@ -1,6 +1,6 @@
 import { melee, updateBody } from "./combat.js?v=fight2";
 import { WORLD } from "./stages.js?v=art";
-import { spawnLaser, spawnShot } from "./weapons.js?v=swagger";
+import { spawnSatellite, spawnShot, spawnSombrero } from "./weapons.js?v=dt";
 
 const KINDS = {
   grunt: {
@@ -126,7 +126,7 @@ const KINDS = {
     trim: "#c4a15a",
     skin: "#e4b48a",
     pants: "#1a2744",
-    hat: "none",
+    hat: "sombrero",
   },
   vance: {
     name: "JD Vance",
@@ -453,11 +453,14 @@ function updateGreene(enemy, game, dt) {
     enemy.stateT += dt;
     enemy.vx = 0;
     enemy.vy = 0;
-    if (!enemy.spawned && enemy.stateT >= 0.46) {
+    if (!enemy.spawned && enemy.stateT >= 0.15) {
       enemy.spawned = true;
-      spawnLaser(game, player.x, player.y, enemy.dmg + 6);
+      spawnSatellite(game, player.x - 40, player.y, enemy.dmg + 6, -24);
+      spawnSatellite(game, player.x + 40, player.y, enemy.dmg + 4, 24);
+      game.banner = "Dodge the lock";
+      game.bannerT = 1.3;
     }
-    if (enemy.stateT >= 1.15) {
+    if (enemy.stateT >= 1.6) {
       enemy.state = "idle";
       enemy.spawned = false;
       enemy.attackCd = 1.3;
@@ -519,9 +522,9 @@ function updateGreene(enemy, game, dt) {
   const dy = Math.abs(player.y - enemy.y);
   const dist = Math.abs(dx);
   face(enemy, player);
-  enemy.laserCd = (enemy.laserCd ?? 1.6) - dt;
-  if (enemy.laserCd <= 0 && dist > 120 && dist < 540 && dy < 90) {
-    enemy.laserCd = 4.2;
+  enemy.laserCd = (enemy.laserCd ?? 0.45) - dt;
+  if (enemy.laserCd <= 0 && dist > 48 && dist < 760 && dy < 140) {
+    enemy.laserCd = 2.6;
     enemy.state = "special";
     enemy.stateT = 0;
     enemy.spawned = false;
@@ -532,7 +535,7 @@ function updateGreene(enemy, game, dt) {
     enemy.stateT = 0;
     enemy.z = 0;
     enemy.vz = 480;
-    enemy.vx = enemy.facing * 260;
+    enemy.vx = enemy.facing * 150;
     enemy.spawned = false;
     enemy.swingHits = new Set();
     enemy.attackCd = 0.3;
@@ -546,8 +549,9 @@ function updateGreene(enemy, game, dt) {
     return;
   }
   enemy.state = "run";
-  enemy.vx = Math.abs(dx) > 8 ? Math.sign(dx) * enemy.speed : 0;
-  enemy.vy = dy > 12 ? Math.sign(player.y - enemy.y) * enemy.speed * 0.85 : 0;
+  const moving = Math.abs(dx) > 8;
+  enemy.vx = moving ? Math.sign(dx) * enemy.speed * 0.62 : 0;
+  enemy.vy = dy > 12 ? Math.sign(player.y - enemy.y) * enemy.speed * 0.28 : 0;
   enemy.x += enemy.vx * dt;
   enemy.y = clampY(enemy.y + enemy.vy * dt);
 }
@@ -654,7 +658,7 @@ function updateVance(enemy, game, dt) {
       enemy.z = 0;
       enemy.vz = 0;
     }
-    enemy.vx = enemy.facing * 150;
+    enemy.vx = enemy.facing * 260;
     enemy.x += enemy.vx * dt;
     if (!enemy.spawned && enemy.stateT >= 0.16) {
       enemy.spawned = true;
@@ -701,9 +705,12 @@ function updateVance(enemy, game, dt) {
     enemy.swingHits = new Set();
     return;
   }
+  const cycle = 2.16;
+  const gait = ((enemy.anim || 0) % cycle) / cycle;
+  const surge = gait > 0.64;
   enemy.state = Math.abs(dx) > 10 || ady > 14 ? "run" : "idle";
-  enemy.vx = Math.abs(dx) > 10 ? Math.sign(dx) * enemy.speed * 0.85 : 0;
-  enemy.vy = ady > 14 ? Math.sign(dy) * enemy.speed * 0.55 : 0;
+  enemy.vx = Math.abs(dx) > 10 ? Math.sign(dx) * enemy.speed * (surge ? 2.15 : 0.18) : 0;
+  enemy.vy = ady > 14 ? Math.sign(dy) * enemy.speed * (surge ? 0.7 : 0.12) : 0;
   enemy.x += enemy.vx * dt;
   enemy.y = clampY(enemy.y + enemy.vy * dt);
 }
@@ -723,20 +730,12 @@ function updateCruz(enemy, game, dt) {
   if (enemy.state === "attack") {
     enemy.stateT += dt;
     enemy.vx = 0;
-    if (!enemy.spawned && enemy.stateT >= 0.36) {
+    enemy.vy = 0;
+    if (!enemy.spawned && enemy.stateT >= 0.72) {
       enemy.spawned = true;
-      melee(game, enemy, {
-        dmg: enemy.dmg,
-        kb: 140,
-        lift: 0,
-        reach: enemy.reach + 6,
-        low: true,
-        already: enemy.swingHits,
-        kind: "light",
-        hitstop: 0.04,
-      });
+      spawnSombrero(game, enemy);
     }
-    if (enemy.stateT >= 0.7) {
+    if (enemy.stateT >= 1.05) {
       enemy.state = "idle";
       enemy.spawned = false;
       enemy.attackCd = 0.65;
@@ -787,9 +786,11 @@ function updateCruz(enemy, game, dt) {
     enemy.state = "run";
     return;
   }
-  if (enemy.attackCd <= 0 && Math.abs(dy) < 30 && dist < enemy.reach && claim(game, enemy)) {
+  if (enemy.attackCd <= 0 && Math.abs(dy) < 40 && dist < 380 && dist > 48) {
     enemy.state = "attack";
     enemy.stateT = 0;
+    enemy.vx = 0;
+    enemy.vy = 0;
     enemy.spawned = false;
     enemy.swingHits = new Set();
     return;
@@ -799,7 +800,7 @@ function updateCruz(enemy, game, dt) {
     enemy.stateT = 0;
     return;
   }
-  approach(enemy, player, dt, enemy.speed * 1.15);
+  approach(enemy, player, dt, enemy.speed * 1.45);
 }
 
 function updateThrower(enemy, game, dt) {

@@ -4,7 +4,7 @@
       "frame": {
         "x": 2,
         "y": 2,
-        "w": 243,
+        "w": 133,
         "h": 256
       },
       "rotated": false,
@@ -12,20 +12,20 @@
       "spriteSourceSize": {
         "x": 0,
         "y": 0,
-        "w": 243,
+        "w": 133,
         "h": 256
       },
       "sourceSize": {
-        "w": 243,
+        "w": 133,
         "h": 256
       },
-      "duration": 83
+      "duration": 80
     },
     "marjorie_taylor_greene_cast_001.webp": {
       "frame": {
-        "x": 247,
+        "x": 137,
         "y": 2,
-        "w": 243,
+        "w": 133,
         "h": 256
       },
       "rotated": false,
@@ -33,20 +33,20 @@
       "spriteSourceSize": {
         "x": 0,
         "y": 0,
-        "w": 243,
+        "w": 133,
         "h": 256
       },
       "sourceSize": {
-        "w": 243,
+        "w": 133,
         "h": 256
       },
-      "duration": 83
+      "duration": 80
     },
     "marjorie_taylor_greene_cast_002.webp": {
       "frame": {
-        "x": 492,
+        "x": 272,
         "y": 2,
-        "w": 243,
+        "w": 133,
         "h": 256
       },
       "rotated": false,
@@ -54,20 +54,20 @@
       "spriteSourceSize": {
         "x": 0,
         "y": 0,
-        "w": 243,
+        "w": 133,
         "h": 256
       },
       "sourceSize": {
-        "w": 243,
+        "w": 133,
         "h": 256
       },
-      "duration": 83
+      "duration": 80
     },
     "marjorie_taylor_greene_cast_003.webp": {
       "frame": {
-        "x": 737,
+        "x": 407,
         "y": 2,
-        "w": 243,
+        "w": 133,
         "h": 256
       },
       "rotated": false,
@@ -75,20 +75,20 @@
       "spriteSourceSize": {
         "x": 0,
         "y": 0,
-        "w": 243,
+        "w": 133,
         "h": 256
       },
       "sourceSize": {
-        "w": 243,
+        "w": 133,
         "h": 256
       },
-      "duration": 83
+      "duration": 80
     },
     "marjorie_taylor_greene_cast_004.webp": {
       "frame": {
-        "x": 982,
+        "x": 542,
         "y": 2,
-        "w": 243,
+        "w": 133,
         "h": 256
       },
       "rotated": false,
@@ -96,20 +96,20 @@
       "spriteSourceSize": {
         "x": 0,
         "y": 0,
-        "w": 243,
+        "w": 133,
         "h": 256
       },
       "sourceSize": {
-        "w": 243,
+        "w": 133,
         "h": 256
       },
-      "duration": 83
+      "duration": 80
     },
     "marjorie_taylor_greene_cast_005.webp": {
       "frame": {
-        "x": 1227,
+        "x": 677,
         "y": 2,
-        "w": 243,
+        "w": 133,
         "h": 256
       },
       "rotated": false,
@@ -117,20 +117,20 @@
       "spriteSourceSize": {
         "x": 0,
         "y": 0,
-        "w": 243,
+        "w": 133,
         "h": 256
       },
       "sourceSize": {
-        "w": 243,
+        "w": 133,
         "h": 256
       },
-      "duration": 83
+      "duration": 80
     },
     "marjorie_taylor_greene_cast_006.webp": {
       "frame": {
-        "x": 1472,
+        "x": 812,
         "y": 2,
-        "w": 243,
+        "w": 133,
         "h": 256
       },
       "rotated": false,
@@ -138,20 +138,20 @@
       "spriteSourceSize": {
         "x": 0,
         "y": 0,
-        "w": 243,
+        "w": 133,
         "h": 256
       },
       "sourceSize": {
-        "w": 243,
+        "w": 133,
         "h": 256
       },
-      "duration": 83
+      "duration": 80
     },
     "marjorie_taylor_greene_cast_007.webp": {
       "frame": {
-        "x": 1717,
+        "x": 947,
         "y": 2,
-        "w": 243,
+        "w": 133,
         "h": 256
       },
       "rotated": false,
@@ -159,20 +159,20 @@
       "spriteSourceSize": {
         "x": 0,
         "y": 0,
-        "w": 243,
+        "w": 133,
         "h": 256
       },
       "sourceSize": {
-        "w": 243,
+        "w": 133,
         "h": 256
       },
-      "duration": 83
+      "duration": 80
     },
     "marjorie_taylor_greene_cast_008.webp": {
       "frame": {
-        "x": 1962,
+        "x": 1082,
         "y": 2,
-        "w": 243,
+        "w": 133,
         "h": 256
       },
       "rotated": false,
@@ -180,20 +180,20 @@
       "spriteSourceSize": {
         "x": 0,
         "y": 0,
-        "w": 243,
+        "w": 133,
         "h": 256
       },
       "sourceSize": {
-        "w": 243,
+        "w": 133,
         "h": 256
       },
-      "duration": 83
+      "duration": 80
     },
     "marjorie_taylor_greene_cast_009.webp": {
       "frame": {
-        "x": 2207,
+        "x": 1217,
         "y": 2,
-        "w": 243,
+        "w": 133,
         "h": 256
       },
       "rotated": false,
@@ -201,20 +201,20 @@
       "spriteSourceSize": {
         "x": 0,
         "y": 0,
-        "w": 243,
+        "w": 133,
         "h": 256
       },
       "sourceSize": {
-        "w": 243,
+        "w": 133,
         "h": 256
       },
-      "duration": 83
+      "duration": 80
     },
     "marjorie_taylor_greene_cast_010.webp": {
       "frame": {
-        "x": 2452,
+        "x": 1352,
         "y": 2,
-        "w": 243,
+        "w": 133,
         "h": 256
       },
       "rotated": false,
@@ -222,20 +222,20 @@
       "spriteSourceSize": {
         "x": 0,
         "y": 0,
-        "w": 243,
+        "w": 133,
         "h": 256
       },
       "sourceSize": {
-        "w": 243,
+        "w": 133,
         "h": 256
       },
-      "duration": 83
+      "duration": 80
     },
     "marjorie_taylor_greene_cast_011.webp": {
       "frame": {
-        "x": 2697,
+        "x": 1487,
         "y": 2,
-        "w": 243,
+        "w": 133,
         "h": 256
       },
       "rotated": false,
@@ -243,28 +243,28 @@
       "spriteSourceSize": {
         "x": 0,
         "y": 0,
-        "w": 243,
+        "w": 133,
         "h": 256
       },
       "sourceSize": {
-        "w": 243,
+        "w": 133,
         "h": 256
       },
-      "duration": 83
+      "duration": 80
     }
   },
   "meta": {
     "app": "bake",
     "version": "1",
+    "image": "marjorie_taylor_greene_cast.webp",
     "format": "RGBA8888",
     "scale": "1",
-    "image": "marjorie_taylor_greene_cast.webp",
     "size": {
-      "w": 2942,
+      "w": 1622,
       "h": 260
     },
     "anchor": {
-      "x": 121.5,
+      "x": 66.5,
       "y": 258,
       "normalized": {
         "x": 0.5,

@@ -4,7 +4,7 @@
       "frame": {
         "x": 2,
         "y": 2,
-        "w": 171,
+        "w": 110,
         "h": 256
       },
       "rotated": false,
@@ -12,20 +12,20 @@
       "spriteSourceSize": {
         "x": 0,
         "y": 0,
-        "w": 171,
+        "w": 110,
         "h": 256
       },
       "sourceSize": {
-        "w": 171,
+        "w": 110,
         "h": 256
       },
-      "duration": 83
+      "duration": 80
     },
     "marjorie_taylor_greene_hit_001.webp": {
       "frame": {
-        "x": 175,
+        "x": 114,
         "y": 2,
-        "w": 171,
+        "w": 110,
         "h": 256
       },
       "rotated": false,
@@ -33,20 +33,20 @@
       "spriteSourceSize": {
         "x": 0,
         "y": 0,
-        "w": 171,
+        "w": 110,
         "h": 256
       },
       "sourceSize": {
-        "w": 171,
+        "w": 110,
         "h": 256
       },
-      "duration": 83
+      "duration": 80
     },
     "marjorie_taylor_greene_hit_002.webp": {
       "frame": {
-        "x": 348,
+        "x": 226,
         "y": 2,
-        "w": 171,
+        "w": 110,
         "h": 256
       },
       "rotated": false,
@@ -54,20 +54,20 @@
       "spriteSourceSize": {
         "x": 0,
         "y": 0,
-        "w": 171,
+        "w": 110,
         "h": 256
       },
       "sourceSize": {
-        "w": 171,
+        "w": 110,
         "h": 256
       },
-      "duration": 83
+      "duration": 80
     },
     "marjorie_taylor_greene_hit_003.webp": {
       "frame": {
-        "x": 521,
+        "x": 338,
         "y": 2,
-        "w": 171,
+        "w": 110,
         "h": 256
       },
       "rotated": false,
@@ -75,20 +75,20 @@
       "spriteSourceSize": {
         "x": 0,
         "y": 0,
-        "w": 171,
+        "w": 110,
         "h": 256
       },
       "sourceSize": {
-        "w": 171,
+        "w": 110,
         "h": 256
       },
-      "duration": 83
+      "duration": 80
     },
     "marjorie_taylor_greene_hit_004.webp": {
       "frame": {
-        "x": 694,
+        "x": 450,
         "y": 2,
-        "w": 171,
+        "w": 110,
         "h": 256
       },
       "rotated": false,
@@ -96,20 +96,20 @@
       "spriteSourceSize": {
         "x": 0,
         "y": 0,
-        "w": 171,
+        "w": 110,
         "h": 256
       },
       "sourceSize": {
-        "w": 171,
+        "w": 110,
         "h": 256
       },
-      "duration": 83
+      "duration": 80
     },
     "marjorie_taylor_greene_hit_005.webp": {
       "frame": {
-        "x": 867,
+        "x": 562,
         "y": 2,
-        "w": 171,
+        "w": 110,
         "h": 256
       },
       "rotated": false,
@@ -117,20 +117,20 @@
       "spriteSourceSize": {
         "x": 0,
         "y": 0,
-        "w": 171,
+        "w": 110,
         "h": 256
       },
       "sourceSize": {
-        "w": 171,
+        "w": 110,
         "h": 256
       },
-      "duration": 83
+      "duration": 80
     },
     "marjorie_taylor_greene_hit_006.webp": {
       "frame": {
-        "x": 1040,
+        "x": 674,
         "y": 2,
-        "w": 171,
+        "w": 110,
         "h": 256
       },
       "rotated": false,
@@ -138,20 +138,20 @@
       "spriteSourceSize": {
         "x": 0,
         "y": 0,
-        "w": 171,
+        "w": 110,
         "h": 256
       },
       "sourceSize": {
-        "w": 171,
+        "w": 110,
         "h": 256
       },
-      "duration": 83
+      "duration": 80
     },
     "marjorie_taylor_greene_hit_007.webp": {
       "frame": {
-        "x": 1213,
+        "x": 786,
         "y": 2,
-        "w": 171,
+        "w": 110,
         "h": 256
       },
       "rotated": false,
@@ -159,20 +159,20 @@
       "spriteSourceSize": {
         "x": 0,
         "y": 0,
-        "w": 171,
+        "w": 110,
         "h": 256
       },
       "sourceSize": {
-        "w": 171,
+        "w": 110,
         "h": 256
       },
-      "duration": 83
+      "duration": 80
     },
     "marjorie_taylor_greene_hit_008.webp": {
       "frame": {
-        "x": 1386,
+        "x": 898,
         "y": 2,
-        "w": 171,
+        "w": 110,
         "h": 256
       },
       "rotated": false,
@@ -180,20 +180,20 @@
       "spriteSourceSize": {
         "x": 0,
         "y": 0,
-        "w": 171,
+        "w": 110,
         "h": 256
       },
       "sourceSize": {
-        "w": 171,
+        "w": 110,
         "h": 256
       },
-      "duration": 83
+      "duration": 80
     },
     "marjorie_taylor_greene_hit_009.webp": {
       "frame": {
-        "x": 1559,
+        "x": 1010,
         "y": 2,
-        "w": 171,
+        "w": 110,
         "h": 256
       },
       "rotated": false,
@@ -201,20 +201,20 @@
       "spriteSourceSize": {
         "x": 0,
         "y": 0,
-        "w": 171,
+        "w": 110,
         "h": 256
       },
       "sourceSize": {
-        "w": 171,
+        "w": 110,
         "h": 256
       },
-      "duration": 83
+      "duration": 80
     },
     "marjorie_taylor_greene_hit_010.webp": {
       "frame": {
-        "x": 1732,
+        "x": 1122,
         "y": 2,
-        "w": 171,
+        "w": 110,
         "h": 256
       },
       "rotated": false,
@@ -222,20 +222,20 @@
       "spriteSourceSize": {
         "x": 0,
         "y": 0,
-        "w": 171,
+        "w": 110,
         "h": 256
       },
       "sourceSize": {
-        "w": 171,
+        "w": 110,
         "h": 256
       },
-      "duration": 83
+      "duration": 80
     },
     "marjorie_taylor_greene_hit_011.webp": {
       "frame": {
-        "x": 1905,
+        "x": 1234,
         "y": 2,
-        "w": 171,
+        "w": 110,
         "h": 256
       },
       "rotated": false,
@@ -243,28 +243,28 @@
       "spriteSourceSize": {
         "x": 0,
         "y": 0,
-        "w": 171,
+        "w": 110,
         "h": 256
       },
       "sourceSize": {
-        "w": 171,
+        "w": 110,
         "h": 256
       },
-      "duration": 83
+      "duration": 80
     }
   },
   "meta": {
     "app": "bake",
     "version": "1",
+    "image": "marjorie_taylor_greene_hit.webp",
     "format": "RGBA8888",
     "scale": "1",
-    "image": "marjorie_taylor_greene_hit.webp",
     "size": {
-      "w": 2078,
+      "w": 1346,
       "h": 260
     },
     "anchor": {
-      "x": 85.5,
+      "x": 55.0,
       "y": 258,
       "normalized": {
         "x": 0.5,

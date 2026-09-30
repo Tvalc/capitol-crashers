@@ -1,1 +1,276 @@
-{"frames":{"ted_cruz_idle_000.webp":{"frame":{"x":2,"y":2,"w":66,"h":256},"rotated":false,"trimmed":false,"spriteSourceSize":{"x":0,"y":0,"w":66,"h":256},"sourceSize":{"w":66,"h":256},"duration":83},"ted_cruz_idle_001.webp":{"frame":{"x":72,"y":2,"w":66,"h":256},"rotated":false,"trimmed":false,"spriteSourceSize":{"x":0,"y":0,"w":66,"h":256},"sourceSize":{"w":66,"h":256},"duration":83},"ted_cruz_idle_002.webp":{"frame":{"x":142,"y":2,"w":66,"h":256},"rotated":false,"trimmed":false,"spriteSourceSize":{"x":0,"y":0,"w":66,"h":256},"sourceSize":{"w":66,"h":256},"duration":83},"ted_cruz_idle_003.webp":{"frame":{"x":212,"y":2,"w":66,"h":256},"rotated":false,"trimmed":false,"spriteSourceSize":{"x":0,"y":0,"w":66,"h":256},"sourceSize":{"w":66,"h":256},"duration":83},"ted_cruz_idle_004.webp":{"frame":{"x":282,"y":2,"w":66,"h":256},"rotated":false,"trimmed":false,"spriteSourceSize":{"x":0,"y":0,"w":66,"h":256},"sourceSize":{"w":66,"h":256},"duration":83},"ted_cruz_idle_005.webp":{"frame":{"x":352,"y":2,"w":66,"h":256},"rotated":false,"trimmed":false,"spriteSourceSize":{"x":0,"y":0,"w":66,"h":256},"sourceSize":{"w":66,"h":256},"duration":83},"ted_cruz_idle_006.webp":{"frame":{"x":422,"y":2,"w":66,"h":256},"rotated":false,"trimmed":false,"spriteSourceSize":{"x":0,"y":0,"w":66,"h":256},"sourceSize":{"w":66,"h":256},"duration":83},"ted_cruz_idle_007.webp":{"frame":{"x":492,"y":2,"w":66,"h":256},"rotated":false,"trimmed":false,"spriteSourceSize":{"x":0,"y":0,"w":66,"h":256},"sourceSize":{"w":66,"h":256},"duration":83},"ted_cruz_idle_008.webp":{"frame":{"x":562,"y":2,"w":66,"h":256},"rotated":false,"trimmed":false,"spriteSourceSize":{"x":0,"y":0,"w":66,"h":256},"sourceSize":{"w":66,"h":256},"duration":83},"ted_cruz_idle_009.webp":{"frame":{"x":632,"y":2,"w":66,"h":256},"rotated":false,"trimmed":false,"spriteSourceSize":{"x":0,"y":0,"w":66,"h":256},"sourceSize":{"w":66,"h":256},"duration":83},"ted_cruz_idle_010.webp":{"frame":{"x":702,"y":2,"w":66,"h":256},"rotated":false,"trimmed":false,"spriteSourceSize":{"x":0,"y":0,"w":66,"h":256},"sourceSize":{"w":66,"h":256},"duration":83},"ted_cruz_idle_011.webp":{"frame":{"x":772,"y":2,"w":66,"h":256},"rotated":false,"trimmed":false,"spriteSourceSize":{"x":0,"y":0,"w":66,"h":256},"sourceSize":{"w":66,"h":256},"duration":83}},"meta":{"app":"MAKKO Sprite Studio","version":"1.0.0","image":"ted_cruz_idle.webp","format":"RGBA8888","size":{"w":840,"h":260},"scale":"1","frameTags":[{"name":"Ted Cruz Idle","from":0,"to":11,"direction":"forward"}],"anchor":{"x":33,"y":255,"normalized":{"x":0.5,"y":0.99609375},"strategy":"bottom-center"},"referenceAlignment":{"referenceBounds":{"width":63,"height":255},"frameBounds":{"width":66,"height":256},"normalized":true}}}
+{
+  "frames": {
+    "ted_cruz_idle_000.webp": {
+      "frame": {
+        "x": 2,
+        "y": 2,
+        "w": 164,
+        "h": 256
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 164,
+        "h": 256
+      },
+      "sourceSize": {
+        "w": 164,
+        "h": 256
+      },
+      "duration": 80
+    },
+    "ted_cruz_idle_001.webp": {
+      "frame": {
+        "x": 168,
+        "y": 2,
+        "w": 164,
+        "h": 256
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 164,
+        "h": 256
+      },
+      "sourceSize": {
+        "w": 164,
+        "h": 256
+      },
+      "duration": 80
+    },
+    "ted_cruz_idle_002.webp": {
+      "frame": {
+        "x": 334,
+        "y": 2,
+        "w": 164,
+        "h": 256
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 164,
+        "h": 256
+      },
+      "sourceSize": {
+        "w": 164,
+        "h": 256
+      },
+      "duration": 80
+    },
+    "ted_cruz_idle_003.webp": {
+      "frame": {
+        "x": 500,
+        "y": 2,
+        "w": 164,
+        "h": 256
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 164,
+        "h": 256
+      },
+      "sourceSize": {
+        "w": 164,
+        "h": 256
+      },
+      "duration": 80
+    },
+    "ted_cruz_idle_004.webp": {
+      "frame": {
+        "x": 666,
+        "y": 2,
+        "w": 164,
+        "h": 256
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 164,
+        "h": 256
+      },
+      "sourceSize": {
+        "w": 164,
+        "h": 256
+      },
+      "duration": 80
+    },
+    "ted_cruz_idle_005.webp": {
+      "frame": {
+        "x": 832,
+        "y": 2,
+        "w": 164,
+        "h": 256
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 164,
+        "h": 256
+      },
+      "sourceSize": {
+        "w": 164,
+        "h": 256
+      },
+      "duration": 80
+    },
+    "ted_cruz_idle_006.webp": {
+      "frame": {
+        "x": 998,
+        "y": 2,
+        "w": 164,
+        "h": 256
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 164,
+        "h": 256
+      },
+      "sourceSize": {
+        "w": 164,
+        "h": 256
+      },
+      "duration": 80
+    },
+    "ted_cruz_idle_007.webp": {
+      "frame": {
+        "x": 1164,
+        "y": 2,
+        "w": 164,
+        "h": 256
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 164,
+        "h": 256
+      },
+      "sourceSize": {
+        "w": 164,
+        "h": 256
+      },
+      "duration": 80
+    },
+    "ted_cruz_idle_008.webp": {
+      "frame": {
+        "x": 1330,
+        "y": 2,
+        "w": 164,
+        "h": 256
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 164,
+        "h": 256
+      },
+      "sourceSize": {
+        "w": 164,
+        "h": 256
+      },
+      "duration": 80
+    },
+    "ted_cruz_idle_009.webp": {
+      "frame": {
+        "x": 1496,
+        "y": 2,
+        "w": 164,
+        "h": 256
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 164,
+        "h": 256
+      },
+      "sourceSize": {
+        "w": 164,
+        "h": 256
+      },
+      "duration": 80
+    },
+    "ted_cruz_idle_010.webp": {
+      "frame": {
+        "x": 1662,
+        "y": 2,
+        "w": 164,
+        "h": 256
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 164,
+        "h": 256
+      },
+      "sourceSize": {
+        "w": 164,
+        "h": 256
+      },
+      "duration": 80
+    },
+    "ted_cruz_idle_011.webp": {
+      "frame": {
+        "x": 1828,
+        "y": 2,
+        "w": 164,
+        "h": 256
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 164,
+        "h": 256
+      },
+      "sourceSize": {
+        "w": 164,
+        "h": 256
+      },
+      "duration": 80
+    }
+  },
+  "meta": {
+    "app": "bake",
+    "version": "1",
+    "image": "ted_cruz_idle.webp",
+    "format": "RGBA8888",
+    "scale": "1",
+    "size": {
+      "w": 1994,
+      "h": 260
+    },
+    "anchor": {
+      "x": 82.0,
+      "y": 258,
+      "normalized": {
+        "x": 0.5,
+        "y": 1
+      },
+      "strategy": "bottom-center"
+    }
+  }
+}

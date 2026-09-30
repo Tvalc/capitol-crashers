@@ -33,6 +33,50 @@ export function spawnBolt(game, owner) {
   });
 }
 
+export function spawnSombrero(game, owner) {
+  const facing = owner.facing || 1;
+  game.projectiles.push({
+    kind: "sombrero",
+    x: owner.x + facing * 128,
+    y: owner.y,
+    z: 168,
+    vx: facing * 720,
+    vy: 0,
+    vz: 0,
+    team: "enemy",
+    dmg: owner.dmg + 4,
+    kb: 170,
+    life: 0.9,
+    age: 0,
+    alive: true,
+    spin: 0,
+  });
+}
+
+export function spawnSatellite(game, x, y, dmg, lead = 0) {
+  game.projectiles.push({
+    kind: "satellite",
+    x,
+    y,
+    z: 0,
+    vx: 0,
+    vy: 0,
+    vz: 0,
+    team: "enemy",
+    dmg,
+    kb: 280,
+    life: 2.15,
+    age: 0,
+    hover: 1.15,
+    lock: 0.48,
+    lead,
+    alive: true,
+    spin: 0,
+    hit: false,
+    locked: false,
+  });
+}
+
 export function spawnLaser(game, x, y, dmg) {
   game.projectiles.push({
     kind: "laser",
@@ -96,6 +140,40 @@ export function updatePickups(game) {
 export function updateProjectiles(game, dt) {
   for (const shot of game.projectiles) {
     if (!shot.alive) continue;
+    if (shot.kind === "satellite") {
+      shot.age += dt;
+      shot.life -= dt;
+      const target = game.player;
+      if (!shot.locked && shot.age < shot.hover && target) {
+        const goalX = target.x + (shot.lead || 0);
+        shot.x += (goalX - shot.x) * Math.min(1, dt * 1.7);
+        shot.y += (target.y - shot.y) * Math.min(1, dt * 1.7);
+      } else if (!shot.locked) {
+        shot.locked = true;
+      }
+      const fireAt = shot.hover + shot.lock;
+      if (!shot.hit && shot.age >= fireAt && target?.alive) {
+        shot.hit = true;
+        if (Math.abs(shot.x - target.x) < 34 && Math.abs(shot.y - target.y) < 30) {
+          applyHit(game, {
+            x: shot.x,
+            y: shot.y,
+            dmg: shot.dmg,
+            kb: shot.kb,
+            lift: 50,
+            knockdown: false,
+            facing: Math.sign(target.x - shot.x) || 1,
+            team: "enemy",
+            kind: "throw",
+            points: 0,
+            hitstop: 0.06,
+            shake: 8,
+          }, target);
+        }
+      }
+      if (shot.life <= 0) shot.alive = false;
+      continue;
+    }
     if (shot.kind === "laser") {
       shot.age += dt;
       shot.life -= dt;
@@ -118,6 +196,33 @@ export function updateProjectiles(game, dt) {
             shake: 7,
           }, target);
         }
+      }
+      if (shot.life <= 0) shot.alive = false;
+      continue;
+    }
+    if (shot.kind === "sombrero") {
+      shot.life -= dt;
+      shot.age = (shot.age || 0) + dt;
+      shot.x += shot.vx * dt;
+      shot.y += shot.vy * dt;
+      const target = game.player;
+      if (target?.alive && !shot.hit && Math.abs(shot.x - target.x) < target.w * 0.55 + 16 && Math.abs(shot.y - target.y) < 28) {
+        shot.hit = true;
+        shot.alive = false;
+        applyHit(game, {
+          x: shot.x,
+          y: shot.y,
+          dmg: shot.dmg,
+          kb: shot.kb,
+          lift: 20,
+          knockdown: false,
+          facing: Math.sign(shot.vx) || 1,
+          team: "enemy",
+          kind: "throw",
+          points: 0,
+          hitstop: 0.05,
+          shake: 5,
+        }, target);
       }
       if (shot.life <= 0) shot.alive = false;
       continue;

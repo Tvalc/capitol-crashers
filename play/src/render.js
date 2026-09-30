@@ -1,5 +1,5 @@
 import { FIGHTERS, poseFor } from "./fighters.js?v=art";
-import { drawSprite } from "./sprites.js?v=swagger";
+import { drawSprite } from "./sprites.js?v=dt";
 import { WORLD } from "./stages.js?v=art";
 
 function roundRect(ctx, x, y, w, h, r) {
@@ -166,30 +166,72 @@ function drawPickup(ctx, pickup, cam) {
   }
 }
 
+const hatSprite = new Image();
+hatSprite.src = "assets/sprites/ted_cruz_hat.webp?v=dt";
+const craftSprite = new Image();
+craftSprite.src = "assets/sprites/satellite_craft.webp?v=dt";
+const beamSprite = new Image();
+beamSprite.src = "assets/sprites/satellite_beam.webp?v=dt";
+
 function drawShot(ctx, shot, cam) {
+  if (shot.kind === "satellite") {
+    const x = shot.x - cam;
+    const firing = shot.age >= shot.hover + shot.lock;
+    const locking = shot.locked && !firing;
+    const bob = shot.locked ? 0 : Math.sin(shot.age * 7) * 8;
+    const craftY = 78 + bob;
+    ctx.save();
+    ctx.strokeStyle = firing ? "rgba(120, 230, 255, 0.95)" : locking ? "rgba(255, 220, 90, 0.95)" : "rgba(160, 210, 255, 0.4)";
+    ctx.lineWidth = firing ? 3 : 2;
+    ctx.beginPath();
+    ctx.ellipse(x, shot.y, firing ? 26 : locking ? 24 : 36, 9, 0, 0, Math.PI * 2);
+    ctx.stroke();
+    if ((firing || locking) && beamSprite.complete && beamSprite.naturalWidth) {
+      ctx.globalAlpha = firing ? 0.95 : 0.28;
+      ctx.drawImage(beamSprite, x - 16, craftY + 18, 32, Math.max(8, shot.y - craftY - 18));
+      ctx.globalAlpha = 1;
+    }
+    if (craftSprite.complete && craftSprite.naturalWidth) {
+      ctx.drawImage(craftSprite, x - 78, craftY - 30, 156, 62);
+    }
+    ctx.restore();
+    return;
+  }
   if (shot.kind === "laser") {
     const x = shot.x - cam;
     const warming = shot.age < shot.warn;
+    const pulse = 0.65 + Math.sin(shot.age * 28) * 0.35;
     ctx.save();
-    ctx.strokeStyle = warming ? "rgba(255, 70, 150, 0.55)" : "#fff4fb";
-    ctx.lineWidth = warming ? 4 : 16;
+    ctx.fillStyle = warming ? `rgba(255, 60, 160, ${0.28 * pulse})` : "rgba(255, 40, 140, 0.35)";
     ctx.beginPath();
-    ctx.moveTo(x, shot.y - 460);
+    ctx.ellipse(x, shot.y, warming ? 22 : 34, warming ? 8 : 12, 0, 0, Math.PI * 2);
+    ctx.fill();
+    ctx.strokeStyle = warming ? `rgba(255, 140, 210, ${0.85 * pulse})` : "#ff4d9a";
+    ctx.lineWidth = warming ? 10 : 34;
+    ctx.beginPath();
+    ctx.moveTo(x, 0);
     ctx.lineTo(x, shot.y);
     ctx.stroke();
-    if (!warming) {
-      ctx.strokeStyle = "#ff4d9a";
-      ctx.lineWidth = 6;
-      ctx.beginPath();
-      ctx.moveTo(x, shot.y - 460);
-      ctx.lineTo(x, shot.y);
-      ctx.stroke();
-    }
+    ctx.strokeStyle = warming ? "rgba(255, 230, 250, 0.7)" : "#fff6fd";
+    ctx.lineWidth = warming ? 3 : 8;
+    ctx.beginPath();
+    ctx.moveTo(x, 0);
+    ctx.lineTo(x, shot.y);
+    ctx.stroke();
     ctx.restore();
     return;
   }
   const x = shot.x - cam;
   const y = shot.y - shot.z;
+  if (shot.kind === "sombrero" && hatSprite.complete && hatSprite.naturalWidth) {
+    const spin = 0.72 + Math.abs(Math.sin((shot.age || 0) * 24)) * 0.28;
+    ctx.save();
+    ctx.translate(x, y);
+    ctx.scale((shot.vx < 0 ? -1 : 1) * spin, 1);
+    ctx.drawImage(hatSprite, -48, -18, 96, 36);
+    ctx.restore();
+    return;
+  }
   ctx.save();
   ctx.translate(x, y);
   ctx.rotate(shot.spin);

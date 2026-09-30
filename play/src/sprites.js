@@ -1,4 +1,4 @@
-import { playerMoveWindow } from "./player.js?v=swagger";
+import { playerMoveWindow } from "./player.js?v=dt";
 
 const CLIPS = {
   zohran: ["idle", "walk", "run", "jump", "attack", "hit", "death", "cast", "grab", "throw", "lunge", "reversal"],
@@ -86,14 +86,14 @@ export function readFrames(data, width, height) {
 
 function loadOne(sprite, clip, name) {
   const image = new Image();
-  const dataPromise = fetch(`assets/sprites/${name}.json?v=swagger`).then((res) => {
+  const dataPromise = fetch(`assets/sprites/${name}.json?v=dt`).then((res) => {
     if (!res.ok) throw new Error(`Could not load ${name}: ${res.status}`);
     return res.json();
   });
   const imagePromise = new Promise((resolve, reject) => {
     image.onload = () => resolve(image);
     image.onerror = reject;
-    image.src = `assets/sprites/${name}.webp?v=swagger`;
+    image.src = `assets/sprites/${name}.webp?v=dt`;
   });
   return Promise.all([dataPromise, imagePromise]).then(([data, img]) => {
     const frames = readFrames(data, img.naturalWidth, img.naturalHeight);
@@ -120,7 +120,7 @@ export function clipFor(state) {
   if (state === "reversal") return "reversal";
   if (state === "throw") return "throw";
   if (state === "grab") return "grab";
-  if (state === "grabbed") return "hit";
+  if (state === "grabbed") return "idle";
   if (state === "dashatk") return "lunge";
   if (state === "hurt" || state === "air" || state === "getup") return "hit";
   if (state === "down" || state === "dead") return "death";
@@ -145,8 +145,7 @@ function attackWindow(ent) {
   if (ent.team === "player") {
     const move = playerMoveWindow(ent);
     if (move) return move;
-    // Grab and airborne states still need their dedicated asset/event pass.
-    if (ent.state === "grab") return { startup: 0.16, active: 0.14, total: 0.56 };
+    if (ent.state === "grab") return { startup: 0.12, active: 2.3, total: 2.55 };
   }
   if (ent.kind === "trump") return { startup: 0.34, active: 0.12, total: 0.72 };
   if (ent.kind === "greene") {
@@ -154,7 +153,7 @@ function attackWindow(ent) {
     return { startup: 0.22, active: 0.12, total: 0.55 };
   }
   if (ent.kind === "cruz" && ent.state === "windup") return { startup: 0.28, active: 0.04, total: 0.32 };
-  if (ent.kind === "cruz" && ent.state === "attack") return { startup: 0.36, active: 0.12, total: 0.7 };
+  if (ent.kind === "cruz" && ent.state === "attack") return { startup: 0.72, active: 0.12, total: 1.05 };
   if (ent.kind === "vance") return { startup: 0.28, active: 0.14, total: 0.7 };
   return { startup: 0.18, active: 0.08, total: 0.48 };
 }
@@ -162,12 +161,12 @@ function attackWindow(ent) {
 function contactAt(ent, count) {
   let frac = 0.42;
   if (ent.kind === "trump" && ent.state === "attack") frac = 0.72;
-  if (ent.kind === "cruz" && ent.state === "attack") frac = 0.78;
+  if (ent.kind === "cruz" && ent.state === "attack") frac = 0.62;
   if (ent.state === "dashatk" || ent.state === "lunge") frac = 0.55;
   else if (ent.state === "heavy") frac = 0.62;
   else if (ent.state === "reversal") frac = 0.8;
   else if (ent.state === "throw") frac = 0.78;
-  else if (ent.state === "grab") frac = 0.16;
+  else if (ent.state === "grab") frac = 0.18;
   else if (ent.state === "light") {
     if (ent.combo === 2) frac = 0.7;
     else if (ent.combo === 1) frac = 0.5;
@@ -205,9 +204,9 @@ const STEP = {
   zohran: { walk: 0.12, run: 0.055 },
   abdul: { walk: 0.14, run: 0.06 },
   trump: { walk: 0.18, run: 0.14 },
-  vance: { walk: 0.16, run: 0.1 },
-  cruz: { walk: 0.055, run: 0.04 },
-  greene: { walk: 0.05, run: 0.045 },
+  vance: { walk: 0.2, run: 0.18 },
+  cruz: { walk: 0.1, run: 0.08 },
+  greene: { walk: 0.055, run: 0.055 },
 };
 
 function gaitIndex(ent, count, clip) {
@@ -237,7 +236,8 @@ export const SPRITE_BODY_SCALE = { cruz: { attack: 0.55 }, vance: { cast: 1.65 }
 
 export function drawSprite(ctx, ent, sx, sc) {
   const sprite = actorSprite(ent);
-  const wanted = clipFor(ent.state);
+  let wanted = clipFor(ent.state);
+  if (actorSprite(ent) === "cruz" && ent.state === "windup") wanted = "run";
   const resolved = resolveSheet(sprite, wanted);
   if (!resolved) return false;
   const { sheet, clip } = resolved;
@@ -246,7 +246,7 @@ export function drawSprite(ctx, ent, sx, sc) {
   const once = ONCE.has(clip);
   let index;
   if (clip === "idle") {
-    const step = sprite === "zohran" ? 0.14 : sprite === "abdul" ? 0.2 : 0;
+    const step = sprite === "zohran" ? 0.14 : sprite === "abdul" ? 0.2 : sprite === "vance" ? 0.22 : sprite === "cruz" ? 0.16 : sprite === "greene" ? 0.16 : 0;
     index = step ? Math.floor((ent.anim || 0) / step) % count : 0;
   }
   else if (clip === "hit") index = flinchIndex(ent, count);

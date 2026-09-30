@@ -1,7 +1,7 @@
 import { play } from "./audio.js";
 import { FIGHTERS } from "./fighters.js?v=art";
 import { integrate, melee, spendSpecial, updateBody } from "./combat.js?v=fight2";
-import { finishWeapon, launchHeld, noteWeaponSwing, spawnBolt } from "./weapons.js?v=swagger";
+import { finishWeapon, launchHeld, noteWeaponSwing, spawnBolt } from "./weapons.js?v=dt";
 
 const LIGHTS = [
   { startup: 0.2, active: 0.12, dmg: 7, kb: 180, lift: 0 },
@@ -300,8 +300,8 @@ function startGrab(game, player, enemy) {
   enemy.vx = 0;
   enemy.vy = 0;
   enemy.vz = 0;
-  game.banner = "K throws. Hold back to throw behind you.";
-  game.bannerT = 1.1;
+  game.banner = "J knees. K throws. Hold back and K to throw behind you.";
+  game.bannerT = 1.2;
 }
 
 function startBackstep(player) {
@@ -533,11 +533,10 @@ function updateGrab(player, game, input, dt) {
   enemy.y = player.y;
   enemy.z = 0;
   enemy.facing = -player.facing;
-  const punch = player.bufferLight > 0 && player.grabHits < 3 && player.stateT >= 0.16;
+  const punch = player.bufferLight > 0 && player.stateT >= 0.12;
   if (punch) {
     player.bufferLight = 0;
     player.grabHits += 1;
-    player.stateT = 0;
     melee(game, player, {
       dmg: 6 * player.fighter.power,
       kb: 0,
@@ -551,7 +550,15 @@ function updateGrab(player, game, input, dt) {
     });
     return;
   }
-  const throwNow = player.bufferHeavy > 0 || (player.bufferLight > 0 && player.grabHits >= 3) || player.stateT > 0.9;
+  const throwNow = player.bufferHeavy > 0;
+  if (player.stateT > 2.5 && !throwNow) {
+    enemy.state = "idle";
+    enemy.vx = 0;
+    player.grabId = null;
+    player.grabCd = 0.45;
+    player.state = "idle";
+    return;
+  }
   if (throwNow) {
     const dir = input.x === -player.facing ? -player.facing : player.facing;
     player.bufferLight = 0;
@@ -724,7 +731,6 @@ export function updatePlayer(player, game, input, dt) {
 
   if (tryOffense(player, game, input)) return;
   steer(player, input, game.time);
-  if ((player.state === "idle" || player.state === "walk") && tryGrab(player, game, 88)) return;
   integrate(player, dt);
 }
 

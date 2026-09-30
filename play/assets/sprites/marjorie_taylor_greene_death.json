@@ -4,7 +4,7 @@
       "frame": {
         "x": 2,
         "y": 2,
-        "w": 296,
+        "w": 253,
         "h": 256
       },
       "rotated": false,
@@ -12,20 +12,20 @@
       "spriteSourceSize": {
         "x": 0,
         "y": 0,
-        "w": 296,
+        "w": 253,
         "h": 256
       },
       "sourceSize": {
-        "w": 296,
+        "w": 253,
         "h": 256
       },
-      "duration": 83
+      "duration": 80
     },
     "marjorie_taylor_greene_death_001.webp": {
       "frame": {
-        "x": 300,
+        "x": 257,
         "y": 2,
-        "w": 296,
+        "w": 253,
         "h": 256
       },
       "rotated": false,
@@ -33,20 +33,20 @@
       "spriteSourceSize": {
         "x": 0,
         "y": 0,
-        "w": 296,
+        "w": 253,
         "h": 256
       },
       "sourceSize": {
-        "w": 296,
+        "w": 253,
         "h": 256
       },
-      "duration": 83
+      "duration": 80
     },
     "marjorie_taylor_greene_death_002.webp": {
       "frame": {
-        "x": 598,
+        "x": 512,
         "y": 2,
-        "w": 296,
+        "w": 253,
         "h": 256
       },
       "rotated": false,
@@ -54,20 +54,20 @@
       "spriteSourceSize": {
         "x": 0,
         "y": 0,
-        "w": 296,
+        "w": 253,
         "h": 256
       },
       "sourceSize": {
-        "w": 296,
+        "w": 253,
         "h": 256
       },
-      "duration": 83
+      "duration": 80
     },
     "marjorie_taylor_greene_death_003.webp": {
       "frame": {
-        "x": 896,
+        "x": 767,
         "y": 2,
-        "w": 296,
+        "w": 253,
         "h": 256
       },
       "rotated": false,
@@ -75,20 +75,20 @@
       "spriteSourceSize": {
         "x": 0,
         "y": 0,
-        "w": 296,
+        "w": 253,
         "h": 256
       },
       "sourceSize": {
-        "w": 296,
+        "w": 253,
         "h": 256
       },
-      "duration": 83
+      "duration": 80
     },
     "marjorie_taylor_greene_death_004.webp": {
       "frame": {
-        "x": 1194,
+        "x": 1022,
         "y": 2,
-        "w": 296,
+        "w": 253,
         "h": 256
       },
       "rotated": false,
@@ -96,20 +96,20 @@
       "spriteSourceSize": {
         "x": 0,
         "y": 0,
-        "w": 296,
+        "w": 253,
         "h": 256
       },
       "sourceSize": {
-        "w": 296,
+        "w": 253,
         "h": 256
       },
-      "duration": 83
+      "duration": 80
     },
     "marjorie_taylor_greene_death_005.webp": {
       "frame": {
-        "x": 1492,
+        "x": 1277,
         "y": 2,
-        "w": 296,
+        "w": 253,
         "h": 256
       },
       "rotated": false,
@@ -117,20 +117,20 @@
       "spriteSourceSize": {
         "x": 0,
         "y": 0,
-        "w": 296,
+        "w": 253,
         "h": 256
       },
       "sourceSize": {
-        "w": 296,
+        "w": 253,
         "h": 256
       },
-      "duration": 83
+      "duration": 80
     },
     "marjorie_taylor_greene_death_006.webp": {
       "frame": {
-        "x": 1790,
+        "x": 1532,
         "y": 2,
-        "w": 296,
+        "w": 253,
         "h": 256
       },
       "rotated": false,
@@ -138,20 +138,20 @@
       "spriteSourceSize": {
         "x": 0,
         "y": 0,
-        "w": 296,
+        "w": 253,
         "h": 256
       },
       "sourceSize": {
-        "w": 296,
+        "w": 253,
         "h": 256
       },
-      "duration": 83
+      "duration": 80
     },
     "marjorie_taylor_greene_death_007.webp": {
       "frame": {
-        "x": 2088,
+        "x": 1787,
         "y": 2,
-        "w": 296,
+        "w": 253,
         "h": 256
       },
       "rotated": false,
@@ -159,20 +159,20 @@
       "spriteSourceSize": {
         "x": 0,
         "y": 0,
-        "w": 296,
+        "w": 253,
         "h": 256
       },
       "sourceSize": {
-        "w": 296,
+        "w": 253,
         "h": 256
       },
-      "duration": 83
+      "duration": 80
     },
     "marjorie_taylor_greene_death_008.webp": {
       "frame": {
-        "x": 2386,
+        "x": 2042,
         "y": 2,
-        "w": 296,
+        "w": 253,
         "h": 256
       },
       "rotated": false,
@@ -180,20 +180,20 @@
       "spriteSourceSize": {
         "x": 0,
         "y": 0,
-        "w": 296,
+        "w": 253,
         "h": 256
       },
       "sourceSize": {
-        "w": 296,
+        "w": 253,
         "h": 256
       },
-      "duration": 83
+      "duration": 80
     },
     "marjorie_taylor_greene_death_009.webp": {
       "frame": {
-        "x": 2684,
+        "x": 2297,
         "y": 2,
-        "w": 296,
+        "w": 253,
         "h": 256
       },
       "rotated": false,
@@ -201,20 +201,20 @@
       "spriteSourceSize": {
         "x": 0,
         "y": 0,
-        "w": 296,
+        "w": 253,
         "h": 256
       },
       "sourceSize": {
-        "w": 296,
+        "w": 253,
         "h": 256
       },
-      "duration": 83
+      "duration": 80
     },
     "marjorie_taylor_greene_death_010.webp": {
       "frame": {
-        "x": 2982,
+        "x": 2552,
         "y": 2,
-        "w": 296,
+        "w": 253,
         "h": 256
       },
       "rotated": false,
@@ -222,20 +222,20 @@
       "spriteSourceSize": {
         "x": 0,
         "y": 0,
-        "w": 296,
+        "w": 253,
         "h": 256
       },
       "sourceSize": {
-        "w": 296,
+        "w": 253,
         "h": 256
       },
-      "duration": 83
+      "duration": 80
     },
     "marjorie_taylor_greene_death_011.webp": {
       "frame": {
-        "x": 3280,
+        "x": 2807,
         "y": 2,
-        "w": 296,
+        "w": 253,
         "h": 256
       },
       "rotated": false,
@@ -243,28 +243,28 @@
       "spriteSourceSize": {
         "x": 0,
         "y": 0,
-        "w": 296,
+        "w": 253,
         "h": 256
       },
       "sourceSize": {
-        "w": 296,
+        "w": 253,
         "h": 256
       },
-      "duration": 83
+      "duration": 80
     }
   },
   "meta": {
     "app": "bake",
     "version": "1",
+    "image": "marjorie_taylor_greene_death.webp",
     "format": "RGBA8888",
     "scale": "1",
-    "image": "marjorie_taylor_greene_death.webp",
     "size": {
-      "w": 3578,
+      "w": 3062,
       "h": 260
     },
     "anchor": {
-      "x": 148.0,
+      "x": 126.5,
       "y": 258,
       "normalized": {
         "x": 0.5,
