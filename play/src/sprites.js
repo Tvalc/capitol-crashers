@@ -319,6 +319,13 @@ export function drawSprite(ctx, ent, sx, sc) {
     const idleTime = Math.max(0, (ent.anim || 0) - (ent.idleStartedAt || 0));
     index = sheet.frameDurations ? timedLoopIndex(idleTime, sheet.frameDurations) : step ? Math.floor(idleTime / step) % count : 0;
   }
+  else if (ent.team === "citizen" && (clip === "cheer" || clip === "hit")) {
+    // Citizens play these from the moment they trigger: cheer runs once and holds the last
+    // frame; a knocked-down witness holds the kneeling midpoint until someone helps them up.
+    const fps = sheet.fps > 0 ? sheet.fps : 12;
+    const at = Math.floor(Math.max(0, ent.stateT || 0) * fps);
+    index = clip === "hit" ? Math.min(at, Math.floor(count * 0.5)) : Math.min(at, count - 1);
+  }
   else if (clip === "hit") index = flinchIndex(ent, count);
   else if (clip === "cast") index = poseIndex(ent, count, clip);
   else if (clip === "walk" || clip === "run") index = gaitIndex(ent, count, clip, sheet.fps);
