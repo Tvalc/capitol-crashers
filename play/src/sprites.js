@@ -18,7 +18,25 @@ const FILE = {
   cruz: "chibi/ted_cruz",
 };
 
+// Citizen sheets are optional until the Makko art lands; the renderer falls
+// back to a painted placeholder when a sheet is missing.
+const OPTIONAL_CLIPS = {
+  citizen_hungry: ["idle", "cheer", "walk"],
+  citizen_sick: ["idle", "cheer", "walk"],
+  citizen_evicted: ["idle", "cheer", "walk"],
+  citizen_worker: ["idle", "cheer", "walk"],
+  citizen_witness: ["idle", "cheer", "walk", "hit"],
+};
+const OPTIONAL_FILE = {
+  citizen_hungry: "chibi/citizens/hungry",
+  citizen_sick: "chibi/citizens/sick",
+  citizen_evicted: "chibi/citizens/evicted",
+  citizen_worker: "chibi/citizens/worker",
+  citizen_witness: "chibi/citizens/witness",
+};
+
 const FALLBACK = {
+  cheer: ["cheer", "idle"],
   idle: ["idle", "walk", "run"],
   walk: ["walk", "idle"],
   run: ["run", "walk", "idle"],
@@ -50,11 +68,15 @@ export function loadSprites() {
       jobs.push(loadOne(sprite, clip, name));
     }
   }
-  return Promise.allSettled(jobs).then((results) => {
+  const optional = [];
+  for (const [sprite, clips] of Object.entries(OPTIONAL_CLIPS)) {
+    for (const clip of clips) optional.push(loadOne(sprite, clip, `${OPTIONAL_FILE[sprite]}_${clip}`).catch(() => null));
+  }
+  return Promise.allSettled([...jobs, ...optional]).then((results) => {
     if (sheets.has("greene:run") && !sheets.has("greene:walk")) {
       sheets.set("greene:walk", sheets.get("greene:run"));
     }
-    const failures = results.filter(result => result.status === "rejected");
+    const failures = results.slice(0, jobs.length).filter(result => result.status === "rejected");
     if (failures.length) throw new Error(`${failures.length} animation sheets failed to load.`);
   });
 }
@@ -109,12 +131,20 @@ function loadOne(sprite, clip, name) {
   });
 }
 
+export function hasSheet(sprite, clip = "idle") {
+  return sheets.has(clipKey(sprite, clip));
+}
+
 export function actorSprite(ent) {
   if (ent.team === "player") return ent.fighter?.sprite || ent.kind;
   return ent.sprite || ent.kind;
 }
 
 export function clipFor(state) {
+  if (state === "help") return "grab";
+  if (state === "need") return "idle";
+  if (state === "helped" || state === "testified") return "cheer";
+  if (state === "follow" || state === "leaving") return "walk";
   if (state === "walk") return "walk";
   if (state === "run" || state === "dash" || state === "charge") return "run";
   if (state === "jump" || state === "jatk" || state === "leap") return "jump";
@@ -151,6 +181,7 @@ function attackWindow(ent) {
     if (move) return move;
     // Grab and airborne states still need their dedicated asset/event pass.
     if (ent.state === "grab") return { startup: 0.16, active: 0.14, total: 0.56 };
+    if (ent.state === "help") return { startup: 0.2, active: 0.1, total: 0.62 };
   }
   if (ent.kind === "trump") return { startup: 0.34, active: 0.12, total: 0.72 };
   if (ent.kind === "greene") {
@@ -184,6 +215,13 @@ export function poseIndex(ent, count, clip) {
   if (count <= 1) return 0;
   if (clip === "grab" && ent.team === "player") {
     const contact = Math.min(count - 1, actorSprite(ent) === "abdul" ? 7 : 6);
+    if (ent.state === "help") {
+      // Reach out, hold the hand-off, then settle back.
+      const t = Math.max(0, ent.stateT || 0);
+      if (t < 0.2) return Math.min(contact, Math.floor(t / 0.2 * contact));
+      if (t < 0.36) return contact;
+      return Math.min(count - 1, contact + Math.floor((t - 0.36) / 0.26 * (count - contact)));
+    }
     return Math.min(contact, Math.floor(Math.max(0, ent.stateT || 0) / 0.24 * contact));
   }
   if (clip === "death" && ent.team === "player" && count === 12) {

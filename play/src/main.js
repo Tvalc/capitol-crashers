@@ -8,6 +8,10 @@ import { cloneStage, STAGES, WORLD } from "./stages.js?v=feel1";
 import { updatePickups, updateProjectiles } from "./weapons.js?v=chibi-site2";
 import { loadSprites } from "./sprites.js?v=grounded1";
 import { PAGES } from "../../story/panels.js";
+import { followingWitness, makeCitizen, spawnCelebration, updateCitizens, witnessTestifies } from "./citizens.js?v=citizens1";
+
+// Comic panels that exist as short animated loops (OpenArt), shown between stages.
+const MOTION = { p21: "../art/story/motion/p21.mp4", p27: "../art/story/motion/p27.mp4" };
 
 const PANELS = Object.fromEntries(PAGES.flatMap((page) => page.panels).map((panel) => [panel.id, panel]));
 
@@ -29,6 +33,11 @@ export function createGame() {
     lockCam: null,
     waveIndex: 0,
     enemies: [],
+    citizens: [],
+    helped: 0,
+    stopped: 0,
+    testified: 0,
+    comboKind: "hit",
     projectiles: [],
     fx: [],
     pending: [],
@@ -53,6 +62,9 @@ export function beginRun(game, fighterId) {
   game.score = 0;
   game.combo = 0;
   game.comboT = 0;
+  game.helped = 0;
+  game.stopped = 0;
+  game.testified = 0;
   game.hitstop = 0;
   game.shake = 0;
   game.player = makePlayer(fighterById(fighterId), 240, 560);
@@ -70,6 +82,7 @@ export function beginPractice(game, fighterId, active = false, opponent = game.p
   game.introT = 0;
   game.stage.props = [];
   game.stage.pickups = [];
+  game.citizens = [];
   game.player.x = 420;
   game.enemies = [makeEnemy(game.practiceEnemy, 510, 560)];
   game.enemies[0].facing = -1;
@@ -102,6 +115,7 @@ export function startStage(game) {
   game.lockCam = null;
   game.waveIndex = 0;
   game.enemies = [];
+  game.citizens = (game.stage.citizens || []).map((cit) => makeCitizen(cit.kind, cit.x, cit.y));
   game.projectiles = [];
   game.fx = [];
   game.pending = [];
@@ -140,6 +154,9 @@ export function updateGame(game, input, dt) {
 
   if (game.clearT > 0) {
     game.clearT -= dt;
+    updateCitizens(game, dt);
+    for (const fx of game.fx) fx.t += dt;
+    game.fx = game.fx.filter((fx) => fx.t < fx.life);
     if (game.clearT <= 0) advance(game);
     return;
   }
@@ -164,9 +181,14 @@ export function updateGame(game, input, dt) {
     game.pending.length = 0;
   }
   separate(game.enemies);
+  updateCitizens(game, dt);
   updatePickups(game);
   updateProjectiles(game, dt);
   updateWaves(game);
+  // A witness who makes it to the boss puts the receipts on the record.
+  const bossNow = game.enemies.find((enemy) => enemy.isBoss && enemy.alive);
+  const witness = followingWitness(game);
+  if (bossNow && witness && Math.abs(witness.x - bossNow.x) < 420) witnessTestifies(game, bossNow);
   updateCamera(game);
   for (const before of gaitBefore) advanceGait(before.ent, before.x, before.y);
   for (const fx of game.fx) fx.t += dt;
@@ -179,13 +201,15 @@ export { advanceGait };
 
 function advance(game) {
   const story = game.player.fighter.story || {};
+  const wonPanel = game.stage.panel;
   if (game.stageIndex >= STAGES.length - 1) {
     showStory(game, story.end, "ending");
     return;
   }
   game.stageIndex += 1;
   startStage(game);
-  showStory(game, story.beats?.[game.stageIndex - 1], "play");
+  // The policy panel for the block you just won, else the fighter's own beat.
+  showStory(game, wonPanel || story.beats?.[game.stageIndex - 1], "play");
 }
 
 function updateWaves(game) {
@@ -193,9 +217,12 @@ function updateWaves(game) {
   const waves = game.stage.waves;
   if (game.waveIndex >= waves.length) {
     if (game.enemies.every((enemy) => !enemy.alive) && game.clearT <= 0 && game.mode === "play") {
-      game.clearT = 2.3;
-      game.banner = `${game.stage.name} clear`;
-      game.bannerT = 2.3;
+      // The policy wins: banner, the street changes, the block comes out to cheer.
+      game.clearT = 4.2;
+      game.stage.won = true;
+      game.banner = game.stage.policy || `${game.stage.name} clear`;
+      game.bannerT = 4.2;
+      spawnCelebration(game, 4);
       play("clear");
     }
     return;
@@ -212,6 +239,7 @@ function updateWaves(game) {
       const enemy = makeEnemy(member.kind, base + member.dx, member.y);
       if (wave.boss) {
         enemy.isBoss = true;
+        enemy.title = wave.bossName;
         enemy.hp = Math.max(enemy.hp, 220);
         enemy.hpMax = enemy.hp;
       }
@@ -255,6 +283,7 @@ function boot() {
   const ctx = canvas.getContext("2d");
   const input = createInput();
   const game = createGame();
+  if (typeof window !== "undefined") window.__cc = game; // debug/automation hook
   const practiceRequested = new URLSearchParams(window.location.search).has("practice");
   let assetsReady = false;
   const startButton = document.getElementById("start");
@@ -383,7 +412,18 @@ function boot() {
     const frame = document.getElementById("story-frame");
     frame.className = `story-frame ${panel.where}`;
     frame.replaceChildren();
-    if (panel.art) {
+    if (MOTION[panel.id]) {
+      const video = document.createElement("video");
+      video.src = MOTION[panel.id];
+      video.autoplay = true;
+      video.loop = true;
+      video.muted = true;
+      video.playsInline = true;
+      video.setAttribute("aria-label", panel.alt || panel.scene);
+      if (panel.art) video.poster = `../art/story/chibi/${panel.art}`;
+      frame.append(video);
+      video.play?.().catch(() => {});
+    } else if (panel.art) {
       const img = document.createElement("img");
       img.src = `../art/story/chibi/${panel.art}`;
       img.alt = panel.alt || panel.scene;
@@ -440,15 +480,15 @@ function boot() {
       button.classList.toggle("on", button.dataset.id === game.fighterId);
     });
     if (game.mode === "play" && game.clearT > 0) {
-      document.getElementById("clear-title").textContent = `${game.stage.name} clear`;
-      document.getElementById("clear-copy").textContent = game.stage.clear;
+      document.getElementById("clear-title").textContent = game.stage.policy || `${game.stage.name} clear`;
+      document.getElementById("clear-copy").textContent = `${game.stage.clear} Helped ${game.helped} so far.`;
     }
     if (game.mode === "ending") {
       document.getElementById("end-copy").textContent =
-        `${game.player?.name || "You"} made it to the Capitol. Score ${game.score}.`;
+        `${game.player?.name || "You"} made it to the Capitol. Helped ${game.helped}, stopped ${game.stopped}, ${game.testified} on the record. Score ${game.score}.`;
     }
     if (game.mode === "gameover") {
-      document.getElementById("over-copy").textContent = `Score ${game.score}. Get up. The Capitol is still there.`;
+      document.getElementById("over-copy").textContent = `Helped ${game.helped}. Score ${game.score}. Get up. The block still needs you.`;
     }
   }
 

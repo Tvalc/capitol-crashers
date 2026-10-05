@@ -6,12 +6,31 @@ export const WORLD = {
   gravity: 2100,
 };
 
-const dock = {
+// Words the street carries: sign posts, plane banners, policy wins. Pulled from
+// the songs and the comic so the game, the music and the strip say one thing.
+export const SLOGANS = [
+  "FREEZE THE RENT",
+  "HEALTHCARE FOR ALL",
+  "MONEY OUT OF POLITICS",
+  "MONEY IN YOUR POCKET",
+  "FREE BUSES",
+  "TOWN HALL",
+  "I'VE GOT RECEIPTS",
+  "THIS CITY BELONGS TO YOU",
+  "HOPE IS ALIVE",
+  "TURN THE VOLUME UP",
+];
+
+// Stage 1 — Freeze the Rent. The block is hungry and getting evicted; the
+// Landlord waits at the end of the street.
+const rally = {
   id: "rally",
-  name: "Street rally",
-  line: "Night fight on the rally street.",
-  clear: "The rally breaks. The studio is next.",
-  length: 3100,
+  name: "Freeze the Rent",
+  policy: "RENT FROZEN",
+  line: "Feed the block. Freeze the rent. The Landlord is at the end of the street.",
+  clear: "The rent is frozen on this block. The clinic is next.",
+  panel: "p27",
+  length: 3600,
   sky0: "#1b2436",
   sky1: "#44556f",
   ground: "#3c4452",
@@ -19,49 +38,71 @@ const dock = {
   accent: "#e0a45a",
   building: "#232a38",
   trim: "#8ea0b8",
+  layers: [
+    { name: "sky", speed: 0.04 },
+    { name: "skyline", speed: 0.18 },
+    { name: "blocks", speed: 0.45 },
+  ],
+  signs: [
+    { x: 520, text: "FREEZE THE RENT" },
+    { x: 1420, text: "THIS CITY BELONGS TO YOU" },
+    { x: 2180, text: "TOWN HALL" },
+    { x: 3180, text: "MONEY IN YOUR POCKET" },
+  ],
+  planes: [
+    { text: "FREEZE THE RENT", y: 92, speed: 68, start: 0 },
+    { text: "I'VE GOT RECEIPTS", y: 150, speed: 50, start: 1900 },
+  ],
+  citizens: [
+    { kind: "hungry", x: 300, y: 610 },
+    { kind: "evicted", x: 640, y: 500 },
+    { kind: "hungry", x: 1150, y: 625 },
+    { kind: "witness", x: 1340, y: 560 },
+    { kind: "sick", x: 1860, y: 600 },
+    { kind: "evicted", x: 2080, y: 500 },
+    { kind: "worker", x: 2300, y: 625 },
+  ],
   waves: [
     {
-      at: 340,
-      hint: "Dodge the hat. Close in while it returns.",
-      group: [
-        { kind: "cruz", dx: 20, y: 560 },
-      ],
+      at: 420,
+      hint: "Neighbors in need: walk up and press J to help.",
+      group: [{ kind: "cruz", dx: 20, y: 560 }],
     },
     {
-      at: 1000,
+      at: 1020,
       hint: "Step out of his charge, then hit back.",
-      group: [
-        { kind: "vance", dx: 80, y: 560 },
-      ],
+      group: [{ kind: "vance", dx: 80, y: 560 }],
     },
     {
-      at: 1660,
-      hint: "Keep moving. Separate the pair.",
+      at: 1640,
+      hint: "Keep the witness standing.",
       group: [{ kind: "greene", dx: 30, y: 510 }, { kind: "cruz", dx: 210, y: 610 }],
     },
     {
-      at: 2360,
+      at: 2560,
       boss: true,
-      bossName: "Donald Trump",
+      bossName: "The Landlord",
       group: [{ kind: "trump", dx: 180, y: 560 }],
     },
   ],
   pickups: [
-    { kind: "pipe", x: 260, y: 540 },
-    { kind: "pipe", x: 1280, y: 600 },
+    { kind: "pipe", x: 900, y: 600 },
   ],
   props: [
-    { x: 280, y: 500, w: 70, h: 48 },
+    { x: 420, y: 500, w: 70, h: 48 },
     { x: 980, y: 520, w: 90, h: 40 },
-    { x: 2100, y: 490, w: 64, h: 54 },
+    { x: 1980, y: 490, w: 64, h: 54 },
   ],
 };
 
-const market = {
+// Stage 2 placeholder until the clinic block lands: Money Out of Politics in the studio.
+const studio = {
   id: "studio",
-  name: "Cable studio",
-  line: "The studio lights stay on.",
+  name: "Money Out of Politics",
+  policy: "MONEY OUT",
+  line: "The studio lights stay on. The Lobbyist runs the room.",
   clear: "The set goes dark. The capitol is last.",
+  panel: "p37",
   length: 4200,
   sky0: "#2a1c2e",
   sky1: "#6a3a48",
@@ -70,6 +111,19 @@ const market = {
   accent: "#f0c14a",
   building: "#3a2430",
   trim: "#e7d2a8",
+  layers: [],
+  signs: [
+    { x: 700, text: "MONEY OUT OF POLITICS" },
+    { x: 2000, text: "TURN THE VOLUME UP" },
+    { x: 3300, text: "HOPE IS ALIVE" },
+  ],
+  planes: [{ text: "MONEY OUT OF POLITICS", y: 100, speed: 60, start: 400 }],
+  citizens: [
+    { kind: "worker", x: 460, y: 600 },
+    { kind: "witness", x: 1200, y: 560 },
+    { kind: "sick", x: 1960, y: 620 },
+    { kind: "hungry", x: 2400, y: 520 },
+  ],
   waves: [
     {
       at: 620,
@@ -88,7 +142,7 @@ const market = {
     {
       at: 2600,
       boss: true,
-      bossName: "JD Vance",
+      bossName: "The Lobbyist",
       group: [{ kind: "vance", dx: 200, y: 560 }],
     },
   ],
@@ -104,11 +158,13 @@ const market = {
   ],
 };
 
-const roof = {
+const capitol = {
   id: "capitol",
-  name: "Capitol approach",
-  line: "The last fight is on the capitol approach.",
+  name: "Accountability",
+  policy: "ON THE RECORD",
+  line: "The Capitol approach. Bring the witnesses.",
   clear: "The approach is clear.",
+  panel: null,
   length: 4200,
   sky0: "#101622",
   sky1: "#24344a",
@@ -117,6 +173,20 @@ const roof = {
   accent: "#7ee0c6",
   building: "#1a2230",
   trim: "#9fb0c4",
+  layers: [],
+  signs: [
+    { x: 600, text: "I'VE GOT RECEIPTS" },
+    { x: 1800, text: "HEALTHCARE FOR ALL" },
+    { x: 3200, text: "THIS CITY BELONGS TO YOU" },
+  ],
+  planes: [{ text: "I'VE GOT RECEIPTS", y: 96, speed: 72, start: 0 }],
+  citizens: [
+    { kind: "witness", x: 520, y: 560 },
+    { kind: "hungry", x: 1000, y: 620 },
+    { kind: "witness", x: 1500, y: 540 },
+    { kind: "evicted", x: 2100, y: 500 },
+    { kind: "witness", x: 2450, y: 580 },
+  ],
   waves: [
     {
       at: 700,
@@ -135,7 +205,7 @@ const roof = {
     {
       at: 2680,
       boss: true,
-      bossName: "Ted Cruz",
+      bossName: "The Insurance Exec",
       group: [{ kind: "cruz", dx: 180, y: 560 }],
     },
   ],
@@ -150,7 +220,7 @@ const roof = {
   ],
 };
 
-export const STAGES = [dock, market, roof];
+export const STAGES = [rally, studio, capitol];
 
 export function cloneStage(index) {
   const src = STAGES[index];
@@ -163,5 +233,11 @@ export function cloneStage(index) {
     })),
     pickups: src.pickups.map((pickup) => ({ ...pickup, taken: false })),
     props: src.props.map((prop) => ({ ...prop })),
+    citizens: (src.citizens || []).map((cit) => ({ ...cit })),
+    signs: (src.signs || []).map((sign) => ({ ...sign })),
+    planes: (src.planes || []).map((plane) => ({ ...plane })),
+    layers: (src.layers || []).map((layer) => ({ ...layer })),
+    marks: [],
+    won: false,
   };
 }

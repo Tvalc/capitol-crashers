@@ -2,6 +2,10 @@ import { play } from "./audio.js";
 import { FIGHTERS } from "./fighters.js?v=chibi-site2";
 import { integrate, melee, spendSpecial, updateBody } from "./combat.js?v=feel1";
 import { finishWeapon, launchHeld, noteWeaponSwing, spawnBolt } from "./weapons.js?v=chibi-site2";
+import { deliverHelp, helpTarget, startHelp } from "./citizens.js?v=citizens1";
+
+// Handing someone a meal takes about as long as a grab reach.
+const HELP_WINDOW = { startup: 0.2, active: 0.1, total: 0.62 };
 
 const LIGHTS = [
   { startup: 0.10, active: 0.09, dmg: 7, kb: 65, lift: 0, stun: 0.32 },
@@ -393,6 +397,14 @@ function tryOffense(player, game, input) {
   }
   if (player.bufferLight > 0) {
     player.bufferLight = 0;
+    // A neighbor in need beside you always comes first. Strike becomes help.
+    if (player.state !== "dash" && player.z <= 0) {
+      const cit = helpTarget(game, player);
+      if (cit) {
+        startHelp(game, player, cit);
+        return true;
+      }
+    }
     if (player.state === "dash") {
       startMove(player, "dashatk");
       return true;
@@ -473,6 +485,7 @@ function moveSpec(player) {
 // Rendering reads the same timings that gameplay uses for damage and recovery.
 export function playerMoveWindow(player) {
   if (player.state === "throw") return { startup: 0.16, active: 0.04, total: 0.42 };
+  if (player.state === "help") return HELP_WINDOW;
   if (player.state === "light") {
     const table = player.kind === "sayed" ? KICKS : LIGHTS;
     const step = table[player.combo] || table[0];
@@ -668,6 +681,21 @@ export function updatePlayer(player, game, input, dt) {
 
   if (player.state === "grab") {
     updateGrab(player, game, input, dt);
+    return;
+  }
+  if (player.state === "help") {
+    player.stateT += dt;
+    player.vx = 0;
+    player.vy = 0;
+    if (!player.spawned && player.stateT >= HELP_WINDOW.startup) {
+      player.spawned = true;
+      const cit = (game.citizens || []).find((c) => c.id === player.helpId);
+      deliverHelp(game, player, cit);
+    }
+    if (player.stateT >= HELP_WINDOW.total) {
+      player.helpId = null;
+      endMove(player);
+    }
     return;
   }
   if (player.state === "backstep") {

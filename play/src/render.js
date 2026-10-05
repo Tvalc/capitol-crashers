@@ -1,15 +1,25 @@
 import { FIGHTERS, poseFor } from "./fighters.js?v=chibi-site2";
 import { drawSprite } from "./sprites.js?v=grounded1";
-import { WORLD } from "./stages.js?v=feel1";
+import { WORLD, STAGES } from "./stages.js?v=feel1";
+import { CITIZEN_KINDS } from "./citizens.js?v=citizens1";
 
 const art = {};
 export function loadEnvironment() {
   const names=['rally','studio','capitol','crate','bin','hydrant','barrel','pipe','bottle','food','impact','panel','button-gold','button-teal','banner'];
-  return Promise.all(names.map(name => new Promise((resolve,reject) => {
+  const required = Promise.all(names.map(name => new Promise((resolve,reject) => {
     const image=new Image(); image.onload=()=>{art[name]=image;resolve();};
     image.onerror=()=>reject(new Error(`Missing Makko artwork: ${name}`));
     image.src=`../art/chibi/${name}.webp?v=1`;
   })));
+  // Parallax layers, the banner plane and icicles are optional until their art lands.
+  const optional = [];
+  const tryLoad = (key, src) => optional.push(new Promise((resolve) => {
+    const image = new Image(); image.onload = () => { art[key] = image; resolve(); }; image.onerror = () => resolve(); image.src = src;
+  }));
+  for (const stage of STAGES) for (const layer of stage.layers || []) tryLoad(`${stage.id}-${layer.name}`, `../art/parallax/${stage.id}/${layer.name}.webp?v=1`);
+  tryLoad("plane", "../art/parallax/plane.webp?v=1");
+  tryLoad("icicles", "../art/parallax/icicles.webp?v=1");
+  return Promise.all([required, ...optional]);
 }
 function painted(ctx,name,x,y,w,h) {
   const image=art[name]; if(!image)return;
@@ -33,9 +43,19 @@ export function draw(ctx, game) {
     ctx.translate((Math.random() - 0.5) * game.shake * 2, (Math.random() - 0.5) * game.shake * 2);
   }
   drawStreet(ctx, game, cam);
+  drawPlanes(ctx, game);
   const sprites = [];
+  for (const sign of game.stage?.signs || []) {
+    sprites.push({ y: WORLD.floorTop + 1, draw: () => drawSign(ctx, sign, cam) });
+  }
+  for (const mark of game.stage?.marks || []) {
+    sprites.push({ y: WORLD.floorTop + 2, draw: () => drawMark(ctx, mark, cam) });
+  }
   for (const prop of game.stage?.props || []) {
     sprites.push({ y: prop.y, draw: () => drawProp(ctx, game, prop, cam) });
+  }
+  for (const cit of game.citizens || []) {
+    sprites.push({ y: cit.y, draw: () => drawPerson(ctx, cit, cam, game) });
   }
   for (const pickup of game.stage?.pickups || []) {
     if (pickup.taken) continue;
@@ -54,6 +74,7 @@ export function draw(ctx, game) {
   }
   sprites.sort((a, b) => a.y - b.y);
   for (const sprite of sprites) sprite.draw();
+  if (game.stage?.won) drawWin(ctx, game);
   for (const fx of game.fx || []) drawFx(ctx, fx, cam);
   if (game.mode === "play") drawHud(ctx, game);
   ctx.restore();
@@ -92,8 +113,144 @@ function drawStreet(ctx,game,cam) {
   const progress=Math.max(0,Math.min(1,cam/Math.max(1,game.stage.length-WORLD.viewW)));
   const sourceX=(image.width-sourceWidth)*progress;
   const curb=Math.round(image.height*.58);
-  ctx.drawImage(image,sourceX,0,sourceWidth,curb,0,0,WORLD.viewW,WORLD.floorTop);
+  // Multilayer parallax when the stage has layers painted; the single painting otherwise.
+  const layers=(game.stage.layers||[]).map(layer=>({layer,image:art[`${game.stage.id}-${layer.name}`]})).filter(entry=>entry.image);
+  if(layers.length){
+    for(const {layer,image:img} of layers){
+      const scale=WORLD.floorTop/img.height;
+      const w=img.width*scale;
+      let offset=-((cam*layer.speed)%w);
+      for(let x=offset;x<WORLD.viewW;x+=w) ctx.drawImage(img,0,0,img.width,img.height,Math.round(x),0,Math.ceil(w)+1,WORLD.floorTop);
+    }
+  } else {
+    ctx.drawImage(image,sourceX,0,sourceWidth,curb,0,0,WORLD.viewW,WORLD.floorTop);
+  }
   ctx.drawImage(image,sourceX,curb,sourceWidth,image.height-curb,0,WORLD.floorTop,WORLD.viewW,WORLD.viewH-WORLD.floorTop);
+}
+
+// Planes tow the message across the sky, independent of the street scroll.
+function drawPlanes(ctx, game) {
+  const planes = game.stage?.planes || [];
+  if (!planes.length || game.mode !== "play") return;
+  ctx.save();
+  ctx.font = "800 22px Bungee, Segoe UI, sans-serif";
+  ctx.textBaseline = "middle";
+  for (const plane of planes) {
+    const textW = ctx.measureText(plane.text).width + 36;
+    const span = WORLD.viewW + textW + 260;
+    const x = WORLD.viewW + 120 - (((game.time * plane.speed + plane.start) % span) + span) % span;
+    const y = plane.y;
+    // plane
+    if (art.plane) ctx.drawImage(art.plane, x - 60, y - 24, 120, 48);
+    else {
+      ctx.fillStyle = "#e8e2d4";
+      ctx.beginPath(); ctx.ellipse(x, y, 44, 10, 0, 0, Math.PI * 2); ctx.fill();
+      ctx.fillStyle = "#ef6b4a";
+      ctx.beginPath(); ctx.moveTo(x - 30, y); ctx.lineTo(x - 48, y - 20); ctx.lineTo(x - 40, y); ctx.closePath(); ctx.fill();
+      ctx.fillStyle = "#1a1a1a";
+      ctx.fillRect(x - 6, y - 14, 12, 4);
+    }
+    // tow line + banner
+    ctx.strokeStyle = "rgba(255,255,255,0.7)"; ctx.lineWidth = 2;
+    ctx.beginPath(); ctx.moveTo(x - 44, y + 2); ctx.lineTo(x - 70, y + 8); ctx.stroke();
+    const bx = x - 70 - textW, by = y - 16;
+    ctx.fillStyle = "#ffd23f"; roundRect(ctx, bx, by, textW, 34, 6); ctx.fill();
+    ctx.strokeStyle = "#1a1208"; ctx.lineWidth = 3; ctx.stroke();
+    ctx.fillStyle = "#1a1208"; ctx.textAlign = "left"; ctx.fillText(plane.text, bx + 18, by + 18);
+  }
+  ctx.restore();
+}
+
+// Sidewalk sign posts along the street carry the slogans.
+function drawSign(ctx, sign, cam) {
+  const x = sign.x - cam;
+  if (x < -300 || x > WORLD.viewW + 300) return;
+  const y = WORLD.floorTop + 6;
+  ctx.save();
+  ctx.font = "800 18px Bungee, Segoe UI, sans-serif";
+  const w = Math.ceil(ctx.measureText(sign.text).width + 40);
+  const h = 54;
+  ctx.fillStyle = "#3b2a1c"; ctx.fillRect(x - 5, y - 118, 10, 118);
+  if (art.panel) ctx.drawImage(art.panel, x - w / 2 - 14, y - 134 - h * 0.3, w + 28, h * 1.6);
+  else { ctx.fillStyle = "#19e6ff"; roundRect(ctx, x - w / 2, y - 134, w, h, 8); ctx.fill(); }
+  ctx.fillStyle = "#f4efe4"; ctx.textAlign = "center"; ctx.textBaseline = "middle";
+  ctx.fillText(sign.text, x, y - 134 + h / 2);
+  ctx.restore();
+}
+
+// A RENT FROZEN notice goes up on the building where a tenant was helped.
+function drawMark(ctx, mark, cam) {
+  const x = mark.x - cam;
+  if (x < -200 || x > WORLD.viewW + 200) return;
+  const pop = Math.min(1, mark.t / 0.25);
+  const y = 236 - (1 - pop) * 30;
+  ctx.save();
+  ctx.globalAlpha = pop;
+  ctx.font = "800 18px Bungee, Segoe UI, sans-serif";
+  const w = Math.ceil(ctx.measureText(mark.text).width + 28);
+  ctx.translate(x, y); ctx.rotate(-0.04);
+  ctx.fillStyle = "#f4efe4"; ctx.fillRect(-w / 2, -22, w, 44);
+  ctx.strokeStyle = "#1c5fd8"; ctx.lineWidth = 4; ctx.strokeRect(-w / 2 + 3, -19, w - 6, 38);
+  ctx.fillStyle = "#1c5fd8"; ctx.textAlign = "center"; ctx.textBaseline = "middle"; ctx.fillText(mark.text, 0, 1);
+  ctx.restore();
+}
+
+// The street changes when the policy wins: icicles along the eaves, a cool cast.
+function drawWin(ctx, game) {
+  if (game.stage.id !== "rally") return;
+  ctx.save();
+  if (art.icicles) {
+    const img = art.icicles; const h = 90; const w = img.width * (h / img.height);
+    for (let x = -((game.cameraX * 0.45) % w); x < WORLD.viewW; x += w) ctx.drawImage(img, x, WORLD.floorTop - 70, w, h);
+  } else {
+    ctx.fillStyle = "rgba(220,240,255,0.9)";
+    for (let x = -((game.cameraX * 0.45) % 46); x < WORLD.viewW; x += 46) {
+      const len = 18 + ((x * 7) % 26);
+      ctx.beginPath(); ctx.moveTo(x, WORLD.floorTop - 72); ctx.lineTo(x + 14, WORLD.floorTop - 72); ctx.lineTo(x + 7, WORLD.floorTop - 72 + len); ctx.closePath(); ctx.fill();
+    }
+  }
+  ctx.fillStyle = "rgba(120,180,255,0.10)"; ctx.fillRect(0, 0, WORLD.viewW, WORLD.viewH);
+  ctx.restore();
+}
+
+// Painted stand-in for a citizen until their Makko sheet exists.
+function drawCitizenPlaceholder(ctx, cit, sx, sc) {
+  const c = cit.colors || CITIZEN_KINDS[cit.kind];
+  const h = cit.h * sc, w = cit.w * sc;
+  const down = cit.state === "down";
+  ctx.save();
+  ctx.translate(sx, cit.y - (cit.z || 0));
+  if (down) { ctx.rotate(cit.facing * 1.4); ctx.translate(0, 10); }
+  // legs, body, head
+  ctx.fillStyle = c.pants; ctx.fillRect(-w * 0.32, -h * 0.42, w * 0.26, h * 0.42); ctx.fillRect(w * 0.06, -h * 0.42, w * 0.26, h * 0.42);
+  ctx.fillStyle = c.body; roundRect(ctx, -w * 0.42, -h * 0.78, w * 0.84, h * 0.4, 8); ctx.fill();
+  ctx.fillStyle = c.trim; ctx.fillRect(-w * 0.1, -h * 0.76, w * 0.2, h * 0.3);
+  ctx.fillStyle = c.skin; ctx.beginPath(); ctx.arc(0, -h * 0.9, h * 0.17, 0, Math.PI * 2); ctx.fill();
+  ctx.fillStyle = "#1a1a1a"; ctx.beginPath(); ctx.arc(0, -h * 1.0, h * 0.16, Math.PI, Math.PI * 2); ctx.fill();
+  // mood
+  ctx.strokeStyle = "#1a1a1a"; ctx.lineWidth = 2; ctx.beginPath();
+  const happy = cit.state === "helped" || cit.state === "testified" || cit.state === "follow";
+  if (happy) ctx.arc(cit.facing * 3, -h * 0.87, 5, 0.1 * Math.PI, 0.9 * Math.PI); else ctx.arc(cit.facing * 3, -h * 0.82, 5, 1.1 * Math.PI, 1.9 * Math.PI);
+  ctx.stroke();
+  ctx.restore();
+  // need bubble
+  if (cit.state === "need" || cit.state === "down") {
+    const bob = Math.sin((cit.anim || 0) * 4) * 3;
+    const bx = sx, by = cit.y - h - 28 + bob;
+    ctx.save();
+    ctx.fillStyle = "#f4efe4"; ctx.beginPath(); ctx.arc(bx, by, 18, 0, Math.PI * 2); ctx.fill();
+    ctx.fillStyle = "#f4efe4"; ctx.beginPath(); ctx.moveTo(bx - 6, by + 14); ctx.lineTo(bx + 6, by + 14); ctx.lineTo(bx, by + 24); ctx.closePath(); ctx.fill();
+    ctx.strokeStyle = "#1a1a1a"; ctx.lineWidth = 2.5; ctx.fillStyle = "#1a1a1a"; ctx.lineCap = "round";
+    const icon = c.icon;
+    ctx.beginPath();
+    if (icon === "bowl") { ctx.arc(bx, by - 1, 9, 0, Math.PI); ctx.moveTo(bx - 11, by - 1); ctx.lineTo(bx + 11, by - 1); }
+    else if (icon === "cross") { ctx.moveTo(bx - 8, by); ctx.lineTo(bx + 8, by); ctx.moveTo(bx, by - 8); ctx.lineTo(bx, by + 8); }
+    else if (icon === "box") { ctx.rect(bx - 8, by - 6, 16, 13); ctx.moveTo(bx - 8, by - 1); ctx.lineTo(bx + 8, by - 1); }
+    else if (icon === "dollar") { ctx.moveTo(bx + 5, by - 7); ctx.bezierCurveTo(bx - 10, by - 10, bx - 10, by, bx, by); ctx.bezierCurveTo(bx + 10, by, bx + 10, by + 10, bx - 5, by + 7); ctx.moveTo(bx, by - 10); ctx.lineTo(bx, by + 10); }
+    else { ctx.rect(bx - 9, by - 5, 18, 12); ctx.moveTo(bx - 9, by - 5); ctx.lineTo(bx - 3, by - 9); ctx.lineTo(bx + 1, by - 5); }
+    ctx.stroke();
+    ctx.restore();
+  }
 }
 function drawProp(ctx,game,prop,cam) {
   const name=game.stage.id==='studio'?'bin':game.stage.id==='capitol'?'barrel':'crate';
@@ -161,6 +318,19 @@ function drawShot(ctx, shot, cam) {
 }
 
 function drawFx(ctx,fx,cam) {
+  if (fx.kind === "heart" || fx.kind === "receipts") {
+    const u = fx.t / fx.life;
+    ctx.save(); ctx.globalAlpha = Math.max(0, 1 - u);
+    const x = fx.x - cam, y = fx.y - fx.z - u * 60;
+    if (fx.kind === "heart") {
+      ctx.fillStyle = "#ef4a7a"; ctx.beginPath();
+      ctx.moveTo(x, y + 12); ctx.bezierCurveTo(x - 22, y - 6, x - 10, y - 22, x, y - 8); ctx.bezierCurveTo(x + 10, y - 22, x + 22, y - 6, x, y + 12); ctx.fill();
+    } else {
+      ctx.font = "800 22px Bungee, Segoe UI, sans-serif"; ctx.textAlign = "center"; ctx.fillStyle = "#ffd23f";
+      ctx.strokeStyle = "#1a1208"; ctx.lineWidth = 4; ctx.strokeText("RECEIPTS", x, y); ctx.fillText("RECEIPTS", x, y);
+    }
+    ctx.restore(); return;
+  }
   ctx.save();ctx.globalAlpha=Math.max(0,1-fx.t/fx.life);
   const size=(fx.heavy ? 64 : 38)*(1+Math.min(1,fx.t/.06)*.25);
   painted(ctx,'impact',fx.x-cam-size/2,fx.y-fx.z-size/2,size,size);ctx.restore();
@@ -189,6 +359,11 @@ function drawPerson(ctx, ent, cam, game) {
   ctx.restore();
 
   if (drawSprite(ctx, ent, sx, spriteScale)) label(ctx, ent, sx);
+  else if (ent.team === "citizen") drawCitizenPlaceholder(ctx, ent, sx, spriteScale);
+  if (ent.team === "citizen" && ent.state === "follow") {
+    ctx.save(); ctx.font = "700 13px Segoe UI, sans-serif"; ctx.textAlign = "center"; ctx.fillStyle = "#ffd23f";
+    ctx.fillText("WITNESS", sx, ent.y - ent.z - (ent.h || 84) * spriteScale - 10); ctx.restore();
+  }
 }
 
 function label(ctx, ent, sx) {
@@ -196,7 +371,7 @@ function label(ctx, ent, sx) {
   ctx.fillStyle = "#f4efe4";
   ctx.font = "700 16px Segoe UI, sans-serif";
   ctx.textAlign = "center";
-  ctx.fillText(ent.name, sx, ent.y - ent.z - (ent.h || 90) * (ent.scale || 1) - 16);
+  ctx.fillText(ent.title ? `${ent.title} · ${ent.name}` : ent.name, sx, ent.y - ent.z - (ent.h || 90) * (ent.scale || 1) - 16);
 }
 
 function innerPlate(x, y, w, h) {
@@ -225,7 +400,7 @@ function drawHud(ctx, game) {
   bar(ctx, left.x, barY, left.w, barH, player);
   ctx.font = "600 16px Segoe UI, sans-serif";
   ctx.fillStyle = "#e2b657";
-  ctx.fillText(`Lives ${game.lives}`, left.x, barY + barH + 8);
+  ctx.fillText(`Lives ${game.lives}   ·   Helped ${game.helped || 0}`, left.x, barY + barH + 8);
 
   const sw = 240;
   const sh = Math.round(sw / aspect);
@@ -241,7 +416,8 @@ function drawHud(ctx, game) {
     ctx.fillText(scoreText, score.x + score.w / 2, score.y + score.h * 0.34);
     ctx.fillStyle = "#ef6b4a";
     ctx.font = "800 18px Segoe UI, sans-serif";
-    ctx.fillText(`${game.combo} HITS`, score.x + score.w / 2, score.y + score.h * 0.72);
+    ctx.fillStyle = game.comboKind === "help" ? "#5fd38a" : "#ef6b4a";
+    ctx.fillText(game.comboKind === "help" ? `${game.combo} HELPED` : `${game.combo} HITS`, score.x + score.w / 2, score.y + score.h * 0.72);
   } else {
     ctx.font = "700 26px Segoe UI, sans-serif";
     ctx.fillText(scoreText, score.x + score.w / 2, score.y + score.h / 2);
@@ -258,7 +434,7 @@ function drawHud(ctx, game) {
     ctx.textBaseline = "top";
     ctx.fillStyle = "#f4efe4";
     ctx.font = "700 18px Segoe UI, sans-serif";
-    ctx.fillText(boss.name, box.x + box.w / 2, box.y);
+    ctx.fillText(boss.title ? `${boss.title} · ${boss.name}` : boss.name, box.x + box.w / 2, box.y);
     bar(ctx, box.x + box.w * 0.06, box.y + 28, box.w * 0.88, 24, boss);
   }
 

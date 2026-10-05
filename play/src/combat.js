@@ -1,5 +1,6 @@
 import { play } from "./audio.js";
 import { WORLD } from "./stages.js?v=feel1";
+import { followingWitness, knockWitness } from "./citizens.js?v=citizens1";
 
 export function integrate(ent, dt) {
   ent.z += ent.vz * dt;
@@ -117,6 +118,8 @@ export function applyHit(game, spec, target) {
   });
 
   if (spec.team === "player") {
+    if (game.comboKind !== "hit") game.combo = 0;
+    game.comboKind = "hit";
     game.combo += 1;
     game.comboT = 2;
     const base = spec.points ?? 100;
@@ -134,7 +137,10 @@ export function applyHit(game, spec, target) {
     target.deadT = 0.9;
     target.vz = Math.max(target.vz, 220);
     play("ko");
-    if (target.team === "enemy") game.score += 500;
+    if (target.team === "enemy") {
+      game.score += 500;
+      game.stopped = (game.stopped || 0) + 1;
+    }
     if (target.isBoss) {
       game.banner = `${target.name} is down`;
       game.bannerT = 1.4;
@@ -173,6 +179,14 @@ export function melee(game, owner, spec) {
     if (!overlaps(hit, target)) continue;
     spec.already?.add(target.id);
     if (applyHit(game, hit, target)) connected += 1;
+  }
+  // Villains swinging near a following witness knock the witness down.
+  if (owner.team === "enemy") {
+    const witness = followingWitness(game);
+    if (witness && !spec.already?.has(witness.id) && overlaps(hit, witness)) {
+      spec.already?.add(witness.id);
+      knockWitness(game, witness, owner.facing);
+    }
   }
   return connected;
 }
