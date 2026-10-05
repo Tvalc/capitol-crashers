@@ -371,7 +371,8 @@ function label(ctx, ent, sx) {
   ctx.fillStyle = "#f4efe4";
   ctx.font = "700 16px Segoe UI, sans-serif";
   ctx.textAlign = "center";
-  ctx.fillText(ent.title ? `${ent.title} · ${ent.name}` : ent.name, sx, ent.y - ent.z - (ent.h || 90) * (ent.scale || 1) - 16);
+  // Chibi sheets stand about 2.4x the logical body height; keep the tag clear of the hair.
+  ctx.fillText(ent.title ? `${ent.title} · ${ent.name}` : ent.name, sx, ent.y - ent.z - (ent.h || 90) * (ent.scale || 1) * 2.4 - 14);
 }
 
 function innerPlate(x, y, w, h) {
