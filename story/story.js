@@ -55,7 +55,8 @@ function renderPanel(panel) {
   }
 
   node.append(frame);
-  if (dialogue.childElementCount) node.append(dialogue);
+  const copy = el("div", "panel-copy");
+  if (dialogue.childElementCount) copy.append(dialogue);
 
   const captions = panel.captions || [];
   if (captions.length) {
@@ -63,8 +64,9 @@ function renderPanel(panel) {
     for (const cap of captions) {
       lettering.append(el("p", "caption", cap.text));
     }
-    node.append(lettering);
+    copy.append(lettering);
   }
+  node.append(copy);
 
   return node;
 }
@@ -108,3 +110,4 @@ for (const source of SOURCES) {
   item.append(link);
   sourcesHost.append(item);
 }
+
