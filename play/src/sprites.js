@@ -86,14 +86,15 @@ export function readFrames(data, width, height) {
 
 function loadOne(sprite, clip, name) {
   const image = new Image();
-  const dataPromise = fetch(`assets/sprites/${name}.json?v=cast-v7`).then((res) => {
+  const version = sprite === "cruz" ? "cruz-native1" : "grounded1";
+  const dataPromise = fetch(`assets/sprites/${name}.json?v=${version}`).then((res) => {
     if (!res.ok) throw new Error(`Could not load ${name}: ${res.status}`);
     return res.json();
   });
   const imagePromise = new Promise((resolve, reject) => {
     image.onload = () => resolve(image);
     image.onerror = reject;
-    image.src = `assets/sprites/${name}.webp?v=cast-v7`;
+    image.src = `assets/sprites/${name}.webp?v=${version}`;
   });
   return Promise.all([dataPromise, imagePromise]).then(([data, img]) => {
     const frames = readFrames(data, img.naturalWidth, img.naturalHeight);
@@ -290,6 +291,7 @@ export function drawSprite(ctx, ent, sx, sc) {
   const frame = sheet.frames[index];
   const cell = frame.frame;
   const offset = frame.trimmed ? frame.spriteSourceSize : null;
+  const anchorY = ent.team === "player" && !(ent.z > 0) ? (frame.groundAnchorY ?? sheet.anchor.y) : sheet.anchor.y;
   ctx.save();
   ctx.translate(sx, ent.y - (ent.z || 0));
   ctx.scale(sc * (ent.facing || 1), sc);
@@ -297,7 +299,7 @@ export function drawSprite(ctx, ent, sx, sc) {
   ctx.drawImage(
     sheet.image,
     cell.x, cell.y, cell.w, cell.h,
-    -sheet.anchor.x + (offset?.x || 0), -sheet.anchor.y + (offset?.y || 0), cell.w, cell.h,
+    -sheet.anchor.x + (offset?.x || 0), -anchorY + (offset?.y || 0), cell.w, cell.h,
   );
   ctx.restore();
   return true;

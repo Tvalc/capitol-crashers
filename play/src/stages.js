@@ -11,7 +11,7 @@ const dock = {
   name: "Street rally",
   line: "Night fight on the rally street.",
   clear: "The rally breaks. The studio is next.",
-  length: 4200,
+  length: 3100,
   sky0: "#1b2436",
   sky1: "#44556f",
   ground: "#3c4452",
@@ -21,27 +21,33 @@ const dock = {
   trim: "#8ea0b8",
   waves: [
     {
-      at: 640,
+      at: 340,
+      hint: "Dodge the hat. Close in while it returns.",
       group: [
-        { kind: "greene", dx: 40, y: 520 },
-        { kind: "cruz", dx: 180, y: 600 },
+        { kind: "cruz", dx: 20, y: 560 },
       ],
     },
     {
-      at: 1560,
+      at: 1000,
+      hint: "Step out of his charge, then hit back.",
       group: [
         { kind: "vance", dx: 80, y: 560 },
       ],
     },
     {
-      at: 2580,
+      at: 1660,
+      hint: "Keep moving. Separate the pair.",
+      group: [{ kind: "greene", dx: 30, y: 510 }, { kind: "cruz", dx: 210, y: 610 }],
+    },
+    {
+      at: 2360,
       boss: true,
       bossName: "Donald Trump",
       group: [{ kind: "trump", dx: 180, y: 560 }],
     },
   ],
   pickups: [
-    { kind: "pipe", x: 460, y: 540 },
+    { kind: "pipe", x: 260, y: 540 },
     { kind: "pipe", x: 1280, y: 600 },
   ],
   props: [

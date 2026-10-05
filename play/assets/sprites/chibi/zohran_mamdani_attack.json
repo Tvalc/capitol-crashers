@@ -19,7 +19,8 @@
         "w": 174,
         "h": 256
       },
-      "duration": 42
+      "duration": 42,
+      "groundAnchorY": 256
     },
     {
       "frame": {
@@ -40,7 +41,8 @@
         "w": 174,
         "h": 256
       },
-      "duration": 42
+      "duration": 42,
+      "groundAnchorY": 256
     },
     {
       "frame": {
@@ -61,7 +63,8 @@
         "w": 174,
         "h": 256
       },
-      "duration": 42
+      "duration": 42,
+      "groundAnchorY": 256
     },
     {
       "frame": {
@@ -82,7 +85,8 @@
         "w": 174,
         "h": 256
       },
-      "duration": 42
+      "duration": 42,
+      "groundAnchorY": 256
     },
     {
       "frame": {
@@ -103,7 +107,8 @@
         "w": 174,
         "h": 256
       },
-      "duration": 42
+      "duration": 42,
+      "groundAnchorY": 256
     },
     {
       "frame": {
@@ -124,7 +129,8 @@
         "w": 174,
         "h": 256
       },
-      "duration": 42
+      "duration": 42,
+      "groundAnchorY": 256
     },
     {
       "frame": {
@@ -145,7 +151,8 @@
         "w": 174,
         "h": 256
       },
-      "duration": 42
+      "duration": 42,
+      "groundAnchorY": 256
     },
     {
       "frame": {
@@ -166,7 +173,8 @@
         "w": 174,
         "h": 256
       },
-      "duration": 42
+      "duration": 42,
+      "groundAnchorY": 256
     },
     {
       "frame": {
@@ -187,7 +195,8 @@
         "w": 174,
         "h": 256
       },
-      "duration": 42
+      "duration": 42,
+      "groundAnchorY": 256
     },
     {
       "frame": {
@@ -208,7 +217,8 @@
         "w": 174,
         "h": 256
       },
-      "duration": 42
+      "duration": 42,
+      "groundAnchorY": 256
     },
     {
       "frame": {
@@ -229,7 +239,8 @@
         "w": 174,
         "h": 256
       },
-      "duration": 42
+      "duration": 42,
+      "groundAnchorY": 256
     },
     {
       "frame": {
@@ -250,7 +261,8 @@
         "w": 174,
         "h": 256
       },
-      "duration": 42
+      "duration": 42,
+      "groundAnchorY": 256
     }
   ],
   "meta": {
@@ -310,6 +322,7 @@
     ],
     "playbackFps": 24,
     "useFrameDurations": false,
-    "bodyScale": 0.984251968503937
+    "bodyScale": 0.984251968503937,
+    "grounding": "Planted sole baseline for grounded poses; fixed lowest sole for the running flight phase."
   }
 }

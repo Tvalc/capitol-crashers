@@ -1,122 +1,182 @@
 {
-  "frames": {
-    "0": {
+  "frames": [
+    {
       "frame": {
         "x": 2,
         "y": 2,
-        "w": 256,
-        "h": 156
+        "w": 639,
+        "h": 500
       },
-      "duration": 42
+      "duration": 42,
+      "sourceSize": {
+        "w": 639,
+        "h": 500
+      },
+      "trimmed": false
     },
-    "1": {
+    {
       "frame": {
-        "x": 262,
+        "x": 645,
         "y": 2,
-        "w": 256,
-        "h": 156
+        "w": 639,
+        "h": 500
       },
-      "duration": 42
+      "duration": 42,
+      "sourceSize": {
+        "w": 639,
+        "h": 500
+      },
+      "trimmed": false
     },
-    "2": {
+    {
       "frame": {
-        "x": 522,
+        "x": 1288,
         "y": 2,
-        "w": 256,
-        "h": 156
+        "w": 639,
+        "h": 500
       },
-      "duration": 42
+      "duration": 42,
+      "sourceSize": {
+        "w": 639,
+        "h": 500
+      },
+      "trimmed": false
     },
-    "3": {
+    {
       "frame": {
-        "x": 782,
+        "x": 1931,
         "y": 2,
-        "w": 256,
-        "h": 156
+        "w": 639,
+        "h": 500
       },
-      "duration": 42
+      "duration": 42,
+      "sourceSize": {
+        "w": 639,
+        "h": 500
+      },
+      "trimmed": false
     },
-    "4": {
+    {
       "frame": {
         "x": 2,
-        "y": 162,
-        "w": 256,
-        "h": 156
+        "y": 506,
+        "w": 639,
+        "h": 500
       },
-      "duration": 42
+      "duration": 42,
+      "sourceSize": {
+        "w": 639,
+        "h": 500
+      },
+      "trimmed": false
     },
-    "5": {
+    {
       "frame": {
-        "x": 262,
-        "y": 162,
-        "w": 256,
-        "h": 156
+        "x": 645,
+        "y": 506,
+        "w": 639,
+        "h": 500
       },
-      "duration": 42
+      "duration": 42,
+      "sourceSize": {
+        "w": 639,
+        "h": 500
+      },
+      "trimmed": false
     },
-    "6": {
+    {
       "frame": {
-        "x": 522,
-        "y": 162,
-        "w": 256,
-        "h": 156
+        "x": 1288,
+        "y": 506,
+        "w": 639,
+        "h": 500
       },
-      "duration": 42
+      "duration": 42,
+      "sourceSize": {
+        "w": 639,
+        "h": 500
+      },
+      "trimmed": false
     },
-    "7": {
+    {
       "frame": {
-        "x": 782,
-        "y": 162,
-        "w": 256,
-        "h": 156
+        "x": 1931,
+        "y": 506,
+        "w": 639,
+        "h": 500
       },
-      "duration": 42
+      "duration": 42,
+      "sourceSize": {
+        "w": 639,
+        "h": 500
+      },
+      "trimmed": false
     },
-    "8": {
+    {
       "frame": {
         "x": 2,
-        "y": 322,
-        "w": 256,
-        "h": 156
+        "y": 1010,
+        "w": 639,
+        "h": 500
       },
-      "duration": 42
+      "duration": 42,
+      "sourceSize": {
+        "w": 639,
+        "h": 500
+      },
+      "trimmed": false
     },
-    "9": {
+    {
       "frame": {
-        "x": 262,
-        "y": 322,
-        "w": 256,
-        "h": 156
+        "x": 645,
+        "y": 1010,
+        "w": 639,
+        "h": 500
       },
-      "duration": 42
+      "duration": 42,
+      "sourceSize": {
+        "w": 639,
+        "h": 500
+      },
+      "trimmed": false
     },
-    "10": {
+    {
       "frame": {
-        "x": 522,
-        "y": 322,
-        "w": 256,
-        "h": 156
+        "x": 1288,
+        "y": 1010,
+        "w": 639,
+        "h": 500
       },
-      "duration": 42
+      "duration": 42,
+      "sourceSize": {
+        "w": 639,
+        "h": 500
+      },
+      "trimmed": false
     },
-    "11": {
+    {
       "frame": {
-        "x": 782,
-        "y": 322,
-        "w": 256,
-        "h": 156
+        "x": 1931,
+        "y": 1010,
+        "w": 639,
+        "h": 500
       },
-      "duration": 42
+      "duration": 42,
+      "sourceSize": {
+        "w": 639,
+        "h": 500
+      },
+      "trimmed": false
     }
-  },
+  ],
   "meta": {
     "size": {
-      "w": 1040,
-      "h": 480
+      "w": 2572,
+      "h": 1512
     },
     "anchor": {
-      "x": 107,
-      "y": 155
+      "x": 391.5812030075188,
+      "y": 496.63759398496245
     },
     "referenceAlignment": {
       "referenceBounds": {
@@ -140,10 +200,10 @@
       65,
       69
     ],
-    "importSource": "chibi_cast__concepts_to_reference_sheets_cruz_v3_attack_12.webp",
+    "importSource": "Original 1280x720 Makko video 1791170503776_animation.mp4",
     "playbackFps": 24,
     "useFrameDurations": false,
-    "bodyScale": 1.8796992481203008,
+    "bodyScale": 0.4996003197442046,
     "projectileCleanup": "Detached hat removed from release and follow-through; game renders one projectile.",
     "frameTags": [
       {
@@ -152,6 +212,7 @@
         "to": 11,
         "direction": "forward"
       }
-    ]
+    ],
+    "nativeResolutionRepair": true
   }
 }

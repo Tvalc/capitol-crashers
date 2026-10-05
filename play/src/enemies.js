@@ -1,5 +1,5 @@
-import { melee, updateBody } from "./combat.js?v=chibi-site2";
-import { WORLD } from "./stages.js?v=chibi-site2";
+import { melee, updateBody } from "./combat.js?v=feel1";
+import { WORLD } from "./stages.js?v=feel1";
 import { spawnSatellite, spawnShot, spawnSombrero } from "./weapons.js?v=chibi-site2";
 
 const KINDS = {
@@ -99,11 +99,11 @@ const KINDS = {
   greene: {
     name: "Marjorie Taylor Greene",
     sprite: "greene",
-    hp: 48,
-    speed: 200,
+    hp: 58,
+    speed: 250,
     w: 44,
     h: 96,
-    dmg: 9,
+    dmg: 11,
     reach: 52,
     scale: 1,
     body: "#d9d4ea",
@@ -115,11 +115,11 @@ const KINDS = {
   cruz: {
     name: "Ted Cruz",
     sprite: "cruz",
-    hp: 56,
-    speed: 92,
+    hp: 68,
+    speed: 160,
     w: 44,
     h: 96,
-    dmg: 10,
+    dmg: 12,
     reach: 54,
     scale: 1,
     body: "#1d3f86",
@@ -131,11 +131,11 @@ const KINDS = {
   vance: {
     name: "JD Vance",
     sprite: "vance",
-    hp: 110,
-    speed: 70,
+    hp: 130,
+    speed: 145,
     w: 48,
     h: 100,
-    dmg: 12,
+    dmg: 14,
     reach: 62,
     scale: 1.08,
     body: "#243656",
@@ -147,11 +147,11 @@ const KINDS = {
   trump: {
     name: "Donald Trump",
     sprite: "trump",
-    hp: 280,
-    speed: 48,
+    hp: 320,
+    speed: 118,
     w: 64,
     h: 110,
-    dmg: 16,
+    dmg: 18,
     reach: 96,
     scale: 1.2,
     boss: true,
@@ -460,10 +460,10 @@ function updateGreene(enemy, game, dt) {
       game.banner = "Dodge the lock";
       game.bannerT = 1.3;
     }
-    if (enemy.stateT >= 1.6) {
+    if (enemy.stateT >= 1.35) {
       enemy.state = "idle";
       enemy.spawned = false;
-      enemy.attackCd = 1.3;
+      enemy.attackCd = 0.7;
     }
     return;
   }
@@ -513,7 +513,7 @@ function updateGreene(enemy, game, dt) {
     if (enemy.stateT >= 0.55) {
       enemy.state = "idle";
       enemy.spawned = false;
-      enemy.attackCd = 0.45;
+      enemy.attackCd = 0.28;
       enemy.swingHits = new Set();
     }
     return;
@@ -523,7 +523,7 @@ function updateGreene(enemy, game, dt) {
   const dist = Math.abs(dx);
   face(enemy, player);
   if (enemy.laserCd <= 0 && dist > 48 && dist < 760 && dy < 140) {
-    enemy.laserCd = 2.6;
+    enemy.laserCd = 1.6;
     enemy.state = "special";
     enemy.stateT = 0;
     enemy.spawned = false;
@@ -534,7 +534,7 @@ function updateGreene(enemy, game, dt) {
     enemy.stateT = 0;
     enemy.z = 0;
     enemy.vz = 480;
-    enemy.vx = enemy.facing * 150;
+    enemy.vx = enemy.facing * 280;
     enemy.spawned = false;
     enemy.swingHits = new Set();
     enemy.attackCd = 0.3;
@@ -549,8 +549,8 @@ function updateGreene(enemy, game, dt) {
   }
   enemy.state = "run";
   const moving = Math.abs(dx) > 8;
-  enemy.vx = moving ? Math.sign(dx) * enemy.speed * 0.62 : 0;
-  enemy.vy = dy > 12 ? Math.sign(player.y - enemy.y) * enemy.speed * 0.28 : 0;
+  enemy.vx = moving ? Math.sign(dx) * enemy.speed * 0.9 : 0;
+  enemy.vy = dy > 12 ? Math.sign(player.y - enemy.y) * enemy.speed * 0.45 : 0;
   enemy.x += enemy.vx * dt;
   enemy.y = clampY(enemy.y + enemy.vy * dt);
 }
@@ -567,7 +567,7 @@ function updateTrump(enemy, game, dt) {
         dmg: Math.max(6, enemy.dmg - 6),
         kb: 80,
         lift: 0,
-        reach: 48,
+        reach: 72,
         rx: 26,
         already: enemy.swingHits,
         kind: "light",
@@ -577,7 +577,7 @@ function updateTrump(enemy, game, dt) {
     if (enemy.stateT >= 0.72) {
       enemy.state = "idle";
       enemy.spawned = false;
-      enemy.attackCd = 0.9;
+      enemy.attackCd = 0.48;
       enemy.swingHits = new Set();
     }
     return;
@@ -586,27 +586,27 @@ function updateTrump(enemy, game, dt) {
     enemy.stateT += dt;
     enemy.vx = 0;
     enemy.vy = 0;
-    if (enemy.stateT >= 1.05) enemy.state = "idle";
+    if (enemy.stateT >= 0.4) enemy.state = "idle";
     return;
   }
   const dx = player.x - enemy.x;
   const dy = Math.abs(player.y - enemy.y);
   face(enemy, player);
-  if (Math.abs(dx) < 72 && dy < 34 && enemy.attackCd <= 0) {
+  if (Math.abs(dx) < 96 && dy < 40 && enemy.attackCd <= 0) {
     enemy.state = "attack";
     enemy.stateT = 0;
     enemy.spawned = false;
     enemy.swingHits = new Set();
     return;
   }
-  enemy.dozeCd = (enemy.dozeCd ?? 2.2) - dt;
-  if (enemy.dozeCd <= 0 && Math.abs(dx) > 100) {
-    enemy.dozeCd = 3.4;
+  enemy.dozeCd = (enemy.dozeCd ?? 4.8) - dt;
+  if (enemy.dozeCd <= 0 && Math.abs(dx) > 160) {
+    enemy.dozeCd = 7.5;
     enemy.state = "doze";
     enemy.stateT = 0;
     return;
   }
-  approach(enemy, player, dt, enemy.speed * 0.7);
+  approach(enemy, player, dt, enemy.speed);
 }
 
 function updateVance(enemy, game, dt) {
@@ -641,10 +641,10 @@ function updateVance(enemy, game, dt) {
         hitstop: 0.04,
       });
     }
-    if (enemy.stateT >= 0.7) {
+    if (enemy.stateT >= 0.55) {
       enemy.state = "idle";
       enemy.spawned = false;
-      enemy.attackCd = 0.7;
+      enemy.attackCd = 0.38;
       enemy.swingHits = new Set();
     }
     return;
@@ -657,7 +657,7 @@ function updateVance(enemy, game, dt) {
       enemy.z = 0;
       enemy.vz = 0;
     }
-    enemy.vx = enemy.facing * 260;
+    enemy.vx = enemy.facing * 420;
     enemy.x += enemy.vx * dt;
     if (!enemy.spawned && enemy.stateT >= 0.16) {
       enemy.spawned = true;
@@ -676,7 +676,7 @@ function updateVance(enemy, game, dt) {
       enemy.z = 0;
       enemy.vz = 0;
       enemy.spawned = false;
-      enemy.attackCd = 1.15;
+      enemy.attackCd = 0.62;
       enemy.swingHits = new Set();
     }
     return;
@@ -693,9 +693,9 @@ function updateVance(enemy, game, dt) {
     enemy.swingHits = new Set();
     return;
   }
-  enemy.dashCd = (enemy.dashCd ?? 1.4) - dt;
-  if (enemy.dashCd <= 0 && dist > 110 && dist < 340 && ady < 40) {
-    enemy.dashCd = 2.6;
+  enemy.dashCd = (enemy.dashCd ?? 0.8) - dt;
+  if (enemy.dashCd <= 0 && dist > 90 && dist < 420 && ady < 48) {
+    enemy.dashCd = 1.35;
     enemy.state = "charge";
     enemy.stateT = 0;
     enemy.z = 0;
@@ -707,7 +707,7 @@ function updateVance(enemy, game, dt) {
   const moving = dist > 10 || ady > 14;
   const running = dist > 120;
   enemy.state = moving ? (running ? "run" : "walk") : "idle";
-  const speed = enemy.speed * (running ? 2 : 1);
+  const speed = enemy.speed * (running ? 1.55 : 1.15);
   let mx = dist > 10 ? Math.sign(dx) : 0;
   let my = ady > 14 ? Math.sign(dy) : 0;
   const length = Math.hypot(mx, my) || 1;
@@ -737,10 +737,10 @@ function updateCruz(enemy, game, dt) {
       enemy.spawned = true;
       spawnSombrero(game, enemy);
     }
-    if (enemy.stateT >= 1.05) {
+    if (enemy.stateT >= 0.82) {
       enemy.state = "idle";
       enemy.spawned = false;
-      enemy.attackCd = 0.65;
+      enemy.attackCd = 0.38;
       enemy.swingHits = new Set();
       release(game, enemy);
     }
@@ -773,7 +773,7 @@ function updateCruz(enemy, game, dt) {
     });
     if (enemy.stateT >= 0.38) {
       enemy.state = "idle";
-      enemy.attackCd = 1.15;
+      enemy.attackCd = 0.55;
       enemy.swingHits = new Set();
     }
     return;
@@ -781,10 +781,10 @@ function updateCruz(enemy, game, dt) {
   const dx = player.x - enemy.x;
   const dy = player.y - enemy.y;
   const dist = Math.abs(dx);
-  enemy.fleeCd = (enemy.fleeCd ?? 1.8) - dt;
-  if (enemy.fleeCd <= 0 && dist < 220 && dist > 70 && Math.abs(dy) < 36) {
-    enemy.fleeCd = 3.6;
-    enemy.fleeT = 0.48;
+  enemy.fleeCd = (enemy.fleeCd ?? 2.8) - dt;
+  if (enemy.fleeCd <= 0 && dist < 160 && dist > 70 && Math.abs(dy) < 36) {
+    enemy.fleeCd = 5.2;
+    enemy.fleeT = 0.22;
     enemy.state = "run";
     return;
   }

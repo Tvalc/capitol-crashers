@@ -9,7 +9,7 @@
 // A key is { key, code } as it would appear on a KeyboardEvent.
 (function () {
   function send(type, k) {
-    window.dispatchEvent(new KeyboardEvent(type, { key: k.key, code: k.code, bubbles: true }));
+    window.dispatchEvent(new KeyboardEvent(type, { key: k.key, code: k.code, bubbles: true, cancelable: true }));
   }
 
   function makePad(keys) {
@@ -115,11 +115,14 @@
     host.append(bar);
 
     const coarse = window.matchMedia("(pointer: coarse)");
+    const narrow = window.matchMedia("(max-width: 760px), (orientation: landscape) and (max-height: 520px)");
     const show = () => {
       bar.hidden = false;
       document.documentElement.classList.add("has-touch");
     };
-    if (coarse.matches) show();
+    if (coarse.matches || narrow.matches) show();
+    coarse.addEventListener("change", (event) => { if (event.matches) show(); });
+    narrow.addEventListener("change", (event) => { if (event.matches) show(); });
     window.addEventListener("touchstart", show, { once: true, passive: true });
     return bar;
   };

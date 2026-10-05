@@ -4,105 +4,209 @@
       "frame": {
         "x": 2,
         "y": 2,
-        "w": 189,
+        "w": 74,
         "h": 256
       },
       "rotated": false,
       "trimmed": false,
-      "spriteSourceSize": {
-        "x": 0,
-        "y": 0,
-        "w": 189,
-        "h": 256
-      },
       "sourceSize": {
-        "w": 189,
+        "w": 74,
         "h": 256
       },
-      "duration": 180
+      "duration": 333.3333333333333
     },
     "jd_vance_idle_001.webp": {
       "frame": {
-        "x": 193,
+        "x": 80,
         "y": 2,
-        "w": 189,
+        "w": 74,
         "h": 256
       },
       "rotated": false,
       "trimmed": false,
-      "spriteSourceSize": {
-        "x": 0,
-        "y": 0,
-        "w": 189,
-        "h": 256
-      },
       "sourceSize": {
-        "w": 189,
+        "w": 74,
         "h": 256
       },
-      "duration": 180
+      "duration": 333.3333333333333
     },
     "jd_vance_idle_002.webp": {
       "frame": {
-        "x": 384,
+        "x": 158,
         "y": 2,
-        "w": 189,
+        "w": 74,
         "h": 256
       },
       "rotated": false,
       "trimmed": false,
-      "spriteSourceSize": {
-        "x": 0,
-        "y": 0,
-        "w": 189,
-        "h": 256
-      },
       "sourceSize": {
-        "w": 189,
+        "w": 74,
         "h": 256
       },
-      "duration": 180
+      "duration": 333.3333333333333
     },
     "jd_vance_idle_003.webp": {
       "frame": {
-        "x": 575,
+        "x": 236,
         "y": 2,
-        "w": 189,
+        "w": 74,
         "h": 256
       },
       "rotated": false,
       "trimmed": false,
-      "spriteSourceSize": {
-        "x": 0,
-        "y": 0,
-        "w": 189,
-        "h": 256
-      },
       "sourceSize": {
-        "w": 189,
+        "w": 74,
         "h": 256
       },
-      "duration": 180
+      "duration": 333.3333333333333
+    },
+    "jd_vance_idle_004.webp": {
+      "frame": {
+        "x": 314,
+        "y": 2,
+        "w": 74,
+        "h": 256
+      },
+      "rotated": false,
+      "trimmed": false,
+      "sourceSize": {
+        "w": 74,
+        "h": 256
+      },
+      "duration": 333.3333333333333
+    },
+    "jd_vance_idle_005.webp": {
+      "frame": {
+        "x": 392,
+        "y": 2,
+        "w": 74,
+        "h": 256
+      },
+      "rotated": false,
+      "trimmed": false,
+      "sourceSize": {
+        "w": 74,
+        "h": 256
+      },
+      "duration": 333.3333333333333
+    },
+    "jd_vance_idle_006.webp": {
+      "frame": {
+        "x": 470,
+        "y": 2,
+        "w": 74,
+        "h": 256
+      },
+      "rotated": false,
+      "trimmed": false,
+      "sourceSize": {
+        "w": 74,
+        "h": 256
+      },
+      "duration": 333.3333333333333
+    },
+    "jd_vance_idle_007.webp": {
+      "frame": {
+        "x": 548,
+        "y": 2,
+        "w": 74,
+        "h": 256
+      },
+      "rotated": false,
+      "trimmed": false,
+      "sourceSize": {
+        "w": 74,
+        "h": 256
+      },
+      "duration": 333.3333333333333
+    },
+    "jd_vance_idle_008.webp": {
+      "frame": {
+        "x": 626,
+        "y": 2,
+        "w": 74,
+        "h": 256
+      },
+      "rotated": false,
+      "trimmed": false,
+      "sourceSize": {
+        "w": 74,
+        "h": 256
+      },
+      "duration": 333.3333333333333
+    },
+    "jd_vance_idle_009.webp": {
+      "frame": {
+        "x": 704,
+        "y": 2,
+        "w": 74,
+        "h": 256
+      },
+      "rotated": false,
+      "trimmed": false,
+      "sourceSize": {
+        "w": 74,
+        "h": 256
+      },
+      "duration": 333.3333333333333
+    },
+    "jd_vance_idle_010.webp": {
+      "frame": {
+        "x": 782,
+        "y": 2,
+        "w": 74,
+        "h": 256
+      },
+      "rotated": false,
+      "trimmed": false,
+      "sourceSize": {
+        "w": 74,
+        "h": 256
+      },
+      "duration": 333.3333333333333
+    },
+    "jd_vance_idle_011.webp": {
+      "frame": {
+        "x": 860,
+        "y": 2,
+        "w": 74,
+        "h": 256
+      },
+      "rotated": false,
+      "trimmed": false,
+      "sourceSize": {
+        "w": 74,
+        "h": 256
+      },
+      "duration": 333.3333333333333
     }
   },
   "meta": {
-    "app": "bake",
-    "version": "1",
+    "app": "Recovered saved Makko frames",
     "image": "jd_vance_idle.webp",
-    "format": "RGBA8888",
-    "scale": "1",
     "size": {
-      "w": 766,
+      "w": 936,
       "h": 260
     },
     "anchor": {
-      "x": 94.5,
-      "y": 253,
-      "normalized": {
-        "x": 0.5,
-        "y": 1
-      },
-      "strategy": "bottom-center"
-    }
+      "x": 37.0,
+      "y": 255
+    },
+    "fps": 3.0,
+    "source": "https://www.makko.ai/studio/collection/21d63cc3-9f17-4463-a9d6-3901abe8d04a/animation/db8b2d78-434a-450e-8ab3-806d7337448d",
+    "sourceFrames": [
+      "1790385904314_frame_000.webp",
+      "1790385904314_frame_009.webp",
+      "1790385904314_frame_017.webp",
+      "1790385904314_frame_026.webp",
+      "1790385904314_frame_035.webp",
+      "1790385904314_frame_043.webp",
+      "1790385904314_frame_052.webp",
+      "1790385904314_frame_060.webp",
+      "1790385904314_frame_069.webp",
+      "1790385904314_frame_078.webp",
+      "1790385904314_frame_086.webp",
+      "1790385904314_frame_095.webp"
+    ]
   }
 }

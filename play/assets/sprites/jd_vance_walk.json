@@ -1,295 +1,212 @@
 {
   "frames": {
-    "jd_vance_run_000.webp": {
+    "jd_vance_walk_000.webp": {
       "frame": {
         "x": 2,
         "y": 2,
-        "w": 189,
+        "w": 151,
         "h": 256
       },
       "rotated": false,
       "trimmed": false,
-      "spriteSourceSize": {
-        "x": 0,
-        "y": 0,
-        "w": 189,
-        "h": 256
-      },
       "sourceSize": {
-        "w": 189,
+        "w": 151,
         "h": 256
       },
-      "duration": 83
+      "duration": 125
     },
-    "jd_vance_run_001.webp": {
+    "jd_vance_walk_001.webp": {
       "frame": {
-        "x": 193,
+        "x": 157,
         "y": 2,
-        "w": 189,
+        "w": 151,
         "h": 256
       },
       "rotated": false,
       "trimmed": false,
-      "spriteSourceSize": {
-        "x": 0,
-        "y": 0,
-        "w": 189,
-        "h": 256
-      },
       "sourceSize": {
-        "w": 189,
+        "w": 151,
         "h": 256
       },
-      "duration": 83
+      "duration": 125
     },
-    "jd_vance_run_002.webp": {
+    "jd_vance_walk_002.webp": {
       "frame": {
-        "x": 384,
+        "x": 312,
         "y": 2,
-        "w": 189,
+        "w": 151,
         "h": 256
       },
       "rotated": false,
       "trimmed": false,
-      "spriteSourceSize": {
-        "x": 0,
-        "y": 0,
-        "w": 189,
-        "h": 256
-      },
       "sourceSize": {
-        "w": 189,
+        "w": 151,
         "h": 256
       },
-      "duration": 83
+      "duration": 125
     },
-    "jd_vance_run_003.webp": {
+    "jd_vance_walk_003.webp": {
       "frame": {
-        "x": 575,
+        "x": 467,
         "y": 2,
-        "w": 189,
+        "w": 151,
         "h": 256
       },
       "rotated": false,
       "trimmed": false,
-      "spriteSourceSize": {
-        "x": 0,
-        "y": 0,
-        "w": 189,
-        "h": 256
-      },
       "sourceSize": {
-        "w": 189,
+        "w": 151,
         "h": 256
       },
-      "duration": 83
+      "duration": 125
     },
-    "jd_vance_run_004.webp": {
+    "jd_vance_walk_004.webp": {
       "frame": {
-        "x": 766,
+        "x": 622,
         "y": 2,
-        "w": 189,
+        "w": 151,
         "h": 256
       },
       "rotated": false,
       "trimmed": false,
-      "spriteSourceSize": {
-        "x": 0,
-        "y": 0,
-        "w": 189,
-        "h": 256
-      },
       "sourceSize": {
-        "w": 189,
+        "w": 151,
         "h": 256
       },
-      "duration": 83
+      "duration": 125
     },
-    "jd_vance_run_005.webp": {
+    "jd_vance_walk_005.webp": {
       "frame": {
-        "x": 957,
+        "x": 777,
         "y": 2,
-        "w": 189,
+        "w": 151,
         "h": 256
       },
       "rotated": false,
       "trimmed": false,
-      "spriteSourceSize": {
-        "x": 0,
-        "y": 0,
-        "w": 189,
-        "h": 256
-      },
       "sourceSize": {
-        "w": 189,
+        "w": 151,
         "h": 256
       },
-      "duration": 83
+      "duration": 125
     },
-    "jd_vance_run_006.webp": {
+    "jd_vance_walk_006.webp": {
       "frame": {
-        "x": 1148,
+        "x": 932,
         "y": 2,
-        "w": 189,
+        "w": 151,
         "h": 256
       },
       "rotated": false,
       "trimmed": false,
-      "spriteSourceSize": {
-        "x": 0,
-        "y": 0,
-        "w": 189,
-        "h": 256
-      },
       "sourceSize": {
-        "w": 189,
+        "w": 151,
         "h": 256
       },
-      "duration": 83
+      "duration": 125
     },
-    "jd_vance_run_007.webp": {
+    "jd_vance_walk_007.webp": {
       "frame": {
-        "x": 1339,
+        "x": 1087,
         "y": 2,
-        "w": 189,
+        "w": 151,
         "h": 256
       },
       "rotated": false,
       "trimmed": false,
-      "spriteSourceSize": {
-        "x": 0,
-        "y": 0,
-        "w": 189,
-        "h": 256
-      },
       "sourceSize": {
-        "w": 189,
+        "w": 151,
         "h": 256
       },
-      "duration": 83
+      "duration": 125
     },
-    "jd_vance_run_008.webp": {
+    "jd_vance_walk_008.webp": {
       "frame": {
-        "x": 1530,
+        "x": 1242,
         "y": 2,
-        "w": 189,
+        "w": 151,
         "h": 256
       },
       "rotated": false,
       "trimmed": false,
-      "spriteSourceSize": {
-        "x": 0,
-        "y": 0,
-        "w": 189,
-        "h": 256
-      },
       "sourceSize": {
-        "w": 189,
+        "w": 151,
         "h": 256
       },
-      "duration": 83
+      "duration": 125
     },
-    "jd_vance_run_009.webp": {
+    "jd_vance_walk_009.webp": {
       "frame": {
-        "x": 1721,
+        "x": 1397,
         "y": 2,
-        "w": 189,
+        "w": 151,
         "h": 256
       },
       "rotated": false,
       "trimmed": false,
-      "spriteSourceSize": {
-        "x": 0,
-        "y": 0,
-        "w": 189,
-        "h": 256
-      },
       "sourceSize": {
-        "w": 189,
+        "w": 151,
         "h": 256
       },
-      "duration": 83
+      "duration": 125
     },
-    "jd_vance_run_010.webp": {
+    "jd_vance_walk_010.webp": {
       "frame": {
-        "x": 1912,
+        "x": 1552,
         "y": 2,
-        "w": 189,
+        "w": 151,
         "h": 256
       },
       "rotated": false,
       "trimmed": false,
-      "spriteSourceSize": {
-        "x": 0,
-        "y": 0,
-        "w": 189,
-        "h": 256
-      },
       "sourceSize": {
-        "w": 189,
+        "w": 151,
         "h": 256
       },
-      "duration": 83
+      "duration": 125
     },
-    "jd_vance_run_011.webp": {
+    "jd_vance_walk_011.webp": {
       "frame": {
-        "x": 2103,
+        "x": 1707,
         "y": 2,
-        "w": 189,
+        "w": 151,
         "h": 256
       },
       "rotated": false,
       "trimmed": false,
-      "spriteSourceSize": {
-        "x": 0,
-        "y": 0,
-        "w": 189,
-        "h": 256
-      },
       "sourceSize": {
-        "w": 189,
+        "w": 151,
         "h": 256
       },
-      "duration": 83
+      "duration": 125
     }
   },
   "meta": {
-    "app": "MAKKO Sprite Studio",
-    "version": "1.0.0",
-    "image": "jd_vance_run.webp",
-    "format": "RGBA8888",
+    "app": "Recovered saved Makko frames",
+    "image": "jd_vance_walk.webp",
     "size": {
-      "w": 2294,
+      "w": 1860,
       "h": 260
     },
-    "scale": "1",
-    "frameTags": [
-      {
-        "name": "JD Vance Run",
-        "from": 0,
-        "to": 11,
-        "direction": "forward"
-      }
-    ],
     "anchor": {
-      "x": 94.5,
-      "y": 253,
-      "normalized": {
-        "x": 0.5,
-        "y": 1
-      },
-      "strategy": "bottom-center"
+      "x": 75.5,
+      "y": 255
     },
-    "referenceAlignment": {
-      "referenceBounds": {
-        "width": 146,
-        "height": 244
-      },
-      "frameBounds": {
-        "width": 234,
-        "height": 256
-      },
-      "normalized": true
-    }
+    "fps": 8.0,
+    "source": "https://www.makko.ai/studio/collection/21d63cc3-9f17-4463-a9d6-3901abe8d04a/animation/4e96e6a6-8b19-49cc-9fb6-a9908472d218",
+    "sourceFrames": [
+      "1790386201100_frame_055.webp",
+      "1790386201100_frame_058.webp",
+      "1790386201100_frame_061.webp",
+      "1790386201100_frame_064.webp",
+      "1790386201100_frame_067.webp",
+      "1790386201100_frame_070.webp",
+      "1790386201100_frame_073.webp",
+      "1790386201100_frame_076.webp",
+      "1790386201100_frame_079.webp",
+      "1790386201100_frame_082.webp",
+      "1790386201100_frame_085.webp",
+      "1790386201100_frame_088.webp"
+    ]
   }
 }

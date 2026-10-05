@@ -4,292 +4,97 @@
       "frame": {
         "x": 2,
         "y": 2,
-        "w": 204,
+        "w": 190,
         "h": 256
       },
       "rotated": false,
       "trimmed": false,
-      "spriteSourceSize": {
-        "x": 0,
-        "y": 0,
-        "w": 204,
-        "h": 256
-      },
       "sourceSize": {
-        "w": 204,
+        "w": 190,
         "h": 256
       },
-      "duration": 83
+      "duration": 140
     },
     "jd_vance_attack_001.webp": {
       "frame": {
-        "x": 208,
+        "x": 196,
         "y": 2,
-        "w": 204,
+        "w": 190,
         "h": 256
       },
       "rotated": false,
       "trimmed": false,
-      "spriteSourceSize": {
-        "x": 0,
-        "y": 0,
-        "w": 204,
-        "h": 256
-      },
       "sourceSize": {
-        "w": 204,
+        "w": 190,
         "h": 256
       },
-      "duration": 83
+      "duration": 140
     },
     "jd_vance_attack_002.webp": {
       "frame": {
-        "x": 414,
+        "x": 390,
         "y": 2,
-        "w": 204,
+        "w": 190,
         "h": 256
       },
       "rotated": false,
       "trimmed": false,
-      "spriteSourceSize": {
-        "x": 0,
-        "y": 0,
-        "w": 204,
-        "h": 256
-      },
       "sourceSize": {
-        "w": 204,
+        "w": 190,
         "h": 256
       },
-      "duration": 83
+      "duration": 140
     },
     "jd_vance_attack_003.webp": {
       "frame": {
-        "x": 620,
+        "x": 584,
         "y": 2,
-        "w": 204,
+        "w": 190,
         "h": 256
       },
       "rotated": false,
       "trimmed": false,
-      "spriteSourceSize": {
-        "x": 0,
-        "y": 0,
-        "w": 204,
-        "h": 256
-      },
       "sourceSize": {
-        "w": 204,
+        "w": 190,
         "h": 256
       },
-      "duration": 83
+      "duration": 140
     },
     "jd_vance_attack_004.webp": {
       "frame": {
-        "x": 826,
+        "x": 778,
         "y": 2,
-        "w": 204,
+        "w": 190,
         "h": 256
       },
       "rotated": false,
       "trimmed": false,
-      "spriteSourceSize": {
-        "x": 0,
-        "y": 0,
-        "w": 204,
-        "h": 256
-      },
       "sourceSize": {
-        "w": 204,
+        "w": 190,
         "h": 256
       },
-      "duration": 83
-    },
-    "jd_vance_attack_005.webp": {
-      "frame": {
-        "x": 1032,
-        "y": 2,
-        "w": 204,
-        "h": 256
-      },
-      "rotated": false,
-      "trimmed": false,
-      "spriteSourceSize": {
-        "x": 0,
-        "y": 0,
-        "w": 204,
-        "h": 256
-      },
-      "sourceSize": {
-        "w": 204,
-        "h": 256
-      },
-      "duration": 83
-    },
-    "jd_vance_attack_006.webp": {
-      "frame": {
-        "x": 1238,
-        "y": 2,
-        "w": 204,
-        "h": 256
-      },
-      "rotated": false,
-      "trimmed": false,
-      "spriteSourceSize": {
-        "x": 0,
-        "y": 0,
-        "w": 204,
-        "h": 256
-      },
-      "sourceSize": {
-        "w": 204,
-        "h": 256
-      },
-      "duration": 83
-    },
-    "jd_vance_attack_007.webp": {
-      "frame": {
-        "x": 1444,
-        "y": 2,
-        "w": 204,
-        "h": 256
-      },
-      "rotated": false,
-      "trimmed": false,
-      "spriteSourceSize": {
-        "x": 0,
-        "y": 0,
-        "w": 204,
-        "h": 256
-      },
-      "sourceSize": {
-        "w": 204,
-        "h": 256
-      },
-      "duration": 83
-    },
-    "jd_vance_attack_008.webp": {
-      "frame": {
-        "x": 1650,
-        "y": 2,
-        "w": 204,
-        "h": 256
-      },
-      "rotated": false,
-      "trimmed": false,
-      "spriteSourceSize": {
-        "x": 0,
-        "y": 0,
-        "w": 204,
-        "h": 256
-      },
-      "sourceSize": {
-        "w": 204,
-        "h": 256
-      },
-      "duration": 83
-    },
-    "jd_vance_attack_009.webp": {
-      "frame": {
-        "x": 1856,
-        "y": 2,
-        "w": 204,
-        "h": 256
-      },
-      "rotated": false,
-      "trimmed": false,
-      "spriteSourceSize": {
-        "x": 0,
-        "y": 0,
-        "w": 204,
-        "h": 256
-      },
-      "sourceSize": {
-        "w": 204,
-        "h": 256
-      },
-      "duration": 83
-    },
-    "jd_vance_attack_010.webp": {
-      "frame": {
-        "x": 2062,
-        "y": 2,
-        "w": 204,
-        "h": 256
-      },
-      "rotated": false,
-      "trimmed": false,
-      "spriteSourceSize": {
-        "x": 0,
-        "y": 0,
-        "w": 204,
-        "h": 256
-      },
-      "sourceSize": {
-        "w": 204,
-        "h": 256
-      },
-      "duration": 83
-    },
-    "jd_vance_attack_011.webp": {
-      "frame": {
-        "x": 2268,
-        "y": 2,
-        "w": 204,
-        "h": 256
-      },
-      "rotated": false,
-      "trimmed": false,
-      "spriteSourceSize": {
-        "x": 0,
-        "y": 0,
-        "w": 204,
-        "h": 256
-      },
-      "sourceSize": {
-        "w": 204,
-        "h": 256
-      },
-      "duration": 83
+      "duration": 140
     }
   },
   "meta": {
-    "app": "MAKKO Sprite Studio",
-    "version": "1.0.0",
     "image": "jd_vance_attack.webp",
-    "format": "RGBA8888",
     "size": {
-      "w": 2474,
+      "w": 970,
       "h": 260
     },
-    "scale": "1",
-    "frameTags": [
-      {
-        "name": "JD Vance Attack",
-        "from": 0,
-        "to": 11,
-        "direction": "forward"
-      }
-    ],
     "anchor": {
-      "x": 102.0,
-      "y": 258,
-      "normalized": {
-        "x": 0.5,
-        "y": 1
-      },
-      "strategy": "bottom-center"
+      "x": 95.0,
+      "y": 255
     },
-    "referenceAlignment": {
-      "referenceBounds": {
-        "width": 182,
-        "height": 248
-      },
-      "frameBounds": {
-        "width": 190,
-        "height": 256
-      },
-      "normalized": true
-    }
+    "source": "https://www.makko.ai/studio/collection/21d63cc3-9f17-4463-a9d6-3901abe8d04a/animation/4b32463e-c061-4a10-9de7-746465e6423a",
+    "sourceFrames": [
+      9,
+      8,
+      7,
+      8,
+      9
+    ],
+    "contactFrame": 2,
+    "note": "Saved full-body jab, retraction reversed for preparation. Replaces clipped overhead animation incorrectly assigned to melee attack."
   }
 }

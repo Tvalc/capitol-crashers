@@ -1,6 +1,6 @@
 import { FIGHTERS, poseFor } from "./fighters.js?v=chibi-site2";
-import { drawSprite } from "./sprites.js?v=chibi-site2";
-import { WORLD } from "./stages.js?v=chibi-site2";
+import { drawSprite } from "./sprites.js?v=grounded1";
+import { WORLD } from "./stages.js?v=feel1";
 
 const art = {};
 export function loadEnvironment() {
@@ -162,7 +162,7 @@ function drawShot(ctx, shot, cam) {
 
 function drawFx(ctx,fx,cam) {
   ctx.save();ctx.globalAlpha=Math.max(0,1-fx.t/fx.life);
-  const size=28+fx.t*100;
+  const size=(fx.heavy ? 64 : 38)*(1+Math.min(1,fx.t/.06)*.25);
   painted(ctx,'impact',fx.x-cam-size/2,fx.y-fx.z-size/2,size,size);ctx.restore();
 }
 
@@ -182,7 +182,9 @@ function drawPerson(ctx, ent, cam, game) {
   ctx.scale(spriteScale, spriteScale * 0.42);
   ctx.fillStyle = "rgba(0,0,0,0.35)";
   ctx.beginPath();
-  ctx.ellipse(0, 8, 54, 18, 0, 0, Math.PI * 2);
+  const airborne = Math.min(1, (ent.z || 0) / 160);
+  ctx.globalAlpha = 1 - airborne * .55;
+  ctx.ellipse(0, 0, 38 - airborne * 10, 11 - airborne * 3, 0, 0, Math.PI * 2);
   ctx.fill();
   ctx.restore();
 
@@ -197,65 +199,128 @@ function label(ctx, ent, sx) {
   ctx.fillText(ent.name, sx, ent.y - ent.z - (ent.h || 90) * (ent.scale || 1) - 16);
 }
 
+function innerPlate(x, y, w, h) {
+  const px = w * 0.1;
+  const py = h * 0.27;
+  return { x: x + px, y: y + py, w: w - px * 2, h: h - py * 2 };
+}
+
 function drawHud(ctx, game) {
   const player = game.player;
   if (!player) return;
-  painted(ctx,'panel',18,12,320,102);
-  painted(ctx,'panel',WORLD.viewW-230,12,210,82);
+  ctx.save();
+  const aspect = 510 / 245;
+
+  const lw = 360;
+  const lh = Math.round(lw / aspect);
+  painted(ctx, "panel", 14, 10, lw, lh);
+  const left = innerPlate(14, 10, lw, lh);
   ctx.textAlign = "left";
-  ctx.font = "700 18px Segoe UI, sans-serif";
-  ctx.fillStyle = "#f4efe4";
-  ctx.fillText(player.name, 36, 40);
-  bar(ctx, 36, 52, 280, 16, player);
-
-  ctx.font = "600 14px Segoe UI, sans-serif";
-  ctx.fillStyle = "#e2b657";
-  ctx.fillText(`Lives ${game.lives}`, 36, 92);
-
-  ctx.textAlign = "right";
+  ctx.textBaseline = "top";
   ctx.fillStyle = "#f4efe4";
   ctx.font = "700 20px Segoe UI, sans-serif";
-  ctx.fillText(String(game.score).padStart(6, "0"), WORLD.viewW - 36, 42);
+  ctx.fillText(player.name, left.x, left.y);
+  const barH = 26;
+  const barY = left.y + 28;
+  bar(ctx, left.x, barY, left.w, barH, player);
+  ctx.font = "600 16px Segoe UI, sans-serif";
+  ctx.fillStyle = "#e2b657";
+  ctx.fillText(`Lives ${game.lives}`, left.x, barY + barH + 8);
+
+  const sw = 240;
+  const sh = Math.round(sw / aspect);
+  const sx = WORLD.viewW - 14 - sw;
+  painted(ctx, "panel", sx, 10, sw, sh);
+  const score = innerPlate(sx, 10, sw, sh);
+  ctx.textAlign = "center";
+  ctx.textBaseline = "middle";
+  ctx.fillStyle = "#f4efe4";
+  const scoreText = String(game.score).padStart(6, "0");
   if (game.combo >= 2) {
+    ctx.font = "700 22px Segoe UI, sans-serif";
+    ctx.fillText(scoreText, score.x + score.w / 2, score.y + score.h * 0.34);
     ctx.fillStyle = "#ef6b4a";
-    ctx.font = "800 28px Segoe UI, sans-serif";
-    ctx.fillText(`${game.combo} HITS`, WORLD.viewW - 36, 78);
+    ctx.font = "800 18px Segoe UI, sans-serif";
+    ctx.fillText(`${game.combo} HITS`, score.x + score.w / 2, score.y + score.h * 0.72);
+  } else {
+    ctx.font = "700 26px Segoe UI, sans-serif";
+    ctx.fillText(scoreText, score.x + score.w / 2, score.y + score.h / 2);
   }
 
   const boss = (game.enemies || []).find((enemy) => enemy.isBoss && enemy.alive);
   if (boss) {
-    painted(ctx,'panel',WORLD.viewW/2-184,8,368,74);
+    const bw = 440;
+    const bh = 156;
+    const bx = (WORLD.viewW - bw) / 2;
+    painted(ctx, "panel", bx, 8, bw, bh);
+    const box = innerPlate(bx, 8, bw, bh);
     ctx.textAlign = "center";
+    ctx.textBaseline = "top";
     ctx.fillStyle = "#f4efe4";
-    ctx.font = "700 16px Segoe UI, sans-serif";
-    ctx.fillText(boss.name, WORLD.viewW / 2, 36);
-    bar(ctx, WORLD.viewW / 2 - 160, 46, 320, 14, boss);
+    ctx.font = "700 18px Segoe UI, sans-serif";
+    ctx.fillText(boss.name, box.x + box.w / 2, box.y);
+    bar(ctx, box.x + box.w * 0.06, box.y + 28, box.w * 0.88, 24, boss);
   }
 
   if (player.holding) {
-    ctx.textAlign = "left";
-    ctx.fillStyle = "#f4efe4";
-    ctx.font = "700 16px Segoe UI, sans-serif";
     const word = player.holding.kind === "pipe" ? `Pipe ${player.holding.left}` : "Bottle";
-    ctx.fillText(word, 36, WORLD.viewH - 36);
+    ctx.font = "700 16px Segoe UI, sans-serif";
+    const bw = Math.ceil(ctx.measureText(word).width + 64);
+    const bh = 52;
+    const bx = 16;
+    const by = WORLD.viewH - 16 - bh;
+    painted(ctx, "button-gold", bx, by, bw, bh);
+    ctx.textAlign = "center";
+    ctx.textBaseline = "middle";
+    ctx.fillStyle = "#251a0b";
+    ctx.fillText(word, bx + bw / 2, by + bh * 0.46);
   }
 
   if (game.banner && (game.bannerT > 0 || game.introT > 0)) {
+    let size = 32;
+    ctx.font = `800 ${size}px Segoe UI, sans-serif`;
+    const maxW = 440;
+    while (ctx.measureText(game.banner).width > maxW && size > 18) {
+      size -= 2;
+      ctx.font = `800 ${size}px Segoe UI, sans-serif`;
+    }
+    const bw = Math.max(380, Math.ceil(ctx.measureText(game.banner).width + 140));
+    const bh = Math.round(bw * (219 / 574));
+    const bx = (WORLD.viewW - bw) / 2;
+    const by = 156;
+    painted(ctx, "banner", bx, by, bw, bh);
     ctx.textAlign = "center";
-    ctx.fillStyle = "#f4efe4";
-    ctx.font = "800 42px Segoe UI, sans-serif";
-    ctx.fillText(game.banner, WORLD.viewW / 2, 150);
-    if (game.introT > 0.2 && game.stage?.line) {
-      ctx.font = "600 18px Segoe UI, sans-serif";
-      ctx.fillStyle = "#e2b657";
-      ctx.fillText(game.stage.line, WORLD.viewW / 2, 184);
+    ctx.textBaseline = "middle";
+    ctx.fillStyle = "#251a0b";
+    const hasLine = game.introT > 0.2 && game.stage?.line;
+    ctx.fillText(game.banner, WORLD.viewW / 2, by + bh * (hasLine ? 0.4 : 0.48));
+    if (hasLine) {
+      ctx.font = "600 16px Segoe UI, sans-serif";
+      ctx.fillStyle = "#5a3a12";
+      ctx.fillText(game.stage.line, WORLD.viewW / 2, by + bh * 0.66);
     }
   }
+  ctx.restore();
 }
 
-function bar(ctx,x,y,w,h,ent) {
-  const image=art['button-teal'];
-  painted(ctx,'button-gold',x,y,w,h);
-  const ratio=Math.max(0,Math.min(1,ent.hp/ent.hpMax));
-  if(image&&ratio>0)ctx.drawImage(image,0,0,image.width*ratio,image.height,x,y,w*ratio,h);
+function bar(ctx, x, y, w, h, ent) {
+  painted(ctx, "button-gold", x, y, w, h);
+  const image = art["button-teal"];
+  const ratio = Math.max(0, Math.min(1, ent.hp / ent.hpMax));
+  if (!image || ratio <= 0) return;
+  const insetX = 0.08;
+  const insetY = 0.24;
+  const faceW = 1 - insetX * 2;
+  const faceH = 1 - insetY * 2;
+  ctx.drawImage(
+    image,
+    image.width * insetX,
+    image.height * insetY,
+    image.width * faceW * ratio,
+    image.height * faceH,
+    x + w * insetX,
+    y + h * insetY,
+    w * faceW * ratio,
+    h * faceH
+  );
 }

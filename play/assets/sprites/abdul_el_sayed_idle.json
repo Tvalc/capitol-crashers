@@ -4,189 +4,1461 @@
       "frame": {
         "x": 2,
         "y": 2,
-        "w": 168,
+        "w": 130,
         "h": 256
       },
       "rotated": false,
       "trimmed": false,
-      "spriteSourceSize": {
-        "x": 0,
-        "y": 0,
-        "w": 168,
-        "h": 256
-      },
       "sourceSize": {
-        "w": 168,
+        "w": 130,
         "h": 256
       },
-      "duration": 160
+      "duration": 41.666666666666664
     },
     "abdul_el_sayed_idle_001.webp": {
       "frame": {
-        "x": 172,
+        "x": 136,
         "y": 2,
-        "w": 168,
+        "w": 130,
         "h": 256
       },
       "rotated": false,
       "trimmed": false,
-      "spriteSourceSize": {
-        "x": 0,
-        "y": 0,
-        "w": 168,
-        "h": 256
-      },
       "sourceSize": {
-        "w": 168,
+        "w": 130,
         "h": 256
       },
-      "duration": 160
+      "duration": 41.666666666666664
     },
     "abdul_el_sayed_idle_002.webp": {
       "frame": {
-        "x": 342,
+        "x": 270,
         "y": 2,
-        "w": 168,
+        "w": 130,
         "h": 256
       },
       "rotated": false,
       "trimmed": false,
-      "spriteSourceSize": {
-        "x": 0,
-        "y": 0,
-        "w": 168,
-        "h": 256
-      },
       "sourceSize": {
-        "w": 168,
+        "w": 130,
         "h": 256
       },
-      "duration": 160
+      "duration": 41.666666666666664
     },
     "abdul_el_sayed_idle_003.webp": {
       "frame": {
-        "x": 512,
+        "x": 404,
         "y": 2,
-        "w": 168,
+        "w": 130,
         "h": 256
       },
       "rotated": false,
       "trimmed": false,
-      "spriteSourceSize": {
-        "x": 0,
-        "y": 0,
-        "w": 168,
-        "h": 256
-      },
       "sourceSize": {
-        "w": 168,
+        "w": 130,
         "h": 256
       },
-      "duration": 160
+      "duration": 41.666666666666664
     },
     "abdul_el_sayed_idle_004.webp": {
       "frame": {
-        "x": 682,
+        "x": 538,
         "y": 2,
-        "w": 168,
+        "w": 130,
         "h": 256
       },
       "rotated": false,
       "trimmed": false,
-      "spriteSourceSize": {
-        "x": 0,
-        "y": 0,
-        "w": 168,
-        "h": 256
-      },
       "sourceSize": {
-        "w": 168,
+        "w": 130,
         "h": 256
       },
-      "duration": 160
+      "duration": 41.666666666666664
     },
     "abdul_el_sayed_idle_005.webp": {
       "frame": {
-        "x": 852,
+        "x": 672,
         "y": 2,
-        "w": 168,
+        "w": 130,
         "h": 256
       },
       "rotated": false,
       "trimmed": false,
-      "spriteSourceSize": {
-        "x": 0,
-        "y": 0,
-        "w": 168,
-        "h": 256
-      },
       "sourceSize": {
-        "w": 168,
+        "w": 130,
         "h": 256
       },
-      "duration": 160
+      "duration": 41.666666666666664
     },
     "abdul_el_sayed_idle_006.webp": {
       "frame": {
-        "x": 1022,
+        "x": 806,
         "y": 2,
-        "w": 168,
+        "w": 130,
         "h": 256
       },
       "rotated": false,
       "trimmed": false,
-      "spriteSourceSize": {
-        "x": 0,
-        "y": 0,
-        "w": 168,
-        "h": 256
-      },
       "sourceSize": {
-        "w": 168,
+        "w": 130,
         "h": 256
       },
-      "duration": 160
+      "duration": 41.666666666666664
     },
     "abdul_el_sayed_idle_007.webp": {
       "frame": {
-        "x": 1192,
+        "x": 940,
         "y": 2,
-        "w": 168,
+        "w": 130,
         "h": 256
       },
       "rotated": false,
       "trimmed": false,
-      "spriteSourceSize": {
-        "x": 0,
-        "y": 0,
-        "w": 168,
-        "h": 256
-      },
       "sourceSize": {
-        "w": 168,
+        "w": 130,
         "h": 256
       },
-      "duration": 160
+      "duration": 41.666666666666664
+    },
+    "abdul_el_sayed_idle_008.webp": {
+      "frame": {
+        "x": 1074,
+        "y": 2,
+        "w": 130,
+        "h": 256
+      },
+      "rotated": false,
+      "trimmed": false,
+      "sourceSize": {
+        "w": 130,
+        "h": 256
+      },
+      "duration": 41.666666666666664
+    },
+    "abdul_el_sayed_idle_009.webp": {
+      "frame": {
+        "x": 1208,
+        "y": 2,
+        "w": 130,
+        "h": 256
+      },
+      "rotated": false,
+      "trimmed": false,
+      "sourceSize": {
+        "w": 130,
+        "h": 256
+      },
+      "duration": 41.666666666666664
+    },
+    "abdul_el_sayed_idle_010.webp": {
+      "frame": {
+        "x": 1342,
+        "y": 2,
+        "w": 130,
+        "h": 256
+      },
+      "rotated": false,
+      "trimmed": false,
+      "sourceSize": {
+        "w": 130,
+        "h": 256
+      },
+      "duration": 41.666666666666664
+    },
+    "abdul_el_sayed_idle_011.webp": {
+      "frame": {
+        "x": 1476,
+        "y": 2,
+        "w": 130,
+        "h": 256
+      },
+      "rotated": false,
+      "trimmed": false,
+      "sourceSize": {
+        "w": 130,
+        "h": 256
+      },
+      "duration": 41.666666666666664
+    },
+    "abdul_el_sayed_idle_012.webp": {
+      "frame": {
+        "x": 2,
+        "y": 262,
+        "w": 130,
+        "h": 256
+      },
+      "rotated": false,
+      "trimmed": false,
+      "sourceSize": {
+        "w": 130,
+        "h": 256
+      },
+      "duration": 41.666666666666664
+    },
+    "abdul_el_sayed_idle_013.webp": {
+      "frame": {
+        "x": 136,
+        "y": 262,
+        "w": 130,
+        "h": 256
+      },
+      "rotated": false,
+      "trimmed": false,
+      "sourceSize": {
+        "w": 130,
+        "h": 256
+      },
+      "duration": 41.666666666666664
+    },
+    "abdul_el_sayed_idle_014.webp": {
+      "frame": {
+        "x": 270,
+        "y": 262,
+        "w": 130,
+        "h": 256
+      },
+      "rotated": false,
+      "trimmed": false,
+      "sourceSize": {
+        "w": 130,
+        "h": 256
+      },
+      "duration": 41.666666666666664
+    },
+    "abdul_el_sayed_idle_015.webp": {
+      "frame": {
+        "x": 404,
+        "y": 262,
+        "w": 130,
+        "h": 256
+      },
+      "rotated": false,
+      "trimmed": false,
+      "sourceSize": {
+        "w": 130,
+        "h": 256
+      },
+      "duration": 41.666666666666664
+    },
+    "abdul_el_sayed_idle_016.webp": {
+      "frame": {
+        "x": 538,
+        "y": 262,
+        "w": 130,
+        "h": 256
+      },
+      "rotated": false,
+      "trimmed": false,
+      "sourceSize": {
+        "w": 130,
+        "h": 256
+      },
+      "duration": 41.666666666666664
+    },
+    "abdul_el_sayed_idle_017.webp": {
+      "frame": {
+        "x": 672,
+        "y": 262,
+        "w": 130,
+        "h": 256
+      },
+      "rotated": false,
+      "trimmed": false,
+      "sourceSize": {
+        "w": 130,
+        "h": 256
+      },
+      "duration": 41.666666666666664
+    },
+    "abdul_el_sayed_idle_018.webp": {
+      "frame": {
+        "x": 806,
+        "y": 262,
+        "w": 130,
+        "h": 256
+      },
+      "rotated": false,
+      "trimmed": false,
+      "sourceSize": {
+        "w": 130,
+        "h": 256
+      },
+      "duration": 41.666666666666664
+    },
+    "abdul_el_sayed_idle_019.webp": {
+      "frame": {
+        "x": 940,
+        "y": 262,
+        "w": 130,
+        "h": 256
+      },
+      "rotated": false,
+      "trimmed": false,
+      "sourceSize": {
+        "w": 130,
+        "h": 256
+      },
+      "duration": 41.666666666666664
+    },
+    "abdul_el_sayed_idle_020.webp": {
+      "frame": {
+        "x": 1074,
+        "y": 262,
+        "w": 130,
+        "h": 256
+      },
+      "rotated": false,
+      "trimmed": false,
+      "sourceSize": {
+        "w": 130,
+        "h": 256
+      },
+      "duration": 41.666666666666664
+    },
+    "abdul_el_sayed_idle_021.webp": {
+      "frame": {
+        "x": 1208,
+        "y": 262,
+        "w": 130,
+        "h": 256
+      },
+      "rotated": false,
+      "trimmed": false,
+      "sourceSize": {
+        "w": 130,
+        "h": 256
+      },
+      "duration": 41.666666666666664
+    },
+    "abdul_el_sayed_idle_022.webp": {
+      "frame": {
+        "x": 1342,
+        "y": 262,
+        "w": 130,
+        "h": 256
+      },
+      "rotated": false,
+      "trimmed": false,
+      "sourceSize": {
+        "w": 130,
+        "h": 256
+      },
+      "duration": 41.666666666666664
+    },
+    "abdul_el_sayed_idle_023.webp": {
+      "frame": {
+        "x": 1476,
+        "y": 262,
+        "w": 130,
+        "h": 256
+      },
+      "rotated": false,
+      "trimmed": false,
+      "sourceSize": {
+        "w": 130,
+        "h": 256
+      },
+      "duration": 41.666666666666664
+    },
+    "abdul_el_sayed_idle_024.webp": {
+      "frame": {
+        "x": 2,
+        "y": 522,
+        "w": 130,
+        "h": 256
+      },
+      "rotated": false,
+      "trimmed": false,
+      "sourceSize": {
+        "w": 130,
+        "h": 256
+      },
+      "duration": 41.666666666666664
+    },
+    "abdul_el_sayed_idle_025.webp": {
+      "frame": {
+        "x": 136,
+        "y": 522,
+        "w": 130,
+        "h": 256
+      },
+      "rotated": false,
+      "trimmed": false,
+      "sourceSize": {
+        "w": 130,
+        "h": 256
+      },
+      "duration": 41.666666666666664
+    },
+    "abdul_el_sayed_idle_026.webp": {
+      "frame": {
+        "x": 270,
+        "y": 522,
+        "w": 130,
+        "h": 256
+      },
+      "rotated": false,
+      "trimmed": false,
+      "sourceSize": {
+        "w": 130,
+        "h": 256
+      },
+      "duration": 41.666666666666664
+    },
+    "abdul_el_sayed_idle_027.webp": {
+      "frame": {
+        "x": 404,
+        "y": 522,
+        "w": 130,
+        "h": 256
+      },
+      "rotated": false,
+      "trimmed": false,
+      "sourceSize": {
+        "w": 130,
+        "h": 256
+      },
+      "duration": 41.666666666666664
+    },
+    "abdul_el_sayed_idle_028.webp": {
+      "frame": {
+        "x": 538,
+        "y": 522,
+        "w": 130,
+        "h": 256
+      },
+      "rotated": false,
+      "trimmed": false,
+      "sourceSize": {
+        "w": 130,
+        "h": 256
+      },
+      "duration": 41.666666666666664
+    },
+    "abdul_el_sayed_idle_029.webp": {
+      "frame": {
+        "x": 672,
+        "y": 522,
+        "w": 130,
+        "h": 256
+      },
+      "rotated": false,
+      "trimmed": false,
+      "sourceSize": {
+        "w": 130,
+        "h": 256
+      },
+      "duration": 41.666666666666664
+    },
+    "abdul_el_sayed_idle_030.webp": {
+      "frame": {
+        "x": 806,
+        "y": 522,
+        "w": 130,
+        "h": 256
+      },
+      "rotated": false,
+      "trimmed": false,
+      "sourceSize": {
+        "w": 130,
+        "h": 256
+      },
+      "duration": 41.666666666666664
+    },
+    "abdul_el_sayed_idle_031.webp": {
+      "frame": {
+        "x": 940,
+        "y": 522,
+        "w": 130,
+        "h": 256
+      },
+      "rotated": false,
+      "trimmed": false,
+      "sourceSize": {
+        "w": 130,
+        "h": 256
+      },
+      "duration": 41.666666666666664
+    },
+    "abdul_el_sayed_idle_032.webp": {
+      "frame": {
+        "x": 1074,
+        "y": 522,
+        "w": 130,
+        "h": 256
+      },
+      "rotated": false,
+      "trimmed": false,
+      "sourceSize": {
+        "w": 130,
+        "h": 256
+      },
+      "duration": 41.666666666666664
+    },
+    "abdul_el_sayed_idle_033.webp": {
+      "frame": {
+        "x": 1208,
+        "y": 522,
+        "w": 130,
+        "h": 256
+      },
+      "rotated": false,
+      "trimmed": false,
+      "sourceSize": {
+        "w": 130,
+        "h": 256
+      },
+      "duration": 41.666666666666664
+    },
+    "abdul_el_sayed_idle_034.webp": {
+      "frame": {
+        "x": 1342,
+        "y": 522,
+        "w": 130,
+        "h": 256
+      },
+      "rotated": false,
+      "trimmed": false,
+      "sourceSize": {
+        "w": 130,
+        "h": 256
+      },
+      "duration": 41.666666666666664
+    },
+    "abdul_el_sayed_idle_035.webp": {
+      "frame": {
+        "x": 1476,
+        "y": 522,
+        "w": 130,
+        "h": 256
+      },
+      "rotated": false,
+      "trimmed": false,
+      "sourceSize": {
+        "w": 130,
+        "h": 256
+      },
+      "duration": 41.666666666666664
+    },
+    "abdul_el_sayed_idle_036.webp": {
+      "frame": {
+        "x": 2,
+        "y": 782,
+        "w": 130,
+        "h": 256
+      },
+      "rotated": false,
+      "trimmed": false,
+      "sourceSize": {
+        "w": 130,
+        "h": 256
+      },
+      "duration": 41.666666666666664
+    },
+    "abdul_el_sayed_idle_037.webp": {
+      "frame": {
+        "x": 136,
+        "y": 782,
+        "w": 130,
+        "h": 256
+      },
+      "rotated": false,
+      "trimmed": false,
+      "sourceSize": {
+        "w": 130,
+        "h": 256
+      },
+      "duration": 41.666666666666664
+    },
+    "abdul_el_sayed_idle_038.webp": {
+      "frame": {
+        "x": 270,
+        "y": 782,
+        "w": 130,
+        "h": 256
+      },
+      "rotated": false,
+      "trimmed": false,
+      "sourceSize": {
+        "w": 130,
+        "h": 256
+      },
+      "duration": 41.666666666666664
+    },
+    "abdul_el_sayed_idle_039.webp": {
+      "frame": {
+        "x": 404,
+        "y": 782,
+        "w": 130,
+        "h": 256
+      },
+      "rotated": false,
+      "trimmed": false,
+      "sourceSize": {
+        "w": 130,
+        "h": 256
+      },
+      "duration": 41.666666666666664
+    },
+    "abdul_el_sayed_idle_040.webp": {
+      "frame": {
+        "x": 538,
+        "y": 782,
+        "w": 130,
+        "h": 256
+      },
+      "rotated": false,
+      "trimmed": false,
+      "sourceSize": {
+        "w": 130,
+        "h": 256
+      },
+      "duration": 41.666666666666664
+    },
+    "abdul_el_sayed_idle_041.webp": {
+      "frame": {
+        "x": 672,
+        "y": 782,
+        "w": 130,
+        "h": 256
+      },
+      "rotated": false,
+      "trimmed": false,
+      "sourceSize": {
+        "w": 130,
+        "h": 256
+      },
+      "duration": 41.666666666666664
+    },
+    "abdul_el_sayed_idle_042.webp": {
+      "frame": {
+        "x": 806,
+        "y": 782,
+        "w": 130,
+        "h": 256
+      },
+      "rotated": false,
+      "trimmed": false,
+      "sourceSize": {
+        "w": 130,
+        "h": 256
+      },
+      "duration": 41.666666666666664
+    },
+    "abdul_el_sayed_idle_043.webp": {
+      "frame": {
+        "x": 940,
+        "y": 782,
+        "w": 130,
+        "h": 256
+      },
+      "rotated": false,
+      "trimmed": false,
+      "sourceSize": {
+        "w": 130,
+        "h": 256
+      },
+      "duration": 41.666666666666664
+    },
+    "abdul_el_sayed_idle_044.webp": {
+      "frame": {
+        "x": 1074,
+        "y": 782,
+        "w": 130,
+        "h": 256
+      },
+      "rotated": false,
+      "trimmed": false,
+      "sourceSize": {
+        "w": 130,
+        "h": 256
+      },
+      "duration": 41.666666666666664
+    },
+    "abdul_el_sayed_idle_045.webp": {
+      "frame": {
+        "x": 1208,
+        "y": 782,
+        "w": 130,
+        "h": 256
+      },
+      "rotated": false,
+      "trimmed": false,
+      "sourceSize": {
+        "w": 130,
+        "h": 256
+      },
+      "duration": 41.666666666666664
+    },
+    "abdul_el_sayed_idle_046.webp": {
+      "frame": {
+        "x": 1342,
+        "y": 782,
+        "w": 130,
+        "h": 256
+      },
+      "rotated": false,
+      "trimmed": false,
+      "sourceSize": {
+        "w": 130,
+        "h": 256
+      },
+      "duration": 41.666666666666664
+    },
+    "abdul_el_sayed_idle_047.webp": {
+      "frame": {
+        "x": 1476,
+        "y": 782,
+        "w": 130,
+        "h": 256
+      },
+      "rotated": false,
+      "trimmed": false,
+      "sourceSize": {
+        "w": 130,
+        "h": 256
+      },
+      "duration": 41.666666666666664
+    },
+    "abdul_el_sayed_idle_048.webp": {
+      "frame": {
+        "x": 2,
+        "y": 1042,
+        "w": 130,
+        "h": 256
+      },
+      "rotated": false,
+      "trimmed": false,
+      "sourceSize": {
+        "w": 130,
+        "h": 256
+      },
+      "duration": 41.666666666666664
+    },
+    "abdul_el_sayed_idle_049.webp": {
+      "frame": {
+        "x": 136,
+        "y": 1042,
+        "w": 130,
+        "h": 256
+      },
+      "rotated": false,
+      "trimmed": false,
+      "sourceSize": {
+        "w": 130,
+        "h": 256
+      },
+      "duration": 41.666666666666664
+    },
+    "abdul_el_sayed_idle_050.webp": {
+      "frame": {
+        "x": 270,
+        "y": 1042,
+        "w": 130,
+        "h": 256
+      },
+      "rotated": false,
+      "trimmed": false,
+      "sourceSize": {
+        "w": 130,
+        "h": 256
+      },
+      "duration": 41.666666666666664
+    },
+    "abdul_el_sayed_idle_051.webp": {
+      "frame": {
+        "x": 404,
+        "y": 1042,
+        "w": 130,
+        "h": 256
+      },
+      "rotated": false,
+      "trimmed": false,
+      "sourceSize": {
+        "w": 130,
+        "h": 256
+      },
+      "duration": 41.666666666666664
+    },
+    "abdul_el_sayed_idle_052.webp": {
+      "frame": {
+        "x": 538,
+        "y": 1042,
+        "w": 130,
+        "h": 256
+      },
+      "rotated": false,
+      "trimmed": false,
+      "sourceSize": {
+        "w": 130,
+        "h": 256
+      },
+      "duration": 41.666666666666664
+    },
+    "abdul_el_sayed_idle_053.webp": {
+      "frame": {
+        "x": 672,
+        "y": 1042,
+        "w": 130,
+        "h": 256
+      },
+      "rotated": false,
+      "trimmed": false,
+      "sourceSize": {
+        "w": 130,
+        "h": 256
+      },
+      "duration": 41.666666666666664
+    },
+    "abdul_el_sayed_idle_054.webp": {
+      "frame": {
+        "x": 806,
+        "y": 1042,
+        "w": 130,
+        "h": 256
+      },
+      "rotated": false,
+      "trimmed": false,
+      "sourceSize": {
+        "w": 130,
+        "h": 256
+      },
+      "duration": 41.666666666666664
+    },
+    "abdul_el_sayed_idle_055.webp": {
+      "frame": {
+        "x": 940,
+        "y": 1042,
+        "w": 130,
+        "h": 256
+      },
+      "rotated": false,
+      "trimmed": false,
+      "sourceSize": {
+        "w": 130,
+        "h": 256
+      },
+      "duration": 41.666666666666664
+    },
+    "abdul_el_sayed_idle_056.webp": {
+      "frame": {
+        "x": 1074,
+        "y": 1042,
+        "w": 130,
+        "h": 256
+      },
+      "rotated": false,
+      "trimmed": false,
+      "sourceSize": {
+        "w": 130,
+        "h": 256
+      },
+      "duration": 41.666666666666664
+    },
+    "abdul_el_sayed_idle_057.webp": {
+      "frame": {
+        "x": 1208,
+        "y": 1042,
+        "w": 130,
+        "h": 256
+      },
+      "rotated": false,
+      "trimmed": false,
+      "sourceSize": {
+        "w": 130,
+        "h": 256
+      },
+      "duration": 41.666666666666664
+    },
+    "abdul_el_sayed_idle_058.webp": {
+      "frame": {
+        "x": 1342,
+        "y": 1042,
+        "w": 130,
+        "h": 256
+      },
+      "rotated": false,
+      "trimmed": false,
+      "sourceSize": {
+        "w": 130,
+        "h": 256
+      },
+      "duration": 41.666666666666664
+    },
+    "abdul_el_sayed_idle_059.webp": {
+      "frame": {
+        "x": 1476,
+        "y": 1042,
+        "w": 130,
+        "h": 256
+      },
+      "rotated": false,
+      "trimmed": false,
+      "sourceSize": {
+        "w": 130,
+        "h": 256
+      },
+      "duration": 41.666666666666664
+    },
+    "abdul_el_sayed_idle_060.webp": {
+      "frame": {
+        "x": 2,
+        "y": 1302,
+        "w": 130,
+        "h": 256
+      },
+      "rotated": false,
+      "trimmed": false,
+      "sourceSize": {
+        "w": 130,
+        "h": 256
+      },
+      "duration": 41.666666666666664
+    },
+    "abdul_el_sayed_idle_061.webp": {
+      "frame": {
+        "x": 136,
+        "y": 1302,
+        "w": 130,
+        "h": 256
+      },
+      "rotated": false,
+      "trimmed": false,
+      "sourceSize": {
+        "w": 130,
+        "h": 256
+      },
+      "duration": 41.666666666666664
+    },
+    "abdul_el_sayed_idle_062.webp": {
+      "frame": {
+        "x": 270,
+        "y": 1302,
+        "w": 130,
+        "h": 256
+      },
+      "rotated": false,
+      "trimmed": false,
+      "sourceSize": {
+        "w": 130,
+        "h": 256
+      },
+      "duration": 41.666666666666664
+    },
+    "abdul_el_sayed_idle_063.webp": {
+      "frame": {
+        "x": 404,
+        "y": 1302,
+        "w": 130,
+        "h": 256
+      },
+      "rotated": false,
+      "trimmed": false,
+      "sourceSize": {
+        "w": 130,
+        "h": 256
+      },
+      "duration": 41.666666666666664
+    },
+    "abdul_el_sayed_idle_064.webp": {
+      "frame": {
+        "x": 538,
+        "y": 1302,
+        "w": 130,
+        "h": 256
+      },
+      "rotated": false,
+      "trimmed": false,
+      "sourceSize": {
+        "w": 130,
+        "h": 256
+      },
+      "duration": 41.666666666666664
+    },
+    "abdul_el_sayed_idle_065.webp": {
+      "frame": {
+        "x": 672,
+        "y": 1302,
+        "w": 130,
+        "h": 256
+      },
+      "rotated": false,
+      "trimmed": false,
+      "sourceSize": {
+        "w": 130,
+        "h": 256
+      },
+      "duration": 41.666666666666664
+    },
+    "abdul_el_sayed_idle_066.webp": {
+      "frame": {
+        "x": 806,
+        "y": 1302,
+        "w": 130,
+        "h": 256
+      },
+      "rotated": false,
+      "trimmed": false,
+      "sourceSize": {
+        "w": 130,
+        "h": 256
+      },
+      "duration": 41.666666666666664
+    },
+    "abdul_el_sayed_idle_067.webp": {
+      "frame": {
+        "x": 940,
+        "y": 1302,
+        "w": 130,
+        "h": 256
+      },
+      "rotated": false,
+      "trimmed": false,
+      "sourceSize": {
+        "w": 130,
+        "h": 256
+      },
+      "duration": 41.666666666666664
+    },
+    "abdul_el_sayed_idle_068.webp": {
+      "frame": {
+        "x": 1074,
+        "y": 1302,
+        "w": 130,
+        "h": 256
+      },
+      "rotated": false,
+      "trimmed": false,
+      "sourceSize": {
+        "w": 130,
+        "h": 256
+      },
+      "duration": 41.666666666666664
+    },
+    "abdul_el_sayed_idle_069.webp": {
+      "frame": {
+        "x": 1208,
+        "y": 1302,
+        "w": 130,
+        "h": 256
+      },
+      "rotated": false,
+      "trimmed": false,
+      "sourceSize": {
+        "w": 130,
+        "h": 256
+      },
+      "duration": 41.666666666666664
+    },
+    "abdul_el_sayed_idle_070.webp": {
+      "frame": {
+        "x": 1342,
+        "y": 1302,
+        "w": 130,
+        "h": 256
+      },
+      "rotated": false,
+      "trimmed": false,
+      "sourceSize": {
+        "w": 130,
+        "h": 256
+      },
+      "duration": 41.666666666666664
+    },
+    "abdul_el_sayed_idle_071.webp": {
+      "frame": {
+        "x": 1476,
+        "y": 1302,
+        "w": 130,
+        "h": 256
+      },
+      "rotated": false,
+      "trimmed": false,
+      "sourceSize": {
+        "w": 130,
+        "h": 256
+      },
+      "duration": 41.666666666666664
+    },
+    "abdul_el_sayed_idle_072.webp": {
+      "frame": {
+        "x": 2,
+        "y": 1562,
+        "w": 130,
+        "h": 256
+      },
+      "rotated": false,
+      "trimmed": false,
+      "sourceSize": {
+        "w": 130,
+        "h": 256
+      },
+      "duration": 41.666666666666664
+    },
+    "abdul_el_sayed_idle_073.webp": {
+      "frame": {
+        "x": 136,
+        "y": 1562,
+        "w": 130,
+        "h": 256
+      },
+      "rotated": false,
+      "trimmed": false,
+      "sourceSize": {
+        "w": 130,
+        "h": 256
+      },
+      "duration": 41.666666666666664
+    },
+    "abdul_el_sayed_idle_074.webp": {
+      "frame": {
+        "x": 270,
+        "y": 1562,
+        "w": 130,
+        "h": 256
+      },
+      "rotated": false,
+      "trimmed": false,
+      "sourceSize": {
+        "w": 130,
+        "h": 256
+      },
+      "duration": 41.666666666666664
+    },
+    "abdul_el_sayed_idle_075.webp": {
+      "frame": {
+        "x": 404,
+        "y": 1562,
+        "w": 130,
+        "h": 256
+      },
+      "rotated": false,
+      "trimmed": false,
+      "sourceSize": {
+        "w": 130,
+        "h": 256
+      },
+      "duration": 41.666666666666664
+    },
+    "abdul_el_sayed_idle_076.webp": {
+      "frame": {
+        "x": 538,
+        "y": 1562,
+        "w": 130,
+        "h": 256
+      },
+      "rotated": false,
+      "trimmed": false,
+      "sourceSize": {
+        "w": 130,
+        "h": 256
+      },
+      "duration": 41.666666666666664
+    },
+    "abdul_el_sayed_idle_077.webp": {
+      "frame": {
+        "x": 672,
+        "y": 1562,
+        "w": 130,
+        "h": 256
+      },
+      "rotated": false,
+      "trimmed": false,
+      "sourceSize": {
+        "w": 130,
+        "h": 256
+      },
+      "duration": 41.666666666666664
+    },
+    "abdul_el_sayed_idle_078.webp": {
+      "frame": {
+        "x": 806,
+        "y": 1562,
+        "w": 130,
+        "h": 256
+      },
+      "rotated": false,
+      "trimmed": false,
+      "sourceSize": {
+        "w": 130,
+        "h": 256
+      },
+      "duration": 41.666666666666664
+    },
+    "abdul_el_sayed_idle_079.webp": {
+      "frame": {
+        "x": 940,
+        "y": 1562,
+        "w": 130,
+        "h": 256
+      },
+      "rotated": false,
+      "trimmed": false,
+      "sourceSize": {
+        "w": 130,
+        "h": 256
+      },
+      "duration": 41.666666666666664
+    },
+    "abdul_el_sayed_idle_080.webp": {
+      "frame": {
+        "x": 1074,
+        "y": 1562,
+        "w": 130,
+        "h": 256
+      },
+      "rotated": false,
+      "trimmed": false,
+      "sourceSize": {
+        "w": 130,
+        "h": 256
+      },
+      "duration": 41.666666666666664
+    },
+    "abdul_el_sayed_idle_081.webp": {
+      "frame": {
+        "x": 1208,
+        "y": 1562,
+        "w": 130,
+        "h": 256
+      },
+      "rotated": false,
+      "trimmed": false,
+      "sourceSize": {
+        "w": 130,
+        "h": 256
+      },
+      "duration": 41.666666666666664
+    },
+    "abdul_el_sayed_idle_082.webp": {
+      "frame": {
+        "x": 1342,
+        "y": 1562,
+        "w": 130,
+        "h": 256
+      },
+      "rotated": false,
+      "trimmed": false,
+      "sourceSize": {
+        "w": 130,
+        "h": 256
+      },
+      "duration": 41.666666666666664
+    },
+    "abdul_el_sayed_idle_083.webp": {
+      "frame": {
+        "x": 1476,
+        "y": 1562,
+        "w": 130,
+        "h": 256
+      },
+      "rotated": false,
+      "trimmed": false,
+      "sourceSize": {
+        "w": 130,
+        "h": 256
+      },
+      "duration": 41.666666666666664
+    },
+    "abdul_el_sayed_idle_084.webp": {
+      "frame": {
+        "x": 2,
+        "y": 1822,
+        "w": 130,
+        "h": 256
+      },
+      "rotated": false,
+      "trimmed": false,
+      "sourceSize": {
+        "w": 130,
+        "h": 256
+      },
+      "duration": 41.666666666666664
+    },
+    "abdul_el_sayed_idle_085.webp": {
+      "frame": {
+        "x": 136,
+        "y": 1822,
+        "w": 130,
+        "h": 256
+      },
+      "rotated": false,
+      "trimmed": false,
+      "sourceSize": {
+        "w": 130,
+        "h": 256
+      },
+      "duration": 41.666666666666664
+    },
+    "abdul_el_sayed_idle_086.webp": {
+      "frame": {
+        "x": 270,
+        "y": 1822,
+        "w": 130,
+        "h": 256
+      },
+      "rotated": false,
+      "trimmed": false,
+      "sourceSize": {
+        "w": 130,
+        "h": 256
+      },
+      "duration": 41.666666666666664
+    },
+    "abdul_el_sayed_idle_087.webp": {
+      "frame": {
+        "x": 404,
+        "y": 1822,
+        "w": 130,
+        "h": 256
+      },
+      "rotated": false,
+      "trimmed": false,
+      "sourceSize": {
+        "w": 130,
+        "h": 256
+      },
+      "duration": 41.666666666666664
+    },
+    "abdul_el_sayed_idle_088.webp": {
+      "frame": {
+        "x": 538,
+        "y": 1822,
+        "w": 130,
+        "h": 256
+      },
+      "rotated": false,
+      "trimmed": false,
+      "sourceSize": {
+        "w": 130,
+        "h": 256
+      },
+      "duration": 41.666666666666664
+    },
+    "abdul_el_sayed_idle_089.webp": {
+      "frame": {
+        "x": 672,
+        "y": 1822,
+        "w": 130,
+        "h": 256
+      },
+      "rotated": false,
+      "trimmed": false,
+      "sourceSize": {
+        "w": 130,
+        "h": 256
+      },
+      "duration": 41.666666666666664
+    },
+    "abdul_el_sayed_idle_090.webp": {
+      "frame": {
+        "x": 806,
+        "y": 1822,
+        "w": 130,
+        "h": 256
+      },
+      "rotated": false,
+      "trimmed": false,
+      "sourceSize": {
+        "w": 130,
+        "h": 256
+      },
+      "duration": 41.666666666666664
+    },
+    "abdul_el_sayed_idle_091.webp": {
+      "frame": {
+        "x": 940,
+        "y": 1822,
+        "w": 130,
+        "h": 256
+      },
+      "rotated": false,
+      "trimmed": false,
+      "sourceSize": {
+        "w": 130,
+        "h": 256
+      },
+      "duration": 41.666666666666664
+    },
+    "abdul_el_sayed_idle_092.webp": {
+      "frame": {
+        "x": 1074,
+        "y": 1822,
+        "w": 130,
+        "h": 256
+      },
+      "rotated": false,
+      "trimmed": false,
+      "sourceSize": {
+        "w": 130,
+        "h": 256
+      },
+      "duration": 41.666666666666664
+    },
+    "abdul_el_sayed_idle_093.webp": {
+      "frame": {
+        "x": 1208,
+        "y": 1822,
+        "w": 130,
+        "h": 256
+      },
+      "rotated": false,
+      "trimmed": false,
+      "sourceSize": {
+        "w": 130,
+        "h": 256
+      },
+      "duration": 41.666666666666664
+    },
+    "abdul_el_sayed_idle_094.webp": {
+      "frame": {
+        "x": 1342,
+        "y": 1822,
+        "w": 130,
+        "h": 256
+      },
+      "rotated": false,
+      "trimmed": false,
+      "sourceSize": {
+        "w": 130,
+        "h": 256
+      },
+      "duration": 41.666666666666664
+    },
+    "abdul_el_sayed_idle_095.webp": {
+      "frame": {
+        "x": 1476,
+        "y": 1822,
+        "w": 130,
+        "h": 256
+      },
+      "rotated": false,
+      "trimmed": false,
+      "sourceSize": {
+        "w": 130,
+        "h": 256
+      },
+      "duration": 41.666666666666664
     }
   },
   "meta": {
-    "app": "bake",
-    "version": "1",
+    "app": "Makko source, mechanically packed by Codex",
     "image": "abdul_el_sayed_idle.webp",
-    "format": "RGBA8888",
-    "scale": "1",
     "size": {
-      "w": 1362,
-      "h": 260
+      "w": 1608,
+      "h": 2080
     },
     "anchor": {
-      "x": 84,
-      "y": 255,
-      "normalized": {
-        "x": 0.5,
-        "y": 0.99609375
-      },
-      "strategy": "bottom-center"
-    }
+      "x": 65,
+      "y": 255
+    },
+    "fps": 24,
+    "source": "https://www.makko.ai/studio/collection/21d63cc3-9f17-4463-a9d6-3901abe8d04a/animation/43164ff3-22e6-412f-9bcf-822b9e7d5c94",
+    "sourceFrames": [
+      1,
+      96
+    ],
+    "note": "Intact Makko dance frames, fixed dark wardrobe grade. No head replacement. Source likeness remains unapproved.",
+    "wardrobeExposure": 0.8055555555555556
   }
 }

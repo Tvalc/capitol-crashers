@@ -1,266 +1,182 @@
 {
-  "frames": {
-    "chibi_cast__concepts_to_reference_sheets_cruz_v3_idle_12_000.webp": {
+  "frames": [
+    {
       "frame": {
         "x": 2,
         "y": 2,
-        "w": 191,
-        "h": 256
+        "w": 332,
+        "h": 501
       },
-      "rotated": false,
-      "trimmed": false,
-      "spriteSourceSize": {
-        "x": 0,
-        "y": 0,
-        "w": 191,
-        "h": 256
-      },
+      "duration": 167,
       "sourceSize": {
-        "w": 191,
-        "h": 256
+        "w": 332,
+        "h": 501
       },
-      "duration": 167
+      "trimmed": false
     },
-    "chibi_cast__concepts_to_reference_sheets_cruz_v3_idle_12_001.webp": {
+    {
       "frame": {
-        "x": 197,
+        "x": 338,
         "y": 2,
-        "w": 191,
-        "h": 256
+        "w": 332,
+        "h": 501
       },
-      "rotated": false,
-      "trimmed": false,
-      "spriteSourceSize": {
-        "x": 0,
-        "y": 0,
-        "w": 191,
-        "h": 256
-      },
+      "duration": 167,
       "sourceSize": {
-        "w": 191,
-        "h": 256
+        "w": 332,
+        "h": 501
       },
-      "duration": 167
+      "trimmed": false
     },
-    "chibi_cast__concepts_to_reference_sheets_cruz_v3_idle_12_002.webp": {
+    {
       "frame": {
-        "x": 392,
+        "x": 674,
         "y": 2,
-        "w": 191,
-        "h": 256
+        "w": 332,
+        "h": 501
       },
-      "rotated": false,
-      "trimmed": false,
-      "spriteSourceSize": {
-        "x": 0,
-        "y": 0,
-        "w": 191,
-        "h": 256
-      },
+      "duration": 167,
       "sourceSize": {
-        "w": 191,
-        "h": 256
+        "w": 332,
+        "h": 501
       },
-      "duration": 167
+      "trimmed": false
     },
-    "chibi_cast__concepts_to_reference_sheets_cruz_v3_idle_12_003.webp": {
+    {
       "frame": {
-        "x": 587,
+        "x": 1010,
         "y": 2,
-        "w": 191,
-        "h": 256
+        "w": 332,
+        "h": 501
       },
-      "rotated": false,
-      "trimmed": false,
-      "spriteSourceSize": {
-        "x": 0,
-        "y": 0,
-        "w": 191,
-        "h": 256
-      },
+      "duration": 167,
       "sourceSize": {
-        "w": 191,
-        "h": 256
+        "w": 332,
+        "h": 501
       },
-      "duration": 167
+      "trimmed": false
     },
-    "chibi_cast__concepts_to_reference_sheets_cruz_v3_idle_12_004.webp": {
+    {
       "frame": {
         "x": 2,
-        "y": 262,
-        "w": 191,
-        "h": 256
+        "y": 507,
+        "w": 332,
+        "h": 501
       },
-      "rotated": false,
-      "trimmed": false,
-      "spriteSourceSize": {
-        "x": 0,
-        "y": 0,
-        "w": 191,
-        "h": 256
-      },
+      "duration": 167,
       "sourceSize": {
-        "w": 191,
-        "h": 256
+        "w": 332,
+        "h": 501
       },
-      "duration": 167
+      "trimmed": false
     },
-    "chibi_cast__concepts_to_reference_sheets_cruz_v3_idle_12_005.webp": {
+    {
       "frame": {
-        "x": 197,
-        "y": 262,
-        "w": 191,
-        "h": 256
+        "x": 338,
+        "y": 507,
+        "w": 332,
+        "h": 501
       },
-      "rotated": false,
-      "trimmed": false,
-      "spriteSourceSize": {
-        "x": 0,
-        "y": 0,
-        "w": 191,
-        "h": 256
-      },
+      "duration": 167,
       "sourceSize": {
-        "w": 191,
-        "h": 256
+        "w": 332,
+        "h": 501
       },
-      "duration": 167
+      "trimmed": false
     },
-    "chibi_cast__concepts_to_reference_sheets_cruz_v3_idle_12_006.webp": {
+    {
       "frame": {
-        "x": 392,
-        "y": 262,
-        "w": 191,
-        "h": 256
+        "x": 674,
+        "y": 507,
+        "w": 332,
+        "h": 501
       },
-      "rotated": false,
-      "trimmed": false,
-      "spriteSourceSize": {
-        "x": 0,
-        "y": 0,
-        "w": 191,
-        "h": 256
-      },
+      "duration": 167,
       "sourceSize": {
-        "w": 191,
-        "h": 256
+        "w": 332,
+        "h": 501
       },
-      "duration": 167
+      "trimmed": false
     },
-    "chibi_cast__concepts_to_reference_sheets_cruz_v3_idle_12_007.webp": {
+    {
       "frame": {
-        "x": 587,
-        "y": 262,
-        "w": 191,
-        "h": 256
+        "x": 1010,
+        "y": 507,
+        "w": 332,
+        "h": 501
       },
-      "rotated": false,
-      "trimmed": false,
-      "spriteSourceSize": {
-        "x": 0,
-        "y": 0,
-        "w": 191,
-        "h": 256
-      },
+      "duration": 167,
       "sourceSize": {
-        "w": 191,
-        "h": 256
+        "w": 332,
+        "h": 501
       },
-      "duration": 167
+      "trimmed": false
     },
-    "chibi_cast__concepts_to_reference_sheets_cruz_v3_idle_12_008.webp": {
+    {
       "frame": {
         "x": 2,
-        "y": 522,
-        "w": 191,
-        "h": 256
+        "y": 1012,
+        "w": 332,
+        "h": 501
       },
-      "rotated": false,
-      "trimmed": false,
-      "spriteSourceSize": {
-        "x": 0,
-        "y": 0,
-        "w": 191,
-        "h": 256
-      },
+      "duration": 167,
       "sourceSize": {
-        "w": 191,
-        "h": 256
+        "w": 332,
+        "h": 501
       },
-      "duration": 167
+      "trimmed": false
     },
-    "chibi_cast__concepts_to_reference_sheets_cruz_v3_idle_12_009.webp": {
+    {
       "frame": {
-        "x": 197,
-        "y": 522,
-        "w": 191,
-        "h": 256
+        "x": 338,
+        "y": 1012,
+        "w": 332,
+        "h": 501
       },
-      "rotated": false,
-      "trimmed": false,
-      "spriteSourceSize": {
-        "x": 0,
-        "y": 0,
-        "w": 191,
-        "h": 256
-      },
+      "duration": 167,
       "sourceSize": {
-        "w": 191,
-        "h": 256
+        "w": 332,
+        "h": 501
       },
-      "duration": 167
+      "trimmed": false
     },
-    "chibi_cast__concepts_to_reference_sheets_cruz_v3_idle_12_010.webp": {
+    {
       "frame": {
-        "x": 392,
-        "y": 522,
-        "w": 191,
-        "h": 256
+        "x": 674,
+        "y": 1012,
+        "w": 332,
+        "h": 501
       },
-      "rotated": false,
-      "trimmed": false,
-      "spriteSourceSize": {
-        "x": 0,
-        "y": 0,
-        "w": 191,
-        "h": 256
-      },
+      "duration": 167,
       "sourceSize": {
-        "w": 191,
-        "h": 256
+        "w": 332,
+        "h": 501
       },
-      "duration": 167
+      "trimmed": false
     },
-    "chibi_cast__concepts_to_reference_sheets_cruz_v3_idle_12_011.webp": {
+    {
       "frame": {
-        "x": 587,
-        "y": 522,
-        "w": 191,
-        "h": 256
+        "x": 1010,
+        "y": 1012,
+        "w": 332,
+        "h": 501
       },
-      "rotated": false,
-      "trimmed": false,
-      "spriteSourceSize": {
-        "x": 0,
-        "y": 0,
-        "w": 191,
-        "h": 256
-      },
+      "duration": 167,
       "sourceSize": {
-        "w": 191,
-        "h": 256
+        "w": 332,
+        "h": 501
       },
-      "duration": 167
+      "trimmed": false
     }
-  },
+  ],
   "meta": {
     "app": "MAKKO Sprite Studio",
     "version": "1.0.0",
     "image": "ted_cruz_idle.webp",
     "format": "RGBA8888",
     "size": {
-      "w": 780,
-      "h": 780
+      "w": 1344,
+      "h": 1515
     },
     "scale": "1",
     "frameTags": [
@@ -272,13 +188,8 @@
       }
     ],
     "anchor": {
-      "x": 96,
-      "y": 255,
-      "normalized": {
-        "x": 0.5026178010471204,
-        "y": 0.99609375
-      },
-      "strategy": "bottom-center"
+      "x": 187.00446428571428,
+      "y": 499.7566964285714
     },
     "referenceAlignment": {
       "referenceBounds": {
@@ -307,9 +218,10 @@
       69,
       85
     ],
-    "importSource": "chibi_cast__concepts_to_reference_sheets_cruz_v3_idle_12.zip",
+    "importSource": "Original Makko video 1791168442153_animation.mp4",
     "playbackFps": 6,
     "useFrameDurations": true,
-    "bodyScale": 0.9803921568627451
+    "bodyScale": 0.5008160618865563,
+    "nativeResolutionRepair": true
   }
 }

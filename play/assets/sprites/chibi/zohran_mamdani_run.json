@@ -19,7 +19,8 @@
         "w": 179,
         "h": 256
       },
-      "duration": 42
+      "duration": 42,
+      "groundAnchorY": 255
     },
     "zohran_mamdani_chibi_run_12_001.webp": {
       "frame": {
@@ -40,7 +41,8 @@
         "w": 179,
         "h": 256
       },
-      "duration": 42
+      "duration": 42,
+      "groundAnchorY": 255
     },
     "zohran_mamdani_chibi_run_12_002.webp": {
       "frame": {
@@ -61,7 +63,8 @@
         "w": 179,
         "h": 256
       },
-      "duration": 42
+      "duration": 42,
+      "groundAnchorY": 255
     },
     "zohran_mamdani_chibi_run_12_003.webp": {
       "frame": {
@@ -82,7 +85,8 @@
         "w": 179,
         "h": 256
       },
-      "duration": 42
+      "duration": 42,
+      "groundAnchorY": 255
     },
     "zohran_mamdani_chibi_run_12_004.webp": {
       "frame": {
@@ -103,7 +107,8 @@
         "w": 179,
         "h": 256
       },
-      "duration": 42
+      "duration": 42,
+      "groundAnchorY": 255
     },
     "zohran_mamdani_chibi_run_12_005.webp": {
       "frame": {
@@ -124,7 +129,8 @@
         "w": 179,
         "h": 256
       },
-      "duration": 42
+      "duration": 42,
+      "groundAnchorY": 255
     },
     "zohran_mamdani_chibi_run_12_006.webp": {
       "frame": {
@@ -145,7 +151,8 @@
         "w": 179,
         "h": 256
       },
-      "duration": 42
+      "duration": 42,
+      "groundAnchorY": 255
     },
     "zohran_mamdani_chibi_run_12_007.webp": {
       "frame": {
@@ -166,7 +173,8 @@
         "w": 179,
         "h": 256
       },
-      "duration": 42
+      "duration": 42,
+      "groundAnchorY": 255
     },
     "zohran_mamdani_chibi_run_12_008.webp": {
       "frame": {
@@ -187,7 +195,8 @@
         "w": 179,
         "h": 256
       },
-      "duration": 42
+      "duration": 42,
+      "groundAnchorY": 255
     },
     "zohran_mamdani_chibi_run_12_009.webp": {
       "frame": {
@@ -208,7 +217,8 @@
         "w": 179,
         "h": 256
       },
-      "duration": 42
+      "duration": 42,
+      "groundAnchorY": 255
     },
     "zohran_mamdani_chibi_run_12_010.webp": {
       "frame": {
@@ -229,7 +239,8 @@
         "w": 179,
         "h": 256
       },
-      "duration": 42
+      "duration": 42,
+      "groundAnchorY": 255
     },
     "zohran_mamdani_chibi_run_12_011.webp": {
       "frame": {
@@ -250,7 +261,8 @@
         "w": 179,
         "h": 256
       },
-      "duration": 42
+      "duration": 42,
+      "groundAnchorY": 255
     }
   },
   "meta": {
@@ -294,6 +306,7 @@
     "designVersion": "chibi-makko-oct04",
     "bodyScale": 1.02880658436214,
     "playbackFps": 24,
-    "importSource": "zohran_mamdani_chibi_run_12.json"
+    "importSource": "zohran_mamdani_chibi_run_12.json",
+    "grounding": "Planted sole baseline for grounded poses; fixed lowest sole for the running flight phase."
   }
 }

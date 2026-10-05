@@ -2,22 +2,25 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
   <title>Capitol Crashers</title>
   <link rel="canonical" href="https://capitolcrashers.com/play/" />
   <meta
     name="description"
     content="Capitol Crashers is the first machine on at Political Arcades. Play as Zohran Mamdani or Abdul El-Sayed, chain hits, and fight three blocks to the Capitol."
   />
-  <link rel="stylesheet" href="styles.css" />
-  <link rel="stylesheet" href="touch.css" />
+  <link rel="stylesheet" href="styles.css?v=mob2" />
+  <link rel="stylesheet" href="touch.css?v=mob1" />
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4762698707947194" crossorigin="anonymous"></script>
-<link rel="stylesheet" href="../chibi-ui.css?v=2">
+<link rel="stylesheet" href="../chibi-ui.css?v=mob1">
+<link rel="stylesheet" href="game-page.css?v=grounded1">
 </head>
 <body>
   <header class="topbar">
     <a class="brand" href="../">Capitol Crashers</a>
-    <a class="patreon" data-patreon hidden target="_blank" rel="noopener noreferrer">Support on Patreon</a>
+    <div class="top-actions">
+      <a class="patreon" data-patreon hidden target="_blank" rel="noopener noreferrer">Support on Patreon</a>
+    </div>
   </header>
 
   <aside class="ad-slot" id="ad-slot" hidden>
@@ -37,8 +40,10 @@
   <main class="stage">
     <section class="card" id="pause-panel" hidden aria-labelledby="pause-title">
       <h2 id="pause-title">Paused</h2><p>Your fight will wait. Resume when you are ready.</p>
-      <div class="actions"><button type="button" class="play" id="resume">Resume</button><button type="button" id="restart-run">Restart run</button><button type="button" id="choose-again">Choose fighter</button></div>
+      <div class="actions"><button type="button" class="play" id="resume">Resume</button><button type="button" id="restart-run">Restart run</button><button type="button" id="choose-again">Choose fighter</button><button type="button" id="fullscreen">Fullscreen</button></div>
+      <p class="hint">Ctrl+F toggles fullscreen.</p>
     </section>
+    <button type="button" id="stage-pause" class="stage-pause" hidden>Pause</button>
     <canvas id="game" width="1280" height="720" tabindex="0" aria-label="Capitol Crashers"></canvas>
 
     <section class="card" id="title-panel">
@@ -71,8 +76,10 @@
         </button>
       </div>
       <p class="hint">Left and right to choose. Enter to start.</p>
-      <button type="button" class="play" id="run">Fight</button>
-      <button type="button" id="practice-start">Practice moves</button>
+      <div class="actions">
+        <button type="button" class="play" id="run">Fight</button>
+        <button type="button" id="practice-start">Practice moves</button>
+      </div>
     </section>
 
     <section class="card comic" id="story-panel" hidden>
@@ -116,13 +123,12 @@
     <p>Capitol Crashers is an original game on the floor at <a href="https://politicalarcades.com/">Political Arcades</a>. It is an unofficial cartoon, not authorized by Zohran Mamdani, Abdul El-Sayed, or any candidate or campaign committee.</p>
     <p><a href="privacy.html">Privacy</a></p>
   </footer>
-  <script src="touch.js"></script>
-  <script type="module" src="src/main.js?v=chibi-site2"></script>
+  <script src="touch.js?v=mob1"></script>
+  <script type="module" src="src/main.js?v=mob1"></script>
   <script type="module" src="site.js"></script>
-  <script src="../soundtrack.js?v=chibi2" data-controls></script>
+  <script src="../soundtrack.js?v=ux2" data-controls></script>
 </body>
 </html>
-
 
 
 

@@ -19,7 +19,8 @@
         "w": 149,
         "h": 256
       },
-      "duration": 167
+      "duration": 167,
+      "groundAnchorY": 255
     },
     "chibi_cast__concepts_to_reference_sheets_sayed_v3_idle_verified12_001.webp": {
       "frame": {
@@ -40,7 +41,8 @@
         "w": 149,
         "h": 256
       },
-      "duration": 167
+      "duration": 167,
+      "groundAnchorY": 254
     },
     "chibi_cast__concepts_to_reference_sheets_sayed_v3_idle_verified12_002.webp": {
       "frame": {
@@ -61,7 +63,8 @@
         "w": 149,
         "h": 256
       },
-      "duration": 167
+      "duration": 167,
+      "groundAnchorY": 254
     },
     "chibi_cast__concepts_to_reference_sheets_sayed_v3_idle_verified12_003.webp": {
       "frame": {
@@ -82,7 +85,8 @@
         "w": 149,
         "h": 256
       },
-      "duration": 167
+      "duration": 167,
+      "groundAnchorY": 255
     },
     "chibi_cast__concepts_to_reference_sheets_sayed_v3_idle_verified12_004.webp": {
       "frame": {
@@ -103,7 +107,8 @@
         "w": 149,
         "h": 256
       },
-      "duration": 167
+      "duration": 167,
+      "groundAnchorY": 255
     },
     "chibi_cast__concepts_to_reference_sheets_sayed_v3_idle_verified12_005.webp": {
       "frame": {
@@ -124,7 +129,8 @@
         "w": 149,
         "h": 256
       },
-      "duration": 167
+      "duration": 167,
+      "groundAnchorY": 255
     },
     "chibi_cast__concepts_to_reference_sheets_sayed_v3_idle_verified12_006.webp": {
       "frame": {
@@ -145,7 +151,8 @@
         "w": 149,
         "h": 256
       },
-      "duration": 167
+      "duration": 167,
+      "groundAnchorY": 255
     },
     "chibi_cast__concepts_to_reference_sheets_sayed_v3_idle_verified12_007.webp": {
       "frame": {
@@ -166,7 +173,8 @@
         "w": 149,
         "h": 256
       },
-      "duration": 167
+      "duration": 167,
+      "groundAnchorY": 255
     },
     "chibi_cast__concepts_to_reference_sheets_sayed_v3_idle_verified12_008.webp": {
       "frame": {
@@ -187,7 +195,8 @@
         "w": 149,
         "h": 256
       },
-      "duration": 167
+      "duration": 167,
+      "groundAnchorY": 255
     },
     "chibi_cast__concepts_to_reference_sheets_sayed_v3_idle_verified12_009.webp": {
       "frame": {
@@ -208,7 +217,8 @@
         "w": 149,
         "h": 256
       },
-      "duration": 167
+      "duration": 167,
+      "groundAnchorY": 255
     },
     "chibi_cast__concepts_to_reference_sheets_sayed_v3_idle_verified12_010.webp": {
       "frame": {
@@ -229,7 +239,8 @@
         "w": 149,
         "h": 256
       },
-      "duration": 167
+      "duration": 167,
+      "groundAnchorY": 254
     },
     "chibi_cast__concepts_to_reference_sheets_sayed_v3_idle_verified12_011.webp": {
       "frame": {
@@ -250,7 +261,8 @@
         "w": 149,
         "h": 256
       },
-      "duration": 167
+      "duration": 167,
+      "groundAnchorY": 254
     }
   },
   "meta": {
@@ -310,6 +322,7 @@
     "importSource": "chibi_cast__concepts_to_reference_sheets_sayed_v3_idle_verified12.zip",
     "playbackFps": 6,
     "useFrameDurations": true,
-    "bodyScale": 0.9881422924901185
+    "bodyScale": 0.9881422924901185,
+    "grounding": "Planted sole baseline for grounded poses; fixed lowest sole for the running flight phase."
   }
 }

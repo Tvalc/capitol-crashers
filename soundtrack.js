@@ -54,11 +54,13 @@
       button.style.cssText = 'font:600 14px system-ui;min-height:44px;padding:10px 16px;border:1px solid #cbb886;border-radius:6px;background:#171b25;color:#fff;cursor:pointer';
       bar.appendChild(button);
     }
-    function label() { toggle.textContent = enabled ? 'Music on · Mute' : 'Music off · Enable'; toggle.setAttribute('aria-pressed', String(enabled)); }
+    function label() { toggle.textContent = enabled ? 'Music on' : 'Music off'; toggle.setAttribute('aria-pressed', String(enabled)); toggle.setAttribute('aria-label', enabled ? 'Mute music' : 'Enable music'); }
     label(); skip.textContent = 'Next song'; skip.setAttribute('aria-label', 'Play next song');
     toggle.addEventListener('click', () => { enabled = !enabled; label(); sync(); });
     skip.addEventListener('click', () => { enabled = true; label(); if (next()) sync(); });
-    (document.querySelector('.topbar, .sign, header') || document.body).appendChild(bar);
+    const host = document.querySelector('.top-actions') || document.querySelector('.topbar, .sign, header') || document.body;
+    if (host.classList.contains('top-actions')) host.append(toggle, skip);
+    else host.appendChild(bar);
     const panel = document.getElementById('pause-panel');
     if (panel) {
       const checkPause = () => { const value = !panel.hidden; if (paused !== value) { paused = value; sync(); } };

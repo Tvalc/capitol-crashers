@@ -1,6 +1,6 @@
 import { play } from "./audio.js";
 import { FIGHTERS } from "./fighters.js?v=chibi-site2";
-import { integrate, melee, spendSpecial, updateBody } from "./combat.js?v=chibi-site2";
+import { integrate, melee, spendSpecial, updateBody } from "./combat.js?v=feel1";
 import { finishWeapon, launchHeld, noteWeaponSwing, spawnBolt } from "./weapons.js?v=chibi-site2";
 
 const LIGHTS = [

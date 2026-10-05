@@ -1,266 +1,182 @@
 {
-  "frames": {
-    "chibi_cast__concepts_to_reference_sheets_cruz_v3_walk_12_000.webp": {
+  "frames": [
+    {
       "frame": {
         "x": 2,
         "y": 2,
-        "w": 156,
-        "h": 256
+        "w": 311,
+        "h": 511
       },
-      "rotated": false,
-      "trimmed": false,
-      "spriteSourceSize": {
-        "x": 0,
-        "y": 0,
-        "w": 156,
-        "h": 256
-      },
+      "duration": 97,
       "sourceSize": {
-        "w": 156,
-        "h": 256
+        "w": 311,
+        "h": 511
       },
-      "duration": 97
+      "trimmed": false
     },
-    "chibi_cast__concepts_to_reference_sheets_cruz_v3_walk_12_001.webp": {
+    {
       "frame": {
-        "x": 162,
+        "x": 317,
         "y": 2,
-        "w": 156,
-        "h": 256
+        "w": 311,
+        "h": 511
       },
-      "rotated": false,
-      "trimmed": false,
-      "spriteSourceSize": {
-        "x": 0,
-        "y": 0,
-        "w": 156,
-        "h": 256
-      },
+      "duration": 97,
       "sourceSize": {
-        "w": 156,
-        "h": 256
+        "w": 311,
+        "h": 511
       },
-      "duration": 97
+      "trimmed": false
     },
-    "chibi_cast__concepts_to_reference_sheets_cruz_v3_walk_12_002.webp": {
+    {
       "frame": {
-        "x": 322,
+        "x": 632,
         "y": 2,
-        "w": 156,
-        "h": 256
+        "w": 311,
+        "h": 511
       },
-      "rotated": false,
-      "trimmed": false,
-      "spriteSourceSize": {
-        "x": 0,
-        "y": 0,
-        "w": 156,
-        "h": 256
-      },
+      "duration": 97,
       "sourceSize": {
-        "w": 156,
-        "h": 256
+        "w": 311,
+        "h": 511
       },
-      "duration": 97
+      "trimmed": false
     },
-    "chibi_cast__concepts_to_reference_sheets_cruz_v3_walk_12_003.webp": {
+    {
       "frame": {
-        "x": 482,
+        "x": 947,
         "y": 2,
-        "w": 156,
-        "h": 256
+        "w": 311,
+        "h": 511
       },
-      "rotated": false,
-      "trimmed": false,
-      "spriteSourceSize": {
-        "x": 0,
-        "y": 0,
-        "w": 156,
-        "h": 256
-      },
+      "duration": 97,
       "sourceSize": {
-        "w": 156,
-        "h": 256
+        "w": 311,
+        "h": 511
       },
-      "duration": 97
+      "trimmed": false
     },
-    "chibi_cast__concepts_to_reference_sheets_cruz_v3_walk_12_004.webp": {
+    {
       "frame": {
         "x": 2,
-        "y": 262,
-        "w": 156,
-        "h": 256
+        "y": 517,
+        "w": 311,
+        "h": 511
       },
-      "rotated": false,
-      "trimmed": false,
-      "spriteSourceSize": {
-        "x": 0,
-        "y": 0,
-        "w": 156,
-        "h": 256
-      },
+      "duration": 97,
       "sourceSize": {
-        "w": 156,
-        "h": 256
+        "w": 311,
+        "h": 511
       },
-      "duration": 97
+      "trimmed": false
     },
-    "chibi_cast__concepts_to_reference_sheets_cruz_v3_walk_12_005.webp": {
+    {
       "frame": {
-        "x": 162,
-        "y": 262,
-        "w": 156,
-        "h": 256
+        "x": 317,
+        "y": 517,
+        "w": 311,
+        "h": 511
       },
-      "rotated": false,
-      "trimmed": false,
-      "spriteSourceSize": {
-        "x": 0,
-        "y": 0,
-        "w": 156,
-        "h": 256
-      },
+      "duration": 97,
       "sourceSize": {
-        "w": 156,
-        "h": 256
+        "w": 311,
+        "h": 511
       },
-      "duration": 97
+      "trimmed": false
     },
-    "chibi_cast__concepts_to_reference_sheets_cruz_v3_walk_12_006.webp": {
+    {
       "frame": {
-        "x": 322,
-        "y": 262,
-        "w": 156,
-        "h": 256
+        "x": 632,
+        "y": 517,
+        "w": 311,
+        "h": 511
       },
-      "rotated": false,
-      "trimmed": false,
-      "spriteSourceSize": {
-        "x": 0,
-        "y": 0,
-        "w": 156,
-        "h": 256
-      },
+      "duration": 97,
       "sourceSize": {
-        "w": 156,
-        "h": 256
+        "w": 311,
+        "h": 511
       },
-      "duration": 97
+      "trimmed": false
     },
-    "chibi_cast__concepts_to_reference_sheets_cruz_v3_walk_12_007.webp": {
+    {
       "frame": {
-        "x": 482,
-        "y": 262,
-        "w": 156,
-        "h": 256
+        "x": 947,
+        "y": 517,
+        "w": 311,
+        "h": 511
       },
-      "rotated": false,
-      "trimmed": false,
-      "spriteSourceSize": {
-        "x": 0,
-        "y": 0,
-        "w": 156,
-        "h": 256
-      },
+      "duration": 97,
       "sourceSize": {
-        "w": 156,
-        "h": 256
+        "w": 311,
+        "h": 511
       },
-      "duration": 97
+      "trimmed": false
     },
-    "chibi_cast__concepts_to_reference_sheets_cruz_v3_walk_12_008.webp": {
+    {
       "frame": {
         "x": 2,
-        "y": 522,
-        "w": 156,
-        "h": 256
+        "y": 1032,
+        "w": 311,
+        "h": 511
       },
-      "rotated": false,
-      "trimmed": false,
-      "spriteSourceSize": {
-        "x": 0,
-        "y": 0,
-        "w": 156,
-        "h": 256
-      },
+      "duration": 97,
       "sourceSize": {
-        "w": 156,
-        "h": 256
+        "w": 311,
+        "h": 511
       },
-      "duration": 97
+      "trimmed": false
     },
-    "chibi_cast__concepts_to_reference_sheets_cruz_v3_walk_12_009.webp": {
+    {
       "frame": {
-        "x": 162,
-        "y": 522,
-        "w": 156,
-        "h": 256
+        "x": 317,
+        "y": 1032,
+        "w": 311,
+        "h": 511
       },
-      "rotated": false,
-      "trimmed": false,
-      "spriteSourceSize": {
-        "x": 0,
-        "y": 0,
-        "w": 156,
-        "h": 256
-      },
+      "duration": 97,
       "sourceSize": {
-        "w": 156,
-        "h": 256
+        "w": 311,
+        "h": 511
       },
-      "duration": 97
+      "trimmed": false
     },
-    "chibi_cast__concepts_to_reference_sheets_cruz_v3_walk_12_010.webp": {
+    {
       "frame": {
-        "x": 322,
-        "y": 522,
-        "w": 156,
-        "h": 256
+        "x": 632,
+        "y": 1032,
+        "w": 311,
+        "h": 511
       },
-      "rotated": false,
-      "trimmed": false,
-      "spriteSourceSize": {
-        "x": 0,
-        "y": 0,
-        "w": 156,
-        "h": 256
-      },
+      "duration": 97,
       "sourceSize": {
-        "w": 156,
-        "h": 256
+        "w": 311,
+        "h": 511
       },
-      "duration": 97
+      "trimmed": false
     },
-    "chibi_cast__concepts_to_reference_sheets_cruz_v3_walk_12_011.webp": {
+    {
       "frame": {
-        "x": 482,
-        "y": 522,
-        "w": 156,
-        "h": 256
+        "x": 947,
+        "y": 1032,
+        "w": 311,
+        "h": 511
       },
-      "rotated": false,
-      "trimmed": false,
-      "spriteSourceSize": {
-        "x": 0,
-        "y": 0,
-        "w": 156,
-        "h": 256
-      },
+      "duration": 97,
       "sourceSize": {
-        "w": 156,
-        "h": 256
+        "w": 311,
+        "h": 511
       },
-      "duration": 97
+      "trimmed": false
     }
-  },
+  ],
   "meta": {
     "app": "MAKKO Sprite Studio",
     "version": "1.0.0",
     "image": "ted_cruz_walk.webp",
     "format": "RGBA8888",
     "size": {
-      "w": 640,
-      "h": 780
+      "w": 1260,
+      "h": 1545
     },
     "scale": "1",
     "frameTags": [
@@ -272,13 +188,8 @@
       }
     ],
     "anchor": {
-      "x": 78,
-      "y": 251,
-      "normalized": {
-        "x": 0.5,
-        "y": 0.98046875
-      },
-      "strategy": "bottom-center"
+      "x": 155.5,
+      "y": 500.25326281082573
     },
     "referenceAlignment": {
       "referenceBounds": {
@@ -307,9 +218,10 @@
       24,
       27
     ],
-    "importSource": "chibi_cast__concepts_to_reference_sheets_cruz_v3_walk_12.zip",
+    "importSource": "Original Makko video 1791168506639_animation.mp4",
     "playbackFps": 10.3,
     "useFrameDurations": false,
-    "bodyScale": 1.0
+    "bodyScale": 0.5015388148828663,
+    "nativeResolutionRepair": true
   }
 }

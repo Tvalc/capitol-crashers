@@ -1,5 +1,5 @@
 import { play } from "./audio.js";
-import { WORLD } from "./stages.js?v=chibi-site2";
+import { WORLD } from "./stages.js?v=feel1";
 
 export function integrate(ent, dt) {
   ent.z += ent.vz * dt;
@@ -107,12 +107,13 @@ export function applyHit(game, spec, target) {
   game.hitstop = Math.max(game.hitstop, spec.hitstop ?? 0.045);
   game.shake = Math.max(game.shake, spec.shake ?? 5);
   game.fx.push({
-    x: target.x,
+    x: spec.x == null ? target.x : Math.max(target.x - target.w * .4, Math.min(target.x + target.w * .4, spec.x)),
     y: target.y,
-    z: target.z + 50,
+    z: spec.z == null ? target.z + 50 : Math.max(target.z + 20, Math.min(target.z + target.h * .8, spec.z)),
     t: 0,
     life: 0.22,
     color: spec.team === "player" ? "#f4efe4" : "#ef6b4a",
+    heavy: !!spec.knockdown || spec.kind === "heavy" || spec.kind === "special",
   });
 
   if (spec.team === "player") {

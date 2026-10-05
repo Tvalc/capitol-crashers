@@ -1,12 +1,12 @@
 import { play, unlock } from "./audio.js?v=chibi-site2";
-import { separate, tickToss, wallBounce } from "./combat.js?v=chibi-site2";
-import { makeEnemy, updateEnemy } from "./enemies.js?v=chibi-site2";
+import { separate, tickToss, wallBounce } from "./combat.js?v=feel1";
+import { makeEnemy, updateEnemy } from "./enemies.js?v=hard1";
 import { blankInput, createInput } from "./input.js?v=chibi-site2";
 import { fighterById, makePlayer, updatePlayer, bufferPlayerInput } from "./player.js?v=chibi-site2";
-import { draw, loadEnvironment } from "./render.js?v=chibi-site2";
-import { cloneStage, STAGES, WORLD } from "./stages.js?v=chibi-site2";
+import { draw, loadEnvironment } from "./render.js?v=grounded1";
+import { cloneStage, STAGES, WORLD } from "./stages.js?v=feel1";
 import { updatePickups, updateProjectiles } from "./weapons.js?v=chibi-site2";
-import { loadSprites } from "./sprites.js?v=chibi-site2";
+import { loadSprites } from "./sprites.js?v=grounded1";
 import { PAGES } from "../../story/panels.js";
 
 const PANELS = Object.fromEntries(PAGES.flatMap((page) => page.panels).map((panel) => [panel.id, panel]));
@@ -221,6 +221,9 @@ function updateWaves(game) {
       game.banner = wave.bossName;
       game.bannerT = 1.6;
       play("boss");
+    } else if (wave.hint) {
+      game.banner = wave.hint;
+      game.bannerT = 2.2;
     }
   }
 
@@ -315,9 +318,63 @@ function boot() {
     unlock(); input.clear(); beginPractice(game, game.fighterId); canvas.focus({ preventScroll: true });
   });
   document.getElementById("choose-again").addEventListener("click", () => { input.clear(); game.paused = false; game.mode = "select"; canvas.focus({ preventScroll: true }); });
-  window.addEventListener("blur", () => setPaused(true));
+  const stage = document.querySelector(".stage");
+  const fullscreenButton = document.getElementById("fullscreen");
+  const stagePause = document.getElementById("stage-pause");
+  let ignoreBlur = false;
+  function fullscreenOn() {
+    return !!(document.fullscreenElement || document.webkitFullscreenElement || document.documentElement.classList.contains("is-fullscreen"));
+  }
+  function syncFullscreen() {
+    fullscreenButton.textContent = fullscreenOn() ? "Exit fullscreen" : "Fullscreen";
+  }
+  function toggleFullscreen() {
+    ignoreBlur = true;
+    setTimeout(() => { ignoreBlur = false; }, 700);
+    if (fullscreenOn()) {
+      const exit = document.exitFullscreen || document.webkitExitFullscreen;
+      if ((document.fullscreenElement || document.webkitFullscreenElement) && exit) exit.call(document).catch(() => {});
+      document.documentElement.classList.remove("is-fullscreen");
+      syncFullscreen();
+      return;
+    }
+    const req = stage.requestFullscreen || stage.webkitRequestFullscreen;
+    if (!req) {
+      document.documentElement.classList.add("is-fullscreen");
+      syncFullscreen();
+      return;
+    }
+    req.call(stage).then(syncFullscreen).catch(() => {
+      document.documentElement.classList.add("is-fullscreen");
+      syncFullscreen();
+    });
+  }
+  fullscreenButton.addEventListener("click", toggleFullscreen);
+  stagePause.addEventListener("click", () => setPaused(true));
+  document.addEventListener("fullscreenchange", syncFullscreen);
+  document.addEventListener("webkitfullscreenchange", syncFullscreen);
+  window.addEventListener("blur", () => { if (!ignoreBlur) setPaused(true); });
   document.addEventListener("visibilitychange", () => { if (document.hidden) setPaused(true); });
-  window.addEventListener("keydown", (e) => { if (e.key === "Escape" && !e.repeat && game.mode === "play") { e.preventDefault(); setPaused(!game.paused); } });
+  window.addEventListener("keydown", (e) => {
+    if (e.repeat) return;
+    const typing = e.target?.closest?.("input, textarea, select, [contenteditable]");
+    if (!typing && e.ctrlKey && !e.metaKey && !e.altKey && e.key.toLowerCase() === "f") {
+      e.preventDefault();
+      toggleFullscreen();
+      return;
+    }
+    if (e.key === "Escape" && game.mode === "play") {
+      if (document.fullscreenElement || document.webkitFullscreenElement) return;
+      if (document.documentElement.classList.contains("is-fullscreen")) {
+        e.preventDefault();
+        document.documentElement.classList.remove("is-fullscreen");
+        syncFullscreen();
+        return;
+      }
+      e.preventDefault();
+      setPaused(!game.paused);
+    }
+  }, true);
   document.querySelectorAll(".fighter").forEach(button => {
     button.querySelector("span").textContent = fighterById(button.dataset.id).blurb;
   });
@@ -362,6 +419,7 @@ function boot() {
     pausePanel.hidden = !game.paused;
     pauseToggle.hidden = game.mode !== "play";
     pauseToggle.textContent = game.paused ? "Resume · Esc" : "Pause · Esc";
+    stagePause.hidden = game.mode !== "play" || game.paused;
     document.getElementById("practice-controls").hidden = !game.practice;
     document.getElementById("practice-opponent").textContent = game.practiceActive ? "Opponent: active" : "Opponent: stationary";
     document.getElementById("practice-enemy").value = game.practiceEnemy || "cruz";
@@ -441,7 +499,7 @@ function boot() {
       { label: "Heavy", key: "k", code: "KeyK", tone: "gold" },
       { label: "Grab", key: "g", code: "KeyG", tone: "gold" },
       { label: "Special", key: "l", code: "KeyL", tone: "blue" },
-      { label: "Jump", key: " ", code: "Space", tone: "cream" },
+      { label: "Jump", key: " ", code: "Space", tone: "cream wide" },
     ],
   });
 
