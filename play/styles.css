@@ -297,3 +297,5 @@ h2 { font-size: 36px; }
 }
 
 .session-controls{max-width:1280px;margin:12px auto;padding:0 16px}.session-controls button,#pause-panel button{min-height:44px;padding:10px 18px;font:inherit;cursor:pointer}#pause-panel{z-index:20}button:focus-visible,a:focus-visible{outline:3px solid #7bddff;outline-offset:4px}
+#practice-controls{display:flex;flex-wrap:wrap;gap:8px;align-items:center}#practice-controls[hidden]{display:none}#practice-controls p{flex-basis:100%;margin:4px 0;font-size:14px;color:#c3ccd7}#practice-controls a{padding:10px;color:#f3cc70}
+.session-controls button{background:#202839;border:1px solid #566078;border-radius:6px;color:#f6f1e7}.session-controls button:hover{background:#303c51}.session-controls button[aria-pressed="true"]{border-color:#edc46b;box-shadow:inset 0 -3px #edc46b}

@@ -1,0 +1,315 @@
+{
+  "frames": {
+    "chibi_cast__concepts_to_reference_sheets_vance_v3_death_12_000.webp": {
+      "frame": {
+        "x": 2,
+        "y": 2,
+        "w": 217,
+        "h": 256
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 217,
+        "h": 256
+      },
+      "sourceSize": {
+        "w": 217,
+        "h": 256
+      },
+      "duration": 42
+    },
+    "chibi_cast__concepts_to_reference_sheets_vance_v3_death_12_001.webp": {
+      "frame": {
+        "x": 223,
+        "y": 2,
+        "w": 217,
+        "h": 256
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 217,
+        "h": 256
+      },
+      "sourceSize": {
+        "w": 217,
+        "h": 256
+      },
+      "duration": 42
+    },
+    "chibi_cast__concepts_to_reference_sheets_vance_v3_death_12_002.webp": {
+      "frame": {
+        "x": 444,
+        "y": 2,
+        "w": 217,
+        "h": 256
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 217,
+        "h": 256
+      },
+      "sourceSize": {
+        "w": 217,
+        "h": 256
+      },
+      "duration": 42
+    },
+    "chibi_cast__concepts_to_reference_sheets_vance_v3_death_12_003.webp": {
+      "frame": {
+        "x": 665,
+        "y": 2,
+        "w": 217,
+        "h": 256
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 217,
+        "h": 256
+      },
+      "sourceSize": {
+        "w": 217,
+        "h": 256
+      },
+      "duration": 42
+    },
+    "chibi_cast__concepts_to_reference_sheets_vance_v3_death_12_004.webp": {
+      "frame": {
+        "x": 2,
+        "y": 262,
+        "w": 217,
+        "h": 256
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 217,
+        "h": 256
+      },
+      "sourceSize": {
+        "w": 217,
+        "h": 256
+      },
+      "duration": 42
+    },
+    "chibi_cast__concepts_to_reference_sheets_vance_v3_death_12_005.webp": {
+      "frame": {
+        "x": 223,
+        "y": 262,
+        "w": 217,
+        "h": 256
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 217,
+        "h": 256
+      },
+      "sourceSize": {
+        "w": 217,
+        "h": 256
+      },
+      "duration": 42
+    },
+    "chibi_cast__concepts_to_reference_sheets_vance_v3_death_12_006.webp": {
+      "frame": {
+        "x": 444,
+        "y": 262,
+        "w": 217,
+        "h": 256
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 217,
+        "h": 256
+      },
+      "sourceSize": {
+        "w": 217,
+        "h": 256
+      },
+      "duration": 42
+    },
+    "chibi_cast__concepts_to_reference_sheets_vance_v3_death_12_007.webp": {
+      "frame": {
+        "x": 665,
+        "y": 262,
+        "w": 217,
+        "h": 256
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 217,
+        "h": 256
+      },
+      "sourceSize": {
+        "w": 217,
+        "h": 256
+      },
+      "duration": 42
+    },
+    "chibi_cast__concepts_to_reference_sheets_vance_v3_death_12_008.webp": {
+      "frame": {
+        "x": 2,
+        "y": 522,
+        "w": 217,
+        "h": 256
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 217,
+        "h": 256
+      },
+      "sourceSize": {
+        "w": 217,
+        "h": 256
+      },
+      "duration": 42
+    },
+    "chibi_cast__concepts_to_reference_sheets_vance_v3_death_12_009.webp": {
+      "frame": {
+        "x": 223,
+        "y": 522,
+        "w": 217,
+        "h": 256
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 217,
+        "h": 256
+      },
+      "sourceSize": {
+        "w": 217,
+        "h": 256
+      },
+      "duration": 42
+    },
+    "chibi_cast__concepts_to_reference_sheets_vance_v3_death_12_010.webp": {
+      "frame": {
+        "x": 444,
+        "y": 522,
+        "w": 217,
+        "h": 256
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 217,
+        "h": 256
+      },
+      "sourceSize": {
+        "w": 217,
+        "h": 256
+      },
+      "duration": 42
+    },
+    "chibi_cast__concepts_to_reference_sheets_vance_v3_death_12_011.webp": {
+      "frame": {
+        "x": 665,
+        "y": 522,
+        "w": 217,
+        "h": 256
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 217,
+        "h": 256
+      },
+      "sourceSize": {
+        "w": 217,
+        "h": 256
+      },
+      "duration": 42
+    }
+  },
+  "meta": {
+    "app": "MAKKO Sprite Studio",
+    "version": "1.0.0",
+    "image": "jd_vance_death.webp",
+    "format": "RGBA8888",
+    "size": {
+      "w": 884,
+      "h": 780
+    },
+    "scale": "1",
+    "frameTags": [
+      {
+        "name": "death",
+        "from": 0,
+        "to": 11,
+        "direction": "forward"
+      }
+    ],
+    "anchor": {
+      "x": 109,
+      "y": 235,
+      "normalized": {
+        "x": 0.5023041474654378,
+        "y": 0.91796875
+      },
+      "strategy": "bottom-center"
+    },
+    "referenceAlignment": {
+      "referenceBounds": {
+        "width": 175,
+        "height": 208
+      },
+      "frameBounds": {
+        "width": 217,
+        "height": 256
+      },
+      "normalized": true
+    },
+    "designVersion": "chibi-vance-v3",
+    "referenceSheet": "Vance chibi blue suit reference sheet",
+    "sourceFrames": [
+      9,
+      13,
+      21,
+      25,
+      29,
+      31,
+      33,
+      35,
+      37,
+      41,
+      45,
+      49
+    ],
+    "importSource": "chibi_cast__concepts_to_reference_sheets_vance_v3_death_12.zip",
+    "playbackFps": 24,
+    "useFrameDurations": false,
+    "bodyScale": 1.2019230769230769
+  }
+}

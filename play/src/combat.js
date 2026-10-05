@@ -1,5 +1,5 @@
 import { play } from "./audio.js";
-import { WORLD } from "./stages.js?v=art";
+import { WORLD } from "./stages.js?v=chibi-site2";
 
 export function integrate(ent, dt) {
   ent.z += ent.vz * dt;
@@ -70,6 +70,7 @@ export function applyHit(game, spec, target) {
   const facing = spec.radial ? Math.sign(target.x - spec.x) || spec.facing || 1 : spec.facing || 1;
   if (game.attackSlot === target.id) game.attackSlot = null;
   const grabbed = target.state === "grabbed" && spec.kind === "grab";
+  if (grabbed) target.stateT = 0;
   if (!grabbed) {
     target.vx = facing * spec.kb;
     const depth = target.y - (spec.y ?? target.y);
@@ -89,7 +90,7 @@ export function applyHit(game, spec, target) {
         target.state = "air";
       } else {
         target.state = "hurt";
-        target.hurtT = 0.22;
+        target.hurtT = spec.stun ?? 0.22;
         target.vz = 0;
       }
     } else if (launch || target.z > 16) {
@@ -97,7 +98,7 @@ export function applyHit(game, spec, target) {
       target.vz = Math.max(spec.lift, 90);
     } else {
       target.state = "hurt";
-      target.hurtT = 0.22;
+      target.hurtT = spec.stun ?? 0.22;
       target.vz = 0;
     }
     target.stateT = 0;
@@ -151,6 +152,7 @@ export function melee(game, owner, spec) {
     ry: spec.ry ?? 30,
     rz: spec.rz ?? 40,
     dmg: spec.dmg,
+    stun: spec.stun,
     kb: spec.kb,
     lift: spec.lift ?? 0,
     knockdown: !!spec.knockdown,
@@ -189,9 +191,13 @@ export function updateBody(ent, dt) {
     return true;
   }
 
-  if (ent.state === "grabbed") return true;
+  if (ent.state === "grabbed") {
+    ent.stateT = (ent.stateT || 0) + dt;
+    return true;
+  }
 
   if (ent.state === "hurt" || ent.state === "air" || ent.state === "down" || ent.state === "getup") {
+    ent.stateT = (ent.stateT || 0) + dt;
     const z0 = ent.z;
     const drag = ent.state === "air" ? 1.05 : 0.65;
     ent.vx *= Math.exp(-drag * dt);
@@ -204,6 +210,7 @@ export function updateBody(ent, dt) {
         ent.vx *= 0.55;
       } else {
         ent.state = "down";
+        ent.stateT = 0;
         ent.juggle = 0;
         ent.toss = null;
         ent.groundBounced = false;
@@ -217,6 +224,7 @@ export function updateBody(ent, dt) {
         if (ent.state === "hurt") ent.state = "idle";
         else if (ent.state === "down") {
           ent.state = "getup";
+          ent.stateT = 0;
           ent.hurtT = ent.team === "player" ? 0.34 : 0.26;
           ent.invuln = Math.max(ent.invuln, ent.team === "player" ? 0.85 : 0.48);
         } else {

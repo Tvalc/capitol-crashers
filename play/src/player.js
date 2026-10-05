@@ -1,17 +1,17 @@
 import { play } from "./audio.js";
-import { FIGHTERS } from "./fighters.js?v=art";
-import { integrate, melee, spendSpecial, updateBody } from "./combat.js?v=fight2";
-import { finishWeapon, launchHeld, noteWeaponSwing, spawnBolt } from "./weapons.js?v=dt";
+import { FIGHTERS } from "./fighters.js?v=chibi-site2";
+import { integrate, melee, spendSpecial, updateBody } from "./combat.js?v=chibi-site2";
+import { finishWeapon, launchHeld, noteWeaponSwing, spawnBolt } from "./weapons.js?v=chibi-site2";
 
 const LIGHTS = [
-  { startup: 0.2, active: 0.12, dmg: 7, kb: 180, lift: 0 },
-  { startup: 0.18, active: 0.12, dmg: 8, kb: 200, lift: 0 },
-  { startup: 0.24, active: 0.14, dmg: 12, kb: 340, lift: 520, knockdown: true },
+  { startup: 0.10, active: 0.09, dmg: 7, kb: 65, lift: 0, stun: 0.32 },
+  { startup: 0.10, active: 0.09, dmg: 8, kb: 85, lift: 0, stun: 0.34 },
+  { startup: 0.16, active: 0.11, dmg: 12, kb: 340, lift: 520, knockdown: true },
 ];
 
 const KICKS = [
-  { startup: 0.08, active: 0.07, dmg: 7, kb: 180, lift: 0 },
-  { startup: 0.07, active: 0.07, dmg: 8, kb: 200, lift: 0 },
+  { startup: 0.08, active: 0.07, dmg: 7, kb: 45, lift: 0, stun: 0.25 },
+  { startup: 0.07, active: 0.07, dmg: 8, kb: 60, lift: 0, stun: 0.27 },
   { startup: 0.1, active: 0.08, dmg: 12, kb: 340, lift: 520, knockdown: true },
 ];
 
@@ -181,6 +181,7 @@ export function makePlayer(fighter, x, y) {
     dashT: 0,
     jumpAttacked: false,
     jatkT: 0,
+    queuedLight: false,
     bufferLight: 0,
     bufferHeavy: 0,
     bufferSpecial: 0,
@@ -196,7 +197,9 @@ export function makePlayer(fighter, x, y) {
   };
 }
 
-function buffer(player, input, dt) {
+export function bufferPlayerInput(player, input, dt = 0) {
+  // Preserve one deliberate follow-up through startup and impact freeze.
+  if (input.light && player.state === "light" && player.combo < 2) player.queuedLight = true;
   player.bufferLight = Math.max(0, player.bufferLight - dt);
   player.bufferHeavy = Math.max(0, player.bufferHeavy - dt);
   player.bufferSpecial = Math.max(0, player.bufferSpecial - dt);
@@ -242,15 +245,17 @@ function pipeMul(player) {
 }
 
 function swing(player, game, spec) {
-  const kick = player.kind === "sayed" && !spec.radial && !spec.ownBox;
+  const kick = player.kind === "sayed" && player.holding?.kind !== "pipe" && !spec.radial && !spec.ownBox;
   const connected = melee(game, player, {
     dmg: spec.dmg * player.fighter.power * pipeMul(player),
     kb: spec.kb,
     lift: spec.lift,
+    stun: spec.stun,
     knockdown: spec.knockdown,
-    reach: kick ? 300 : (spec.radial ? 40 : reachOf(player) + (spec.reachAdd || 0)),
-    rx: kick ? 78 : spec.rx,
-    ry: kick ? 56 : spec.ry,
+    // Cover the visible leg continuously from the body, without the old distant dead zone.
+    reach: kick ? 110 : (spec.radial ? 40 : reachOf(player) + (spec.reachAdd || 0)),
+    rx: spec.rx,
+    ry: spec.ry,
     z: kick ? 58 : spec.z,
     rz: kick ? 52 : spec.rz,
     radial: spec.radial,
@@ -268,6 +273,7 @@ function endMove(player) {
   finishWeapon(player);
   player.state = "idle";
   player.combo = 0;
+  player.queuedLight = false;
   player.vx = 0;
   player.vy = 0;
 }
@@ -280,7 +286,7 @@ function grabTarget(game, player, reach = 100) {
     if (enemy.state === "down" || enemy.state === "air" || enemy.state === "dead" || enemy.state === "grabbed") continue;
     const dx = (enemy.x - player.x) * player.facing;
     const dy = Math.abs(enemy.y - player.y);
-    if (dx > -36 && dx < bestDx && dy < 70) {
+    if (dx >= 0 && dx < bestDx && dy < 30) {
       best = enemy;
       bestDx = Math.max(0, dx);
     }
@@ -293,15 +299,19 @@ function startGrab(game, player, enemy) {
   player.stateT = 0;
   player.grabId = enemy.id;
   player.grabHits = 0;
+  player.grabStrikeT = 0;
+  player.grabStartX = enemy.x;
+  player.grabStartY = enemy.y;
   player.bufferGrab = 0;
   player.vx = 0;
   player.vy = 0;
   enemy.state = "grabbed";
+  enemy.stateT = 0;
   enemy.vx = 0;
   enemy.vy = 0;
   enemy.vz = 0;
-  game.banner = "J knees. K throws. Hold back and K to throw behind you.";
-  game.bannerT = 1.2;
+  game.banner = "Grabbed · J strike · K throw";
+  game.bannerT = 1.1;
 }
 
 function startBackstep(player) {
@@ -410,11 +420,11 @@ function tryGrab(player, game, reach) {
 
 function steer(player, input, time) {
   const speed = player.fighter.speed;
-  player.vx = input.x * speed;
-  player.vy = input.y * speed * 0.72;
-  const waiting = player.holdFaceDir && input.x === player.holdFaceDir && time < player.holdFaceUntil;
-  if (waiting) player.facing = player.holdFace;
-  else if (input.x !== 0) player.facing = input.x;
+  const diagonal = Math.max(1, Math.hypot(input.x, input.y));
+  player.vx = input.x * speed / diagonal;
+  player.vy = input.y * speed * 0.72 / diagonal;
+  // The first tap already records the old facing for a double-tap backstep.
+  if (input.x !== 0) player.facing = input.x;
   const moving = input.x !== 0 || input.y !== 0;
   player.state = moving ? "walk" : "idle";
 }
@@ -431,6 +441,7 @@ function updateLight(player, game, dt) {
       dmg: step.dmg,
       kb: step.kb,
       lift: step.lift,
+      stun: step.stun,
       knockdown: step.knockdown,
       kind: player.combo === 2 ? "heavy" : "light",
       points: 100 + player.combo * 20,
@@ -439,9 +450,10 @@ function updateLight(player, game, dt) {
     });
   }
   const linkAt = step.startup + step.active;
-  if (player.combo < 2 && player.bufferLight > 0 && player.stateT >= linkAt) {
+  if (player.combo < 2 && (player.queuedLight || player.bufferLight > 0) && player.stateT >= linkAt) {
     player.bufferLight = 0;
     finishWeapon(player);
+    player.queuedLight = false;
     player.combo += 1;
     player.stateT = 0;
     player.spawned = false;
@@ -521,6 +533,7 @@ function updateJump(player, game, input, dt) {
 function updateGrab(player, game, input, dt) {
   const enemy = game.enemies.find((ent) => ent.id === player.grabId);
   player.stateT += dt;
+  player.grabStrikeT = Math.max(0, (player.grabStrikeT || 0) - dt);
   player.vx = 0;
   player.vy = 0;
   if (!enemy || !enemy.alive) {
@@ -529,19 +542,22 @@ function updateGrab(player, game, input, dt) {
     player.state = "idle";
     return;
   }
-  enemy.x = player.x + player.facing * 52;
-  enemy.y = player.y;
+  const reachProgress = Math.min(1, player.stateT / 0.24);
+  const ease = reachProgress * reachProgress * (3 - 2 * reachProgress);
+  enemy.x = (player.grabStartX ?? player.x + player.facing * 110) * (1 - ease) + (player.x + player.facing * 110) * ease;
+  enemy.y = (player.grabStartY ?? player.y) * (1 - ease) + player.y * ease;
   enemy.z = 0;
   enemy.facing = -player.facing;
-  const punch = player.bufferLight > 0 && player.stateT >= 0.12;
+  const punch = player.bufferLight > 0 && player.stateT >= 0.24 && player.grabStrikeT === 0;
   if (punch) {
     player.bufferLight = 0;
     player.grabHits += 1;
+    player.grabStrikeT = 0.24;
     melee(game, player, {
       dmg: 6 * player.fighter.power,
       kb: 0,
       lift: 0,
-      reach: 64,
+      reach: 128,
       kind: "grab",
       points: 80,
       hitstop: 0.04,
@@ -552,12 +568,8 @@ function updateGrab(player, game, input, dt) {
   }
   const throwNow = player.bufferHeavy > 0;
   if (player.stateT > 2.5 && !throwNow) {
-    enemy.state = "idle";
-    enemy.vx = 0;
-    player.grabId = null;
-    player.grabCd = 0.45;
-    player.state = "idle";
-    return;
+    enemy.state = "idle"; enemy.vx = 0; player.grabId = null;
+    player.grabCd = 0.45; player.state = "idle"; return;
   }
   if (throwNow) {
     const dir = input.x === -player.facing ? -player.facing : player.facing;
@@ -578,7 +590,7 @@ function applyThrow(game, player, enemy, dir) {
     kb: 420,
     lift: 520,
     knockdown: true,
-    reach: 64,
+    reach: 128,
     kind: "throw",
     points: 250,
     hitstop: 0.07,
@@ -632,7 +644,8 @@ export function updatePlayer(player, game, input, dt) {
   }
   player.anim += dt;
   if (player.grabCd > 0) player.grabCd = Math.max(0, player.grabCd - dt);
-  buffer(player, input, dt);
+  if (["hurt", "air", "down", "getup", "dead"].includes(player.state)) player.queuedLight = false;
+  bufferPlayerInput(player, input, dt);
   takeTap(player, input, game.time);
 
   if (player.state === "grabbed") {
@@ -663,6 +676,15 @@ export function updatePlayer(player, game, input, dt) {
   }
   if (player.state === "light") {
     updateLight(player, game, dt);
+    // Keep the standing combo window, but permit stepping out after recovery.
+    const timing = playerMoveWindow(player);
+    if (player.state === "light" && player.combo < 2 && !player.queuedLight &&
+        player.bufferLight <= 0 && (input.x || input.y) &&
+        player.stateT >= timing.startup + timing.active + 0.1) {
+      endMove(player);
+      steer(player, input, game.time);
+      integrate(player, dt);
+    }
     return;
   }
   if (player.state === "heavy" || player.state === "dashatk" || player.state === "special" || player.state === "lunge" || player.state === "reversal") {
@@ -674,7 +696,7 @@ export function updatePlayer(player, game, input, dt) {
     const timing = playerMoveWindow(player);
     const held = game.enemies.find(ent => ent.id === player.grabId);
     if (held?.alive && !player.spawned) {
-      held.x = player.x + player.facing * 52;
+      held.x = player.x + player.facing * 110;
       held.y = player.y;
       if (player.stateT >= timing.startup) {
         player.spawned = true;
@@ -711,7 +733,7 @@ export function updatePlayer(player, game, input, dt) {
 
   if (player.bufferGrab > 0 && (player.state === "idle" || player.state === "walk" || player.state === "dash")) {
     player.bufferGrab = 0;
-    if (tryGrab(player, game, 190)) return;
+    if (tryGrab(player, game, 120)) return;
   }
 
   if (player.state === "dash") {

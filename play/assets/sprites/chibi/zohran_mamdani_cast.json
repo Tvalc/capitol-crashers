@@ -1,0 +1,299 @@
+{
+  "frames": {
+    "zohran_mamdani_chibi_cast_12_000.webp": {
+      "frame": {
+        "x": 2,
+        "y": 2,
+        "w": 177,
+        "h": 256
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 177,
+        "h": 256
+      },
+      "sourceSize": {
+        "w": 177,
+        "h": 256
+      },
+      "duration": 42
+    },
+    "zohran_mamdani_chibi_cast_12_001.webp": {
+      "frame": {
+        "x": 183,
+        "y": 2,
+        "w": 177,
+        "h": 256
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 177,
+        "h": 256
+      },
+      "sourceSize": {
+        "w": 177,
+        "h": 256
+      },
+      "duration": 42
+    },
+    "zohran_mamdani_chibi_cast_12_002.webp": {
+      "frame": {
+        "x": 364,
+        "y": 2,
+        "w": 177,
+        "h": 256
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 177,
+        "h": 256
+      },
+      "sourceSize": {
+        "w": 177,
+        "h": 256
+      },
+      "duration": 42
+    },
+    "zohran_mamdani_chibi_cast_12_003.webp": {
+      "frame": {
+        "x": 545,
+        "y": 2,
+        "w": 177,
+        "h": 256
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 177,
+        "h": 256
+      },
+      "sourceSize": {
+        "w": 177,
+        "h": 256
+      },
+      "duration": 42
+    },
+    "zohran_mamdani_chibi_cast_12_004.webp": {
+      "frame": {
+        "x": 2,
+        "y": 262,
+        "w": 177,
+        "h": 256
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 177,
+        "h": 256
+      },
+      "sourceSize": {
+        "w": 177,
+        "h": 256
+      },
+      "duration": 42
+    },
+    "zohran_mamdani_chibi_cast_12_005.webp": {
+      "frame": {
+        "x": 183,
+        "y": 262,
+        "w": 177,
+        "h": 256
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 177,
+        "h": 256
+      },
+      "sourceSize": {
+        "w": 177,
+        "h": 256
+      },
+      "duration": 42
+    },
+    "zohran_mamdani_chibi_cast_12_006.webp": {
+      "frame": {
+        "x": 364,
+        "y": 262,
+        "w": 177,
+        "h": 256
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 177,
+        "h": 256
+      },
+      "sourceSize": {
+        "w": 177,
+        "h": 256
+      },
+      "duration": 42
+    },
+    "zohran_mamdani_chibi_cast_12_007.webp": {
+      "frame": {
+        "x": 545,
+        "y": 262,
+        "w": 177,
+        "h": 256
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 177,
+        "h": 256
+      },
+      "sourceSize": {
+        "w": 177,
+        "h": 256
+      },
+      "duration": 42
+    },
+    "zohran_mamdani_chibi_cast_12_008.webp": {
+      "frame": {
+        "x": 2,
+        "y": 522,
+        "w": 177,
+        "h": 256
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 177,
+        "h": 256
+      },
+      "sourceSize": {
+        "w": 177,
+        "h": 256
+      },
+      "duration": 42
+    },
+    "zohran_mamdani_chibi_cast_12_009.webp": {
+      "frame": {
+        "x": 183,
+        "y": 522,
+        "w": 177,
+        "h": 256
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 177,
+        "h": 256
+      },
+      "sourceSize": {
+        "w": 177,
+        "h": 256
+      },
+      "duration": 42
+    },
+    "zohran_mamdani_chibi_cast_12_010.webp": {
+      "frame": {
+        "x": 364,
+        "y": 522,
+        "w": 177,
+        "h": 256
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 177,
+        "h": 256
+      },
+      "sourceSize": {
+        "w": 177,
+        "h": 256
+      },
+      "duration": 42
+    },
+    "zohran_mamdani_chibi_cast_12_011.webp": {
+      "frame": {
+        "x": 545,
+        "y": 522,
+        "w": 177,
+        "h": 256
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 177,
+        "h": 256
+      },
+      "sourceSize": {
+        "w": 177,
+        "h": 256
+      },
+      "duration": 42
+    }
+  },
+  "meta": {
+    "app": "MAKKO Sprite Studio",
+    "version": "1.0.0",
+    "image": "zohran_mamdani_cast.webp",
+    "format": "RGBA8888",
+    "size": {
+      "w": 724,
+      "h": 780
+    },
+    "scale": "1",
+    "frameTags": [
+      {
+        "name": "Special",
+        "from": 0,
+        "to": 11,
+        "direction": "forward"
+      }
+    ],
+    "anchor": {
+      "x": 89,
+      "y": 255,
+      "normalized": {
+        "x": 0.5028248587570622,
+        "y": 0.99609375
+      },
+      "strategy": "bottom-center"
+    },
+    "referenceAlignment": {
+      "referenceBounds": {
+        "width": 87,
+        "height": 252
+      },
+      "frameBounds": {
+        "width": 177,
+        "height": 256
+      },
+      "normalized": true
+    },
+    "designVersion": "chibi-makko-oct04",
+    "bodyScale": 0.9920634920634921,
+    "playbackFps": 24,
+    "importSource": "zohran_mamdani_chibi_cast_12.json"
+  }
+}

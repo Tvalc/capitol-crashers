@@ -1,0 +1,13 @@
+{
+  "source": "Makko",
+  "generated": {
+    "hero": "40fbd586-878c-4053-9209-38ef55e20743",
+    "kit": "ab84435c-1d86-475b-9311-60fdb4f2769c",
+    "rally": "f3428974-388d-40a4-b4ae-3853d49a0d53",
+    "dock": "d2e71586-93e6-40be-bf9f-7c4b5f9db16f",
+    "capitol": "354d5365-9dd0-40e2-8c14-d4b7a3b68657",
+    "studio": "7a1c878d-a2c1-41cd-bfab-9237f33aaf92",
+    "ball": "5c1e55ad-382b-48d2-b544-856d60bf5bea"
+  },
+  "processing": "Resize, grid crop and magenta removal only. No art drawn in code."
+}

@@ -12,6 +12,7 @@
   <link rel="stylesheet" href="styles.css" />
   <link rel="stylesheet" href="touch.css" />
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4762698707947194" crossorigin="anonymous"></script>
+<link rel="stylesheet" href="../chibi-ui.css?v=2">
 </head>
 <body>
   <header class="topbar">
@@ -24,6 +25,15 @@
   </aside>
 
   <div class="session-controls"><button id="pause-toggle" type="button" hidden>Pause · Esc</button></div>
+  <div class="session-controls" id="practice-controls" hidden>
+    <button id="practice-mamdani" type="button">Practice Mamdani</button>
+    <button id="practice-sayed" type="button">Practice El-Sayed</button>
+    <button id="practice-reset" type="button">Reset practice</button>
+    <button id="practice-opponent" type="button">Opponent: stationary</button>
+    <label>Opponent <select id="practice-enemy"><option value="cruz">Ted Cruz</option><option value="vance">JD Vance</option><option value="greene">MTG</option><option value="trump">Donald Trump</option></select></label>
+    <a href="./">Full game</a>
+    <p>Move: arrows / WASD · J: strike · G: grab · K: throw · Space: jump. Reset brings the selected opponent back beside you.</p>
+  </div>
   <main class="stage">
     <section class="card" id="pause-panel" hidden aria-labelledby="pause-title">
       <h2 id="pause-title">Paused</h2><p>Your fight will wait. Resume when you are ready.</p>
@@ -38,7 +48,7 @@
       <ul class="how">
         <li>Arrows or WASD move. Double-tap forward to run, then J to strike. Double-tap back to retreat.</li>
         <li>J light combo, K heavy, L special, Space jump. Hold forward and K to lunge. Hold back and K to reverse. J as you get up.</li>
-        <li>Press G up close to grab. J knees them. K throws. Hold back and K to throw behind you.</li>
+        <li>Press G to grab a nearby enemy. J punches; walking never grabs. K throws. Hold back and K to throw behind you.</li>
         <li>Walk over a pipe or bottle to take it. J swings a pipe. K throws it.</li>
       </ul>
       <div class="actions">
@@ -62,6 +72,7 @@
       </div>
       <p class="hint">Left and right to choose. Enter to start.</p>
       <button type="button" class="play" id="run">Fight</button>
+      <button type="button" id="practice-start">Practice moves</button>
     </section>
 
     <section class="card comic" id="story-panel" hidden>
@@ -106,8 +117,15 @@
     <p><a href="privacy.html">Privacy</a></p>
   </footer>
   <script src="touch.js"></script>
-  <script type="module" src="src/main.js?v=dt"></script>
+  <script type="module" src="src/main.js?v=chibi-site2"></script>
   <script type="module" src="site.js"></script>
-  <script src="../soundtrack.js?v=1" data-controls></script>
+  <script src="../soundtrack.js?v=chibi2" data-controls></script>
 </body>
 </html>
+
+
+
+
+
+
+

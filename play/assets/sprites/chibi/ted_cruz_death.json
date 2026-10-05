@@ -1,0 +1,315 @@
+{
+  "frames": {
+    "chibi_cast__concepts_to_reference_sheets_cruz_v3_death_12_000.webp": {
+      "frame": {
+        "x": 2,
+        "y": 2,
+        "w": 249,
+        "h": 256
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 249,
+        "h": 256
+      },
+      "sourceSize": {
+        "w": 249,
+        "h": 256
+      },
+      "duration": 42
+    },
+    "chibi_cast__concepts_to_reference_sheets_cruz_v3_death_12_001.webp": {
+      "frame": {
+        "x": 255,
+        "y": 2,
+        "w": 249,
+        "h": 256
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 249,
+        "h": 256
+      },
+      "sourceSize": {
+        "w": 249,
+        "h": 256
+      },
+      "duration": 42
+    },
+    "chibi_cast__concepts_to_reference_sheets_cruz_v3_death_12_002.webp": {
+      "frame": {
+        "x": 508,
+        "y": 2,
+        "w": 249,
+        "h": 256
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 249,
+        "h": 256
+      },
+      "sourceSize": {
+        "w": 249,
+        "h": 256
+      },
+      "duration": 42
+    },
+    "chibi_cast__concepts_to_reference_sheets_cruz_v3_death_12_003.webp": {
+      "frame": {
+        "x": 761,
+        "y": 2,
+        "w": 249,
+        "h": 256
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 249,
+        "h": 256
+      },
+      "sourceSize": {
+        "w": 249,
+        "h": 256
+      },
+      "duration": 42
+    },
+    "chibi_cast__concepts_to_reference_sheets_cruz_v3_death_12_004.webp": {
+      "frame": {
+        "x": 2,
+        "y": 262,
+        "w": 249,
+        "h": 256
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 249,
+        "h": 256
+      },
+      "sourceSize": {
+        "w": 249,
+        "h": 256
+      },
+      "duration": 42
+    },
+    "chibi_cast__concepts_to_reference_sheets_cruz_v3_death_12_005.webp": {
+      "frame": {
+        "x": 255,
+        "y": 262,
+        "w": 249,
+        "h": 256
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 249,
+        "h": 256
+      },
+      "sourceSize": {
+        "w": 249,
+        "h": 256
+      },
+      "duration": 42
+    },
+    "chibi_cast__concepts_to_reference_sheets_cruz_v3_death_12_006.webp": {
+      "frame": {
+        "x": 508,
+        "y": 262,
+        "w": 249,
+        "h": 256
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 249,
+        "h": 256
+      },
+      "sourceSize": {
+        "w": 249,
+        "h": 256
+      },
+      "duration": 42
+    },
+    "chibi_cast__concepts_to_reference_sheets_cruz_v3_death_12_007.webp": {
+      "frame": {
+        "x": 761,
+        "y": 262,
+        "w": 249,
+        "h": 256
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 249,
+        "h": 256
+      },
+      "sourceSize": {
+        "w": 249,
+        "h": 256
+      },
+      "duration": 42
+    },
+    "chibi_cast__concepts_to_reference_sheets_cruz_v3_death_12_008.webp": {
+      "frame": {
+        "x": 2,
+        "y": 522,
+        "w": 249,
+        "h": 256
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 249,
+        "h": 256
+      },
+      "sourceSize": {
+        "w": 249,
+        "h": 256
+      },
+      "duration": 42
+    },
+    "chibi_cast__concepts_to_reference_sheets_cruz_v3_death_12_009.webp": {
+      "frame": {
+        "x": 255,
+        "y": 522,
+        "w": 249,
+        "h": 256
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 249,
+        "h": 256
+      },
+      "sourceSize": {
+        "w": 249,
+        "h": 256
+      },
+      "duration": 42
+    },
+    "chibi_cast__concepts_to_reference_sheets_cruz_v3_death_12_010.webp": {
+      "frame": {
+        "x": 508,
+        "y": 522,
+        "w": 249,
+        "h": 256
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 249,
+        "h": 256
+      },
+      "sourceSize": {
+        "w": 249,
+        "h": 256
+      },
+      "duration": 42
+    },
+    "chibi_cast__concepts_to_reference_sheets_cruz_v3_death_12_011.webp": {
+      "frame": {
+        "x": 761,
+        "y": 522,
+        "w": 249,
+        "h": 256
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 249,
+        "h": 256
+      },
+      "sourceSize": {
+        "w": 249,
+        "h": 256
+      },
+      "duration": 42
+    }
+  },
+  "meta": {
+    "app": "MAKKO Sprite Studio",
+    "version": "1.0.0",
+    "image": "ted_cruz_death.webp",
+    "format": "RGBA8888",
+    "size": {
+      "w": 1012,
+      "h": 780
+    },
+    "scale": "1",
+    "frameTags": [
+      {
+        "name": "death",
+        "from": 0,
+        "to": 11,
+        "direction": "forward"
+      }
+    ],
+    "anchor": {
+      "x": 125,
+      "y": 248,
+      "normalized": {
+        "x": 0.5020080321285141,
+        "y": 0.96875
+      },
+      "strategy": "bottom-center"
+    },
+    "referenceAlignment": {
+      "referenceBounds": {
+        "width": 198,
+        "height": 241
+      },
+      "frameBounds": {
+        "width": 249,
+        "height": 256
+      },
+      "normalized": true
+    },
+    "designVersion": "chibi-cruz-v3",
+    "referenceSheet": "sombrero blue suit chibi reference sheet",
+    "sourceFrames": [
+      13,
+      17,
+      25,
+      33,
+      37,
+      41,
+      45,
+      49,
+      65,
+      73,
+      85,
+      96
+    ],
+    "importSource": "chibi_cast__concepts_to_reference_sheets_cruz_v3_death_12.zip",
+    "playbackFps": 24,
+    "useFrameDurations": false,
+    "bodyScale": 1.037344398340249
+  }
+}

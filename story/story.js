@@ -1,6 +1,6 @@
 import { PAGES, PLANKS, SOURCES } from "./panels.js";
 
-const ART_DIR = "../art/story/";
+const ART_DIR = "../art/story/chibi/";
 const book = document.getElementById("book");
 const planksHost = document.getElementById("planks");
 const sourcesHost = document.getElementById("sources");
@@ -37,11 +37,12 @@ function renderPanel(panel) {
 
   if (panel.tag) frame.append(el("span", "tag", panel.tag));
 
+  const dialogue = el("div", "dialogue");
   for (const line of panel.bubbles || []) {
-    const bubble = el("p", `bubble ${line.pos || "left high"}${line.shout ? " shout" : ""}`);
+    const bubble = el("blockquote", "dialogue-line");
     if (line.who) bubble.append(el("span", "who", line.who));
     bubble.append(document.createTextNode(line.text));
-    frame.append(bubble);
+    dialogue.append(bubble);
   }
 
   if (panel.sfx) frame.append(el("span", "sfx", panel.sfx.text));
@@ -54,6 +55,7 @@ function renderPanel(panel) {
   }
 
   node.append(frame);
+  if (dialogue.childElementCount) node.append(dialogue);
 
   const captions = panel.captions || [];
   if (captions.length) {

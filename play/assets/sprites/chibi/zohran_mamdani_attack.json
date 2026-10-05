@@ -1,0 +1,315 @@
+{
+  "frames": [
+    {
+      "frame": {
+        "x": 2,
+        "y": 522,
+        "w": 174,
+        "h": 256
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 174,
+        "h": 256
+      },
+      "sourceSize": {
+        "w": 174,
+        "h": 256
+      },
+      "duration": 42
+    },
+    {
+      "frame": {
+        "x": 358,
+        "y": 262,
+        "w": 174,
+        "h": 256
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 174,
+        "h": 256
+      },
+      "sourceSize": {
+        "w": 174,
+        "h": 256
+      },
+      "duration": 42
+    },
+    {
+      "frame": {
+        "x": 180,
+        "y": 262,
+        "w": 174,
+        "h": 256
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 174,
+        "h": 256
+      },
+      "sourceSize": {
+        "w": 174,
+        "h": 256
+      },
+      "duration": 42
+    },
+    {
+      "frame": {
+        "x": 358,
+        "y": 2,
+        "w": 174,
+        "h": 256
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 174,
+        "h": 256
+      },
+      "sourceSize": {
+        "w": 174,
+        "h": 256
+      },
+      "duration": 42
+    },
+    {
+      "frame": {
+        "x": 2,
+        "y": 2,
+        "w": 174,
+        "h": 256
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 174,
+        "h": 256
+      },
+      "sourceSize": {
+        "w": 174,
+        "h": 256
+      },
+      "duration": 42
+    },
+    {
+      "frame": {
+        "x": 2,
+        "y": 2,
+        "w": 174,
+        "h": 256
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 174,
+        "h": 256
+      },
+      "sourceSize": {
+        "w": 174,
+        "h": 256
+      },
+      "duration": 42
+    },
+    {
+      "frame": {
+        "x": 2,
+        "y": 2,
+        "w": 174,
+        "h": 256
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 174,
+        "h": 256
+      },
+      "sourceSize": {
+        "w": 174,
+        "h": 256
+      },
+      "duration": 42
+    },
+    {
+      "frame": {
+        "x": 2,
+        "y": 2,
+        "w": 174,
+        "h": 256
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 174,
+        "h": 256
+      },
+      "sourceSize": {
+        "w": 174,
+        "h": 256
+      },
+      "duration": 42
+    },
+    {
+      "frame": {
+        "x": 2,
+        "y": 2,
+        "w": 174,
+        "h": 256
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 174,
+        "h": 256
+      },
+      "sourceSize": {
+        "w": 174,
+        "h": 256
+      },
+      "duration": 42
+    },
+    {
+      "frame": {
+        "x": 180,
+        "y": 2,
+        "w": 174,
+        "h": 256
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 174,
+        "h": 256
+      },
+      "sourceSize": {
+        "w": 174,
+        "h": 256
+      },
+      "duration": 42
+    },
+    {
+      "frame": {
+        "x": 2,
+        "y": 262,
+        "w": 174,
+        "h": 256
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 174,
+        "h": 256
+      },
+      "sourceSize": {
+        "w": 174,
+        "h": 256
+      },
+      "duration": 42
+    },
+    {
+      "frame": {
+        "x": 2,
+        "y": 522,
+        "w": 174,
+        "h": 256
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 174,
+        "h": 256
+      },
+      "sourceSize": {
+        "w": 174,
+        "h": 256
+      },
+      "duration": 42
+    }
+  ],
+  "meta": {
+    "app": "MAKKO Sprite Studio",
+    "version": "1.0.0",
+    "image": "zohran_mamdani_attack.webp",
+    "format": "RGBA8888",
+    "size": {
+      "w": 534,
+      "h": 780
+    },
+    "scale": "1",
+    "frameTags": [
+      {
+        "name": "attack",
+        "from": 0,
+        "to": 11,
+        "direction": "forward"
+      }
+    ],
+    "anchor": {
+      "x": 87,
+      "y": 255,
+      "normalized": {
+        "x": 0.5,
+        "y": 0.99609375
+      },
+      "strategy": "bottom-center"
+    },
+    "referenceAlignment": {
+      "referenceBounds": {
+        "width": 173,
+        "height": 254
+      },
+      "frameBounds": {
+        "width": 174,
+        "height": 256
+      },
+      "normalized": true
+    },
+    "designVersion": "chibi-suit-v3",
+    "referenceSheet": "Zohran Mamdani \u2014 Chibi Suit v2",
+    "importSource": "chibi_cast__concepts_to_reference_sheets_mamdani_suit_v3_punch_7.json",
+    "sourceFrames": [
+      23,
+      21,
+      19,
+      15,
+      1,
+      1,
+      1,
+      1,
+      1,
+      13,
+      17,
+      23
+    ],
+    "playbackFps": 24,
+    "useFrameDurations": false,
+    "bodyScale": 0.984251968503937
+  }
+}

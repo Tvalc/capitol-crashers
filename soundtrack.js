@@ -41,7 +41,7 @@
     if (next()) sync();
   });
   document.addEventListener('visibilitychange', sync);
-  window.VoteMusic = { setState(on, stopped) { enabled = on; paused = stopped; sync(); } };
+  window.VoteMusic = { get enabled() { return enabled; }, get paused() { return paused || document.hidden; }, setState(on, stopped) { enabled = on; paused = stopped; sync(); } };
   if (document.currentScript?.hasAttribute('data-controls')) {
     const bar = document.createElement('div');
     bar.setAttribute('role', 'group');
@@ -67,4 +67,3 @@
     }
   }
 })();
-

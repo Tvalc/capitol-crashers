@@ -1,4 +1,4 @@
-import { playerMoveWindow } from "./player.js?v=dt";
+import { playerMoveWindow } from "./player.js?v=chibi-site2";
 
 const CLIPS = {
   zohran: ["idle", "walk", "run", "jump", "attack", "hit", "death", "cast", "grab", "throw", "lunge", "reversal"],
@@ -10,12 +10,12 @@ const CLIPS = {
 };
 
 const FILE = {
-  zohran: "zohran_mamdani",
-  abdul: "abdul_el_sayed",
-  trump: "donald_trump",
-  vance: "jd_vance",
-  greene: "marjorie_taylor_greene",
-  cruz: "ted_cruz",
+  zohran: "chibi/zohran_mamdani",
+  abdul: "chibi/abdul_el_sayed",
+  trump: "chibi/donald_trump",
+  vance: "chibi/jd_vance",
+  greene: "chibi/marjorie_greene",
+  cruz: "chibi/ted_cruz",
 };
 
 const FALLBACK = {
@@ -86,20 +86,23 @@ export function readFrames(data, width, height) {
 
 function loadOne(sprite, clip, name) {
   const image = new Image();
-  const dataPromise = fetch(`assets/sprites/${name}.json?v=dt`).then((res) => {
+  const dataPromise = fetch(`assets/sprites/${name}.json?v=cast-v7`).then((res) => {
     if (!res.ok) throw new Error(`Could not load ${name}: ${res.status}`);
     return res.json();
   });
   const imagePromise = new Promise((resolve, reject) => {
     image.onload = () => resolve(image);
     image.onerror = reject;
-    image.src = `assets/sprites/${name}.webp?v=dt`;
+    image.src = `assets/sprites/${name}.webp?v=cast-v7`;
   });
   return Promise.all([dataPromise, imagePromise]).then(([data, img]) => {
     const frames = readFrames(data, img.naturalWidth, img.naturalHeight);
     sheets.set(clipKey(sprite, clip), {
       image: img,
       frames,
+      fps: data.meta?.playbackFps,
+      frameDurations: data.meta?.useFrameDurations ? frames.map(frame => frame.duration) : null,
+      bodyScale: data.meta?.bodyScale || 1,
       anchor: data.meta?.anchor || { x: (frames[0].sourceSize?.w || frames[0].frame.w) / 2, y: frames[0].sourceSize?.h || frames[0].frame.h },
     });
   });
@@ -120,7 +123,7 @@ export function clipFor(state) {
   if (state === "reversal") return "reversal";
   if (state === "throw") return "throw";
   if (state === "grab") return "grab";
-  if (state === "grabbed") return "idle";
+  if (state === "grabbed") return "hit";
   if (state === "dashatk") return "lunge";
   if (state === "hurt" || state === "air" || state === "getup") return "hit";
   if (state === "down" || state === "dead") return "death";
@@ -145,11 +148,12 @@ function attackWindow(ent) {
   if (ent.team === "player") {
     const move = playerMoveWindow(ent);
     if (move) return move;
-    if (ent.state === "grab") return { startup: 0.12, active: 2.3, total: 2.55 };
+    // Grab and airborne states still need their dedicated asset/event pass.
+    if (ent.state === "grab") return { startup: 0.16, active: 0.14, total: 0.56 };
   }
   if (ent.kind === "trump") return { startup: 0.34, active: 0.12, total: 0.72 };
   if (ent.kind === "greene") {
-    if (ent.state === "special") return { startup: 0.46, active: 0.2, total: 1.15 };
+    if (ent.state === "special") return { startup: 0.15, active: 0.2, total: 1.6 };
     return { startup: 0.22, active: 0.12, total: 0.55 };
   }
   if (ent.kind === "cruz" && ent.state === "windup") return { startup: 0.28, active: 0.04, total: 0.32 };
@@ -161,12 +165,12 @@ function attackWindow(ent) {
 function contactAt(ent, count) {
   let frac = 0.42;
   if (ent.kind === "trump" && ent.state === "attack") frac = 0.72;
-  if (ent.kind === "cruz" && ent.state === "attack") frac = 0.62;
+  if (ent.kind === "cruz" && ent.state === "attack") frac = 0.78;
   if (ent.state === "dashatk" || ent.state === "lunge") frac = 0.55;
   else if (ent.state === "heavy") frac = 0.62;
   else if (ent.state === "reversal") frac = 0.8;
   else if (ent.state === "throw") frac = 0.78;
-  else if (ent.state === "grab") frac = 0.18;
+  else if (ent.state === "grab") frac = 0.16;
   else if (ent.state === "light") {
     if (ent.combo === 2) frac = 0.7;
     else if (ent.combo === 1) frac = 0.5;
@@ -177,6 +181,14 @@ function contactAt(ent, count) {
 
 export function poseIndex(ent, count, clip) {
   if (count <= 1) return 0;
+  if (clip === "grab" && ent.team === "player") {
+    const contact = Math.min(count - 1, actorSprite(ent) === "abdul" ? 7 : 6);
+    return Math.min(contact, Math.floor(Math.max(0, ent.stateT || 0) / 0.24 * contact));
+  }
+  if (clip === "death" && ent.team === "player" && count === 12) {
+    if (ent.state === "down") return 8;
+    return Math.min(8, Math.floor(Math.max(0, 0.9 - (ent.deadT ?? 0.9)) / 0.5 * 9));
+  }
   if (clip === "jump") {
     const height = Math.max(0, Math.min(1, (ent.z || 0) / 170));
     const rising = (ent.vz || 0) >= 0;
@@ -204,13 +216,31 @@ const STEP = {
   zohran: { walk: 0.12, run: 0.055 },
   abdul: { walk: 0.14, run: 0.06 },
   trump: { walk: 0.18, run: 0.14 },
-  vance: { walk: 0.2, run: 0.18 },
+  vance: { walk: 0.125, run: 0.075 },
   cruz: { walk: 0.1, run: 0.08 },
   greene: { walk: 0.055, run: 0.055 },
 };
 
-function gaitIndex(ent, count, clip) {
-  const step = STEP[actorSprite(ent)]?.[clip] || (clip === "run" ? 0.055 : 0.08);
+// Authored holds are part of the gesture: a uniform FPS loop removes its rests.
+export function timedLoopIndex(seconds, durations) {
+  const ms = durations.map(duration => Number.isFinite(duration) && duration > 0 ? duration : 100);
+  const total = ms.reduce((sum, duration) => sum + duration, 0);
+  if (!total) return 0;
+  let phase = Math.max(0, Number.isFinite(seconds) ? seconds : 0) * 1000 % total;
+  for (let index = 0; index < ms.length; index++) {
+    if (phase < ms[index]) return index;
+    phase -= ms[index];
+  }
+  return 0;
+}
+
+function gaitIndex(ent, count, clip, fps) {
+  const step = fps > 0 ? 1 / fps : STEP[actorSprite(ent)]?.[clip] || (clip === "run" ? 0.055 : 0.08);
+  if (Number.isFinite(ent.gaitDistance)) {
+    const speed = ent.fighter?.speed || ent.speed || 188;
+    const stride = Math.max(12, speed * (clip === "run" ? 2.35 : 1) * step);
+    return Math.floor(ent.gaitDistance / stride) % count;
+  }
   const t = Math.max(0, ent.anim || 0);
   return Math.floor(t / step) % count;
 }
@@ -232,28 +262,30 @@ function flinchIndex(ent, count) {
 
 // These exports were normalized to their whole action bounding box, rather
 // than the character's body. Calibrate once per clip, never once per frame.
-export const SPRITE_BODY_SCALE = { cruz: { attack: 0.55 }, vance: { cast: 1.65 } };
+export const SPRITE_BODY_SCALE = {};
 
 export function drawSprite(ctx, ent, sx, sc) {
   const sprite = actorSprite(ent);
   let wanted = clipFor(ent.state);
-  if (actorSprite(ent) === "cruz" && ent.state === "windup") wanted = "run";
+  if (sprite === "cruz" && ent.state === "windup") wanted = "attack";
   const resolved = resolveSheet(sprite, wanted);
   if (!resolved) return false;
   const { sheet, clip } = resolved;
-  sc *= SPRITE_BODY_SCALE[sprite]?.[clip] || 1;
+  sc *= sheet.bodyScale * (SPRITE_BODY_SCALE[sprite]?.[clip] || 1);
   const count = sheet.frames.length;
   const once = ONCE.has(clip);
   let index;
   if (clip === "idle") {
-    const step = sprite === "zohran" ? 0.14 : sprite === "abdul" ? 0.2 : sprite === "vance" ? 0.22 : sprite === "cruz" ? 0.16 : sprite === "greene" ? 0.16 : 0;
-    index = step ? Math.floor((ent.anim || 0) / step) % count : 0;
+    const step = sheet.fps > 0 ? 1 / sheet.fps : sprite === "zohran" ? 0.14 : sprite === "abdul" ? 1 / 24 : sprite === "vance" ? 1 / 3 : sprite === "cruz" || sprite === "greene" ? 0.16 : 0;
+    const idleTime = Math.max(0, (ent.anim || 0) - (ent.idleStartedAt || 0));
+    index = sheet.frameDurations ? timedLoopIndex(idleTime, sheet.frameDurations) : step ? Math.floor(idleTime / step) % count : 0;
   }
   else if (clip === "hit") index = flinchIndex(ent, count);
   else if (clip === "cast") index = poseIndex(ent, count, clip);
-  else if (clip === "walk" || clip === "run") index = gaitIndex(ent, count, clip);
+  else if (clip === "walk" || clip === "run") index = gaitIndex(ent, count, clip, sheet.fps);
   else if (once) index = poseIndex(ent, count, clip);
   else index = Math.floor((ent.anim || 0) / 0.1) % count;
+  if (sprite === "cruz" && ent.state === "windup") index = 0;
   if (index < 0) index = 0;
   const frame = sheet.frames[index];
   const cell = frame.frame;
@@ -270,3 +302,12 @@ export function drawSprite(ctx, ent, sx, sc) {
   ctx.restore();
   return true;
 }
+
+
+
+
+
+
+
+
+

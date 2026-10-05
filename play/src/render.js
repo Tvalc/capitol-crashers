@@ -1,6 +1,20 @@
-import { FIGHTERS, poseFor } from "./fighters.js?v=art";
-import { drawSprite } from "./sprites.js?v=dt";
-import { WORLD } from "./stages.js?v=art";
+import { FIGHTERS, poseFor } from "./fighters.js?v=chibi-site2";
+import { drawSprite } from "./sprites.js?v=chibi-site2";
+import { WORLD } from "./stages.js?v=chibi-site2";
+
+const art = {};
+export function loadEnvironment() {
+  const names=['rally','studio','capitol','crate','bin','hydrant','barrel','pipe','bottle','food','impact','panel','button-gold','button-teal','banner'];
+  return Promise.all(names.map(name => new Promise((resolve,reject) => {
+    const image=new Image(); image.onload=()=>{art[name]=image;resolve();};
+    image.onerror=()=>reject(new Error(`Missing Makko artwork: ${name}`));
+    image.src=`../art/chibi/${name}.webp?v=1`;
+  })));
+}
+function painted(ctx,name,x,y,w,h) {
+  const image=art[name]; if(!image)return;
+  ctx.drawImage(image,x,y,w,h);
+}
 
 function roundRect(ctx, x, y, w, h, r) {
   ctx.beginPath();
@@ -71,107 +85,31 @@ function preview(id, x, game) {
   };
 }
 
-function drawStreet(ctx, game, cam) {
-  const stage = game.stage;
-  const sky = ctx.createLinearGradient(0, 0, 0, WORLD.floorTop);
-  sky.addColorStop(0, stage.sky0);
-  sky.addColorStop(1, stage.sky1);
-  ctx.fillStyle = sky;
-  ctx.fillRect(0, 0, WORLD.viewW, WORLD.viewH);
-
-  const parallax = cam * 0.35;
-  for (let i = -1; i < 8; i += 1) {
-    const x = i * 300 - (parallax % 300);
-    ctx.fillStyle = stage.building;
-    ctx.fillRect(x, 150, 210, WORLD.floorTop - 150);
-    ctx.fillStyle = stage.trim;
-    for (let row = 0; row < 4; row += 1) {
-      for (let col = 0; col < 3; col += 1) {
-        if ((i + row + col) % 3 === 0) continue;
-        ctx.globalAlpha = 0.35;
-        ctx.fillRect(x + 18 + col * 58, 176 + row * 48, 28, 18);
-        ctx.globalAlpha = 1;
-      }
-    }
-    if (stage.id === "dock" && i % 2 === 0) {
-      ctx.strokeStyle = stage.accent;
-      ctx.lineWidth = 6;
-      ctx.beginPath();
-      ctx.moveTo(x + 180, 150);
-      ctx.lineTo(x + 250, 70);
-      ctx.lineTo(x + 250, 150);
-      ctx.stroke();
-    }
-    if (stage.id === "market") {
-      ctx.fillStyle = stage.accent;
-      ctx.fillRect(x + 20, WORLD.floorTop - 28, 170, 12);
-    }
-  }
-
-  ctx.fillStyle = stage.groundEdge;
-  ctx.fillRect(0, WORLD.floorTop - 18, WORLD.viewW, WORLD.viewH - WORLD.floorTop + 18);
-  ctx.fillStyle = stage.ground;
-  ctx.fillRect(0, WORLD.floorTop, WORLD.viewW, WORLD.floorBottom - WORLD.floorTop + 8);
-  ctx.strokeStyle = "rgba(255,255,255,0.05)";
-  ctx.lineWidth = 2;
-  for (let y = WORLD.floorTop + 28; y <= WORLD.floorBottom; y += 36) {
-    ctx.beginPath();
-    ctx.moveTo(0, y);
-    ctx.lineTo(WORLD.viewW, y);
-    ctx.stroke();
-  }
+function drawStreet(ctx,game,cam) {
+  const image=art[game.stage.id] || art.rally;
+  if(!image)return;
+  const sourceWidth=image.width*.86;
+  const progress=Math.max(0,Math.min(1,cam/Math.max(1,game.stage.length-WORLD.viewW)));
+  const sourceX=(image.width-sourceWidth)*progress;
+  const curb=Math.round(image.height*.58);
+  ctx.drawImage(image,sourceX,0,sourceWidth,curb,0,0,WORLD.viewW,WORLD.floorTop);
+  ctx.drawImage(image,sourceX,curb,sourceWidth,image.height-curb,0,WORLD.floorTop,WORLD.viewW,WORLD.viewH-WORLD.floorTop);
+}
+function drawProp(ctx,game,prop,cam) {
+  const name=game.stage.id==='studio'?'bin':game.stage.id==='capitol'?'barrel':'crate';
+  painted(ctx,name,prop.x-cam-prop.w/2,prop.y-prop.h,prop.w,prop.h);
+}
+function drawPickup(ctx,pickup,cam) {
+  const name=pickup.kind==='pipe'?'pipe':pickup.kind==='bottle'?'bottle':'food';
+  painted(ctx,name,pickup.x-cam-22,pickup.y-34,44,34);
 }
 
-function drawProp(ctx, game, prop, cam) {
-  const x = prop.x - cam;
-  const y = prop.y;
-  ctx.fillStyle = "rgba(0,0,0,0.25)";
-  ctx.fillRect(x - prop.w / 2, y - 8, prop.w, 10);
-  if (game.stage.id === "market") {
-    ctx.fillStyle = "#6b4634";
-    ctx.fillRect(x - prop.w / 2, y - prop.h, prop.w, prop.h);
-    ctx.fillStyle = game.stage.accent;
-    ctx.fillRect(x - prop.w / 2 - 8, y - prop.h - 10, prop.w + 16, 12);
-  } else if (game.stage.id === "roof") {
-    ctx.fillStyle = "#3d4654";
-    ctx.fillRect(x - prop.w / 2, y - prop.h, prop.w, prop.h);
-    ctx.fillStyle = game.stage.accent;
-    ctx.fillRect(x - 6, y - prop.h - 16, 12, 18);
-  } else {
-    ctx.fillStyle = "#6d5834";
-    ctx.fillRect(x - prop.w / 2, y - prop.h, prop.w, prop.h);
-    ctx.strokeStyle = "rgba(0,0,0,0.25)";
-    ctx.strokeRect(x - prop.w / 2, y - prop.h, prop.w, prop.h);
-  }
-}
-
-function drawPickup(ctx, pickup, cam) {
-  const x = pickup.x - cam;
-  const y = pickup.y;
-  ctx.fillStyle = "rgba(0,0,0,0.3)";
-  ctx.beginPath();
-  ctx.ellipse(x, y, 16, 6, 0, 0, Math.PI * 2);
-  ctx.fill();
-  if (pickup.kind === "pipe") {
-    ctx.strokeStyle = "#d9dde6";
-    ctx.lineWidth = 6;
-    ctx.beginPath();
-    ctx.moveTo(x - 16, y - 8);
-    ctx.lineTo(x + 16, y - 20);
-    ctx.stroke();
-  } else {
-    ctx.fillStyle = "#d7e7a0";
-    roundRect(ctx, x - 5, y - 22, 10, 18, 3);
-    ctx.fill();
-  }
-}
-
-const hatSprite = new Image();
-hatSprite.src = "assets/sprites/ted_cruz_hat.webp?v=dt";
-const craftSprite = new Image();
-craftSprite.src = "assets/sprites/satellite_craft.webp?v=dt";
-const beamSprite = new Image();
-beamSprite.src = "assets/sprites/satellite_beam.webp?v=dt";
+const hatSprite = typeof Image === "undefined" ? { complete: false } : new Image();
+hatSprite.src = "assets/sprites/ted_cruz_hat.webp?v=idleentry1";
+const craftSprite = typeof Image === "undefined" ? { complete: false } : new Image();
+craftSprite.src = "assets/sprites/satellite_craft.webp?v=idleentry1";
+const beamSprite = typeof Image === "undefined" ? { complete: false } : new Image();
+beamSprite.src = "assets/sprites/satellite_beam.webp?v=idleentry1";
 
 function drawShot(ctx, shot, cam) {
   if (shot.kind === "satellite") {
@@ -198,28 +136,10 @@ function drawShot(ctx, shot, cam) {
     return;
   }
   if (shot.kind === "laser") {
-    const x = shot.x - cam;
-    const warming = shot.age < shot.warn;
-    const pulse = 0.65 + Math.sin(shot.age * 28) * 0.35;
-    ctx.save();
-    ctx.fillStyle = warming ? `rgba(255, 60, 160, ${0.28 * pulse})` : "rgba(255, 40, 140, 0.35)";
-    ctx.beginPath();
-    ctx.ellipse(x, shot.y, warming ? 22 : 34, warming ? 8 : 12, 0, 0, Math.PI * 2);
-    ctx.fill();
-    ctx.strokeStyle = warming ? `rgba(255, 140, 210, ${0.85 * pulse})` : "#ff4d9a";
-    ctx.lineWidth = warming ? 10 : 34;
-    ctx.beginPath();
-    ctx.moveTo(x, 0);
-    ctx.lineTo(x, shot.y);
-    ctx.stroke();
-    ctx.strokeStyle = warming ? "rgba(255, 230, 250, 0.7)" : "#fff6fd";
-    ctx.lineWidth = warming ? 3 : 8;
-    ctx.beginPath();
-    ctx.moveTo(x, 0);
-    ctx.lineTo(x, shot.y);
-    ctx.stroke();
-    ctx.restore();
-    return;
+    const x=shot.x-cam, warming=shot.age<shot.warn;
+    ctx.save();ctx.globalAlpha=warming?.25:1;
+    if(beamSprite.complete&&beamSprite.naturalWidth)ctx.drawImage(beamSprite,x-18,0,36,shot.y);
+    painted(ctx,'impact',x-28,shot.y-12,56,24);ctx.restore();return;
   }
   const x = shot.x - cam;
   const y = shot.y - shot.z;
@@ -235,33 +155,15 @@ function drawShot(ctx, shot, cam) {
   ctx.save();
   ctx.translate(x, y);
   ctx.rotate(shot.spin);
-  if (shot.kind === "bolt") {
-    ctx.fillStyle = "#1a1a1a";
-    ctx.fillRect(-34, -8, 68, 16);
-    ctx.fillStyle = "#f2d27a";
-    ctx.fillRect(-28, -4, 56, 8);
-  } else if (shot.kind === "pipe") {
-    ctx.strokeStyle = "#e8eef8";
-    ctx.lineWidth = 6;
-    ctx.beginPath();
-    ctx.moveTo(-16, 0);
-    ctx.lineTo(16, 0);
-    ctx.stroke();
-  } else {
-    ctx.fillStyle = "#d7e7a0";
-    ctx.fillRect(-4, -8, 8, 16);
-  }
+  const name=shot.kind==='pipe'||shot.kind==='bolt'?'pipe':'bottle';
+  painted(ctx,name,-20,-15,40,30);
   ctx.restore();
 }
 
-function drawFx(ctx, fx, cam) {
-  const alpha = 1 - fx.t / fx.life;
-  ctx.globalAlpha = Math.max(0, alpha);
-  ctx.fillStyle = fx.color;
-  ctx.beginPath();
-  ctx.arc(fx.x - cam, fx.y - fx.z, 8 + fx.t * 36, 0, Math.PI * 2);
-  ctx.fill();
-  ctx.globalAlpha = 1;
+function drawFx(ctx,fx,cam) {
+  ctx.save();ctx.globalAlpha=Math.max(0,1-fx.t/fx.life);
+  const size=28+fx.t*100;
+  painted(ctx,'impact',fx.x-cam-size/2,fx.y-fx.z-size/2,size,size);ctx.restore();
 }
 
 function drawPerson(ctx, ent, cam, game) {
@@ -284,105 +186,7 @@ function drawPerson(ctx, ent, cam, game) {
   ctx.fill();
   ctx.restore();
 
-  if (drawSprite(ctx, ent, sx, spriteScale)) {
-    label(ctx, ent, sx);
-    return;
-  }
-
-  ctx.save();
-  ctx.translate(sx, ent.y);
-  ctx.scale(sc, sc * 0.42);
-  ctx.fillStyle = "rgba(0,0,0,0.35)";
-  ctx.beginPath();
-  ctx.ellipse(0, 0, 26, 18, 0, 0, Math.PI * 2);
-  ctx.fill();
-  ctx.restore();
-
-  ctx.save();
-  ctx.translate(sx, ent.y - ent.z);
-  ctx.scale(sc * (ent.facing || 1), sc);
-  const ink = flash ? "#ffffff" : null;
-  if (pose.down) {
-    ctx.fillStyle = ink || colors.pants;
-    ctx.fillRect(-36, -18, 54, 14);
-    ctx.fillStyle = ink || colors.body;
-    ctx.fillRect(-8, -24, 34, 16);
-    ctx.fillStyle = ink || colors.skin;
-    ctx.beginPath();
-    ctx.arc(30, -20, 10, 0, Math.PI * 2);
-    ctx.fill();
-    ctx.restore();
-    label(ctx, ent, sx);
-    return;
-  }
-
-  const step = pose.step || 0;
-  const lean = pose.lean || 0;
-  ctx.fillStyle = ink || colors.pants;
-  ctx.fillRect(-12, -40, 9, 36 + step * 2);
-  ctx.fillRect(2, -40, 9, 36 - step * 2);
-  ctx.fillStyle = ink || colors.skin;
-  ctx.fillRect(-14, -44, 8, 8);
-  ctx.fillRect(6, -44, 8, 8);
-
-  ctx.fillStyle = ink || colors.body;
-  ctx.fillRect(-16 + lean * 0.2, -78, 32, 42);
-  ctx.fillStyle = ink || colors.trim;
-  ctx.fillRect(-16 + lean * 0.2, -62, 32, 7);
-
-  if (ent.team === "player" && colors.bag) {
-    ctx.fillStyle = ink || colors.bag;
-    ctx.fillRect(-20, -70, 8, 16);
-  }
-
-  ctx.fillStyle = ink || colors.skin;
-  ctx.beginPath();
-  ctx.arc(lean * 0.15, -92, 14, 0, Math.PI * 2);
-  ctx.fill();
-  ctx.fillStyle = ink || colors.trim;
-  if (colors.hat === "cap") ctx.fillRect(-15, -106, 30, 8);
-  if (colors.hat === "helm") {
-    ctx.beginPath();
-    ctx.arc(0, -96, 16, Math.PI, 0);
-    ctx.fill();
-  }
-  if (colors.hat === "tail") ctx.fillRect(-26, -96, 18, 5);
-  if (colors.hat === "hair") {
-    ctx.fillStyle = ink || colors.hair;
-    ctx.beginPath();
-    ctx.arc(lean * 0.15, -95, 14.5, Math.PI * 1.05, Math.PI * 1.95);
-    ctx.fill();
-    ctx.fillRect(lean * 0.15 - 14, -98, 7, 10);
-  }
-
-  const punch = pose.punch || 0;
-  ctx.fillStyle = ink || colors.skin;
-  ctx.fillRect(-20, -70, 10, 8);
-  ctx.fillStyle = ink || colors.body;
-  ctx.fillRect(8, -70 - punch * 4, 12 + punch * 36, 8);
-
-  if (ent.holding?.kind === "pipe" && !pose.down) {
-    ctx.strokeStyle = "#e8eef8";
-    ctx.lineWidth = 4;
-    ctx.beginPath();
-    ctx.moveTo(16 + punch * 20, -78);
-    ctx.lineTo(36 + punch * 28, -92);
-    ctx.stroke();
-  } else if (ent.holding?.kind === "bottle") {
-    ctx.fillStyle = "#d7e7a0";
-    ctx.fillRect(18, -86, 7, 14);
-  }
-
-  if (pose.special) {
-    ctx.globalAlpha = 0.35;
-    ctx.fillStyle = colors.trim;
-    ctx.beginPath();
-    ctx.arc(0, -50, 70, 0, Math.PI * 2);
-    ctx.fill();
-    ctx.globalAlpha = 1;
-  }
-  ctx.restore();
-  label(ctx, ent, sx);
+  if (drawSprite(ctx, ent, sx, spriteScale)) label(ctx, ent, sx);
 }
 
 function label(ctx, ent, sx) {
@@ -396,6 +200,8 @@ function label(ctx, ent, sx) {
 function drawHud(ctx, game) {
   const player = game.player;
   if (!player) return;
+  painted(ctx,'panel',18,12,320,102);
+  painted(ctx,'panel',WORLD.viewW-230,12,210,82);
   ctx.textAlign = "left";
   ctx.font = "700 18px Segoe UI, sans-serif";
   ctx.fillStyle = "#f4efe4";
@@ -418,6 +224,7 @@ function drawHud(ctx, game) {
 
   const boss = (game.enemies || []).find((enemy) => enemy.isBoss && enemy.alive);
   if (boss) {
+    painted(ctx,'panel',WORLD.viewW/2-184,8,368,74);
     ctx.textAlign = "center";
     ctx.fillStyle = "#f4efe4";
     ctx.font = "700 16px Segoe UI, sans-serif";
@@ -446,15 +253,9 @@ function drawHud(ctx, game) {
   }
 }
 
-function bar(ctx, x, y, w, h, ent) {
-  const red = Math.max(0, ent.hp - ent.chip) / ent.hpMax;
-  const green = Math.max(0, ent.chip) / ent.hpMax;
-  ctx.fillStyle = "rgba(0,0,0,0.45)";
-  ctx.fillRect(x, y, w, h);
-  ctx.fillStyle = "#d24b3a";
-  ctx.fillRect(x, y, w * Math.min(1, red), h);
-  ctx.fillStyle = "#7dce6a";
-  ctx.fillRect(x + w * Math.min(1, red), y, w * Math.min(1 - red, green), h);
-  ctx.strokeStyle = "rgba(244,239,228,0.7)";
-  ctx.strokeRect(x + 0.5, y + 0.5, w - 1, h - 1);
+function bar(ctx,x,y,w,h,ent) {
+  const image=art['button-teal'];
+  painted(ctx,'button-gold',x,y,w,h);
+  const ratio=Math.max(0,Math.min(1,ent.hp/ent.hpMax));
+  if(image&&ratio>0)ctx.drawImage(image,0,0,image.width*ratio,image.height,x,y,w*ratio,h);
 }

@@ -1,0 +1,315 @@
+{
+  "frames": {
+    "chibi_cast__concepts_to_reference_sheets_sayed_v3_lunge_clean12_000.webp": {
+      "frame": {
+        "x": 2,
+        "y": 2,
+        "w": 167,
+        "h": 256
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 167,
+        "h": 256
+      },
+      "sourceSize": {
+        "w": 167,
+        "h": 256
+      },
+      "duration": 42
+    },
+    "chibi_cast__concepts_to_reference_sheets_sayed_v3_lunge_clean12_001.webp": {
+      "frame": {
+        "x": 173,
+        "y": 2,
+        "w": 167,
+        "h": 256
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 167,
+        "h": 256
+      },
+      "sourceSize": {
+        "w": 167,
+        "h": 256
+      },
+      "duration": 42
+    },
+    "chibi_cast__concepts_to_reference_sheets_sayed_v3_lunge_clean12_002.webp": {
+      "frame": {
+        "x": 344,
+        "y": 2,
+        "w": 167,
+        "h": 256
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 167,
+        "h": 256
+      },
+      "sourceSize": {
+        "w": 167,
+        "h": 256
+      },
+      "duration": 42
+    },
+    "chibi_cast__concepts_to_reference_sheets_sayed_v3_lunge_clean12_003.webp": {
+      "frame": {
+        "x": 515,
+        "y": 2,
+        "w": 167,
+        "h": 256
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 167,
+        "h": 256
+      },
+      "sourceSize": {
+        "w": 167,
+        "h": 256
+      },
+      "duration": 42
+    },
+    "chibi_cast__concepts_to_reference_sheets_sayed_v3_lunge_clean12_004.webp": {
+      "frame": {
+        "x": 2,
+        "y": 262,
+        "w": 167,
+        "h": 256
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 167,
+        "h": 256
+      },
+      "sourceSize": {
+        "w": 167,
+        "h": 256
+      },
+      "duration": 42
+    },
+    "chibi_cast__concepts_to_reference_sheets_sayed_v3_lunge_clean12_005.webp": {
+      "frame": {
+        "x": 173,
+        "y": 262,
+        "w": 167,
+        "h": 256
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 167,
+        "h": 256
+      },
+      "sourceSize": {
+        "w": 167,
+        "h": 256
+      },
+      "duration": 42
+    },
+    "chibi_cast__concepts_to_reference_sheets_sayed_v3_lunge_clean12_006.webp": {
+      "frame": {
+        "x": 344,
+        "y": 262,
+        "w": 167,
+        "h": 256
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 167,
+        "h": 256
+      },
+      "sourceSize": {
+        "w": 167,
+        "h": 256
+      },
+      "duration": 42
+    },
+    "chibi_cast__concepts_to_reference_sheets_sayed_v3_lunge_clean12_007.webp": {
+      "frame": {
+        "x": 515,
+        "y": 262,
+        "w": 167,
+        "h": 256
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 167,
+        "h": 256
+      },
+      "sourceSize": {
+        "w": 167,
+        "h": 256
+      },
+      "duration": 42
+    },
+    "chibi_cast__concepts_to_reference_sheets_sayed_v3_lunge_clean12_008.webp": {
+      "frame": {
+        "x": 2,
+        "y": 522,
+        "w": 167,
+        "h": 256
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 167,
+        "h": 256
+      },
+      "sourceSize": {
+        "w": 167,
+        "h": 256
+      },
+      "duration": 42
+    },
+    "chibi_cast__concepts_to_reference_sheets_sayed_v3_lunge_clean12_009.webp": {
+      "frame": {
+        "x": 173,
+        "y": 522,
+        "w": 167,
+        "h": 256
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 167,
+        "h": 256
+      },
+      "sourceSize": {
+        "w": 167,
+        "h": 256
+      },
+      "duration": 42
+    },
+    "chibi_cast__concepts_to_reference_sheets_sayed_v3_lunge_clean12_010.webp": {
+      "frame": {
+        "x": 344,
+        "y": 522,
+        "w": 167,
+        "h": 256
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 167,
+        "h": 256
+      },
+      "sourceSize": {
+        "w": 167,
+        "h": 256
+      },
+      "duration": 42
+    },
+    "chibi_cast__concepts_to_reference_sheets_sayed_v3_lunge_clean12_011.webp": {
+      "frame": {
+        "x": 515,
+        "y": 522,
+        "w": 167,
+        "h": 256
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 167,
+        "h": 256
+      },
+      "sourceSize": {
+        "w": 167,
+        "h": 256
+      },
+      "duration": 42
+    }
+  },
+  "meta": {
+    "app": "MAKKO Sprite Studio",
+    "version": "1.0.0",
+    "image": "abdul_el_sayed_lunge.webp",
+    "format": "RGBA8888",
+    "size": {
+      "w": 684,
+      "h": 780
+    },
+    "scale": "1",
+    "frameTags": [
+      {
+        "name": "lunge",
+        "from": 0,
+        "to": 11,
+        "direction": "forward"
+      }
+    ],
+    "anchor": {
+      "x": 84,
+      "y": 255,
+      "normalized": {
+        "x": 0.5029940119760479,
+        "y": 0.99609375
+      },
+      "strategy": "bottom-center"
+    },
+    "referenceAlignment": {
+      "referenceBounds": {
+        "width": 123,
+        "height": 211
+      },
+      "frameBounds": {
+        "width": 167,
+        "height": 256
+      },
+      "normalized": true
+    },
+    "designVersion": "chibi-sayed-v3",
+    "referenceSheet": "El-Sayed chibi black shirt and stethoscope",
+    "sourceFrames": [
+      1,
+      3,
+      5,
+      7,
+      9,
+      11,
+      13,
+      17,
+      29,
+      33,
+      37,
+      41
+    ],
+    "importSource": "chibi_cast__concepts_to_reference_sheets_sayed_v3_lunge_clean12.zip",
+    "playbackFps": 24,
+    "useFrameDurations": false,
+    "bodyScale": 1.1848341232227488
+  }
+}

@@ -1,0 +1,228 @@
+{
+  "frames": {
+    "0": {
+      "frame": {
+        "x": 2,
+        "y": 2,
+        "w": 146,
+        "h": 256
+      },
+      "rotated": false,
+      "trimmed": false,
+      "sourceSize": {
+        "w": 146,
+        "h": 256
+      },
+      "duration": 42
+    },
+    "1": {
+      "frame": {
+        "x": 152,
+        "y": 2,
+        "w": 146,
+        "h": 256
+      },
+      "rotated": false,
+      "trimmed": false,
+      "sourceSize": {
+        "w": 146,
+        "h": 256
+      },
+      "duration": 42
+    },
+    "2": {
+      "frame": {
+        "x": 302,
+        "y": 2,
+        "w": 146,
+        "h": 256
+      },
+      "rotated": false,
+      "trimmed": false,
+      "sourceSize": {
+        "w": 146,
+        "h": 256
+      },
+      "duration": 42
+    },
+    "3": {
+      "frame": {
+        "x": 452,
+        "y": 2,
+        "w": 146,
+        "h": 256
+      },
+      "rotated": false,
+      "trimmed": false,
+      "sourceSize": {
+        "w": 146,
+        "h": 256
+      },
+      "duration": 42
+    },
+    "4": {
+      "frame": {
+        "x": 2,
+        "y": 262,
+        "w": 146,
+        "h": 256
+      },
+      "rotated": false,
+      "trimmed": false,
+      "sourceSize": {
+        "w": 146,
+        "h": 256
+      },
+      "duration": 42
+    },
+    "5": {
+      "frame": {
+        "x": 152,
+        "y": 262,
+        "w": 146,
+        "h": 256
+      },
+      "rotated": false,
+      "trimmed": false,
+      "sourceSize": {
+        "w": 146,
+        "h": 256
+      },
+      "duration": 42
+    },
+    "6": {
+      "frame": {
+        "x": 302,
+        "y": 262,
+        "w": 146,
+        "h": 256
+      },
+      "rotated": false,
+      "trimmed": false,
+      "sourceSize": {
+        "w": 146,
+        "h": 256
+      },
+      "duration": 42
+    },
+    "7": {
+      "frame": {
+        "x": 452,
+        "y": 262,
+        "w": 146,
+        "h": 256
+      },
+      "rotated": false,
+      "trimmed": false,
+      "sourceSize": {
+        "w": 146,
+        "h": 256
+      },
+      "duration": 42
+    },
+    "8": {
+      "frame": {
+        "x": 2,
+        "y": 522,
+        "w": 146,
+        "h": 256
+      },
+      "rotated": false,
+      "trimmed": false,
+      "sourceSize": {
+        "w": 146,
+        "h": 256
+      },
+      "duration": 42
+    },
+    "9": {
+      "frame": {
+        "x": 152,
+        "y": 522,
+        "w": 146,
+        "h": 256
+      },
+      "rotated": false,
+      "trimmed": false,
+      "sourceSize": {
+        "w": 146,
+        "h": 256
+      },
+      "duration": 42
+    },
+    "10": {
+      "frame": {
+        "x": 302,
+        "y": 522,
+        "w": 146,
+        "h": 256
+      },
+      "rotated": false,
+      "trimmed": false,
+      "sourceSize": {
+        "w": 146,
+        "h": 256
+      },
+      "duration": 42
+    },
+    "11": {
+      "frame": {
+        "x": 452,
+        "y": 522,
+        "w": 146,
+        "h": 256
+      },
+      "rotated": false,
+      "trimmed": false,
+      "sourceSize": {
+        "w": 146,
+        "h": 256
+      },
+      "duration": 42
+    }
+  },
+  "meta": {
+    "size": {
+      "w": 600,
+      "h": 780
+    },
+    "anchor": {
+      "x": 73.0,
+      "y": 255
+    },
+    "referenceAlignment": {
+      "referenceBounds": {
+        "height": 256
+      }
+    },
+    "image": "abdul_el_sayed_cast.webp",
+    "designVersion": "chibi-sayed-v3",
+    "referenceSheet": "El-Sayed chibi black shirt and stethoscope",
+    "sourceFrames": [
+      1,
+      5,
+      9,
+      13,
+      17,
+      21,
+      25,
+      29,
+      33,
+      37,
+      41,
+      45
+    ],
+    "importSource": "chibi_cast__concepts_to_reference_sheets_sayed_v3_cast_clean12.webp",
+    "playbackFps": 18,
+    "useFrameDurations": false,
+    "bodyScale": 0.9765625,
+    "frameTags": [
+      {
+        "name": "cast",
+        "from": 0,
+        "to": 11,
+        "direction": "forward"
+      }
+    ]
+  }
+}

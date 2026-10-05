@@ -479,3 +479,14 @@ figure.panel { margin: 0; }
   .bubble { font-size: 13px; max-width: 72%; }
   .cover { box-shadow: 6px 6px 0 var(--ink); }
 }
+
+/* Preserve the entire illustration at every viewport width. */
+.panel .frame,.panel.splash .frame,.panel.third .frame,.panel.tall .frame{min-height:0;flex:0 0 auto;overflow:visible}
+.frame>img{position:static;display:block;width:100%;height:auto;object-fit:contain}
+.panel.tall{grid-row:auto}
+.tag{position:static;display:block;border:0;padding:7px 12px}
+.dialogue{background:var(--caption);padding:12px 16px;color:var(--ink)}
+.dialogue-line{margin:0;font-size:16px;line-height:1.45;font-weight:700}
+.dialogue-line+.dialogue-line{margin-top:12px}
+.dialogue-line .who{display:block;font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin-bottom:4px}
+.frame .sfx{display:none}

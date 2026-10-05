@@ -1,0 +1,315 @@
+{
+  "frames": {
+    "chibi_cast__concepts_to_reference_sheets_trump_v3_run_12_000.webp": {
+      "frame": {
+        "x": 2,
+        "y": 2,
+        "w": 173,
+        "h": 256
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 173,
+        "h": 256
+      },
+      "sourceSize": {
+        "w": 173,
+        "h": 256
+      },
+      "duration": 42
+    },
+    "chibi_cast__concepts_to_reference_sheets_trump_v3_run_12_001.webp": {
+      "frame": {
+        "x": 179,
+        "y": 2,
+        "w": 173,
+        "h": 256
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 173,
+        "h": 256
+      },
+      "sourceSize": {
+        "w": 173,
+        "h": 256
+      },
+      "duration": 42
+    },
+    "chibi_cast__concepts_to_reference_sheets_trump_v3_run_12_002.webp": {
+      "frame": {
+        "x": 356,
+        "y": 2,
+        "w": 173,
+        "h": 256
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 173,
+        "h": 256
+      },
+      "sourceSize": {
+        "w": 173,
+        "h": 256
+      },
+      "duration": 42
+    },
+    "chibi_cast__concepts_to_reference_sheets_trump_v3_run_12_003.webp": {
+      "frame": {
+        "x": 533,
+        "y": 2,
+        "w": 173,
+        "h": 256
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 173,
+        "h": 256
+      },
+      "sourceSize": {
+        "w": 173,
+        "h": 256
+      },
+      "duration": 42
+    },
+    "chibi_cast__concepts_to_reference_sheets_trump_v3_run_12_004.webp": {
+      "frame": {
+        "x": 2,
+        "y": 262,
+        "w": 173,
+        "h": 256
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 173,
+        "h": 256
+      },
+      "sourceSize": {
+        "w": 173,
+        "h": 256
+      },
+      "duration": 42
+    },
+    "chibi_cast__concepts_to_reference_sheets_trump_v3_run_12_005.webp": {
+      "frame": {
+        "x": 179,
+        "y": 262,
+        "w": 173,
+        "h": 256
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 173,
+        "h": 256
+      },
+      "sourceSize": {
+        "w": 173,
+        "h": 256
+      },
+      "duration": 42
+    },
+    "chibi_cast__concepts_to_reference_sheets_trump_v3_run_12_006.webp": {
+      "frame": {
+        "x": 356,
+        "y": 262,
+        "w": 173,
+        "h": 256
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 173,
+        "h": 256
+      },
+      "sourceSize": {
+        "w": 173,
+        "h": 256
+      },
+      "duration": 42
+    },
+    "chibi_cast__concepts_to_reference_sheets_trump_v3_run_12_007.webp": {
+      "frame": {
+        "x": 533,
+        "y": 262,
+        "w": 173,
+        "h": 256
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 173,
+        "h": 256
+      },
+      "sourceSize": {
+        "w": 173,
+        "h": 256
+      },
+      "duration": 42
+    },
+    "chibi_cast__concepts_to_reference_sheets_trump_v3_run_12_008.webp": {
+      "frame": {
+        "x": 2,
+        "y": 522,
+        "w": 173,
+        "h": 256
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 173,
+        "h": 256
+      },
+      "sourceSize": {
+        "w": 173,
+        "h": 256
+      },
+      "duration": 42
+    },
+    "chibi_cast__concepts_to_reference_sheets_trump_v3_run_12_009.webp": {
+      "frame": {
+        "x": 179,
+        "y": 522,
+        "w": 173,
+        "h": 256
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 173,
+        "h": 256
+      },
+      "sourceSize": {
+        "w": 173,
+        "h": 256
+      },
+      "duration": 42
+    },
+    "chibi_cast__concepts_to_reference_sheets_trump_v3_run_12_010.webp": {
+      "frame": {
+        "x": 356,
+        "y": 522,
+        "w": 173,
+        "h": 256
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 173,
+        "h": 256
+      },
+      "sourceSize": {
+        "w": 173,
+        "h": 256
+      },
+      "duration": 42
+    },
+    "chibi_cast__concepts_to_reference_sheets_trump_v3_run_12_011.webp": {
+      "frame": {
+        "x": 533,
+        "y": 522,
+        "w": 173,
+        "h": 256
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 173,
+        "h": 256
+      },
+      "sourceSize": {
+        "w": 173,
+        "h": 256
+      },
+      "duration": 42
+    }
+  },
+  "meta": {
+    "app": "MAKKO Sprite Studio",
+    "version": "1.0.0",
+    "image": "donald_trump_run.webp",
+    "format": "RGBA8888",
+    "size": {
+      "w": 708,
+      "h": 780
+    },
+    "scale": "1",
+    "frameTags": [
+      {
+        "name": "run",
+        "from": 0,
+        "to": 11,
+        "direction": "forward"
+      }
+    ],
+    "anchor": {
+      "x": 87,
+      "y": 232,
+      "normalized": {
+        "x": 0.5028901734104047,
+        "y": 0.90625
+      },
+      "strategy": "bottom-center"
+    },
+    "referenceAlignment": {
+      "referenceBounds": {
+        "width": 163,
+        "height": 232
+      },
+      "frameBounds": {
+        "width": 173,
+        "height": 256
+      },
+      "normalized": true
+    },
+    "designVersion": "chibi-trump-v3",
+    "referenceSheet": "blue suit long red tie chibi reference sheet",
+    "sourceFrames": [
+      29,
+      31,
+      32,
+      34,
+      36,
+      37,
+      39,
+      41,
+      42,
+      44,
+      46,
+      48
+    ],
+    "importSource": "chibi_cast__concepts_to_reference_sheets_trump_v3_run_12.zip",
+    "playbackFps": 14.5,
+    "useFrameDurations": false,
+    "bodyScale": 1.0775862068965518
+  }
+}

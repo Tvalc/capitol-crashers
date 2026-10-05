@@ -1,0 +1,156 @@
+{
+  "frames": {
+    "0": {
+      "frame": {
+        "x": 2,
+        "y": 2,
+        "w": 168,
+        "h": 256
+      },
+      "duration": 42
+    },
+    "1": {
+      "frame": {
+        "x": 174,
+        "y": 2,
+        "w": 168,
+        "h": 256
+      },
+      "duration": 42
+    },
+    "2": {
+      "frame": {
+        "x": 346,
+        "y": 2,
+        "w": 168,
+        "h": 256
+      },
+      "duration": 42
+    },
+    "3": {
+      "frame": {
+        "x": 518,
+        "y": 2,
+        "w": 168,
+        "h": 256
+      },
+      "duration": 42
+    },
+    "4": {
+      "frame": {
+        "x": 2,
+        "y": 262,
+        "w": 168,
+        "h": 256
+      },
+      "duration": 42
+    },
+    "5": {
+      "frame": {
+        "x": 174,
+        "y": 262,
+        "w": 168,
+        "h": 256
+      },
+      "duration": 42
+    },
+    "6": {
+      "frame": {
+        "x": 346,
+        "y": 262,
+        "w": 168,
+        "h": 256
+      },
+      "duration": 42
+    },
+    "7": {
+      "frame": {
+        "x": 518,
+        "y": 262,
+        "w": 168,
+        "h": 256
+      },
+      "duration": 42
+    },
+    "8": {
+      "frame": {
+        "x": 2,
+        "y": 522,
+        "w": 168,
+        "h": 256
+      },
+      "duration": 42
+    },
+    "9": {
+      "frame": {
+        "x": 174,
+        "y": 522,
+        "w": 168,
+        "h": 256
+      },
+      "duration": 42
+    },
+    "10": {
+      "frame": {
+        "x": 346,
+        "y": 522,
+        "w": 168,
+        "h": 256
+      },
+      "duration": 42
+    },
+    "11": {
+      "frame": {
+        "x": 518,
+        "y": 522,
+        "w": 168,
+        "h": 256
+      },
+      "duration": 42
+    }
+  },
+  "meta": {
+    "size": {
+      "w": 688,
+      "h": 780
+    },
+    "anchor": {
+      "x": 84.0,
+      "y": 255
+    },
+    "referenceAlignment": {
+      "referenceBounds": {
+        "height": 256
+      }
+    },
+    "image": "marjorie_greene_cast.webp",
+    "designVersion": "chibi-greene-v3",
+    "referenceSheet": "white blazer remote chibi reference sheet",
+    "sourceFrames": [
+      1,
+      5,
+      9,
+      13,
+      17,
+      21,
+      33,
+      37,
+      41,
+      45,
+      49,
+      53
+    ],
+    "importSource": "chibi_cast__concepts_to_reference_sheets_greene_v3_cast_12.webp",
+    "playbackFps": 24,
+    "useFrameDurations": false,
+    "bodyScale": 0.9765625,
+    "frameTags": [
+      {
+        "name": "cast",
+        "from": 0,
+        "to": 11,
+        "direction": "forward"
+      }
+    ]
+  }
+}

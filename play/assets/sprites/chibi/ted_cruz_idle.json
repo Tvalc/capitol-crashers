@@ -1,0 +1,315 @@
+{
+  "frames": {
+    "chibi_cast__concepts_to_reference_sheets_cruz_v3_idle_12_000.webp": {
+      "frame": {
+        "x": 2,
+        "y": 2,
+        "w": 191,
+        "h": 256
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 191,
+        "h": 256
+      },
+      "sourceSize": {
+        "w": 191,
+        "h": 256
+      },
+      "duration": 167
+    },
+    "chibi_cast__concepts_to_reference_sheets_cruz_v3_idle_12_001.webp": {
+      "frame": {
+        "x": 197,
+        "y": 2,
+        "w": 191,
+        "h": 256
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 191,
+        "h": 256
+      },
+      "sourceSize": {
+        "w": 191,
+        "h": 256
+      },
+      "duration": 167
+    },
+    "chibi_cast__concepts_to_reference_sheets_cruz_v3_idle_12_002.webp": {
+      "frame": {
+        "x": 392,
+        "y": 2,
+        "w": 191,
+        "h": 256
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 191,
+        "h": 256
+      },
+      "sourceSize": {
+        "w": 191,
+        "h": 256
+      },
+      "duration": 167
+    },
+    "chibi_cast__concepts_to_reference_sheets_cruz_v3_idle_12_003.webp": {
+      "frame": {
+        "x": 587,
+        "y": 2,
+        "w": 191,
+        "h": 256
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 191,
+        "h": 256
+      },
+      "sourceSize": {
+        "w": 191,
+        "h": 256
+      },
+      "duration": 167
+    },
+    "chibi_cast__concepts_to_reference_sheets_cruz_v3_idle_12_004.webp": {
+      "frame": {
+        "x": 2,
+        "y": 262,
+        "w": 191,
+        "h": 256
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 191,
+        "h": 256
+      },
+      "sourceSize": {
+        "w": 191,
+        "h": 256
+      },
+      "duration": 167
+    },
+    "chibi_cast__concepts_to_reference_sheets_cruz_v3_idle_12_005.webp": {
+      "frame": {
+        "x": 197,
+        "y": 262,
+        "w": 191,
+        "h": 256
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 191,
+        "h": 256
+      },
+      "sourceSize": {
+        "w": 191,
+        "h": 256
+      },
+      "duration": 167
+    },
+    "chibi_cast__concepts_to_reference_sheets_cruz_v3_idle_12_006.webp": {
+      "frame": {
+        "x": 392,
+        "y": 262,
+        "w": 191,
+        "h": 256
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 191,
+        "h": 256
+      },
+      "sourceSize": {
+        "w": 191,
+        "h": 256
+      },
+      "duration": 167
+    },
+    "chibi_cast__concepts_to_reference_sheets_cruz_v3_idle_12_007.webp": {
+      "frame": {
+        "x": 587,
+        "y": 262,
+        "w": 191,
+        "h": 256
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 191,
+        "h": 256
+      },
+      "sourceSize": {
+        "w": 191,
+        "h": 256
+      },
+      "duration": 167
+    },
+    "chibi_cast__concepts_to_reference_sheets_cruz_v3_idle_12_008.webp": {
+      "frame": {
+        "x": 2,
+        "y": 522,
+        "w": 191,
+        "h": 256
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 191,
+        "h": 256
+      },
+      "sourceSize": {
+        "w": 191,
+        "h": 256
+      },
+      "duration": 167
+    },
+    "chibi_cast__concepts_to_reference_sheets_cruz_v3_idle_12_009.webp": {
+      "frame": {
+        "x": 197,
+        "y": 522,
+        "w": 191,
+        "h": 256
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 191,
+        "h": 256
+      },
+      "sourceSize": {
+        "w": 191,
+        "h": 256
+      },
+      "duration": 167
+    },
+    "chibi_cast__concepts_to_reference_sheets_cruz_v3_idle_12_010.webp": {
+      "frame": {
+        "x": 392,
+        "y": 522,
+        "w": 191,
+        "h": 256
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 191,
+        "h": 256
+      },
+      "sourceSize": {
+        "w": 191,
+        "h": 256
+      },
+      "duration": 167
+    },
+    "chibi_cast__concepts_to_reference_sheets_cruz_v3_idle_12_011.webp": {
+      "frame": {
+        "x": 587,
+        "y": 522,
+        "w": 191,
+        "h": 256
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 191,
+        "h": 256
+      },
+      "sourceSize": {
+        "w": 191,
+        "h": 256
+      },
+      "duration": 167
+    }
+  },
+  "meta": {
+    "app": "MAKKO Sprite Studio",
+    "version": "1.0.0",
+    "image": "ted_cruz_idle.webp",
+    "format": "RGBA8888",
+    "size": {
+      "w": 780,
+      "h": 780
+    },
+    "scale": "1",
+    "frameTags": [
+      {
+        "name": "idle",
+        "from": 0,
+        "to": 11,
+        "direction": "forward"
+      }
+    ],
+    "anchor": {
+      "x": 96,
+      "y": 255,
+      "normalized": {
+        "x": 0.5026178010471204,
+        "y": 0.99609375
+      },
+      "strategy": "bottom-center"
+    },
+    "referenceAlignment": {
+      "referenceBounds": {
+        "width": 157,
+        "height": 255
+      },
+      "frameBounds": {
+        "width": 191,
+        "height": 256
+      },
+      "normalized": true
+    },
+    "designVersion": "chibi-cruz-v3",
+    "referenceSheet": "sombrero blue suit chibi reference sheet",
+    "sourceFrames": [
+      1,
+      9,
+      13,
+      17,
+      25,
+      33,
+      45,
+      57,
+      61,
+      65,
+      69,
+      85
+    ],
+    "importSource": "chibi_cast__concepts_to_reference_sheets_cruz_v3_idle_12.zip",
+    "playbackFps": 6,
+    "useFrameDurations": true,
+    "bodyScale": 0.9803921568627451
+  }
+}

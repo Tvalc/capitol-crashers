@@ -1,6 +1,7 @@
 let ctx;
 
 export function unlock() {
+  if (!globalThis.VoteMusic?.enabled) return;
   const AC = globalThis.AudioContext || globalThis.webkitAudioContext;
   if (!AC) return;
   if (!ctx) ctx = new AC();
@@ -8,7 +9,7 @@ export function unlock() {
 }
 
 function tone(freq, dur, type, gain, delay = 0) {
-  if (!ctx) return;
+  if (!ctx || !globalThis.VoteMusic?.enabled || globalThis.VoteMusic?.paused) return;
   const t = ctx.currentTime + delay;
   const osc = ctx.createOscillator();
   const amp = ctx.createGain();
@@ -23,7 +24,7 @@ function tone(freq, dur, type, gain, delay = 0) {
 }
 
 export function play(name, combo = 1) {
-  if (!ctx) return;
+  if (!ctx || !globalThis.VoteMusic?.enabled || globalThis.VoteMusic?.paused) return;
   if (name === "hit") {
     tone(160 + combo * 18, 0.06, "square", 0.045);
     tone(80, 0.08, "sawtooth", 0.04);

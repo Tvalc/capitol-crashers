@@ -1,6 +1,6 @@
-import { melee, updateBody } from "./combat.js?v=fight2";
-import { WORLD } from "./stages.js?v=art";
-import { spawnSatellite, spawnShot, spawnSombrero } from "./weapons.js?v=dt";
+import { melee, updateBody } from "./combat.js?v=chibi-site2";
+import { WORLD } from "./stages.js?v=chibi-site2";
+import { spawnSatellite, spawnShot, spawnSombrero } from "./weapons.js?v=chibi-site2";
 
 const KINDS = {
   grunt: {
@@ -522,7 +522,6 @@ function updateGreene(enemy, game, dt) {
   const dy = Math.abs(player.y - enemy.y);
   const dist = Math.abs(dx);
   face(enemy, player);
-  enemy.laserCd = (enemy.laserCd ?? 0.45) - dt;
   if (enemy.laserCd <= 0 && dist > 48 && dist < 760 && dy < 140) {
     enemy.laserCd = 2.6;
     enemy.state = "special";
@@ -705,12 +704,15 @@ function updateVance(enemy, game, dt) {
     enemy.swingHits = new Set();
     return;
   }
-  const cycle = 2.16;
-  const gait = ((enemy.anim || 0) % cycle) / cycle;
-  const surge = gait > 0.64;
-  enemy.state = Math.abs(dx) > 10 || ady > 14 ? "run" : "idle";
-  enemy.vx = Math.abs(dx) > 10 ? Math.sign(dx) * enemy.speed * (surge ? 2.15 : 0.18) : 0;
-  enemy.vy = ady > 14 ? Math.sign(dy) * enemy.speed * (surge ? 0.7 : 0.12) : 0;
+  const moving = dist > 10 || ady > 14;
+  const running = dist > 120;
+  enemy.state = moving ? (running ? "run" : "walk") : "idle";
+  const speed = enemy.speed * (running ? 2 : 1);
+  let mx = dist > 10 ? Math.sign(dx) : 0;
+  let my = ady > 14 ? Math.sign(dy) : 0;
+  const length = Math.hypot(mx, my) || 1;
+  enemy.vx = mx / length * speed;
+  enemy.vy = my / length * speed * 0.72;
   enemy.x += enemy.vx * dt;
   enemy.y = clampY(enemy.y + enemy.vy * dt);
 }
@@ -798,6 +800,15 @@ function updateCruz(enemy, game, dt) {
   if (enemy.attackCd <= 0 && Math.abs(dy) < 34 && dist < 400 && dist > 80) {
     enemy.state = "windup";
     enemy.stateT = 0;
+    return;
+  }
+  // Keep room for the sombrero during recovery instead of walking through
+  // the player and becoming trapped inside the throw's minimum range.
+  if (dist < 120 && Math.abs(dy) < 40) {
+    enemy.state = "walk";
+    enemy.vx = -enemy.facing * enemy.speed * 0.65;
+    enemy.vy = 0;
+    enemy.x += enemy.vx * dt;
     return;
   }
   approach(enemy, player, dt, enemy.speed * 1.45);
@@ -999,6 +1010,7 @@ function updateSignal(enemy, game, dt) {
 
 export function updateEnemy(enemy, game, dt) {
   enemy.anim += dt;
+  if (enemy.kind === "greene") enemy.laserCd = Math.max(0, (enemy.laserCd ?? 0.45) - dt);
   if (enemy.attackCd > 0) enemy.attackCd -= dt;
   if (updateBody(enemy, dt)) {
     if (enemy.state !== "attack" && enemy.state !== "charge") release(game, enemy);

@@ -1,0 +1,157 @@
+{
+  "frames": {
+    "0": {
+      "frame": {
+        "x": 2,
+        "y": 2,
+        "w": 256,
+        "h": 156
+      },
+      "duration": 42
+    },
+    "1": {
+      "frame": {
+        "x": 262,
+        "y": 2,
+        "w": 256,
+        "h": 156
+      },
+      "duration": 42
+    },
+    "2": {
+      "frame": {
+        "x": 522,
+        "y": 2,
+        "w": 256,
+        "h": 156
+      },
+      "duration": 42
+    },
+    "3": {
+      "frame": {
+        "x": 782,
+        "y": 2,
+        "w": 256,
+        "h": 156
+      },
+      "duration": 42
+    },
+    "4": {
+      "frame": {
+        "x": 2,
+        "y": 162,
+        "w": 256,
+        "h": 156
+      },
+      "duration": 42
+    },
+    "5": {
+      "frame": {
+        "x": 262,
+        "y": 162,
+        "w": 256,
+        "h": 156
+      },
+      "duration": 42
+    },
+    "6": {
+      "frame": {
+        "x": 522,
+        "y": 162,
+        "w": 256,
+        "h": 156
+      },
+      "duration": 42
+    },
+    "7": {
+      "frame": {
+        "x": 782,
+        "y": 162,
+        "w": 256,
+        "h": 156
+      },
+      "duration": 42
+    },
+    "8": {
+      "frame": {
+        "x": 2,
+        "y": 322,
+        "w": 256,
+        "h": 156
+      },
+      "duration": 42
+    },
+    "9": {
+      "frame": {
+        "x": 262,
+        "y": 322,
+        "w": 256,
+        "h": 156
+      },
+      "duration": 42
+    },
+    "10": {
+      "frame": {
+        "x": 522,
+        "y": 322,
+        "w": 256,
+        "h": 156
+      },
+      "duration": 42
+    },
+    "11": {
+      "frame": {
+        "x": 782,
+        "y": 322,
+        "w": 256,
+        "h": 156
+      },
+      "duration": 42
+    }
+  },
+  "meta": {
+    "size": {
+      "w": 1040,
+      "h": 480
+    },
+    "anchor": {
+      "x": 107,
+      "y": 155
+    },
+    "referenceAlignment": {
+      "referenceBounds": {
+        "height": 156
+      }
+    },
+    "image": "ted_cruz_attack.webp",
+    "designVersion": "chibi-cruz-v3",
+    "referenceSheet": "sombrero blue suit chibi reference sheet",
+    "sourceFrames": [
+      1,
+      9,
+      13,
+      17,
+      21,
+      29,
+      37,
+      41,
+      49,
+      53,
+      65,
+      69
+    ],
+    "importSource": "chibi_cast__concepts_to_reference_sheets_cruz_v3_attack_12.webp",
+    "playbackFps": 24,
+    "useFrameDurations": false,
+    "bodyScale": 1.8796992481203008,
+    "projectileCleanup": "Detached hat removed from release and follow-through; game renders one projectile.",
+    "frameTags": [
+      {
+        "name": "attack",
+        "from": 0,
+        "to": 11,
+        "direction": "forward"
+      }
+    ]
+  }
+}

@@ -1,12 +1,12 @@
-import { play, unlock } from "./audio.js";
-import { separate, tickToss, wallBounce } from "./combat.js?v=fight2";
-import { makeEnemy, updateEnemy } from "./enemies.js?v=dt";
-import { blankInput, createInput } from "./input.js?v=grab2";
-import { fighterById, makePlayer, updatePlayer } from "./player.js?v=dt";
-import { draw } from "./render.js?v=dt";
-import { cloneStage, STAGES, WORLD } from "./stages.js?v=art";
-import { updatePickups, updateProjectiles } from "./weapons.js?v=dt";
-import { loadSprites } from "./sprites.js?v=dt";
+import { play, unlock } from "./audio.js?v=chibi-site2";
+import { separate, tickToss, wallBounce } from "./combat.js?v=chibi-site2";
+import { makeEnemy, updateEnemy } from "./enemies.js?v=chibi-site2";
+import { blankInput, createInput } from "./input.js?v=chibi-site2";
+import { fighterById, makePlayer, updatePlayer, bufferPlayerInput } from "./player.js?v=chibi-site2";
+import { draw, loadEnvironment } from "./render.js?v=chibi-site2";
+import { cloneStage, STAGES, WORLD } from "./stages.js?v=chibi-site2";
+import { updatePickups, updateProjectiles } from "./weapons.js?v=chibi-site2";
+import { loadSprites } from "./sprites.js?v=chibi-site2";
 import { PAGES } from "../../story/panels.js";
 
 const PANELS = Object.fromEntries(PAGES.flatMap((page) => page.panels).map((panel) => [panel.id, panel]));
@@ -44,6 +44,7 @@ export function createGame() {
 }
 
 export function beginRun(game, fighterId) {
+  game.practice = false;
   game.mode = "play";
   game.paused = false;
   game.fighterId = fighterId;
@@ -57,6 +58,23 @@ export function beginRun(game, fighterId) {
   game.player = makePlayer(fighterById(fighterId), 240, 560);
   startStage(game);
   showStory(game, game.player.fighter.story?.intro, "play");
+}
+
+export function beginPractice(game, fighterId, active = false, opponent = game.practiceEnemy || "cruz") {
+  beginRun(game, fighterId);
+  game.mode = "play";
+  game.storyId = null;
+  game.practice = true;
+  game.practiceActive = active;
+  game.practiceEnemy = ["cruz", "vance", "greene", "trump"].includes(opponent) ? opponent : "cruz";
+  game.introT = 0;
+  game.stage.props = [];
+  game.stage.pickups = [];
+  game.player.x = 420;
+  game.enemies = [makeEnemy(game.practiceEnemy, 510, 560)];
+  game.enemies[0].facing = -1;
+  game.banner = "Practice · G grab · J strike · K throw";
+  game.bannerT = 3;
 }
 
 // Pause on a comic panel from the story, then switch to `then` on continue.
@@ -109,7 +127,8 @@ export function updateGame(game, input, dt) {
   }
 
   if (game.hitstop > 0) {
-    game.hitstop -= dt;
+    bufferPlayerInput(game.player, input);
+    game.hitstop = Math.max(0, game.hitstop - dt);
     return;
   }
 
@@ -125,10 +144,19 @@ export function updateGame(game, input, dt) {
     return;
   }
 
+  const gaitBefore = [game.player, ...game.enemies].map(ent => ({ ent, x: ent.x, y: ent.y }));
   updatePlayer(game.player, game, input, dt);
   if (game.mode !== "play") return;
 
-  for (const enemy of game.enemies) updateEnemy(enemy, game, dt);
+  for (const enemy of game.enemies) {
+    if (game.practice && !game.practiceActive && ["idle", "walk", "run"].includes(enemy.state)) {
+      enemy.state = "idle";
+      enemy.vx = enemy.vy = 0;
+      enemy.anim += dt;
+      enemy.invuln = Math.max(0, enemy.invuln - dt);
+      enemy.flash = Math.max(0, enemy.flash - dt);
+    } else updateEnemy(enemy, game, dt);
+  }
   tickToss(game, dt);
   wallBounce(game);
   if (game.pending.length) {
@@ -140,10 +168,14 @@ export function updateGame(game, input, dt) {
   updateProjectiles(game, dt);
   updateWaves(game);
   updateCamera(game);
+  for (const before of gaitBefore) advanceGait(before.ent, before.x, before.y);
   for (const fx of game.fx) fx.t += dt;
   game.fx = game.fx.filter((fx) => fx.t < fx.life);
   game.enemies = game.enemies.filter((enemy) => !(enemy.state === "dead" && enemy.deadT <= 0));
 }
+
+import { advanceGait } from "./animation-clock.js?v=chibi-site2";
+export { advanceGait };
 
 function advance(game) {
   const story = game.player.fighter.story || {};
@@ -157,6 +189,7 @@ function advance(game) {
 }
 
 function updateWaves(game) {
+  if (game.practice) return;
   const waves = game.stage.waves;
   if (game.waveIndex >= waves.length) {
     if (game.enemies.every((enemy) => !enemy.alive) && game.clearT <= 0 && game.mode === "play") {
@@ -219,6 +252,7 @@ function boot() {
   const ctx = canvas.getContext("2d");
   const input = createInput();
   const game = createGame();
+  const practiceRequested = new URLSearchParams(window.location.search).has("practice");
   let assetsReady = false;
   const startButton = document.getElementById("start");
   const assetStatus = document.createElement("p");
@@ -228,10 +262,11 @@ function boot() {
     startButton.disabled = true;
     assetStatus.textContent = "Loading fighters and animations…";
     try {
-      await loadSprites();
+      await Promise.all([loadSprites(), loadEnvironment()]);
       assetsReady = true;
       assetStatus.textContent = "Ready to play.";
       startButton.textContent = "Step in";
+      if (practiceRequested && game.mode === "title") beginPractice(game, "mamdani");
     } catch (error) {
       assetStatus.textContent = "Some animations could not load. Check your connection and retry.";
       startButton.textContent = "Retry loading";
@@ -259,7 +294,26 @@ function boot() {
   }
   pauseToggle.addEventListener("click", () => setPaused(!game.paused));
   document.getElementById("resume").addEventListener("click", () => setPaused(false));
-  document.getElementById("restart-run").addEventListener("click", () => { input.clear(); beginRun(game, game.fighterId); canvas.focus({ preventScroll: true }); });
+  function restartCurrent() {
+    input.clear();
+    if (game.practice) beginPractice(game, game.fighterId, game.practiceActive);
+    else beginRun(game, game.fighterId);
+    canvas.focus({ preventScroll: true });
+  }
+  document.getElementById("restart-run").addEventListener("click", restartCurrent);
+  document.getElementById("practice-reset").addEventListener("click", restartCurrent);
+  document.getElementById("practice-opponent").addEventListener("click", () => {
+    input.clear(); beginPractice(game, game.fighterId, !game.practiceActive); canvas.focus({ preventScroll: true });
+  });
+  document.getElementById("practice-enemy").addEventListener("change", (event) => {
+    input.clear(); beginPractice(game, game.fighterId, game.practiceActive, event.target.value); canvas.focus({ preventScroll: true });
+  });
+  for (const id of ["mamdani", "sayed"]) document.getElementById(`practice-${id}`).addEventListener("click", () => {
+    input.clear(); beginPractice(game, id, game.practiceActive); canvas.focus({ preventScroll: true });
+  });
+  document.getElementById("practice-start").addEventListener("click", () => {
+    unlock(); input.clear(); beginPractice(game, game.fighterId); canvas.focus({ preventScroll: true });
+  });
   document.getElementById("choose-again").addEventListener("click", () => { input.clear(); game.paused = false; game.mode = "select"; canvas.focus({ preventScroll: true }); });
   window.addEventListener("blur", () => setPaused(true));
   document.addEventListener("visibilitychange", () => { if (document.hidden) setPaused(true); });
@@ -274,7 +328,7 @@ function boot() {
     frame.replaceChildren();
     if (panel.art) {
       const img = document.createElement("img");
-      img.src = `../art/story/${panel.art}`;
+      img.src = `../art/story/chibi/${panel.art}`;
       img.alt = panel.alt || panel.scene;
       frame.append(img);
     } else {
@@ -308,6 +362,10 @@ function boot() {
     pausePanel.hidden = !game.paused;
     pauseToggle.hidden = game.mode !== "play";
     pauseToggle.textContent = game.paused ? "Resume · Esc" : "Pause · Esc";
+    document.getElementById("practice-controls").hidden = !game.practice;
+    document.getElementById("practice-opponent").textContent = game.practiceActive ? "Opponent: active" : "Opponent: stationary";
+    document.getElementById("practice-enemy").value = game.practiceEnemy || "cruz";
+    for (const id of ["mamdani", "sayed"]) document.getElementById(`practice-${id}`).setAttribute("aria-pressed", String(game.fighterId === id));
     titlePanel.hidden = game.mode !== "title";
     selectPanel.hidden = game.mode !== "select";
     clearPanel.hidden = !(game.mode === "play" && game.clearT > 0);
@@ -423,3 +481,9 @@ function boot() {
 if (typeof document !== "undefined") boot();
 
 export { blankInput };
+
+
+
+
+
+

@@ -1,0 +1,315 @@
+{
+  "frames": {
+    "chibi_cast__concepts_to_reference_sheets_sayed_v3_death_clean12_000.webp": {
+      "frame": {
+        "x": 2,
+        "y": 2,
+        "w": 205,
+        "h": 256
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 205,
+        "h": 256
+      },
+      "sourceSize": {
+        "w": 205,
+        "h": 256
+      },
+      "duration": 42
+    },
+    "chibi_cast__concepts_to_reference_sheets_sayed_v3_death_clean12_001.webp": {
+      "frame": {
+        "x": 211,
+        "y": 2,
+        "w": 205,
+        "h": 256
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 205,
+        "h": 256
+      },
+      "sourceSize": {
+        "w": 205,
+        "h": 256
+      },
+      "duration": 42
+    },
+    "chibi_cast__concepts_to_reference_sheets_sayed_v3_death_clean12_002.webp": {
+      "frame": {
+        "x": 420,
+        "y": 2,
+        "w": 205,
+        "h": 256
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 205,
+        "h": 256
+      },
+      "sourceSize": {
+        "w": 205,
+        "h": 256
+      },
+      "duration": 42
+    },
+    "chibi_cast__concepts_to_reference_sheets_sayed_v3_death_clean12_003.webp": {
+      "frame": {
+        "x": 629,
+        "y": 2,
+        "w": 205,
+        "h": 256
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 205,
+        "h": 256
+      },
+      "sourceSize": {
+        "w": 205,
+        "h": 256
+      },
+      "duration": 42
+    },
+    "chibi_cast__concepts_to_reference_sheets_sayed_v3_death_clean12_004.webp": {
+      "frame": {
+        "x": 2,
+        "y": 262,
+        "w": 205,
+        "h": 256
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 205,
+        "h": 256
+      },
+      "sourceSize": {
+        "w": 205,
+        "h": 256
+      },
+      "duration": 42
+    },
+    "chibi_cast__concepts_to_reference_sheets_sayed_v3_death_clean12_005.webp": {
+      "frame": {
+        "x": 211,
+        "y": 262,
+        "w": 205,
+        "h": 256
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 205,
+        "h": 256
+      },
+      "sourceSize": {
+        "w": 205,
+        "h": 256
+      },
+      "duration": 42
+    },
+    "chibi_cast__concepts_to_reference_sheets_sayed_v3_death_clean12_006.webp": {
+      "frame": {
+        "x": 420,
+        "y": 262,
+        "w": 205,
+        "h": 256
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 205,
+        "h": 256
+      },
+      "sourceSize": {
+        "w": 205,
+        "h": 256
+      },
+      "duration": 42
+    },
+    "chibi_cast__concepts_to_reference_sheets_sayed_v3_death_clean12_007.webp": {
+      "frame": {
+        "x": 629,
+        "y": 262,
+        "w": 205,
+        "h": 256
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 205,
+        "h": 256
+      },
+      "sourceSize": {
+        "w": 205,
+        "h": 256
+      },
+      "duration": 42
+    },
+    "chibi_cast__concepts_to_reference_sheets_sayed_v3_death_clean12_008.webp": {
+      "frame": {
+        "x": 2,
+        "y": 522,
+        "w": 205,
+        "h": 256
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 205,
+        "h": 256
+      },
+      "sourceSize": {
+        "w": 205,
+        "h": 256
+      },
+      "duration": 42
+    },
+    "chibi_cast__concepts_to_reference_sheets_sayed_v3_death_clean12_009.webp": {
+      "frame": {
+        "x": 211,
+        "y": 522,
+        "w": 205,
+        "h": 256
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 205,
+        "h": 256
+      },
+      "sourceSize": {
+        "w": 205,
+        "h": 256
+      },
+      "duration": 42
+    },
+    "chibi_cast__concepts_to_reference_sheets_sayed_v3_death_clean12_010.webp": {
+      "frame": {
+        "x": 420,
+        "y": 522,
+        "w": 205,
+        "h": 256
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 205,
+        "h": 256
+      },
+      "sourceSize": {
+        "w": 205,
+        "h": 256
+      },
+      "duration": 42
+    },
+    "chibi_cast__concepts_to_reference_sheets_sayed_v3_death_clean12_011.webp": {
+      "frame": {
+        "x": 629,
+        "y": 522,
+        "w": 205,
+        "h": 256
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 205,
+        "h": 256
+      },
+      "sourceSize": {
+        "w": 205,
+        "h": 256
+      },
+      "duration": 42
+    }
+  },
+  "meta": {
+    "app": "MAKKO Sprite Studio",
+    "version": "1.0.0",
+    "image": "abdul_el_sayed_death.webp",
+    "format": "RGBA8888",
+    "size": {
+      "w": 836,
+      "h": 780
+    },
+    "scale": "1",
+    "frameTags": [
+      {
+        "name": "death",
+        "from": 0,
+        "to": 11,
+        "direction": "forward"
+      }
+    ],
+    "anchor": {
+      "x": 103,
+      "y": 251,
+      "normalized": {
+        "x": 0.5024390243902439,
+        "y": 0.98046875
+      },
+      "strategy": "bottom-center"
+    },
+    "referenceAlignment": {
+      "referenceBounds": {
+        "width": 173,
+        "height": 246
+      },
+      "frameBounds": {
+        "width": 205,
+        "height": 256
+      },
+      "normalized": true
+    },
+    "designVersion": "chibi-sayed-v3",
+    "referenceSheet": "El-Sayed chibi black shirt and stethoscope",
+    "sourceFrames": [
+      1,
+      5,
+      21,
+      25,
+      29,
+      37,
+      45,
+      57,
+      65,
+      73,
+      85,
+      96
+    ],
+    "importSource": "chibi_cast__concepts_to_reference_sheets_sayed_v3_death_clean12.zip",
+    "playbackFps": 24,
+    "useFrameDurations": false,
+    "bodyScale": 1.016260162601626
+  }
+}

@@ -1,0 +1,41 @@
+
+/* All decorative surfaces below use the Makko chibi launch atlas. */
+:root { --chibi-gold:url('art/chibi/button-gold.webp'); --chibi-teal:url('art/chibi/button-teal.webp'); }
+button, .patreon, .go, .play, .start, .back, .cta {
+ background:var(--chibi-gold) center / 100% 100% no-repeat !important;
+ border:0 !important; border-radius:0 !important; box-shadow:none !important;
+ color:#251a0b !important; text-shadow:none !important;
+ min-height:48px; padding:13px 25px; font-weight:800; text-decoration:none;
+ transition:filter .15s,transform .15s;
+}
+button:hover, .go:hover, .patreon:hover, .play:hover {filter:brightness(1.12);transform:translateY(-2px)}
+button:active {transform:translateY(1px)}
+button:focus-visible,a:focus-visible{outline:3px solid #fff;outline-offset:3px}
+button:disabled{filter:grayscale(.7);opacity:.55}
+.topbar,.bar{flex-wrap:wrap}
+@media(prefers-reduced-motion:reduce){button{transition:none}}
+
+.arcade{background:url('art/chibi/rally.webp') center/cover fixed!important}
+.wash,.deck,.coin,.scan,.scanlines{display:none!important}
+.cabinet{background:none!important;border:0!important;box-shadow:none!important}
+.cabinet .screen img{object-fit:contain!important}
+.card{background:#12223aed url('art/chibi/panel.webp') center/100% 100% no-repeat!important;border:0!important;border-radius:0!important;backdrop-filter:none!important}
+.pick{background:transparent!important;color:white!important;min-height:100px}
+.pick[aria-pressed=true]{outline:3px solid #ffd15b}
+body:has(.stage){background:#101c30 url('art/chibi/rally.webp') center/cover fixed!important}
+.speaker,.bulbs,.cpanel,.glare,.bezel::before,.bezel::after{display:none!important}
+.stack,.bezel,.marquee,.crt{background:none!important;border:0!important;box-shadow:none!important;border-radius:0!important}
+.marquee{padding:24px!important;background:url('art/chibi/panel.webp') center/100% 100% no-repeat!important}
+.cabinet{display:block!important;max-width:1100px!important;margin:auto!important;padding:0!important}
+.crt{display:block!important;aspect-ratio:16/9!important}
+.crt img{width:100%!important;height:100%!important;object-fit:contain!important;filter:none!important}
+.card{background:none!important;border:28px solid transparent!important;border-image:url('art/chibi/panel.webp') 65 fill / 28px / 0 stretch!important;padding:20px!important}
+.fighter{background:var(--chibi-teal) center/100% 100% no-repeat!important;color:#102c2b!important}
+.fighter.on{background-image:var(--chibi-gold)!important;color:#261a04!important}
+.fighter *{color:inherit!important}
+.fighter{padding:18px 24px!important}
+.card,.card p,.card a{color:#f7f1df!important}
+.card button,.card .fighter,.card .fighter *{color:#251a0b!important}
+body:has(#book){background:#f3ead8 url('art/chibi/rally.webp') center top/cover fixed}
+body:has(#book) .page{background:#f3ead8}
+body:has(#book) .frame img{object-fit:contain;background:#172235}
