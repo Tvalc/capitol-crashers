@@ -2,8 +2,7 @@
 body:has(#book) { font-family: var(--body); }
 .topbar { font-family: var(--body); letter-spacing: 0; text-transform: none; }
 .topbar .nav a { text-transform: uppercase; }
-.topbar .btn { color: #251a0b; text-transform: uppercase; }
-.topbar .btn-patreon { color: #1a0d09; }
+.topbar .btn { text-transform: uppercase; }
 .cover h1 { color: #fff; text-shadow: 0 0 2px #fff, 0 0 18px rgba(255, 77, 141, 0.9), 0 0 42px rgba(255, 77, 141, 0.45); }
 .issue { color: var(--amber); }
 .issue::before { content: "▸ "; color: var(--pink); }
