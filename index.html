@@ -19,7 +19,8 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Bungee&family=Share+Tech+Mono&family=Source+Sans+3:wght@400;600;700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="arcade.css?v=1" />
+  <link rel="stylesheet" href="arcade.css?v=2" />
+  <link rel="preload" as="image" href="art/web/capitol-1600.webp" imagesrcset="art/web/capitol-800.webp 800w, art/web/capitol-1200.webp 1200w, art/web/capitol-1600.webp 1600w" imagesizes="100vw" />
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4762698707947194" crossorigin="anonymous"></script>
   <style>
     .floor-copy { text-align: left; margin-bottom: 0; }
@@ -46,7 +47,7 @@
 
   <main>
     <section class="floor">
-      <img class="mural" src="art/chibi/capitol.webp" width="1600" height="900" alt="" fetchpriority="high" />
+      <img class="mural" src="art/web/capitol-1600.webp" srcset="art/web/capitol-800.webp 800w, art/web/capitol-1200.webp 1200w, art/web/capitol-1600.webp 1600w" sizes="100vw" width="1600" height="900" alt="" fetchpriority="high" decoding="async" />
       <div class="wrap hero-grid">
         <div class="floor-copy">
           <p class="kicker">Machine 01 · free<span class="hide-m"> · in your browser</span></p>
@@ -60,7 +61,7 @@
         <a class="cab" href="play/">
           <div class="marquee"><h2>Step in</h2><span class="machine">1P · keys + touch</span></div>
           <div class="screen">
-            <img src="art/chibi/hero.webp" width="1600" height="900" alt="Mamdani and El-Sayed square up on a rainy street in front of the Capitol." />
+            <img src="art/web/crashers-1200.webp" srcset="art/web/crashers-800.webp 800w, art/web/crashers-1200.webp 1200w" sizes="(max-width: 860px) 100vw, 55vw" width="1200" height="675" alt="Mamdani and El-Sayed square up on a rainy street in front of the Capitol." decoding="async" />
             <span class="coin" aria-hidden="true">Insert coin · press start</span>
           </div>
         </a>
@@ -110,12 +111,12 @@
           <p class="lede">Both drawn and animated in Makko. Same street, different speed.</p>
         </div>
         <div class="cast">
-          <figure><img src="art/cast/mamdani.webp" alt="Chibi Zohran Mamdani." /><figcaption><span class="role">Player 1</span><b>Zohran Mamdani</b><span>Long reach, heavy hits, slow feet.</span></figcaption></figure>
-          <figure><img src="art/cast/elsayed.webp" alt="Chibi Abdul El-Sayed." /><figcaption><span class="role">Player 2</span><b>Abdul El-Sayed</b><span>Fast feet, short combo window, lighter hits.</span></figcaption></figure>
-          <figure><img src="art/cast/witness.webp" alt="The witness with her folder of receipts." /><figcaption><span class="role">Follows you</span><b>The witness</b><span>Keep her standing. The receipts do the rest.</span></figcaption></figure>
-          <figure class="foe"><img src="art/cast/trump.webp" alt="Chibi Donald Trump." /><figcaption><span class="role">Boss · The Landlord</span><b>Donald Trump</b><span>Rent goes up until he goes down.</span></figcaption></figure>
-          <figure class="foe"><img src="art/cast/cruz.webp" alt="Chibi Ted Cruz." /><figcaption><span class="role">Boss · The Insurance Exec</span><b>Ted Cruz</b><span>Throws the hat, flees the fight.</span></figcaption></figure>
-          <figure class="foe"><img src="art/cast/vance.webp" alt="Chibi JD Vance." /><figcaption><span class="role">Boss · The Lobbyist</span><b>JD Vance</b><span>Runs the studio.</span></figcaption></figure>
+          <figure><img loading="lazy" decoding="async" src="art/cast/mamdani.webp" alt="Chibi Zohran Mamdani." /><figcaption><span class="role">Player 1</span><b>Zohran Mamdani</b><span>Long reach, heavy hits, slow feet.</span></figcaption></figure>
+          <figure><img loading="lazy" decoding="async" src="art/cast/elsayed.webp" alt="Chibi Abdul El-Sayed." /><figcaption><span class="role">Player 2</span><b>Abdul El-Sayed</b><span>Fast feet, short combo window, lighter hits.</span></figcaption></figure>
+          <figure><img loading="lazy" decoding="async" src="art/cast/witness.webp" alt="The witness with her folder of receipts." /><figcaption><span class="role">Follows you</span><b>The witness</b><span>Keep her standing. The receipts do the rest.</span></figcaption></figure>
+          <figure class="foe"><img loading="lazy" decoding="async" src="art/cast/trump.webp" alt="Chibi Donald Trump." /><figcaption><span class="role">Boss · The Landlord</span><b>Donald Trump</b><span>Rent goes up until he goes down.</span></figcaption></figure>
+          <figure class="foe"><img loading="lazy" decoding="async" src="art/cast/cruz.webp" alt="Chibi Ted Cruz." /><figcaption><span class="role">Boss · The Insurance Exec</span><b>Ted Cruz</b><span>Throws the hat, flees the fight.</span></figcaption></figure>
+          <figure class="foe"><img loading="lazy" decoding="async" src="art/cast/vance.webp" alt="Chibi JD Vance." /><figcaption><span class="role">Boss · The Lobbyist</span><b>JD Vance</b><span>Runs the studio.</span></figcaption></figure>
         </div>
         <p style="margin-top:20px"><a class="btn btn-ghost" href="https://politicalarcades.com/#cast">The whole block, on the floor</a></p>
       </div>
@@ -127,10 +128,12 @@
           <div><p class="kicker">Watch</p><h2>Freeze the Rent, <em>the video</em></h2></div>
           <p class="lede">Gameplay, the cast, and the comic panels brought to life, cut to track one of the soundtrack.</p>
         </div>
-        <div class="theater" id="theater">
-          <video controls preload="metadata" playsinline poster="https://politicalarcades.com/media/freeze-the-rent-poster.jpg">
-            <source src="https://politicalarcades.com/media/freeze-the-rent.mp4" type="video/mp4" />
-          </video>
+        <div class="theater" id="theater" data-mp4="https://politicalarcades.com/media/freeze-the-rent.mp4">
+          <button type="button" class="theater-poster" aria-label="Play the Freeze the Rent music video">
+            <img src="https://politicalarcades.com/art/web/video-poster.webp" width="1280" height="720" alt="" loading="lazy" decoding="async" />
+            <span class="btn btn-big">▶ Play the video</span>
+            <span class="theater-meta">2:10 · 20 MB</span>
+          </button>
         </div>
         <div class="theater-caption"><span><b>Track 01</b> · Freeze the Rent</span><span><a href="https://politicalarcades.com/#listen">All sixteen songs</a></span></div>
       </div>
@@ -160,5 +163,13 @@
       <p class="fine">Capitol Crashers is an original game on the floor at Political Arcades. It is an unofficial cartoon, not authorized, paid for or reviewed by Zohran Mamdani, Abdul El-Sayed, or any candidate or campaign committee.</p>
     </div>
   </footer>
+  <script>
+    const theater = document.getElementById("theater");
+    theater?.querySelector(".theater-poster")?.addEventListener("click", () => {
+      const v = document.createElement("video");
+      v.controls = true; v.playsInline = true; v.autoplay = true; v.src = theater.dataset.mp4; v.style.cssText = "display:block;width:100%;aspect-ratio:16/9";
+      theater.replaceChildren(v); v.play().catch(() => {});
+    });
+  </script>
 </body>
 </html>
