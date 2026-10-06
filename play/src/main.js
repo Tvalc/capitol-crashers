@@ -285,6 +285,29 @@ function updateCamera(game) {
 function boot() {
   const canvas = document.getElementById("game");
   const ctx = canvas.getContext("2d");
+  // The game draws in a fixed 1280×720 space. The backing store used to be exactly that,
+  // so on a 2560-wide window at 150% scaling the browser stretched every pixel 3× and the
+  // whole street went soft. Size the store to what is actually on screen and scale the
+  // context so nothing else in the renderer has to know.
+  let pixelScale = 1;
+  function fitCanvas() {
+    const rect = canvas.getBoundingClientRect();
+    if (!rect.width || !rect.height) return;
+    // object-fit: contain letterboxes inside the element, so use the smaller fit.
+    const shown = Math.min(rect.width / WORLD.viewW, rect.height / WORLD.viewH);
+    const dpr = Math.min(window.devicePixelRatio || 1, 3);
+    const scale = Math.min(3, Math.max(1, shown * dpr));
+    const w = Math.round(WORLD.viewW * scale), h = Math.round(WORLD.viewH * scale);
+    if (canvas.width !== w || canvas.height !== h) { canvas.width = w; canvas.height = h; }
+    pixelScale = scale;
+    ctx.imageSmoothingEnabled = true;
+    ctx.imageSmoothingQuality = "high";
+  }
+  fitCanvas();
+  if (typeof ResizeObserver !== "undefined") new ResizeObserver(fitCanvas).observe(canvas);
+  window.addEventListener("resize", fitCanvas);
+  document.addEventListener("fullscreenchange", () => requestAnimationFrame(fitCanvas));
+  let dprSeen = window.devicePixelRatio;
   const input = createInput();
   const game = createGame();
   if (typeof window !== "undefined") window.__cc = game; // debug/automation hook
@@ -572,8 +595,10 @@ function boot() {
       game.player = null;
       game.enemies = [];
     }
+    if (window.devicePixelRatio !== dprSeen) { dprSeen = window.devicePixelRatio; fitCanvas(); }
     if (assetsReady) {
       updateGame(game, game.mode === "play" ? snap : blankInput(), dt);
+      ctx.setTransform(pixelScale, 0, 0, pixelScale, 0, 0);
       draw(ctx, game);
     }
     sync();
