@@ -4,16 +4,16 @@
       "frame": {
         "x": 2,
         "y": 2,
-        "w": 153,
-        "h": 256
+        "w": 128,
+        "h": 242
       },
       "rotated": false,
-      "trimmed": false,
+      "trimmed": true,
       "spriteSourceSize": {
-        "x": 0,
-        "y": 0,
-        "w": 153,
-        "h": 256
+        "x": 2,
+        "y": 14,
+        "w": 128,
+        "h": 242
       },
       "sourceSize": {
         "w": 153,
@@ -23,18 +23,18 @@
     },
     "chibi_cast__concepts_to_reference_sheets_trump_v3_hit_12_001.webp": {
       "frame": {
-        "x": 159,
-        "y": 2,
-        "w": 153,
-        "h": 256
+        "x": 2,
+        "y": 248,
+        "w": 128,
+        "h": 242
       },
       "rotated": false,
-      "trimmed": false,
+      "trimmed": true,
       "spriteSourceSize": {
-        "x": 0,
-        "y": 0,
-        "w": 153,
-        "h": 256
+        "x": 2,
+        "y": 14,
+        "w": 128,
+        "h": 242
       },
       "sourceSize": {
         "w": 153,
@@ -44,18 +44,18 @@
     },
     "chibi_cast__concepts_to_reference_sheets_trump_v3_hit_12_002.webp": {
       "frame": {
-        "x": 316,
-        "y": 2,
-        "w": 153,
-        "h": 256
+        "x": 2,
+        "y": 494,
+        "w": 129,
+        "h": 239
       },
       "rotated": false,
-      "trimmed": false,
+      "trimmed": true,
       "spriteSourceSize": {
-        "x": 0,
-        "y": 0,
-        "w": 153,
-        "h": 256
+        "x": 4,
+        "y": 17,
+        "w": 129,
+        "h": 239
       },
       "sourceSize": {
         "w": 153,
@@ -65,18 +65,18 @@
     },
     "chibi_cast__concepts_to_reference_sheets_trump_v3_hit_12_003.webp": {
       "frame": {
-        "x": 473,
-        "y": 2,
-        "w": 153,
-        "h": 256
+        "x": 2,
+        "y": 737,
+        "w": 134,
+        "h": 231
       },
       "rotated": false,
-      "trimmed": false,
+      "trimmed": true,
       "spriteSourceSize": {
-        "x": 0,
-        "y": 0,
-        "w": 153,
-        "h": 256
+        "x": 6,
+        "y": 25,
+        "w": 134,
+        "h": 231
       },
       "sourceSize": {
         "w": 153,
@@ -87,17 +87,17 @@
     "chibi_cast__concepts_to_reference_sheets_trump_v3_hit_12_004.webp": {
       "frame": {
         "x": 2,
-        "y": 262,
-        "w": 153,
-        "h": 256
+        "y": 972,
+        "w": 139,
+        "h": 224
       },
       "rotated": false,
-      "trimmed": false,
+      "trimmed": true,
       "spriteSourceSize": {
-        "x": 0,
-        "y": 0,
-        "w": 153,
-        "h": 256
+        "x": 6,
+        "y": 32,
+        "w": 139,
+        "h": 224
       },
       "sourceSize": {
         "w": 153,
@@ -107,18 +107,18 @@
     },
     "chibi_cast__concepts_to_reference_sheets_trump_v3_hit_12_005.webp": {
       "frame": {
-        "x": 159,
-        "y": 262,
-        "w": 153,
-        "h": 256
+        "x": 2,
+        "y": 1200,
+        "w": 145,
+        "h": 230
       },
       "rotated": false,
-      "trimmed": false,
+      "trimmed": true,
       "spriteSourceSize": {
-        "x": 0,
-        "y": 0,
-        "w": 153,
-        "h": 256
+        "x": 6,
+        "y": 26,
+        "w": 145,
+        "h": 230
       },
       "sourceSize": {
         "w": 153,
@@ -128,18 +128,18 @@
     },
     "chibi_cast__concepts_to_reference_sheets_trump_v3_hit_12_006.webp": {
       "frame": {
-        "x": 316,
-        "y": 262,
-        "w": 153,
-        "h": 256
+        "x": 2,
+        "y": 1434,
+        "w": 147,
+        "h": 236
       },
       "rotated": false,
-      "trimmed": false,
+      "trimmed": true,
       "spriteSourceSize": {
-        "x": 0,
-        "y": 0,
-        "w": 153,
-        "h": 256
+        "x": 6,
+        "y": 20,
+        "w": 147,
+        "h": 236
       },
       "sourceSize": {
         "w": 153,
@@ -149,18 +149,18 @@
     },
     "chibi_cast__concepts_to_reference_sheets_trump_v3_hit_12_007.webp": {
       "frame": {
-        "x": 473,
-        "y": 262,
-        "w": 153,
-        "h": 256
+        "x": 2,
+        "y": 1674,
+        "w": 147,
+        "h": 236
       },
       "rotated": false,
-      "trimmed": false,
+      "trimmed": true,
       "spriteSourceSize": {
-        "x": 0,
-        "y": 0,
-        "w": 153,
-        "h": 256
+        "x": 6,
+        "y": 20,
+        "w": 147,
+        "h": 236
       },
       "sourceSize": {
         "w": 153,
@@ -171,17 +171,17 @@
     "chibi_cast__concepts_to_reference_sheets_trump_v3_hit_12_008.webp": {
       "frame": {
         "x": 2,
-        "y": 522,
-        "w": 153,
-        "h": 256
+        "y": 1914,
+        "w": 147,
+        "h": 236
       },
       "rotated": false,
-      "trimmed": false,
+      "trimmed": true,
       "spriteSourceSize": {
-        "x": 0,
-        "y": 0,
-        "w": 153,
-        "h": 256
+        "x": 6,
+        "y": 20,
+        "w": 147,
+        "h": 236
       },
       "sourceSize": {
         "w": 153,
@@ -191,18 +191,18 @@
     },
     "chibi_cast__concepts_to_reference_sheets_trump_v3_hit_12_009.webp": {
       "frame": {
-        "x": 159,
-        "y": 522,
-        "w": 153,
-        "h": 256
+        "x": 2,
+        "y": 2154,
+        "w": 145,
+        "h": 238
       },
       "rotated": false,
-      "trimmed": false,
+      "trimmed": true,
       "spriteSourceSize": {
-        "x": 0,
-        "y": 0,
-        "w": 153,
-        "h": 256
+        "x": 7,
+        "y": 18,
+        "w": 145,
+        "h": 238
       },
       "sourceSize": {
         "w": 153,
@@ -212,18 +212,18 @@
     },
     "chibi_cast__concepts_to_reference_sheets_trump_v3_hit_12_010.webp": {
       "frame": {
-        "x": 316,
-        "y": 522,
-        "w": 153,
-        "h": 256
+        "x": 2,
+        "y": 2396,
+        "w": 136,
+        "h": 249
       },
       "rotated": false,
-      "trimmed": false,
+      "trimmed": true,
       "spriteSourceSize": {
-        "x": 0,
-        "y": 0,
-        "w": 153,
-        "h": 256
+        "x": 4,
+        "y": 7,
+        "w": 136,
+        "h": 249
       },
       "sourceSize": {
         "w": 153,
@@ -233,17 +233,17 @@
     },
     "chibi_cast__concepts_to_reference_sheets_trump_v3_hit_12_011.webp": {
       "frame": {
-        "x": 473,
-        "y": 522,
-        "w": 153,
+        "x": 2,
+        "y": 2649,
+        "w": 125,
         "h": 256
       },
       "rotated": false,
-      "trimmed": false,
+      "trimmed": true,
       "spriteSourceSize": {
-        "x": 0,
+        "x": 3,
         "y": 0,
-        "w": 153,
+        "w": 125,
         "h": 256
       },
       "sourceSize": {
@@ -259,8 +259,8 @@
     "image": "donald_trump_hit.webp",
     "format": "RGBA8888",
     "size": {
-      "w": 628,
-      "h": 780
+      "w": 151,
+      "h": 2907
     },
     "scale": "1",
     "frameTags": [
@@ -310,6 +310,7 @@
     "importSource": "chibi_cast__concepts_to_reference_sheets_trump_v3_hit_12.zip",
     "playbackFps": 24,
     "useFrameDurations": false,
-    "bodyScale": 1.0330578512396693
+    "bodyScale": 1.0330578512396693,
+    "packing": "Lossless transparent-border trim; original source sizes and anchors retained"
   }
 }

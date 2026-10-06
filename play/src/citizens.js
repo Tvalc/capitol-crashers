@@ -1,15 +1,16 @@
+import { helpAction } from "./help-actions.js?v=idle21";
 // Citizens are the people the fighters stop for. They never take damage and
 // never deal it. Standing next to one and pressing strike helps them.
 // Witnesses are the exception: once helped they follow the fighter to the boss,
 // and villains can knock them down on the way.
 import { play } from "./audio.js";
-import { WORLD } from "./stages.js?v=feel1";
+import { WORLD } from "./stages.js?v=idle21";
 
 export const CITIZEN_KINDS = {
   hungry: {
     name: "Hungry neighbor",
     need: "No dinner tonight.",
-    give: "A hot meal",
+    give: "Hot Meal and a Winter Coat",
     verb: "FED",
     points: 150,
     icon: "bowl",
@@ -138,11 +139,43 @@ export function startHelp(game, player, cit) {
   player.vy = 0;
   player.facing = cit.x >= player.x ? 1 : -1;
   cit.facing = -player.facing;
+  player.helpKind = cit.state === "down" ? "rescue" : cit.kind;
+  const action = helpAction(player, player.helpKind);
+  if (action) {
+    const depth = .86 + (cit.y - WORLD.floorTop) / (WORLD.floorBottom - WORLD.floorTop) * .2;
+    const distance = action.offsetX * 1.05 * depth;
+    if (cit.x - player.facing * distance < 30 || cit.x - player.facing * distance > game.stage.length - 30) player.facing *= -1;
+    const targetX = cit.x - player.facing * distance;
+    const targetY = clampY(cit.y - action.offsetY * 1.05 * depth);
+    player.helpAction = { ...action, approach: Math.max(.18, Math.hypot(targetX - player.x, targetY - player.y) / 300), fromX: player.x, fromY: player.y, targetX, targetY };
+    cit.helpDelivered = false;
+    cit.facing = -player.facing;
+    cit.helpPreviousState = cit.state;
+    cit.helpOwner = player;
+    cit.state = "receiving";
+    cit.stateT = 0;
+  }
+}
+
+export function finishHelp(game, player) {
+  const cit = (game.citizens || []).find(c => c.id === player.helpId);
+  if (cit?.helpOwner === player) {
+    cit.state = player.spawned ? (cit.kind === "witness" ? "follow" : cit.kind === "hungry" ? "leaving" : "helped") : cit.helpPreviousState;
+    cit.stateT = player.spawned ? 0 : cit.state === "down" ? 1.7 : 0;
+    if (player.spawned && cit.kind === "hungry") {cit.facing=player.facing;cit.anim=0;}
+    delete cit.helpOwner;
+    delete cit.helpPreviousState;
+    delete cit.helpDelivered;
+  }
+  player.helpId = null;
+  player.helpAction = null;
 }
 
 // Called by the player state machine at the moment of the hand-off.
 export function deliverHelp(game, player, cit) {
-  if (!cit || !citizenInNeed(cit)) return false;
+  if (!cit || !(citizenInNeed(cit) || cit.state === "receiving" && cit.helpOwner === player)) return false;
+  if (cit.helpDelivered) return false;
+  if (cit.helpOwner) cit.helpDelivered = true;
   const stats = CITIZEN_KINDS[cit.kind];
   cit.stateT = 0;
   cit.flash = 0;
@@ -151,10 +184,12 @@ export function deliverHelp(game, player, cit) {
     game.banner = "Witness joins you · keep them standing";
     game.bannerT = 1.6;
   } else {
-    cit.state = "helped";
+    cit.state = cit.kind === "hungry" ? "leaving" : "helped";
+    if(cit.kind === "hungry") {cit.facing=player.facing;cit.anim=0;}
     game.banner = stats.give;
     game.bannerT = 1.1;
   }
+  if (cit.helpOwner) cit.state = "receiving";
   if (stats.mark) {
     game.stage.marks = game.stage.marks || [];
     game.stage.marks.push({ x: cit.x, y: WORLD.floorTop - 10, text: stats.mark, t: 0 });
@@ -211,6 +246,11 @@ export function updateCitizens(game, dt) {
     cit.anim += dt;
     cit.stateT += dt;
     if (cit.flash > 0) cit.flash = Math.max(0, cit.flash - dt);
+    if (cit.state === "receiving") {
+      cit.vx = cit.vy = 0;
+      if (cit.helpOwner?.state !== "help" || !cit.helpOwner?.alive) finishHelp(game, cit.helpOwner);
+      continue;
+    }
     if (cit.state === "need") {
       if (player?.alive && Math.abs(player.x - cit.x) < 320) cit.facing = player.x >= cit.x ? 1 : -1;
       continue;
@@ -268,6 +308,7 @@ export function updateCitizens(game, dt) {
   }
   game.citizens = (game.citizens || []).filter((cit) => cit.alive);
   for (const mark of game.stage?.marks || []) mark.t += dt;
+  if (game.stage) game.stage.marks = (game.stage.marks || []).filter(mark => mark.t < 3);
 }
 
 // After the policy wins, a few neighbors come out to celebrate on the block.

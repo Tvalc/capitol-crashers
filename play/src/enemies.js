@@ -1,5 +1,5 @@
 import { melee, updateBody } from "./combat.js?v=feel1";
-import { WORLD } from "./stages.js?v=feel1";
+import { WORLD } from "./stages.js?v=idle21";
 import { spawnSatellite, spawnShot, spawnSombrero } from "./weapons.js?v=chibi-site2";
 
 const KINDS = {

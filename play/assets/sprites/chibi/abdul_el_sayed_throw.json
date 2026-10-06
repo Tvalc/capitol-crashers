@@ -4,187 +4,259 @@
       "frame": {
         "x": 2,
         "y": 2,
-        "w": 167,
-        "h": 256
+        "w": 121,
+        "h": 251
       },
       "rotated": false,
-      "trimmed": false,
+      "trimmed": true,
       "sourceSize": {
         "w": 167,
         "h": 256
       },
-      "duration": 42
+      "duration": 42,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 5,
+        "w": 121,
+        "h": 251
+      }
     },
     "1": {
       "frame": {
-        "x": 173,
+        "x": 127,
         "y": 2,
-        "w": 167,
-        "h": 256
+        "w": 121,
+        "h": 251
       },
       "rotated": false,
-      "trimmed": false,
+      "trimmed": true,
       "sourceSize": {
         "w": 167,
         "h": 256
       },
-      "duration": 42
+      "duration": 42,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 5,
+        "w": 121,
+        "h": 251
+      }
     },
     "2": {
       "frame": {
-        "x": 344,
+        "x": 252,
         "y": 2,
-        "w": 167,
-        "h": 256
+        "w": 121,
+        "h": 251
       },
       "rotated": false,
-      "trimmed": false,
+      "trimmed": true,
       "sourceSize": {
         "w": 167,
         "h": 256
       },
-      "duration": 42
+      "duration": 42,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 5,
+        "w": 121,
+        "h": 251
+      }
     },
     "3": {
       "frame": {
-        "x": 515,
+        "x": 377,
         "y": 2,
-        "w": 167,
-        "h": 256
+        "w": 121,
+        "h": 250
       },
       "rotated": false,
-      "trimmed": false,
+      "trimmed": true,
       "sourceSize": {
         "w": 167,
         "h": 256
       },
-      "duration": 42
+      "duration": 42,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 6,
+        "w": 121,
+        "h": 250
+      }
     },
     "4": {
       "frame": {
-        "x": 2,
-        "y": 262,
-        "w": 167,
-        "h": 256
+        "x": 502,
+        "y": 2,
+        "w": 121,
+        "h": 249
       },
       "rotated": false,
-      "trimmed": false,
+      "trimmed": true,
       "sourceSize": {
         "w": 167,
         "h": 256
       },
-      "duration": 42
+      "duration": 42,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 7,
+        "w": 121,
+        "h": 249
+      }
     },
     "5": {
       "frame": {
-        "x": 173,
-        "y": 262,
-        "w": 167,
-        "h": 256
+        "x": 627,
+        "y": 2,
+        "w": 121,
+        "h": 247
       },
       "rotated": false,
-      "trimmed": false,
+      "trimmed": true,
       "sourceSize": {
         "w": 167,
         "h": 256
       },
-      "duration": 42
+      "duration": 42,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 9,
+        "w": 121,
+        "h": 247
+      }
     },
     "6": {
       "frame": {
-        "x": 344,
-        "y": 262,
-        "w": 167,
-        "h": 256
+        "x": 752,
+        "y": 2,
+        "w": 121,
+        "h": 246
       },
       "rotated": false,
-      "trimmed": false,
+      "trimmed": true,
       "sourceSize": {
         "w": 167,
         "h": 256
       },
-      "duration": 42
+      "duration": 42,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 10,
+        "w": 121,
+        "h": 246
+      }
     },
     "7": {
       "frame": {
-        "x": 515,
-        "y": 262,
-        "w": 167,
-        "h": 256
+        "x": 2,
+        "y": 257,
+        "w": 122,
+        "h": 245
       },
       "rotated": false,
-      "trimmed": false,
+      "trimmed": true,
       "sourceSize": {
         "w": 167,
         "h": 256
       },
-      "duration": 42
+      "duration": 42,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 11,
+        "w": 122,
+        "h": 245
+      }
     },
     "8": {
       "frame": {
-        "x": 2,
-        "y": 522,
-        "w": 167,
-        "h": 256
+        "x": 128,
+        "y": 257,
+        "w": 146,
+        "h": 248
       },
       "rotated": false,
-      "trimmed": false,
+      "trimmed": true,
       "sourceSize": {
         "w": 167,
         "h": 256
       },
-      "duration": 42
+      "duration": 42,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 8,
+        "w": 146,
+        "h": 248
+      }
     },
     "9": {
       "frame": {
-        "x": 173,
-        "y": 522,
+        "x": 278,
+        "y": 257,
         "w": 167,
-        "h": 256
+        "h": 251
       },
       "rotated": false,
-      "trimmed": false,
+      "trimmed": true,
       "sourceSize": {
         "w": 167,
         "h": 256
       },
-      "duration": 42
+      "duration": 42,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 5,
+        "w": 167,
+        "h": 251
+      }
     },
     "10": {
       "frame": {
-        "x": 344,
-        "y": 522,
-        "w": 167,
-        "h": 256
+        "x": 449,
+        "y": 257,
+        "w": 144,
+        "h": 252
       },
       "rotated": false,
-      "trimmed": false,
+      "trimmed": true,
       "sourceSize": {
         "w": 167,
         "h": 256
       },
-      "duration": 42
+      "duration": 42,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 4,
+        "w": 144,
+        "h": 252
+      }
     },
     "11": {
       "frame": {
-        "x": 515,
-        "y": 522,
-        "w": 167,
-        "h": 256
+        "x": 597,
+        "y": 257,
+        "w": 122,
+        "h": 255
       },
       "rotated": false,
-      "trimmed": false,
+      "trimmed": true,
       "sourceSize": {
         "w": 167,
         "h": 256
       },
-      "duration": 42
+      "duration": 42,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 1,
+        "w": 122,
+        "h": 255
+      }
     }
   },
   "meta": {
     "size": {
-      "w": 684,
-      "h": 780
+      "w": 875,
+      "h": 514
     },
     "anchor": {
       "x": 83.5,
@@ -223,6 +295,7 @@
         "to": 11,
         "direction": "forward"
       }
-    ]
+    ],
+    "packing": "Lossless transparent-border trim; original source sizes and anchors retained"
   }
 }

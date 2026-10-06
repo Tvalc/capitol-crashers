@@ -1,1 +1,209 @@
-{"frames": {"hungry_cheer_000": {"frame": {"x": 0, "y": 0, "w": 160, "h": 284}, "rotated": false, "trimmed": false, "sourceSize": {"w": 160, "h": 284}, "duration": 83}, "hungry_cheer_001": {"frame": {"x": 160, "y": 0, "w": 160, "h": 284}, "rotated": false, "trimmed": false, "sourceSize": {"w": 160, "h": 284}, "duration": 83}, "hungry_cheer_002": {"frame": {"x": 320, "y": 0, "w": 160, "h": 284}, "rotated": false, "trimmed": false, "sourceSize": {"w": 160, "h": 284}, "duration": 83}, "hungry_cheer_003": {"frame": {"x": 480, "y": 0, "w": 160, "h": 284}, "rotated": false, "trimmed": false, "sourceSize": {"w": 160, "h": 284}, "duration": 83}, "hungry_cheer_004": {"frame": {"x": 640, "y": 0, "w": 160, "h": 284}, "rotated": false, "trimmed": false, "sourceSize": {"w": 160, "h": 284}, "duration": 83}, "hungry_cheer_005": {"frame": {"x": 800, "y": 0, "w": 160, "h": 284}, "rotated": false, "trimmed": false, "sourceSize": {"w": 160, "h": 284}, "duration": 83}, "hungry_cheer_006": {"frame": {"x": 960, "y": 0, "w": 160, "h": 284}, "rotated": false, "trimmed": false, "sourceSize": {"w": 160, "h": 284}, "duration": 83}, "hungry_cheer_007": {"frame": {"x": 1120, "y": 0, "w": 160, "h": 284}, "rotated": false, "trimmed": false, "sourceSize": {"w": 160, "h": 284}, "duration": 83}, "hungry_cheer_008": {"frame": {"x": 0, "y": 284, "w": 160, "h": 284}, "rotated": false, "trimmed": false, "sourceSize": {"w": 160, "h": 284}, "duration": 83}, "hungry_cheer_009": {"frame": {"x": 160, "y": 284, "w": 160, "h": 284}, "rotated": false, "trimmed": false, "sourceSize": {"w": 160, "h": 284}, "duration": 83}, "hungry_cheer_010": {"frame": {"x": 320, "y": 284, "w": 160, "h": 284}, "rotated": false, "trimmed": false, "sourceSize": {"w": 160, "h": 284}, "duration": 83}, "hungry_cheer_011": {"frame": {"x": 480, "y": 284, "w": 160, "h": 284}, "rotated": false, "trimmed": false, "sourceSize": {"w": 160, "h": 284}, "duration": 83}, "hungry_cheer_012": {"frame": {"x": 640, "y": 284, "w": 160, "h": 284}, "rotated": false, "trimmed": false, "sourceSize": {"w": 160, "h": 284}, "duration": 83}, "hungry_cheer_013": {"frame": {"x": 800, "y": 284, "w": 160, "h": 284}, "rotated": false, "trimmed": false, "sourceSize": {"w": 160, "h": 284}, "duration": 83}, "hungry_cheer_014": {"frame": {"x": 960, "y": 284, "w": 160, "h": 284}, "rotated": false, "trimmed": false, "sourceSize": {"w": 160, "h": 284}, "duration": 83}, "hungry_cheer_015": {"frame": {"x": 1120, "y": 284, "w": 160, "h": 284}, "rotated": false, "trimmed": false, "sourceSize": {"w": 160, "h": 284}, "duration": 83}, "hungry_cheer_016": {"frame": {"x": 0, "y": 568, "w": 160, "h": 284}, "rotated": false, "trimmed": false, "sourceSize": {"w": 160, "h": 284}, "duration": 83}, "hungry_cheer_017": {"frame": {"x": 160, "y": 568, "w": 160, "h": 284}, "rotated": false, "trimmed": false, "sourceSize": {"w": 160, "h": 284}, "duration": 83}, "hungry_cheer_018": {"frame": {"x": 320, "y": 568, "w": 160, "h": 284}, "rotated": false, "trimmed": false, "sourceSize": {"w": 160, "h": 284}, "duration": 83}, "hungry_cheer_019": {"frame": {"x": 480, "y": 568, "w": 160, "h": 284}, "rotated": false, "trimmed": false, "sourceSize": {"w": 160, "h": 284}, "duration": 83}, "hungry_cheer_020": {"frame": {"x": 640, "y": 568, "w": 160, "h": 284}, "rotated": false, "trimmed": false, "sourceSize": {"w": 160, "h": 284}, "duration": 83}, "hungry_cheer_021": {"frame": {"x": 800, "y": 568, "w": 160, "h": 284}, "rotated": false, "trimmed": false, "sourceSize": {"w": 160, "h": 284}, "duration": 83}, "hungry_cheer_022": {"frame": {"x": 960, "y": 568, "w": 160, "h": 284}, "rotated": false, "trimmed": false, "sourceSize": {"w": 160, "h": 284}, "duration": 83}, "hungry_cheer_023": {"frame": {"x": 1120, "y": 568, "w": 160, "h": 284}, "rotated": false, "trimmed": false, "sourceSize": {"w": 160, "h": 284}, "duration": 83}, "hungry_cheer_024": {"frame": {"x": 0, "y": 852, "w": 160, "h": 284}, "rotated": false, "trimmed": false, "sourceSize": {"w": 160, "h": 284}, "duration": 83}, "hungry_cheer_025": {"frame": {"x": 160, "y": 852, "w": 160, "h": 284}, "rotated": false, "trimmed": false, "sourceSize": {"w": 160, "h": 284}, "duration": 83}, "hungry_cheer_026": {"frame": {"x": 320, "y": 852, "w": 160, "h": 284}, "rotated": false, "trimmed": false, "sourceSize": {"w": 160, "h": 284}, "duration": 83}, "hungry_cheer_027": {"frame": {"x": 480, "y": 852, "w": 160, "h": 284}, "rotated": false, "trimmed": false, "sourceSize": {"w": 160, "h": 284}, "duration": 83}, "hungry_cheer_028": {"frame": {"x": 640, "y": 852, "w": 160, "h": 284}, "rotated": false, "trimmed": false, "sourceSize": {"w": 160, "h": 284}, "duration": 83}, "hungry_cheer_029": {"frame": {"x": 800, "y": 852, "w": 160, "h": 284}, "rotated": false, "trimmed": false, "sourceSize": {"w": 160, "h": 284}, "duration": 83}, "hungry_cheer_030": {"frame": {"x": 960, "y": 852, "w": 160, "h": 284}, "rotated": false, "trimmed": false, "sourceSize": {"w": 160, "h": 284}, "duration": 83}, "hungry_cheer_031": {"frame": {"x": 1120, "y": 852, "w": 160, "h": 284}, "rotated": false, "trimmed": false, "sourceSize": {"w": 160, "h": 284}, "duration": 83}, "hungry_cheer_032": {"frame": {"x": 0, "y": 1136, "w": 160, "h": 284}, "rotated": false, "trimmed": false, "sourceSize": {"w": 160, "h": 284}, "duration": 83}, "hungry_cheer_033": {"frame": {"x": 160, "y": 1136, "w": 160, "h": 284}, "rotated": false, "trimmed": false, "sourceSize": {"w": 160, "h": 284}, "duration": 83}, "hungry_cheer_034": {"frame": {"x": 320, "y": 1136, "w": 160, "h": 284}, "rotated": false, "trimmed": false, "sourceSize": {"w": 160, "h": 284}, "duration": 83}, "hungry_cheer_035": {"frame": {"x": 480, "y": 1136, "w": 160, "h": 284}, "rotated": false, "trimmed": false, "sourceSize": {"w": 160, "h": 284}, "duration": 83}, "hungry_cheer_036": {"frame": {"x": 640, "y": 1136, "w": 160, "h": 284}, "rotated": false, "trimmed": false, "sourceSize": {"w": 160, "h": 284}, "duration": 83}, "hungry_cheer_037": {"frame": {"x": 800, "y": 1136, "w": 160, "h": 284}, "rotated": false, "trimmed": false, "sourceSize": {"w": 160, "h": 284}, "duration": 83}, "hungry_cheer_038": {"frame": {"x": 960, "y": 1136, "w": 160, "h": 284}, "rotated": false, "trimmed": false, "sourceSize": {"w": 160, "h": 284}, "duration": 83}, "hungry_cheer_039": {"frame": {"x": 1120, "y": 1136, "w": 160, "h": 284}, "rotated": false, "trimmed": false, "sourceSize": {"w": 160, "h": 284}, "duration": 83}, "hungry_cheer_040": {"frame": {"x": 0, "y": 1420, "w": 160, "h": 284}, "rotated": false, "trimmed": false, "sourceSize": {"w": 160, "h": 284}, "duration": 83}, "hungry_cheer_041": {"frame": {"x": 160, "y": 1420, "w": 160, "h": 284}, "rotated": false, "trimmed": false, "sourceSize": {"w": 160, "h": 284}, "duration": 83}, "hungry_cheer_042": {"frame": {"x": 320, "y": 1420, "w": 160, "h": 284}, "rotated": false, "trimmed": false, "sourceSize": {"w": 160, "h": 284}, "duration": 83}, "hungry_cheer_043": {"frame": {"x": 480, "y": 1420, "w": 160, "h": 284}, "rotated": false, "trimmed": false, "sourceSize": {"w": 160, "h": 284}, "duration": 83}, "hungry_cheer_044": {"frame": {"x": 640, "y": 1420, "w": 160, "h": 284}, "rotated": false, "trimmed": false, "sourceSize": {"w": 160, "h": 284}, "duration": 83}, "hungry_cheer_045": {"frame": {"x": 800, "y": 1420, "w": 160, "h": 284}, "rotated": false, "trimmed": false, "sourceSize": {"w": 160, "h": 284}, "duration": 83}, "hungry_cheer_046": {"frame": {"x": 960, "y": 1420, "w": 160, "h": 284}, "rotated": false, "trimmed": false, "sourceSize": {"w": 160, "h": 284}, "duration": 83}, "hungry_cheer_047": {"frame": {"x": 1120, "y": 1420, "w": 160, "h": 284}, "rotated": false, "trimmed": false, "sourceSize": {"w": 160, "h": 284}, "duration": 83}}, "meta": {"app": "makko+ffmpeg", "image": "hungry_cheer.webp", "size": {"w": 1280, "h": 1704}, "playbackFps": 12, "anchor": {"x": 80.0, "y": 272}, "bodyScale": 1, "source": "https://api.makko.ai/storage/v1/object/public/animation-frames/a5368c09-882b-4eba-9f18-9a0a5360acbc/videos/1791234982917_animation.mp4", "animationId": "c183d838-a902-4c64-855b-d5b16be24823", "cropRepair": "full alpha bounds across all source frames; 12px gutters", "sourceBounds": [462, 14, 814, 691]}}
+{
+  "frames": [
+    {
+      "frame": {
+        "x": 2,
+        "y": 2,
+        "w": 114,
+        "h": 248
+      },
+      "rotated": false,
+      "trimmed": true,
+      "sourceSize": {
+        "w": 160,
+        "h": 284
+      },
+      "duration": 83,
+      "spriteSourceSize": {
+        "x": 16,
+        "y": 24,
+        "w": 114,
+        "h": 248
+      }
+    },
+    {
+      "frame": {
+        "x": 120,
+        "y": 2,
+        "w": 113,
+        "h": 248
+      },
+      "rotated": false,
+      "trimmed": true,
+      "sourceSize": {
+        "w": 160,
+        "h": 284
+      },
+      "duration": 83,
+      "spriteSourceSize": {
+        "x": 16,
+        "y": 24,
+        "w": 113,
+        "h": 248
+      }
+    },
+    {
+      "frame": {
+        "x": 237,
+        "y": 2,
+        "w": 113,
+        "h": 248
+      },
+      "rotated": false,
+      "trimmed": true,
+      "sourceSize": {
+        "w": 160,
+        "h": 284
+      },
+      "duration": 83,
+      "spriteSourceSize": {
+        "x": 15,
+        "y": 24,
+        "w": 113,
+        "h": 248
+      }
+    },
+    {
+      "frame": {
+        "x": 354,
+        "y": 2,
+        "w": 113,
+        "h": 248
+      },
+      "rotated": false,
+      "trimmed": true,
+      "sourceSize": {
+        "w": 160,
+        "h": 284
+      },
+      "duration": 83,
+      "spriteSourceSize": {
+        "x": 15,
+        "y": 24,
+        "w": 113,
+        "h": 248
+      }
+    },
+    {
+      "frame": {
+        "x": 2,
+        "y": 254,
+        "w": 113,
+        "h": 248
+      },
+      "rotated": false,
+      "trimmed": true,
+      "sourceSize": {
+        "w": 160,
+        "h": 284
+      },
+      "duration": 83,
+      "spriteSourceSize": {
+        "x": 15,
+        "y": 24,
+        "w": 113,
+        "h": 248
+      }
+    },
+    {
+      "frame": {
+        "x": 119,
+        "y": 254,
+        "w": 113,
+        "h": 248
+      },
+      "rotated": false,
+      "trimmed": true,
+      "sourceSize": {
+        "w": 160,
+        "h": 284
+      },
+      "duration": 83,
+      "spriteSourceSize": {
+        "x": 15,
+        "y": 24,
+        "w": 113,
+        "h": 248
+      }
+    },
+    {
+      "frame": {
+        "x": 236,
+        "y": 254,
+        "w": 113,
+        "h": 248
+      },
+      "rotated": false,
+      "trimmed": true,
+      "sourceSize": {
+        "w": 160,
+        "h": 284
+      },
+      "duration": 83,
+      "spriteSourceSize": {
+        "x": 15,
+        "y": 24,
+        "w": 113,
+        "h": 248
+      }
+    },
+    {
+      "frame": {
+        "x": 353,
+        "y": 254,
+        "w": 113,
+        "h": 248
+      },
+      "rotated": false,
+      "trimmed": true,
+      "sourceSize": {
+        "w": 160,
+        "h": 284
+      },
+      "duration": 83,
+      "spriteSourceSize": {
+        "x": 15,
+        "y": 24,
+        "w": 113,
+        "h": 248
+      }
+    }
+  ],
+  "meta": {
+    "app": "makko+ffmpeg",
+    "image": "hungry_cheer.webp",
+    "size": {
+      "w": 470,
+      "h": 504
+    },
+    "playbackFps": 12,
+    "anchor": {
+      "x": 80.0,
+      "y": 272
+    },
+    "bodyScale": 0.927419,
+    "source": "https://api.makko.ai/storage/v1/object/public/animation-frames/a5368c09-882b-4eba-9f18-9a0a5360acbc/videos/1791234982917_animation.mp4",
+    "animationId": "c183d838-a902-4c64-855b-d5b16be24823",
+    "cropRepair": "full alpha bounds across all source frames; 12px gutters",
+    "sourceBounds": [
+      462,
+      14,
+      814,
+      691
+    ],
+    "steamRepair": "Trimmed malformed steam; clean happy bowl reaction from original Makko frames 40\u201347",
+    "sourceFrameIndices": [
+      40,
+      41,
+      42,
+      43,
+      44,
+      45,
+      46,
+      47
+    ],
+    "standingBodyHeight": 230,
+    "continuityRepair": "Approved reference identity; constant standing-body scale; curated maximum twelve frames.",
+    "packing": "Lossless transparent-border trim; original source sizes and anchors retained"
+  }
+}

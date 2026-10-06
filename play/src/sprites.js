@@ -1,4 +1,5 @@
-import { playerMoveWindow } from "./player.js?v=chibi-site2";
+import { registerHelpAction } from "./help-actions.js?v=idle21";
+import { playerMoveWindow } from "./player.js?v=idle21";
 
 const CLIPS = {
   zohran: ["idle", "walk", "run", "jump", "attack", "hit", "death", "cast", "grab", "throw", "lunge", "reversal"],
@@ -18,8 +19,7 @@ const FILE = {
   cruz: "chibi/ted_cruz",
 };
 
-// Citizen sheets are optional until the Makko art lands; the renderer falls
-// back to a painted placeholder when a sheet is missing.
+// All citizen artwork is authored in Makko and required at startup.
 const OPTIONAL_CLIPS = {
   citizen_hungry: ["idle", "cheer", "walk", "depart"],
   citizen_sick: ["idle", "cheer", "walk", "depart"],
@@ -69,16 +69,22 @@ export function loadSprites() {
       jobs.push(loadOne(sprite, clip, name));
     }
   }
+  for (const sprite of ["zohran", "abdul"]) {
+    for (const kind of ["hungry", "sick", "evicted", "worker", "witness", "rescue"]) jobs.push(loadOne(sprite, `help_${kind}`, `${FILE[sprite]}_help_${kind}`));
+  }
   const optional = [];
   for (const [sprite, clips] of Object.entries(OPTIONAL_CLIPS)) {
-    for (const clip of clips) optional.push(loadOne(sprite, clip, `${OPTIONAL_FILE[sprite]}_${clip}`).catch(() => null));
+    for (const clip of clips) if(clip !== "depart") optional.push(loadOne(sprite, clip, `${OPTIONAL_FILE[sprite]}_${clip}`));
   }
   return Promise.allSettled([...jobs, ...optional]).then((results) => {
+    for(const sprite of Object.keys(OPTIONAL_CLIPS)) {
+      if(sheets.has(`${sprite}:walk`)) sheets.set(`${sprite}:depart`,sheets.get(`${sprite}:walk`));
+    }
     if (sheets.has("greene:run") && !sheets.has("greene:walk")) {
       sheets.set("greene:walk", sheets.get("greene:run"));
     }
-    const failures = results.slice(0, jobs.length).filter(result => result.status === "rejected");
-    if (failures.length) throw new Error(`${failures.length} animation sheets failed to load.`);
+      const failures = results.filter(result => result.status === "rejected");
+    if (failures.length) throw new Error(`${failures.length} animation sheets failed to load: ${failures.map(result => result.reason?.message || result.reason).join("; ")}`);
   });
 }
 
@@ -109,7 +115,7 @@ export function readFrames(data, width, height) {
 
 function loadOne(sprite, clip, name) {
   const image = new Image();
-  const version = sprite.startsWith("citizen_") ? "citizen-happy3" : sprite === "cruz" ? "cruz-native1" : "grounded1";
+  const version = sprite === "zohran" && clip === "idle" ? "idle21" : "packed19";
   const dataPromise = fetch(`assets/sprites/${name}.json?v=${version}`).then((res) => {
     if (!res.ok) throw new Error(`Could not load ${name}: ${res.status}`);
     return res.json();
@@ -121,6 +127,7 @@ function loadOne(sprite, clip, name) {
   });
   return Promise.all([dataPromise, imagePromise]).then(([data, img]) => {
     const frames = readFrames(data, img.naturalWidth, img.naturalHeight);
+    if (data.meta?.helpAction) registerHelpAction(sprite, clip.slice(5), data.meta.helpAction);
     sheets.set(clipKey(sprite, clip), {
       image: img,
       frames,
@@ -170,7 +177,7 @@ export function clipFor(state) {
 }
 
 function resolveSheet(sprite, clip) {
-  for (const name of FALLBACK[clip] || ["idle"]) {
+  for (const name of FALLBACK[clip] || [clip]) {
     const sheet = sheets.get(clipKey(sprite, name));
     if (sheet) return { sheet, clip: name };
   }
@@ -308,6 +315,7 @@ export const SPRITE_BODY_SCALE = {};
 export function drawSprite(ctx, ent, sx, sc) {
   const sprite = actorSprite(ent);
   let wanted = clipFor(ent.state);
+  if (ent.state === "help" && ent.helpAction) wanted = ent.stateT < ent.helpAction.approach ? "walk" : `help_${ent.helpKind}`;
   if (sprite === "cruz" && ent.state === "windup") wanted = "attack";
   const resolved = resolveSheet(sprite, wanted);
   if (!resolved) return false;
@@ -316,7 +324,8 @@ export function drawSprite(ctx, ent, sx, sc) {
   const count = sheet.frames.length;
   const once = ONCE.has(clip);
   let index;
-  if (clip === "idle") {
+  if (clip.startsWith("help_")) index = Math.min(count - 1, Math.floor(Math.max(0, ent.stateT - ent.helpAction.approach) / ent.helpAction.total * count));
+  else if (clip === "idle") {
     const step = sheet.fps > 0 ? 1 / sheet.fps : sprite === "zohran" ? 0.14 : sprite === "abdul" ? 1 / 24 : sprite === "vance" ? 1 / 3 : sprite === "cruz" || sprite === "greene" ? 0.16 : 0;
     const idleTime = Math.max(0, (ent.anim || 0) - (ent.idleStartedAt || 0));
     index = sheet.frameDurations ? timedLoopIndex(idleTime, sheet.frameDurations) : step ? Math.floor(idleTime / step) % count : 0;
@@ -339,15 +348,16 @@ export function drawSprite(ctx, ent, sx, sc) {
   const frame = sheet.frames[index];
   const cell = frame.frame;
   const offset = frame.trimmed ? frame.spriteSourceSize : null;
-  const anchorY = ent.team === "player" && !(ent.z > 0) ? (frame.groundAnchorY ?? sheet.anchor.y) : sheet.anchor.y;
+  const anchorY = (ent.team === "player" || ent.team === "citizen") && !(ent.z > 0) ? (frame.groundAnchorY ?? sheet.anchor.y) : sheet.anchor.y;
   ctx.save();
   ctx.translate(sx, ent.y - (ent.z || 0));
-  ctx.scale(sc * (ent.facing || 1), sc);
+  const facing = ent.state === "help" && ent.helpAction && ent.stateT < ent.helpAction.approach ? Math.sign(ent.helpAction.targetX - ent.helpAction.fromX) || ent.facing : ent.facing;
+  ctx.scale(sc * (facing || 1), sc);
   if (ent.flash > 0) ctx.filter = "brightness(3)";
   ctx.drawImage(
     sheet.image,
     cell.x, cell.y, cell.w, cell.h,
-    -sheet.anchor.x + (offset?.x || 0), -anchorY + (offset?.y || 0), cell.w, cell.h,
+    -(frame.anchorX ?? sheet.anchor.x) + (offset?.x || 0), -anchorY + (offset?.y || 0), cell.w, cell.h,
   );
   ctx.restore();
   return true;

@@ -1,14 +1,15 @@
+import { propFootprints, collideProps } from "./prop-collision.js?v=props20";
 import { play, unlock } from "./audio.js?v=chibi-site2";
 import { separate, tickToss, wallBounce } from "./combat.js?v=feel1";
 import { makeEnemy, updateEnemy } from "./enemies.js?v=hard1";
 import { blankInput, createInput } from "./input.js?v=chibi-site2";
-import { fighterById, makePlayer, updatePlayer, bufferPlayerInput } from "./player.js?v=chibi-site2";
-import { draw, loadEnvironment } from "./render.js?v=citizen-happy3";
-import { cloneStage, STAGES, WORLD } from "./stages.js?v=feel1";
+import { fighterById, makePlayer, updatePlayer, bufferPlayerInput } from "./player.js?v=idle21";
+import { draw, loadEnvironment } from "./render.js?v=idle21";
+import { cloneStage, STAGES, WORLD } from "./stages.js?v=idle21";
 import { updatePickups, updateProjectiles } from "./weapons.js?v=chibi-site2";
-import { loadSprites } from "./sprites.js?v=citizen-happy3";
+import { loadSprites } from "./sprites.js?v=idle21";
 import { PAGES } from "../../story/panels.js";
-import { followingWitness, makeCitizen, spawnCelebration, updateCitizens, witnessTestifies } from "./citizens.js?v=citizens1";
+import { followingWitness, makeCitizen, spawnCelebration, updateCitizens, witnessTestifies } from "./citizens.js?v=idle21";
 
 // Comic panels that exist as short animated loops (OpenArt), shown between stages.
 const MOTION = { p21: "../art/story/motion/p21.mp4", p27: "../art/story/motion/p27.mp4" };
@@ -161,6 +162,7 @@ export function updateGame(game, input, dt) {
     return;
   }
 
+  const propBefore = [game.player, ...game.enemies, ...game.citizens].map(ent => ({ent,x:ent.x,y:ent.y}));
   const gaitBefore = [game.player, ...game.enemies].map(ent => ({ ent, x: ent.x, y: ent.y }));
   updatePlayer(game.player, game, input, dt);
   if (game.mode !== "play") return;
@@ -182,6 +184,8 @@ export function updateGame(game, input, dt) {
   }
   separate(game.enemies);
   updateCitizens(game, dt);
+  const footprints = propFootprints(game.stage);
+  for (const before of propBefore) collideProps(before.ent, before, footprints);
   updatePickups(game);
   updateProjectiles(game, dt);
   updateWaves(game);
@@ -568,8 +572,10 @@ function boot() {
       game.player = null;
       game.enemies = [];
     }
-    updateGame(game, game.mode === "play" ? snap : blankInput(), dt);
-    draw(ctx, game);
+    if (assetsReady) {
+      updateGame(game, game.mode === "play" ? snap : blankInput(), dt);
+      draw(ctx, game);
+    }
     sync();
     requestAnimationFrame(frame);
   }

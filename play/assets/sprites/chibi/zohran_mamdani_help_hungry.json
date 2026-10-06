@@ -1,0 +1,317 @@
+{
+  "frames": [
+    {
+      "frame": {
+        "x": 2,
+        "y": 2,
+        "w": 252,
+        "h": 253
+      },
+      "sourceSize": {
+        "w": 284,
+        "h": 277
+      },
+      "anchorX": 69.39,
+      "groundAnchorY": 264.1,
+      "duration": 150,
+      "sourceFrame": 0,
+      "spriteSourceSize": {
+        "x": 14,
+        "y": 12,
+        "w": 252,
+        "h": 253
+      },
+      "trimmed": true
+    },
+    {
+      "frame": {
+        "x": 2,
+        "y": 259,
+        "w": 238,
+        "h": 253
+      },
+      "sourceSize": {
+        "w": 284,
+        "h": 277
+      },
+      "anchorX": 69.39,
+      "groundAnchorY": 264.1,
+      "duration": 150,
+      "sourceFrame": 6,
+      "spriteSourceSize": {
+        "x": 22,
+        "y": 12,
+        "w": 238,
+        "h": 253
+      },
+      "trimmed": true
+    },
+    {
+      "frame": {
+        "x": 2,
+        "y": 516,
+        "w": 230,
+        "h": 253
+      },
+      "sourceSize": {
+        "w": 284,
+        "h": 277
+      },
+      "anchorX": 69.39,
+      "groundAnchorY": 263.57,
+      "duration": 150,
+      "sourceFrame": 12,
+      "spriteSourceSize": {
+        "x": 29,
+        "y": 12,
+        "w": 230,
+        "h": 253
+      },
+      "trimmed": true
+    },
+    {
+      "frame": {
+        "x": 2,
+        "y": 773,
+        "w": 230,
+        "h": 253
+      },
+      "sourceSize": {
+        "w": 284,
+        "h": 277
+      },
+      "anchorX": 69.39,
+      "groundAnchorY": 263.57,
+      "duration": 150,
+      "sourceFrame": 18,
+      "spriteSourceSize": {
+        "x": 29,
+        "y": 12,
+        "w": 230,
+        "h": 253
+      },
+      "trimmed": true
+    },
+    {
+      "frame": {
+        "x": 2,
+        "y": 1030,
+        "w": 230,
+        "h": 253
+      },
+      "sourceSize": {
+        "w": 284,
+        "h": 277
+      },
+      "anchorX": 69.39,
+      "groundAnchorY": 263.57,
+      "duration": 150,
+      "sourceFrame": 24,
+      "spriteSourceSize": {
+        "x": 29,
+        "y": 12,
+        "w": 230,
+        "h": 253
+      },
+      "trimmed": true
+    },
+    {
+      "frame": {
+        "x": 2,
+        "y": 1287,
+        "w": 230,
+        "h": 253
+      },
+      "sourceSize": {
+        "w": 284,
+        "h": 277
+      },
+      "anchorX": 69.39,
+      "groundAnchorY": 263.57,
+      "duration": 150,
+      "sourceFrame": 30,
+      "spriteSourceSize": {
+        "x": 29,
+        "y": 12,
+        "w": 230,
+        "h": 253
+      },
+      "trimmed": true
+    },
+    {
+      "frame": {
+        "x": 2,
+        "y": 1544,
+        "w": 233,
+        "h": 253
+      },
+      "sourceSize": {
+        "w": 284,
+        "h": 277
+      },
+      "anchorX": 69.39,
+      "groundAnchorY": 263.57,
+      "duration": 150,
+      "sourceFrame": 36,
+      "spriteSourceSize": {
+        "x": 29,
+        "y": 12,
+        "w": 233,
+        "h": 253
+      },
+      "trimmed": true
+    },
+    {
+      "frame": {
+        "x": 2,
+        "y": 1801,
+        "w": 241,
+        "h": 253
+      },
+      "sourceSize": {
+        "w": 284,
+        "h": 277
+      },
+      "anchorX": 69.39,
+      "groundAnchorY": 263.57,
+      "duration": 150,
+      "sourceFrame": 42,
+      "spriteSourceSize": {
+        "x": 29,
+        "y": 12,
+        "w": 241,
+        "h": 253
+      },
+      "trimmed": true
+    },
+    {
+      "frame": {
+        "x": 2,
+        "y": 2058,
+        "w": 249,
+        "h": 253
+      },
+      "sourceSize": {
+        "w": 284,
+        "h": 277
+      },
+      "anchorX": 69.39,
+      "groundAnchorY": 264.1,
+      "duration": 150,
+      "sourceFrame": 48,
+      "spriteSourceSize": {
+        "x": 23,
+        "y": 12,
+        "w": 249,
+        "h": 253
+      },
+      "trimmed": true
+    },
+    {
+      "frame": {
+        "x": 2,
+        "y": 2315,
+        "w": 260,
+        "h": 253
+      },
+      "sourceSize": {
+        "w": 284,
+        "h": 277
+      },
+      "anchorX": 69.39,
+      "groundAnchorY": 264.1,
+      "duration": 150,
+      "sourceFrame": 54,
+      "spriteSourceSize": {
+        "x": 12,
+        "y": 12,
+        "w": 260,
+        "h": 253
+      },
+      "trimmed": true
+    },
+    {
+      "frame": {
+        "x": 2,
+        "y": 2572,
+        "w": 260,
+        "h": 253
+      },
+      "sourceSize": {
+        "w": 284,
+        "h": 277
+      },
+      "anchorX": 69.39,
+      "groundAnchorY": 264.1,
+      "duration": 150,
+      "sourceFrame": 60,
+      "spriteSourceSize": {
+        "x": 12,
+        "y": 12,
+        "w": 260,
+        "h": 253
+      },
+      "trimmed": true
+    },
+    {
+      "frame": {
+        "x": 2,
+        "y": 2829,
+        "w": 260,
+        "h": 253
+      },
+      "sourceSize": {
+        "w": 284,
+        "h": 277
+      },
+      "anchorX": 69.39,
+      "groundAnchorY": 264.1,
+      "duration": 150,
+      "sourceFrame": 66,
+      "spriteSourceSize": {
+        "x": 12,
+        "y": 12,
+        "w": 260,
+        "h": 253
+      },
+      "trimmed": true
+    }
+  ],
+  "meta": {
+    "image": "zohran_mamdani_help_hungry.webp",
+    "anchor": {
+      "x": 69.39,
+      "y": 264.1
+    },
+    "bodyScale": 1,
+    "playbackFps": 6.666666666666666,
+    "helpAction": {
+      "total": 1.8,
+      "contact": 1.05,
+      "offsetX": 146.49,
+      "offsetY": 0.52,
+      "citizenHeight": 231
+    },
+    "source": "C:/Users/19415/Downloads/1791251271984_animation.mp4",
+    "sourceFrames": [
+      0,
+      6,
+      12,
+      18,
+      24,
+      30,
+      36,
+      42,
+      48,
+      54,
+      60,
+      66
+    ],
+    "generator": "Makko; two reference sheets",
+    "size": {
+      "w": 264,
+      "h": 3084
+    },
+    "packing": "Lossless transparent-border trim; original source sizes and anchors retained"
+  }
+}

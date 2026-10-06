@@ -41,14 +41,20 @@ const rally = {
   layers: [
     { name: "sky", speed: 0.04 },
     { name: "skyline", speed: 0.18 },
-    { name: "blocks", speed: 0.45 },
+    { name: "blocks", speed: 1 },
   ],
-  signs: [
-    { x: 520, text: "FREEZE THE RENT" },
-    { x: 1420, text: "THIS CITY BELONGS TO YOU" },
-    { x: 2180, text: "TOWN HALL" },
-    { x: 3180, text: "MONEY IN YOUR POCKET" },
+  scenery: [
+    {art:'nyc-lamp',x:80,y:484,w:82,h:330},
+    {art:'nyc-lamp',x:1710,y:484,w:82,h:330},
+    {art:'nyc-lamp',x:2820,y:484,w:82,h:330},
+    {art:'scenery-pantry-night',x:305,y:485,w:195,h:218},
+    {art:'scenery-kiosk-night',x:700,y:480,w:175,h:210},
+    {art:'scenery-bus-stop-night',x:1430,y:485,w:280,h:280},
+    {art:'scenery-planter-night',x:1960,y:487,w:165,h:150},
+    {art:'scenery-bench-night',x:2500,y:685,w:190,h:140},
+    {art:'scenery-planter-night',x:3180,y:480,w:165,h:150}
   ],
+  signs: [],
   planes: [
     { text: "FREEZE THE RENT", y: 92, speed: 68, start: 0 },
     { text: "I'VE GOT RECEIPTS", y: 150, speed: 50, start: 1900 },
@@ -112,11 +118,7 @@ const studio = {
   building: "#3a2430",
   trim: "#e7d2a8",
   layers: [],
-  signs: [
-    { x: 700, text: "MONEY OUT OF POLITICS" },
-    { x: 2000, text: "TURN THE VOLUME UP" },
-    { x: 3300, text: "HOPE IS ALIVE" },
-  ],
+  signs: [],
   planes: [{ text: "MONEY OUT OF POLITICS", y: 100, speed: 60, start: 400 }],
   citizens: [
     { kind: "worker", x: 460, y: 600 },
@@ -174,11 +176,13 @@ const capitol = {
   building: "#1a2230",
   trim: "#9fb0c4",
   layers: [],
-  signs: [
-    { x: 600, text: "I'VE GOT RECEIPTS" },
-    { x: 1800, text: "HEALTHCARE FOR ALL" },
-    { x: 3200, text: "THIS CITY BELONGS TO YOU" },
+  scenery: [
+    {art:'scenery-planter',x:460,y:485,w:170,h:160},
+    {art:'scenery-bench',x:1160,y:490,w:180,h:133},
+    {art:'scenery-planter',x:2170,y:485,w:170,h:160},
+    {art:'scenery-bench',x:2880,y:680,w:180,h:133}
   ],
+  signs: [],
   planes: [{ text: "I'VE GOT RECEIPTS", y: 96, speed: 72, start: 0 }],
   citizens: [
     { kind: "witness", x: 520, y: 560 },
@@ -234,6 +238,7 @@ export function cloneStage(index) {
     pickups: src.pickups.map((pickup) => ({ ...pickup, taken: false })),
     props: src.props.map((prop) => ({ ...prop })),
     citizens: (src.citizens || []).map((cit) => ({ ...cit })),
+    scenery: (src.scenery || []).map(prop=>({...prop})),
     signs: (src.signs || []).map((sign) => ({ ...sign })),
     planes: (src.planes || []).map((plane) => ({ ...plane })),
     layers: (src.layers || []).map((layer) => ({ ...layer })),

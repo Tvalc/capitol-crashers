@@ -4,16 +4,16 @@
       "frame": {
         "x": 2,
         "y": 2,
-        "w": 140,
-        "h": 256
+        "w": 121,
+        "h": 250
       },
       "rotated": false,
-      "trimmed": false,
+      "trimmed": true,
       "spriteSourceSize": {
-        "x": 0,
-        "y": 0,
-        "w": 140,
-        "h": 256
+        "x": 9,
+        "y": 2,
+        "w": 121,
+        "h": 250
       },
       "sourceSize": {
         "w": 140,
@@ -24,18 +24,18 @@
     },
     "chibi_cast__concepts_to_reference_sheets_mamdani_suit_v3_walk_12_001.webp": {
       "frame": {
-        "x": 146,
+        "x": 127,
         "y": 2,
-        "w": 140,
-        "h": 256
+        "w": 115,
+        "h": 252
       },
       "rotated": false,
-      "trimmed": false,
+      "trimmed": true,
       "spriteSourceSize": {
-        "x": 0,
-        "y": 0,
-        "w": 140,
-        "h": 256
+        "x": 11,
+        "y": 3,
+        "w": 115,
+        "h": 252
       },
       "sourceSize": {
         "w": 140,
@@ -46,18 +46,18 @@
     },
     "chibi_cast__concepts_to_reference_sheets_mamdani_suit_v3_walk_12_002.webp": {
       "frame": {
-        "x": 290,
+        "x": 246,
         "y": 2,
-        "w": 140,
-        "h": 256
+        "w": 94,
+        "h": 255
       },
       "rotated": false,
-      "trimmed": false,
+      "trimmed": true,
       "spriteSourceSize": {
-        "x": 0,
-        "y": 0,
-        "w": 140,
-        "h": 256
+        "x": 20,
+        "y": 1,
+        "w": 94,
+        "h": 255
       },
       "sourceSize": {
         "w": 140,
@@ -68,18 +68,18 @@
     },
     "chibi_cast__concepts_to_reference_sheets_mamdani_suit_v3_walk_12_003.webp": {
       "frame": {
-        "x": 434,
+        "x": 344,
         "y": 2,
-        "w": 140,
-        "h": 256
+        "w": 86,
+        "h": 255
       },
       "rotated": false,
-      "trimmed": false,
+      "trimmed": true,
       "spriteSourceSize": {
-        "x": 0,
+        "x": 19,
         "y": 0,
-        "w": 140,
-        "h": 256
+        "w": 86,
+        "h": 255
       },
       "sourceSize": {
         "w": 140,
@@ -90,18 +90,18 @@
     },
     "chibi_cast__concepts_to_reference_sheets_mamdani_suit_v3_walk_12_004.webp": {
       "frame": {
-        "x": 2,
-        "y": 262,
-        "w": 140,
-        "h": 256
+        "x": 434,
+        "y": 2,
+        "w": 95,
+        "h": 254
       },
       "rotated": false,
-      "trimmed": false,
+      "trimmed": true,
       "spriteSourceSize": {
-        "x": 0,
+        "x": 18,
         "y": 0,
-        "w": 140,
-        "h": 256
+        "w": 95,
+        "h": 254
       },
       "sourceSize": {
         "w": 140,
@@ -112,18 +112,18 @@
     },
     "chibi_cast__concepts_to_reference_sheets_mamdani_suit_v3_walk_12_005.webp": {
       "frame": {
-        "x": 146,
-        "y": 262,
-        "w": 140,
-        "h": 256
+        "x": 533,
+        "y": 2,
+        "w": 129,
+        "h": 252
       },
       "rotated": false,
-      "trimmed": false,
+      "trimmed": true,
       "spriteSourceSize": {
-        "x": 0,
-        "y": 0,
-        "w": 140,
-        "h": 256
+        "x": 10,
+        "y": 1,
+        "w": 129,
+        "h": 252
       },
       "sourceSize": {
         "w": 140,
@@ -134,18 +134,18 @@
     },
     "chibi_cast__concepts_to_reference_sheets_mamdani_suit_v3_walk_12_006.webp": {
       "frame": {
-        "x": 290,
-        "y": 262,
-        "w": 140,
-        "h": 256
+        "x": 2,
+        "y": 261,
+        "w": 134,
+        "h": 249
       },
       "rotated": false,
-      "trimmed": false,
+      "trimmed": true,
       "spriteSourceSize": {
         "x": 0,
-        "y": 0,
-        "w": 140,
-        "h": 256
+        "y": 3,
+        "w": 134,
+        "h": 249
       },
       "sourceSize": {
         "w": 140,
@@ -156,18 +156,18 @@
     },
     "chibi_cast__concepts_to_reference_sheets_mamdani_suit_v3_walk_12_007.webp": {
       "frame": {
-        "x": 434,
-        "y": 262,
-        "w": 140,
-        "h": 256
+        "x": 140,
+        "y": 261,
+        "w": 105,
+        "h": 250
       },
       "rotated": false,
-      "trimmed": false,
+      "trimmed": true,
       "spriteSourceSize": {
-        "x": 0,
-        "y": 0,
-        "w": 140,
-        "h": 256
+        "x": 13,
+        "y": 2,
+        "w": 105,
+        "h": 250
       },
       "sourceSize": {
         "w": 140,
@@ -178,18 +178,18 @@
     },
     "chibi_cast__concepts_to_reference_sheets_mamdani_suit_v3_walk_12_008.webp": {
       "frame": {
-        "x": 2,
-        "y": 522,
-        "w": 140,
-        "h": 256
+        "x": 249,
+        "y": 261,
+        "w": 86,
+        "h": 251
       },
       "rotated": false,
-      "trimmed": false,
+      "trimmed": true,
       "spriteSourceSize": {
-        "x": 0,
-        "y": 0,
-        "w": 140,
-        "h": 256
+        "x": 20,
+        "y": 1,
+        "w": 86,
+        "h": 251
       },
       "sourceSize": {
         "w": 140,
@@ -200,18 +200,18 @@
     },
     "chibi_cast__concepts_to_reference_sheets_mamdani_suit_v3_walk_12_009.webp": {
       "frame": {
-        "x": 146,
-        "y": 522,
-        "w": 140,
-        "h": 256
+        "x": 339,
+        "y": 261,
+        "w": 97,
+        "h": 251
       },
       "rotated": false,
-      "trimmed": false,
+      "trimmed": true,
       "spriteSourceSize": {
-        "x": 0,
+        "x": 19,
         "y": 0,
-        "w": 140,
-        "h": 256
+        "w": 97,
+        "h": 251
       },
       "sourceSize": {
         "w": 140,
@@ -222,18 +222,18 @@
     },
     "chibi_cast__concepts_to_reference_sheets_mamdani_suit_v3_walk_12_010.webp": {
       "frame": {
-        "x": 290,
-        "y": 522,
-        "w": 140,
-        "h": 256
+        "x": 440,
+        "y": 261,
+        "w": 117,
+        "h": 249
       },
       "rotated": false,
-      "trimmed": false,
+      "trimmed": true,
       "spriteSourceSize": {
-        "x": 0,
-        "y": 0,
-        "w": 140,
-        "h": 256
+        "x": 11,
+        "y": 1,
+        "w": 117,
+        "h": 249
       },
       "sourceSize": {
         "w": 140,
@@ -244,18 +244,18 @@
     },
     "chibi_cast__concepts_to_reference_sheets_mamdani_suit_v3_walk_12_011.webp": {
       "frame": {
-        "x": 434,
-        "y": 522,
-        "w": 140,
-        "h": 256
+        "x": 561,
+        "y": 261,
+        "w": 122,
+        "h": 250
       },
       "rotated": false,
-      "trimmed": false,
+      "trimmed": true,
       "spriteSourceSize": {
-        "x": 0,
-        "y": 0,
-        "w": 140,
-        "h": 256
+        "x": 8,
+        "y": 2,
+        "w": 122,
+        "h": 250
       },
       "sourceSize": {
         "w": 140,
@@ -271,8 +271,8 @@
     "image": "zohran_mamdani_walk.webp",
     "format": "RGBA8888",
     "size": {
-      "w": 576,
-      "h": 780
+      "w": 714,
+      "h": 514
     },
     "scale": "1",
     "frameTags": [
@@ -323,6 +323,7 @@
     "playbackFps": 9,
     "useFrameDurations": false,
     "bodyScale": 1.0,
-    "grounding": "Planted sole baseline for grounded poses; fixed lowest sole for the running flight phase."
+    "grounding": "Planted sole baseline for grounded poses; fixed lowest sole for the running flight phase.",
+    "packing": "Lossless transparent-border trim; original source sizes and anchors retained"
   }
 }

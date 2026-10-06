@@ -4,169 +4,241 @@
       "frame": {
         "x": 2,
         "y": 2,
-        "w": 359,
-        "h": 568
+        "w": 342,
+        "h": 506
       },
       "duration": 56,
       "sourceSize": {
         "w": 359,
         "h": 568
       },
-      "trimmed": false
-    },
-    {
-      "frame": {
-        "x": 365,
-        "y": 2,
-        "w": 359,
-        "h": 568
-      },
-      "duration": 56,
-      "sourceSize": {
-        "w": 359,
-        "h": 568
-      },
-      "trimmed": false
-    },
-    {
-      "frame": {
-        "x": 728,
-        "y": 2,
-        "w": 359,
-        "h": 568
-      },
-      "duration": 56,
-      "sourceSize": {
-        "w": 359,
-        "h": 568
-      },
-      "trimmed": false
-    },
-    {
-      "frame": {
-        "x": 1091,
-        "y": 2,
-        "w": 359,
-        "h": 568
-      },
-      "duration": 56,
-      "sourceSize": {
-        "w": 359,
-        "h": 568
-      },
-      "trimmed": false
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 342,
+        "h": 506
+      }
     },
     {
       "frame": {
         "x": 2,
-        "y": 574,
-        "w": 359,
-        "h": 568
+        "y": 512,
+        "w": 338,
+        "h": 519
       },
       "duration": 56,
       "sourceSize": {
         "w": 359,
         "h": 568
       },
-      "trimmed": false
-    },
-    {
-      "frame": {
-        "x": 365,
-        "y": 574,
-        "w": 359,
-        "h": 568
-      },
-      "duration": 56,
-      "sourceSize": {
-        "w": 359,
-        "h": 568
-      },
-      "trimmed": false
-    },
-    {
-      "frame": {
-        "x": 728,
-        "y": 574,
-        "w": 359,
-        "h": 568
-      },
-      "duration": 56,
-      "sourceSize": {
-        "w": 359,
-        "h": 568
-      },
-      "trimmed": false
-    },
-    {
-      "frame": {
-        "x": 1091,
-        "y": 574,
-        "w": 359,
-        "h": 568
-      },
-      "duration": 56,
-      "sourceSize": {
-        "w": 359,
-        "h": 568
-      },
-      "trimmed": false
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 2,
+        "w": 338,
+        "h": 519
+      }
     },
     {
       "frame": {
         "x": 2,
-        "y": 1146,
-        "w": 359,
-        "h": 568
+        "y": 1035,
+        "w": 337,
+        "h": 540
       },
       "duration": 56,
       "sourceSize": {
         "w": 359,
         "h": 568
       },
-      "trimmed": false
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 7,
+        "w": 337,
+        "h": 540
+      }
     },
     {
       "frame": {
-        "x": 365,
-        "y": 1146,
-        "w": 359,
-        "h": 568
+        "x": 2,
+        "y": 1579,
+        "w": 338,
+        "h": 548
       },
       "duration": 56,
       "sourceSize": {
         "w": 359,
         "h": 568
       },
-      "trimmed": false
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 20,
+        "w": 338,
+        "h": 548
+      }
     },
     {
       "frame": {
-        "x": 728,
-        "y": 1146,
-        "w": 359,
-        "h": 568
+        "x": 2,
+        "y": 2131,
+        "w": 338,
+        "h": 552
       },
       "duration": 56,
       "sourceSize": {
         "w": 359,
         "h": 568
       },
-      "trimmed": false
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 16,
+        "w": 338,
+        "h": 552
+      }
     },
     {
       "frame": {
-        "x": 1091,
-        "y": 1146,
-        "w": 359,
-        "h": 568
+        "x": 2,
+        "y": 2687,
+        "w": 341,
+        "h": 556
       },
       "duration": 56,
       "sourceSize": {
         "w": 359,
         "h": 568
       },
-      "trimmed": false
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 1,
+        "y": 10,
+        "w": 341,
+        "h": 556
+      }
+    },
+    {
+      "frame": {
+        "x": 2,
+        "y": 3247,
+        "w": 349,
+        "h": 536
+      },
+      "duration": 56,
+      "sourceSize": {
+        "w": 359,
+        "h": 568
+      },
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 7,
+        "y": 0,
+        "w": 349,
+        "h": 536
+      }
+    },
+    {
+      "frame": {
+        "x": 2,
+        "y": 3787,
+        "w": 350,
+        "h": 514
+      },
+      "duration": 56,
+      "sourceSize": {
+        "w": 359,
+        "h": 568
+      },
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 9,
+        "y": 0,
+        "w": 350,
+        "h": 514
+      }
+    },
+    {
+      "frame": {
+        "x": 2,
+        "y": 4305,
+        "w": 350,
+        "h": 529
+      },
+      "duration": 56,
+      "sourceSize": {
+        "w": 359,
+        "h": 568
+      },
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 9,
+        "y": 0,
+        "w": 350,
+        "h": 529
+      }
+    },
+    {
+      "frame": {
+        "x": 2,
+        "y": 4838,
+        "w": 341,
+        "h": 555
+      },
+      "duration": 56,
+      "sourceSize": {
+        "w": 359,
+        "h": 568
+      },
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 8,
+        "y": 13,
+        "w": 341,
+        "h": 555
+      }
+    },
+    {
+      "frame": {
+        "x": 2,
+        "y": 5397,
+        "w": 342,
+        "h": 552
+      },
+      "duration": 56,
+      "sourceSize": {
+        "w": 359,
+        "h": 568
+      },
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 7,
+        "y": 16,
+        "w": 342,
+        "h": 552
+      }
+    },
+    {
+      "frame": {
+        "x": 2,
+        "y": 5953,
+        "w": 342,
+        "h": 555
+      },
+      "duration": 56,
+      "sourceSize": {
+        "w": 359,
+        "h": 568
+      },
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 7,
+        "y": 9,
+        "w": 342,
+        "h": 555
+      }
     }
   ],
   "meta": {
@@ -175,8 +247,8 @@
     "image": "ted_cruz_run.webp",
     "format": "RGBA8888",
     "size": {
-      "w": 1452,
-      "h": 1716
+      "w": 354,
+      "h": 6510
     },
     "scale": "1",
     "frameTags": [
@@ -222,6 +294,7 @@
     "playbackFps": 18,
     "useFrameDurations": false,
     "bodyScale": 0.5015458079524932,
-    "nativeResolutionRepair": true
+    "nativeResolutionRepair": true,
+    "packing": "Lossless transparent-border trim; original source sizes and anchors retained"
   }
 }

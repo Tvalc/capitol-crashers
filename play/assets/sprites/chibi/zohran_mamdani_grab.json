@@ -4,16 +4,16 @@
       "frame": {
         "x": 2,
         "y": 2,
-        "w": 198,
-        "h": 256
+        "w": 111,
+        "h": 251
       },
       "rotated": false,
-      "trimmed": false,
+      "trimmed": true,
       "spriteSourceSize": {
-        "x": 0,
-        "y": 0,
-        "w": 198,
-        "h": 256
+        "x": 15,
+        "y": 5,
+        "w": 111,
+        "h": 251
       },
       "sourceSize": {
         "w": 198,
@@ -23,18 +23,18 @@
     },
     "zohran_mamdani_chibi_grab_12_001.webp": {
       "frame": {
-        "x": 204,
+        "x": 117,
         "y": 2,
-        "w": 198,
-        "h": 256
+        "w": 108,
+        "h": 248
       },
       "rotated": false,
-      "trimmed": false,
+      "trimmed": true,
       "spriteSourceSize": {
-        "x": 0,
-        "y": 0,
-        "w": 198,
-        "h": 256
+        "x": 19,
+        "y": 8,
+        "w": 108,
+        "h": 248
       },
       "sourceSize": {
         "w": 198,
@@ -44,18 +44,18 @@
     },
     "zohran_mamdani_chibi_grab_12_002.webp": {
       "frame": {
-        "x": 406,
+        "x": 229,
         "y": 2,
-        "w": 198,
-        "h": 256
+        "w": 91,
+        "h": 248
       },
       "rotated": false,
-      "trimmed": false,
+      "trimmed": true,
       "spriteSourceSize": {
-        "x": 0,
-        "y": 0,
-        "w": 198,
-        "h": 256
+        "x": 46,
+        "y": 8,
+        "w": 91,
+        "h": 248
       },
       "sourceSize": {
         "w": 198,
@@ -65,18 +65,18 @@
     },
     "zohran_mamdani_chibi_grab_12_003.webp": {
       "frame": {
-        "x": 608,
+        "x": 324,
         "y": 2,
-        "w": 198,
-        "h": 256
+        "w": 148,
+        "h": 243
       },
       "rotated": false,
-      "trimmed": false,
+      "trimmed": true,
       "spriteSourceSize": {
-        "x": 0,
-        "y": 0,
-        "w": 198,
-        "h": 256
+        "x": 41,
+        "y": 11,
+        "w": 148,
+        "h": 243
       },
       "sourceSize": {
         "w": 198,
@@ -86,18 +86,18 @@
     },
     "zohran_mamdani_chibi_grab_12_004.webp": {
       "frame": {
-        "x": 2,
-        "y": 262,
-        "w": 198,
-        "h": 256
+        "x": 476,
+        "y": 2,
+        "w": 158,
+        "h": 246
       },
       "rotated": false,
-      "trimmed": false,
+      "trimmed": true,
       "spriteSourceSize": {
-        "x": 0,
-        "y": 0,
-        "w": 198,
-        "h": 256
+        "x": 24,
+        "y": 10,
+        "w": 158,
+        "h": 246
       },
       "sourceSize": {
         "w": 198,
@@ -107,18 +107,18 @@
     },
     "zohran_mamdani_chibi_grab_12_005.webp": {
       "frame": {
-        "x": 204,
-        "y": 262,
-        "w": 198,
-        "h": 256
+        "x": 638,
+        "y": 2,
+        "w": 132,
+        "h": 252
       },
       "rotated": false,
-      "trimmed": false,
+      "trimmed": true,
       "spriteSourceSize": {
-        "x": 0,
-        "y": 0,
-        "w": 198,
-        "h": 256
+        "x": 24,
+        "y": 4,
+        "w": 132,
+        "h": 252
       },
       "sourceSize": {
         "w": 198,
@@ -128,18 +128,18 @@
     },
     "zohran_mamdani_chibi_grab_12_006.webp": {
       "frame": {
-        "x": 406,
-        "y": 262,
-        "w": 198,
-        "h": 256
+        "x": 774,
+        "y": 2,
+        "w": 179,
+        "h": 254
       },
       "rotated": false,
-      "trimmed": false,
+      "trimmed": true,
       "spriteSourceSize": {
-        "x": 0,
-        "y": 0,
-        "w": 198,
-        "h": 256
+        "x": 18,
+        "y": 2,
+        "w": 179,
+        "h": 254
       },
       "sourceSize": {
         "w": 198,
@@ -149,18 +149,18 @@
     },
     "zohran_mamdani_chibi_grab_12_007.webp": {
       "frame": {
-        "x": 608,
-        "y": 262,
-        "w": 198,
-        "h": 256
+        "x": 2,
+        "y": 260,
+        "w": 179,
+        "h": 255
       },
       "rotated": false,
-      "trimmed": false,
+      "trimmed": true,
       "spriteSourceSize": {
-        "x": 0,
-        "y": 0,
-        "w": 198,
-        "h": 256
+        "x": 17,
+        "y": 1,
+        "w": 179,
+        "h": 255
       },
       "sourceSize": {
         "w": 198,
@@ -170,18 +170,18 @@
     },
     "zohran_mamdani_chibi_grab_12_008.webp": {
       "frame": {
-        "x": 2,
-        "y": 522,
-        "w": 198,
-        "h": 256
+        "x": 185,
+        "y": 260,
+        "w": 178,
+        "h": 255
       },
       "rotated": false,
-      "trimmed": false,
+      "trimmed": true,
       "spriteSourceSize": {
-        "x": 0,
-        "y": 0,
-        "w": 198,
-        "h": 256
+        "x": 18,
+        "y": 1,
+        "w": 178,
+        "h": 255
       },
       "sourceSize": {
         "w": 198,
@@ -191,18 +191,18 @@
     },
     "zohran_mamdani_chibi_grab_12_009.webp": {
       "frame": {
-        "x": 204,
-        "y": 522,
-        "w": 198,
-        "h": 256
+        "x": 367,
+        "y": 260,
+        "w": 177,
+        "h": 255
       },
       "rotated": false,
-      "trimmed": false,
+      "trimmed": true,
       "spriteSourceSize": {
-        "x": 0,
-        "y": 0,
-        "w": 198,
-        "h": 256
+        "x": 19,
+        "y": 1,
+        "w": 177,
+        "h": 255
       },
       "sourceSize": {
         "w": 198,
@@ -212,18 +212,18 @@
     },
     "zohran_mamdani_chibi_grab_12_010.webp": {
       "frame": {
-        "x": 406,
-        "y": 522,
-        "w": 198,
-        "h": 256
+        "x": 548,
+        "y": 260,
+        "w": 128,
+        "h": 254
       },
       "rotated": false,
-      "trimmed": false,
+      "trimmed": true,
       "spriteSourceSize": {
-        "x": 0,
-        "y": 0,
-        "w": 198,
-        "h": 256
+        "x": 14,
+        "y": 2,
+        "w": 128,
+        "h": 254
       },
       "sourceSize": {
         "w": 198,
@@ -233,17 +233,17 @@
     },
     "zohran_mamdani_chibi_grab_12_011.webp": {
       "frame": {
-        "x": 608,
-        "y": 522,
-        "w": 198,
+        "x": 680,
+        "y": 260,
+        "w": 129,
         "h": 256
       },
       "rotated": false,
-      "trimmed": false,
+      "trimmed": true,
       "spriteSourceSize": {
         "x": 0,
         "y": 0,
-        "w": 198,
+        "w": 129,
         "h": 256
       },
       "sourceSize": {
@@ -259,8 +259,8 @@
     "image": "zohran_mamdani_grab.webp",
     "format": "RGBA8888",
     "size": {
-      "w": 808,
-      "h": 780
+      "w": 983,
+      "h": 518
     },
     "scale": "1",
     "frameTags": [
@@ -294,6 +294,7 @@
     "designVersion": "chibi-makko-oct04",
     "bodyScale": 1.0040160642570282,
     "playbackFps": 24,
-    "importSource": "zohran_mamdani_chibi_grab_12.json"
+    "importSource": "zohran_mamdani_chibi_grab_12.json",
+    "packing": "Lossless transparent-border trim; original source sizes and anchors retained"
   }
 }

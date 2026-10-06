@@ -4,16 +4,16 @@
       "frame": {
         "x": 2,
         "y": 2,
-        "w": 237,
-        "h": 256
+        "w": 212,
+        "h": 251
       },
       "rotated": false,
-      "trimmed": false,
+      "trimmed": true,
       "spriteSourceSize": {
-        "x": 0,
+        "x": 18,
         "y": 0,
-        "w": 237,
-        "h": 256
+        "w": 212,
+        "h": 251
       },
       "sourceSize": {
         "w": 237,
@@ -23,18 +23,18 @@
     },
     "chibi_cast__concepts_to_reference_sheets_trump_v3_death_12_001.webp": {
       "frame": {
-        "x": 243,
-        "y": 2,
-        "w": 237,
-        "h": 256
+        "x": 2,
+        "y": 257,
+        "w": 222,
+        "h": 249
       },
       "rotated": false,
-      "trimmed": false,
+      "trimmed": true,
       "spriteSourceSize": {
-        "x": 0,
-        "y": 0,
-        "w": 237,
-        "h": 256
+        "x": 8,
+        "y": 2,
+        "w": 222,
+        "h": 249
       },
       "sourceSize": {
         "w": 237,
@@ -44,18 +44,18 @@
     },
     "chibi_cast__concepts_to_reference_sheets_trump_v3_death_12_002.webp": {
       "frame": {
-        "x": 484,
-        "y": 2,
-        "w": 237,
-        "h": 256
+        "x": 2,
+        "y": 510,
+        "w": 225,
+        "h": 246
       },
       "rotated": false,
-      "trimmed": false,
+      "trimmed": true,
       "spriteSourceSize": {
-        "x": 0,
-        "y": 0,
-        "w": 237,
-        "h": 256
+        "x": 3,
+        "y": 5,
+        "w": 225,
+        "h": 246
       },
       "sourceSize": {
         "w": 237,
@@ -65,18 +65,18 @@
     },
     "chibi_cast__concepts_to_reference_sheets_trump_v3_death_12_003.webp": {
       "frame": {
-        "x": 725,
-        "y": 2,
-        "w": 237,
-        "h": 256
+        "x": 2,
+        "y": 760,
+        "w": 202,
+        "h": 248
       },
       "rotated": false,
-      "trimmed": false,
+      "trimmed": true,
       "spriteSourceSize": {
-        "x": 0,
-        "y": 0,
-        "w": 237,
-        "h": 256
+        "x": 33,
+        "y": 3,
+        "w": 202,
+        "h": 248
       },
       "sourceSize": {
         "w": 237,
@@ -87,17 +87,17 @@
     "chibi_cast__concepts_to_reference_sheets_trump_v3_death_12_004.webp": {
       "frame": {
         "x": 2,
-        "y": 262,
-        "w": 237,
-        "h": 256
+        "y": 1012,
+        "w": 193,
+        "h": 238
       },
       "rotated": false,
-      "trimmed": false,
+      "trimmed": true,
       "spriteSourceSize": {
-        "x": 0,
-        "y": 0,
-        "w": 237,
-        "h": 256
+        "x": 41,
+        "y": 14,
+        "w": 193,
+        "h": 238
       },
       "sourceSize": {
         "w": 237,
@@ -107,18 +107,18 @@
     },
     "chibi_cast__concepts_to_reference_sheets_trump_v3_death_12_005.webp": {
       "frame": {
-        "x": 243,
-        "y": 262,
-        "w": 237,
-        "h": 256
+        "x": 2,
+        "y": 1254,
+        "w": 202,
+        "h": 215
       },
       "rotated": false,
-      "trimmed": false,
+      "trimmed": true,
       "spriteSourceSize": {
-        "x": 0,
-        "y": 0,
-        "w": 237,
-        "h": 256
+        "x": 34,
+        "y": 39,
+        "w": 202,
+        "h": 215
       },
       "sourceSize": {
         "w": 237,
@@ -128,18 +128,18 @@
     },
     "chibi_cast__concepts_to_reference_sheets_trump_v3_death_12_006.webp": {
       "frame": {
-        "x": 484,
-        "y": 262,
-        "w": 237,
-        "h": 256
+        "x": 2,
+        "y": 1473,
+        "w": 196,
+        "h": 184
       },
       "rotated": false,
-      "trimmed": false,
+      "trimmed": true,
       "spriteSourceSize": {
-        "x": 0,
-        "y": 0,
-        "w": 237,
-        "h": 256
+        "x": 30,
+        "y": 70,
+        "w": 196,
+        "h": 184
       },
       "sourceSize": {
         "w": 237,
@@ -149,18 +149,18 @@
     },
     "chibi_cast__concepts_to_reference_sheets_trump_v3_death_12_007.webp": {
       "frame": {
-        "x": 725,
-        "y": 262,
-        "w": 237,
-        "h": 256
+        "x": 2,
+        "y": 1661,
+        "w": 205,
+        "h": 171
       },
       "rotated": false,
-      "trimmed": false,
+      "trimmed": true,
       "spriteSourceSize": {
-        "x": 0,
-        "y": 0,
-        "w": 237,
-        "h": 256
+        "x": 20,
+        "y": 85,
+        "w": 205,
+        "h": 171
       },
       "sourceSize": {
         "w": 237,
@@ -171,17 +171,17 @@
     "chibi_cast__concepts_to_reference_sheets_trump_v3_death_12_008.webp": {
       "frame": {
         "x": 2,
-        "y": 522,
-        "w": 237,
-        "h": 256
+        "y": 1836,
+        "w": 227,
+        "h": 147
       },
       "rotated": false,
-      "trimmed": false,
+      "trimmed": true,
       "spriteSourceSize": {
-        "x": 0,
-        "y": 0,
-        "w": 237,
-        "h": 256
+        "x": 1,
+        "y": 109,
+        "w": 227,
+        "h": 147
       },
       "sourceSize": {
         "w": 237,
@@ -191,18 +191,18 @@
     },
     "chibi_cast__concepts_to_reference_sheets_trump_v3_death_12_009.webp": {
       "frame": {
-        "x": 243,
-        "y": 522,
-        "w": 237,
-        "h": 256
+        "x": 2,
+        "y": 1987,
+        "w": 232,
+        "h": 145
       },
       "rotated": false,
-      "trimmed": false,
+      "trimmed": true,
       "spriteSourceSize": {
         "x": 0,
-        "y": 0,
-        "w": 237,
-        "h": 256
+        "y": 110,
+        "w": 232,
+        "h": 145
       },
       "sourceSize": {
         "w": 237,
@@ -212,18 +212,18 @@
     },
     "chibi_cast__concepts_to_reference_sheets_trump_v3_death_12_010.webp": {
       "frame": {
-        "x": 484,
-        "y": 522,
-        "w": 237,
-        "h": 256
+        "x": 2,
+        "y": 2136,
+        "w": 234,
+        "h": 144
       },
       "rotated": false,
-      "trimmed": false,
+      "trimmed": true,
       "spriteSourceSize": {
-        "x": 0,
-        "y": 0,
-        "w": 237,
-        "h": 256
+        "x": 2,
+        "y": 111,
+        "w": 234,
+        "h": 144
       },
       "sourceSize": {
         "w": 237,
@@ -233,18 +233,18 @@
     },
     "chibi_cast__concepts_to_reference_sheets_trump_v3_death_12_011.webp": {
       "frame": {
-        "x": 725,
-        "y": 522,
-        "w": 237,
-        "h": 256
+        "x": 2,
+        "y": 2284,
+        "w": 233,
+        "h": 143
       },
       "rotated": false,
-      "trimmed": false,
+      "trimmed": true,
       "spriteSourceSize": {
-        "x": 0,
-        "y": 0,
-        "w": 237,
-        "h": 256
+        "x": 2,
+        "y": 112,
+        "w": 233,
+        "h": 143
       },
       "sourceSize": {
         "w": 237,
@@ -259,8 +259,8 @@
     "image": "donald_trump_death.webp",
     "format": "RGBA8888",
     "size": {
-      "w": 964,
-      "h": 780
+      "w": 238,
+      "h": 2429
     },
     "scale": "1",
     "frameTags": [
@@ -310,6 +310,7 @@
     "importSource": "chibi_cast__concepts_to_reference_sheets_trump_v3_death_12.zip",
     "playbackFps": 24,
     "useFrameDurations": false,
-    "bodyScale": 0.9960159362549801
+    "bodyScale": 0.9960159362549801,
+    "packing": "Lossless transparent-border trim; original source sizes and anchors retained"
   }
 }

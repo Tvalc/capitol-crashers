@@ -1,10 +1,10 @@
 {
-  "frames": {
-    "chibi_cast__concepts_to_reference_sheets_mamdani_suit_v3_idle_12_000.webp": {
+  "frames": [
+    {
       "frame": {
         "x": 2,
         "y": 2,
-        "w": 137,
+        "w": 128,
         "h": 256
       },
       "rotated": false,
@@ -12,21 +12,22 @@
       "spriteSourceSize": {
         "x": 0,
         "y": 0,
-        "w": 137,
+        "w": 128,
         "h": 256
       },
       "sourceSize": {
-        "w": 137,
+        "w": 128,
         "h": 256
       },
       "duration": 167,
-      "groundAnchorY": 256
+      "anchorX": 64,
+      "groundAnchorY": 255
     },
-    "chibi_cast__concepts_to_reference_sheets_mamdani_suit_v3_idle_12_001.webp": {
+    {
       "frame": {
-        "x": 143,
+        "x": 134,
         "y": 2,
-        "w": 137,
+        "w": 128,
         "h": 256
       },
       "rotated": false,
@@ -34,21 +35,22 @@
       "spriteSourceSize": {
         "x": 0,
         "y": 0,
-        "w": 137,
+        "w": 128,
         "h": 256
       },
       "sourceSize": {
-        "w": 137,
+        "w": 128,
         "h": 256
       },
       "duration": 167,
-      "groundAnchorY": 256
+      "anchorX": 64,
+      "groundAnchorY": 255
     },
-    "chibi_cast__concepts_to_reference_sheets_mamdani_suit_v3_idle_12_002.webp": {
+    {
       "frame": {
-        "x": 284,
+        "x": 266,
         "y": 2,
-        "w": 137,
+        "w": 128,
         "h": 256
       },
       "rotated": false,
@@ -56,21 +58,22 @@
       "spriteSourceSize": {
         "x": 0,
         "y": 0,
-        "w": 137,
+        "w": 128,
         "h": 256
       },
       "sourceSize": {
-        "w": 137,
+        "w": 128,
         "h": 256
       },
       "duration": 167,
-      "groundAnchorY": 256
+      "anchorX": 64,
+      "groundAnchorY": 255
     },
-    "chibi_cast__concepts_to_reference_sheets_mamdani_suit_v3_idle_12_003.webp": {
+    {
       "frame": {
-        "x": 425,
+        "x": 398,
         "y": 2,
-        "w": 137,
+        "w": 128,
         "h": 256
       },
       "rotated": false,
@@ -78,21 +81,22 @@
       "spriteSourceSize": {
         "x": 0,
         "y": 0,
-        "w": 137,
+        "w": 128,
         "h": 256
       },
       "sourceSize": {
-        "w": 137,
+        "w": 128,
         "h": 256
       },
       "duration": 167,
-      "groundAnchorY": 256
+      "anchorX": 64,
+      "groundAnchorY": 255
     },
-    "chibi_cast__concepts_to_reference_sheets_mamdani_suit_v3_idle_12_004.webp": {
+    {
       "frame": {
         "x": 2,
         "y": 262,
-        "w": 137,
+        "w": 128,
         "h": 256
       },
       "rotated": false,
@@ -100,21 +104,22 @@
       "spriteSourceSize": {
         "x": 0,
         "y": 0,
-        "w": 137,
+        "w": 128,
         "h": 256
       },
       "sourceSize": {
-        "w": 137,
+        "w": 128,
         "h": 256
       },
       "duration": 167,
-      "groundAnchorY": 256
+      "anchorX": 64,
+      "groundAnchorY": 255
     },
-    "chibi_cast__concepts_to_reference_sheets_mamdani_suit_v3_idle_12_005.webp": {
+    {
       "frame": {
-        "x": 143,
+        "x": 134,
         "y": 262,
-        "w": 137,
+        "w": 128,
         "h": 256
       },
       "rotated": false,
@@ -122,21 +127,22 @@
       "spriteSourceSize": {
         "x": 0,
         "y": 0,
-        "w": 137,
+        "w": 128,
         "h": 256
       },
       "sourceSize": {
-        "w": 137,
+        "w": 128,
         "h": 256
       },
       "duration": 167,
-      "groundAnchorY": 256
+      "anchorX": 64,
+      "groundAnchorY": 255
     },
-    "chibi_cast__concepts_to_reference_sheets_mamdani_suit_v3_idle_12_006.webp": {
+    {
       "frame": {
-        "x": 284,
+        "x": 266,
         "y": 262,
-        "w": 137,
+        "w": 128,
         "h": 256
       },
       "rotated": false,
@@ -144,21 +150,22 @@
       "spriteSourceSize": {
         "x": 0,
         "y": 0,
-        "w": 137,
+        "w": 128,
         "h": 256
       },
       "sourceSize": {
-        "w": 137,
+        "w": 128,
         "h": 256
       },
       "duration": 167,
-      "groundAnchorY": 256
+      "anchorX": 64,
+      "groundAnchorY": 255
     },
-    "chibi_cast__concepts_to_reference_sheets_mamdani_suit_v3_idle_12_007.webp": {
+    {
       "frame": {
-        "x": 425,
+        "x": 398,
         "y": 262,
-        "w": 137,
+        "w": 128,
         "h": 256
       },
       "rotated": false,
@@ -166,21 +173,22 @@
       "spriteSourceSize": {
         "x": 0,
         "y": 0,
-        "w": 137,
+        "w": 128,
         "h": 256
       },
       "sourceSize": {
-        "w": 137,
+        "w": 128,
         "h": 256
       },
       "duration": 167,
-      "groundAnchorY": 256
+      "anchorX": 64,
+      "groundAnchorY": 255
     },
-    "chibi_cast__concepts_to_reference_sheets_mamdani_suit_v3_idle_12_008.webp": {
+    {
       "frame": {
         "x": 2,
         "y": 522,
-        "w": 137,
+        "w": 128,
         "h": 256
       },
       "rotated": false,
@@ -188,21 +196,22 @@
       "spriteSourceSize": {
         "x": 0,
         "y": 0,
-        "w": 137,
+        "w": 128,
         "h": 256
       },
       "sourceSize": {
-        "w": 137,
+        "w": 128,
         "h": 256
       },
       "duration": 167,
-      "groundAnchorY": 256
+      "anchorX": 64,
+      "groundAnchorY": 255
     },
-    "chibi_cast__concepts_to_reference_sheets_mamdani_suit_v3_idle_12_009.webp": {
+    {
       "frame": {
-        "x": 143,
+        "x": 134,
         "y": 522,
-        "w": 137,
+        "w": 128,
         "h": 256
       },
       "rotated": false,
@@ -210,21 +219,22 @@
       "spriteSourceSize": {
         "x": 0,
         "y": 0,
-        "w": 137,
+        "w": 128,
         "h": 256
       },
       "sourceSize": {
-        "w": 137,
+        "w": 128,
         "h": 256
       },
       "duration": 167,
-      "groundAnchorY": 256
+      "anchorX": 64,
+      "groundAnchorY": 255
     },
-    "chibi_cast__concepts_to_reference_sheets_mamdani_suit_v3_idle_12_010.webp": {
+    {
       "frame": {
-        "x": 284,
+        "x": 266,
         "y": 522,
-        "w": 137,
+        "w": 128,
         "h": 256
       },
       "rotated": false,
@@ -232,21 +242,22 @@
       "spriteSourceSize": {
         "x": 0,
         "y": 0,
-        "w": 137,
+        "w": 128,
         "h": 256
       },
       "sourceSize": {
-        "w": 137,
+        "w": 128,
         "h": 256
       },
       "duration": 167,
-      "groundAnchorY": 256
+      "anchorX": 64,
+      "groundAnchorY": 255
     },
-    "chibi_cast__concepts_to_reference_sheets_mamdani_suit_v3_idle_12_011.webp": {
+    {
       "frame": {
-        "x": 425,
+        "x": 398,
         "y": 522,
-        "w": 137,
+        "w": 128,
         "h": 256
       },
       "rotated": false,
@@ -254,75 +265,74 @@
       "spriteSourceSize": {
         "x": 0,
         "y": 0,
-        "w": 137,
+        "w": 128,
         "h": 256
       },
       "sourceSize": {
-        "w": 137,
+        "w": 128,
         "h": 256
       },
       "duration": 167,
-      "groundAnchorY": 256
+      "anchorX": 64,
+      "groundAnchorY": 255
     }
-  },
+  ],
   "meta": {
     "app": "MAKKO Sprite Studio",
     "version": "1.0.0",
     "image": "zohran_mamdani_idle.webp",
     "format": "RGBA8888",
     "size": {
-      "w": 564,
+      "w": 528,
       "h": 780
     },
     "scale": "1",
     "frameTags": [
       {
-        "name": "idle",
+        "name": "animation",
         "from": 0,
         "to": 11,
         "direction": "forward"
       }
     ],
     "anchor": {
-      "x": 69,
+      "x": 64,
       "y": 255,
       "normalized": {
-        "x": 0.5036496350364964,
+        "x": 0.5,
         "y": 0.99609375
       },
       "strategy": "bottom-center"
     },
     "referenceAlignment": {
       "referenceBounds": {
-        "width": 98,
-        "height": 255
+        "width": 107,
+        "height": 249
       },
       "frameBounds": {
-        "width": 137,
+        "width": 128,
         "height": 256
       },
       "normalized": true
     },
-    "designVersion": "chibi-suit-v3",
-    "referenceSheet": "Zohran Mamdani \u2014 Chibi Suit v2",
-    "importSource": "chibi_cast__concepts_to_reference_sheets_mamdani_suit_v3_idle_12.json",
-    "sourceFrames": [
-      41,
-      45,
-      49,
-      53,
-      57,
-      61,
-      65,
-      69,
-      73,
-      77,
-      81,
-      85
-    ],
+    "bodyScale": 0.9803921568627451,
     "playbackFps": 6,
     "useFrameDurations": true,
-    "bodyScale": 0.9803921568627451,
-    "grounding": "Planted sole baseline for grounded poses; fixed lowest sole for the running flight phase."
+    "source": "https://www.makko.ai/studio/collection/a5368c09-882b-4eba-9f18-9a0a5360acbc/animation/b49083ae-80bd-4580-b17c-4064c88e6852",
+    "designVersion": "chibi-suit-v3-expressive-idle",
+    "loopOrder": [
+      8,
+      9,
+      10,
+      11,
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7
+    ]
   }
 }

@@ -4,187 +4,259 @@
       "frame": {
         "x": 2,
         "y": 2,
-        "w": 146,
-        "h": 256
+        "w": 119,
+        "h": 254
       },
       "rotated": false,
-      "trimmed": false,
+      "trimmed": true,
       "sourceSize": {
         "w": 146,
         "h": 256
       },
-      "duration": 42
+      "duration": 42,
+      "spriteSourceSize": {
+        "x": 3,
+        "y": 2,
+        "w": 119,
+        "h": 254
+      }
     },
     "1": {
       "frame": {
-        "x": 152,
+        "x": 125,
         "y": 2,
-        "w": 146,
-        "h": 256
+        "w": 133,
+        "h": 253
       },
       "rotated": false,
-      "trimmed": false,
+      "trimmed": true,
       "sourceSize": {
         "w": 146,
         "h": 256
       },
-      "duration": 42
+      "duration": 42,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 3,
+        "w": 133,
+        "h": 253
+      }
     },
     "2": {
       "frame": {
-        "x": 302,
+        "x": 262,
         "y": 2,
-        "w": 146,
-        "h": 256
+        "w": 140,
+        "h": 253
       },
       "rotated": false,
-      "trimmed": false,
+      "trimmed": true,
       "sourceSize": {
         "w": 146,
         "h": 256
       },
-      "duration": 42
+      "duration": 42,
+      "spriteSourceSize": {
+        "x": 1,
+        "y": 3,
+        "w": 140,
+        "h": 253
+      }
     },
     "3": {
       "frame": {
-        "x": 452,
+        "x": 406,
         "y": 2,
-        "w": 146,
-        "h": 256
+        "w": 124,
+        "h": 250
       },
       "rotated": false,
-      "trimmed": false,
+      "trimmed": true,
       "sourceSize": {
         "w": 146,
         "h": 256
       },
-      "duration": 42
+      "duration": 42,
+      "spriteSourceSize": {
+        "x": 4,
+        "y": 6,
+        "w": 124,
+        "h": 250
+      }
     },
     "4": {
       "frame": {
-        "x": 2,
-        "y": 262,
-        "w": 146,
-        "h": 256
+        "x": 534,
+        "y": 2,
+        "w": 118,
+        "h": 248
       },
       "rotated": false,
-      "trimmed": false,
+      "trimmed": true,
       "sourceSize": {
         "w": 146,
         "h": 256
       },
-      "duration": 42
+      "duration": 42,
+      "spriteSourceSize": {
+        "x": 9,
+        "y": 7,
+        "w": 118,
+        "h": 248
+      }
     },
     "5": {
       "frame": {
-        "x": 152,
-        "y": 262,
-        "w": 146,
-        "h": 256
+        "x": 656,
+        "y": 2,
+        "w": 119,
+        "h": 252
       },
       "rotated": false,
-      "trimmed": false,
+      "trimmed": true,
       "sourceSize": {
         "w": 146,
         "h": 256
       },
-      "duration": 42
+      "duration": 42,
+      "spriteSourceSize": {
+        "x": 13,
+        "y": 2,
+        "w": 119,
+        "h": 252
+      }
     },
     "6": {
       "frame": {
-        "x": 302,
-        "y": 262,
-        "w": 146,
-        "h": 256
+        "x": 2,
+        "y": 260,
+        "w": 118,
+        "h": 254
       },
       "rotated": false,
-      "trimmed": false,
+      "trimmed": true,
       "sourceSize": {
         "w": 146,
         "h": 256
       },
-      "duration": 42
+      "duration": 42,
+      "spriteSourceSize": {
+        "x": 15,
+        "y": 0,
+        "w": 118,
+        "h": 254
+      }
     },
     "7": {
       "frame": {
-        "x": 452,
-        "y": 262,
-        "w": 146,
-        "h": 256
+        "x": 124,
+        "y": 260,
+        "w": 121,
+        "h": 254
       },
       "rotated": false,
-      "trimmed": false,
+      "trimmed": true,
       "sourceSize": {
         "w": 146,
         "h": 256
       },
-      "duration": 42
+      "duration": 42,
+      "spriteSourceSize": {
+        "x": 15,
+        "y": 0,
+        "w": 121,
+        "h": 254
+      }
     },
     "8": {
       "frame": {
-        "x": 2,
-        "y": 522,
-        "w": 146,
-        "h": 256
+        "x": 249,
+        "y": 260,
+        "w": 118,
+        "h": 252
       },
       "rotated": false,
-      "trimmed": false,
+      "trimmed": true,
       "sourceSize": {
         "w": 146,
         "h": 256
       },
-      "duration": 42
+      "duration": 42,
+      "spriteSourceSize": {
+        "x": 16,
+        "y": 2,
+        "w": 118,
+        "h": 252
+      }
     },
     "9": {
       "frame": {
-        "x": 152,
-        "y": 522,
-        "w": 146,
-        "h": 256
+        "x": 371,
+        "y": 260,
+        "w": 120,
+        "h": 253
       },
       "rotated": false,
-      "trimmed": false,
+      "trimmed": true,
       "sourceSize": {
         "w": 146,
         "h": 256
       },
-      "duration": 42
+      "duration": 42,
+      "spriteSourceSize": {
+        "x": 17,
+        "y": 3,
+        "w": 120,
+        "h": 253
+      }
     },
     "10": {
       "frame": {
-        "x": 302,
-        "y": 522,
-        "w": 146,
-        "h": 256
+        "x": 495,
+        "y": 260,
+        "w": 127,
+        "h": 252
       },
       "rotated": false,
-      "trimmed": false,
+      "trimmed": true,
       "sourceSize": {
         "w": 146,
         "h": 256
       },
-      "duration": 42
+      "duration": 42,
+      "spriteSourceSize": {
+        "x": 18,
+        "y": 2,
+        "w": 127,
+        "h": 252
+      }
     },
     "11": {
       "frame": {
-        "x": 452,
-        "y": 522,
-        "w": 146,
-        "h": 256
+        "x": 626,
+        "y": 260,
+        "w": 126,
+        "h": 251
       },
       "rotated": false,
-      "trimmed": false,
+      "trimmed": true,
       "sourceSize": {
         "w": 146,
         "h": 256
       },
-      "duration": 42
+      "duration": 42,
+      "spriteSourceSize": {
+        "x": 19,
+        "y": 3,
+        "w": 126,
+        "h": 251
+      }
     }
   },
   "meta": {
     "size": {
-      "w": 600,
-      "h": 780
+      "w": 784,
+      "h": 516
     },
     "anchor": {
       "x": 73.0,
@@ -223,6 +295,7 @@
         "to": 11,
         "direction": "forward"
       }
-    ]
+    ],
+    "packing": "Lossless transparent-border trim; original source sizes and anchors retained"
   }
 }

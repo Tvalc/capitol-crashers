@@ -1,6 +1,6 @@
 import { play } from "./audio.js";
-import { WORLD } from "./stages.js?v=feel1";
-import { followingWitness, knockWitness } from "./citizens.js?v=citizens1";
+import { WORLD } from "./stages.js?v=idle21";
+import { followingWitness, knockWitness } from "./citizens.js?v=idle21";
 
 export function integrate(ent, dt) {
   ent.z += ent.vz * dt;

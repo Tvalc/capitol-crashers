@@ -1,1 +1,314 @@
-{"frames": {"sick_cheer_000": {"frame": {"x": 0, "y": 0, "w": 196, "h": 284}, "rotated": false, "trimmed": false, "sourceSize": {"w": 196, "h": 284}, "duration": 83}, "sick_cheer_001": {"frame": {"x": 196, "y": 0, "w": 196, "h": 284}, "rotated": false, "trimmed": false, "sourceSize": {"w": 196, "h": 284}, "duration": 83}, "sick_cheer_002": {"frame": {"x": 392, "y": 0, "w": 196, "h": 284}, "rotated": false, "trimmed": false, "sourceSize": {"w": 196, "h": 284}, "duration": 83}, "sick_cheer_003": {"frame": {"x": 588, "y": 0, "w": 196, "h": 284}, "rotated": false, "trimmed": false, "sourceSize": {"w": 196, "h": 284}, "duration": 83}, "sick_cheer_004": {"frame": {"x": 784, "y": 0, "w": 196, "h": 284}, "rotated": false, "trimmed": false, "sourceSize": {"w": 196, "h": 284}, "duration": 83}, "sick_cheer_005": {"frame": {"x": 980, "y": 0, "w": 196, "h": 284}, "rotated": false, "trimmed": false, "sourceSize": {"w": 196, "h": 284}, "duration": 83}, "sick_cheer_006": {"frame": {"x": 1176, "y": 0, "w": 196, "h": 284}, "rotated": false, "trimmed": false, "sourceSize": {"w": 196, "h": 284}, "duration": 83}, "sick_cheer_007": {"frame": {"x": 1372, "y": 0, "w": 196, "h": 284}, "rotated": false, "trimmed": false, "sourceSize": {"w": 196, "h": 284}, "duration": 83}, "sick_cheer_008": {"frame": {"x": 0, "y": 284, "w": 196, "h": 284}, "rotated": false, "trimmed": false, "sourceSize": {"w": 196, "h": 284}, "duration": 83}, "sick_cheer_009": {"frame": {"x": 196, "y": 284, "w": 196, "h": 284}, "rotated": false, "trimmed": false, "sourceSize": {"w": 196, "h": 284}, "duration": 83}, "sick_cheer_010": {"frame": {"x": 392, "y": 284, "w": 196, "h": 284}, "rotated": false, "trimmed": false, "sourceSize": {"w": 196, "h": 284}, "duration": 83}, "sick_cheer_011": {"frame": {"x": 588, "y": 284, "w": 196, "h": 284}, "rotated": false, "trimmed": false, "sourceSize": {"w": 196, "h": 284}, "duration": 83}, "sick_cheer_012": {"frame": {"x": 784, "y": 284, "w": 196, "h": 284}, "rotated": false, "trimmed": false, "sourceSize": {"w": 196, "h": 284}, "duration": 83}, "sick_cheer_013": {"frame": {"x": 980, "y": 284, "w": 196, "h": 284}, "rotated": false, "trimmed": false, "sourceSize": {"w": 196, "h": 284}, "duration": 83}, "sick_cheer_014": {"frame": {"x": 1176, "y": 284, "w": 196, "h": 284}, "rotated": false, "trimmed": false, "sourceSize": {"w": 196, "h": 284}, "duration": 83}, "sick_cheer_015": {"frame": {"x": 1372, "y": 284, "w": 196, "h": 284}, "rotated": false, "trimmed": false, "sourceSize": {"w": 196, "h": 284}, "duration": 83}, "sick_cheer_016": {"frame": {"x": 0, "y": 568, "w": 196, "h": 284}, "rotated": false, "trimmed": false, "sourceSize": {"w": 196, "h": 284}, "duration": 83}, "sick_cheer_017": {"frame": {"x": 196, "y": 568, "w": 196, "h": 284}, "rotated": false, "trimmed": false, "sourceSize": {"w": 196, "h": 284}, "duration": 83}, "sick_cheer_018": {"frame": {"x": 392, "y": 568, "w": 196, "h": 284}, "rotated": false, "trimmed": false, "sourceSize": {"w": 196, "h": 284}, "duration": 83}, "sick_cheer_019": {"frame": {"x": 588, "y": 568, "w": 196, "h": 284}, "rotated": false, "trimmed": false, "sourceSize": {"w": 196, "h": 284}, "duration": 83}, "sick_cheer_020": {"frame": {"x": 784, "y": 568, "w": 196, "h": 284}, "rotated": false, "trimmed": false, "sourceSize": {"w": 196, "h": 284}, "duration": 83}, "sick_cheer_021": {"frame": {"x": 980, "y": 568, "w": 196, "h": 284}, "rotated": false, "trimmed": false, "sourceSize": {"w": 196, "h": 284}, "duration": 83}, "sick_cheer_022": {"frame": {"x": 1176, "y": 568, "w": 196, "h": 284}, "rotated": false, "trimmed": false, "sourceSize": {"w": 196, "h": 284}, "duration": 83}, "sick_cheer_023": {"frame": {"x": 1372, "y": 568, "w": 196, "h": 284}, "rotated": false, "trimmed": false, "sourceSize": {"w": 196, "h": 284}, "duration": 83}, "sick_cheer_024": {"frame": {"x": 0, "y": 852, "w": 196, "h": 284}, "rotated": false, "trimmed": false, "sourceSize": {"w": 196, "h": 284}, "duration": 83}, "sick_cheer_025": {"frame": {"x": 196, "y": 852, "w": 196, "h": 284}, "rotated": false, "trimmed": false, "sourceSize": {"w": 196, "h": 284}, "duration": 83}, "sick_cheer_026": {"frame": {"x": 392, "y": 852, "w": 196, "h": 284}, "rotated": false, "trimmed": false, "sourceSize": {"w": 196, "h": 284}, "duration": 83}, "sick_cheer_027": {"frame": {"x": 588, "y": 852, "w": 196, "h": 284}, "rotated": false, "trimmed": false, "sourceSize": {"w": 196, "h": 284}, "duration": 83}, "sick_cheer_028": {"frame": {"x": 784, "y": 852, "w": 196, "h": 284}, "rotated": false, "trimmed": false, "sourceSize": {"w": 196, "h": 284}, "duration": 83}, "sick_cheer_029": {"frame": {"x": 980, "y": 852, "w": 196, "h": 284}, "rotated": false, "trimmed": false, "sourceSize": {"w": 196, "h": 284}, "duration": 83}, "sick_cheer_030": {"frame": {"x": 1176, "y": 852, "w": 196, "h": 284}, "rotated": false, "trimmed": false, "sourceSize": {"w": 196, "h": 284}, "duration": 83}, "sick_cheer_031": {"frame": {"x": 1372, "y": 852, "w": 196, "h": 284}, "rotated": false, "trimmed": false, "sourceSize": {"w": 196, "h": 284}, "duration": 83}, "sick_cheer_032": {"frame": {"x": 0, "y": 1136, "w": 196, "h": 284}, "rotated": false, "trimmed": false, "sourceSize": {"w": 196, "h": 284}, "duration": 83}, "sick_cheer_033": {"frame": {"x": 196, "y": 1136, "w": 196, "h": 284}, "rotated": false, "trimmed": false, "sourceSize": {"w": 196, "h": 284}, "duration": 83}, "sick_cheer_034": {"frame": {"x": 392, "y": 1136, "w": 196, "h": 284}, "rotated": false, "trimmed": false, "sourceSize": {"w": 196, "h": 284}, "duration": 83}, "sick_cheer_035": {"frame": {"x": 588, "y": 1136, "w": 196, "h": 284}, "rotated": false, "trimmed": false, "sourceSize": {"w": 196, "h": 284}, "duration": 83}, "sick_cheer_036": {"frame": {"x": 784, "y": 1136, "w": 196, "h": 284}, "rotated": false, "trimmed": false, "sourceSize": {"w": 196, "h": 284}, "duration": 83}, "sick_cheer_037": {"frame": {"x": 980, "y": 1136, "w": 196, "h": 284}, "rotated": false, "trimmed": false, "sourceSize": {"w": 196, "h": 284}, "duration": 83}, "sick_cheer_038": {"frame": {"x": 1176, "y": 1136, "w": 196, "h": 284}, "rotated": false, "trimmed": false, "sourceSize": {"w": 196, "h": 284}, "duration": 83}, "sick_cheer_039": {"frame": {"x": 1372, "y": 1136, "w": 196, "h": 284}, "rotated": false, "trimmed": false, "sourceSize": {"w": 196, "h": 284}, "duration": 83}, "sick_cheer_040": {"frame": {"x": 0, "y": 1420, "w": 196, "h": 284}, "rotated": false, "trimmed": false, "sourceSize": {"w": 196, "h": 284}, "duration": 83}, "sick_cheer_041": {"frame": {"x": 196, "y": 1420, "w": 196, "h": 284}, "rotated": false, "trimmed": false, "sourceSize": {"w": 196, "h": 284}, "duration": 83}, "sick_cheer_042": {"frame": {"x": 392, "y": 1420, "w": 196, "h": 284}, "rotated": false, "trimmed": false, "sourceSize": {"w": 196, "h": 284}, "duration": 83}, "sick_cheer_043": {"frame": {"x": 588, "y": 1420, "w": 196, "h": 284}, "rotated": false, "trimmed": false, "sourceSize": {"w": 196, "h": 284}, "duration": 83}, "sick_cheer_044": {"frame": {"x": 784, "y": 1420, "w": 196, "h": 284}, "rotated": false, "trimmed": false, "sourceSize": {"w": 196, "h": 284}, "duration": 83}, "sick_cheer_045": {"frame": {"x": 980, "y": 1420, "w": 196, "h": 284}, "rotated": false, "trimmed": false, "sourceSize": {"w": 196, "h": 284}, "duration": 83}, "sick_cheer_046": {"frame": {"x": 1176, "y": 1420, "w": 196, "h": 284}, "rotated": false, "trimmed": false, "sourceSize": {"w": 196, "h": 284}, "duration": 83}, "sick_cheer_047": {"frame": {"x": 1372, "y": 1420, "w": 196, "h": 284}, "rotated": false, "trimmed": false, "sourceSize": {"w": 196, "h": 284}, "duration": 83}}, "meta": {"app": "makko+ffmpeg", "image": "sick_cheer.webp", "size": {"w": 1568, "h": 1704}, "playbackFps": 12, "anchor": {"x": 98.0, "y": 272}, "bodyScale": 1, "source": "https://api.makko.ai/storage/v1/object/public/animation-frames/a5368c09-882b-4eba-9f18-9a0a5360acbc/videos/1791235122860_citizen-sick-cheer.mp4", "animationId": "5e6778b5-8e94-4bff-8933-936244756753", "cropRepair": "full alpha bounds across all source frames; 12px gutters", "sourceBounds": [466, 54, 882, 684]}}
+{
+  "frames": [
+    {
+      "frame": {
+        "x": 2,
+        "y": 2,
+        "w": 148,
+        "h": 251
+      },
+      "sourceSize": {
+        "w": 191,
+        "h": 275
+      },
+      "anchorX": 69.2,
+      "groundAnchorY": 263.06,
+      "duration": 117,
+      "sourceFrame": 0,
+      "spriteSourceSize": {
+        "x": 12,
+        "y": 12,
+        "w": 148,
+        "h": 251
+      },
+      "trimmed": true
+    },
+    {
+      "frame": {
+        "x": 154,
+        "y": 2,
+        "w": 152,
+        "h": 251
+      },
+      "sourceSize": {
+        "w": 191,
+        "h": 275
+      },
+      "anchorX": 69.2,
+      "groundAnchorY": 263.06,
+      "duration": 117,
+      "sourceFrame": 6,
+      "spriteSourceSize": {
+        "x": 12,
+        "y": 12,
+        "w": 152,
+        "h": 251
+      },
+      "trimmed": true
+    },
+    {
+      "frame": {
+        "x": 310,
+        "y": 2,
+        "w": 149,
+        "h": 251
+      },
+      "sourceSize": {
+        "w": 191,
+        "h": 275
+      },
+      "anchorX": 69.2,
+      "groundAnchorY": 263.06,
+      "duration": 117,
+      "sourceFrame": 12,
+      "spriteSourceSize": {
+        "x": 12,
+        "y": 12,
+        "w": 149,
+        "h": 251
+      },
+      "trimmed": true
+    },
+    {
+      "frame": {
+        "x": 463,
+        "y": 2,
+        "w": 153,
+        "h": 251
+      },
+      "sourceSize": {
+        "w": 191,
+        "h": 275
+      },
+      "anchorX": 69.2,
+      "groundAnchorY": 263.06,
+      "duration": 117,
+      "sourceFrame": 18,
+      "spriteSourceSize": {
+        "x": 12,
+        "y": 12,
+        "w": 153,
+        "h": 251
+      },
+      "trimmed": true
+    },
+    {
+      "frame": {
+        "x": 620,
+        "y": 2,
+        "w": 147,
+        "h": 251
+      },
+      "sourceSize": {
+        "w": 191,
+        "h": 275
+      },
+      "anchorX": 69.2,
+      "groundAnchorY": 263.06,
+      "duration": 117,
+      "sourceFrame": 24,
+      "spriteSourceSize": {
+        "x": 12,
+        "y": 12,
+        "w": 147,
+        "h": 251
+      },
+      "trimmed": true
+    },
+    {
+      "frame": {
+        "x": 771,
+        "y": 2,
+        "w": 152,
+        "h": 251
+      },
+      "sourceSize": {
+        "w": 191,
+        "h": 275
+      },
+      "anchorX": 69.2,
+      "groundAnchorY": 263.06,
+      "duration": 117,
+      "sourceFrame": 32,
+      "spriteSourceSize": {
+        "x": 12,
+        "y": 12,
+        "w": 152,
+        "h": 251
+      },
+      "trimmed": true
+    },
+    {
+      "frame": {
+        "x": 2,
+        "y": 257,
+        "w": 153,
+        "h": 251
+      },
+      "sourceSize": {
+        "w": 191,
+        "h": 275
+      },
+      "anchorX": 69.2,
+      "groundAnchorY": 263.06,
+      "duration": 117,
+      "sourceFrame": 40,
+      "spriteSourceSize": {
+        "x": 12,
+        "y": 12,
+        "w": 153,
+        "h": 251
+      },
+      "trimmed": true
+    },
+    {
+      "frame": {
+        "x": 159,
+        "y": 257,
+        "w": 152,
+        "h": 251
+      },
+      "sourceSize": {
+        "w": 191,
+        "h": 275
+      },
+      "anchorX": 69.2,
+      "groundAnchorY": 263.06,
+      "duration": 117,
+      "sourceFrame": 48,
+      "spriteSourceSize": {
+        "x": 12,
+        "y": 12,
+        "w": 152,
+        "h": 251
+      },
+      "trimmed": true
+    },
+    {
+      "frame": {
+        "x": 315,
+        "y": 257,
+        "w": 158,
+        "h": 251
+      },
+      "sourceSize": {
+        "w": 191,
+        "h": 275
+      },
+      "anchorX": 69.2,
+      "groundAnchorY": 263.06,
+      "duration": 117,
+      "sourceFrame": 55,
+      "spriteSourceSize": {
+        "x": 12,
+        "y": 12,
+        "w": 158,
+        "h": 251
+      },
+      "trimmed": true
+    },
+    {
+      "frame": {
+        "x": 477,
+        "y": 257,
+        "w": 165,
+        "h": 250
+      },
+      "sourceSize": {
+        "w": 191,
+        "h": 275
+      },
+      "anchorX": 69.2,
+      "groundAnchorY": 263.06,
+      "duration": 117,
+      "sourceFrame": 62,
+      "spriteSourceSize": {
+        "x": 12,
+        "y": 13,
+        "w": 165,
+        "h": 250
+      },
+      "trimmed": true
+    },
+    {
+      "frame": {
+        "x": 646,
+        "y": 257,
+        "w": 118,
+        "h": 251
+      },
+      "sourceSize": {
+        "w": 191,
+        "h": 275
+      },
+      "anchorX": 69.2,
+      "groundAnchorY": 263.06,
+      "duration": 117,
+      "sourceFrame": 70,
+      "spriteSourceSize": {
+        "x": 12,
+        "y": 12,
+        "w": 118,
+        "h": 251
+      },
+      "trimmed": true
+    },
+    {
+      "frame": {
+        "x": 768,
+        "y": 257,
+        "w": 117,
+        "h": 251
+      },
+      "sourceSize": {
+        "w": 191,
+        "h": 275
+      },
+      "anchorX": 69.2,
+      "groundAnchorY": 263.06,
+      "duration": 117,
+      "sourceFrame": 80,
+      "spriteSourceSize": {
+        "x": 12,
+        "y": 12,
+        "w": 117,
+        "h": 251
+      },
+      "trimmed": true
+    }
+  ],
+  "meta": {
+    "image": "sick_cheer.webp",
+    "anchor": {
+      "x": 69.2,
+      "y": 263.06
+    },
+    "bodyScale": 0.996016,
+    "playbackFps": 8.571428571428571,
+    "source": "C:/Users/19415/Downloads/1791254937152_animation.mp4",
+    "sourceFrameIndices": [
+      0,
+      6,
+      12,
+      18,
+      24,
+      32,
+      40,
+      48,
+      55,
+      62,
+      70,
+      80
+    ],
+    "generator": "Makko; approved citizen reference sheet",
+    "standingBodyHeight": 250,
+    "continuityRepair": "Approved reference identity; constant standing-body scale; curated maximum twelve frames.",
+    "animationId": "32c2e39f-4b39-40dd-801f-47c801fd8cff",
+    "makkoUrl": "https://www.makko.ai/studio/collection/a5368c09-882b-4eba-9f18-9a0a5360acbc/animation/32c2e39f-4b39-40dd-801f-47c801fd8cff",
+    "size": {
+      "w": 937,
+      "h": 510
+    },
+    "packing": "Lossless transparent-border trim; original source sizes and anchors retained"
+  }
+}

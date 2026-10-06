@@ -1,0 +1,9 @@
+{
+  "generator": "Animation assembled from Makko plane artwork",
+  "frames": 12,
+  "columns": 4,
+  "frameWidth": 960,
+  "frameHeight": 204,
+  "fps": 18,
+  "source": "plane-banner.webp"
+}

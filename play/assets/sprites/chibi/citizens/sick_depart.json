@@ -1,1 +1,292 @@
-{"frames": {"sick_depart_000": {"frame": {"x": 0, "y": 0, "w": 189, "h": 284}, "rotated": false, "trimmed": false, "sourceSize": {"w": 189, "h": 284}, "duration": 104}, "sick_depart_001": {"frame": {"x": 189, "y": 0, "w": 189, "h": 284}, "rotated": false, "trimmed": false, "sourceSize": {"w": 189, "h": 284}, "duration": 104}, "sick_depart_002": {"frame": {"x": 378, "y": 0, "w": 189, "h": 284}, "rotated": false, "trimmed": false, "sourceSize": {"w": 189, "h": 284}, "duration": 104}, "sick_depart_003": {"frame": {"x": 567, "y": 0, "w": 189, "h": 284}, "rotated": false, "trimmed": false, "sourceSize": {"w": 189, "h": 284}, "duration": 104}, "sick_depart_004": {"frame": {"x": 756, "y": 0, "w": 189, "h": 284}, "rotated": false, "trimmed": false, "sourceSize": {"w": 189, "h": 284}, "duration": 104}, "sick_depart_005": {"frame": {"x": 945, "y": 0, "w": 189, "h": 284}, "rotated": false, "trimmed": false, "sourceSize": {"w": 189, "h": 284}, "duration": 104}, "sick_depart_006": {"frame": {"x": 0, "y": 284, "w": 189, "h": 284}, "rotated": false, "trimmed": false, "sourceSize": {"w": 189, "h": 284}, "duration": 104}, "sick_depart_007": {"frame": {"x": 189, "y": 284, "w": 189, "h": 284}, "rotated": false, "trimmed": false, "sourceSize": {"w": 189, "h": 284}, "duration": 104}, "sick_depart_008": {"frame": {"x": 378, "y": 284, "w": 189, "h": 284}, "rotated": false, "trimmed": false, "sourceSize": {"w": 189, "h": 284}, "duration": 104}, "sick_depart_009": {"frame": {"x": 567, "y": 284, "w": 189, "h": 284}, "rotated": false, "trimmed": false, "sourceSize": {"w": 189, "h": 284}, "duration": 104}, "sick_depart_010": {"frame": {"x": 756, "y": 284, "w": 189, "h": 284}, "rotated": false, "trimmed": false, "sourceSize": {"w": 189, "h": 284}, "duration": 104}, "sick_depart_011": {"frame": {"x": 945, "y": 284, "w": 189, "h": 284}, "rotated": false, "trimmed": false, "sourceSize": {"w": 189, "h": 284}, "duration": 104}}, "meta": {"app": "Makko source / curated departure cycle", "image": "sick_depart.webp", "size": {"w": 1134, "h": 568}, "playbackFps": 9.6, "anchor": {"x": 94.5, "y": 272}, "bodyScale": 1, "animationId": "94b47593-ba39-420c-9001-7d755828c370", "source": "https://www.makko.ai/studio/collection/a5368c09-882b-4eba-9f18-9a0a5360acbc/animation/94b47593-ba39-420c-9001-7d755828c370", "sourceFrameIndices": [59, 62, 64, 66, 69, 72, 74, 76, 79, 82, 84, 86], "sourceFps": 24, "cropRepair": "fixed full-source bounds; 12px transparent gutters", "alphaRepair": "green dominance threshold preserves teal cloth; enclosed headwrap protection"}}
+{
+  "frames": [
+    {
+      "frame": {
+        "x": 2,
+        "y": 2,
+        "w": 160,
+        "h": 260
+      },
+      "rotated": false,
+      "trimmed": true,
+      "sourceSize": {
+        "w": 189,
+        "h": 284
+      },
+      "duration": 104,
+      "spriteSourceSize": {
+        "x": 12,
+        "y": 12,
+        "w": 160,
+        "h": 260
+      }
+    },
+    {
+      "frame": {
+        "x": 166,
+        "y": 2,
+        "w": 149,
+        "h": 260
+      },
+      "rotated": false,
+      "trimmed": true,
+      "sourceSize": {
+        "w": 189,
+        "h": 284
+      },
+      "duration": 104,
+      "spriteSourceSize": {
+        "x": 20,
+        "y": 12,
+        "w": 149,
+        "h": 260
+      }
+    },
+    {
+      "frame": {
+        "x": 319,
+        "y": 2,
+        "w": 139,
+        "h": 260
+      },
+      "rotated": false,
+      "trimmed": true,
+      "sourceSize": {
+        "w": 189,
+        "h": 284
+      },
+      "duration": 104,
+      "spriteSourceSize": {
+        "x": 29,
+        "y": 12,
+        "w": 139,
+        "h": 260
+      }
+    },
+    {
+      "frame": {
+        "x": 462,
+        "y": 2,
+        "w": 132,
+        "h": 260
+      },
+      "rotated": false,
+      "trimmed": true,
+      "sourceSize": {
+        "w": 189,
+        "h": 284
+      },
+      "duration": 104,
+      "spriteSourceSize": {
+        "x": 34,
+        "y": 12,
+        "w": 132,
+        "h": 260
+      }
+    },
+    {
+      "frame": {
+        "x": 2,
+        "y": 266,
+        "w": 124,
+        "h": 260
+      },
+      "rotated": false,
+      "trimmed": true,
+      "sourceSize": {
+        "w": 189,
+        "h": 284
+      },
+      "duration": 104,
+      "spriteSourceSize": {
+        "x": 37,
+        "y": 12,
+        "w": 124,
+        "h": 260
+      }
+    },
+    {
+      "frame": {
+        "x": 130,
+        "y": 266,
+        "w": 138,
+        "h": 260
+      },
+      "rotated": false,
+      "trimmed": true,
+      "sourceSize": {
+        "w": 189,
+        "h": 284
+      },
+      "duration": 104,
+      "spriteSourceSize": {
+        "x": 22,
+        "y": 12,
+        "w": 138,
+        "h": 260
+      }
+    },
+    {
+      "frame": {
+        "x": 272,
+        "y": 266,
+        "w": 147,
+        "h": 260
+      },
+      "rotated": false,
+      "trimmed": true,
+      "sourceSize": {
+        "w": 189,
+        "h": 284
+      },
+      "duration": 104,
+      "spriteSourceSize": {
+        "x": 12,
+        "y": 12,
+        "w": 147,
+        "h": 260
+      }
+    },
+    {
+      "frame": {
+        "x": 423,
+        "y": 266,
+        "w": 145,
+        "h": 259
+      },
+      "rotated": false,
+      "trimmed": true,
+      "sourceSize": {
+        "w": 189,
+        "h": 284
+      },
+      "duration": 104,
+      "spriteSourceSize": {
+        "x": 16,
+        "y": 12,
+        "w": 145,
+        "h": 259
+      }
+    },
+    {
+      "frame": {
+        "x": 2,
+        "y": 530,
+        "w": 133,
+        "h": 259
+      },
+      "rotated": false,
+      "trimmed": true,
+      "sourceSize": {
+        "w": 189,
+        "h": 284
+      },
+      "duration": 104,
+      "spriteSourceSize": {
+        "x": 35,
+        "y": 12,
+        "w": 133,
+        "h": 259
+      }
+    },
+    {
+      "frame": {
+        "x": 139,
+        "y": 530,
+        "w": 149,
+        "h": 258
+      },
+      "rotated": false,
+      "trimmed": true,
+      "sourceSize": {
+        "w": 189,
+        "h": 284
+      },
+      "duration": 104,
+      "spriteSourceSize": {
+        "x": 28,
+        "y": 12,
+        "w": 149,
+        "h": 258
+      }
+    },
+    {
+      "frame": {
+        "x": 292,
+        "y": 530,
+        "w": 155,
+        "h": 257
+      },
+      "rotated": false,
+      "trimmed": true,
+      "sourceSize": {
+        "w": 189,
+        "h": 284
+      },
+      "duration": 104,
+      "spriteSourceSize": {
+        "x": 22,
+        "y": 12,
+        "w": 155,
+        "h": 257
+      }
+    },
+    {
+      "frame": {
+        "x": 451,
+        "y": 530,
+        "w": 159,
+        "h": 259
+      },
+      "rotated": false,
+      "trimmed": true,
+      "sourceSize": {
+        "w": 189,
+        "h": 284
+      },
+      "duration": 104,
+      "spriteSourceSize": {
+        "x": 15,
+        "y": 12,
+        "w": 159,
+        "h": 259
+      }
+    }
+  ],
+  "meta": {
+    "app": "Makko source / curated departure cycle",
+    "image": "sick_depart.webp",
+    "size": {
+      "w": 612,
+      "h": 791
+    },
+    "playbackFps": 9.6,
+    "anchor": {
+      "x": 94.5,
+      "y": 272
+    },
+    "bodyScale": 0.961538,
+    "animationId": "94b47593-ba39-420c-9001-7d755828c370",
+    "source": "https://www.makko.ai/studio/collection/a5368c09-882b-4eba-9f18-9a0a5360acbc/animation/94b47593-ba39-420c-9001-7d755828c370",
+    "sourceFrameIndices": [
+      59,
+      62,
+      64,
+      66,
+      69,
+      72,
+      74,
+      76,
+      79,
+      82,
+      84,
+      86
+    ],
+    "sourceFps": 24,
+    "cropRepair": "fixed full-source bounds; 12px transparent gutters",
+    "alphaRepair": "green dominance threshold preserves teal cloth; enclosed headwrap protection",
+    "standingBodyHeight": 250,
+    "continuityRepair": "Approved reference identity; constant standing-body scale; curated maximum twelve frames.",
+    "packing": "Lossless transparent-border trim; original source sizes and anchors retained"
+  }
+}

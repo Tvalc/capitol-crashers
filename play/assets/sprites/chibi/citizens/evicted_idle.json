@@ -1,1 +1,314 @@
-{"frames": {"evicted_idle_000": {"frame": {"x": 0, "y": 0, "w": 170, "h": 284}, "rotated": false, "trimmed": false, "sourceSize": {"w": 170, "h": 284}, "duration": 83}, "evicted_idle_001": {"frame": {"x": 170, "y": 0, "w": 170, "h": 284}, "rotated": false, "trimmed": false, "sourceSize": {"w": 170, "h": 284}, "duration": 83}, "evicted_idle_002": {"frame": {"x": 340, "y": 0, "w": 170, "h": 284}, "rotated": false, "trimmed": false, "sourceSize": {"w": 170, "h": 284}, "duration": 83}, "evicted_idle_003": {"frame": {"x": 510, "y": 0, "w": 170, "h": 284}, "rotated": false, "trimmed": false, "sourceSize": {"w": 170, "h": 284}, "duration": 83}, "evicted_idle_004": {"frame": {"x": 680, "y": 0, "w": 170, "h": 284}, "rotated": false, "trimmed": false, "sourceSize": {"w": 170, "h": 284}, "duration": 83}, "evicted_idle_005": {"frame": {"x": 850, "y": 0, "w": 170, "h": 284}, "rotated": false, "trimmed": false, "sourceSize": {"w": 170, "h": 284}, "duration": 83}, "evicted_idle_006": {"frame": {"x": 1020, "y": 0, "w": 170, "h": 284}, "rotated": false, "trimmed": false, "sourceSize": {"w": 170, "h": 284}, "duration": 83}, "evicted_idle_007": {"frame": {"x": 1190, "y": 0, "w": 170, "h": 284}, "rotated": false, "trimmed": false, "sourceSize": {"w": 170, "h": 284}, "duration": 83}, "evicted_idle_008": {"frame": {"x": 0, "y": 284, "w": 170, "h": 284}, "rotated": false, "trimmed": false, "sourceSize": {"w": 170, "h": 284}, "duration": 83}, "evicted_idle_009": {"frame": {"x": 170, "y": 284, "w": 170, "h": 284}, "rotated": false, "trimmed": false, "sourceSize": {"w": 170, "h": 284}, "duration": 83}, "evicted_idle_010": {"frame": {"x": 340, "y": 284, "w": 170, "h": 284}, "rotated": false, "trimmed": false, "sourceSize": {"w": 170, "h": 284}, "duration": 83}, "evicted_idle_011": {"frame": {"x": 510, "y": 284, "w": 170, "h": 284}, "rotated": false, "trimmed": false, "sourceSize": {"w": 170, "h": 284}, "duration": 83}, "evicted_idle_012": {"frame": {"x": 680, "y": 284, "w": 170, "h": 284}, "rotated": false, "trimmed": false, "sourceSize": {"w": 170, "h": 284}, "duration": 83}, "evicted_idle_013": {"frame": {"x": 850, "y": 284, "w": 170, "h": 284}, "rotated": false, "trimmed": false, "sourceSize": {"w": 170, "h": 284}, "duration": 83}, "evicted_idle_014": {"frame": {"x": 1020, "y": 284, "w": 170, "h": 284}, "rotated": false, "trimmed": false, "sourceSize": {"w": 170, "h": 284}, "duration": 83}, "evicted_idle_015": {"frame": {"x": 1190, "y": 284, "w": 170, "h": 284}, "rotated": false, "trimmed": false, "sourceSize": {"w": 170, "h": 284}, "duration": 83}, "evicted_idle_016": {"frame": {"x": 0, "y": 568, "w": 170, "h": 284}, "rotated": false, "trimmed": false, "sourceSize": {"w": 170, "h": 284}, "duration": 83}, "evicted_idle_017": {"frame": {"x": 170, "y": 568, "w": 170, "h": 284}, "rotated": false, "trimmed": false, "sourceSize": {"w": 170, "h": 284}, "duration": 83}, "evicted_idle_018": {"frame": {"x": 340, "y": 568, "w": 170, "h": 284}, "rotated": false, "trimmed": false, "sourceSize": {"w": 170, "h": 284}, "duration": 83}, "evicted_idle_019": {"frame": {"x": 510, "y": 568, "w": 170, "h": 284}, "rotated": false, "trimmed": false, "sourceSize": {"w": 170, "h": 284}, "duration": 83}, "evicted_idle_020": {"frame": {"x": 680, "y": 568, "w": 170, "h": 284}, "rotated": false, "trimmed": false, "sourceSize": {"w": 170, "h": 284}, "duration": 83}, "evicted_idle_021": {"frame": {"x": 850, "y": 568, "w": 170, "h": 284}, "rotated": false, "trimmed": false, "sourceSize": {"w": 170, "h": 284}, "duration": 83}, "evicted_idle_022": {"frame": {"x": 1020, "y": 568, "w": 170, "h": 284}, "rotated": false, "trimmed": false, "sourceSize": {"w": 170, "h": 284}, "duration": 83}, "evicted_idle_023": {"frame": {"x": 1190, "y": 568, "w": 170, "h": 284}, "rotated": false, "trimmed": false, "sourceSize": {"w": 170, "h": 284}, "duration": 83}, "evicted_idle_024": {"frame": {"x": 0, "y": 852, "w": 170, "h": 284}, "rotated": false, "trimmed": false, "sourceSize": {"w": 170, "h": 284}, "duration": 83}, "evicted_idle_025": {"frame": {"x": 170, "y": 852, "w": 170, "h": 284}, "rotated": false, "trimmed": false, "sourceSize": {"w": 170, "h": 284}, "duration": 83}, "evicted_idle_026": {"frame": {"x": 340, "y": 852, "w": 170, "h": 284}, "rotated": false, "trimmed": false, "sourceSize": {"w": 170, "h": 284}, "duration": 83}, "evicted_idle_027": {"frame": {"x": 510, "y": 852, "w": 170, "h": 284}, "rotated": false, "trimmed": false, "sourceSize": {"w": 170, "h": 284}, "duration": 83}, "evicted_idle_028": {"frame": {"x": 680, "y": 852, "w": 170, "h": 284}, "rotated": false, "trimmed": false, "sourceSize": {"w": 170, "h": 284}, "duration": 83}, "evicted_idle_029": {"frame": {"x": 850, "y": 852, "w": 170, "h": 284}, "rotated": false, "trimmed": false, "sourceSize": {"w": 170, "h": 284}, "duration": 83}, "evicted_idle_030": {"frame": {"x": 1020, "y": 852, "w": 170, "h": 284}, "rotated": false, "trimmed": false, "sourceSize": {"w": 170, "h": 284}, "duration": 83}, "evicted_idle_031": {"frame": {"x": 1190, "y": 852, "w": 170, "h": 284}, "rotated": false, "trimmed": false, "sourceSize": {"w": 170, "h": 284}, "duration": 83}, "evicted_idle_032": {"frame": {"x": 0, "y": 1136, "w": 170, "h": 284}, "rotated": false, "trimmed": false, "sourceSize": {"w": 170, "h": 284}, "duration": 83}, "evicted_idle_033": {"frame": {"x": 170, "y": 1136, "w": 170, "h": 284}, "rotated": false, "trimmed": false, "sourceSize": {"w": 170, "h": 284}, "duration": 83}, "evicted_idle_034": {"frame": {"x": 340, "y": 1136, "w": 170, "h": 284}, "rotated": false, "trimmed": false, "sourceSize": {"w": 170, "h": 284}, "duration": 83}, "evicted_idle_035": {"frame": {"x": 510, "y": 1136, "w": 170, "h": 284}, "rotated": false, "trimmed": false, "sourceSize": {"w": 170, "h": 284}, "duration": 83}, "evicted_idle_036": {"frame": {"x": 680, "y": 1136, "w": 170, "h": 284}, "rotated": false, "trimmed": false, "sourceSize": {"w": 170, "h": 284}, "duration": 83}, "evicted_idle_037": {"frame": {"x": 850, "y": 1136, "w": 170, "h": 284}, "rotated": false, "trimmed": false, "sourceSize": {"w": 170, "h": 284}, "duration": 83}, "evicted_idle_038": {"frame": {"x": 1020, "y": 1136, "w": 170, "h": 284}, "rotated": false, "trimmed": false, "sourceSize": {"w": 170, "h": 284}, "duration": 83}, "evicted_idle_039": {"frame": {"x": 1190, "y": 1136, "w": 170, "h": 284}, "rotated": false, "trimmed": false, "sourceSize": {"w": 170, "h": 284}, "duration": 83}, "evicted_idle_040": {"frame": {"x": 0, "y": 1420, "w": 170, "h": 284}, "rotated": false, "trimmed": false, "sourceSize": {"w": 170, "h": 284}, "duration": 83}, "evicted_idle_041": {"frame": {"x": 170, "y": 1420, "w": 170, "h": 284}, "rotated": false, "trimmed": false, "sourceSize": {"w": 170, "h": 284}, "duration": 83}, "evicted_idle_042": {"frame": {"x": 340, "y": 1420, "w": 170, "h": 284}, "rotated": false, "trimmed": false, "sourceSize": {"w": 170, "h": 284}, "duration": 83}, "evicted_idle_043": {"frame": {"x": 510, "y": 1420, "w": 170, "h": 284}, "rotated": false, "trimmed": false, "sourceSize": {"w": 170, "h": 284}, "duration": 83}, "evicted_idle_044": {"frame": {"x": 680, "y": 1420, "w": 170, "h": 284}, "rotated": false, "trimmed": false, "sourceSize": {"w": 170, "h": 284}, "duration": 83}, "evicted_idle_045": {"frame": {"x": 850, "y": 1420, "w": 170, "h": 284}, "rotated": false, "trimmed": false, "sourceSize": {"w": 170, "h": 284}, "duration": 83}, "evicted_idle_046": {"frame": {"x": 1020, "y": 1420, "w": 170, "h": 284}, "rotated": false, "trimmed": false, "sourceSize": {"w": 170, "h": 284}, "duration": 83}, "evicted_idle_047": {"frame": {"x": 1190, "y": 1420, "w": 170, "h": 284}, "rotated": false, "trimmed": false, "sourceSize": {"w": 170, "h": 284}, "duration": 83}}, "meta": {"app": "makko+ffmpeg", "image": "evicted_idle.webp", "size": {"w": 1360, "h": 1704}, "playbackFps": 12, "anchor": {"x": 85.0, "y": 272}, "bodyScale": 1, "source": "https://api.makko.ai/storage/v1/object/public/animation-frames/a5368c09-882b-4eba-9f18-9a0a5360acbc/videos/1791235086609_citizen-evicted-idle.mp4", "animationId": "e5ffe995-ee5e-450e-8f26-e94b1ef8390e", "cropRepair": "full alpha bounds across all source frames; 12px gutters", "sourceBounds": [486, 36, 849, 684]}}
+{
+  "frames": [
+    {
+      "frame": {
+        "x": 2,
+        "y": 2,
+        "w": 89,
+        "h": 252
+      },
+      "sourceSize": {
+        "w": 156,
+        "h": 276
+      },
+      "anchorX": 63.33,
+      "groundAnchorY": 262.51,
+      "duration": 117,
+      "sourceFrame": 70,
+      "spriteSourceSize": {
+        "x": 15,
+        "y": 12,
+        "w": 89,
+        "h": 252
+      },
+      "trimmed": true
+    },
+    {
+      "frame": {
+        "x": 2,
+        "y": 258,
+        "w": 90,
+        "h": 252
+      },
+      "sourceSize": {
+        "w": 156,
+        "h": 276
+      },
+      "anchorX": 63.33,
+      "groundAnchorY": 262.51,
+      "duration": 117,
+      "sourceFrame": 72,
+      "spriteSourceSize": {
+        "x": 14,
+        "y": 12,
+        "w": 90,
+        "h": 252
+      },
+      "trimmed": true
+    },
+    {
+      "frame": {
+        "x": 2,
+        "y": 514,
+        "w": 90,
+        "h": 252
+      },
+      "sourceSize": {
+        "w": 156,
+        "h": 276
+      },
+      "anchorX": 63.33,
+      "groundAnchorY": 262.51,
+      "duration": 117,
+      "sourceFrame": 74,
+      "spriteSourceSize": {
+        "x": 14,
+        "y": 12,
+        "w": 90,
+        "h": 252
+      },
+      "trimmed": true
+    },
+    {
+      "frame": {
+        "x": 2,
+        "y": 770,
+        "w": 90,
+        "h": 252
+      },
+      "sourceSize": {
+        "w": 156,
+        "h": 276
+      },
+      "anchorX": 63.33,
+      "groundAnchorY": 262.51,
+      "duration": 117,
+      "sourceFrame": 76,
+      "spriteSourceSize": {
+        "x": 14,
+        "y": 12,
+        "w": 90,
+        "h": 252
+      },
+      "trimmed": true
+    },
+    {
+      "frame": {
+        "x": 2,
+        "y": 1026,
+        "w": 90,
+        "h": 252
+      },
+      "sourceSize": {
+        "w": 156,
+        "h": 276
+      },
+      "anchorX": 63.33,
+      "groundAnchorY": 262.51,
+      "duration": 117,
+      "sourceFrame": 78,
+      "spriteSourceSize": {
+        "x": 14,
+        "y": 12,
+        "w": 90,
+        "h": 252
+      },
+      "trimmed": true
+    },
+    {
+      "frame": {
+        "x": 2,
+        "y": 1282,
+        "w": 90,
+        "h": 252
+      },
+      "sourceSize": {
+        "w": 156,
+        "h": 276
+      },
+      "anchorX": 63.33,
+      "groundAnchorY": 262.51,
+      "duration": 117,
+      "sourceFrame": 80,
+      "spriteSourceSize": {
+        "x": 14,
+        "y": 12,
+        "w": 90,
+        "h": 252
+      },
+      "trimmed": true
+    },
+    {
+      "frame": {
+        "x": 2,
+        "y": 1538,
+        "w": 90,
+        "h": 252
+      },
+      "sourceSize": {
+        "w": 156,
+        "h": 276
+      },
+      "anchorX": 63.33,
+      "groundAnchorY": 262.51,
+      "duration": 117,
+      "sourceFrame": 82,
+      "spriteSourceSize": {
+        "x": 14,
+        "y": 12,
+        "w": 90,
+        "h": 252
+      },
+      "trimmed": true
+    },
+    {
+      "frame": {
+        "x": 2,
+        "y": 1794,
+        "w": 90,
+        "h": 252
+      },
+      "sourceSize": {
+        "w": 156,
+        "h": 276
+      },
+      "anchorX": 63.33,
+      "groundAnchorY": 262.51,
+      "duration": 117,
+      "sourceFrame": 84,
+      "spriteSourceSize": {
+        "x": 14,
+        "y": 12,
+        "w": 90,
+        "h": 252
+      },
+      "trimmed": true
+    },
+    {
+      "frame": {
+        "x": 2,
+        "y": 2050,
+        "w": 90,
+        "h": 252
+      },
+      "sourceSize": {
+        "w": 156,
+        "h": 276
+      },
+      "anchorX": 63.33,
+      "groundAnchorY": 262.51,
+      "duration": 117,
+      "sourceFrame": 86,
+      "spriteSourceSize": {
+        "x": 14,
+        "y": 12,
+        "w": 90,
+        "h": 252
+      },
+      "trimmed": true
+    },
+    {
+      "frame": {
+        "x": 2,
+        "y": 2306,
+        "w": 90,
+        "h": 252
+      },
+      "sourceSize": {
+        "w": 156,
+        "h": 276
+      },
+      "anchorX": 63.33,
+      "groundAnchorY": 262.51,
+      "duration": 117,
+      "sourceFrame": 88,
+      "spriteSourceSize": {
+        "x": 14,
+        "y": 12,
+        "w": 90,
+        "h": 252
+      },
+      "trimmed": true
+    },
+    {
+      "frame": {
+        "x": 2,
+        "y": 2562,
+        "w": 90,
+        "h": 252
+      },
+      "sourceSize": {
+        "w": 156,
+        "h": 276
+      },
+      "anchorX": 63.33,
+      "groundAnchorY": 262.51,
+      "duration": 117,
+      "sourceFrame": 90,
+      "spriteSourceSize": {
+        "x": 14,
+        "y": 12,
+        "w": 90,
+        "h": 252
+      },
+      "trimmed": true
+    },
+    {
+      "frame": {
+        "x": 2,
+        "y": 2818,
+        "w": 90,
+        "h": 252
+      },
+      "sourceSize": {
+        "w": 156,
+        "h": 276
+      },
+      "anchorX": 63.33,
+      "groundAnchorY": 262.51,
+      "duration": 117,
+      "sourceFrame": 92,
+      "spriteSourceSize": {
+        "x": 14,
+        "y": 12,
+        "w": 90,
+        "h": 252
+      },
+      "trimmed": true
+    }
+  ],
+  "meta": {
+    "image": "evicted_idle.webp",
+    "anchor": {
+      "x": 63.33,
+      "y": 262.51
+    },
+    "bodyScale": 0.992063,
+    "playbackFps": 12.0,
+    "source": "C:/Users/19415/Downloads/1791255385877_animation.mp4",
+    "sourceFrameIndices": [
+      70,
+      72,
+      74,
+      76,
+      78,
+      80,
+      82,
+      84,
+      86,
+      88,
+      90,
+      92
+    ],
+    "generator": "Makko; approved citizen reference sheet",
+    "standingBodyHeight": 250,
+    "continuityRepair": "Approved reference identity; constant standing-body scale; curated maximum twelve frames.",
+    "animationId": "732c3d7c-53c1-4ea8-806a-7017805a72e5",
+    "makkoUrl": "https://www.makko.ai/studio/collection/a5368c09-882b-4eba-9f18-9a0a5360acbc/animation/732c3d7c-53c1-4ea8-806a-7017805a72e5",
+    "size": {
+      "w": 94,
+      "h": 3072
+    },
+    "packing": "Lossless transparent-border trim; original source sizes and anchors retained"
+  }
+}

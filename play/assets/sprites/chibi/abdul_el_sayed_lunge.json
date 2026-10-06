@@ -4,16 +4,16 @@
       "frame": {
         "x": 2,
         "y": 2,
-        "w": 167,
-        "h": 256
+        "w": 123,
+        "h": 211
       },
       "rotated": false,
-      "trimmed": false,
+      "trimmed": true,
       "spriteSourceSize": {
         "x": 0,
-        "y": 0,
-        "w": 167,
-        "h": 256
+        "y": 45,
+        "w": 123,
+        "h": 211
       },
       "sourceSize": {
         "w": 167,
@@ -23,18 +23,18 @@
     },
     "chibi_cast__concepts_to_reference_sheets_sayed_v3_lunge_clean12_001.webp": {
       "frame": {
-        "x": 173,
+        "x": 129,
         "y": 2,
-        "w": 167,
-        "h": 256
+        "w": 123,
+        "h": 211
       },
       "rotated": false,
-      "trimmed": false,
+      "trimmed": true,
       "spriteSourceSize": {
         "x": 0,
-        "y": 0,
-        "w": 167,
-        "h": 256
+        "y": 45,
+        "w": 123,
+        "h": 211
       },
       "sourceSize": {
         "w": 167,
@@ -44,18 +44,18 @@
     },
     "chibi_cast__concepts_to_reference_sheets_sayed_v3_lunge_clean12_002.webp": {
       "frame": {
-        "x": 344,
+        "x": 256,
         "y": 2,
-        "w": 167,
-        "h": 256
+        "w": 123,
+        "h": 211
       },
       "rotated": false,
-      "trimmed": false,
+      "trimmed": true,
       "spriteSourceSize": {
         "x": 0,
-        "y": 0,
-        "w": 167,
-        "h": 256
+        "y": 45,
+        "w": 123,
+        "h": 211
       },
       "sourceSize": {
         "w": 167,
@@ -65,18 +65,18 @@
     },
     "chibi_cast__concepts_to_reference_sheets_sayed_v3_lunge_clean12_003.webp": {
       "frame": {
-        "x": 515,
+        "x": 383,
         "y": 2,
-        "w": 167,
-        "h": 256
+        "w": 124,
+        "h": 212
       },
       "rotated": false,
-      "trimmed": false,
+      "trimmed": true,
       "spriteSourceSize": {
         "x": 0,
-        "y": 0,
-        "w": 167,
-        "h": 256
+        "y": 44,
+        "w": 124,
+        "h": 212
       },
       "sourceSize": {
         "w": 167,
@@ -86,18 +86,18 @@
     },
     "chibi_cast__concepts_to_reference_sheets_sayed_v3_lunge_clean12_004.webp": {
       "frame": {
-        "x": 2,
-        "y": 262,
-        "w": 167,
-        "h": 256
+        "x": 511,
+        "y": 2,
+        "w": 126,
+        "h": 215
       },
       "rotated": false,
-      "trimmed": false,
+      "trimmed": true,
       "spriteSourceSize": {
         "x": 0,
-        "y": 0,
-        "w": 167,
-        "h": 256
+        "y": 41,
+        "w": 126,
+        "h": 215
       },
       "sourceSize": {
         "w": 167,
@@ -107,18 +107,18 @@
     },
     "chibi_cast__concepts_to_reference_sheets_sayed_v3_lunge_clean12_005.webp": {
       "frame": {
-        "x": 173,
-        "y": 262,
-        "w": 167,
-        "h": 256
+        "x": 2,
+        "y": 221,
+        "w": 136,
+        "h": 218
       },
       "rotated": false,
-      "trimmed": false,
+      "trimmed": true,
       "spriteSourceSize": {
         "x": 0,
-        "y": 0,
-        "w": 167,
-        "h": 256
+        "y": 38,
+        "w": 136,
+        "h": 218
       },
       "sourceSize": {
         "w": 167,
@@ -128,18 +128,18 @@
     },
     "chibi_cast__concepts_to_reference_sheets_sayed_v3_lunge_clean12_006.webp": {
       "frame": {
-        "x": 344,
-        "y": 262,
-        "w": 167,
-        "h": 256
+        "x": 142,
+        "y": 221,
+        "w": 160,
+        "h": 222
       },
       "rotated": false,
-      "trimmed": false,
+      "trimmed": true,
       "spriteSourceSize": {
         "x": 0,
-        "y": 0,
-        "w": 167,
-        "h": 256
+        "y": 34,
+        "w": 160,
+        "h": 222
       },
       "sourceSize": {
         "w": 167,
@@ -149,18 +149,18 @@
     },
     "chibi_cast__concepts_to_reference_sheets_sayed_v3_lunge_clean12_007.webp": {
       "frame": {
-        "x": 515,
-        "y": 262,
-        "w": 167,
-        "h": 256
+        "x": 306,
+        "y": 221,
+        "w": 161,
+        "h": 224
       },
       "rotated": false,
-      "trimmed": false,
+      "trimmed": true,
       "spriteSourceSize": {
         "x": 0,
-        "y": 0,
-        "w": 167,
-        "h": 256
+        "y": 32,
+        "w": 161,
+        "h": 224
       },
       "sourceSize": {
         "w": 167,
@@ -170,18 +170,18 @@
     },
     "chibi_cast__concepts_to_reference_sheets_sayed_v3_lunge_clean12_008.webp": {
       "frame": {
-        "x": 2,
-        "y": 522,
-        "w": 167,
-        "h": 256
+        "x": 471,
+        "y": 221,
+        "w": 161,
+        "h": 224
       },
       "rotated": false,
-      "trimmed": false,
+      "trimmed": true,
       "spriteSourceSize": {
         "x": 0,
-        "y": 0,
-        "w": 167,
-        "h": 256
+        "y": 32,
+        "w": 161,
+        "h": 224
       },
       "sourceSize": {
         "w": 167,
@@ -191,18 +191,18 @@
     },
     "chibi_cast__concepts_to_reference_sheets_sayed_v3_lunge_clean12_009.webp": {
       "frame": {
-        "x": 173,
-        "y": 522,
-        "w": 167,
-        "h": 256
+        "x": 2,
+        "y": 449,
+        "w": 165,
+        "h": 226
       },
       "rotated": false,
-      "trimmed": false,
+      "trimmed": true,
       "spriteSourceSize": {
         "x": 0,
-        "y": 0,
-        "w": 167,
-        "h": 256
+        "y": 30,
+        "w": 165,
+        "h": 226
       },
       "sourceSize": {
         "w": 167,
@@ -212,18 +212,18 @@
     },
     "chibi_cast__concepts_to_reference_sheets_sayed_v3_lunge_clean12_010.webp": {
       "frame": {
-        "x": 344,
-        "y": 522,
-        "w": 167,
-        "h": 256
+        "x": 171,
+        "y": 449,
+        "w": 160,
+        "h": 237
       },
       "rotated": false,
-      "trimmed": false,
+      "trimmed": true,
       "spriteSourceSize": {
         "x": 0,
-        "y": 0,
-        "w": 167,
-        "h": 256
+        "y": 19,
+        "w": 160,
+        "h": 237
       },
       "sourceSize": {
         "w": 167,
@@ -233,18 +233,18 @@
     },
     "chibi_cast__concepts_to_reference_sheets_sayed_v3_lunge_clean12_011.webp": {
       "frame": {
-        "x": 515,
-        "y": 522,
-        "w": 167,
-        "h": 256
+        "x": 335,
+        "y": 449,
+        "w": 123,
+        "h": 250
       },
       "rotated": false,
-      "trimmed": false,
+      "trimmed": true,
       "spriteSourceSize": {
         "x": 0,
-        "y": 0,
-        "w": 167,
-        "h": 256
+        "y": 6,
+        "w": 123,
+        "h": 250
       },
       "sourceSize": {
         "w": 167,
@@ -259,8 +259,8 @@
     "image": "abdul_el_sayed_lunge.webp",
     "format": "RGBA8888",
     "size": {
-      "w": 684,
-      "h": 780
+      "w": 649,
+      "h": 701
     },
     "scale": "1",
     "frameTags": [
@@ -310,6 +310,7 @@
     "importSource": "chibi_cast__concepts_to_reference_sheets_sayed_v3_lunge_clean12.zip",
     "playbackFps": 24,
     "useFrameDurations": false,
-    "bodyScale": 1.1848341232227488
+    "bodyScale": 1.1848341232227488,
+    "packing": "Lossless transparent-border trim; original source sizes and anchors retained"
   }
 }

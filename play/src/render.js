@@ -1,15 +1,15 @@
 import { FIGHTERS, poseFor } from "./fighters.js?v=chibi-site2";
-import { drawSprite } from "./sprites.js?v=citizen-happy3";
-import { WORLD, STAGES } from "./stages.js?v=feel1";
-import { CITIZEN_KINDS } from "./citizens.js?v=citizens1";
+import { drawSprite } from "./sprites.js?v=idle21";
+import { WORLD, STAGES } from "./stages.js?v=idle21";
+import { CITIZEN_KINDS } from "./citizens.js?v=idle21";
 
 const art = {};
 export function loadEnvironment() {
-  const names=['rally','studio','capitol','crate','bin','hydrant','barrel','pipe','bottle','food','impact','panel','button-gold','button-teal','banner'];
+  const names=['rally','studio','capitol','crate','bin','hydrant','barrel','pipe','bottle','food','impact','button-teal','street-panel','plane-loop','nyc-background','nyc-pavement','nyc-sidewalk','nyc-lamp','scenery-pantry-night','scenery-bus-stop-night','scenery-bench-night','scenery-planter-night','scenery-kiosk-night','scenery-bench','scenery-planter'];
   const required = Promise.all(names.map(name => new Promise((resolve,reject) => {
     const image=new Image(); image.onload=()=>{art[name]=image;resolve();};
     image.onerror=()=>reject(new Error(`Missing Makko artwork: ${name}`));
-    image.src=`../art/chibi/${name}.webp?v=1`;
+    image.src=`../art/chibi/${name}.webp?v=idle21`;
   })));
   // Parallax layers, the banner plane and icicles are optional until their art lands.
   const optional = [];
@@ -17,13 +17,35 @@ export function loadEnvironment() {
     const image = new Image(); image.onload = () => { art[key] = image; resolve(); }; image.onerror = () => resolve(); image.src = src;
   }));
   for (const stage of STAGES) for (const layer of stage.layers || []) tryLoad(`${stage.id}-${layer.name}`, `../art/parallax/${stage.id}/${layer.name}.webp?v=1`);
-  tryLoad("plane", "../art/parallax/plane.webp?v=1");
   tryLoad("icicles", "../art/parallax/icicles.webp?v=1");
   return Promise.all([required, ...optional]);
 }
 function painted(ctx,name,x,y,w,h) {
+  if (['panel','banner','button-gold','button-teal'].includes(name)) {
+    const image=art['street-panel']; if(!image)return;
+    const s=90,d=Math.min(20,w/4,h/4);
+    const xs=[0,s,image.width-s,image.width],ys=[0,s,image.height-s,image.height];
+    const dx=[x,x+d,x+w-d,x+w],dy=[y,y+d,y+h-d,y+h];
+    for(let row=0;row<3;row++)for(let col=0;col<3;col++)ctx.drawImage(image,xs[col],ys[row],xs[col+1]-xs[col],ys[row+1]-ys[row],dx[col],dy[row],dx[col+1]-dx[col],dy[row+1]-dy[row]);
+    return;
+  }
   const image=art[name]; if(!image)return;
   ctx.drawImage(image,x,y,w,h);
+}
+
+export function fittedText(ctx,text,x,y,width,size=18) {
+  text=String(text);
+  ctx.font=`800 ${size}px Segoe UI, sans-serif`;
+  while(ctx.measureText(text).width>width && size>10)ctx.font=`800 ${--size}px Segoe UI, sans-serif`;
+  ctx.fillText(text,x,y);
+}
+
+export function wrappedText(ctx,text,x,y,width,lineHeight=21) {
+  const words=String(text).split(/\s+/);let line='',lines=[];
+  for(const word of words){const next=line?line+' '+word:word;if(line&&ctx.measureText(next).width>width){lines.push(line);line=word;}else line=next;}
+  if(line)lines.push(line);
+  lines.forEach((line,i)=>ctx.fillText(line,x,y+i*lineHeight));
+  return lines.length;
 }
 
 function roundRect(ctx, x, y, w, h, r) {
@@ -45,6 +67,10 @@ export function draw(ctx, game) {
   drawStreet(ctx, game, cam);
   drawPlanes(ctx, game);
   const sprites = [];
+  for (const prop of game.stage?.scenery || []) {
+    const img=art[prop.art];const h=img?prop.w*img.height/img.width:prop.h;
+    sprites.push({y:prop.y,draw:()=>painted(ctx,prop.art,prop.x-cam-prop.w/2,prop.y-h,prop.w,h)});
+  }
   for (const sign of game.stage?.signs || []) {
     sprites.push({ y: WORLD.floorTop + 1, draw: () => drawSign(ctx, sign, cam) });
   }
@@ -109,54 +135,66 @@ function preview(id, x, game) {
 function drawStreet(ctx,game,cam) {
   const image=art[game.stage.id] || art.rally;
   if(!image)return;
-  const sourceWidth=image.width*.86;
-  const progress=Math.max(0,Math.min(1,cam/Math.max(1,game.stage.length-WORLD.viewW)));
-  const sourceX=(image.width-sourceWidth)*progress;
-  const curb=Math.round(image.height*.58);
-  // Multilayer parallax when the stage has layers painted; the single painting otherwise.
+  if(game.stage.id==='rally' && art['nyc-background'] && art['nyc-pavement'] && art['nyc-sidewalk']) {
+    const backdrop=art['nyc-background'],road=art['nyc-pavement'],curb=art['nyc-sidewalk'];
+    // Opaque architecture has no sidewalk furniture baked into it.
+    const width=WORLD.viewW*1.6;
+    for(let x=-((cam*.55)%width);x<WORLD.viewW;x+=width) ctx.drawImage(backdrop,0,0,backdrop.width,Math.round(backdrop.height*.9),x,0,width,WORLD.floorTop);
+    for(let x=-(cam%width);x<WORLD.viewW;x+=width) ctx.drawImage(road,x,WORLD.floorTop,width,WORLD.viewH-WORLD.floorTop);
+    // The transparent curb is a complete authored prop, not a slice through the scene.
+    const tileWidth=420;
+    for(let x=-(cam%tileWidth);x<WORLD.viewW;x+=tileWidth) ctx.drawImage(curb,x,435,tileWidth+1,50);
+    return;
+  }
+  // Cut below the entire NYC curb, planter feet and shop crates.
+  const curb=Math.round(image.height*(game.stage.id==='rally'?.64:.58));
   const layers=(game.stage.layers||[]).map(layer=>({layer,image:art[`${game.stage.id}-${layer.name}`]})).filter(entry=>entry.image);
+  // Buildings nearest the sidewalk share its world coordinates. Only distant layers lag.
   if(layers.length){
     for(const {layer,image:img} of layers){
-      const scale=WORLD.floorTop/img.height;
-      const w=img.width*scale;
-      let offset=-((cam*layer.speed)%w);
-      for(let x=offset;x<WORLD.viewW;x+=w) ctx.drawImage(img,0,0,img.width,img.height,Math.round(x),0,Math.ceil(w)+1,WORLD.floorTop);
+      const w=img.width*(WORLD.floorTop/img.height);
+      const offset=-((cam*layer.speed)%w);
+      for(let x=offset;x<WORLD.viewW;x+=w) ctx.drawImage(img,0,0,img.width,img.height,x,0,w+.5,WORLD.floorTop);
     }
   } else {
-    ctx.drawImage(image,sourceX,0,sourceWidth,curb,0,0,WORLD.viewW,WORLD.floorTop);
+    const w=WORLD.viewW*1.6;
+    const offset=-((cam%w)+w)%w;
+    for(let x=offset;x<WORLD.viewW;x+=w) ctx.drawImage(image,0,0,image.width,curb,x,0,w+.5,WORLD.floorTop);
   }
-  ctx.drawImage(image,sourceX,curb,sourceWidth,image.height-curb,0,WORLD.floorTop,WORLD.viewW,WORLD.viewH-WORLD.floorTop);
+  // The pavement is at the actors' depth: a camera movement shifts both by the same pixels.
+  // Shared width and camera offset keep the painted curb connected to the storefronts.
+  const groundWidth=WORLD.viewW*1.6;
+  const offset=-((cam%groundWidth)+groundWidth)%groundWidth;
+  for(let x=offset;x<WORLD.viewW;x+=groundWidth){
+    ctx.drawImage(image,0,curb,image.width,image.height-curb,x,WORLD.floorTop,groundWidth+.5,WORLD.viewH-WORLD.floorTop);
+  }
 }
 
 // Planes tow the message across the sky, independent of the street scroll.
 function drawPlanes(ctx, game) {
   const planes = game.stage?.planes || [];
-  if (!planes.length || game.mode !== "play") return;
+  const image = art["plane-loop"];
+  if (!image || !planes.length || game.mode !== "play" || game.stage.id === "studio") return;
   ctx.save();
-  ctx.font = "800 22px Bungee, Segoe UI, sans-serif";
-  ctx.textBaseline = "middle";
-  for (const plane of planes) {
-    const textW = ctx.measureText(plane.text).width + 36;
-    const span = WORLD.viewW + textW + 260;
-    const x = WORLD.viewW + 120 - (((game.time * plane.speed + plane.start) % span) + span) % span;
-    const y = plane.y;
-    // plane
-    if (art.plane) ctx.drawImage(art.plane, x - 60, y - 24, 120, 48);
-    else {
-      ctx.fillStyle = "#e8e2d4";
-      ctx.beginPath(); ctx.ellipse(x, y, 44, 10, 0, 0, Math.PI * 2); ctx.fill();
-      ctx.fillStyle = "#ef6b4a";
-      ctx.beginPath(); ctx.moveTo(x - 30, y); ctx.lineTo(x - 48, y - 20); ctx.lineTo(x - 40, y); ctx.closePath(); ctx.fill();
-      ctx.fillStyle = "#1a1a1a";
-      ctx.fillRect(x - 6, y - 14, 12, 4);
-    }
-    // tow line + banner
-    ctx.strokeStyle = "rgba(255,255,255,0.7)"; ctx.lineWidth = 2;
-    ctx.beginPath(); ctx.moveTo(x - 44, y + 2); ctx.lineTo(x - 70, y + 8); ctx.stroke();
-    const bx = x - 70 - textW, by = y - 16;
-    ctx.fillStyle = "#ffd23f"; roundRect(ctx, bx, by, textW, 34, 6); ctx.fill();
-    ctx.strokeStyle = "#1a1208"; ctx.lineWidth = 3; ctx.stroke();
-    ctx.fillStyle = "#1a1208"; ctx.textAlign = "left"; ctx.fillText(plane.text, bx + 18, by + 18);
+  ctx.font = "800 20px Bungee, Segoe UI, sans-serif";
+  ctx.textAlign = "center"; ctx.textBaseline = "middle";
+  const width = 360, height = width * 204 / 960;
+  for (const [index, plane] of planes.entries()) {
+    // Brief flyovers separated by quiet sky; no permanently circling slogan.
+    const elapsed = game.time - (8 + index * 22);
+    if (elapsed < 0) continue;
+    const phase = elapsed % 58;
+    const speed = 165;
+    if (phase > (WORLD.viewW + width + 200) / speed) continue;
+    const span = WORLD.viewW + width + 200;
+    const x = WORLD.viewW + 100 - phase * speed;
+    // The entire authored sprite travels left: nose at left, rope and banner behind at right.
+    const frame=Math.floor(game.time*18+plane.start)%12;
+    ctx.drawImage(image,frame%4*960,Math.floor(frame/4)*204,960,204,x,plane.y-height/2,width,height);
+    ctx.fillStyle = "#1a1208";
+    ctx.font = '800 12px Segoe UI, sans-serif';
+    const multiline=ctx.measureText(plane.text).width>width*.43;
+    wrappedText(ctx,plane.text,x+width*.744,plane.y-height*.035-(multiline?7:0),width*.43,14);
   }
   ctx.restore();
 }
@@ -165,16 +203,14 @@ function drawPlanes(ctx, game) {
 function drawSign(ctx, sign, cam) {
   const x = sign.x - cam;
   if (x < -300 || x > WORLD.viewW + 300) return;
-  const y = WORLD.floorTop + 6;
+  const y = sign.y ?? 350;
   ctx.save();
   ctx.font = "800 18px Bungee, Segoe UI, sans-serif";
-  const w = Math.ceil(ctx.measureText(sign.text).width + 40);
-  const h = 54;
-  ctx.fillStyle = "#3b2a1c"; ctx.fillRect(x - 5, y - 118, 10, 118);
-  if (art.panel) ctx.drawImage(art.panel, x - w / 2 - 14, y - 134 - h * 0.3, w + 28, h * 1.6);
-  else { ctx.fillStyle = "#19e6ff"; roundRect(ctx, x - w / 2, y - 134, w, h, 8); ctx.fill(); }
+  const w = sign.w ?? 200;
+  const h = 46;
+  painted(ctx,'panel',x-w/2,y-h/2,w,h);
   ctx.fillStyle = "#f4efe4"; ctx.textAlign = "center"; ctx.textBaseline = "middle";
-  ctx.fillText(sign.text, x, y - 134 + h / 2);
+  fittedText(ctx,sign.text,x,y,w-32,16);
   ctx.restore();
 }
 
@@ -182,16 +218,16 @@ function drawSign(ctx, sign, cam) {
 function drawMark(ctx, mark, cam) {
   const x = mark.x - cam;
   if (x < -200 || x > WORLD.viewW + 200) return;
-  const pop = Math.min(1, mark.t / 0.25);
+  if (mark.t >= 3) return;
+  const pop = Math.min(1, mark.t / 0.25) * Math.min(1, (3-mark.t)/0.5);
   const y = 236 - (1 - pop) * 30;
   ctx.save();
   ctx.globalAlpha = pop;
   ctx.font = "800 18px Bungee, Segoe UI, sans-serif";
-  const w = Math.ceil(ctx.measureText(mark.text).width + 28);
+  const w = Math.min(400,Math.max(240,Math.ceil(ctx.measureText(mark.text).width + 56)));
   ctx.translate(x, y); ctx.rotate(-0.04);
-  ctx.fillStyle = "#f4efe4"; ctx.fillRect(-w / 2, -22, w, 44);
-  ctx.strokeStyle = "#1c5fd8"; ctx.lineWidth = 4; ctx.strokeRect(-w / 2 + 3, -19, w - 6, 38);
-  ctx.fillStyle = "#1c5fd8"; ctx.textAlign = "center"; ctx.textBaseline = "middle"; ctx.fillText(mark.text, 0, 1);
+  painted(ctx, "panel", -w / 2, -32, w, 64);
+  ctx.fillStyle = "#f4efe4"; ctx.textAlign = "center"; ctx.textBaseline = "middle"; fittedText(ctx,mark.text,0,0,w-48,18);
   ctx.restore();
 }
 
@@ -202,60 +238,16 @@ function drawWin(ctx, game) {
   if (art.icicles) {
     const img = art.icicles; const h = 90; const w = img.width * (h / img.height);
     for (let x = -((game.cameraX * 0.45) % w); x < WORLD.viewW; x += w) ctx.drawImage(img, x, WORLD.floorTop - 70, w, h);
-  } else {
-    ctx.fillStyle = "rgba(220,240,255,0.9)";
-    for (let x = -((game.cameraX * 0.45) % 46); x < WORLD.viewW; x += 46) {
-      const len = 18 + ((x * 7) % 26);
-      ctx.beginPath(); ctx.moveTo(x, WORLD.floorTop - 72); ctx.lineTo(x + 14, WORLD.floorTop - 72); ctx.lineTo(x + 7, WORLD.floorTop - 72 + len); ctx.closePath(); ctx.fill();
-    }
   }
   ctx.fillStyle = "rgba(120,180,255,0.10)"; ctx.fillRect(0, 0, WORLD.viewW, WORLD.viewH);
   ctx.restore();
 }
 
-// Painted stand-in for a citizen until their Makko sheet exists.
-function drawCitizenPlaceholder(ctx, cit, sx, sc) {
-  const c = cit.colors || CITIZEN_KINDS[cit.kind];
-  const h = cit.h * sc, w = cit.w * sc;
-  const down = cit.state === "down";
-  ctx.save();
-  ctx.translate(sx, cit.y - (cit.z || 0));
-  if (down) { ctx.rotate(cit.facing * 1.4); ctx.translate(0, 10); }
-  // legs, body, head
-  ctx.fillStyle = c.pants; ctx.fillRect(-w * 0.32, -h * 0.42, w * 0.26, h * 0.42); ctx.fillRect(w * 0.06, -h * 0.42, w * 0.26, h * 0.42);
-  ctx.fillStyle = c.body; roundRect(ctx, -w * 0.42, -h * 0.78, w * 0.84, h * 0.4, 8); ctx.fill();
-  ctx.fillStyle = c.trim; ctx.fillRect(-w * 0.1, -h * 0.76, w * 0.2, h * 0.3);
-  ctx.fillStyle = c.skin; ctx.beginPath(); ctx.arc(0, -h * 0.9, h * 0.17, 0, Math.PI * 2); ctx.fill();
-  ctx.fillStyle = "#1a1a1a"; ctx.beginPath(); ctx.arc(0, -h * 1.0, h * 0.16, Math.PI, Math.PI * 2); ctx.fill();
-  // mood
-  ctx.strokeStyle = "#1a1a1a"; ctx.lineWidth = 2; ctx.beginPath();
-  const happy = cit.state === "helped" || cit.state === "testified" || cit.state === "follow";
-  if (happy) ctx.arc(cit.facing * 3, -h * 0.87, 5, 0.1 * Math.PI, 0.9 * Math.PI); else ctx.arc(cit.facing * 3, -h * 0.82, 5, 1.1 * Math.PI, 1.9 * Math.PI);
-  ctx.stroke();
-  ctx.restore();
-  // need bubble
-  if (cit.state === "need" || cit.state === "down") {
-    const bob = Math.sin((cit.anim || 0) * 4) * 3;
-    const bx = sx, by = cit.y - h - 28 + bob;
-    ctx.save();
-    ctx.fillStyle = "#f4efe4"; ctx.beginPath(); ctx.arc(bx, by, 18, 0, Math.PI * 2); ctx.fill();
-    ctx.fillStyle = "#f4efe4"; ctx.beginPath(); ctx.moveTo(bx - 6, by + 14); ctx.lineTo(bx + 6, by + 14); ctx.lineTo(bx, by + 24); ctx.closePath(); ctx.fill();
-    ctx.strokeStyle = "#1a1a1a"; ctx.lineWidth = 2.5; ctx.fillStyle = "#1a1a1a"; ctx.lineCap = "round";
-    const icon = c.icon;
-    ctx.beginPath();
-    if (icon === "bowl") { ctx.arc(bx, by - 1, 9, 0, Math.PI); ctx.moveTo(bx - 11, by - 1); ctx.lineTo(bx + 11, by - 1); }
-    else if (icon === "cross") { ctx.moveTo(bx - 8, by); ctx.lineTo(bx + 8, by); ctx.moveTo(bx, by - 8); ctx.lineTo(bx, by + 8); }
-    else if (icon === "box") { ctx.rect(bx - 8, by - 6, 16, 13); ctx.moveTo(bx - 8, by - 1); ctx.lineTo(bx + 8, by - 1); }
-    else if (icon === "dollar") { ctx.moveTo(bx + 5, by - 7); ctx.bezierCurveTo(bx - 10, by - 10, bx - 10, by, bx, by); ctx.bezierCurveTo(bx + 10, by, bx + 10, by + 10, bx - 5, by + 7); ctx.moveTo(bx, by - 10); ctx.lineTo(bx, by + 10); }
-    else { ctx.rect(bx - 9, by - 5, 18, 12); ctx.moveTo(bx - 9, by - 5); ctx.lineTo(bx - 3, by - 9); ctx.lineTo(bx + 1, by - 5); }
-    ctx.stroke();
-    ctx.restore();
-  }
+function drawProp(ctx, game, prop, cam) {
+  const name = game.stage.id === 'studio' ? 'bin' : game.stage.id === 'capitol' ? 'barrel' : 'crate';
+  painted(ctx, name, prop.x - cam - prop.w / 2, prop.y - prop.h, prop.w, prop.h);
 }
-function drawProp(ctx,game,prop,cam) {
-  const name=game.stage.id==='studio'?'bin':game.stage.id==='capitol'?'barrel':'crate';
-  painted(ctx,name,prop.x-cam-prop.w/2,prop.y-prop.h,prop.w,prop.h);
-}
+
 function drawPickup(ctx,pickup,cam) {
   const name=pickup.kind==='pipe'?'pipe':pickup.kind==='bottle'?'bottle':'food';
   painted(ctx,name,pickup.x-cam-22,pickup.y-34,44,34);
@@ -322,13 +314,10 @@ function drawFx(ctx,fx,cam) {
     const u = fx.t / fx.life;
     ctx.save(); ctx.globalAlpha = Math.max(0, 1 - u);
     const x = fx.x - cam, y = fx.y - fx.z - u * 60;
-    if (fx.kind === "heart") {
-      ctx.fillStyle = "#ef4a7a"; ctx.beginPath();
-      ctx.moveTo(x, y + 12); ctx.bezierCurveTo(x - 22, y - 6, x - 10, y - 22, x, y - 8); ctx.bezierCurveTo(x + 10, y - 22, x + 22, y - 6, x, y + 12); ctx.fill();
-    } else {
-      ctx.font = "800 22px Bungee, Segoe UI, sans-serif"; ctx.textAlign = "center"; ctx.fillStyle = "#ffd23f";
-      ctx.strokeStyle = "#1a1208"; ctx.lineWidth = 4; ctx.strokeText("RECEIPTS", x, y); ctx.fillText("RECEIPTS", x, y);
-    }
+    ctx.font = "800 22px Bungee, Segoe UI, sans-serif"; ctx.textAlign = "center"; ctx.fillStyle = "#ffd23f";
+    ctx.strokeStyle = "#1a1208"; ctx.lineWidth = 4;
+    const message = fx.kind === "heart" ? "THANK YOU!" : "RECEIPTS";
+    ctx.strokeText(message, x, y); ctx.fillText(message, x, y);
     ctx.restore(); return;
   }
   ctx.save();ctx.globalAlpha=Math.max(0,1-fx.t/fx.life);
@@ -337,6 +326,7 @@ function drawFx(ctx,fx,cam) {
 }
 
 function drawPerson(ctx, ent, cam, game) {
+  if (ent.team === "citizen" && ent.helpOwner?.state === "help" && ent.helpOwner.stateT >= ent.helpOwner.helpAction.approach) return;
   if (ent.team === "player" && ent.invuln > 0 && Math.floor(game.time * 16) % 2 === 0 && ent.state !== "special") return;
   const depth = 0.86 + ((ent.y - WORLD.floorTop) / (WORLD.floorBottom - WORLD.floorTop)) * 0.2;
   const sc = (ent.scale || 1) * depth;
@@ -359,11 +349,6 @@ function drawPerson(ctx, ent, cam, game) {
   ctx.restore();
 
   if (drawSprite(ctx, ent, sx, spriteScale)) label(ctx, ent, sx);
-  else if (ent.team === "citizen") drawCitizenPlaceholder(ctx, ent, sx, spriteScale);
-  if (ent.team === "citizen" && ent.state === "follow") {
-    ctx.save(); ctx.font = "700 13px Segoe UI, sans-serif"; ctx.textAlign = "center"; ctx.fillStyle = "#ffd23f";
-    ctx.fillText("WITNESS", sx, ent.y - ent.z - (ent.h || 84) * spriteScale - 10); ctx.restore();
-  }
 }
 
 function label(ctx, ent, sx) {
@@ -376,8 +361,8 @@ function label(ctx, ent, sx) {
 }
 
 function innerPlate(x, y, w, h) {
-  const px = w * 0.1;
-  const py = h * 0.27;
+  const px = 22;
+  const py = 20;
   return { x: x + px, y: y + py, w: w - px * 2, h: h - py * 2 };
 }
 
@@ -385,7 +370,7 @@ function drawHud(ctx, game) {
   const player = game.player;
   if (!player) return;
   ctx.save();
-  const aspect = 510 / 245;
+  const aspect = 3;
 
   const lw = 360;
   const lh = Math.round(lw / aspect);
@@ -395,16 +380,16 @@ function drawHud(ctx, game) {
   ctx.textBaseline = "top";
   ctx.fillStyle = "#f4efe4";
   ctx.font = "700 20px Segoe UI, sans-serif";
-  ctx.fillText(player.name, left.x, left.y);
+  fittedText(ctx,player.name,left.x,left.y,left.w,20);
   const barH = 26;
   const barY = left.y + 28;
   bar(ctx, left.x, barY, left.w, barH, player);
   ctx.font = "600 16px Segoe UI, sans-serif";
   ctx.fillStyle = "#e2b657";
-  ctx.fillText(`Lives ${game.lives}   ·   Helped ${game.helped || 0}`, left.x, barY + barH + 8);
+  fittedText(ctx,`Lives ${game.lives}   ·   Helped ${game.helped || 0}`,left.x,barY+barH+8,left.w,16);
 
   const sw = 240;
-  const sh = Math.round(sw / aspect);
+  const sh = 104;
   const sx = WORLD.viewW - 14 - sw;
   painted(ctx, "panel", sx, 10, sw, sh);
   const score = innerPlate(sx, 10, sw, sh);
@@ -418,7 +403,7 @@ function drawHud(ctx, game) {
     ctx.fillStyle = "#ef6b4a";
     ctx.font = "800 18px Segoe UI, sans-serif";
     ctx.fillStyle = game.comboKind === "help" ? "#5fd38a" : "#ef6b4a";
-    ctx.fillText(game.comboKind === "help" ? `${game.combo} HELPED` : `${game.combo} HITS`, score.x + score.w / 2, score.y + score.h * 0.72);
+    fittedText(ctx,game.comboKind === "help" ? `${game.combo} HELPED` : `${game.combo} HITS`,score.x+score.w/2,score.y+score.h*.72,score.w,18);
   } else {
     ctx.font = "700 26px Segoe UI, sans-serif";
     ctx.fillText(scoreText, score.x + score.w / 2, score.y + score.h / 2);
@@ -427,7 +412,7 @@ function drawHud(ctx, game) {
   const boss = (game.enemies || []).find((enemy) => enemy.isBoss && enemy.alive);
   if (boss) {
     const bw = 440;
-    const bh = 156;
+    const bh = 104;
     const bx = (WORLD.viewW - bw) / 2;
     painted(ctx, "panel", bx, 8, bw, bh);
     const box = innerPlate(bx, 8, bw, bh);
@@ -435,7 +420,7 @@ function drawHud(ctx, game) {
     ctx.textBaseline = "top";
     ctx.fillStyle = "#f4efe4";
     ctx.font = "700 18px Segoe UI, sans-serif";
-    ctx.fillText(boss.title ? `${boss.title} · ${boss.name}` : boss.name, box.x + box.w / 2, box.y);
+    fittedText(ctx,boss.title ? `${boss.title} · ${boss.name}` : boss.name,box.x+box.w/2,box.y,box.w,18);
     bar(ctx, box.x + box.w * 0.06, box.y + 28, box.w * 0.88, 24, boss);
   }
 
@@ -449,33 +434,20 @@ function drawHud(ctx, game) {
     painted(ctx, "button-gold", bx, by, bw, bh);
     ctx.textAlign = "center";
     ctx.textBaseline = "middle";
-    ctx.fillStyle = "#251a0b";
+    ctx.fillStyle = "#f4efe4";
     ctx.fillText(word, bx + bw / 2, by + bh * 0.46);
   }
 
   if (game.banner && (game.bannerT > 0 || game.introT > 0)) {
-    let size = 32;
-    ctx.font = `800 ${size}px Segoe UI, sans-serif`;
-    const maxW = 440;
-    while (ctx.measureText(game.banner).width > maxW && size > 18) {
-      size -= 2;
-      ctx.font = `800 ${size}px Segoe UI, sans-serif`;
-    }
-    const bw = Math.max(380, Math.ceil(ctx.measureText(game.banner).width + 140));
-    const bh = Math.round(bw * (219 / 574));
-    const bx = (WORLD.viewW - bw) / 2;
-    const by = 156;
-    painted(ctx, "banner", bx, by, bw, bh);
-    ctx.textAlign = "center";
-    ctx.textBaseline = "middle";
-    ctx.fillStyle = "#251a0b";
     const hasLine = game.introT > 0.2 && game.stage?.line;
-    ctx.fillText(game.banner, WORLD.viewW / 2, by + bh * (hasLine ? 0.4 : 0.48));
-    if (hasLine) {
-      ctx.font = "600 16px Segoe UI, sans-serif";
-      ctx.fillStyle = "#5a3a12";
-      ctx.fillText(game.stage.line, WORLD.viewW / 2, by + bh * 0.66);
-    }
+    const bw = 680, bh = hasLine ? 132 : 80;
+    const bx = (WORLD.viewW - bw) / 2, by = 146;
+    painted(ctx, "panel", bx, by, bw, bh);
+    ctx.textAlign = "center"; ctx.textBaseline = "middle";
+    ctx.fillStyle = "#f4efe4";
+    fittedText(ctx,game.banner,WORLD.viewW/2,by+(hasLine?35:40),bw-64,28);
+    if(hasLine){ctx.font="600 17px Segoe UI, sans-serif";ctx.fillStyle="#efe4c9";wrappedText(ctx,game.stage.line,WORLD.viewW/2,by+72,bw-64,22);}
+
   }
   ctx.restore();
 }

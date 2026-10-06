@@ -1,0 +1,11 @@
+{
+  "source": "Makko",
+  "original": "rally.webp",
+  "processing": "Crop only from empty asphalt below all sidewalk objects",
+  "crop": [
+    0,
+    639,
+    1600,
+    900
+  ]
+}

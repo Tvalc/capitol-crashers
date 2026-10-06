@@ -4,16 +4,16 @@
       "frame": {
         "x": 2,
         "y": 2,
-        "w": 205,
-        "h": 256
+        "w": 174,
+        "h": 246
       },
       "rotated": false,
-      "trimmed": false,
+      "trimmed": true,
       "spriteSourceSize": {
-        "x": 0,
-        "y": 0,
-        "w": 205,
-        "h": 256
+        "x": 16,
+        "y": 6,
+        "w": 174,
+        "h": 246
       },
       "sourceSize": {
         "w": 205,
@@ -23,18 +23,18 @@
     },
     "chibi_cast__concepts_to_reference_sheets_sayed_v3_death_clean12_001.webp": {
       "frame": {
-        "x": 211,
-        "y": 2,
-        "w": 205,
-        "h": 256
+        "x": 2,
+        "y": 252,
+        "w": 176,
+        "h": 243
       },
       "rotated": false,
-      "trimmed": false,
+      "trimmed": true,
       "spriteSourceSize": {
-        "x": 0,
-        "y": 0,
-        "w": 205,
-        "h": 256
+        "x": 16,
+        "y": 10,
+        "w": 176,
+        "h": 243
       },
       "sourceSize": {
         "w": 205,
@@ -44,18 +44,18 @@
     },
     "chibi_cast__concepts_to_reference_sheets_sayed_v3_death_clean12_002.webp": {
       "frame": {
-        "x": 420,
-        "y": 2,
-        "w": 205,
-        "h": 256
+        "x": 2,
+        "y": 499,
+        "w": 190,
+        "h": 230
       },
       "rotated": false,
-      "trimmed": false,
+      "trimmed": true,
       "spriteSourceSize": {
-        "x": 0,
-        "y": 0,
-        "w": 205,
-        "h": 256
+        "x": 8,
+        "y": 22,
+        "w": 190,
+        "h": 230
       },
       "sourceSize": {
         "w": 205,
@@ -65,18 +65,18 @@
     },
     "chibi_cast__concepts_to_reference_sheets_sayed_v3_death_clean12_003.webp": {
       "frame": {
-        "x": 629,
-        "y": 2,
-        "w": 205,
-        "h": 256
+        "x": 2,
+        "y": 733,
+        "w": 148,
+        "h": 202
       },
       "rotated": false,
-      "trimmed": false,
+      "trimmed": true,
       "spriteSourceSize": {
-        "x": 0,
-        "y": 0,
-        "w": 205,
-        "h": 256
+        "x": 34,
+        "y": 51,
+        "w": 148,
+        "h": 202
       },
       "sourceSize": {
         "w": 205,
@@ -87,17 +87,17 @@
     "chibi_cast__concepts_to_reference_sheets_sayed_v3_death_clean12_004.webp": {
       "frame": {
         "x": 2,
-        "y": 262,
-        "w": 205,
-        "h": 256
+        "y": 939,
+        "w": 137,
+        "h": 178
       },
       "rotated": false,
-      "trimmed": false,
+      "trimmed": true,
       "spriteSourceSize": {
-        "x": 0,
-        "y": 0,
-        "w": 205,
-        "h": 256
+        "x": 45,
+        "y": 75,
+        "w": 137,
+        "h": 178
       },
       "sourceSize": {
         "w": 205,
@@ -107,18 +107,18 @@
     },
     "chibi_cast__concepts_to_reference_sheets_sayed_v3_death_clean12_005.webp": {
       "frame": {
-        "x": 211,
-        "y": 262,
-        "w": 205,
-        "h": 256
+        "x": 2,
+        "y": 1121,
+        "w": 161,
+        "h": 165
       },
       "rotated": false,
-      "trimmed": false,
+      "trimmed": true,
       "spriteSourceSize": {
-        "x": 0,
-        "y": 0,
-        "w": 205,
-        "h": 256
+        "x": 26,
+        "y": 86,
+        "w": 161,
+        "h": 165
       },
       "sourceSize": {
         "w": 205,
@@ -128,18 +128,18 @@
     },
     "chibi_cast__concepts_to_reference_sheets_sayed_v3_death_clean12_006.webp": {
       "frame": {
-        "x": 420,
-        "y": 262,
-        "w": 205,
-        "h": 256
+        "x": 2,
+        "y": 1290,
+        "w": 190,
+        "h": 145
       },
       "rotated": false,
-      "trimmed": false,
+      "trimmed": true,
       "spriteSourceSize": {
         "x": 0,
-        "y": 0,
-        "w": 205,
-        "h": 256
+        "y": 105,
+        "w": 190,
+        "h": 145
       },
       "sourceSize": {
         "w": 205,
@@ -149,18 +149,18 @@
     },
     "chibi_cast__concepts_to_reference_sheets_sayed_v3_death_clean12_007.webp": {
       "frame": {
-        "x": 629,
-        "y": 262,
-        "w": 205,
-        "h": 256
+        "x": 2,
+        "y": 1439,
+        "w": 200,
+        "h": 145
       },
       "rotated": false,
-      "trimmed": false,
+      "trimmed": true,
       "spriteSourceSize": {
-        "x": 0,
-        "y": 0,
-        "w": 205,
-        "h": 256
+        "x": 4,
+        "y": 106,
+        "w": 200,
+        "h": 145
       },
       "sourceSize": {
         "w": 205,
@@ -171,17 +171,17 @@
     "chibi_cast__concepts_to_reference_sheets_sayed_v3_death_clean12_008.webp": {
       "frame": {
         "x": 2,
-        "y": 522,
-        "w": 205,
-        "h": 256
+        "y": 1588,
+        "w": 202,
+        "h": 138
       },
       "rotated": false,
-      "trimmed": false,
+      "trimmed": true,
       "spriteSourceSize": {
-        "x": 0,
-        "y": 0,
-        "w": 205,
-        "h": 256
+        "x": 1,
+        "y": 111,
+        "w": 202,
+        "h": 138
       },
       "sourceSize": {
         "w": 205,
@@ -191,18 +191,18 @@
     },
     "chibi_cast__concepts_to_reference_sheets_sayed_v3_death_clean12_009.webp": {
       "frame": {
-        "x": 211,
-        "y": 522,
-        "w": 205,
-        "h": 256
+        "x": 2,
+        "y": 1730,
+        "w": 202,
+        "h": 138
       },
       "rotated": false,
-      "trimmed": false,
+      "trimmed": true,
       "spriteSourceSize": {
-        "x": 0,
-        "y": 0,
-        "w": 205,
-        "h": 256
+        "x": 1,
+        "y": 111,
+        "w": 202,
+        "h": 138
       },
       "sourceSize": {
         "w": 205,
@@ -212,18 +212,18 @@
     },
     "chibi_cast__concepts_to_reference_sheets_sayed_v3_death_clean12_010.webp": {
       "frame": {
-        "x": 420,
-        "y": 522,
-        "w": 205,
-        "h": 256
+        "x": 2,
+        "y": 1872,
+        "w": 202,
+        "h": 138
       },
       "rotated": false,
-      "trimmed": false,
+      "trimmed": true,
       "spriteSourceSize": {
-        "x": 0,
-        "y": 0,
-        "w": 205,
-        "h": 256
+        "x": 1,
+        "y": 111,
+        "w": 202,
+        "h": 138
       },
       "sourceSize": {
         "w": 205,
@@ -233,18 +233,18 @@
     },
     "chibi_cast__concepts_to_reference_sheets_sayed_v3_death_clean12_011.webp": {
       "frame": {
-        "x": 629,
-        "y": 522,
-        "w": 205,
-        "h": 256
+        "x": 2,
+        "y": 2014,
+        "w": 183,
+        "h": 162
       },
       "rotated": false,
-      "trimmed": false,
+      "trimmed": true,
       "spriteSourceSize": {
-        "x": 0,
-        "y": 0,
-        "w": 205,
-        "h": 256
+        "x": 16,
+        "y": 94,
+        "w": 183,
+        "h": 162
       },
       "sourceSize": {
         "w": 205,
@@ -259,8 +259,8 @@
     "image": "abdul_el_sayed_death.webp",
     "format": "RGBA8888",
     "size": {
-      "w": 836,
-      "h": 780
+      "w": 206,
+      "h": 2178
     },
     "scale": "1",
     "frameTags": [
@@ -310,6 +310,7 @@
     "importSource": "chibi_cast__concepts_to_reference_sheets_sayed_v3_death_clean12.zip",
     "playbackFps": 24,
     "useFrameDurations": false,
-    "bodyScale": 1.016260162601626
+    "bodyScale": 1.016260162601626,
+    "packing": "Lossless transparent-border trim; original source sizes and anchors retained"
   }
 }

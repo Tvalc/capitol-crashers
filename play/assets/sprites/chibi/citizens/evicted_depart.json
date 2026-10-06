@@ -1,1 +1,292 @@
-{"frames": {"evicted_depart_000": {"frame": {"x": 0, "y": 0, "w": 181, "h": 284}, "rotated": false, "trimmed": false, "sourceSize": {"w": 181, "h": 284}, "duration": 94}, "evicted_depart_001": {"frame": {"x": 181, "y": 0, "w": 181, "h": 284}, "rotated": false, "trimmed": false, "sourceSize": {"w": 181, "h": 284}, "duration": 94}, "evicted_depart_002": {"frame": {"x": 362, "y": 0, "w": 181, "h": 284}, "rotated": false, "trimmed": false, "sourceSize": {"w": 181, "h": 284}, "duration": 94}, "evicted_depart_003": {"frame": {"x": 543, "y": 0, "w": 181, "h": 284}, "rotated": false, "trimmed": false, "sourceSize": {"w": 181, "h": 284}, "duration": 94}, "evicted_depart_004": {"frame": {"x": 724, "y": 0, "w": 181, "h": 284}, "rotated": false, "trimmed": false, "sourceSize": {"w": 181, "h": 284}, "duration": 94}, "evicted_depart_005": {"frame": {"x": 905, "y": 0, "w": 181, "h": 284}, "rotated": false, "trimmed": false, "sourceSize": {"w": 181, "h": 284}, "duration": 94}, "evicted_depart_006": {"frame": {"x": 0, "y": 284, "w": 181, "h": 284}, "rotated": false, "trimmed": false, "sourceSize": {"w": 181, "h": 284}, "duration": 94}, "evicted_depart_007": {"frame": {"x": 181, "y": 284, "w": 181, "h": 284}, "rotated": false, "trimmed": false, "sourceSize": {"w": 181, "h": 284}, "duration": 94}, "evicted_depart_008": {"frame": {"x": 362, "y": 284, "w": 181, "h": 284}, "rotated": false, "trimmed": false, "sourceSize": {"w": 181, "h": 284}, "duration": 94}, "evicted_depart_009": {"frame": {"x": 543, "y": 284, "w": 181, "h": 284}, "rotated": false, "trimmed": false, "sourceSize": {"w": 181, "h": 284}, "duration": 94}, "evicted_depart_010": {"frame": {"x": 724, "y": 284, "w": 181, "h": 284}, "rotated": false, "trimmed": false, "sourceSize": {"w": 181, "h": 284}, "duration": 94}, "evicted_depart_011": {"frame": {"x": 905, "y": 284, "w": 181, "h": 284}, "rotated": false, "trimmed": false, "sourceSize": {"w": 181, "h": 284}, "duration": 94}}, "meta": {"app": "Makko source / curated departure cycle", "image": "evicted_depart.webp", "size": {"w": 1086, "h": 568}, "playbackFps": 10.666666666666666, "anchor": {"x": 90.5, "y": 272}, "bodyScale": 1, "animationId": "d5190488-d755-42d8-8629-f521d637cfd0", "source": "https://www.makko.ai/studio/collection/a5368c09-882b-4eba-9f18-9a0a5360acbc/animation/d5190488-d755-42d8-8629-f521d637cfd0", "sourceFrameIndices": [47, 49, 52, 54, 56, 58, 60, 63, 65, 67, 70, 72], "sourceFps": 24, "cropRepair": "fixed full-source bounds; 12px transparent gutters", "alphaRepair": "green dominance threshold preserves teal cloth; enclosed headwrap protection"}}
+{
+  "frames": [
+    {
+      "frame": {
+        "x": 2,
+        "y": 2,
+        "w": 156,
+        "h": 254
+      },
+      "rotated": false,
+      "trimmed": true,
+      "sourceSize": {
+        "w": 181,
+        "h": 284
+      },
+      "duration": 94,
+      "spriteSourceSize": {
+        "x": 13,
+        "y": 12,
+        "w": 156,
+        "h": 254
+      }
+    },
+    {
+      "frame": {
+        "x": 162,
+        "y": 2,
+        "w": 151,
+        "h": 257
+      },
+      "rotated": false,
+      "trimmed": true,
+      "sourceSize": {
+        "w": 181,
+        "h": 284
+      },
+      "duration": 94,
+      "spriteSourceSize": {
+        "x": 12,
+        "y": 13,
+        "w": 151,
+        "h": 257
+      }
+    },
+    {
+      "frame": {
+        "x": 317,
+        "y": 2,
+        "w": 108,
+        "h": 259
+      },
+      "rotated": false,
+      "trimmed": true,
+      "sourceSize": {
+        "w": 181,
+        "h": 284
+      },
+      "duration": 94,
+      "spriteSourceSize": {
+        "x": 32,
+        "y": 12,
+        "w": 108,
+        "h": 259
+      }
+    },
+    {
+      "frame": {
+        "x": 429,
+        "y": 2,
+        "w": 93,
+        "h": 259
+      },
+      "rotated": false,
+      "trimmed": true,
+      "sourceSize": {
+        "w": 181,
+        "h": 284
+      },
+      "duration": 94,
+      "spriteSourceSize": {
+        "x": 47,
+        "y": 12,
+        "w": 93,
+        "h": 259
+      }
+    },
+    {
+      "frame": {
+        "x": 526,
+        "y": 2,
+        "w": 109,
+        "h": 258
+      },
+      "rotated": false,
+      "trimmed": true,
+      "sourceSize": {
+        "w": 181,
+        "h": 284
+      },
+      "duration": 94,
+      "spriteSourceSize": {
+        "x": 44,
+        "y": 12,
+        "w": 109,
+        "h": 258
+      }
+    },
+    {
+      "frame": {
+        "x": 639,
+        "y": 2,
+        "w": 123,
+        "h": 257
+      },
+      "rotated": false,
+      "trimmed": true,
+      "sourceSize": {
+        "w": 181,
+        "h": 284
+      },
+      "duration": 94,
+      "spriteSourceSize": {
+        "x": 38,
+        "y": 12,
+        "w": 123,
+        "h": 257
+      }
+    },
+    {
+      "frame": {
+        "x": 2,
+        "y": 265,
+        "w": 136,
+        "h": 254
+      },
+      "rotated": false,
+      "trimmed": true,
+      "sourceSize": {
+        "w": 181,
+        "h": 284
+      },
+      "duration": 94,
+      "spriteSourceSize": {
+        "x": 27,
+        "y": 12,
+        "w": 136,
+        "h": 254
+      }
+    },
+    {
+      "frame": {
+        "x": 142,
+        "y": 265,
+        "w": 141,
+        "h": 259
+      },
+      "rotated": false,
+      "trimmed": true,
+      "sourceSize": {
+        "w": 181,
+        "h": 284
+      },
+      "duration": 94,
+      "spriteSourceSize": {
+        "x": 22,
+        "y": 13,
+        "w": 141,
+        "h": 259
+      }
+    },
+    {
+      "frame": {
+        "x": 287,
+        "y": 265,
+        "w": 123,
+        "h": 260
+      },
+      "rotated": false,
+      "trimmed": true,
+      "sourceSize": {
+        "w": 181,
+        "h": 284
+      },
+      "duration": 94,
+      "spriteSourceSize": {
+        "x": 36,
+        "y": 12,
+        "w": 123,
+        "h": 260
+      }
+    },
+    {
+      "frame": {
+        "x": 414,
+        "y": 265,
+        "w": 104,
+        "h": 260
+      },
+      "rotated": false,
+      "trimmed": true,
+      "sourceSize": {
+        "w": 181,
+        "h": 284
+      },
+      "duration": 94,
+      "spriteSourceSize": {
+        "x": 44,
+        "y": 12,
+        "w": 104,
+        "h": 260
+      }
+    },
+    {
+      "frame": {
+        "x": 522,
+        "y": 265,
+        "w": 98,
+        "h": 260
+      },
+      "rotated": false,
+      "trimmed": true,
+      "sourceSize": {
+        "w": 181,
+        "h": 284
+      },
+      "duration": 94,
+      "spriteSourceSize": {
+        "x": 42,
+        "y": 12,
+        "w": 98,
+        "h": 260
+      }
+    },
+    {
+      "frame": {
+        "x": 624,
+        "y": 265,
+        "w": 130,
+        "h": 259
+      },
+      "rotated": false,
+      "trimmed": true,
+      "sourceSize": {
+        "w": 181,
+        "h": 284
+      },
+      "duration": 94,
+      "spriteSourceSize": {
+        "x": 28,
+        "y": 12,
+        "w": 130,
+        "h": 259
+      }
+    }
+  ],
+  "meta": {
+    "app": "Makko source / curated departure cycle",
+    "image": "evicted_depart.webp",
+    "size": {
+      "w": 768,
+      "h": 527
+    },
+    "playbackFps": 10.666666666666666,
+    "anchor": {
+      "x": 90.5,
+      "y": 272
+    },
+    "bodyScale": 0.965251,
+    "animationId": "d5190488-d755-42d8-8629-f521d637cfd0",
+    "source": "https://www.makko.ai/studio/collection/a5368c09-882b-4eba-9f18-9a0a5360acbc/animation/d5190488-d755-42d8-8629-f521d637cfd0",
+    "sourceFrameIndices": [
+      47,
+      49,
+      52,
+      54,
+      56,
+      58,
+      60,
+      63,
+      65,
+      67,
+      70,
+      72
+    ],
+    "sourceFps": 24,
+    "cropRepair": "fixed full-source bounds; 12px transparent gutters",
+    "alphaRepair": "green dominance threshold preserves teal cloth; enclosed headwrap protection",
+    "standingBodyHeight": 250,
+    "continuityRepair": "Approved reference identity; constant standing-body scale; curated maximum twelve frames.",
+    "packing": "Lossless transparent-border trim; original source sizes and anchors retained"
+  }
+}

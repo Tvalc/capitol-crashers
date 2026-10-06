@@ -4,16 +4,16 @@
       "frame": {
         "x": 2,
         "y": 2,
-        "w": 167,
-        "h": 256
+        "w": 165,
+        "h": 246
       },
       "rotated": false,
-      "trimmed": false,
+      "trimmed": true,
       "spriteSourceSize": {
-        "x": 0,
-        "y": 0,
-        "w": 167,
-        "h": 256
+        "x": 2,
+        "y": 4,
+        "w": 165,
+        "h": 246
       },
       "sourceSize": {
         "w": 167,
@@ -23,18 +23,18 @@
     },
     "chibi_cast__concepts_to_reference_sheets_vance_v3_walk_12_001.webp": {
       "frame": {
-        "x": 173,
+        "x": 171,
         "y": 2,
-        "w": 167,
-        "h": 256
+        "w": 157,
+        "h": 252
       },
       "rotated": false,
-      "trimmed": false,
+      "trimmed": true,
       "spriteSourceSize": {
-        "x": 0,
-        "y": 0,
-        "w": 167,
-        "h": 256
+        "x": 7,
+        "y": 4,
+        "w": 157,
+        "h": 252
       },
       "sourceSize": {
         "w": 167,
@@ -44,18 +44,18 @@
     },
     "chibi_cast__concepts_to_reference_sheets_vance_v3_walk_12_002.webp": {
       "frame": {
-        "x": 344,
+        "x": 332,
         "y": 2,
-        "w": 167,
-        "h": 256
+        "w": 139,
+        "h": 253
       },
       "rotated": false,
-      "trimmed": false,
+      "trimmed": true,
       "spriteSourceSize": {
-        "x": 0,
-        "y": 0,
-        "w": 167,
-        "h": 256
+        "x": 19,
+        "y": 3,
+        "w": 139,
+        "h": 253
       },
       "sourceSize": {
         "w": 167,
@@ -65,18 +65,18 @@
     },
     "chibi_cast__concepts_to_reference_sheets_vance_v3_walk_12_003.webp": {
       "frame": {
-        "x": 515,
+        "x": 475,
         "y": 2,
-        "w": 167,
-        "h": 256
+        "w": 111,
+        "h": 254
       },
       "rotated": false,
-      "trimmed": false,
+      "trimmed": true,
       "spriteSourceSize": {
-        "x": 0,
-        "y": 0,
-        "w": 167,
-        "h": 256
+        "x": 25,
+        "y": 1,
+        "w": 111,
+        "h": 254
       },
       "sourceSize": {
         "w": 167,
@@ -86,18 +86,18 @@
     },
     "chibi_cast__concepts_to_reference_sheets_vance_v3_walk_12_004.webp": {
       "frame": {
-        "x": 2,
-        "y": 262,
-        "w": 167,
-        "h": 256
+        "x": 590,
+        "y": 2,
+        "w": 105,
+        "h": 255
       },
       "rotated": false,
-      "trimmed": false,
+      "trimmed": true,
       "spriteSourceSize": {
-        "x": 0,
+        "x": 24,
         "y": 0,
-        "w": 167,
-        "h": 256
+        "w": 105,
+        "h": 255
       },
       "sourceSize": {
         "w": 167,
@@ -107,18 +107,18 @@
     },
     "chibi_cast__concepts_to_reference_sheets_vance_v3_walk_12_005.webp": {
       "frame": {
-        "x": 173,
-        "y": 262,
-        "w": 167,
-        "h": 256
+        "x": 699,
+        "y": 2,
+        "w": 131,
+        "h": 251
       },
       "rotated": false,
-      "trimmed": false,
+      "trimmed": true,
       "spriteSourceSize": {
-        "x": 0,
-        "y": 0,
-        "w": 167,
-        "h": 256
+        "x": 23,
+        "y": 2,
+        "w": 131,
+        "h": 251
       },
       "sourceSize": {
         "w": 167,
@@ -128,18 +128,18 @@
     },
     "chibi_cast__concepts_to_reference_sheets_vance_v3_walk_12_006.webp": {
       "frame": {
-        "x": 344,
-        "y": 262,
-        "w": 167,
-        "h": 256
+        "x": 2,
+        "y": 261,
+        "w": 137,
+        "h": 249
       },
       "rotated": false,
-      "trimmed": false,
+      "trimmed": true,
       "spriteSourceSize": {
-        "x": 0,
-        "y": 0,
-        "w": 167,
-        "h": 256
+        "x": 15,
+        "y": 4,
+        "w": 137,
+        "h": 249
       },
       "sourceSize": {
         "w": 167,
@@ -149,18 +149,18 @@
     },
     "chibi_cast__concepts_to_reference_sheets_vance_v3_walk_12_007.webp": {
       "frame": {
-        "x": 515,
-        "y": 262,
-        "w": 167,
-        "h": 256
+        "x": 143,
+        "y": 261,
+        "w": 124,
+        "h": 248
       },
       "rotated": false,
-      "trimmed": false,
+      "trimmed": true,
       "spriteSourceSize": {
-        "x": 0,
-        "y": 0,
-        "w": 167,
-        "h": 256
+        "x": 16,
+        "y": 4,
+        "w": 124,
+        "h": 248
       },
       "sourceSize": {
         "w": 167,
@@ -170,18 +170,18 @@
     },
     "chibi_cast__concepts_to_reference_sheets_vance_v3_walk_12_008.webp": {
       "frame": {
-        "x": 2,
-        "y": 522,
-        "w": 167,
-        "h": 256
+        "x": 271,
+        "y": 261,
+        "w": 105,
+        "h": 249
       },
       "rotated": false,
-      "trimmed": false,
+      "trimmed": true,
       "spriteSourceSize": {
-        "x": 0,
-        "y": 0,
-        "w": 167,
-        "h": 256
+        "x": 27,
+        "y": 3,
+        "w": 105,
+        "h": 249
       },
       "sourceSize": {
         "w": 167,
@@ -191,18 +191,18 @@
     },
     "chibi_cast__concepts_to_reference_sheets_vance_v3_walk_12_009.webp": {
       "frame": {
-        "x": 173,
-        "y": 522,
-        "w": 167,
-        "h": 256
+        "x": 380,
+        "y": 261,
+        "w": 126,
+        "h": 250
       },
       "rotated": false,
-      "trimmed": false,
+      "trimmed": true,
       "spriteSourceSize": {
-        "x": 0,
-        "y": 0,
-        "w": 167,
-        "h": 256
+        "x": 26,
+        "y": 1,
+        "w": 126,
+        "h": 250
       },
       "sourceSize": {
         "w": 167,
@@ -212,18 +212,18 @@
     },
     "chibi_cast__concepts_to_reference_sheets_vance_v3_walk_12_010.webp": {
       "frame": {
-        "x": 344,
-        "y": 522,
-        "w": 167,
-        "h": 256
+        "x": 510,
+        "y": 261,
+        "w": 144,
+        "h": 251
       },
       "rotated": false,
-      "trimmed": false,
+      "trimmed": true,
       "spriteSourceSize": {
-        "x": 0,
+        "x": 19,
         "y": 0,
-        "w": 167,
-        "h": 256
+        "w": 144,
+        "h": 251
       },
       "sourceSize": {
         "w": 167,
@@ -233,18 +233,18 @@
     },
     "chibi_cast__concepts_to_reference_sheets_vance_v3_walk_12_011.webp": {
       "frame": {
-        "x": 515,
-        "y": 522,
-        "w": 167,
-        "h": 256
+        "x": 658,
+        "y": 261,
+        "w": 163,
+        "h": 246
       },
       "rotated": false,
-      "trimmed": false,
+      "trimmed": true,
       "spriteSourceSize": {
-        "x": 0,
-        "y": 0,
-        "w": 167,
-        "h": 256
+        "x": 4,
+        "y": 3,
+        "w": 163,
+        "h": 246
       },
       "sourceSize": {
         "w": 167,
@@ -259,8 +259,8 @@
     "image": "jd_vance_walk.webp",
     "format": "RGBA8888",
     "size": {
-      "w": 684,
-      "h": 780
+      "w": 841,
+      "h": 514
     },
     "scale": "1",
     "frameTags": [
@@ -310,6 +310,7 @@
     "importSource": "chibi_cast__concepts_to_reference_sheets_vance_v3_walk_12.zip",
     "playbackFps": 9.6,
     "useFrameDurations": false,
-    "bodyScale": 1.016260162601626
+    "bodyScale": 1.016260162601626,
+    "packing": "Lossless transparent-border trim; original source sizes and anchors retained"
   }
 }
