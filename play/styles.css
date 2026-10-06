@@ -260,6 +260,7 @@ h2 { font-size: 36px; }
 .story-frame.detroit { --tone-a: #0076b6; --tone-b: #04223a; }
 
 .story-frame img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+.story-frame video { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
 
 .story-frame b {
   font-size: clamp(22px, 4vw, 36px);
