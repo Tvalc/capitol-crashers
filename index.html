@@ -5,100 +5,160 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Capitol Crashers</title>
   <link rel="canonical" href="https://capitolcrashers.com/" />
-  <meta name="description" content="Capitol Crashers is a co-op belt scroller. Two fighters, one street, three blocks to the Capitol." />
+  <meta name="description" content="Capitol Crashers is a free browser belt scroller. Play as Zohran Mamdani or Abdul El-Sayed: feed the block, freeze the rent, keep the witness standing, and stop the Landlord." />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Political Arcades" />
+  <meta property="og:title" content="Capitol Crashers" />
+  <meta property="og:description" content="Feed the block. Freeze the rent. Stop the Landlord. Free in your browser." />
+  <meta property="og:url" content="https://capitolcrashers.com/" />
+  <meta property="og:image" content="https://capitolcrashers.com/art/chibi/hero.webp" />
+  <meta property="og:image:width" content="1600" />
+  <meta property="og:image:height" content="900" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="theme-color" content="#07060b" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Bungee&family=Share+Tech+Mono&family=Source+Sans+3:wght@400;600&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="styles.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Bungee&family=Share+Tech+Mono&family=Source+Sans+3:wght@400;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="arcade.css?v=1" />
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4762698707947194" crossorigin="anonymous"></script>
-  <link rel="stylesheet" href="chibi-ui.css?v=3" />
-  <link rel="stylesheet" href="home.css?v=3" />
+  <style>
+    .floor-copy { text-align: left; margin-bottom: 0; }
+    .floor h1 { margin-left: 0; max-width: none; font-size: clamp(44px, 6.4vw, 92px); overflow-wrap: anywhere; }
+    .floor .lede { text-align: left; margin-left: 0; }
+    .floor .acts { justify-content: flex-start; }
+    .hero-grid { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.1fr); gap: clamp(20px, 4vw, 48px); align-items: center; }
+    @media (max-width: 860px) { .hero-grid { grid-template-columns: 1fr; } }
+  </style>
 </head>
 <body>
-  <div class="arcade">
-    <div class="wash" aria-hidden="true"></div>
+  <header class="topbar">
+    <a class="brand" href="https://politicalarcades.com/"><span class="lamp" aria-hidden="true"></span>Political Arcades <span class="sub">· machine 01</span></a>
+    <nav class="nav" aria-label="Sections">
+      <a href="#how">How it plays</a>
+      <a href="#streets">The streets</a>
+      <a href="#cast">Cast</a>
+      <a href="story/">Comic</a>
+      <a href="https://politicalarcades.com/#listen">Songs</a>
+    </nav>
+    <a class="btn" href="play/">Play free</a>
+    <a class="btn btn-patreon" href="https://www.patreon.com/c/PoliticalArcade" target="_blank" rel="noopener noreferrer">Patreon</a>
+  </header>
 
-    <header class="bar">
-      <a class="back" href="https://politicalarcades.com/">← Political Arcades</a>
-      <p class="now"><span class="lamp"></span> Attract mode</p>
-    </header>
-
-    <section class="cabinet" aria-label="Capitol Crashers cabinet">
-      <div class="speaker" aria-hidden="true">
-        <span></span><span></span><span></span><span></span><span></span>
-      </div>
-
-      <div class="stack">
-        <header class="marquee">
-          <div class="bulbs" aria-hidden="true">
-            <i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i>
-          </div>
-          <p>Political Arcades · machine 01</p>
+  <main>
+    <section class="floor">
+      <img class="mural" src="art/chibi/capitol.webp" width="1600" height="900" alt="" fetchpriority="high" />
+      <div class="wrap hero-grid">
+        <div class="floor-copy">
+          <p class="kicker">Machine 01 · free<span class="hide-m"> · in your browser</span></p>
           <h1>Capitol Crashers</h1>
-          <p class="kind">Single-player belt scroller</p>
-        </header>
-
-        <div class="bezel">
-          <a class="crt" href="play/">
-            <img src="art/chibi/hero.webp" width="960" height="540" alt="Press start. Pick a fighter: Zohran Mamdani or Abdul El-Sayed, on a rainy street in front of the Capitol." />
-          </a>
-          <div class="scan" aria-hidden="true"></div>
-          <div class="glare" aria-hidden="true"></div>
-        </div>
-
-        <div class="cpanel">
-          <div class="control">
-            <div class="joy" aria-hidden="true"><i></i></div>
-            <span>Move</span>
-          </div>
-          <div class="control">
-            <b class="j">J</b>
-            <span>Light</span>
-          </div>
-          <div class="control">
-            <b class="k">K</b>
-            <span>Heavy</span>
-          </div>
-          <div class="control">
-            <b class="l">L</b>
-            <span>Special</span>
-          </div>
-          <div class="control">
-            <b class="sp">⎵</b>
-            <span>Jump</span>
-          </div>
-          <div class="control coinbox">
-            <div id="coin" class="slot" aria-hidden="true"></div>
-            <span class="credit"><i class="lamp"></i> 1 credit</span>
+          <p class="lede">Two fighters. A block that needs them. The Landlord at the end of the street. Feed the hungry, treat the sick, freeze the rent, and keep the witness standing all the way to the Capitol.</p>
+          <div class="acts">
+            <a class="btn btn-big" href="play/">Press start</a>
+            <a class="btn btn-ghost btn-big" href="story/">Read the comic</a>
           </div>
         </div>
-      </div>
-
-      <div class="speaker right" aria-hidden="true">
-        <span></span><span></span><span></span><span></span><span></span>
+        <a class="cab" href="play/">
+          <div class="marquee"><h2>Step in</h2><span class="machine">1P · keys + touch</span></div>
+          <div class="screen">
+            <img src="art/chibi/hero.webp" width="1600" height="900" alt="Mamdani and El-Sayed square up on a rainy street in front of the Capitol." />
+            <span class="coin" aria-hidden="true">Insert coin · press start</span>
+          </div>
+        </a>
       </div>
     </section>
 
-    <section class="what">
-      <p class="kicker">What you play</p>
-      <h2>Two fighters. One street. Three blocks.</h2>
-      <p class="lede">Pick a fighter and walk toward the Capitol. Chain your hits, grab a pipe or a bottle, and clear the block on your own.</p>
-      <div class="acts">
-        <a class="go" href="play/">Hit the street</a>
-        <a class="go comic" href="story/">Read the comic</a>
-        <a class="patreon" href="https://www.patreon.com/c/PoliticalArcade" target="_blank" rel="noopener noreferrer">Support on Patreon</a>
+    <div class="ticker" aria-hidden="true">
+      <div class="track">
+        <span>Freeze the Rent</span><span>Healthcare for All</span><span>Money Out of Politics</span><span>I've Got Receipts</span><span>This City Belongs to You</span><span>Money in Your Pocket</span>
+        <span>Freeze the Rent</span><span>Healthcare for All</span><span>Money Out of Politics</span><span>I've Got Receipts</span><span>This City Belongs to You</span><span>Money in Your Pocket</span>
+      </div>
+    </div>
+
+    <section class="section" id="how">
+      <div class="wrap">
+        <div class="section-head">
+          <div><p class="kicker">How it plays</p><h2>Nobody on the block <em>gets hit</em></h2></div>
+          <p class="lede">The people in need stand along the street. The strike button helps them. The villains still swing, and they still go down.</p>
+        </div>
+        <div class="steps">
+          <div class="step"><div class="n">01</div><h3>Help the neighbors</h3><p>Walk up to anyone with a need bubble and press J. A meal, care, a RENT FROZEN notice on their building, a good job. They light up and head home.</p><div class="keys"><kbd>←→↑↓</kbd><kbd>J</kbd></div></div>
+          <div class="step"><div class="n">02</div><h3>Stop the machine</h3><p>Cruz, Vance and Greene get in the way. Light, heavy, special, grab, throw. Pick up a pipe or a bottle. Double-tap to run or back off.</p><div class="keys"><kbd>J</kbd><kbd>K</kbd><kbd>L</kbd><kbd>G</kbd><kbd>Space</kbd></div></div>
+          <div class="step"><div class="n">03</div><h3>Keep the witness standing</h3><p>Help the witness and she follows you with a folder of receipts. Get her to the boss on her feet and the boss starts a third down.</p><div class="keys"><kbd>Escort</kbd><kbd>Shield</kbd></div></div>
+        </div>
       </div>
     </section>
 
-    <footer class="site-foot">
-      <p>Capitol Crashers is an original belt scroller. It is not affiliated with any other publisher.</p>
-      <p><a href="privacy.html">Privacy</a></p>
-    </footer>
-  </div>
+    <section class="section" id="streets">
+      <div class="wrap">
+        <div class="section-head">
+          <div><p class="kicker">The streets</p><h2>Four fights, <em>four policies</em></h2></div>
+          <p class="lede">Win the street and the policy passes on the block: the banner goes up, the eaves ice over, the neighbors come out, and the comic picks up the story.</p>
+        </div>
+        <div class="stages">
+          <article class="stage"><div class="num"><small>Street</small>01</div><div><h3>Freeze the Rent</h3><p class="where">Street rally</p><ul><li>Hungry neighbors, evicted tenants, a witness, and Cruz, Vance and Greene between you and the end of the block.</li><li>Every tenant you help posts a RENT FROZEN notice on the wall.</li></ul><span class="boss">Boss · The Landlord · Donald Trump</span></div></article>
+          <article class="stage"><div class="num"><small>Street</small>02</div><div><h3>Healthcare for All</h3><p class="where">The clinic block</p><ul><li>Sick neighbors get care with no bill. Medical debt gets torn up.</li><li>Coming next: new block, new background, new neighbors.</li></ul><span class="boss">Boss · The Insurance Exec · Ted Cruz</span></div></article>
+          <article class="stage"><div class="num"><small>Street</small>03</div><div><h3>Money Out of Politics</h3><p class="where">The cable studio</p><ul><li>The studio lights stay on. Workers get paid, the lobbyist gets shown the door.</li></ul><span class="boss">Boss · The Lobbyist · JD Vance</span></div></article>
+          <article class="stage"><div class="num"><small>Street</small>04</div><div><h3>Accountability</h3><p class="where">The Capitol approach</p><ul><li>Witness-heavy. Every receipt on the record, every boss back for one more round.</li></ul><span class="boss">Finale</span></div></article>
+        </div>
+      </div>
+    </section>
 
-  
-  
-  <script src="soundtrack.js?v=chibi2" data-controls></script>
+    <section class="section" id="cast">
+      <div class="wrap">
+        <div class="section-head">
+          <div><p class="kicker">Cast</p><h2>Pick a <em>fighter</em></h2></div>
+          <p class="lede">Both drawn and animated in Makko. Same street, different speed.</p>
+        </div>
+        <div class="cast">
+          <figure><img src="art/cast/mamdani.webp" alt="Chibi Zohran Mamdani." /><figcaption><span class="role">Player 1</span><b>Zohran Mamdani</b><span>Long reach, heavy hits, slow feet.</span></figcaption></figure>
+          <figure><img src="art/cast/elsayed.webp" alt="Chibi Abdul El-Sayed." /><figcaption><span class="role">Player 2</span><b>Abdul El-Sayed</b><span>Fast feet, short combo window, lighter hits.</span></figcaption></figure>
+          <figure><img src="art/cast/witness.webp" alt="The witness with her folder of receipts." /><figcaption><span class="role">Follows you</span><b>The witness</b><span>Keep her standing. The receipts do the rest.</span></figcaption></figure>
+          <figure class="foe"><img src="art/cast/trump.webp" alt="Chibi Donald Trump." /><figcaption><span class="role">Boss · The Landlord</span><b>Donald Trump</b><span>Rent goes up until he goes down.</span></figcaption></figure>
+          <figure class="foe"><img src="art/cast/cruz.webp" alt="Chibi Ted Cruz." /><figcaption><span class="role">Boss · The Insurance Exec</span><b>Ted Cruz</b><span>Throws the hat, flees the fight.</span></figcaption></figure>
+          <figure class="foe"><img src="art/cast/vance.webp" alt="Chibi JD Vance." /><figcaption><span class="role">Boss · The Lobbyist</span><b>JD Vance</b><span>Runs the studio.</span></figcaption></figure>
+        </div>
+        <p style="margin-top:20px"><a class="btn btn-ghost" href="https://politicalarcades.com/#cast">The whole block, on the floor</a></p>
+      </div>
+    </section>
+
+    <section class="section" id="watch">
+      <div class="wrap">
+        <div class="section-head">
+          <div><p class="kicker">Watch</p><h2>Freeze the Rent, <em>the video</em></h2></div>
+          <p class="lede">Gameplay, the cast, and the comic panels brought to life, cut to track one of the soundtrack.</p>
+        </div>
+        <div class="theater" id="theater">
+          <video controls preload="metadata" playsinline poster="https://politicalarcades.com/media/freeze-the-rent-poster.jpg">
+            <source src="https://politicalarcades.com/media/freeze-the-rent.mp4" type="video/mp4" />
+          </video>
+        </div>
+        <div class="theater-caption"><span><b>Track 01</b> · Freeze the Rent</span><span><a href="https://politicalarcades.com/#listen">All sixteen songs</a></span></div>
+      </div>
+    </section>
+
+    <section class="section" id="support">
+      <div class="wrap">
+        <div class="support">
+          <p class="kicker">Keep the machine on</p>
+          <h2>Free to play. <em>Patreon</em> pays the light bill.</h2>
+          <p class="lede">New streets, bosses and comic issues ship to patrons first. The game stays free for everyone.</p>
+          <div class="acts">
+            <a class="btn btn-patreon btn-big" href="https://www.patreon.com/c/PoliticalArcade" target="_blank" rel="noopener noreferrer">Support on Patreon</a>
+            <a class="btn btn-big" href="play/">Press start</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="foot">
+    <div class="wrap">
+      <div class="row">
+        <span>© Political Arcades · Art and animation made in <a href="https://www.makko.ai/" rel="noopener">Makko</a></span>
+        <span><a href="https://politicalarcades.com/">The floor</a> · <a href="story/">Comic</a> · <a href="privacy.html">Privacy</a></span>
+      </div>
+      <p class="fine">Capitol Crashers is an original game on the floor at Political Arcades. It is an unofficial cartoon, not authorized, paid for or reviewed by Zohran Mamdani, Abdul El-Sayed, or any candidate or campaign committee.</p>
+    </div>
+  </footer>
 </body>
 </html>
-
