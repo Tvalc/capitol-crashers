@@ -21,11 +21,11 @@ const FILE = {
 // Citizen sheets are optional until the Makko art lands; the renderer falls
 // back to a painted placeholder when a sheet is missing.
 const OPTIONAL_CLIPS = {
-  citizen_hungry: ["idle", "cheer", "walk"],
-  citizen_sick: ["idle", "cheer", "walk"],
-  citizen_evicted: ["idle", "cheer", "walk"],
-  citizen_worker: ["idle", "cheer", "walk"],
-  citizen_witness: ["idle", "cheer", "walk", "hit"],
+  citizen_hungry: ["idle", "cheer", "walk", "depart"],
+  citizen_sick: ["idle", "cheer", "walk", "depart"],
+  citizen_evicted: ["idle", "cheer", "walk", "depart"],
+  citizen_worker: ["idle", "cheer", "walk", "depart"],
+  citizen_witness: ["idle", "cheer", "walk", "hit", "depart"],
 };
 const OPTIONAL_FILE = {
   citizen_hungry: "chibi/citizens/hungry",
@@ -36,6 +36,7 @@ const OPTIONAL_FILE = {
 };
 
 const FALLBACK = {
+  depart: ["depart", "walk", "idle"],
   cheer: ["cheer", "idle"],
   idle: ["idle", "walk", "run"],
   walk: ["walk", "idle"],
@@ -108,7 +109,7 @@ export function readFrames(data, width, height) {
 
 function loadOne(sprite, clip, name) {
   const image = new Image();
-  const version = sprite === "cruz" ? "cruz-native1" : "grounded1";
+  const version = sprite.startsWith("citizen_") ? "citizen-happy3" : sprite === "cruz" ? "cruz-native1" : "grounded1";
   const dataPromise = fetch(`assets/sprites/${name}.json?v=${version}`).then((res) => {
     if (!res.ok) throw new Error(`Could not load ${name}: ${res.status}`);
     return res.json();
@@ -144,7 +145,8 @@ export function clipFor(state) {
   if (state === "help") return "grab";
   if (state === "need") return "idle";
   if (state === "helped" || state === "testified") return "cheer";
-  if (state === "follow" || state === "leaving") return "walk";
+  if (state === "leaving") return "depart";
+  if (state === "follow") return "walk";
   if (state === "walk") return "walk";
   if (state === "run" || state === "dash" || state === "charge") return "run";
   if (state === "jump" || state === "jatk" || state === "leap") return "jump";
@@ -326,6 +328,7 @@ export function drawSprite(ctx, ent, sx, sc) {
     const at = Math.floor(Math.max(0, ent.stateT || 0) * fps);
     index = clip === "hit" ? Math.min(at, Math.floor(count * 0.5)) : Math.min(at, count - 1);
   }
+  else if (clip === "depart") index = Math.floor(Math.max(0, ent.stateT || 0) * (sheet.fps || 12)) % count;
   else if (clip === "hit") index = flinchIndex(ent, count);
   else if (clip === "cast") index = poseIndex(ent, count, clip);
   else if (clip === "walk" || clip === "run") index = gaitIndex(ent, count, clip, sheet.fps);

@@ -3,10 +3,10 @@ import { separate, tickToss, wallBounce } from "./combat.js?v=feel1";
 import { makeEnemy, updateEnemy } from "./enemies.js?v=hard1";
 import { blankInput, createInput } from "./input.js?v=chibi-site2";
 import { fighterById, makePlayer, updatePlayer, bufferPlayerInput } from "./player.js?v=chibi-site2";
-import { draw, loadEnvironment } from "./render.js?v=grounded1";
+import { draw, loadEnvironment } from "./render.js?v=citizen-happy3";
 import { cloneStage, STAGES, WORLD } from "./stages.js?v=feel1";
 import { updatePickups, updateProjectiles } from "./weapons.js?v=chibi-site2";
-import { loadSprites } from "./sprites.js?v=grounded1";
+import { loadSprites } from "./sprites.js?v=citizen-happy3";
 import { PAGES } from "../../story/panels.js";
 import { followingWitness, makeCitizen, spawnCelebration, updateCitizens, witnessTestifies } from "./citizens.js?v=citizens1";
 
