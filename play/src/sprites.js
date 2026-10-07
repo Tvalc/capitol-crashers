@@ -10,6 +10,17 @@ const CLIPS = {
   cruz: ["idle", "walk", "run", "attack", "hit", "death"],
 };
 
+// Grab / grabbed sheets are still being made in Makko. These slots load when a sheet exists
+// and are skipped quietly when it does not, so new sheets can be dropped in without code changes.
+const SOFT_CLIPS = {
+  zohran: ["grabbed"],
+  abdul: ["grabbed"],
+  trump: ["grab", "grabbed"],
+  vance: ["grabbed"],
+  greene: ["grab", "grabbed"],
+  cruz: ["grab", "grabbed"],
+};
+
 const FILE = {
   zohran: "chibi/zohran_mamdani",
   abdul: "chibi/abdul_el_sayed",
@@ -51,6 +62,7 @@ const FALLBACK = {
   throw: ["throw", "attack", "idle"],
   backstep: ["backstep", "hit", "idle"],
   grab: ["grab", "attack", "idle"],
+  grabbed: ["grabbed", "hit", "idle"],
 };
 
 const ONCE = new Set(["attack", "hit", "death", "cast", "jump", "lunge", "reversal", "throw", "backstep", "grab"]);
@@ -72,11 +84,15 @@ export function loadSprites() {
   for (const sprite of ["zohran", "abdul"]) {
     for (const kind of ["hungry", "sick", "evicted", "worker", "witness", "rescue"]) jobs.push(loadOne(sprite, `help_${kind}`, `${FILE[sprite]}_help_${kind}`));
   }
+  const soft = [];
+  for (const [sprite, clips] of Object.entries(SOFT_CLIPS)) {
+    for (const clip of clips) soft.push(loadSoft(sprite, clip, `${FILE[sprite]}_${clip}`));
+  }
   const optional = [];
   for (const [sprite, clips] of Object.entries(OPTIONAL_CLIPS)) {
     for (const clip of clips) if(clip !== "depart") optional.push(loadOne(sprite, clip, `${OPTIONAL_FILE[sprite]}_${clip}`));
   }
-  return Promise.allSettled([...jobs, ...optional]).then((results) => {
+  return Promise.allSettled([...jobs, ...optional, ...soft]).then((results) => {
     for(const sprite of Object.keys(OPTIONAL_CLIPS)) {
       if(sheets.has(`${sprite}:walk`)) sheets.set(`${sprite}:depart`,sheets.get(`${sprite}:walk`));
     }
@@ -115,7 +131,7 @@ export function readFrames(data, width, height) {
 
 function loadOne(sprite, clip, name) {
   const image = new Image();
-  const version = "hd1";
+  const version = "hd2";
   const dataPromise = fetch(`assets/sprites/${name}.json?v=${version}`).then((res) => {
     if (!res.ok) throw new Error(`Could not load ${name}: ${res.status}`);
     return res.json();
@@ -137,6 +153,14 @@ function loadOne(sprite, clip, name) {
       anchor: data.meta?.anchor || { x: (frames[0].sourceSize?.w || frames[0].frame.w) / 2, y: frames[0].sourceSize?.h || frames[0].frame.h },
     });
   });
+}
+
+// Missing sheet = 404 on the JSON, nothing else requested, never an error.
+function loadSoft(sprite, clip, name) {
+  const version = "hd2";
+  return fetch(`assets/sprites/${name}.json?v=${version}`, { method: "HEAD" })
+    .then((res) => (res.ok ? loadOne(sprite, clip, name) : null))
+    .catch(() => null);
 }
 
 export function hasSheet(sprite, clip = "idle") {
@@ -163,7 +187,7 @@ export function clipFor(state) {
   if (state === "reversal") return "reversal";
   if (state === "throw") return "throw";
   if (state === "grab") return "grab";
-  if (state === "grabbed") return "hit";
+  if (state === "grabbed") return "grabbed";
   if (state === "dashatk") return "lunge";
   if (state === "hurt" || state === "air" || state === "getup") return "hit";
   if (state === "down" || state === "dead") return "death";
@@ -232,6 +256,9 @@ export function poseIndex(ent, count, clip) {
       return Math.min(count - 1, contact + Math.floor((t - 0.36) / 0.26 * (count - contact)));
     }
     return Math.min(contact, Math.floor(Math.max(0, ent.stateT || 0) / 0.24 * contact));
+  }
+  if (clip === "grab" && ent.team !== "player") {
+    return Math.min(count - 1, Math.floor(Math.max(0, ent.stateT || 0) / 0.28 * (count - 1)));
   }
   if (clip === "death" && ent.team === "player" && count === 12) {
     if (ent.state === "down") return 8;
@@ -338,6 +365,11 @@ export function drawSprite(ctx, ent, sx, sc) {
     index = clip === "hit" ? Math.min(at, Math.floor(count * 0.5)) : Math.min(at, count - 1);
   }
   else if (clip === "depart") index = Math.floor(Math.max(0, ent.stateT || 0) * (sheet.fps || 12)) % count;
+  else if (clip === "grabbed") {
+    const fps = sheet.fps > 0 ? sheet.fps : 10, span = Math.max(1, count - 1);
+    const step = Math.floor(Math.max(0, ent.stateT || 0) * fps) % (span * 2);
+    index = step <= span ? step : span * 2 - step;
+  }
   else if (clip === "hit") index = flinchIndex(ent, count);
   else if (clip === "cast") index = poseIndex(ent, count, clip);
   else if (clip === "walk" || clip === "run") index = gaitIndex(ent, count, clip, sheet.fps);
