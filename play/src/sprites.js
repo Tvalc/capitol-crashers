@@ -1,5 +1,5 @@
 import { registerHelpAction } from "./help-actions.js?v=idle21";
-import { playerMoveWindow } from "./player.js?v=grip24";
+import { playerMoveWindow } from "./player.js?v=grip24b";
 
 const CLIPS = {
   zohran: ["idle", "walk", "run", "jump", "attack", "hit", "death", "cast", "grab", "throw", "lunge", "reversal"],
