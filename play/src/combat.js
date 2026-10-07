@@ -306,7 +306,7 @@ export function separate(list) {
     for (let j = i + 1; j < list.length; j += 1) {
       const a = list[i];
       const b = list[j];
-      if (!a.alive || !b.alive || a.z > 24 || b.z > 24) continue;
+      if (!a.alive || !b.alive || a.z > 24 || b.z > 24 || ["grabbed", "held"].includes(a.state) || ["grabbed", "held"].includes(b.state)) continue;
       let dx = b.x - a.x;
       let dy = b.y - a.y;
       const dist = Math.hypot(dx, dy) || 0.001;

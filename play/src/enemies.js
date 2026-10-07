@@ -1,4 +1,4 @@
-import { melee, updateBody } from "./combat.js?v=feel1";
+import { melee, updateBody } from "./combat.js?v=grip24";
 import { WORLD } from "./stages.js?v=grapple-release23";
 import { spawnSatellite, spawnShot, spawnSombrero } from "./weapons.js?v=chibi-site2";
 

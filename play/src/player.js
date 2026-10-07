@@ -1,7 +1,7 @@
 import { helpWindow } from "./help-actions.js?v=idle21";
 import { play } from "./audio.js";
 import { FIGHTERS } from "./fighters.js?v=chibi-site2";
-import { integrate, melee, spendSpecial, updateBody } from "./combat.js?v=feel1";
+import { integrate, melee, spendSpecial, updateBody } from "./combat.js?v=grip24";
 import { finishWeapon, launchHeld, noteWeaponSwing, spawnBolt } from "./weapons.js?v=chibi-site2";
 import { deliverHelp, finishHelp, helpTarget, startHelp } from "./citizens.js?v=idle21";
 
@@ -541,6 +541,10 @@ function updateJump(player, game, input, dt) {
   }
 }
 
+export function grabContactDistance(player) {
+  return player.fighter.id === "sayed" ? 85 : 70;
+}
+
 function updateGrab(player, game, input, dt) {
   const enemy = game.enemies.find((ent) => ent.id === player.grabId);
   player.stateT += dt;
@@ -555,7 +559,7 @@ function updateGrab(player, game, input, dt) {
   }
   const reachProgress = Math.min(1, player.stateT / 0.24);
   const ease = reachProgress * reachProgress * (3 - 2 * reachProgress);
-  enemy.x = (player.grabStartX ?? player.x + player.facing * 110) * (1 - ease) + (player.x + player.facing * 110) * ease;
+  enemy.x = (player.grabStartX ?? player.x + player.facing * grabContactDistance(player)) * (1 - ease) + (player.x + player.facing * grabContactDistance(player)) * ease;
   enemy.y = (player.grabStartY ?? player.y) * (1 - ease) + player.y * ease;
   enemy.z = 0;
   enemy.facing = -player.facing;
@@ -731,7 +735,7 @@ export function updatePlayer(player, game, input, dt) {
     const timing = playerMoveWindow(player);
     const held = game.enemies.find(ent => ent.id === player.grabId);
     if (held?.alive && !player.spawned) {
-      held.x = player.x + player.facing * 110;
+      held.x = player.x + player.facing * grabContactDistance(player);
       held.y = player.y;
       if (player.stateT >= timing.startup) {
         player.spawned = true;
