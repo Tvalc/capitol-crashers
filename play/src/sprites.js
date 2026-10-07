@@ -131,7 +131,7 @@ export function readFrames(data, width, height) {
 
 function loadOne(sprite, clip, name) {
   const image = new Image();
-  const version = "hd2";
+  const version = "hd4";
   const dataPromise = fetch(`assets/sprites/${name}.json?v=${version}`).then((res) => {
     if (!res.ok) throw new Error(`Could not load ${name}: ${res.status}`);
     return res.json();
@@ -157,7 +157,7 @@ function loadOne(sprite, clip, name) {
 
 // Missing sheet = 404 on the JSON, nothing else requested, never an error.
 function loadSoft(sprite, clip, name) {
-  const version = "hd2";
+  const version = "hd4";
   return fetch(`assets/sprites/${name}.json?v=${version}`, { method: "HEAD" })
     .then((res) => (res.ok ? loadOne(sprite, clip, name) : null))
     .catch(() => null);
@@ -255,7 +255,7 @@ export function poseIndex(ent, count, clip) {
       if (t < 0.36) return contact;
       return Math.min(count - 1, contact + Math.floor((t - 0.36) / 0.26 * (count - contact)));
     }
-    return Math.min(contact, Math.floor(Math.max(0, ent.stateT || 0) / 0.24 * contact));
+    return Math.min(count - 1, Math.floor(Math.max(0, ent.stateT || 0) / 0.24 * (count - 1)));
   }
   if (clip === "grab" && ent.team !== "player") {
     return Math.min(count - 1, Math.floor(Math.max(0, ent.stateT || 0) / 0.28 * (count - 1)));
@@ -365,11 +365,7 @@ export function drawSprite(ctx, ent, sx, sc) {
     index = clip === "hit" ? Math.min(at, Math.floor(count * 0.5)) : Math.min(at, count - 1);
   }
   else if (clip === "depart") index = Math.floor(Math.max(0, ent.stateT || 0) * (sheet.fps || 12)) % count;
-  else if (clip === "grabbed") {
-    const fps = sheet.fps > 0 ? sheet.fps : 10, span = Math.max(1, count - 1);
-    const step = Math.floor(Math.max(0, ent.stateT || 0) * fps) % (span * 2);
-    index = step <= span ? step : span * 2 - step;
-  }
+  else if (clip === "grabbed") index = Math.floor(Math.max(0, ent.stateT || 0) * (sheet.fps > 0 ? sheet.fps : 8)) % count;
   else if (clip === "hit") index = flinchIndex(ent, count);
   else if (clip === "cast") index = poseIndex(ent, count, clip);
   else if (clip === "walk" || clip === "run") index = gaitIndex(ent, count, clip, sheet.fps);
@@ -380,7 +376,7 @@ export function drawSprite(ctx, ent, sx, sc) {
   const frame = sheet.frames[index];
   const cell = frame.frame;
   const offset = frame.trimmed ? frame.spriteSourceSize : null;
-  const anchorY = (ent.team === "player" || ent.team === "citizen") && !(ent.z > 0) ? (frame.groundAnchorY ?? sheet.anchor.y) : sheet.anchor.y;
+  const anchorY = !(ent.z > 0) ? (frame.groundAnchorY ?? sheet.anchor.y) : sheet.anchor.y;
   ctx.save();
   ctx.translate(sx, ent.y - (ent.z || 0));
   const facing = ent.state === "help" && ent.helpAction && ent.stateT < ent.helpAction.approach ? Math.sign(ent.helpAction.targetX - ent.helpAction.fromX) || ent.facing : ent.facing;
