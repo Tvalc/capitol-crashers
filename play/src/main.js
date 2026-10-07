@@ -1,13 +1,13 @@
 import { propFootprints, collideProps } from "./prop-collision.js?v=props20";
 import { play, unlock } from "./audio.js?v=chibi-site2";
 import { separate, tickToss, wallBounce } from "./combat.js?v=feel1";
-import { makeEnemy, updateEnemy } from "./enemies.js?v=hard1";
+import { makeEnemy, updateEnemy } from "./enemies.js?v=pete1";
 import { blankInput, createInput } from "./input.js?v=chibi-site2";
 import { fighterById, makePlayer, updatePlayer, bufferPlayerInput } from "./player.js?v=idle21";
 import { draw, loadEnvironment } from "./render.js?v=idle21";
-import { cloneStage, STAGES, WORLD } from "./stages.js?v=idle21";
+import { cloneStage, STAGES, WORLD } from "./stages.js?v=pete1";
 import { updatePickups, updateProjectiles } from "./weapons.js?v=chibi-site2";
-import { loadSprites } from "./sprites.js?v=hd5";
+import { loadSprites } from "./sprites.js?v=hd6";
 import { PAGES } from "../../story/panels.js";
 import { followingWitness, makeCitizen, spawnCelebration, updateCitizens, witnessTestifies } from "./citizens.js?v=idle21";
 
@@ -79,7 +79,7 @@ export function beginPractice(game, fighterId, active = false, opponent = game.p
   game.storyId = null;
   game.practice = true;
   game.practiceActive = active;
-  game.practiceEnemy = ["cruz", "vance", "greene", "trump"].includes(opponent) ? opponent : "cruz";
+  game.practiceEnemy = ["cruz", "pete", "vance", "greene", "trump"].includes(opponent) ? opponent : "cruz";
   game.introT = 0;
   game.stage.props = [];
   game.stage.pickups = [];

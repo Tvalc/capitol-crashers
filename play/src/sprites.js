@@ -8,6 +8,9 @@ const CLIPS = {
   vance: ["idle", "walk", "run", "attack", "hit", "death", "cast", "grab"],
   greene: ["idle", "run", "attack", "hit", "death", "jump", "cast"],
   cruz: ["idle", "walk", "run", "attack", "hit", "death"],
+  pete: ["idle", "walk", "attack", "hit", "death"],
+  pete_ww: ["idle", "walk", "attack", "hit", "death"],
+  vance_worried: ["idle", "walk", "attack", "hit", "death", "cast"],
 };
 
 // Grab / grabbed sheets are still being made in Makko. These slots load when a sheet exists
@@ -19,6 +22,9 @@ const SOFT_CLIPS = {
   vance: ["grabbed"],
   greene: ["grab", "grabbed"],
   cruz: ["grab", "grabbed"],
+  pete: ["grab", "grabbed", "change"],
+  pete_ww: ["grab", "grabbed"],
+  vance_worried: ["grab", "grabbed"],
 };
 
 const FILE = {
@@ -28,6 +34,9 @@ const FILE = {
   vance: "chibi/jd_vance",
   greene: "chibi/marjorie_greene",
   cruz: "chibi/ted_cruz",
+  pete: "chibi/pete_hegseth",
+  pete_ww: "chibi/pete_hegseth_ww",
+  vance_worried: "chibi/jd_vance_worried",
 };
 
 // All citizen artwork is authored in Makko and required at startup.
@@ -63,6 +72,7 @@ const FALLBACK = {
   backstep: ["backstep", "hit", "idle"],
   grab: ["grab", "attack", "idle"],
   grabbed: ["grabbed", "hit", "idle"],
+  change: ["change", "hit", "idle"],
 };
 
 const ONCE = new Set(["attack", "hit", "death", "cast", "jump", "lunge", "reversal", "throw", "backstep", "grab"]);
@@ -188,6 +198,7 @@ export function clipFor(state) {
   if (state === "throw") return "throw";
   if (state === "grab") return "grab";
   if (state === "grabbed") return "grabbed";
+  if (state === "transform") return "change";
   if (state === "dashatk") return "lunge";
   if (state === "hurt" || state === "air" || state === "getup") return "hit";
   if (state === "down" || state === "dead") return "death";
@@ -224,6 +235,7 @@ function attackWindow(ent) {
   if (ent.kind === "cruz" && ent.state === "windup") return { startup: 0.28, active: 0.04, total: 0.32 };
   if (ent.kind === "cruz" && ent.state === "attack") return { startup: 0.72, active: 0.12, total: 1.05 };
   if (ent.kind === "vance") return { startup: 0.28, active: 0.14, total: 0.7 };
+  if (ent.kind === "pete") return { startup: 0.38, active: 0.08, total: 0.72 };
   return { startup: 0.18, active: 0.08, total: 0.48 };
 }
 
@@ -365,6 +377,7 @@ export function drawSprite(ctx, ent, sx, sc) {
     index = clip === "hit" ? Math.min(at, Math.floor(count * 0.5)) : Math.min(at, count - 1);
   }
   else if (clip === "depart") index = Math.floor(Math.max(0, ent.stateT || 0) * (sheet.fps || 12)) % count;
+  else if (clip === "change") index = Math.min(count - 1, Math.floor(Math.max(0, ent.stateT || 0) / (ent.transformDur || 1.2) * count));
   else if (clip === "grabbed") index = Math.floor(Math.max(0, ent.stateT || 0) * (sheet.fps > 0 ? sheet.fps : 8)) % count;
   else if (clip === "hit") index = flinchIndex(ent, count);
   else if (clip === "cast") index = poseIndex(ent, count, clip);

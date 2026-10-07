@@ -72,7 +72,7 @@ const rally = {
     {
       at: 420,
       hint: "Neighbors in need: walk up and press J to help.",
-      group: [{ kind: "cruz", dx: 20, y: 560 }],
+      group: [{ kind: "cruz", dx: 20, y: 560 }, { kind: "pete", dx: 240, y: 600 }],
     },
     {
       at: 1020,

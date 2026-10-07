@@ -4,7 +4,7 @@ import { helpAction } from "./help-actions.js?v=idle21";
 // Witnesses are the exception: once helped they follow the fighter to the boss,
 // and villains can knock them down on the way.
 import { play } from "./audio.js";
-import { WORLD } from "./stages.js?v=idle21";
+import { WORLD } from "./stages.js?v=pete1";
 
 export const CITIZEN_KINDS = {
   hungry: {

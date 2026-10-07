@@ -1,5 +1,5 @@
 import { melee, updateBody } from "./combat.js?v=feel1";
-import { WORLD } from "./stages.js?v=idle21";
+import { WORLD } from "./stages.js?v=pete1";
 import { spawnSatellite, spawnShot, spawnSombrero } from "./weapons.js?v=chibi-site2";
 
 const KINDS = {
@@ -128,9 +128,32 @@ const KINDS = {
     pants: "#1a2744",
     hat: "sombrero",
   },
+  pete: {
+    name: "Pete Hegseth",
+    sprite: "pete",
+    hp: 110,
+    speed: 120,
+    w: 46,
+    h: 98,
+    dmg: 13,
+    reach: 56,
+    scale: 1,
+    body: "#4d5a32",
+    trim: "#c9b98a",
+    skin: "#e2b48c",
+    pants: "#22262a",
+    hat: "none",
+    // half health: chugs, heaves, comes up as the Weekend Warrior
+    transformTo: "pete_ww",
+    transformDur: 1.2,
+    transformBanner: "Pete cracks a cold one",
+  },
   vance: {
     name: "JD Vance",
     sprite: "vance",
+    transformTo: "vance_worried",
+    transformDur: 0.6,
+    transformBanner: "Vance gets worried",
     hp: 130,
     speed: 145,
     w: 48,
@@ -211,6 +234,10 @@ export function makeEnemy(kind, x, y) {
     speed: stats.speed,
     reach: stats.reach,
     deadT: 0,
+    transformTo: stats.transformTo || null,
+    transformDur: stats.transformDur || 0,
+    transformBanner: stats.transformBanner || "",
+    transformed: false,
   };
 }
 
@@ -300,6 +327,37 @@ function approach(enemy, player, dt, speed = enemy.speed) {
   enemy.vy = Math.abs(dy) > 10 ? Math.sign(dy) * speed * 0.8 : 0;
   enemy.x += enemy.vx * dt;
   enemy.y = clampY(enemy.y + enemy.vy * dt);
+}
+
+// Two-form characters (Pete, Vance): at half health they stop, play their change, and swap sprite sets.
+function updateTransform(enemy, game, dt) {
+  if (enemy.state === "transform") {
+    enemy.stateT += dt;
+    enemy.vx = 0;
+    enemy.vy = 0;
+    if (enemy.stateT >= enemy.transformDur) {
+      enemy.sprite = enemy.transformTo;
+      enemy.transformed = true;
+      enemy.state = "idle";
+      enemy.stateT = 0;
+      enemy.attackCd = 0.5;
+      enemy.flash = 0.12;
+    }
+    return true;
+  }
+  if (!enemy.transformTo || enemy.transformed || enemy.hp <= 0 || enemy.hp > enemy.hpMax * 0.5) return false;
+  if (enemy.z > 0 || enemy.state === "grab" || enemy.state === "grabbed") return false;
+  release(game, enemy);
+  enemy.state = "transform";
+  enemy.stateT = 0;
+  enemy.vx = 0;
+  enemy.vy = 0;
+  enemy.vz = 0;
+  enemy.invuln = enemy.transformDur + 0.2;
+  enemy.swingHits = new Set();
+  enemy.spawned = false;
+  if (enemy.transformBanner) { game.banner = enemy.transformBanner; game.bannerT = 1.3; }
+  return true;
 }
 
 function checkPhase(enemy, game) {
@@ -1023,8 +1081,10 @@ export function updateEnemy(enemy, game, dt) {
     release(game, enemy);
     return;
   }
+  if (updateTransform(enemy, game, dt)) return;
   checkPhase(enemy, game);
-  if (enemy.kind === "greene") updateGreene(enemy, game, dt);
+  if (enemy.kind === "pete") updateGrunt(enemy, game, dt);
+  else if (enemy.kind === "greene") updateGreene(enemy, game, dt);
   else if (enemy.kind === "grunt") updateGrunt(enemy, game, dt);
   else if (enemy.kind === "cruz") updateCruz(enemy, game, dt);
   else if (enemy.kind === "rusher") updateRusher(enemy, game, dt);
