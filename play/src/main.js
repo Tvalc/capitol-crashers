@@ -1,13 +1,13 @@
-import { propFootprints, collideProps } from "./prop-collision.js?v=props20";
+import { propFootprints, collideProps, steerAroundProps } from "./prop-collision.js?v=grapple-release23";
 import { play, unlock } from "./audio.js?v=chibi-site2";
 import { separate, tickToss, wallBounce } from "./combat.js?v=feel1";
-import { makeEnemy, updateEnemy } from "./enemies.js?v=pete1";
+import { makeEnemy, updateEnemy } from "./enemies.js?v=vance-couch2";
 import { blankInput, createInput } from "./input.js?v=chibi-site2";
 import { fighterById, makePlayer, updatePlayer, bufferPlayerInput } from "./player.js?v=idle21";
-import { draw, loadEnvironment } from "./render.js?v=idle21";
-import { cloneStage, STAGES, WORLD } from "./stages.js?v=pete1";
+import { draw, loadEnvironment } from "./render.js?v=grapple-release23";
+import { cloneStage, STAGES, WORLD } from "./stages.js?v=grapple-release23";
 import { updatePickups, updateProjectiles } from "./weapons.js?v=chibi-site2";
-import { loadSprites } from "./sprites.js?v=hd6";
+import { loadSprites } from "./sprites.js?v=vance-couch2";
 import { PAGES } from "../../story/panels.js";
 import { followingWitness, makeCitizen, spawnCelebration, updateCitizens, witnessTestifies } from "./citizens.js?v=idle21";
 
@@ -185,7 +185,10 @@ export function updateGame(game, input, dt) {
   separate(game.enemies);
   updateCitizens(game, dt);
   const footprints = propFootprints(game.stage);
-  for (const before of propBefore) collideProps(before.ent, before, footprints);
+  for (const before of propBefore) {
+    steerAroundProps(before.ent, before, footprints, dt, WORLD.floorTop, WORLD.floorBottom);
+    collideProps(before.ent, before, footprints);
+  }
   updatePickups(game);
   updateProjectiles(game, dt);
   updateWaves(game);
@@ -610,6 +613,7 @@ function boot() {
 if (typeof document !== "undefined") boot();
 
 export { blankInput };
+
 
 
 

@@ -44,15 +44,15 @@ const rally = {
     { name: "blocks", speed: 1 },
   ],
   scenery: [
-    {art:'nyc-lamp',x:80,y:484,w:82,h:330},
-    {art:'nyc-lamp',x:1710,y:484,w:82,h:330},
-    {art:'nyc-lamp',x:2820,y:484,w:82,h:330},
-    {art:'scenery-pantry-night',x:305,y:485,w:195,h:218},
-    {art:'scenery-kiosk-night',x:700,y:480,w:175,h:210},
-    {art:'scenery-bus-stop-night',x:1430,y:485,w:280,h:280},
-    {art:'scenery-planter-night',x:1960,y:487,w:165,h:150},
+    {art:'nyc-lamp',x:80,y:459,w:82,h:330},
+    {art:'nyc-lamp',x:1710,y:459,w:82,h:330},
+    {art:'nyc-lamp',x:2820,y:459,w:82,h:330},
+    {art:'scenery-pantry-night',x:305,y:459,w:195,h:218},
+    {art:'scenery-kiosk-night',x:700,y:459,w:175,h:210},
+    {art:'scenery-bus-stop-night',x:1430,y:459,w:280,h:280},
+    {art:'scenery-planter-night',x:1960,y:459,w:165,h:150},
     {art:'scenery-bench-night',x:2500,y:685,w:190,h:140},
-    {art:'scenery-planter-night',x:3180,y:480,w:165,h:150}
+    {art:'scenery-planter-night',x:3180,y:459,w:165,h:150}
   ],
   signs: [],
   planes: [
@@ -177,9 +177,9 @@ const capitol = {
   trim: "#9fb0c4",
   layers: [],
   scenery: [
-    {art:'scenery-planter',x:460,y:485,w:170,h:160},
-    {art:'scenery-bench',x:1160,y:490,w:180,h:133},
-    {art:'scenery-planter',x:2170,y:485,w:170,h:160},
+    {art:'scenery-planter',x:460,y:459,w:170,h:160},
+    {art:'scenery-bench',x:1160,y:459,w:180,h:133},
+    {art:'scenery-planter',x:2170,y:459,w:170,h:160},
     {art:'scenery-bench',x:2880,y:680,w:180,h:133}
   ],
   signs: [],

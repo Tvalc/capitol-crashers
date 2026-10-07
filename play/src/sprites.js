@@ -354,6 +354,8 @@ export const SPRITE_BODY_SCALE = {};
 export function drawSprite(ctx, ent, sx, sc) {
   const sprite = actorSprite(ent);
   let wanted = clipFor(ent.state);
+  const grabPunch = ent.team === "player" && ent.state === "grab" && ent.grabStrikeT > 0;
+  if (grabPunch) wanted = "attack";
   if (ent.state === "help" && ent.helpAction) wanted = ent.stateT < ent.helpAction.approach ? "walk" : `help_${ent.helpKind}`;
   if (sprite === "cruz" && ent.state === "windup") wanted = "attack";
   const resolved = resolveSheet(sprite, wanted);
@@ -363,7 +365,12 @@ export function drawSprite(ctx, ent, sx, sc) {
   const count = sheet.frames.length;
   const once = ONCE.has(clip);
   let index;
-  if (clip.startsWith("help_")) index = Math.min(count - 1, Math.floor(Math.max(0, ent.stateT - ent.helpAction.approach) / ent.helpAction.total * count));
+  if (grabPunch && clip === "attack") {
+    const phase = Math.max(0, Math.min(1, 1 - ent.grabStrikeT / .24));
+    const punchFrames = sprite === "zohran" ? [0, 1, 2, 3, 4, 9, 10, 11] : [0, 1, 2, 3, 8, 9, 10, 11];
+    index = Math.min(count - 1, punchFrames[Math.min(punchFrames.length - 1, Math.floor(phase * punchFrames.length))]);
+  }
+  else if (clip.startsWith("help_")) index = Math.min(count - 1, Math.floor(Math.max(0, ent.stateT - ent.helpAction.approach) / ent.helpAction.total * count));
   else if (clip === "idle") {
     const step = sheet.fps > 0 ? 1 / sheet.fps : sprite === "zohran" ? 0.14 : sprite === "abdul" ? 1 / 24 : sprite === "vance" ? 1 / 3 : sprite === "cruz" || sprite === "greene" ? 0.16 : 0;
     const idleTime = Math.max(0, (ent.anim || 0) - (ent.idleStartedAt || 0));
@@ -380,6 +387,7 @@ export function drawSprite(ctx, ent, sx, sc) {
   else if (clip === "change") index = Math.min(count - 1, Math.floor(Math.max(0, ent.stateT || 0) / (ent.transformDur || 1.2) * count));
   else if (clip === "grabbed") index = Math.floor(Math.max(0, ent.stateT || 0) * (sheet.fps > 0 ? sheet.fps : 8)) % count;
   else if (clip === "hit") index = flinchIndex(ent, count);
+  else if (sprite === "vance_worried" && clip === "cast") index = Math.min(count - 1, Math.floor(Math.max(0, ent.stateT || 0) / 1.2 * count));
   else if (clip === "cast") index = poseIndex(ent, count, clip);
   else if (clip === "walk" || clip === "run") index = gaitIndex(ent, count, clip, sheet.fps);
   else if (once) index = poseIndex(ent, count, clip);

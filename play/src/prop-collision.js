@@ -39,3 +39,29 @@ export function collideProps(ent, before, boxes) {
   }
   ent.x=x;ent.y=y;
 }
+
+// Keep a chosen lane until the whole footprint is passed; recomputing the
+// nearest side every tick makes followers oscillate against the obstacle.
+export function steerAroundProps(ent, before, boxes, dt, top, bottom) {
+  if (!dt || ent.team === 'player' || ent.z > 0 || !['walk','run','follow','leaving','chase','idle'].includes(ent.state)) return;
+  const dx=ent.x-before.x, dy=ent.y-before.y;
+  if (Math.hypot(dx,dy)<.01) return;
+  const direction=Math.sign(dx) || ent.facing || 1;
+  let route=ent.propRoute;
+  if (route && (direction!==route.direction || direction*(before.x-route.exitX)>=0)) route=ent.propRoute=null;
+  if (!route) {
+    const candidates=boxes.filter(b => direction*(b.x-before.x)>=-b.rx-14 && direction*(b.x-before.x)<b.rx+38 && Math.abs(before.y-b.y)<b.ry+16);
+    candidates.sort((a,b)=>Math.abs(a.x-before.x)-Math.abs(b.x-before.x));
+    const b=candidates[0];
+    if (!b) return;
+    const lanes=[b.y-b.ry-16,b.y+b.ry+16].filter(y=>y>=top && y<=bottom);
+    if (!lanes.length) return;
+    lanes.sort((a,b)=>Math.abs(a-before.y)-Math.abs(b-before.y));
+    route=ent.propRoute={direction,lane:lanes[0],exitX:b.x+direction*(b.rx+22)};
+  }
+  const speed=Math.max(90,Math.hypot(dx,dy)/dt);
+  const step=Math.sign(route.lane-before.y)*Math.min(Math.abs(route.lane-before.y),speed*dt);
+  ent.y=before.y+step;
+  ent.x=Math.abs(route.lane-ent.y)>1 ? before.x : before.x+direction*speed*dt;
+  ent.vx=(ent.x-before.x)/dt; ent.vy=step/dt;
+}

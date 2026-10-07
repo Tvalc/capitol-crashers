@@ -1,5 +1,5 @@
 import { melee, updateBody } from "./combat.js?v=feel1";
-import { WORLD } from "./stages.js?v=pete1";
+import { WORLD } from "./stages.js?v=grapple-release23";
 import { spawnSatellite, spawnShot, spawnSombrero } from "./weapons.js?v=chibi-site2";
 
 const KINDS = {
@@ -150,10 +150,7 @@ const KINDS = {
   },
   vance: {
     name: "JD Vance",
-    sprite: "vance",
-    transformTo: "vance_worried",
-    transformDur: 0.6,
-    transformBanner: "Vance gets worried",
+    sprite: "vance_worried",
     hp: 130,
     speed: 145,
     w: 48,
@@ -707,34 +704,22 @@ function updateVance(enemy, game, dt) {
     }
     return;
   }
-  if (enemy.state === "charge") {
+  if (enemy.state === "special") {
     enemy.stateT += dt;
-    enemy.z += enemy.vz * dt;
-    enemy.vz -= 1700 * dt;
-    if (enemy.z < 0) {
-      enemy.z = 0;
-      enemy.vz = 0;
-    }
-    enemy.vx = enemy.facing * 420;
+    enemy.vy = 0;
+    enemy.z = 0;
+    enemy.vz = 0;
+    // The baked cast contains the couch itself: travel only during its ride.
+    enemy.vx = enemy.stateT >= 0.42 && enemy.stateT < 1.05 ? enemy.facing * 360 : 0;
     enemy.x += enemy.vx * dt;
-    if (!enemy.spawned && enemy.stateT >= 0.16) {
-      enemy.spawned = true;
-      melee(game, enemy, {
-        dmg: enemy.dmg + 1,
-        kb: 180,
-        lift: 40,
-        reach: 64,
-        already: enemy.swingHits,
-        kind: "heavy",
-        hitstop: 0.04,
-      });
+    if (enemy.stateT >= 0.42 && enemy.stateT < 1.05) {
+      melee(game, enemy, { dmg: enemy.dmg + 3, kb: 210, lift: 35,
+        reach: 120, already: enemy.swingHits, kind: "heavy", hitstop: 0.05 });
     }
-    if (enemy.stateT >= 0.62) {
+    if (enemy.stateT >= 1.2) {
       enemy.state = "idle";
-      enemy.z = 0;
-      enemy.vz = 0;
-      enemy.spawned = false;
-      enemy.attackCd = 0.62;
+      enemy.stateT = 0;
+      enemy.attackCd = 0.8;
       enemy.swingHits = new Set();
     }
     return;
@@ -753,11 +738,11 @@ function updateVance(enemy, game, dt) {
   }
   enemy.dashCd = (enemy.dashCd ?? 0.8) - dt;
   if (enemy.dashCd <= 0 && dist > 90 && dist < 420 && ady < 48) {
-    enemy.dashCd = 1.35;
-    enemy.state = "charge";
+    enemy.dashCd = 4.0;
+    enemy.state = "special";
     enemy.stateT = 0;
     enemy.z = 0;
-    enemy.vz = 240;
+    enemy.vz = 0;
     enemy.spawned = false;
     enemy.swingHits = new Set();
     return;
@@ -1095,3 +1080,5 @@ export function updateEnemy(enemy, game, dt) {
   else if (enemy.kind === "mara") updateMara(enemy, game, dt);
   else if (enemy.kind === "signal") updateSignal(enemy, game, dt);
 }
+
+
