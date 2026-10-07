@@ -7,7 +7,7 @@ import { fighterById, makePlayer, updatePlayer, bufferPlayerInput } from "./play
 import { draw, loadEnvironment } from "./render.js?v=idle21";
 import { cloneStage, STAGES, WORLD } from "./stages.js?v=idle21";
 import { updatePickups, updateProjectiles } from "./weapons.js?v=chibi-site2";
-import { loadSprites } from "./sprites.js?v=hd4";
+import { loadSprites } from "./sprites.js?v=hd5";
 import { PAGES } from "../../story/panels.js";
 import { followingWitness, makeCitizen, spawnCelebration, updateCitizens, witnessTestifies } from "./citizens.js?v=idle21";
 
