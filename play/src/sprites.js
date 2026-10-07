@@ -141,7 +141,7 @@ export function readFrames(data, width, height) {
 
 function loadOne(sprite, clip, name) {
   const image = new Image();
-  const version = name === "chibi/jd_vance_worried_death" ? "chibi-death24" : "hd5";
+  const version = /chibi\/(zohran_mamdani|abdul_el_sayed)_grab$/.test(name) ? "grab25" : name === "chibi/jd_vance_worried_death" ? "chibi-death24" : "hd5";
   const dataPromise = fetch(`assets/sprites/${name}.json?v=${version}`).then((res) => {
     if (!res.ok) throw new Error(`Could not load ${name}: ${res.status}`);
     return res.json();
@@ -167,7 +167,7 @@ function loadOne(sprite, clip, name) {
 
 // Missing sheet = 404 on the JSON, nothing else requested, never an error.
 function loadSoft(sprite, clip, name) {
-  const version = name === "chibi/jd_vance_worried_death" ? "chibi-death24" : "hd5";
+  const version = /chibi\/(zohran_mamdani|abdul_el_sayed)_grab$/.test(name) ? "grab25" : name === "chibi/jd_vance_worried_death" ? "chibi-death24" : "hd5";
   return fetch(`assets/sprites/${name}.json?v=${version}`, { method: "HEAD" })
     .then((res) => (res.ok ? loadOne(sprite, clip, name) : null))
     .catch(() => null);
@@ -268,7 +268,7 @@ export function poseIndex(ent, count, clip) {
       return Math.min(count - 1, contact + Math.floor((t - 0.36) / 0.26 * (count - contact)));
     }
     // Return to the extended grip after each punch.
-    return Math.min(count - 1, actorSprite(ent) === "abdul" ? 7 : 0);
+    return 0;
   }
   if (clip === "grab" && ent.team !== "player") {
     return Math.min(count - 1, Math.floor(Math.max(0, ent.stateT || 0) / 0.28 * (count - 1)));
