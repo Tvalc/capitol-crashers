@@ -4,10 +4,10 @@ import { separate, tickToss, wallBounce } from "./combat.js?v=grab27";
 import { makeEnemy, updateEnemy } from "./enemies.js?v=grab27";
 import { blankInput, createInput } from "./input.js?v=chibi-site2";
 import { fighterById, makePlayer, updatePlayer, bufferPlayerInput } from "./player.js?v=grab27";
-import { draw, loadEnvironment } from "./render.js?v=bench28";
+import { draw, loadEnvironment } from "./render.js?v=grip08b";
 import { cloneStage, STAGES, WORLD } from "./stages.js?v=bench28";
 import { updatePickups, updateProjectiles } from "./weapons.js?v=grab27";
-import { loadSprites } from "./sprites.js?v=grab27";
+import { loadSprites } from "./sprites.js?v=grip08b";
 import { PAGES } from "../../story/panels.js";
 import { followingWitness, makeCitizen, spawnCelebration, updateCitizens, witnessTestifies } from "./citizens.js?v=idle21";
 

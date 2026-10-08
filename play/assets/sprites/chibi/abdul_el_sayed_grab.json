@@ -1,1 +1,190 @@
-{"frames":{"0":{"frame":{"x":2,"y":2,"w":350,"h":487},"rotated":false,"trimmed":false,"spriteSourceSize":{"x":0,"y":0,"w":350,"h":487},"sourceSize":{"w":350,"h":487},"duration":83,"anchorX":175.0,"groundAnchorY":485,"makkoFrame":0},"1":{"frame":{"x":356,"y":2,"w":350,"h":487},"rotated":false,"trimmed":false,"spriteSourceSize":{"x":0,"y":0,"w":350,"h":487},"sourceSize":{"w":350,"h":487},"duration":83,"anchorX":175.0,"groundAnchorY":485,"makkoFrame":8},"2":{"frame":{"x":710,"y":2,"w":350,"h":487},"rotated":false,"trimmed":false,"spriteSourceSize":{"x":0,"y":0,"w":350,"h":487},"sourceSize":{"w":350,"h":487},"duration":83,"anchorX":175.0,"groundAnchorY":486,"makkoFrame":16},"3":{"frame":{"x":1064,"y":2,"w":350,"h":487},"rotated":false,"trimmed":false,"spriteSourceSize":{"x":0,"y":0,"w":350,"h":487},"sourceSize":{"w":350,"h":487},"duration":83,"anchorX":175.0,"groundAnchorY":486,"makkoFrame":24},"4":{"frame":{"x":2,"y":493,"w":350,"h":487},"rotated":false,"trimmed":false,"spriteSourceSize":{"x":0,"y":0,"w":350,"h":487},"sourceSize":{"w":350,"h":487},"duration":83,"anchorX":175.0,"groundAnchorY":486,"makkoFrame":32},"5":{"frame":{"x":356,"y":493,"w":350,"h":487},"rotated":false,"trimmed":false,"spriteSourceSize":{"x":0,"y":0,"w":350,"h":487},"sourceSize":{"w":350,"h":487},"duration":83,"anchorX":175.0,"groundAnchorY":485,"makkoFrame":40},"6":{"frame":{"x":710,"y":493,"w":350,"h":487},"rotated":false,"trimmed":false,"spriteSourceSize":{"x":0,"y":0,"w":350,"h":487},"sourceSize":{"w":350,"h":487},"duration":83,"anchorX":175.0,"groundAnchorY":485,"makkoFrame":48},"7":{"frame":{"x":1064,"y":493,"w":350,"h":487},"rotated":false,"trimmed":false,"spriteSourceSize":{"x":0,"y":0,"w":350,"h":487},"sourceSize":{"w":350,"h":487},"duration":83,"anchorX":175.0,"groundAnchorY":485,"makkoFrame":56},"8":{"frame":{"x":2,"y":984,"w":350,"h":487},"rotated":false,"trimmed":false,"spriteSourceSize":{"x":0,"y":0,"w":350,"h":487},"sourceSize":{"w":350,"h":487},"duration":83,"anchorX":175.0,"groundAnchorY":485,"makkoFrame":64},"9":{"frame":{"x":356,"y":984,"w":350,"h":487},"rotated":false,"trimmed":false,"spriteSourceSize":{"x":0,"y":0,"w":350,"h":487},"sourceSize":{"w":350,"h":487},"duration":83,"anchorX":175.0,"groundAnchorY":485,"makkoFrame":72},"10":{"frame":{"x":710,"y":984,"w":350,"h":487},"rotated":false,"trimmed":false,"spriteSourceSize":{"x":0,"y":0,"w":350,"h":487},"sourceSize":{"w":350,"h":487},"duration":83,"anchorX":175.0,"groundAnchorY":486,"makkoFrame":80},"11":{"frame":{"x":1064,"y":984,"w":350,"h":487},"rotated":false,"trimmed":false,"spriteSourceSize":{"x":0,"y":0,"w":350,"h":487},"sourceSize":{"w":350,"h":487},"duration":83,"anchorX":175.0,"groundAnchorY":486,"makkoFrame":88}},"meta":{"app":"MAKKO Sprite Studio","version":"1.0.0","image":"abdul_el_sayed_grab.webp","format":"RGBA8888","size":{"w":1416,"h":1473},"scale":"1","frameTags":[{"name":"Grab","from":0,"to":11,"direction":"forward"}],"anchor":{"x":175.0,"y":485,"strategy":"feet"},"referenceAlignment":{"referenceBounds":{"width":343,"height":478},"frameBounds":{"width":350,"height":487},"normalized":true},"bodyScale":0.5075471698113208,"playbackFps":12,"animationId":"3b6224fc-3a9f-46d8-8a82-77d4e4f37536","source":"https://www.makko.ai/studio/collection/b6c342be-94b4-43c5-9913-be4e1da8f8e7/animation/3b6224fc-3a9f-46d8-8a82-77d4e4f37536","selectedOriginalFrames":[1,9,17,25,33,41,49,57,65,73,81,89],"holdFrame":0,"playback":"hold clean contact pose; punch returns to same pose","export":"native Makko bake; lossless WebP; no resize"}}
+{
+  "frames": {
+    "abdul_el-sayed_grab_collar_v2_000.webp": {
+      "frame": {
+        "x": 2,
+        "y": 2,
+        "w": 392,
+        "h": 577
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 392,
+        "h": 577
+      },
+      "sourceSize": {
+        "w": 392,
+        "h": 577
+      },
+      "duration": 42,
+      "anchorX": 158.5,
+      "groundAnchorY": 575
+    },
+    "abdul_el-sayed_grab_collar_v2_001.webp": {
+      "frame": {
+        "x": 398,
+        "y": 2,
+        "w": 392,
+        "h": 577
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 392,
+        "h": 577
+      },
+      "sourceSize": {
+        "w": 392,
+        "h": 577
+      },
+      "duration": 42,
+      "anchorX": 158.5,
+      "groundAnchorY": 575
+    },
+    "abdul_el-sayed_grab_collar_v2_002.webp": {
+      "frame": {
+        "x": 794,
+        "y": 2,
+        "w": 392,
+        "h": 577
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 392,
+        "h": 577
+      },
+      "sourceSize": {
+        "w": 392,
+        "h": 577
+      },
+      "duration": 42,
+      "anchorX": 158.5,
+      "groundAnchorY": 575
+    },
+    "abdul_el-sayed_grab_collar_v2_003.webp": {
+      "frame": {
+        "x": 2,
+        "y": 583,
+        "w": 392,
+        "h": 577
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 392,
+        "h": 577
+      },
+      "sourceSize": {
+        "w": 392,
+        "h": 577
+      },
+      "duration": 42,
+      "anchorX": 158.5,
+      "groundAnchorY": 575
+    },
+    "abdul_el-sayed_grab_collar_v2_004.webp": {
+      "frame": {
+        "x": 398,
+        "y": 583,
+        "w": 392,
+        "h": 577
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 392,
+        "h": 577
+      },
+      "sourceSize": {
+        "w": 392,
+        "h": 577
+      },
+      "duration": 42,
+      "anchorX": 158.5,
+      "groundAnchorY": 575
+    },
+    "abdul_el-sayed_grab_collar_v2_005.webp": {
+      "frame": {
+        "x": 794,
+        "y": 583,
+        "w": 392,
+        "h": 577
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 392,
+        "h": 577
+      },
+      "sourceSize": {
+        "w": 392,
+        "h": 577
+      },
+      "duration": 42,
+      "anchorX": 158.5,
+      "groundAnchorY": 575
+    }
+  },
+  "meta": {
+    "app": "MAKKO Sprite Studio",
+    "version": "1.0.0",
+    "image": "abdul_el_sayed_grab.webp",
+    "format": "RGBA8888",
+    "size": {
+      "w": 1188,
+      "h": 1162
+    },
+    "scale": "1",
+    "frameTags": [
+      {
+        "name": "animation",
+        "from": 0,
+        "to": 5,
+        "direction": "forward"
+      }
+    ],
+    "anchor": {
+      "x": 158.5,
+      "y": 575
+    },
+    "referenceAlignment": {
+      "referenceBounds": {
+        "width": 388,
+        "height": 573
+      },
+      "frameBounds": {
+        "width": 392,
+        "height": 577
+      },
+      "normalized": true
+    },
+    "bodyScale": 0.4363001745200698,
+    "holdFrame": 3,
+    "playbackFps": 24,
+    "animationId": "1206a3a7-a128-4c0a-bcf0-d0aaf913f5a4",
+    "selectedOriginalFrames": [
+      1,
+      3,
+      5,
+      7,
+      9,
+      10
+    ],
+    "source": "https://www.makko.ai/studio/collection/b6c342be-94b4-43c5-9913-be4e1da8f8e7/animation/1206a3a7-a128-4c0a-bcf0-d0aaf913f5a4",
+    "export": "native Makko bake from six saved editor frames; lossless WebP; no resizing"
+  }
+}

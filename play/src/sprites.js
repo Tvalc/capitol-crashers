@@ -141,7 +141,7 @@ export function readFrames(data, width, height) {
 
 function loadOne(sprite, clip, name) {
   const image = new Image();
-  const version = /chibi\/(zohran_mamdani|abdul_el_sayed)_grab$/.test(name) ? "grab25" : name === "chibi/jd_vance_worried_death" ? "chibi-death24" : "hd5";
+  const version = /chibi\/(zohran_mamdani|abdul_el_sayed)_grab$/.test(name) ? "grip08b" : name === "chibi/jd_vance_worried_death" ? "chibi-death24" : "hd5";
   const dataPromise = fetch(`assets/sprites/${name}.json?v=${version}`).then((res) => {
     if (!res.ok) throw new Error(`Could not load ${name}: ${res.status}`);
     return res.json();
@@ -167,7 +167,7 @@ function loadOne(sprite, clip, name) {
 
 // Missing sheet = 404 on the JSON, nothing else requested, never an error.
 function loadSoft(sprite, clip, name) {
-  const version = /chibi\/(zohran_mamdani|abdul_el_sayed)_grab$/.test(name) ? "grab25" : name === "chibi/jd_vance_worried_death" ? "chibi-death24" : "hd5";
+  const version = /chibi\/(zohran_mamdani|abdul_el_sayed)_grab$/.test(name) ? "grip08b" : name === "chibi/jd_vance_worried_death" ? "chibi-death24" : "hd5";
   return fetch(`assets/sprites/${name}.json?v=${version}`, { method: "HEAD" })
     .then((res) => (res.ok ? loadOne(sprite, clip, name) : null))
     .catch(() => null);
