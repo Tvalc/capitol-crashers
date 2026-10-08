@@ -1,8 +1,8 @@
 import { helpWindow } from "./help-actions.js?v=idle21";
 import { play } from "./audio.js";
 import { FIGHTERS } from "./fighters.js?v=chibi-site2";
-import { integrate, melee, spendSpecial, updateBody } from "./combat.js?v=grip24";
-import { finishWeapon, launchHeld, noteWeaponSwing, spawnBolt } from "./weapons.js?v=chibi-site2";
+import { integrate, melee, spendSpecial, updateBody } from "./combat.js?v=grab27";
+import { finishWeapon, launchHeld, noteWeaponSwing, spawnBolt } from "./weapons.js?v=grab27";
 import { deliverHelp, finishHelp, helpTarget, startHelp } from "./citizens.js?v=idle21";
 
 const LIGHTS = [

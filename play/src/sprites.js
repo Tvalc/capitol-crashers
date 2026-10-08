@@ -1,5 +1,5 @@
 import { registerHelpAction } from "./help-actions.js?v=idle21";
-import { playerMoveWindow } from "./player.js?v=grab26";
+import { playerMoveWindow } from "./player.js?v=grab27";
 
 const CLIPS = {
   zohran: ["idle", "walk", "run", "jump", "attack", "hit", "death", "cast", "grab", "throw", "lunge", "reversal"],
@@ -358,6 +358,8 @@ export const SPRITE_BODY_SCALE = {};
 export function drawSprite(ctx, ent, sx, sc) {
   const sprite = actorSprite(ent);
   let wanted = clipFor(ent.state);
+  const grabbedFlinch = ent.state === "grabbed" && ent.grabFlinchT > 0;
+  if (grabbedFlinch) wanted = "hit";
   const grabPunch = ent.team === "player" && ent.state === "grab" && ent.grabStrikeT > 0;
   if (grabPunch) wanted = "attack";
   if (ent.state === "help" && ent.helpAction) wanted = ent.stateT < ent.helpAction.approach ? "walk" : `help_${ent.helpKind}`;
@@ -390,7 +392,7 @@ export function drawSprite(ctx, ent, sx, sc) {
   else if (clip === "depart") index = Math.floor(Math.max(0, ent.stateT || 0) * (sheet.fps || 12)) % count;
   else if (clip === "change") index = Math.min(count - 1, Math.floor(Math.max(0, ent.stateT || 0) / (ent.transformDur || 1.2) * count));
   else if (clip === "grabbed") index = Math.floor(Math.max(0, ent.stateT || 0) * (sheet.fps > 0 ? sheet.fps : 8)) % count;
-  else if (clip === "hit") index = flinchIndex(ent, count);
+  else if (clip === "hit") index = flinchIndex(grabbedFlinch ? { ...ent, state: "hurt", stateT: 0.22 - ent.grabFlinchT } : ent, count);
   else if (sprite === "vance_worried" && clip === "cast") index = Math.min(count - 1, Math.floor(Math.max(0, ent.stateT || 0) / 1.2 * count));
   else if (clip === "cast") index = poseIndex(ent, count, clip);
   else if (clip === "walk" || clip === "run") index = gaitIndex(ent, count, clip, sheet.fps);

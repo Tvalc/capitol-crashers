@@ -71,7 +71,7 @@ export function applyHit(game, spec, target) {
   const facing = spec.radial ? Math.sign(target.x - spec.x) || spec.facing || 1 : spec.facing || 1;
   if (game.attackSlot === target.id) game.attackSlot = null;
   const grabbed = target.state === "grabbed" && spec.kind === "grab";
-  if (grabbed) target.stateT = 0;
+  if (grabbed) { target.stateT = 0; target.grabFlinchT = 0.22; }
   if (!grabbed) {
     target.vx = facing * spec.kb;
     const depth = target.y - (spec.y ?? target.y);
@@ -207,6 +207,7 @@ export function updateBody(ent, dt) {
   }
 
   if (ent.state === "grabbed") {
+    ent.grabFlinchT = Math.max(0, (ent.grabFlinchT || 0) - dt);
     ent.stateT = (ent.stateT || 0) + dt;
     return true;
   }

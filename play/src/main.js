@@ -1,13 +1,13 @@
 import { propFootprints, collideProps, steerAroundProps } from "./prop-collision.js?v=grapple-release23";
 import { play, unlock } from "./audio.js?v=chibi-site2";
-import { separate, tickToss, wallBounce } from "./combat.js?v=grip24";
-import { makeEnemy, updateEnemy } from "./enemies.js?v=vance-couch2";
+import { separate, tickToss, wallBounce } from "./combat.js?v=grab27";
+import { makeEnemy, updateEnemy } from "./enemies.js?v=grab27";
 import { blankInput, createInput } from "./input.js?v=chibi-site2";
-import { fighterById, makePlayer, updatePlayer, bufferPlayerInput } from "./player.js?v=grab26";
-import { draw, loadEnvironment } from "./render.js?v=grab26";
+import { fighterById, makePlayer, updatePlayer, bufferPlayerInput } from "./player.js?v=grab27";
+import { draw, loadEnvironment } from "./render.js?v=grab27";
 import { cloneStage, STAGES, WORLD } from "./stages.js?v=grapple-release23";
-import { updatePickups, updateProjectiles } from "./weapons.js?v=chibi-site2";
-import { loadSprites } from "./sprites.js?v=grab26";
+import { updatePickups, updateProjectiles } from "./weapons.js?v=grab27";
+import { loadSprites } from "./sprites.js?v=grab27";
 import { PAGES } from "../../story/panels.js";
 import { followingWitness, makeCitizen, spawnCelebration, updateCitizens, witnessTestifies } from "./citizens.js?v=idle21";
 
