@@ -542,7 +542,7 @@ function updateJump(player, game, input, dt) {
 }
 
 export function grabContactDistance(player) {
-  return player.fighter.id === "sayed" ? 60 : 45;
+  return player.fighter.id === "sayed" ? 72 : 57;
 }
 
 function updateGrab(player, game, input, dt) {
