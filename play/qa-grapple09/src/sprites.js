@@ -1,5 +1,5 @@
 import { registerHelpAction } from "./help-actions.js?v=idle21";
-import { playerMoveWindow } from "./player.js?v=grapple13";
+import { playerMoveWindow } from "./player.js?v=grapple14";
 import { WORLD } from "./stages.js?v=bench28";
 
 const CLIPS = {
@@ -392,6 +392,7 @@ export const SPRITE_BODY_SCALE = {};
 // One paired grapple interaction supplies its restrained rest pose, pummel,
 // reaction and recovery. It never replaces a normal attack or throw.
 export function hasGrapplePair(hero, enemy) {
+  if (hero.state === "grab" && hero.grapplePairLocked === false) return false;
   return !!enemy && hasSheet(actorSprite(hero), `grapple_${actorSprite(enemy)}_strike`);
 }
 
