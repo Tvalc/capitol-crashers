@@ -1,5 +1,5 @@
 import { registerHelpAction } from "./help-actions.js?v=idle21";
-import { playerMoveWindow } from "./player.js?v=grapple12";
+import { playerMoveWindow } from "./player.js?v=grapple13";
 import { WORLD } from "./stages.js?v=bench28";
 
 const CLIPS = {

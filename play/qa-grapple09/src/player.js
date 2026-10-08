@@ -1,9 +1,9 @@
 import { helpWindow } from "./help-actions.js?v=idle21";
 import { play } from "./audio.js";
-import { hasGrapplePair, grapplePairDistance, grapplePairContactRemaining } from "./sprites.js?v=grapple12";
+import { hasGrapplePair, grapplePairDistance, grapplePairContactRemaining } from "./sprites.js?v=grapple13";
 import { FIGHTERS } from "./fighters.js?v=chibi-site2";
-import { integrate, melee, spendSpecial, updateBody } from "./combat.js?v=grapple12";
-import { finishWeapon, launchHeld, noteWeaponSwing, spawnBolt } from "./weapons.js?v=grapple12";
+import { integrate, melee, spendSpecial, updateBody } from "./combat.js?v=grapple13";
+import { finishWeapon, launchHeld, noteWeaponSwing, spawnBolt } from "./weapons.js?v=grapple13";
 import { deliverHelp, finishHelp, helpTarget, startHelp } from "./citizens.js?v=idle21";
 
 const LIGHTS = [
@@ -285,7 +285,7 @@ function grabTarget(game, player, reach = 100) {
   let best = null;
   let bestDx = reach;
   for (const enemy of game.enemies) {
-    if (!enemy.alive || enemy.isBoss || enemy.z > 16) continue;
+    if (!enemy.alive || (enemy.isBoss && !game.practice) || enemy.z > 16) continue;
     if (enemy.state === "down" || enemy.state === "air" || enemy.state === "dead" || enemy.state === "grabbed") continue;
     const dx = (enemy.x - player.x) * player.facing;
     const dy = Math.abs(enemy.y - player.y);
