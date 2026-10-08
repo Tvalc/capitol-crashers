@@ -1,5 +1,5 @@
 import { registerHelpAction } from "./help-actions.js?v=idle21";
-import { playerMoveWindow } from "./player.js?v=grapple10";
+import { playerMoveWindow } from "./player.js?v=grapple10b";
 import { WORLD } from "./stages.js?v=bench28";
 
 const CLIPS = {
@@ -393,7 +393,8 @@ export function drawGrapplePair(ctx, hero, enemy, sx, scale) {
   ctx.save();
   ctx.translate(sx, hero.y);
   ctx.scale(scale * sheet.bodyScale * hero.facing, scale * sheet.bodyScale);
-  ctx.drawImage(sheet.image, cell.x, cell.y, cell.w, cell.h, -sheet.anchor.x, -sheet.anchor.y, cell.w, cell.h);
+  const offset = frame.trimmed ? frame.spriteSourceSize : null;
+  ctx.drawImage(sheet.image, cell.x, cell.y, cell.w, cell.h, -sheet.anchor.x + (offset?.x || 0), -sheet.anchor.y + (offset?.y || 0), cell.w, cell.h);
   ctx.restore();
   return true;
 }

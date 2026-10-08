@@ -1,6 +1,6 @@
-import { melee, updateBody } from "./combat.js?v=grapple10";
+import { melee, updateBody } from "./combat.js?v=grapple10b";
 import { WORLD } from "./stages.js?v=bench28";
-import { spawnSatellite, spawnShot, spawnSombrero } from "./weapons.js?v=grapple10";
+import { spawnSatellite, spawnShot, spawnSombrero } from "./weapons.js?v=grapple10b";
 
 const KINDS = {
   grunt: {
