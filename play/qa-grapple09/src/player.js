@@ -1,9 +1,9 @@
 import { helpWindow } from "./help-actions.js?v=idle21";
 import { play } from "./audio.js";
-import { hasGrapplePair, grapplePairDistance } from "./sprites.js?v=grapple10d";
+import { hasGrapplePair, grapplePairDistance } from "./sprites.js?v=grapple11";
 import { FIGHTERS } from "./fighters.js?v=chibi-site2";
-import { integrate, melee, spendSpecial, updateBody } from "./combat.js?v=grapple10d";
-import { finishWeapon, launchHeld, noteWeaponSwing, spawnBolt } from "./weapons.js?v=grapple10d";
+import { integrate, melee, spendSpecial, updateBody } from "./combat.js?v=grapple11";
+import { finishWeapon, launchHeld, noteWeaponSwing, spawnBolt } from "./weapons.js?v=grapple11";
 import { deliverHelp, finishHelp, helpTarget, startHelp } from "./citizens.js?v=idle21";
 
 const LIGHTS = [
