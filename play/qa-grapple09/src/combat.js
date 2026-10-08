@@ -178,7 +178,6 @@ export function melee(game, owner, spec) {
   for (const target of targets) {
     if (!target || spec.already?.has(target.id)) continue;
     if (spec.targetId != null && target.id !== spec.targetId) continue;
-    if (spec.targetId != null && target.id !== spec.targetId) continue;
     if (spec.low && target.z > 36) continue;
     if (!overlaps(hit, target)) continue;
     spec.already?.add(target.id);

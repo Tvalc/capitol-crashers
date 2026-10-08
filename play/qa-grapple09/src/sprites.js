@@ -1,5 +1,6 @@
 import { registerHelpAction } from "./help-actions.js?v=idle21";
-import { playerMoveWindow } from "./player.js?v=grapple09c";
+import { playerMoveWindow } from "./player.js?v=grapple10";
+import { WORLD } from "./stages.js?v=bench28";
 
 const CLIPS = {
   zohran: ["idle", "walk", "run", "jump", "attack", "hit", "death", "cast", "grab", "throw", "lunge", "reversal"],
@@ -16,7 +17,7 @@ const CLIPS = {
 // Grab / grabbed sheets are still being made in Makko. These slots load when a sheet exists
 // and are skipped quietly when it does not, so new sheets can be dropped in without code changes.
 const SOFT_CLIPS = {
-  zohran: ["grabbed", "grab_strike"],
+  zohran: ["grabbed", "grab_strike", "grapple_cruz_hold", "grapple_cruz_strike"],
   abdul: ["grabbed", "grab_strike"],
   trump: ["grab", "grabbed"],
   vance: ["grabbed"],
@@ -72,8 +73,6 @@ const FALLBACK = {
   backstep: ["backstep", "hit", "idle"],
   grab: ["grab", "attack", "idle"],
   grabbed: ["grabbed", "hit", "idle"],
-  grab_strike: ["grab_strike", "attack"],
-  grab_flinch: ["grab_flinch", "grabbed", "hit"],
   grab_strike: ["grab_strike", "attack"],
   grab_flinch: ["grab_flinch", "grabbed", "hit"],
   change: ["change", "hit", "idle"],
@@ -143,18 +142,26 @@ export function readFrames(data, width, height) {
   return frames;
 }
 
-function assetRoot(name) { return ["chibi/zohran_mamdani_grab", "chibi/ted_cruz_grabbed"].includes(name) ? "qa-grapple09/assets/sprites" : "assets/sprites"; }
+function assetRoot(name) { return ["chibi/zohran_mamdani_grab", "chibi/ted_cruz_grabbed"].includes(name) || name.includes("grapple_cruz_") ? "qa-grapple09/assets/sprites" : "assets/sprites"; }
 
 function loadOne(sprite, clip, name) {
   const image = new Image();
-  const version = /chibi\/(zohran_mamdani|abdul_el_sayed)_grab$/.test(name) ? "grapple09c" : name === "chibi/jd_vance_worried_death" ? "chibi-death24" : "grapple09c";
+  const version = /chibi\/(zohran_mamdani|abdul_el_sayed)_grab$/.test(name) ? "grip08b" : name === "chibi/jd_vance_worried_death" ? "chibi-death24" : "hd5";
   const dataPromise = fetch(`${assetRoot(name)}/${name}.json?v=${version}`).then((res) => {
     if (!res.ok) throw new Error(`Could not load ${name}: ${res.status}`);
     return res.json();
   });
   const imagePromise = new Promise((resolve, reject) => {
     image.onload = () => resolve(image);
-    image.onerror = reject;
+    let retried = false;
+    image.onerror = () => {
+      if (!retried) {
+        retried = true;
+        image.src = `${assetRoot(name)}/${name}.webp?v=${version}&retry=1`;
+        return;
+      }
+      reject(new Error(`Could not load sprite image: ${name}`));
+    };
     image.src = `${assetRoot(name)}/${name}.webp?v=${version}`;
   });
   return Promise.all([dataPromise, imagePromise]).then(([data, img]) => {
@@ -165,6 +172,7 @@ function loadOne(sprite, clip, name) {
       frames,
       fps: data.meta?.playbackFps,
       holdFrame: data.meta?.holdFrame,
+      pairedEnemyRoot: data.meta?.pairedEnemyRoot,
       frameDurations: data.meta?.useFrameDurations ? frames.map(frame => frame.duration) : null,
       bodyScale: data.meta?.bodyScale || 1,
       anchor: data.meta?.anchor || { x: (frames[0].sourceSize?.w || frames[0].frame.w) / 2, y: frames[0].sourceSize?.h || frames[0].frame.h },
@@ -174,7 +182,7 @@ function loadOne(sprite, clip, name) {
 
 // Missing sheet = 404 on the JSON, nothing else requested, never an error.
 function loadSoft(sprite, clip, name) {
-  const version = /chibi\/(zohran_mamdani|abdul_el_sayed)_grab$/.test(name) ? "grapple09c" : name === "chibi/jd_vance_worried_death" ? "chibi-death24" : "grapple09c";
+  const version = /chibi\/(zohran_mamdani|abdul_el_sayed)_grab$/.test(name) ? "grip08b" : name === "chibi/jd_vance_worried_death" ? "chibi-death24" : "hd5";
   return fetch(`${assetRoot(name)}/${name}.json?v=${version}`, { method: "HEAD" })
     .then((res) => (res.ok ? loadOne(sprite, clip, name) : null))
     .catch(() => null);
@@ -361,6 +369,34 @@ function flinchIndex(ent, count) {
 // These exports were normalized to their whole action bounding box, rather
 // than the character's body. Calibrate once per clip, never once per frame.
 export const SPRITE_BODY_SCALE = {};
+
+// One paired grapple interaction supplies its restrained rest pose, pummel,
+// reaction and recovery. It never replaces a normal attack or throw.
+export function hasGrapplePair(hero, enemy) {
+  return actorSprite(hero) === "zohran" && actorSprite(enemy) === "cruz"
+    && hasSheet("zohran", "grapple_cruz_strike");
+}
+
+export function grapplePairDistance(hero) {
+  const sheet = sheets.get(clipKey("zohran", "grapple_cruz_strike"));
+  const depth = .86 + (hero.y - WORLD.floorTop) / (WORLD.floorBottom - WORLD.floorTop) * .2;
+  return (sheet.pairedEnemyRoot.x - sheet.anchor.x) * sheet.bodyScale * (hero.scale || 1) * depth * 1.05;
+}
+
+export function drawGrapplePair(ctx, hero, enemy, sx, scale) {
+  if (!hasGrapplePair(hero, enemy)) return false;
+  const strike = hero.grabStrikeT > 0;
+  const sheet = sheets.get(clipKey("zohran", "grapple_cruz_strike"));
+  const phase = Math.max(0, Math.min(1, 1 - (hero.grabStrikeT || 0) / .32));
+  const index = strike ? Math.min(sheet.frames.length - 1, Math.floor(phase * sheet.frames.length)) : 0;
+  const frame = sheet.frames[index], cell = frame.frame;
+  ctx.save();
+  ctx.translate(sx, hero.y);
+  ctx.scale(scale * sheet.bodyScale * hero.facing, scale * sheet.bodyScale);
+  ctx.drawImage(sheet.image, cell.x, cell.y, cell.w, cell.h, -sheet.anchor.x, -sheet.anchor.y, cell.w, cell.h);
+  ctx.restore();
+  return true;
+}
 
 export function drawSprite(ctx, ent, sx, sc) {
   const sprite = actorSprite(ent);

@@ -1,8 +1,9 @@
 import { helpWindow } from "./help-actions.js?v=idle21";
 import { play } from "./audio.js";
+import { hasGrapplePair, grapplePairDistance } from "./sprites.js?v=grapple10";
 import { FIGHTERS } from "./fighters.js?v=chibi-site2";
-import { integrate, melee, spendSpecial, updateBody } from "./combat.js?v=grapple09c";
-import { finishWeapon, launchHeld, noteWeaponSwing, spawnBolt } from "./weapons.js?v=grapple09c";
+import { integrate, melee, spendSpecial, updateBody } from "./combat.js?v=grapple10";
+import { finishWeapon, launchHeld, noteWeaponSwing, spawnBolt } from "./weapons.js?v=grapple10";
 import { deliverHelp, finishHelp, helpTarget, startHelp } from "./citizens.js?v=idle21";
 
 const LIGHTS = [
@@ -544,6 +545,7 @@ function updateJump(player, game, input, dt) {
 
 // Pair geometry is measured in world pixels, independent of facing.
 export function grabContactDistance(player, enemy) {
+  if (enemy && hasGrapplePair(player, enemy)) return grapplePairDistance(player);
   const distances = player.fighter.id === "sayed"
     ? { cruz: 83, pete: 79, pete_ww: 88, vance: 72, vance_worried: 72, greene: 82 }
     : { cruz: 108, pete: 100, pete_ww: 105, vance: 96, vance_worried: 96, greene: 100 };
@@ -577,7 +579,7 @@ function updateGrab(player, game, input, dt) {
   enemy.z = 0;
   enemy.facing = -player.facing;
   // Damage happens at extension, not the key-down / wind-up frame.
-  if (player.grabStrikeT > 0 && player.grabStrikeT <= .16 && !player.grabStrikeConnected) {
+  if (player.grabStrikeT > 0 && player.grabStrikeT <= (hasGrapplePair(player, enemy) ? .22 : .16) && !player.grabStrikeConnected) {
     player.grabStrikeConnected = true;
     melee(game, player, { dmg: (player.grabHits >= 3 ? 10 : 6) * player.fighter.power, kb: player.grabHits >= 3 ? 180 : 0, lift: player.grabHits >= 3 ? 360 : 0, knockdown: player.grabHits >= 3,
       reach: 128, kind: "grab", points: 80, hitstop: .065, shake: 3,

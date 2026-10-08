@@ -1,5 +1,5 @@
 import { FIGHTERS, poseFor } from "./fighters.js?v=chibi-site2";
-import { drawSprite } from "./sprites.js?v=grapple09c";
+import { drawSprite, drawGrapplePair, hasGrapplePair } from "./sprites.js?v=grapple10";
 import { WORLD, STAGES } from "./stages.js?v=bench28";
 import { CITIZEN_KINDS } from "./citizens.js?v=idle21";
 
@@ -326,6 +326,9 @@ function drawFx(ctx,fx,cam) {
 }
 
 function drawPerson(ctx, ent, cam, game) {
+  const holder = game.player;
+  const pairedVictim = holder?.state === "grab" ? game.enemies.find(enemy => enemy.id === holder.grabId && enemy.state === "grabbed") : null;
+  if (pairedVictim && ent === pairedVictim && hasGrapplePair(holder, pairedVictim)) return;
   if (ent.team === "citizen" && ent.helpOwner?.state === "help" && ent.helpOwner.stateT >= ent.helpOwner.helpAction.approach) return;
   if (ent.team === "player" && ent.invuln > 0 && Math.floor(game.time * 16) % 2 === 0 && ent.state !== "special") return;
   const depth = 0.86 + ((ent.y - WORLD.floorTop) / (WORLD.floorBottom - WORLD.floorTop)) * 0.2;
@@ -348,6 +351,7 @@ function drawPerson(ctx, ent, cam, game) {
   ctx.fill();
   ctx.restore();
 
+  if (ent === holder && pairedVictim && drawGrapplePair(ctx, holder, pairedVictim, sx, spriteScale)) return;
   if (drawSprite(ctx, ent, sx, spriteScale)) label(ctx, ent, sx);
 }
 

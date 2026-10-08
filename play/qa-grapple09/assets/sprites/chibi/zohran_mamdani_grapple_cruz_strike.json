@@ -1,0 +1,313 @@
+{
+  "frames": {
+    "zohran_mamdani_grapple_cruz_strike_000.webp": {
+      "frame": {
+        "x": 2,
+        "y": 2,
+        "w": 957,
+        "h": 713
+      },
+      "rotated": false,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 28,
+        "y": 0,
+        "w": 957,
+        "h": 713
+      },
+      "sourceSize": {
+        "w": 1021,
+        "h": 714
+      },
+      "duration": 250
+    },
+    "zohran_mamdani_grapple_cruz_strike_001.webp": {
+      "frame": {
+        "x": 963,
+        "y": 2,
+        "w": 957,
+        "h": 713
+      },
+      "rotated": false,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 28,
+        "y": 0,
+        "w": 957,
+        "h": 713
+      },
+      "sourceSize": {
+        "w": 1021,
+        "h": 714
+      },
+      "duration": 250
+    },
+    "zohran_mamdani_grapple_cruz_strike_002.webp": {
+      "frame": {
+        "x": 1924,
+        "y": 2,
+        "w": 957,
+        "h": 713
+      },
+      "rotated": false,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 28,
+        "y": 0,
+        "w": 957,
+        "h": 713
+      },
+      "sourceSize": {
+        "w": 1021,
+        "h": 714
+      },
+      "duration": 250
+    },
+    "zohran_mamdani_grapple_cruz_strike_003.webp": {
+      "frame": {
+        "x": 2,
+        "y": 719,
+        "w": 957,
+        "h": 713
+      },
+      "rotated": false,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 28,
+        "y": 0,
+        "w": 957,
+        "h": 713
+      },
+      "sourceSize": {
+        "w": 1021,
+        "h": 714
+      },
+      "duration": 250
+    },
+    "zohran_mamdani_grapple_cruz_strike_004.webp": {
+      "frame": {
+        "x": 963,
+        "y": 719,
+        "w": 957,
+        "h": 713
+      },
+      "rotated": false,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 28,
+        "y": 0,
+        "w": 957,
+        "h": 713
+      },
+      "sourceSize": {
+        "w": 1021,
+        "h": 714
+      },
+      "duration": 250
+    },
+    "zohran_mamdani_grapple_cruz_strike_005.webp": {
+      "frame": {
+        "x": 1924,
+        "y": 719,
+        "w": 957,
+        "h": 713
+      },
+      "rotated": false,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 28,
+        "y": 0,
+        "w": 957,
+        "h": 713
+      },
+      "sourceSize": {
+        "w": 1021,
+        "h": 714
+      },
+      "duration": 250
+    },
+    "zohran_mamdani_grapple_cruz_strike_006.webp": {
+      "frame": {
+        "x": 2,
+        "y": 1436,
+        "w": 957,
+        "h": 713
+      },
+      "rotated": false,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 28,
+        "y": 0,
+        "w": 957,
+        "h": 713
+      },
+      "sourceSize": {
+        "w": 1021,
+        "h": 714
+      },
+      "duration": 250
+    },
+    "zohran_mamdani_grapple_cruz_strike_007.webp": {
+      "frame": {
+        "x": 963,
+        "y": 1436,
+        "w": 957,
+        "h": 713
+      },
+      "rotated": false,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 28,
+        "y": 0,
+        "w": 957,
+        "h": 713
+      },
+      "sourceSize": {
+        "w": 1021,
+        "h": 714
+      },
+      "duration": 250
+    },
+    "zohran_mamdani_grapple_cruz_strike_008.webp": {
+      "frame": {
+        "x": 1924,
+        "y": 1436,
+        "w": 957,
+        "h": 713
+      },
+      "rotated": false,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 28,
+        "y": 0,
+        "w": 957,
+        "h": 713
+      },
+      "sourceSize": {
+        "w": 1021,
+        "h": 714
+      },
+      "duration": 250
+    },
+    "zohran_mamdani_grapple_cruz_strike_009.webp": {
+      "frame": {
+        "x": 2,
+        "y": 2153,
+        "w": 957,
+        "h": 713
+      },
+      "rotated": false,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 28,
+        "y": 0,
+        "w": 957,
+        "h": 713
+      },
+      "sourceSize": {
+        "w": 1021,
+        "h": 714
+      },
+      "duration": 250
+    },
+    "zohran_mamdani_grapple_cruz_strike_010.webp": {
+      "frame": {
+        "x": 963,
+        "y": 2153,
+        "w": 957,
+        "h": 713
+      },
+      "rotated": false,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 28,
+        "y": 0,
+        "w": 957,
+        "h": 713
+      },
+      "sourceSize": {
+        "w": 1021,
+        "h": 714
+      },
+      "duration": 250
+    },
+    "zohran_mamdani_grapple_cruz_strike_011.webp": {
+      "frame": {
+        "x": 1924,
+        "y": 2153,
+        "w": 957,
+        "h": 713
+      },
+      "rotated": false,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 28,
+        "y": 0,
+        "w": 957,
+        "h": 713
+      },
+      "sourceSize": {
+        "w": 1021,
+        "h": 714
+      },
+      "duration": 250
+    }
+  },
+  "meta": {
+    "app": "MAKKO Sprite Studio",
+    "version": "1.0.0",
+    "image": "zohran_mamdani_grapple_cruz_strike.webp",
+    "format": "RGBA8888",
+    "size": {
+      "w": 2883,
+      "h": 2868
+    },
+    "scale": "1",
+    "frameTags": [
+      {
+        "name": "animation",
+        "from": 0,
+        "to": 11,
+        "direction": "forward"
+      }
+    ],
+    "anchor": {
+      "x": 250,
+      "y": 688
+    },
+    "referenceAlignment": {
+      "referenceBounds": {
+        "width": 676,
+        "height": 626
+      },
+      "frameBounds": {
+        "width": 1021,
+        "height": 714
+      },
+      "normalized": true
+    },
+    "bodyScale": 0.43252595155709345,
+    "animationId": "c7ffa49a-b3f1-462b-83d3-17d3db24a3f6",
+    "action": "paired grapple pummel",
+    "savedOriginalFrames": [
+      1,
+      7,
+      13,
+      31,
+      37,
+      43,
+      49,
+      55,
+      67,
+      73,
+      79,
+      91
+    ],
+    "contactFrame": 3,
+    "nativePixels": true,
+    "pairedEnemyRoot": {
+      "x": 565,
+      "y": 688
+    }
+  }
+}
