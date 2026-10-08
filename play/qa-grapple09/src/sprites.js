@@ -1,5 +1,5 @@
 import { registerHelpAction } from "./help-actions.js?v=idle21";
-import { playerMoveWindow } from "./player.js?v=grapple09";
+import { playerMoveWindow } from "./player.js?v=grapple09b";
 
 const CLIPS = {
   zohran: ["idle", "walk", "run", "jump", "attack", "hit", "death", "cast", "grab", "throw", "lunge", "reversal"],
@@ -143,17 +143,19 @@ export function readFrames(data, width, height) {
   return frames;
 }
 
+function assetRoot(name) { return ["chibi/zohran_mamdani_grab", "chibi/ted_cruz_grabbed"].includes(name) ? "qa-grapple09/assets/sprites" : "assets/sprites"; }
+
 function loadOne(sprite, clip, name) {
   const image = new Image();
   const version = /chibi\/(zohran_mamdani|abdul_el_sayed)_grab$/.test(name) ? "grip08b" : name === "chibi/jd_vance_worried_death" ? "chibi-death24" : "hd5";
-  const dataPromise = fetch(`assets/sprites/${name}.json?v=${version}`).then((res) => {
+  const dataPromise = fetch(`${assetRoot(name)}/${name}.json?v=${version}`).then((res) => {
     if (!res.ok) throw new Error(`Could not load ${name}: ${res.status}`);
     return res.json();
   });
   const imagePromise = new Promise((resolve, reject) => {
     image.onload = () => resolve(image);
     image.onerror = reject;
-    image.src = `assets/sprites/${name}.webp?v=${version}`;
+    image.src = `${assetRoot(name)}/${name}.webp?v=${version}`;
   });
   return Promise.all([dataPromise, imagePromise]).then(([data, img]) => {
     const frames = readFrames(data, img.naturalWidth, img.naturalHeight);
@@ -162,6 +164,7 @@ function loadOne(sprite, clip, name) {
       image: img,
       frames,
       fps: data.meta?.playbackFps,
+      holdFrame: data.meta?.holdFrame,
       frameDurations: data.meta?.useFrameDurations ? frames.map(frame => frame.duration) : null,
       bodyScale: data.meta?.bodyScale || 1,
       anchor: data.meta?.anchor || { x: (frames[0].sourceSize?.w || frames[0].frame.w) / 2, y: frames[0].sourceSize?.h || frames[0].frame.h },
@@ -172,7 +175,7 @@ function loadOne(sprite, clip, name) {
 // Missing sheet = 404 on the JSON, nothing else requested, never an error.
 function loadSoft(sprite, clip, name) {
   const version = /chibi\/(zohran_mamdani|abdul_el_sayed)_grab$/.test(name) ? "grip08b" : name === "chibi/jd_vance_worried_death" ? "chibi-death24" : "hd5";
-  return fetch(`assets/sprites/${name}.json?v=${version}`, { method: "HEAD" })
+  return fetch(`${assetRoot(name)}/${name}.json?v=${version}`, { method: "HEAD" })
     .then((res) => (res.ok ? loadOne(sprite, clip, name) : null))
     .catch(() => null);
 }
@@ -402,6 +405,7 @@ export function drawSprite(ctx, ent, sx, sc) {
   else if (clip === "walk" || clip === "run") index = gaitIndex(ent, count, clip, sheet.fps);
   else if (once) index = poseIndex(ent, count, clip);
   else index = Math.floor((ent.anim || 0) / 0.1) % count;
+  if (clip === "grab" && ent.team === "player" && Number.isInteger(sheet.holdFrame)) index = Math.min(sheet.holdFrame, Math.floor(Math.max(0, ent.stateT || 0) / .24 * (sheet.holdFrame + 1)));
   if (sprite === "cruz" && ent.state === "windup") index = 0;
   if (index < 0) index = 0;
   const frame = sheet.frames[index];

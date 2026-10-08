@@ -1,8 +1,8 @@
 import { helpWindow } from "./help-actions.js?v=idle21";
 import { play } from "./audio.js";
 import { FIGHTERS } from "./fighters.js?v=chibi-site2";
-import { integrate, melee, spendSpecial, updateBody } from "./combat.js?v=grapple09";
-import { finishWeapon, launchHeld, noteWeaponSwing, spawnBolt } from "./weapons.js?v=grapple09";
+import { integrate, melee, spendSpecial, updateBody } from "./combat.js?v=grapple09b";
+import { finishWeapon, launchHeld, noteWeaponSwing, spawnBolt } from "./weapons.js?v=grapple09b";
 import { deliverHelp, finishHelp, helpTarget, startHelp } from "./citizens.js?v=idle21";
 
 const LIGHTS = [
@@ -546,7 +546,7 @@ function updateJump(player, game, input, dt) {
 export function grabContactDistance(player, enemy) {
   const distances = player.fighter.id === "sayed"
     ? { cruz: 83, pete: 79, pete_ww: 88, vance: 72, vance_worried: 72, greene: 82 }
-    : { cruz: 73, pete: 70, pete_ww: 80, vance: 65, vance_worried: 65, greene: 73 };
+    : { cruz: 108, pete: 100, pete_ww: 105, vance: 96, vance_worried: 96, greene: 100 };
   return distances[enemy?.sprite || enemy?.kind] ?? (player.fighter.id === "sayed" ? 78 : 70);
 }
 
