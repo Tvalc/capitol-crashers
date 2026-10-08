@@ -1,5 +1,5 @@
 import { play } from "./audio.js";
-import { WORLD } from "./stages.js?v=grapple-release23";
+import { WORLD } from "./stages.js?v=bench28";
 import { followingWitness, knockWitness } from "./citizens.js?v=idle21";
 
 export function integrate(ent, dt) {

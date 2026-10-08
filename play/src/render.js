@@ -1,6 +1,6 @@
 import { FIGHTERS, poseFor } from "./fighters.js?v=chibi-site2";
 import { drawSprite } from "./sprites.js?v=grab27";
-import { WORLD, STAGES } from "./stages.js?v=grapple-release23";
+import { WORLD, STAGES } from "./stages.js?v=bench28";
 import { CITIZEN_KINDS } from "./citizens.js?v=idle21";
 
 const art = {};

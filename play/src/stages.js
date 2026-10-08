@@ -51,7 +51,6 @@ const rally = {
     {art:'scenery-kiosk-night',x:700,y:459,w:175,h:210},
     {art:'scenery-bus-stop-night',x:1430,y:459,w:280,h:280},
     {art:'scenery-planter-night',x:1960,y:459,w:165,h:150},
-    {art:'scenery-bench-night',x:2500,y:685,w:190,h:140},
     {art:'scenery-planter-night',x:3180,y:459,w:165,h:150}
   ],
   signs: [],

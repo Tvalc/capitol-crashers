@@ -1,5 +1,5 @@
 import { melee, updateBody } from "./combat.js?v=grab27";
-import { WORLD } from "./stages.js?v=grapple-release23";
+import { WORLD } from "./stages.js?v=bench28";
 import { spawnSatellite, spawnShot, spawnSombrero } from "./weapons.js?v=grab27";
 
 const KINDS = {
