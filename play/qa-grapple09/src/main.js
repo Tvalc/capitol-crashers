@@ -1,13 +1,13 @@
 import { propFootprints, collideProps, steerAroundProps } from "./prop-collision.js?v=grapple-release23";
 import { play, unlock } from "./audio.js?v=chibi-site2";
-import { separate, tickToss, wallBounce } from "./combat.js?v=grapple10c";
-import { makeEnemy, updateEnemy } from "./enemies.js?v=grapple10c";
+import { separate, tickToss, wallBounce } from "./combat.js?v=grapple10d";
+import { makeEnemy, updateEnemy } from "./enemies.js?v=grapple10d";
 import { blankInput, createInput } from "./input.js?v=chibi-site2";
-import { fighterById, makePlayer, updatePlayer, bufferPlayerInput } from "./player.js?v=grapple10c";
-import { draw, loadEnvironment } from "./render.js?v=grapple10c";
+import { fighterById, makePlayer, updatePlayer, bufferPlayerInput } from "./player.js?v=grapple10d";
+import { draw, loadEnvironment } from "./render.js?v=grapple10d";
 import { cloneStage, STAGES, WORLD } from "./stages.js?v=bench28";
-import { updatePickups, updateProjectiles } from "./weapons.js?v=grapple10c";
-import { loadSprites } from "./sprites.js?v=grapple10c";
+import { updatePickups, updateProjectiles } from "./weapons.js?v=grapple10d";
+import { loadSprites } from "./sprites.js?v=grapple10d";
 import { PAGES } from "../../../story/panels.js";
 import { followingWitness, makeCitizen, spawnCelebration, updateCitizens, witnessTestifies } from "./citizens.js?v=idle21";
 
@@ -87,6 +87,7 @@ export function beginPractice(game, fighterId, active = false, opponent = game.p
   game.player.x = 420;
   game.enemies = [makeEnemy(game.practiceEnemy, 510, 560)];
   game.enemies[0].facing = -1;
+  if(new URLSearchParams(window.location.search).get("facing") === "left") { game.player.x = 600; game.player.facing = -1; game.enemies[0].facing = 1; }
   game.banner = "Practice · G grab · J strike · K throw";
   game.bannerT = 3;
 }
