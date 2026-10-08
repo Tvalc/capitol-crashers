@@ -1,5 +1,5 @@
 import { FIGHTERS, poseFor } from "./fighters.js?v=chibi-site2";
-import { drawSprite } from "./sprites.js?v=grapple09b";
+import { drawSprite } from "./sprites.js?v=grapple09c";
 import { WORLD, STAGES } from "./stages.js?v=bench28";
 import { CITIZEN_KINDS } from "./citizens.js?v=idle21";
 

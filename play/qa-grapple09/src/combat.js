@@ -172,8 +172,6 @@ export function melee(game, owner, spec) {
     shake: spec.shake,
     impactX: spec.impactX,
     impactZ: spec.impactZ,
-    impactX: spec.impactX,
-    impactZ: spec.impactZ,
   };
   const targets = owner.team === "player" ? game.enemies : [game.player];
   let connected = 0;
