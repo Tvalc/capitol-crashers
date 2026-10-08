@@ -1,5 +1,5 @@
 import { registerHelpAction } from "./help-actions.js?v=idle21";
-import { playerMoveWindow } from "./player.js?v=grapple11";
+import { playerMoveWindow } from "./player.js?v=grapple12";
 import { WORLD } from "./stages.js?v=bench28";
 
 const CLIPS = {
@@ -17,7 +17,7 @@ const CLIPS = {
 // Grab / grabbed sheets are still being made in Makko. These slots load when a sheet exists
 // and are skipped quietly when it does not, so new sheets can be dropped in without code changes.
 const SOFT_CLIPS = {
-  zohran: ["grabbed", "grab_strike", "grapple_cruz_hold", "grapple_cruz_strike"],
+  zohran: ["grabbed", "grab_strike"],
   abdul: ["grabbed", "grab_strike"],
   trump: ["grab", "grabbed"],
   vance: ["grabbed"],
@@ -81,6 +81,23 @@ const FALLBACK = {
 const ONCE = new Set(["attack", "hit", "death", "cast", "jump", "lunge", "reversal", "throw", "backstep", "grab"]);
 
 const sheets = new Map();
+// Only reviewed candidates are registered. Load the active matchup, not the
+// whole cast's paired atlases at startup.
+const GRAPPLE_PAIRS = {
+  zohran: new Set(["cruz", "mcconnell", "trump"]),
+  abdul: new Set(["cruz", "greene", "trump", "beck"]),
+};
+const pairLoads = new Map();
+export function ensureGrapplePair(hero, enemy) {
+  const sprite = actorSprite(hero), opponent = actorSprite(enemy);
+  if (!GRAPPLE_PAIRS[sprite]?.has(opponent)) return Promise.resolve(false);
+  const clip = `grapple_${opponent}_strike`, key = clipKey(sprite, clip);
+  if (!pairLoads.has(key)) {
+    pairLoads.set(key, loadOne(sprite, clip, `${FILE[sprite]}_${clip}`)
+      .then(() => true).catch(() => false));
+  }
+  return pairLoads.get(key);
+}
 
 function clipKey(sprite, clip) {
   return `${sprite}:${clip}`;
@@ -142,11 +159,11 @@ export function readFrames(data, width, height) {
   return frames;
 }
 
-function assetRoot(name) { return ["chibi/zohran_mamdani_grab", "chibi/ted_cruz_grabbed"].includes(name) || name.includes("grapple_cruz_") ? "qa-grapple09/assets/sprites" : "assets/sprites"; }
+function assetRoot(name) { return ["chibi/zohran_mamdani_grab", "chibi/ted_cruz_grabbed"].includes(name) || name.includes("_grapple_") ? "qa-grapple09/assets/sprites" : "assets/sprites"; }
 
 function loadOne(sprite, clip, name) {
   const image = new Image();
-  const version = name.includes("grapple_cruz_") ? "outline11" : /chibi\/(zohran_mamdani|abdul_el_sayed)_grab$/.test(name) ? "grip08b" : name === "chibi/jd_vance_worried_death" ? "chibi-death24" : "hd5";
+  const version = name.includes("_grapple_") ? "cast12" : /chibi\/(zohran_mamdani|abdul_el_sayed)_grab$/.test(name) ? "grip08b" : name === "chibi/jd_vance_worried_death" ? "chibi-death24" : "hd5";
   const dataPromise = fetch(`${assetRoot(name)}/${name}.json?v=${version}`).then((res) => {
     if (!res.ok) throw new Error(`Could not load ${name}: ${res.status}`);
     return res.json();
@@ -173,6 +190,8 @@ function loadOne(sprite, clip, name) {
       fps: data.meta?.playbackFps,
       holdFrame: data.meta?.holdFrame,
       pairedEnemyRoot: data.meta?.pairedEnemyRoot,
+      playbackSequence: data.meta?.playbackSequence,
+      contactFrame: data.meta?.contactFrame,
       frameDurations: data.meta?.useFrameDurations ? frames.map(frame => frame.duration) : null,
       bodyScale: data.meta?.bodyScale || 1,
       anchor: data.meta?.anchor || { x: (frames[0].sourceSize?.w || frames[0].frame.w) / 2, y: frames[0].sourceSize?.h || frames[0].frame.h },
@@ -182,7 +201,7 @@ function loadOne(sprite, clip, name) {
 
 // Missing sheet = 404 on the JSON, nothing else requested, never an error.
 function loadSoft(sprite, clip, name) {
-  const version = name.includes("grapple_cruz_") ? "outline11" : /chibi\/(zohran_mamdani|abdul_el_sayed)_grab$/.test(name) ? "grip08b" : name === "chibi/jd_vance_worried_death" ? "chibi-death24" : "hd5";
+  const version = name.includes("_grapple_") ? "cast12" : /chibi\/(zohran_mamdani|abdul_el_sayed)_grab$/.test(name) ? "grip08b" : name === "chibi/jd_vance_worried_death" ? "chibi-death24" : "hd5";
   return fetch(`${assetRoot(name)}/${name}.json?v=${version}`, { method: "HEAD" })
     .then((res) => (res.ok ? loadOne(sprite, clip, name) : null))
     .catch(() => null);
@@ -373,12 +392,11 @@ export const SPRITE_BODY_SCALE = {};
 // One paired grapple interaction supplies its restrained rest pose, pummel,
 // reaction and recovery. It never replaces a normal attack or throw.
 export function hasGrapplePair(hero, enemy) {
-  return actorSprite(hero) === "zohran" && actorSprite(enemy) === "cruz"
-    && hasSheet("zohran", "grapple_cruz_strike");
+  return !!enemy && hasSheet(actorSprite(hero), `grapple_${actorSprite(enemy)}_strike`);
 }
 
-export function grapplePairDistance(hero) {
-  const sheet = sheets.get(clipKey("zohran", "grapple_cruz_strike"));
+export function grapplePairDistance(hero, enemy) {
+  const sheet = sheets.get(clipKey(actorSprite(hero), `grapple_${actorSprite(enemy)}_strike`));
   const depth = .86 + (hero.y - WORLD.floorTop) / (WORLD.floorBottom - WORLD.floorTop) * .2;
   return (sheet.pairedEnemyRoot.x - sheet.anchor.x) * sheet.bodyScale * (hero.scale || 1) * depth * 1.05;
 }
@@ -386,9 +404,10 @@ export function grapplePairDistance(hero) {
 export function drawGrapplePair(ctx, hero, enemy, sx, scale) {
   if (!hasGrapplePair(hero, enemy)) return false;
   const strike = hero.grabStrikeT > 0;
-  const sheet = sheets.get(clipKey("zohran", "grapple_cruz_strike"));
+  const sheet = sheets.get(clipKey(actorSprite(hero), `grapple_${actorSprite(enemy)}_strike`));
   const phase = Math.max(0, Math.min(1, 1 - (hero.grabStrikeT || 0) / .32));
-  const index = strike ? Math.min(sheet.frames.length - 1, Math.floor(phase * sheet.frames.length)) : 0;
+  const sequence = sheet.playbackSequence || sheet.frames.map((_,i)=>i);
+  const index = strike ? sequence[Math.min(sequence.length - 1, Math.floor(phase * sequence.length))] : 0;
   const frame = sheet.frames[index], cell = frame.frame;
   ctx.save();
   ctx.translate(sx, hero.y);
@@ -397,6 +416,14 @@ export function drawGrapplePair(ctx, hero, enemy, sx, scale) {
   ctx.drawImage(sheet.image, cell.x, cell.y, cell.w, cell.h, -sheet.anchor.x + (offset?.x || 0), -sheet.anchor.y + (offset?.y || 0), cell.w, cell.h);
   ctx.restore();
   return true;
+}
+
+export function grapplePairContactRemaining(hero, enemy) {
+  const sheet = sheets.get(clipKey(actorSprite(hero), `grapple_${actorSprite(enemy)}_strike`));
+  if (!sheet) return .16;
+  const sequence = sheet.playbackSequence || sheet.frames.map((_,i)=>i);
+  const contact = Math.max(0, sequence.indexOf(sheet.contactFrame ?? 3));
+  return .32 * (1 - contact / sequence.length);
 }
 
 export function drawSprite(ctx, ent, sx, sc) {
@@ -467,3 +494,4 @@ export function drawSprite(ctx, ent, sx, sc) {
   ctx.restore();
   return true;
 }
+

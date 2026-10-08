@@ -1,13 +1,13 @@
 import { propFootprints, collideProps, steerAroundProps } from "./prop-collision.js?v=grapple-release23";
 import { play, unlock } from "./audio.js?v=chibi-site2";
-import { separate, tickToss, wallBounce } from "./combat.js?v=grapple11";
-import { makeEnemy, updateEnemy } from "./enemies.js?v=grapple11";
+import { separate, tickToss, wallBounce } from "./combat.js?v=grapple12";
+import { makeEnemy, updateEnemy } from "./enemies.js?v=grapple12";
 import { blankInput, createInput } from "./input.js?v=chibi-site2";
-import { fighterById, makePlayer, updatePlayer, bufferPlayerInput } from "./player.js?v=grapple11";
-import { draw, loadEnvironment } from "./render.js?v=grapple11";
+import { fighterById, makePlayer, updatePlayer, bufferPlayerInput } from "./player.js?v=grapple12";
+import { draw, loadEnvironment } from "./render.js?v=grapple12";
 import { cloneStage, STAGES, WORLD } from "./stages.js?v=bench28";
-import { updatePickups, updateProjectiles } from "./weapons.js?v=grapple11";
-import { loadSprites } from "./sprites.js?v=grapple11";
+import { updatePickups, updateProjectiles } from "./weapons.js?v=grapple12";
+import { loadSprites, ensureGrapplePair } from "./sprites.js?v=grapple12";
 import { PAGES } from "../../../story/panels.js";
 import { followingWitness, makeCitizen, spawnCelebration, updateCitizens, witnessTestifies } from "./citizens.js?v=idle21";
 
@@ -86,6 +86,7 @@ export function beginPractice(game, fighterId, active = false, opponent = game.p
   game.citizens = [];
   game.player.x = 420;
   game.enemies = [makeEnemy(game.practiceEnemy, 510, 560)];
+  ensureGrapplePair(game.player, game.enemies[0]);
   game.enemies[0].facing = -1;
   if(new URLSearchParams(window.location.search).get("facing") === "left") { game.player.x = 600; game.player.facing = -1; game.enemies[0].facing = 1; }
   game.banner = "Practice · G grab · J strike · K throw";
@@ -245,6 +246,7 @@ function updateWaves(game) {
     const base = desired + 760;
     for (const member of wave.group) {
       const enemy = makeEnemy(member.kind, base + member.dx, member.y);
+      ensureGrapplePair(game.player, enemy);
       if (wave.boss) {
         enemy.isBoss = true;
         enemy.title = wave.bossName;

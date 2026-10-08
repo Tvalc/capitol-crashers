@@ -1,0 +1,236 @@
+{
+  "frames": {
+    "abdul_el-sayed_grapple_trump_strike_000.png": {
+      "frame": {
+        "x": 2,
+        "y": 2,
+        "w": 782,
+        "h": 529
+      },
+      "rotated": false,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 782,
+        "h": 529
+      },
+      "sourceSize": {
+        "w": 785,
+        "h": 530
+      },
+      "duration": 250
+    },
+    "abdul_el-sayed_grapple_trump_strike_001.png": {
+      "frame": {
+        "x": 788,
+        "y": 2,
+        "w": 782,
+        "h": 529
+      },
+      "rotated": false,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 782,
+        "h": 529
+      },
+      "sourceSize": {
+        "w": 785,
+        "h": 530
+      },
+      "duration": 250
+    },
+    "abdul_el-sayed_grapple_trump_strike_002.png": {
+      "frame": {
+        "x": 1574,
+        "y": 2,
+        "w": 782,
+        "h": 529
+      },
+      "rotated": false,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 782,
+        "h": 529
+      },
+      "sourceSize": {
+        "w": 785,
+        "h": 530
+      },
+      "duration": 250
+    },
+    "abdul_el-sayed_grapple_trump_strike_003.png": {
+      "frame": {
+        "x": 2,
+        "y": 535,
+        "w": 782,
+        "h": 529
+      },
+      "rotated": false,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 782,
+        "h": 529
+      },
+      "sourceSize": {
+        "w": 785,
+        "h": 530
+      },
+      "duration": 250
+    },
+    "abdul_el-sayed_grapple_trump_strike_004.png": {
+      "frame": {
+        "x": 788,
+        "y": 535,
+        "w": 782,
+        "h": 529
+      },
+      "rotated": false,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 782,
+        "h": 529
+      },
+      "sourceSize": {
+        "w": 785,
+        "h": 530
+      },
+      "duration": 250
+    },
+    "abdul_el-sayed_grapple_trump_strike_005.png": {
+      "frame": {
+        "x": 1574,
+        "y": 535,
+        "w": 782,
+        "h": 529
+      },
+      "rotated": false,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 782,
+        "h": 529
+      },
+      "sourceSize": {
+        "w": 785,
+        "h": 530
+      },
+      "duration": 250
+    },
+    "abdul_el-sayed_grapple_trump_strike_006.png": {
+      "frame": {
+        "x": 2,
+        "y": 1068,
+        "w": 782,
+        "h": 529
+      },
+      "rotated": false,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 782,
+        "h": 529
+      },
+      "sourceSize": {
+        "w": 785,
+        "h": 530
+      },
+      "duration": 250
+    },
+    "abdul_el-sayed_grapple_trump_strike_007.png": {
+      "frame": {
+        "x": 788,
+        "y": 1068,
+        "w": 782,
+        "h": 529
+      },
+      "rotated": false,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 782,
+        "h": 529
+      },
+      "sourceSize": {
+        "w": 785,
+        "h": 530
+      },
+      "duration": 250
+    }
+  },
+  "meta": {
+    "app": "MAKKO Sprite Studio",
+    "version": "1.0.0",
+    "image": "abdul_el_sayed_grapple_trump_strike.webp",
+    "format": "RGBA8888",
+    "size": {
+      "w": 2358,
+      "h": 1599
+    },
+    "scale": "1",
+    "frameTags": [
+      {
+        "name": "animation",
+        "from": 0,
+        "to": 7,
+        "direction": "forward"
+      }
+    ],
+    "anchor": {
+      "x": 170,
+      "y": 510
+    },
+    "referenceAlignment": {
+      "referenceBounds": {
+        "width": 673,
+        "height": 523
+      },
+      "frameBounds": {
+        "width": 785,
+        "height": 530
+      },
+      "normalized": true
+    },
+    "bodyScale": 0.5154639175257731,
+    "pairedEnemyRoot": {
+      "x": 590,
+      "y": 510
+    },
+    "animationId": "d6fa5700-ffab-4bc5-95f8-1e1fbdde3409",
+    "savedOriginalFrames": [
+      1,
+      13,
+      25,
+      31,
+      37,
+      43,
+      79,
+      85
+    ],
+    "playbackSequence": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      0
+    ],
+    "contactFrame": 3,
+    "nativePixels": true,
+    "reviewStatus": "candidate: in-game visual QA pending"
+  }
+}

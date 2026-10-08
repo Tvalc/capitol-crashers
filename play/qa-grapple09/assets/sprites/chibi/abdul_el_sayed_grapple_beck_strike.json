@@ -1,0 +1,259 @@
+{
+  "frames": {
+    "abdul_el-sayed_grapple_beck_strike_000.png": {
+      "frame": {
+        "x": 2,
+        "y": 2,
+        "w": 668,
+        "h": 667
+      },
+      "rotated": false,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 6,
+        "w": 668,
+        "h": 667
+      },
+      "sourceSize": {
+        "w": 694,
+        "h": 674
+      },
+      "duration": 250
+    },
+    "abdul_el-sayed_grapple_beck_strike_001.png": {
+      "frame": {
+        "x": 674,
+        "y": 2,
+        "w": 668,
+        "h": 667
+      },
+      "rotated": false,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 6,
+        "w": 668,
+        "h": 667
+      },
+      "sourceSize": {
+        "w": 694,
+        "h": 674
+      },
+      "duration": 250
+    },
+    "abdul_el-sayed_grapple_beck_strike_002.png": {
+      "frame": {
+        "x": 1346,
+        "y": 2,
+        "w": 668,
+        "h": 667
+      },
+      "rotated": false,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 6,
+        "w": 668,
+        "h": 667
+      },
+      "sourceSize": {
+        "w": 694,
+        "h": 674
+      },
+      "duration": 250
+    },
+    "abdul_el-sayed_grapple_beck_strike_003.png": {
+      "frame": {
+        "x": 2,
+        "y": 673,
+        "w": 668,
+        "h": 667
+      },
+      "rotated": false,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 6,
+        "w": 668,
+        "h": 667
+      },
+      "sourceSize": {
+        "w": 694,
+        "h": 674
+      },
+      "duration": 250
+    },
+    "abdul_el-sayed_grapple_beck_strike_004.png": {
+      "frame": {
+        "x": 674,
+        "y": 673,
+        "w": 668,
+        "h": 667
+      },
+      "rotated": false,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 6,
+        "w": 668,
+        "h": 667
+      },
+      "sourceSize": {
+        "w": 694,
+        "h": 674
+      },
+      "duration": 250
+    },
+    "abdul_el-sayed_grapple_beck_strike_005.png": {
+      "frame": {
+        "x": 1346,
+        "y": 673,
+        "w": 668,
+        "h": 667
+      },
+      "rotated": false,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 6,
+        "w": 668,
+        "h": 667
+      },
+      "sourceSize": {
+        "w": 694,
+        "h": 674
+      },
+      "duration": 250
+    },
+    "abdul_el-sayed_grapple_beck_strike_006.png": {
+      "frame": {
+        "x": 2,
+        "y": 1344,
+        "w": 668,
+        "h": 667
+      },
+      "rotated": false,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 6,
+        "w": 668,
+        "h": 667
+      },
+      "sourceSize": {
+        "w": 694,
+        "h": 674
+      },
+      "duration": 250
+    },
+    "abdul_el-sayed_grapple_beck_strike_007.png": {
+      "frame": {
+        "x": 674,
+        "y": 1344,
+        "w": 668,
+        "h": 667
+      },
+      "rotated": false,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 6,
+        "w": 668,
+        "h": 667
+      },
+      "sourceSize": {
+        "w": 694,
+        "h": 674
+      },
+      "duration": 250
+    },
+    "abdul_el-sayed_grapple_beck_strike_008.png": {
+      "frame": {
+        "x": 1346,
+        "y": 1344,
+        "w": 668,
+        "h": 667
+      },
+      "rotated": false,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 6,
+        "w": 668,
+        "h": 667
+      },
+      "sourceSize": {
+        "w": 694,
+        "h": 674
+      },
+      "duration": 250
+    }
+  },
+  "meta": {
+    "app": "MAKKO Sprite Studio",
+    "version": "1.0.0",
+    "image": "abdul_el_sayed_grapple_beck_strike.webp",
+    "format": "RGBA8888",
+    "size": {
+      "w": 2016,
+      "h": 2013
+    },
+    "scale": "1",
+    "frameTags": [
+      {
+        "name": "animation",
+        "from": 0,
+        "to": 8,
+        "direction": "forward"
+      }
+    ],
+    "anchor": {
+      "x": 200,
+      "y": 648
+    },
+    "referenceAlignment": {
+      "referenceBounds": {
+        "width": 660,
+        "height": 665
+      },
+      "frameBounds": {
+        "width": 694,
+        "height": 674
+      },
+      "normalized": true
+    },
+    "bodyScale": 0.4098360655737705,
+    "pairedEnemyRoot": {
+      "x": 525,
+      "y": 648
+    },
+    "animationId": "99a88348-d963-4d9a-9f40-99064dfc169e",
+    "savedOriginalFrames": [
+      1,
+      7,
+      13,
+      19,
+      25,
+      37,
+      43,
+      55,
+      79
+    ],
+    "playbackSequence": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      0
+    ],
+    "contactFrame": 3,
+    "nativePixels": true,
+    "reviewStatus": "candidate: in-game visual QA pending"
+  }
+}

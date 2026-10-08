@@ -1,0 +1,239 @@
+{
+  "frames": {
+    "abdul_el-sayed_grapple_cruz_strike_000.png": {
+      "frame": {
+        "x": 2,
+        "y": 2,
+        "w": 787,
+        "h": 557
+      },
+      "rotated": false,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 3,
+        "y": 4,
+        "w": 787,
+        "h": 557
+      },
+      "sourceSize": {
+        "w": 795,
+        "h": 561
+      },
+      "duration": 250
+    },
+    "abdul_el-sayed_grapple_cruz_strike_001.png": {
+      "frame": {
+        "x": 793,
+        "y": 2,
+        "w": 787,
+        "h": 557
+      },
+      "rotated": false,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 3,
+        "y": 4,
+        "w": 787,
+        "h": 557
+      },
+      "sourceSize": {
+        "w": 795,
+        "h": 561
+      },
+      "duration": 250
+    },
+    "abdul_el-sayed_grapple_cruz_strike_002.png": {
+      "frame": {
+        "x": 1584,
+        "y": 2,
+        "w": 787,
+        "h": 557
+      },
+      "rotated": false,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 3,
+        "y": 4,
+        "w": 787,
+        "h": 557
+      },
+      "sourceSize": {
+        "w": 795,
+        "h": 561
+      },
+      "duration": 250
+    },
+    "abdul_el-sayed_grapple_cruz_strike_003.png": {
+      "frame": {
+        "x": 2,
+        "y": 563,
+        "w": 787,
+        "h": 557
+      },
+      "rotated": false,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 3,
+        "y": 4,
+        "w": 787,
+        "h": 557
+      },
+      "sourceSize": {
+        "w": 795,
+        "h": 561
+      },
+      "duration": 250
+    },
+    "abdul_el-sayed_grapple_cruz_strike_004.png": {
+      "frame": {
+        "x": 793,
+        "y": 563,
+        "w": 787,
+        "h": 557
+      },
+      "rotated": false,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 3,
+        "y": 4,
+        "w": 787,
+        "h": 557
+      },
+      "sourceSize": {
+        "w": 795,
+        "h": 561
+      },
+      "duration": 250
+    },
+    "abdul_el-sayed_grapple_cruz_strike_005.png": {
+      "frame": {
+        "x": 1584,
+        "y": 563,
+        "w": 787,
+        "h": 557
+      },
+      "rotated": false,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 3,
+        "y": 4,
+        "w": 787,
+        "h": 557
+      },
+      "sourceSize": {
+        "w": 795,
+        "h": 561
+      },
+      "duration": 250
+    },
+    "abdul_el-sayed_grapple_cruz_strike_006.png": {
+      "frame": {
+        "x": 2,
+        "y": 1124,
+        "w": 787,
+        "h": 557
+      },
+      "rotated": false,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 3,
+        "y": 4,
+        "w": 787,
+        "h": 557
+      },
+      "sourceSize": {
+        "w": 795,
+        "h": 561
+      },
+      "duration": 250
+    },
+    "abdul_el-sayed_grapple_cruz_strike_007.png": {
+      "frame": {
+        "x": 793,
+        "y": 1124,
+        "w": 787,
+        "h": 557
+      },
+      "rotated": false,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 3,
+        "y": 4,
+        "w": 787,
+        "h": 557
+      },
+      "sourceSize": {
+        "w": 795,
+        "h": 561
+      },
+      "duration": 250
+    }
+  },
+  "meta": {
+    "app": "MAKKO Sprite Studio",
+    "version": "1.0.0",
+    "image": "abdul_el_sayed_grapple_cruz_strike.webp",
+    "format": "RGBA8888",
+    "size": {
+      "w": 2373,
+      "h": 1683
+    },
+    "scale": "1",
+    "frameTags": [
+      {
+        "name": "animation",
+        "from": 0,
+        "to": 7,
+        "direction": "forward"
+      }
+    ],
+    "anchor": {
+      "x": 160,
+      "y": 556
+    },
+    "referenceAlignment": {
+      "referenceBounds": {
+        "width": 781,
+        "height": 555
+      },
+      "frameBounds": {
+        "width": 795,
+        "height": 561
+      },
+      "normalized": true
+    },
+    "bodyScale": 0.5,
+    "pairedEnemyRoot": {
+      "x": 550,
+      "y": 556
+    },
+    "animationId": "3c433d80-9914-40eb-9885-e6061283c71f",
+    "savedOriginalFrames": [
+      1,
+      7,
+      13,
+      25,
+      37,
+      43,
+      49,
+      55
+    ],
+    "playbackSequence": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      3,
+      2,
+      1,
+      0
+    ],
+    "contactFrame": 4,
+    "nativePixels": true,
+    "reviewStatus": "candidate: in-game visual QA pending"
+  }
+}
