@@ -1,0 +1,196 @@
+{
+  "frames": {
+    "zohran_mamdani_mamdani_cruz_connected_knee_6f_native_000.webp": {
+      "frame": {
+        "x": 2,
+        "y": 2,
+        "w": 814,
+        "h": 636
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 814,
+        "h": 636
+      },
+      "sourceSize": {
+        "w": 814,
+        "h": 636
+      },
+      "duration": 42
+    },
+    "zohran_mamdani_mamdani_cruz_connected_knee_6f_native_001.webp": {
+      "frame": {
+        "x": 820,
+        "y": 2,
+        "w": 814,
+        "h": 636
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 814,
+        "h": 636
+      },
+      "sourceSize": {
+        "w": 814,
+        "h": 636
+      },
+      "duration": 42
+    },
+    "zohran_mamdani_mamdani_cruz_connected_knee_6f_native_002.webp": {
+      "frame": {
+        "x": 1638,
+        "y": 2,
+        "w": 814,
+        "h": 636
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 814,
+        "h": 636
+      },
+      "sourceSize": {
+        "w": 814,
+        "h": 636
+      },
+      "duration": 42
+    },
+    "zohran_mamdani_mamdani_cruz_connected_knee_6f_native_003.webp": {
+      "frame": {
+        "x": 2,
+        "y": 642,
+        "w": 814,
+        "h": 636
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 814,
+        "h": 636
+      },
+      "sourceSize": {
+        "w": 814,
+        "h": 636
+      },
+      "duration": 42
+    },
+    "zohran_mamdani_mamdani_cruz_connected_knee_6f_native_004.webp": {
+      "frame": {
+        "x": 820,
+        "y": 642,
+        "w": 814,
+        "h": 636
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 814,
+        "h": 636
+      },
+      "sourceSize": {
+        "w": 814,
+        "h": 636
+      },
+      "duration": 42
+    },
+    "zohran_mamdani_mamdani_cruz_connected_knee_6f_native_005.webp": {
+      "frame": {
+        "x": 1638,
+        "y": 642,
+        "w": 814,
+        "h": 636
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 814,
+        "h": 636
+      },
+      "sourceSize": {
+        "w": 814,
+        "h": 636
+      },
+      "duration": 42
+    }
+  },
+  "meta": {
+    "app": "MAKKO Sprite Studio",
+    "version": "1.0.0",
+    "image": "zohran_mamdani_grapple_cruz_strike.webp",
+    "format": "RGBA8888",
+    "size": {
+      "w": 2454,
+      "h": 1280
+    },
+    "scale": "1",
+    "frameTags": [
+      {
+        "name": "animation",
+        "from": 0,
+        "to": 5,
+        "direction": "forward"
+      }
+    ],
+    "anchor": {
+      "x": 170,
+      "y": 630
+    },
+    "referenceAlignment": {
+      "referenceBounds": {
+        "width": 746,
+        "height": 630
+      },
+      "frameBounds": {
+        "width": 814,
+        "height": 636
+      },
+      "normalized": true
+    },
+    "pairedEnemyRoot": {
+      "x": 570,
+      "y": 630
+    },
+    "bodyScale": 0.42735042735042733,
+    "holdFrame": 0,
+    "animationId": "254835ca-d09a-41e7-8924-8d9a3cc941ba",
+    "nativePixels": true,
+    "impactZ": 80,
+    "impactXOffset": 30,
+    "savedOriginalFrames": [
+      1,
+      9,
+      33,
+      41,
+      49,
+      57
+    ],
+    "playbackSequence": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      3,
+      2,
+      1,
+      0
+    ],
+    "contactFrame": 3,
+    "reviewStatus": "verified: six native frames, premature leg reactions removed; actual hold/contact/recovery mc-six-game-board.jpg"
+  }
+}

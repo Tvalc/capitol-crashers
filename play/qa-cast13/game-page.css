@@ -1,0 +1,44 @@
+/* One game surface, with quiet letterboxing rather than a second street. */
+html, body, body:has(.stage) {
+  background: #090d14 !important;
+}
+body { padding: 0; min-height: 100dvh; }
+.stage { width: 100%; margin: 0; border: 0; box-shadow: none; }
+.stage canvas { border: 0; border-radius: 0; box-shadow: none; background: #090d14; }
+.topbar { width: 100%; padding: 6px 16px; min-height: 60px; }
+.site-foot { display: none; }
+@media (min-width: 761px) {
+  body { height: 100dvh; overflow: hidden; }
+  .stage {
+    flex: 1; min-height: 0; display: flex;
+    align-items: center; justify-content: center;
+  }
+  .stage canvas { width: 100%; height: 100%; object-fit: contain; }
+  .session-controls:not(#practice-controls) {
+    position: absolute; z-index: 10; top: 6px; left: 32%;
+    margin: 0; padding: 0;
+  }
+  #practice-controls { margin: 4px auto; }
+  .card { max-height: calc(100% - 16px); overflow-y: auto; }
+}
+@media (max-width: 760px) {
+  .topbar { min-height: 40px; }
+}
+
+/* Street signage authored in Makko, scaled by borders rather than stretched frames. */
+.card {
+ border:20px solid transparent!important;
+ border-image:url('../art/chibi/street-panel.webp') 90 fill / 20px / 0 stretch!important;
+ padding:18px 24px!important;
+}
+button,.patreon,.fighter,.play {
+ background:none!important;
+ border:12px solid transparent!important;
+ border-image:url('../art/chibi/street-panel.webp') 90 fill / 12px / 0 stretch!important;
+ color:#f4efe4!important;
+ padding:3px 14px!important;
+ white-space:normal!important;
+}
+.card button,.card .fighter,.card .fighter * {color:#f4efe4!important;}
+.fighter.on {filter:brightness(1.22);outline:3px solid #ef8b35;outline-offset:3px;}
+.touch-btn {border-image:url('../art/chibi/street-panel.webp') 90 fill / 12px / 0 stretch!important;color:#f4efe4!important;}

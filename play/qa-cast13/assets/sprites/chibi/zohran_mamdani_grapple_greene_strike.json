@@ -1,0 +1,195 @@
+{
+  "frames": {
+    "zohran_mamdani_paired_greene_hold_hit_6f_native_000.webp": {
+      "frame": {
+        "x": 2,
+        "y": 2,
+        "w": 748,
+        "h": 652
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 748,
+        "h": 652
+      },
+      "sourceSize": {
+        "w": 748,
+        "h": 652
+      },
+      "duration": 42
+    },
+    "zohran_mamdani_paired_greene_hold_hit_6f_native_001.webp": {
+      "frame": {
+        "x": 754,
+        "y": 2,
+        "w": 748,
+        "h": 652
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 748,
+        "h": 652
+      },
+      "sourceSize": {
+        "w": 748,
+        "h": 652
+      },
+      "duration": 42
+    },
+    "zohran_mamdani_paired_greene_hold_hit_6f_native_002.webp": {
+      "frame": {
+        "x": 1506,
+        "y": 2,
+        "w": 748,
+        "h": 652
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 748,
+        "h": 652
+      },
+      "sourceSize": {
+        "w": 748,
+        "h": 652
+      },
+      "duration": 42
+    },
+    "zohran_mamdani_paired_greene_hold_hit_6f_native_003.webp": {
+      "frame": {
+        "x": 2,
+        "y": 658,
+        "w": 748,
+        "h": 652
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 748,
+        "h": 652
+      },
+      "sourceSize": {
+        "w": 748,
+        "h": 652
+      },
+      "duration": 42
+    },
+    "zohran_mamdani_paired_greene_hold_hit_6f_native_004.webp": {
+      "frame": {
+        "x": 754,
+        "y": 658,
+        "w": 748,
+        "h": 652
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 748,
+        "h": 652
+      },
+      "sourceSize": {
+        "w": 748,
+        "h": 652
+      },
+      "duration": 42
+    },
+    "zohran_mamdani_paired_greene_hold_hit_6f_native_005.webp": {
+      "frame": {
+        "x": 1506,
+        "y": 658,
+        "w": 748,
+        "h": 652
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 748,
+        "h": 652
+      },
+      "sourceSize": {
+        "w": 748,
+        "h": 652
+      },
+      "duration": 42
+    }
+  },
+  "meta": {
+    "app": "MAKKO Sprite Studio",
+    "version": "1.0.0",
+    "image": "zohran_mamdani_grapple_greene_strike.webp",
+    "format": "RGBA8888",
+    "size": {
+      "w": 2256,
+      "h": 1312
+    },
+    "scale": "1",
+    "frameTags": [
+      {
+        "name": "animation",
+        "from": 0,
+        "to": 5,
+        "direction": "forward"
+      }
+    ],
+    "anchor": {
+      "x": 160,
+      "y": 645
+    },
+    "referenceAlignment": {
+      "referenceBounds": {
+        "width": 743,
+        "height": 648
+      },
+      "frameBounds": {
+        "width": 748,
+        "height": 652
+      },
+      "normalized": true
+    },
+    "pairedEnemyRoot": {
+      "x": 580,
+      "y": 645
+    },
+    "bodyScale": 0.390625,
+    "holdFrame": 0,
+    "animationId": "3ddb9586-b292-43b2-92cc-7040ac08ba52",
+    "savedOriginalFrames": [
+      1,
+      9,
+      17,
+      25,
+      41,
+      57
+    ],
+    "playbackSequence": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      4,
+      3,
+      2,
+      1,
+      0
+    ],
+    "contactFrame": 3,
+    "nativePixels": true,
+    "reviewStatus": "verified: connected hold, strike and recovery in mg-recovery-board.jpg; identity close to baseline"
+  }
+}

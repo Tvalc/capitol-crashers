@@ -1,0 +1,216 @@
+{
+  "frames": {
+    "jd_vance_mamdani_sad_heavy_revision_7f_native_000.webp": {
+      "frame": {
+        "x": 2,
+        "y": 2,
+        "w": 681,
+        "h": 808
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 681,
+        "h": 808
+      },
+      "sourceSize": {
+        "w": 681,
+        "h": 808
+      },
+      "duration": 42
+    },
+    "jd_vance_mamdani_sad_heavy_revision_7f_native_001.webp": {
+      "frame": {
+        "x": 687,
+        "y": 2,
+        "w": 681,
+        "h": 808
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 681,
+        "h": 808
+      },
+      "sourceSize": {
+        "w": 681,
+        "h": 808
+      },
+      "duration": 42
+    },
+    "jd_vance_mamdani_sad_heavy_revision_7f_native_002.webp": {
+      "frame": {
+        "x": 1372,
+        "y": 2,
+        "w": 681,
+        "h": 808
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 681,
+        "h": 808
+      },
+      "sourceSize": {
+        "w": 681,
+        "h": 808
+      },
+      "duration": 42
+    },
+    "jd_vance_mamdani_sad_heavy_revision_7f_native_003.webp": {
+      "frame": {
+        "x": 2,
+        "y": 814,
+        "w": 681,
+        "h": 808
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 681,
+        "h": 808
+      },
+      "sourceSize": {
+        "w": 681,
+        "h": 808
+      },
+      "duration": 42
+    },
+    "jd_vance_mamdani_sad_heavy_revision_7f_native_004.webp": {
+      "frame": {
+        "x": 687,
+        "y": 814,
+        "w": 681,
+        "h": 808
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 681,
+        "h": 808
+      },
+      "sourceSize": {
+        "w": 681,
+        "h": 808
+      },
+      "duration": 42
+    },
+    "jd_vance_mamdani_sad_heavy_revision_7f_native_005.webp": {
+      "frame": {
+        "x": 1372,
+        "y": 814,
+        "w": 681,
+        "h": 808
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 681,
+        "h": 808
+      },
+      "sourceSize": {
+        "w": 681,
+        "h": 808
+      },
+      "duration": 42
+    },
+    "jd_vance_mamdani_sad_heavy_revision_7f_native_006.webp": {
+      "frame": {
+        "x": 2,
+        "y": 1626,
+        "w": 681,
+        "h": 808
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 681,
+        "h": 808
+      },
+      "sourceSize": {
+        "w": 681,
+        "h": 808
+      },
+      "duration": 42
+    }
+  },
+  "meta": {
+    "app": "MAKKO Sprite Studio",
+    "version": "1.0.0",
+    "image": "zohran_mamdani_grapple_vance_worried_strike.webp",
+    "format": "RGBA8888",
+    "size": {
+      "w": 2055,
+      "h": 2436
+    },
+    "scale": "1",
+    "frameTags": [
+      {
+        "name": "animation",
+        "from": 0,
+        "to": 6,
+        "direction": "forward"
+      }
+    ],
+    "anchor": {
+      "x": 180,
+      "y": 790
+    },
+    "referenceAlignment": {
+      "referenceBounds": {
+        "width": 626,
+        "height": 789
+      },
+      "frameBounds": {
+        "width": 681,
+        "height": 808
+      },
+      "normalized": true
+    },
+    "pairedEnemyRoot": {
+      "x": 525,
+      "y": 790
+    },
+    "bodyScale": 0.32051282051282054,
+    "holdFrame": 6,
+    "animationId": "093d93e8-fab7-4260-b735-ade73b413100",
+    "savedOriginalFrames": [
+      9,
+      17,
+      25,
+      33,
+      41,
+      49,
+      72
+    ],
+    "playbackSequence": [
+      6,
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6
+    ],
+    "contactFrame": 2,
+    "nativePixels": true,
+    "reviewStatus": "verified: actual hold/contact/recovery and normalized idle transition in mv-scale-board.jpg; approved identity retained",
+    "impactZ": 70,
+    "impactXOffset": 45
+  }
+}

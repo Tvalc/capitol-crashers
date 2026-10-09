@@ -1,0 +1,147 @@
+{
+  "frames": {
+    "abdul_el-sayed_grapple_greene_strike_000.png": {
+      "frame": {
+        "x": 2,
+        "y": 2,
+        "w": 664,
+        "h": 561
+      },
+      "rotated": false,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 14,
+        "y": 78,
+        "w": 664,
+        "h": 561
+      },
+      "sourceSize": {
+        "w": 823,
+        "h": 639
+      },
+      "duration": 250
+    },
+    "abdul_el-sayed_grapple_greene_strike_001.png": {
+      "frame": {
+        "x": 670,
+        "y": 2,
+        "w": 664,
+        "h": 561
+      },
+      "rotated": false,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 14,
+        "y": 78,
+        "w": 664,
+        "h": 561
+      },
+      "sourceSize": {
+        "w": 823,
+        "h": 639
+      },
+      "duration": 250
+    },
+    "abdul_el-sayed_grapple_greene_strike_002.png": {
+      "frame": {
+        "x": 1338,
+        "y": 2,
+        "w": 664,
+        "h": 561
+      },
+      "rotated": false,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 14,
+        "y": 78,
+        "w": 664,
+        "h": 561
+      },
+      "sourceSize": {
+        "w": 823,
+        "h": 639
+      },
+      "duration": 250
+    },
+    "abdul_el-sayed_grapple_greene_strike_003.png": {
+      "frame": {
+        "x": 2,
+        "y": 567,
+        "w": 664,
+        "h": 561
+      },
+      "rotated": false,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 14,
+        "y": 78,
+        "w": 664,
+        "h": 561
+      },
+      "sourceSize": {
+        "w": 823,
+        "h": 639
+      },
+      "duration": 250
+    }
+  },
+  "meta": {
+    "app": "MAKKO Sprite Studio",
+    "version": "1.0.0",
+    "image": "abdul_el_sayed_grapple_greene_strike.webp",
+    "format": "RGBA8888",
+    "size": {
+      "w": 2004,
+      "h": 1130
+    },
+    "scale": "1",
+    "frameTags": [
+      {
+        "name": "animation",
+        "from": 0,
+        "to": 3,
+        "direction": "forward"
+      }
+    ],
+    "anchor": {
+      "x": 210,
+      "y": 620
+    },
+    "referenceAlignment": {
+      "referenceBounds": {
+        "width": 658,
+        "height": 559
+      },
+      "frameBounds": {
+        "width": 823,
+        "height": 639
+      },
+      "normalized": true
+    },
+    "bodyScale": 0.45454545454545453,
+    "pairedEnemyRoot": {
+      "x": 550,
+      "y": 620
+    },
+    "animationId": "7d874bb3-6bb5-47b1-9a6d-e60b206f9bcb",
+    "savedOriginalFrames": [
+      1,
+      7,
+      13,
+      31
+    ],
+    "playbackSequence": [
+      0,
+      1,
+      2,
+      3,
+      3,
+      2,
+      1,
+      0
+    ],
+    "contactFrame": 3,
+    "nativePixels": true,
+    "reviewStatus": "verified: actual-game hold, held-hit and recovery; identity comparison captured 2026-10-09"
+  }
+}

@@ -1,0 +1,216 @@
+{
+  "frames": {
+    "pete_hegseth_mamdani_transformed_compact_7f_native_000.webp": {
+      "frame": {
+        "x": 2,
+        "y": 2,
+        "w": 686,
+        "h": 710
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 686,
+        "h": 710
+      },
+      "sourceSize": {
+        "w": 686,
+        "h": 710
+      },
+      "duration": 42
+    },
+    "pete_hegseth_mamdani_transformed_compact_7f_native_001.webp": {
+      "frame": {
+        "x": 692,
+        "y": 2,
+        "w": 686,
+        "h": 710
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 686,
+        "h": 710
+      },
+      "sourceSize": {
+        "w": 686,
+        "h": 710
+      },
+      "duration": 42
+    },
+    "pete_hegseth_mamdani_transformed_compact_7f_native_002.webp": {
+      "frame": {
+        "x": 1382,
+        "y": 2,
+        "w": 686,
+        "h": 710
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 686,
+        "h": 710
+      },
+      "sourceSize": {
+        "w": 686,
+        "h": 710
+      },
+      "duration": 42
+    },
+    "pete_hegseth_mamdani_transformed_compact_7f_native_003.webp": {
+      "frame": {
+        "x": 2,
+        "y": 716,
+        "w": 686,
+        "h": 710
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 686,
+        "h": 710
+      },
+      "sourceSize": {
+        "w": 686,
+        "h": 710
+      },
+      "duration": 42
+    },
+    "pete_hegseth_mamdani_transformed_compact_7f_native_004.webp": {
+      "frame": {
+        "x": 692,
+        "y": 716,
+        "w": 686,
+        "h": 710
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 686,
+        "h": 710
+      },
+      "sourceSize": {
+        "w": 686,
+        "h": 710
+      },
+      "duration": 42
+    },
+    "pete_hegseth_mamdani_transformed_compact_7f_native_005.webp": {
+      "frame": {
+        "x": 1382,
+        "y": 716,
+        "w": 686,
+        "h": 710
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 686,
+        "h": 710
+      },
+      "sourceSize": {
+        "w": 686,
+        "h": 710
+      },
+      "duration": 42
+    },
+    "pete_hegseth_mamdani_transformed_compact_7f_native_006.webp": {
+      "frame": {
+        "x": 2,
+        "y": 1430,
+        "w": 686,
+        "h": 710
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 686,
+        "h": 710
+      },
+      "sourceSize": {
+        "w": 686,
+        "h": 710
+      },
+      "duration": 42
+    }
+  },
+  "meta": {
+    "app": "MAKKO Sprite Studio",
+    "version": "1.0.0",
+    "image": "zohran_mamdani_grapple_pete_ww_strike.webp",
+    "format": "RGBA8888",
+    "size": {
+      "w": 2070,
+      "h": 2142
+    },
+    "scale": "1",
+    "frameTags": [
+      {
+        "name": "animation",
+        "from": 0,
+        "to": 6,
+        "direction": "forward"
+      }
+    ],
+    "anchor": {
+      "x": 170,
+      "y": 700
+    },
+    "referenceAlignment": {
+      "referenceBounds": {
+        "width": 648,
+        "height": 703
+      },
+      "frameBounds": {
+        "width": 686,
+        "height": 710
+      },
+      "normalized": true
+    },
+    "pairedEnemyRoot": {
+      "x": 520,
+      "y": 700
+    },
+    "bodyScale": 0.35714285714285715,
+    "holdFrame": 6,
+    "animationId": "9b48ff98-8105-47a1-bee9-f83c5e8576ec",
+    "savedOriginalFrames": [
+      9,
+      17,
+      25,
+      41,
+      49,
+      65,
+      72
+    ],
+    "playbackSequence": [
+      6,
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6
+    ],
+    "contactFrame": 2,
+    "nativePixels": true,
+    "reviewStatus": "verified: actual-game hold, held-hit and recovery; identity comparison captured 2026-10-09",
+    "impactZ": 85,
+    "impactXOffset": 20
+  }
+}

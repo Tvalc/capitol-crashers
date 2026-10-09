@@ -1,0 +1,190 @@
+{
+  "frames": {
+    "zohran_mamdani_zohran_mamdani_grapple_trump_strike_000.png": {
+      "frame": {
+        "x": 2,
+        "y": 2,
+        "w": 714,
+        "h": 623
+      },
+      "rotated": false,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 1,
+        "y": 1,
+        "w": 714,
+        "h": 623
+      },
+      "sourceSize": {
+        "w": 715,
+        "h": 624
+      },
+      "duration": 250
+    },
+    "zohran_mamdani_zohran_mamdani_grapple_trump_strike_001.png": {
+      "frame": {
+        "x": 720,
+        "y": 2,
+        "w": 714,
+        "h": 623
+      },
+      "rotated": false,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 1,
+        "y": 1,
+        "w": 714,
+        "h": 623
+      },
+      "sourceSize": {
+        "w": 715,
+        "h": 624
+      },
+      "duration": 250
+    },
+    "zohran_mamdani_zohran_mamdani_grapple_trump_strike_002.png": {
+      "frame": {
+        "x": 1438,
+        "y": 2,
+        "w": 714,
+        "h": 623
+      },
+      "rotated": false,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 1,
+        "y": 1,
+        "w": 714,
+        "h": 623
+      },
+      "sourceSize": {
+        "w": 715,
+        "h": 624
+      },
+      "duration": 250
+    },
+    "zohran_mamdani_zohran_mamdani_grapple_trump_strike_003.png": {
+      "frame": {
+        "x": 2,
+        "y": 629,
+        "w": 714,
+        "h": 623
+      },
+      "rotated": false,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 1,
+        "y": 1,
+        "w": 714,
+        "h": 623
+      },
+      "sourceSize": {
+        "w": 715,
+        "h": 624
+      },
+      "duration": 250
+    },
+    "zohran_mamdani_zohran_mamdani_grapple_trump_strike_004.png": {
+      "frame": {
+        "x": 720,
+        "y": 629,
+        "w": 714,
+        "h": 623
+      },
+      "rotated": false,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 1,
+        "y": 1,
+        "w": 714,
+        "h": 623
+      },
+      "sourceSize": {
+        "w": 715,
+        "h": 624
+      },
+      "duration": 250
+    },
+    "zohran_mamdani_zohran_mamdani_grapple_trump_strike_005.png": {
+      "frame": {
+        "x": 1438,
+        "y": 629,
+        "w": 714,
+        "h": 623
+      },
+      "rotated": false,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 1,
+        "y": 1,
+        "w": 714,
+        "h": 623
+      },
+      "sourceSize": {
+        "w": 715,
+        "h": 624
+      },
+      "duration": 250
+    }
+  },
+  "meta": {
+    "app": "MAKKO Sprite Studio",
+    "version": "1.0.0",
+    "image": "zohran_mamdani_grapple_trump_strike.webp",
+    "format": "RGBA8888",
+    "size": {
+      "w": 2154,
+      "h": 1254
+    },
+    "scale": "1",
+    "frameTags": [
+      {
+        "name": "animation",
+        "from": 0,
+        "to": 5,
+        "direction": "forward"
+      }
+    ],
+    "anchor": {
+      "x": 190,
+      "y": 602
+    },
+    "referenceAlignment": {
+      "referenceBounds": {
+        "width": 702,
+        "height": 621
+      },
+      "frameBounds": {
+        "width": 715,
+        "height": 624
+      },
+      "normalized": true
+    },
+    "bodyScale": 0.43252595155709345,
+    "pairedEnemyRoot": {
+      "x": 540,
+      "y": 602
+    },
+    "animationId": "71a99325-0733-4d4e-9149-143c6a0f7b96",
+    "savedOriginalFrames": [
+      1,
+      7,
+      13,
+      19,
+      25,
+      31
+    ],
+    "playbackSequence": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      0
+    ],
+    "contactFrame": 2,
+    "nativePixels": true,
+    "reviewStatus": "verified: actual hold/contact/recovery and normalized idle transition in mt-scale-board.jpg; approved identity retained"
+  }
+}

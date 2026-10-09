@@ -1,0 +1,204 @@
+{
+  "frames": {
+    "pete_hegseth_sayed_normal_paired_strike_6f_native_000.webp": {
+      "frame": {
+        "x": 2,
+        "y": 2,
+        "w": 708,
+        "h": 715
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 708,
+        "h": 715
+      },
+      "sourceSize": {
+        "w": 708,
+        "h": 715
+      },
+      "duration": 42
+    },
+    "pete_hegseth_sayed_normal_paired_strike_6f_native_001.webp": {
+      "frame": {
+        "x": 714,
+        "y": 2,
+        "w": 708,
+        "h": 715
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 708,
+        "h": 715
+      },
+      "sourceSize": {
+        "w": 708,
+        "h": 715
+      },
+      "duration": 42
+    },
+    "pete_hegseth_sayed_normal_paired_strike_6f_native_002.webp": {
+      "frame": {
+        "x": 1426,
+        "y": 2,
+        "w": 708,
+        "h": 715
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 708,
+        "h": 715
+      },
+      "sourceSize": {
+        "w": 708,
+        "h": 715
+      },
+      "duration": 42
+    },
+    "pete_hegseth_sayed_normal_paired_strike_6f_native_003.webp": {
+      "frame": {
+        "x": 2,
+        "y": 721,
+        "w": 708,
+        "h": 715
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 708,
+        "h": 715
+      },
+      "sourceSize": {
+        "w": 708,
+        "h": 715
+      },
+      "duration": 42
+    },
+    "pete_hegseth_sayed_normal_paired_strike_6f_native_004.webp": {
+      "frame": {
+        "x": 714,
+        "y": 721,
+        "w": 708,
+        "h": 715
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 708,
+        "h": 715
+      },
+      "sourceSize": {
+        "w": 708,
+        "h": 715
+      },
+      "duration": 42
+    },
+    "pete_hegseth_sayed_normal_paired_strike_6f_native_005.webp": {
+      "frame": {
+        "x": 1426,
+        "y": 721,
+        "w": 708,
+        "h": 715
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 708,
+        "h": 715
+      },
+      "sourceSize": {
+        "w": 708,
+        "h": 715
+      },
+      "duration": 42
+    }
+  },
+  "meta": {
+    "app": "MAKKO Sprite Studio",
+    "version": "1.0.0",
+    "image": "abdul_el_sayed_grapple_pete_strike.webp",
+    "format": "RGBA8888",
+    "size": {
+      "w": 2136,
+      "h": 1438
+    },
+    "scale": "1",
+    "frameTags": [
+      {
+        "name": "animation",
+        "from": 0,
+        "to": 5,
+        "direction": "forward"
+      }
+    ],
+    "anchor": {
+      "x": 150,
+      "y": 700
+    },
+    "referenceAlignment": {
+      "referenceBounds": {
+        "width": 664,
+        "height": 708
+      },
+      "frameBounds": {
+        "width": 708,
+        "height": 715
+      },
+      "normalized": true
+    },
+    "pairedEnemyRoot": {
+      "x": 540,
+      "y": 700
+    },
+    "bodyScale": 0.36231884057971014,
+    "holdFrame": 5,
+    "animationId": "1f37141b-592f-426f-a071-b39b9b3e3554",
+    "savedOriginalFrames": [
+      9,
+      17,
+      25,
+      33,
+      41,
+      49
+    ],
+    "playbackSequence": [
+      5,
+      0,
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "contactFrame": 3,
+    "nativePixels": true,
+    "reviewStatus": "verified: actual-game hold, held-hit and recovery; identity comparison captured 2026-10-09",
+    "impactZ": 75,
+    "impactXOffset": 25,
+    "paletteCorrection": {
+      "reference": "pete_hegseth_idle.webp",
+      "scope": "pre-transformation opponent face, neck and hands only",
+      "rgbDelta": [
+        8,
+        9,
+        -23
+      ],
+      "alphaAndGeometryPreserved": true,
+      "date": "2026-10-09"
+    }
+  }
+}
