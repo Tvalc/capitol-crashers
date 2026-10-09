@@ -3,12 +3,13 @@
 <h1>Actual installed idle vs. correction18 grapple</h1><p>Idle source compared with the corrected grapple at game scale. Left: idle characters. Right: paired hold.</p><p><label>Grapple frame <input id="frame" type="range" min="0" max="10" value="0"> <output>1 / 11</output></label></p><canvas width="1000" height="450"></canvas>
 <script type="module">
 const c=document.querySelector('canvas'),x=c.getContext('2d');
-async function sheet(n){let d=await(await fetch('assets/sprites/chibi/'+n+'.json?v=correction18')).json(),im=new Image();im.src='assets/sprites/chibi/'+n+'.webp?v=correction18';await im.decode();return {d,im};}
+async function sheet(n){let base=n.includes('grapple')?'assets/sprites/chibi/':'/play/assets/sprites/chibi/';let d=await(await fetch(base+n+'.json?v=correction18')).json(),im=new Image();im.src=base+n+'.webp?v=correction18';await im.decode();return {d,im};}
 const names=['zohran_mamdani_idle','ted_cruz_idle','zohran_mamdani_grapple_cruz_strike'];
 const ss=await Promise.all(names.map(sheet));
 function draw(n=0){x.clearRect(0,0,c.width,c.height);x.font='20px system-ui';x.fillStyle='white';x.fillText('IDLE — source of truth',60,40);x.fillText('GRAPPLE — candidate',560,40);
 ss.forEach(({d,im},i)=>{let f=Object.values(d.frames)[i===2?n:0].frame,s=d.meta.bodyScale||.48,a=d.meta.anchor;let left=i===0?110:i===1?285:610;x.drawImage(im,f.x,f.y,f.w,f.h,left-a.x*s,360-a.y*s,f.w*s,f.h*s);});
 }draw();document.querySelector('#frame').oninput=e=>{let n=+e.target.value;document.querySelector('output').value=(n+1)+' / 11';draw(n);};</script>
+
 
 
 
