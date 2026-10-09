@@ -17,7 +17,7 @@ export function loadEnvironment() {
     const image = new Image(); image.onload = () => { art[key] = image; resolve(); }; image.onerror = () => resolve(); image.src = src;
   }));
   for (const stage of STAGES) for (const layer of stage.layers || []) tryLoad(`${stage.id}-${layer.name}`, `../art/parallax/${stage.id}/${layer.name}.webp?v=1`);
-  for(const name of ["platform","relay","relay-damaged","relay-wreck"]) tryLoad("laser-"+name,`assets/laser23/${name}.webp`);
+  for(const name of ["platform","relay","relay-damaged","relay-wreck"]) tryLoad("laser-"+name,new URL(`../assets/laser23/${name}.webp`,import.meta.url).href);
   tryLoad("icicles", "../art/parallax/icicles.webp?v=1");
   return Promise.all([required, ...optional]);
 }
