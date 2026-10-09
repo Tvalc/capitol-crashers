@@ -5,7 +5,7 @@
         "x": 0,
         "y": 0,
         "w": 496,
-        "h": 352
+        "h": 351
       },
       "rotated": false,
       "trimmed": true,
@@ -13,7 +13,7 @@
         "x": 1,
         "y": -1,
         "w": 496,
-        "h": 352
+        "h": 351
       },
       "sourceSize": {
         "w": 499,
@@ -28,7 +28,7 @@
         "x": 496,
         "y": 0,
         "w": 497,
-        "h": 352
+        "h": 351
       },
       "rotated": false,
       "trimmed": true,
@@ -36,7 +36,7 @@
         "x": 0,
         "y": -1,
         "w": 497,
-        "h": 352
+        "h": 351
       },
       "sourceSize": {
         "w": 499,
@@ -51,6 +51,98 @@
         "x": 993,
         "y": 0,
         "w": 496,
+        "h": 351
+      },
+      "rotated": false,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 1,
+        "y": -1,
+        "w": 496,
+        "h": 351
+      },
+      "sourceSize": {
+        "w": 499,
+        "h": 352
+      },
+      "duration": 250,
+      "grappleScale": 1.0,
+      "groundAnchorY": 348.8627450980392
+    },
+    "abdul_el-sayed_grapple_cruz_strike_003.png": {
+      "frame": {
+        "x": 0,
+        "y": 351,
+        "w": 496,
+        "h": 353
+      },
+      "rotated": false,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 1,
+        "y": -4,
+        "w": 496,
+        "h": 353
+      },
+      "sourceSize": {
+        "w": 499,
+        "h": 352
+      },
+      "duration": 250,
+      "grappleScale": 1.0,
+      "groundAnchorY": 348.8627450980392
+    },
+    "abdul_el-sayed_grapple_cruz_strike_004.png": {
+      "frame": {
+        "x": 496,
+        "y": 351,
+        "w": 497,
+        "h": 353
+      },
+      "rotated": false,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": -4,
+        "w": 497,
+        "h": 353
+      },
+      "sourceSize": {
+        "w": 499,
+        "h": 352
+      },
+      "duration": 250,
+      "grappleScale": 1.0,
+      "groundAnchorY": 348.8627450980392
+    },
+    "abdul_el-sayed_grapple_cruz_strike_005.png": {
+      "frame": {
+        "x": 993,
+        "y": 351,
+        "w": 496,
+        "h": 353
+      },
+      "rotated": false,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 1,
+        "y": -4,
+        "w": 496,
+        "h": 353
+      },
+      "sourceSize": {
+        "w": 499,
+        "h": 352
+      },
+      "duration": 250,
+      "grappleScale": 1.0,
+      "groundAnchorY": 348.8627450980392
+    },
+    "abdul_el-sayed_grapple_cruz_strike_006.png": {
+      "frame": {
+        "x": 0,
+        "y": 704,
+        "w": 496,
         "h": 352
       },
       "rotated": false,
@@ -69,112 +161,20 @@
       "grappleScale": 1.0,
       "groundAnchorY": 348.8627450980392
     },
-    "abdul_el-sayed_grapple_cruz_strike_003.png": {
-      "frame": {
-        "x": 0,
-        "y": 352,
-        "w": 496,
-        "h": 353
-      },
-      "rotated": false,
-      "trimmed": true,
-      "spriteSourceSize": {
-        "x": 1,
-        "y": -2,
-        "w": 496,
-        "h": 353
-      },
-      "sourceSize": {
-        "w": 499,
-        "h": 352
-      },
-      "duration": 250,
-      "grappleScale": 1.0,
-      "groundAnchorY": 348.8627450980392
-    },
-    "abdul_el-sayed_grapple_cruz_strike_004.png": {
-      "frame": {
-        "x": 496,
-        "y": 352,
-        "w": 497,
-        "h": 353
-      },
-      "rotated": false,
-      "trimmed": true,
-      "spriteSourceSize": {
-        "x": 0,
-        "y": -2,
-        "w": 497,
-        "h": 353
-      },
-      "sourceSize": {
-        "w": 499,
-        "h": 352
-      },
-      "duration": 250,
-      "grappleScale": 1.0,
-      "groundAnchorY": 348.8627450980392
-    },
-    "abdul_el-sayed_grapple_cruz_strike_005.png": {
-      "frame": {
-        "x": 993,
-        "y": 352,
-        "w": 496,
-        "h": 353
-      },
-      "rotated": false,
-      "trimmed": true,
-      "spriteSourceSize": {
-        "x": 1,
-        "y": -2,
-        "w": 496,
-        "h": 353
-      },
-      "sourceSize": {
-        "w": 499,
-        "h": 352
-      },
-      "duration": 250,
-      "grappleScale": 1.0,
-      "groundAnchorY": 348.8627450980392
-    },
-    "abdul_el-sayed_grapple_cruz_strike_006.png": {
-      "frame": {
-        "x": 0,
-        "y": 705,
-        "w": 496,
-        "h": 351
-      },
-      "rotated": false,
-      "trimmed": true,
-      "spriteSourceSize": {
-        "x": 1,
-        "y": 1,
-        "w": 496,
-        "h": 351
-      },
-      "sourceSize": {
-        "w": 499,
-        "h": 352
-      },
-      "duration": 250,
-      "grappleScale": 1.0,
-      "groundAnchorY": 348.8627450980392
-    },
     "abdul_el-sayed_grapple_cruz_strike_007.png": {
       "frame": {
         "x": 496,
-        "y": 705,
+        "y": 704,
         "w": 497,
-        "h": 351
+        "h": 352
       },
       "rotated": false,
       "trimmed": true,
       "spriteSourceSize": {
         "x": 0,
-        "y": 1,
+        "y": -1,
         "w": 497,
-        "h": 351
+        "h": 352
       },
       "sourceSize": {
         "w": 499,
@@ -250,11 +250,10 @@
     ],
     "contactFrame": 4,
     "nativePixels": true,
-    "reviewStatus": "candidate: identity correction; in-game review pending",
+    "reviewStatus": "candidate: identity21; runtime alignment checked",
     "identityCorrection": {
-      "source": "built-in image edit of native Makko bake",
-      "version": "correction19",
-      "sourceAnimationId": "3c433d80-9914-40eb-9885-e6061283c71f",
+      "source": "built-in image edit using approved idle reference",
+      "version": "identity21",
       "resampled": false
     },
     "scaleCalibration": {

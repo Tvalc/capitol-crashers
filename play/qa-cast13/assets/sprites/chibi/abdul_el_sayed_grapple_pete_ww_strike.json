@@ -5,15 +5,15 @@
         "x": 0,
         "y": 0,
         "w": 392,
-        "h": 476
+        "h": 475
       },
       "rotated": false,
       "trimmed": false,
       "spriteSourceSize": {
         "x": -1,
-        "y": -23,
+        "y": -24,
         "w": 392,
-        "h": 476
+        "h": 475
       },
       "sourceSize": {
         "w": 389,
@@ -21,22 +21,22 @@
       },
       "duration": 42,
       "grappleScale": 0.96729,
-      "groundAnchorY": 434.1050228310502
+      "groundAnchorY": 433.78082191780817
     },
     "pete_hegseth_sayed_transformed_paired_knee_7f_native_001.webp": {
       "frame": {
         "x": 392,
         "y": 0,
         "w": 391,
-        "h": 476
+        "h": 475
       },
       "rotated": false,
       "trimmed": false,
       "spriteSourceSize": {
         "x": -1,
-        "y": -23,
+        "y": -24,
         "w": 391,
-        "h": 476
+        "h": 475
       },
       "sourceSize": {
         "w": 389,
@@ -44,22 +44,22 @@
       },
       "duration": 42,
       "grappleScale": 0.970866,
-      "groundAnchorY": 434.1050228310502
+      "groundAnchorY": 433.78082191780817
     },
     "pete_hegseth_sayed_transformed_paired_knee_7f_native_002.webp": {
       "frame": {
         "x": 783,
         "y": 0,
         "w": 392,
-        "h": 476
+        "h": 475
       },
       "rotated": false,
       "trimmed": false,
       "spriteSourceSize": {
         "x": -2,
-        "y": -23,
+        "y": -24,
         "w": 392,
-        "h": 476
+        "h": 475
       },
       "sourceSize": {
         "w": 389,
@@ -67,22 +67,22 @@
       },
       "duration": 42,
       "grappleScale": 0.969638,
-      "groundAnchorY": 434.1050228310502
+      "groundAnchorY": 433.78082191780817
     },
     "pete_hegseth_sayed_transformed_paired_knee_7f_native_003.webp": {
       "frame": {
         "x": 0,
-        "y": 476,
+        "y": 475,
         "w": 392,
-        "h": 448
+        "h": 449
       },
       "rotated": false,
       "trimmed": false,
       "spriteSourceSize": {
         "x": -1,
-        "y": -8,
+        "y": -10,
         "w": 392,
-        "h": 448
+        "h": 449
       },
       "sourceSize": {
         "w": 389,
@@ -90,22 +90,22 @@
       },
       "duration": 42,
       "grappleScale": 0.967258,
-      "groundAnchorY": 434.1050228310502
+      "groundAnchorY": 433.78082191780817
     },
     "pete_hegseth_sayed_transformed_paired_knee_7f_native_004.webp": {
       "frame": {
         "x": 392,
-        "y": 476,
+        "y": 475,
         "w": 391,
-        "h": 448
+        "h": 449
       },
       "rotated": false,
       "trimmed": false,
       "spriteSourceSize": {
         "x": -1,
-        "y": -8,
+        "y": -10,
         "w": 391,
-        "h": 448
+        "h": 449
       },
       "sourceSize": {
         "w": 389,
@@ -113,22 +113,22 @@
       },
       "duration": 42,
       "grappleScale": 1.0,
-      "groundAnchorY": 434.1050228310502
+      "groundAnchorY": 433.78082191780817
     },
     "pete_hegseth_sayed_transformed_paired_knee_7f_native_005.webp": {
       "frame": {
         "x": 783,
-        "y": 476,
+        "y": 475,
         "w": 392,
-        "h": 448
+        "h": 449
       },
       "rotated": false,
       "trimmed": false,
       "spriteSourceSize": {
         "x": -2,
-        "y": -8,
+        "y": -10,
         "w": 392,
-        "h": 448
+        "h": 449
       },
       "sourceSize": {
         "w": 389,
@@ -136,22 +136,22 @@
       },
       "duration": 42,
       "grappleScale": 0.954497,
-      "groundAnchorY": 434.1050228310502
+      "groundAnchorY": 433.78082191780817
     },
     "pete_hegseth_sayed_transformed_paired_knee_7f_native_006.webp": {
       "frame": {
         "x": 0,
         "y": 924,
         "w": 392,
-        "h": 415
+        "h": 414
       },
       "rotated": false,
       "trimmed": false,
       "spriteSourceSize": {
         "x": -1,
-        "y": 23,
+        "y": 21,
         "w": 392,
-        "h": 415
+        "h": 414
       },
       "sourceSize": {
         "w": 389,
@@ -159,7 +159,7 @@
       },
       "duration": 42,
       "grappleScale": 1.0,
-      "groundAnchorY": 434.1050228310502
+      "groundAnchorY": 433.78082191780817
     }
   },
   "meta": {
@@ -169,7 +169,7 @@
     "format": "RGBA8888",
     "size": {
       "w": 1175,
-      "h": 1339
+      "h": 1338
     },
     "scale": "1",
     "frameTags": [
@@ -182,7 +182,7 @@
     ],
     "anchor": {
       "x": 91.796875,
-      "y": 434.1050228310502
+      "y": 433.78082191780817
     },
     "referenceAlignment": {
       "referenceBounds": {
@@ -197,7 +197,7 @@
     },
     "pairedEnemyRoot": {
       "x": 299.86979166666663,
-      "y": 434.1050228310502
+      "y": 433.78082191780817
     },
     "bodyScale": 0.6086318775461173,
     "holdFrame": 6,
@@ -223,13 +223,12 @@
     ],
     "contactFrame": 3,
     "nativePixels": true,
-    "reviewStatus": "candidate: identity correction; in-game review pending",
+    "reviewStatus": "candidate: identity21; runtime alignment checked",
     "impactZ": 110,
     "impactXOffset": 35,
     "identityCorrection": {
-      "source": "built-in image edit of native Makko bake",
-      "version": "correction19",
-      "sourceAnimationId": "246b8ce9-7e63-4c4a-93f5-5939dd57e671",
+      "source": "built-in image edit using approved idle reference",
+      "version": "identity21",
       "resampled": false
     },
     "scaleCalibration": {
