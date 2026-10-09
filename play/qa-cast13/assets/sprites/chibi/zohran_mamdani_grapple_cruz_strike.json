@@ -1,128 +1,149 @@
 {
   "frames": {
-    "zohran_mamdani_mamdani_cruz_connected_knee_6f_native_000.webp": {
+    "zohran_mamdani_grapple_cruz_anatomy7_000.webp": {
       "frame": {
         "x": 2,
         "y": 2,
-        "w": 814,
-        "h": 636
+        "w": 1169,
+        "h": 955
       },
       "rotated": false,
       "trimmed": false,
       "spriteSourceSize": {
         "x": 0,
         "y": 0,
-        "w": 814,
-        "h": 636
+        "w": 1169,
+        "h": 955
       },
       "sourceSize": {
-        "w": 814,
-        "h": 636
+        "w": 1169,
+        "h": 955
       },
       "duration": 42
     },
-    "zohran_mamdani_mamdani_cruz_connected_knee_6f_native_001.webp": {
+    "zohran_mamdani_grapple_cruz_anatomy7_001.webp": {
       "frame": {
-        "x": 820,
+        "x": 1175,
         "y": 2,
-        "w": 814,
-        "h": 636
+        "w": 1169,
+        "h": 955
       },
       "rotated": false,
       "trimmed": false,
       "spriteSourceSize": {
         "x": 0,
         "y": 0,
-        "w": 814,
-        "h": 636
+        "w": 1169,
+        "h": 955
       },
       "sourceSize": {
-        "w": 814,
-        "h": 636
+        "w": 1169,
+        "h": 955
       },
       "duration": 42
     },
-    "zohran_mamdani_mamdani_cruz_connected_knee_6f_native_002.webp": {
+    "zohran_mamdani_grapple_cruz_anatomy7_002.webp": {
       "frame": {
-        "x": 1638,
+        "x": 2348,
         "y": 2,
-        "w": 814,
-        "h": 636
+        "w": 1169,
+        "h": 955
       },
       "rotated": false,
       "trimmed": false,
       "spriteSourceSize": {
         "x": 0,
         "y": 0,
-        "w": 814,
-        "h": 636
+        "w": 1169,
+        "h": 955
       },
       "sourceSize": {
-        "w": 814,
-        "h": 636
+        "w": 1169,
+        "h": 955
       },
       "duration": 42
     },
-    "zohran_mamdani_mamdani_cruz_connected_knee_6f_native_003.webp": {
+    "zohran_mamdani_grapple_cruz_anatomy7_003.webp": {
       "frame": {
         "x": 2,
-        "y": 642,
-        "w": 814,
-        "h": 636
+        "y": 961,
+        "w": 1169,
+        "h": 955
       },
       "rotated": false,
       "trimmed": false,
       "spriteSourceSize": {
         "x": 0,
         "y": 0,
-        "w": 814,
-        "h": 636
+        "w": 1169,
+        "h": 955
       },
       "sourceSize": {
-        "w": 814,
-        "h": 636
+        "w": 1169,
+        "h": 955
       },
       "duration": 42
     },
-    "zohran_mamdani_mamdani_cruz_connected_knee_6f_native_004.webp": {
+    "zohran_mamdani_grapple_cruz_anatomy7_004.webp": {
       "frame": {
-        "x": 820,
-        "y": 642,
-        "w": 814,
-        "h": 636
+        "x": 1175,
+        "y": 961,
+        "w": 1169,
+        "h": 955
       },
       "rotated": false,
       "trimmed": false,
       "spriteSourceSize": {
         "x": 0,
         "y": 0,
-        "w": 814,
-        "h": 636
+        "w": 1169,
+        "h": 955
       },
       "sourceSize": {
-        "w": 814,
-        "h": 636
+        "w": 1169,
+        "h": 955
       },
       "duration": 42
     },
-    "zohran_mamdani_mamdani_cruz_connected_knee_6f_native_005.webp": {
+    "zohran_mamdani_grapple_cruz_anatomy7_005.webp": {
       "frame": {
-        "x": 1638,
-        "y": 642,
-        "w": 814,
-        "h": 636
+        "x": 2348,
+        "y": 961,
+        "w": 1169,
+        "h": 955
       },
       "rotated": false,
       "trimmed": false,
       "spriteSourceSize": {
         "x": 0,
         "y": 0,
-        "w": 814,
-        "h": 636
+        "w": 1169,
+        "h": 955
       },
       "sourceSize": {
-        "w": 814,
-        "h": 636
+        "w": 1169,
+        "h": 955
+      },
+      "duration": 42
+    },
+    "zohran_mamdani_grapple_cruz_anatomy7_006.webp": {
+      "frame": {
+        "x": 2,
+        "y": 1920,
+        "w": 1169,
+        "h": 955
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 1169,
+        "h": 955
+      },
+      "sourceSize": {
+        "w": 1169,
+        "h": 955
       },
       "duration": 42
     }
@@ -133,51 +154,40 @@
     "image": "zohran_mamdani_grapple_cruz_strike.webp",
     "format": "RGBA8888",
     "size": {
-      "w": 2454,
-      "h": 1280
+      "w": 3519,
+      "h": 2877
     },
     "scale": "1",
     "frameTags": [
       {
         "name": "animation",
         "from": 0,
-        "to": 5,
+        "to": 6,
         "direction": "forward"
       }
     ],
     "anchor": {
-      "x": 170,
-      "y": 630
+      "x": 390,
+      "y": 942
     },
     "referenceAlignment": {
       "referenceBounds": {
-        "width": 746,
-        "height": 630
+        "width": 980,
+        "height": 935
       },
       "frameBounds": {
-        "width": 814,
-        "height": 636
+        "width": 1169,
+        "height": 955
       },
       "normalized": true
     },
     "pairedEnemyRoot": {
-      "x": 570,
-      "y": 630
+      "x": 890,
+      "y": 942
     },
-    "bodyScale": 0.42735042735042733,
+    "bodyScale": 0.26881720430107525,
     "holdFrame": 0,
-    "animationId": "254835ca-d09a-41e7-8924-8d9a3cc941ba",
-    "nativePixels": true,
-    "impactZ": 80,
-    "impactXOffset": 30,
-    "savedOriginalFrames": [
-      1,
-      9,
-      33,
-      41,
-      49,
-      57
-    ],
+    "contactFrame": 5,
     "playbackSequence": [
       0,
       1,
@@ -185,12 +195,25 @@
       3,
       4,
       5,
+      6,
+      5,
       3,
-      2,
       1,
       0
     ],
-    "contactFrame": 3,
-    "reviewStatus": "verified: six native frames, premature leg reactions removed; actual hold/contact/recovery mc-six-game-board.jpg"
+    "animationId": "77b1afb3-7d8b-403b-8e80-21c6210a93f1",
+    "savedOriginalFrames": [
+      1,
+      3,
+      5,
+      7,
+      9,
+      11,
+      13
+    ],
+    "nativePixels": true,
+    "reviewStatus": "candidate: controlled reference, seven native frames; game transition QA pending",
+    "impactZ": 80,
+    "impactXOffset": 30
   }
 }
