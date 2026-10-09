@@ -2,232 +2,232 @@
   "frames": {
     "zohran_mamdani_grapple_cruz_canonical11_000.webp": {
       "frame": {
-        "x": 2,
-        "y": 2,
-        "w": 785,
-        "h": 632
+        "x": 1,
+        "y": 1,
+        "w": 401,
+        "h": 323
       },
       "rotated": false,
       "trimmed": false,
       "spriteSourceSize": {
         "x": 0,
         "y": 0,
-        "w": 785,
-        "h": 632
+        "w": 401,
+        "h": 323
       },
       "sourceSize": {
-        "w": 785,
-        "h": 632
+        "w": 401,
+        "h": 323
       },
       "duration": 42
     },
     "zohran_mamdani_grapple_cruz_canonical11_001.webp": {
       "frame": {
-        "x": 791,
-        "y": 2,
-        "w": 785,
-        "h": 632
+        "x": 404,
+        "y": 1,
+        "w": 401,
+        "h": 323
       },
       "rotated": false,
       "trimmed": false,
       "spriteSourceSize": {
         "x": 0,
         "y": 0,
-        "w": 785,
-        "h": 632
+        "w": 401,
+        "h": 323
       },
       "sourceSize": {
-        "w": 785,
-        "h": 632
+        "w": 401,
+        "h": 323
       },
       "duration": 42
     },
     "zohran_mamdani_grapple_cruz_canonical11_002.webp": {
       "frame": {
-        "x": 1580,
-        "y": 2,
-        "w": 785,
-        "h": 632
+        "x": 808,
+        "y": 1,
+        "w": 401,
+        "h": 323
       },
       "rotated": false,
       "trimmed": false,
       "spriteSourceSize": {
         "x": 0,
         "y": 0,
-        "w": 785,
-        "h": 632
+        "w": 401,
+        "h": 323
       },
       "sourceSize": {
-        "w": 785,
-        "h": 632
+        "w": 401,
+        "h": 323
       },
       "duration": 42
     },
     "zohran_mamdani_grapple_cruz_canonical11_003.webp": {
       "frame": {
-        "x": 2369,
-        "y": 2,
-        "w": 785,
-        "h": 632
+        "x": 1211,
+        "y": 1,
+        "w": 401,
+        "h": 323
       },
       "rotated": false,
       "trimmed": false,
       "spriteSourceSize": {
         "x": 0,
         "y": 0,
-        "w": 785,
-        "h": 632
+        "w": 401,
+        "h": 323
       },
       "sourceSize": {
-        "w": 785,
-        "h": 632
+        "w": 401,
+        "h": 323
       },
       "duration": 42
     },
     "zohran_mamdani_grapple_cruz_canonical11_004.webp": {
       "frame": {
-        "x": 2,
-        "y": 638,
-        "w": 785,
-        "h": 632
+        "x": 1,
+        "y": 326,
+        "w": 401,
+        "h": 323
       },
       "rotated": false,
       "trimmed": false,
       "spriteSourceSize": {
         "x": 0,
         "y": 0,
-        "w": 785,
-        "h": 632
+        "w": 401,
+        "h": 323
       },
       "sourceSize": {
-        "w": 785,
-        "h": 632
+        "w": 401,
+        "h": 323
       },
       "duration": 42
     },
     "zohran_mamdani_grapple_cruz_canonical11_005.webp": {
       "frame": {
-        "x": 791,
-        "y": 638,
-        "w": 785,
-        "h": 632
+        "x": 404,
+        "y": 326,
+        "w": 401,
+        "h": 323
       },
       "rotated": false,
       "trimmed": false,
       "spriteSourceSize": {
         "x": 0,
         "y": 0,
-        "w": 785,
-        "h": 632
+        "w": 401,
+        "h": 323
       },
       "sourceSize": {
-        "w": 785,
-        "h": 632
+        "w": 401,
+        "h": 323
       },
       "duration": 42
     },
     "zohran_mamdani_grapple_cruz_canonical11_006.webp": {
       "frame": {
-        "x": 1580,
-        "y": 638,
-        "w": 785,
-        "h": 632
+        "x": 808,
+        "y": 326,
+        "w": 401,
+        "h": 323
       },
       "rotated": false,
       "trimmed": false,
       "spriteSourceSize": {
         "x": 0,
         "y": 0,
-        "w": 785,
-        "h": 632
+        "w": 401,
+        "h": 323
       },
       "sourceSize": {
-        "w": 785,
-        "h": 632
+        "w": 401,
+        "h": 323
       },
       "duration": 42
     },
     "zohran_mamdani_grapple_cruz_canonical11_007.webp": {
       "frame": {
-        "x": 2369,
-        "y": 638,
-        "w": 785,
-        "h": 632
+        "x": 1211,
+        "y": 326,
+        "w": 401,
+        "h": 323
       },
       "rotated": false,
       "trimmed": false,
       "spriteSourceSize": {
         "x": 0,
         "y": 0,
-        "w": 785,
-        "h": 632
+        "w": 401,
+        "h": 323
       },
       "sourceSize": {
-        "w": 785,
-        "h": 632
+        "w": 401,
+        "h": 323
       },
       "duration": 42
     },
     "zohran_mamdani_grapple_cruz_canonical11_008.webp": {
       "frame": {
-        "x": 2,
-        "y": 1274,
-        "w": 785,
-        "h": 632
+        "x": 1,
+        "y": 651,
+        "w": 401,
+        "h": 323
       },
       "rotated": false,
       "trimmed": false,
       "spriteSourceSize": {
         "x": 0,
         "y": 0,
-        "w": 785,
-        "h": 632
+        "w": 401,
+        "h": 323
       },
       "sourceSize": {
-        "w": 785,
-        "h": 632
+        "w": 401,
+        "h": 323
       },
       "duration": 42
     },
     "zohran_mamdani_grapple_cruz_canonical11_009.webp": {
       "frame": {
-        "x": 791,
-        "y": 1274,
-        "w": 785,
-        "h": 632
+        "x": 404,
+        "y": 651,
+        "w": 401,
+        "h": 323
       },
       "rotated": false,
       "trimmed": false,
       "spriteSourceSize": {
         "x": 0,
         "y": 0,
-        "w": 785,
-        "h": 632
+        "w": 401,
+        "h": 323
       },
       "sourceSize": {
-        "w": 785,
-        "h": 632
+        "w": 401,
+        "h": 323
       },
       "duration": 42
     },
     "zohran_mamdani_grapple_cruz_canonical11_010.webp": {
       "frame": {
-        "x": 1580,
-        "y": 1274,
-        "w": 785,
-        "h": 632
+        "x": 808,
+        "y": 651,
+        "w": 401,
+        "h": 323
       },
       "rotated": false,
       "trimmed": false,
       "spriteSourceSize": {
         "x": 0,
         "y": 0,
-        "w": 785,
-        "h": 632
+        "w": 401,
+        "h": 323
       },
       "sourceSize": {
-        "w": 785,
-        "h": 632
+        "w": 401,
+        "h": 323
       },
       "duration": 42
     }
@@ -238,8 +238,8 @@
     "image": "zohran_mamdani_grapple_cruz_strike.webp",
     "format": "RGBA8888",
     "size": {
-      "w": 3156,
-      "h": 1908
+      "w": 1613,
+      "h": 975
     },
     "scale": "1",
     "frameTags": [
@@ -251,8 +251,8 @@
       }
     ],
     "anchor": {
-      "x": 180,
-      "y": 624
+      "x": 91.99619771863118,
+      "y": 318.8679245283019
     },
     "referenceAlignment": {
       "referenceBounds": {
@@ -266,10 +266,10 @@
       "normalized": true
     },
     "pairedEnemyRoot": {
-      "x": 520,
-      "y": 624
+      "x": 265.7667934093789,
+      "y": 318.8679245283019
     },
-    "bodyScale": 0.4098360655737705,
+    "bodyScale": 0.8018863130507252,
     "holdFrame": 0,
     "contactFrame": 4,
     "playbackSequence": [
@@ -300,9 +300,14 @@
       61
     ],
     "nativePixels": true,
-    "reviewStatus": "candidate: 11 inspected native frames, canonical identity and connected pose references; not final user-approved",
+    "reviewStatus": "candidate: identity-corrected atlas, 11 frames, side-by-side review pending",
     "impactZ": 80,
-    "impactXOffset": 30
+    "impactXOffset": 30,
+    "identityCorrection": {
+      "source": "built-in image edit of native Makko bake",
+      "version": "correction18",
+      "sourceAnimationId": "f26e9095-b35b-4001-a908-404a25904a99",
+      "resampled": false
+    }
   }
 }
-
