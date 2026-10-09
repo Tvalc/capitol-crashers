@@ -11,7 +11,6 @@
   />
   <link rel="stylesheet" href="styles.css?v=mob2" />
   <link rel="stylesheet" href="touch.css?v=mob1" />
-  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4762698707947194" crossorigin="anonymous"></script>
 <link rel="stylesheet" href="../chibi-ui.css?v=mob1">
 <link rel="stylesheet" href="game-page.css?v=packed19">
 </head>
@@ -22,10 +21,6 @@
       <a class="patreon" data-patreon hidden target="_blank" rel="noopener noreferrer">Support on Patreon</a>
     </div>
   </header>
-
-  <aside class="ad-slot" id="ad-slot" hidden>
-    <p class="ad-label">Ad</p>
-  </aside>
 
   <div class="session-controls"><button id="pause-toggle" type="button" hidden>Pause · Esc</button></div>
   <div class="session-controls" id="practice-controls" hidden>
@@ -46,7 +41,13 @@
     <button type="button" id="stage-pause" class="stage-pause" hidden>Pause</button>
     <canvas id="game" width="1280" height="720" tabindex="0" aria-label="Capitol Crashers"></canvas>
 
-    <section class="card" id="title-panel">
+    <!-- Ads: the frame around the preroll, in the game's own words. See ads/CONTRACT.md. -->
+    <section class="card slim" id="ad-frame" aria-live="polite">
+      <p class="eyebrow">Political Arcades · machine 01</p>
+      <p class="ad-line">Ads pay for this arcade. Half the profit goes to community programs.</p>
+    </section>
+
+    <section class="card" id="title-panel" hidden>
       <p class="eyebrow">Political Arcades · machine 01</p>
       <h1>Capitol<br />Crashers</h1>
       <p class="tag">Two fighters. A block that needs them. The Landlord at the end of the street.</p>
@@ -62,6 +63,7 @@
         <button type="button" class="play" id="start">Step in</button>
         <a class="patreon" data-patreon hidden target="_blank" rel="noopener noreferrer">Support on Patreon</a>
       </div>
+      <p class="hint ad-line">Ads pay for this arcade. Half the profit goes to community programs.</p>
     </section>
 
     <section class="card" id="select-panel" hidden>
@@ -116,6 +118,7 @@
       <p id="over-copy"></p>
       <div class="actions">
         <button type="button" class="play" id="over-again">Run it back</button>
+        <button type="button" id="revive" hidden>Watch an ad to revive</button>
         <a class="patreon" data-patreon hidden target="_blank" rel="noopener noreferrer">Support on Patreon</a>
       </div>
     </section>
@@ -126,7 +129,10 @@
     <p><a href="privacy.html">Privacy</a></p>
   </footer>
   <script src="touch.js?v=mob1"></script>
-  <script type="module" src="src/main.js?v=grip08b"></script>
+  <!-- Ads: dark by default. Flip enabled/stub in one place; see ads/CONTRACT.md. -->
+  <script>window.A2A_ADS = { enabled: false, stub: true };</script>
+  <script src="ads/a2a-ads.js?v=a2a1"></script>
+  <script type="module" src="src/main.js?v=a2a1"></script>
   <script type="module" src="site.js"></script>
   <script src="../soundtrack.js?v=ux2" data-controls></script>
 </body>

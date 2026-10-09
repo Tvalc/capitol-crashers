@@ -1,9 +1,5 @@
-// Fill these in before the public launch.
 // patreonUrl: the full page, like https://www.patreon.com/yourname
-// adsenseClient: the publisher id from AdSense, like ca-pub-1234567890123456
-// adsenseSlot: the display-ad unit id for the banner above the game
+// Ads are configured in ads/a2a-ads.js and window.A2A_ADS (see ads/CONTRACT.md), not here.
 export const SITE = {
   patreonUrl: "https://www.patreon.com/c/PoliticalArcade",
-  adsenseClient: "ca-pub-4762698707947194",
-  adsenseSlot: "",
 };

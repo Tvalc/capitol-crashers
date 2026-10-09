@@ -1,0 +1,22 @@
+[
+  {
+    "surface": "billboard_1",
+    "kind": "image",
+    "src": "house/ads-to-aid-poster.svg",
+    "href": "https://adstoaid.com/",
+    "label": "Ads to Aid",
+    "sponsor": "house",
+    "start": "",
+    "end": ""
+  },
+  {
+    "surface": "billboard_1",
+    "kind": "image",
+    "src": "house/comic-poster.svg",
+    "href": "https://capitolcrashers.com/story/",
+    "label": "Capitol Crashers, the comic",
+    "sponsor": "house",
+    "start": "",
+    "end": ""
+  }
+]
