@@ -1,6 +1,6 @@
-import { melee, updateBody } from "./combat.js?v=laser22b";
+import { melee, updateBody } from "./combat.js?v=platform23";
 import { WORLD } from "./stages.js?v=bench28";
-import { spawnSatellite, spawnShot, spawnSombrero } from "./weapons.js?v=laser22b";
+import { spawnSatellite, spawnShot, spawnSombrero } from "./weapons.js?v=platform23";
 
 const KINDS = {
   laser_relay: { name:"Laser relay", hp:60, speed:0, w:100, h:95, dmg:0, reach:0, scale:1 },

@@ -1,14 +1,14 @@
-import { addLaserEncounter, updateLaserEncounters } from "./laser-encounter.js?v=laser22b";
+import { addLaserEncounter, updateLaserEncounters } from "./laser-encounter.js?v=platform23";
 import { propFootprints, collideProps, steerAroundProps } from "./prop-collision.js?v=grapple-release23";
 import { play, unlock } from "./audio.js?v=chibi-site2";
-import { separate, tickToss, wallBounce } from "./combat.js?v=laser22b";
-import { makeEnemy, updateEnemy } from "./enemies.js?v=laser22b";
+import { separate, tickToss, wallBounce } from "./combat.js?v=platform23";
+import { makeEnemy, updateEnemy } from "./enemies.js?v=platform23";
 import { blankInput, createInput } from "./input.js?v=chibi-site2";
-import { fighterById, makePlayer, updatePlayer, bufferPlayerInput } from "./player.js?v=laser22b";
-import { draw, loadEnvironment } from "./render.js?v=laser22b";
+import { fighterById, makePlayer, updatePlayer, bufferPlayerInput } from "./player.js?v=platform23";
+import { draw, loadEnvironment } from "./render.js?v=platform23";
 import { cloneStage, STAGES, WORLD } from "./stages.js?v=bench28";
-import { updatePickups, updateProjectiles } from "./weapons.js?v=laser22b";
-import { loadSprites, ensureGrapplePair } from "./sprites.js?v=laser22b";
+import { updatePickups, updateProjectiles } from "./weapons.js?v=platform23";
+import { loadSprites, ensureGrapplePair } from "./sprites.js?v=platform23";
 import { PAGES } from "/story/panels.js";
 import { followingWitness, makeCitizen, spawnCelebration, updateCitizens, witnessTestifies } from "./citizens.js?v=idle21";
 
@@ -124,7 +124,7 @@ export function startStage(game) {
   game.lockCam = null;
   game.waveIndex = 0;
   game.enemies = [];
-  game.laserOperators = [];
+  game.laserOperators = [];game.laserWrecks=[];
   game.citizens = (game.stage.citizens || []).map((cit) => makeCitizen(cit.kind, cit.x, cit.y));
   game.projectiles = [];
   game.fx = [];
@@ -163,6 +163,7 @@ export function updateGame(game, input, dt) {
   }
 
   if (game.clearT > 0) {
+    updateLaserEncounters(game,dt);
     game.clearT -= dt;
     updateCitizens(game, dt);
     for (const fx of game.fx) fx.t += dt;
@@ -562,14 +563,14 @@ function boot() {
     game.stage = cloneStage(0);
     game.player = null;
     game.enemies = [];
-  game.laserOperators = [];
+  game.laserOperators = [];game.laserWrecks=[];
   });
   document.getElementById("over-again").addEventListener("click", () => {
     game.mode = "title";
     game.stage = cloneStage(0);
     game.player = null;
     game.enemies = [];
-  game.laserOperators = [];
+  game.laserOperators = [];game.laserWrecks=[];
   });
 
   const touchBar = window.mountTouchControls?.(document.querySelector(".stage"), {
@@ -618,7 +619,7 @@ function boot() {
       game.stage = cloneStage(0);
       game.player = null;
       game.enemies = [];
-  game.laserOperators = [];
+  game.laserOperators = [];game.laserWrecks=[];
     }
     if (window.devicePixelRatio !== dprSeen) { dprSeen = window.devicePixelRatio; fitCanvas(); }
     if (assetsReady) {

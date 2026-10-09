@@ -51,7 +51,7 @@ export function applyHit(game, spec, target) {
     if (spec.team !== "player") return false;
     target.hp=Math.max(0,target.hp-Math.max(1,Math.round(spec.dmg)));
     target.flash=.12; game.hitstop=Math.max(game.hitstop||0,.035);
-    if (!target.hp) { target.alive=false;target.state="dead";target.deadT=.35;game.score+=250; }
+    if (!target.hp) { target.alive=false;target.state="dead";target.deadT=.35;game.score+=250;(game.laserWrecks??=[]).push({...target}); }
     return true;
   }
   if (target.state === "getup") return false;

@@ -1,5 +1,5 @@
 import { FIGHTERS, poseFor } from "./fighters.js?v=chibi-site2";
-import { drawSprite, drawGrapplePair, hasGrapplePair } from "./sprites.js?v=laser22b";
+import { drawSprite, drawGrapplePair, hasGrapplePair } from "./sprites.js?v=platform23";
 import { WORLD, STAGES } from "./stages.js?v=bench28";
 import { CITIZEN_KINDS } from "./citizens.js?v=idle21";
 
@@ -17,6 +17,7 @@ export function loadEnvironment() {
     const image = new Image(); image.onload = () => { art[key] = image; resolve(); }; image.onerror = () => resolve(); image.src = src;
   }));
   for (const stage of STAGES) for (const layer of stage.layers || []) tryLoad(`${stage.id}-${layer.name}`, `../art/parallax/${stage.id}/${layer.name}.webp?v=1`);
+  for(const name of ["platform","relay","relay-damaged","relay-wreck"]) tryLoad("laser-"+name,`assets/laser23/${name}.webp`);
   tryLoad("icicles", "../art/parallax/icicles.webp?v=1");
   return Promise.all([required, ...optional]);
 }
@@ -67,10 +68,12 @@ export function draw(ctx, game) {
   drawStreet(ctx, game, cam);
   drawPlanes(ctx, game);
   for (const op of game.laserOperators || []) if(op.alive) {
- if(craftSprite.complete && craftSprite.naturalWidth) ctx.drawImage(craftSprite,op.x-cam-85,op.y-8,170,68);
+ const deck=art["laser-platform"];
+ if(deck)ctx.drawImage(deck,op.platformX-cam,op.platformY-50,op.deckW,op.deckW*deck.height/deck.width);
  drawSprite(ctx,op,op.x-cam,.55);
  }
   const sprites = [];
+  for(const wreck of game.laserWrecks||[]) sprites.push({y:wreck.y,draw:()=>drawPerson(ctx,wreck,cam,game)});
   for (const prop of game.stage?.scenery || []) {
     const img=art[prop.art];const h=img?prop.w*img.height/img.width:prop.h;
     sprites.push({y:prop.y,draw:()=>painted(ctx,prop.art,prop.x-cam-prop.w/2,prop.y-h,prop.w,h)});
@@ -331,10 +334,11 @@ function drawFx(ctx,fx,cam) {
 
 function drawPerson(ctx, ent, cam, game) {
   if (ent.isMachine) {
-    if (!ent.alive) return;
     const x=ent.x-cam;
-    if(craftSprite.complete && craftSprite.naturalWidth) ctx.drawImage(craftSprite,x-70,ent.y-70,140,70);
-    bar(ctx,x-55,ent.y-110,110,16,ent);
+    const key=!ent.alive?'laser-relay-wreck':ent.hp<=ent.hpMax*.5?'laser-relay-damaged':'laser-relay';
+    const img=art[key];
+    if(img){const h=150,w=h*img.width/img.height;ctx.drawImage(img,x-w/2,ent.y-h,w,h);}
+    if(ent.alive)bar(ctx,x-48,ent.y-170,96,13,ent);
     return;
   }
   const holder = game.player;
