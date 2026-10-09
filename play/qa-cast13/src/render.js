@@ -1,5 +1,5 @@
 import { FIGHTERS, poseFor } from "./fighters.js?v=chibi-site2";
-import { drawSprite, drawGrapplePair, hasGrapplePair } from "./sprites.js?v=cast-lock1";
+import { drawSprite, drawGrapplePair, hasGrapplePair } from "./sprites.js?v=laser22b";
 import { WORLD, STAGES } from "./stages.js?v=bench28";
 import { CITIZEN_KINDS } from "./citizens.js?v=idle21";
 
@@ -66,6 +66,10 @@ export function draw(ctx, game) {
   }
   drawStreet(ctx, game, cam);
   drawPlanes(ctx, game);
+  for (const op of game.laserOperators || []) if(op.alive) {
+ if(craftSprite.complete && craftSprite.naturalWidth) ctx.drawImage(craftSprite,op.x-cam-85,op.y-8,170,68);
+ drawSprite(ctx,op,op.x-cam,.55);
+ }
   const sprites = [];
   for (const prop of game.stage?.scenery || []) {
     const img=art[prop.art];const h=img?prop.w*img.height/img.width:prop.h;
@@ -326,6 +330,13 @@ function drawFx(ctx,fx,cam) {
 }
 
 function drawPerson(ctx, ent, cam, game) {
+  if (ent.isMachine) {
+    if (!ent.alive) return;
+    const x=ent.x-cam;
+    if(craftSprite.complete && craftSprite.naturalWidth) ctx.drawImage(craftSprite,x-70,ent.y-70,140,70);
+    bar(ctx,x-55,ent.y-110,110,16,ent);
+    return;
+  }
   const holder = game.player;
   const pairedVictim = holder?.state === "grab" ? game.enemies.find(enemy => enemy.id === holder.grabId && enemy.state === "grabbed") : null;
   if (pairedVictim && ent === pairedVictim && hasGrapplePair(holder, pairedVictim)) return;

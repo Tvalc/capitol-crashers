@@ -46,7 +46,14 @@ export function spendSpecial(player) {
 }
 
 export function applyHit(game, spec, target) {
-  if (!target || target.state === "dead" || !target.alive) return false;
+  if (!target || target.untargetable || target.kind === "greene" || target.state === "dead" || !target.alive) return false;
+  if (target.isMachine) {
+    if (spec.team !== "player") return false;
+    target.hp=Math.max(0,target.hp-Math.max(1,Math.round(spec.dmg)));
+    target.flash=.12; game.hitstop=Math.max(game.hitstop||0,.035);
+    if (!target.hp) { target.alive=false;target.state="dead";target.deadT=.35;game.score+=250; }
+    return true;
+  }
   if (target.state === "getup") return false;
   if (target.invuln > 0) return false;
   if (target.state === "grabbed" && spec.kind !== "grab") return false;
@@ -310,7 +317,7 @@ export function separate(list) {
     for (let j = i + 1; j < list.length; j += 1) {
       const a = list[i];
       const b = list[j];
-      if (!a.alive || !b.alive || a.z > 24 || b.z > 24 || ["grabbed", "held"].includes(a.state) || ["grabbed", "held"].includes(b.state)) continue;
+      if (a.isMachine || b.isMachine || !a.alive || !b.alive || a.z > 24 || b.z > 24 || ["grabbed", "held"].includes(a.state) || ["grabbed", "held"].includes(b.state)) continue;
       let dx = b.x - a.x;
       let dy = b.y - a.y;
       const dist = Math.hypot(dx, dy) || 0.001;

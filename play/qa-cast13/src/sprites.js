@@ -1,5 +1,5 @@
 import { registerHelpAction } from "./help-actions.js?v=idle21";
-import { playerMoveWindow } from "./player.js?v=cast-lock1";
+import { playerMoveWindow } from "./player.js?v=laser22b";
 import { WORLD } from "./stages.js?v=bench28";
 
 const CLIPS = {
@@ -7,7 +7,7 @@ const CLIPS = {
   abdul: ["idle", "walk", "run", "jump", "attack", "hit", "death", "cast", "grab", "throw", "lunge"],
   trump: ["idle", "walk", "run", "attack", "hit", "death", "cast"],
   vance: ["idle", "walk", "run", "attack", "hit", "death", "cast", "grab"],
-  greene: ["idle", "run", "attack", "hit", "death", "jump", "cast"],
+  greene: ["idle", "run", "attack", "cast"],
   cruz: ["idle", "walk", "run", "attack", "hit", "death"],
   pete: ["idle", "walk", "attack", "hit", "death"],
   pete_ww: ["idle", "walk", "attack", "hit", "death"],
@@ -21,7 +21,7 @@ const SOFT_CLIPS = {
   abdul: ["grabbed", "grab_strike"],
   trump: ["grab", "grabbed"],
   vance: ["grabbed"],
-  greene: ["grab", "grabbed"],
+
   cruz: ["grab", "grabbed"],
   pete: ["grab", "grabbed", "change"],
   pete_ww: ["grab", "grabbed"],
@@ -84,8 +84,8 @@ const sheets = new Map();
 // Only reviewed candidates are registered. Load the active matchup, not the
 // whole cast's paired atlases at startup.
 const GRAPPLE_PAIRS = {
-  zohran: new Set(["cruz", "mcconnell", "trump", "greene", "vance_worried", "pete_ww", "pete"]),
-  abdul: new Set(["cruz", "greene", "trump", "beck", "vance_worried", "pete_ww", "pete"]),
+  zohran: new Set(["cruz", "mcconnell", "trump", "vance_worried", "pete_ww", "pete"]),
+  abdul: new Set(["cruz", "trump", "beck", "vance_worried", "pete_ww", "pete"]),
 };
 const pairLoads = new Map();
 export function ensureGrapplePair(hero, enemy) {
@@ -164,7 +164,7 @@ function assetRoot(name) { if (name.includes("_grapple_")) return "/play/qa-cast
 
 function loadOne(sprite, clip, name) {
   const image = new Image();
-  const version = name.includes("_grapple_") ? "identity21" : /chibi\/(zohran_mamdani|abdul_el_sayed)_grab$/.test(name) ? "grip08b" : name === "chibi/jd_vance_worried_death" ? "chibi-death24" : "hd5";
+  const version = name.includes("_grapple_") ? "laser22" : /chibi\/(zohran_mamdani|abdul_el_sayed)_grab$/.test(name) ? "grip08b" : name === "chibi/jd_vance_worried_death" ? "chibi-death24" : "hd5";
   const dataPromise = fetch(`${assetRoot(name)}/${name}.json?v=${version}`).then((res) => {
     if (!res.ok) throw new Error(`Could not load ${name}: ${res.status}`);
     return res.json();

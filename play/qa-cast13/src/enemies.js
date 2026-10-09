@@ -1,8 +1,9 @@
-import { melee, updateBody } from "./combat.js?v=cast-lock1";
+import { melee, updateBody } from "./combat.js?v=laser22b";
 import { WORLD } from "./stages.js?v=bench28";
-import { spawnSatellite, spawnShot, spawnSombrero } from "./weapons.js?v=cast-lock1";
+import { spawnSatellite, spawnShot, spawnSombrero } from "./weapons.js?v=laser22b";
 
 const KINDS = {
+  laser_relay: { name:"Laser relay", hp:60, speed:0, w:100, h:95, dmg:0, reach:0, scale:1 },
   grunt: {
     name: "Grunt",
     hp: 32,
@@ -188,10 +189,12 @@ const KINDS = {
 let seq = 1;
 
 export function makeEnemy(kind, x, y) {
+  if (kind === "greene") kind = "laser_relay";
   const stats = KINDS[kind];
   return {
     id: `e${seq++}`,
     team: "enemy",
+    isMachine: kind === "laser_relay",
     kind,
     sprite: stats.sprite || kind,
     name: stats.name,
@@ -1054,6 +1057,7 @@ function updateSignal(enemy, game, dt) {
 }
 
 export function updateEnemy(enemy, game, dt) {
+  if (enemy.isMachine) { enemy.flash=Math.max(0,enemy.flash-dt); if (!enemy.alive) enemy.deadT-=dt; return; }
   enemy.anim += dt;
   if (enemy.kind === "greene") enemy.laserCd = Math.max(0, (enemy.laserCd ?? 0.45) - dt);
   if (enemy.attackCd > 0) enemy.attackCd -= dt;
