@@ -1,0 +1,17 @@
+<!doctype html><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Grapple identity review</title>
+<style>body{background:#151b25;color:#fff;font:17px system-ui;margin:24px}canvas{width:100%;max-width:1100px;background:#29313c;border:1px solid #64748b}p{color:#cbd5e1}button,select{padding:12px;margin:5px;background:#25354a;color:white;border:1px solid #8091aa;border-radius:8px}header{position:sticky;top:0;background:#151b25;padding:8px;z-index:1}section{max-width:1100px;margin:25px 0}h2{margin-bottom:6px}a{color:#9df}</style>
+<h1>Grapple identity review</h1><p>Installed idle designs on the left; corrected paired animation on the right. Nine new candidates. Trump remains unchanged. Mamdani–Cruz retains your approved correction.</p>
+<header><button id="play">Play all</button><button id="hold">Hold</button><button id="hit">Contact</button><button id="next">Next frame</button><span id="status">Loading…</span></header><main></main>
+<script type="module">
+const heroes={zohran_mamdani:'Mamdani',abdul_el_sayed:'El-Sayed'}, enemies={cruz:['ted_cruz','Cruz'],pete:['pete_hegseth','Pete'],pete_ww:['pete_hegseth_ww','Pete transformed'],vance_worried:['jd_vance_worried','Vance'],greene:['marjorie_greene','Greene']};
+const cache=new Map(), rows=[]; let playing=false;
+async function sheet(n){if(!cache.has(n))cache.set(n,(async()=>{const base=n.includes('grapple')?'assets/sprites/chibi/':'/play/assets/sprites/chibi/';const d=await(await fetch(base+n+'.json?v=correction19')).json(),im=new Image();im.src=base+n+'.webp?v=correction19';await im.decode();return {d,im};})());return cache.get(n);}
+function draw(r){const x=r.c.getContext('2d');x.clearRect(0,0,1100,380);x.fillStyle='#fff';x.font='17px system-ui';x.fillText('INSTALLED IDLE',40,28);x.fillText('CORRECTED GRAPPLE',560,28);r.ss.forEach(({d,im},i)=>{const v=Object.values(d.frames)[i===2?r.frame:0],f=v.frame,a=d.meta.anchor,s=(d.meta.bodyScale||.48),o=v.trimmed?v.spriteSourceSize:{x:0,y:0};const left=i===0?125:i===1?320:660;x.drawImage(im,f.x,f.y,f.w,f.h,left+(o.x-a.x)*s,345+(o.y-a.y)*s,f.w*s,f.h*s);});r.out.textContent=`Frame ${r.frame+1} / ${r.count}`;}
+for(const [h,label] of Object.entries(heroes))for(const [e,[enemy,elabel]] of Object.entries(enemies)){const section=document.createElement('section');section.innerHTML=`<h2>${label} + ${elabel}</h2><p class="count"></p><canvas width="1100" height="380"></canvas>`;document.querySelector('main').append(section);try{const ss=await Promise.all([h+'_idle',enemy+'_idle',h+'_grapple_'+e+'_strike'].map(sheet));const r={ss,c:section.querySelector('canvas'),out:section.querySelector('.count'),frame:0,count:Object.keys(ss[2].d.frames).length};rows.push(r);draw(r);}catch(err){section.querySelector('.count').textContent='Could not load: '+err.message;}}
+document.querySelector('#status').textContent=rows.length+' pairs loaded';
+document.querySelector('#play').onclick=()=>{playing=!playing;document.querySelector('#play').textContent=playing?'Pause all':'Play all';};
+function set(mode){playing=false;document.querySelector('#play').textContent='Play all';for(const r of rows){r.frame=mode==='hit'?(r.ss[2].d.meta.contactFrame??Math.floor(r.count/2)):mode==='next'?(r.frame+1)%r.count:0;draw(r);}}
+for(const mode of ['hold','hit','next'])document.querySelector('#'+mode).onclick=()=>set(mode);
+setInterval(()=>{if(playing)for(const r of rows){r.frame=(r.frame+1)%r.count;draw(r);}},220);
+</script>
+

@@ -2,127 +2,127 @@
   "frames": {
     "zohran_mamdani_paired_greene_hold_hit_6f_native_000.webp": {
       "frame": {
-        "x": 2,
-        "y": 2,
-        "w": 748,
-        "h": 652
+        "x": 0,
+        "y": 0,
+        "w": 548,
+        "h": 489
       },
       "rotated": false,
       "trimmed": false,
       "spriteSourceSize": {
-        "x": 0,
-        "y": 0,
-        "w": 748,
-        "h": 652
+        "x": -1,
+        "y": -7,
+        "w": 548,
+        "h": 489
       },
       "sourceSize": {
-        "w": 748,
-        "h": 652
+        "w": 545,
+        "h": 476
       },
       "duration": 42
     },
     "zohran_mamdani_paired_greene_hold_hit_6f_native_001.webp": {
       "frame": {
-        "x": 754,
-        "y": 2,
-        "w": 748,
-        "h": 652
+        "x": 548,
+        "y": 0,
+        "w": 548,
+        "h": 489
       },
       "rotated": false,
       "trimmed": false,
       "spriteSourceSize": {
-        "x": 0,
-        "y": 0,
-        "w": 748,
-        "h": 652
+        "x": -1,
+        "y": -7,
+        "w": 548,
+        "h": 489
       },
       "sourceSize": {
-        "w": 748,
-        "h": 652
+        "w": 545,
+        "h": 476
       },
       "duration": 42
     },
     "zohran_mamdani_paired_greene_hold_hit_6f_native_002.webp": {
       "frame": {
-        "x": 1506,
-        "y": 2,
-        "w": 748,
-        "h": 652
+        "x": 1096,
+        "y": 0,
+        "w": 548,
+        "h": 489
       },
       "rotated": false,
       "trimmed": false,
       "spriteSourceSize": {
-        "x": 0,
-        "y": 0,
-        "w": 748,
-        "h": 652
+        "x": -1,
+        "y": -7,
+        "w": 548,
+        "h": 489
       },
       "sourceSize": {
-        "w": 748,
-        "h": 652
+        "w": 545,
+        "h": 476
       },
       "duration": 42
     },
     "zohran_mamdani_paired_greene_hold_hit_6f_native_003.webp": {
       "frame": {
-        "x": 2,
-        "y": 658,
-        "w": 748,
-        "h": 652
+        "x": 0,
+        "y": 489,
+        "w": 548,
+        "h": 468
       },
       "rotated": false,
       "trimmed": false,
       "spriteSourceSize": {
-        "x": 0,
-        "y": 0,
-        "w": 748,
-        "h": 652
+        "x": -1,
+        "y": 9,
+        "w": 548,
+        "h": 468
       },
       "sourceSize": {
-        "w": 748,
-        "h": 652
+        "w": 545,
+        "h": 476
       },
       "duration": 42
     },
     "zohran_mamdani_paired_greene_hold_hit_6f_native_004.webp": {
       "frame": {
-        "x": 754,
-        "y": 658,
-        "w": 748,
-        "h": 652
+        "x": 548,
+        "y": 489,
+        "w": 548,
+        "h": 468
       },
       "rotated": false,
       "trimmed": false,
       "spriteSourceSize": {
-        "x": 0,
-        "y": 0,
-        "w": 748,
-        "h": 652
+        "x": -1,
+        "y": 9,
+        "w": 548,
+        "h": 468
       },
       "sourceSize": {
-        "w": 748,
-        "h": 652
+        "w": 545,
+        "h": 476
       },
       "duration": 42
     },
     "zohran_mamdani_paired_greene_hold_hit_6f_native_005.webp": {
       "frame": {
-        "x": 1506,
-        "y": 658,
-        "w": 748,
-        "h": 652
+        "x": 1096,
+        "y": 489,
+        "w": 548,
+        "h": 468
       },
       "rotated": false,
       "trimmed": false,
       "spriteSourceSize": {
-        "x": 0,
-        "y": 0,
-        "w": 748,
-        "h": 652
+        "x": -1,
+        "y": 9,
+        "w": 548,
+        "h": 468
       },
       "sourceSize": {
-        "w": 748,
-        "h": 652
+        "w": 545,
+        "h": 476
       },
       "duration": 42
     }
@@ -133,8 +133,8 @@
     "image": "zohran_mamdani_grapple_greene_strike.webp",
     "format": "RGBA8888",
     "size": {
-      "w": 2256,
-      "h": 1312
+      "w": 1644,
+      "h": 957
     },
     "scale": "1",
     "frameTags": [
@@ -146,8 +146,8 @@
       }
     ],
     "anchor": {
-      "x": 160,
-      "y": 645
+      "x": 116.59574468085106,
+      "y": 470.4763719512195
     },
     "referenceAlignment": {
       "referenceBounds": {
@@ -161,10 +161,10 @@
       "normalized": true
     },
     "pairedEnemyRoot": {
-      "x": 580,
-      "y": 645
+      "x": 422.6595744680851,
+      "y": 470.4763719512195
     },
-    "bodyScale": 0.390625,
+    "bodyScale": 0.5360401459854015,
     "holdFrame": 0,
     "animationId": "3ddb9586-b292-43b2-92cc-7040ac08ba52",
     "savedOriginalFrames": [
@@ -190,6 +190,12 @@
     ],
     "contactFrame": 3,
     "nativePixels": true,
-    "reviewStatus": "verified: connected hold, strike and recovery in mg-recovery-board.jpg; identity close to baseline"
+    "reviewStatus": "candidate: identity correction; in-game review pending",
+    "identityCorrection": {
+      "source": "built-in image edit of native Makko bake",
+      "version": "correction19",
+      "sourceAnimationId": "3ddb9586-b292-43b2-92cc-7040ac08ba52",
+      "resampled": false
+    }
   }
 }

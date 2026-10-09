@@ -2,148 +2,148 @@
   "frames": {
     "pete_hegseth_sayed_transformed_paired_knee_7f_native_000.webp": {
       "frame": {
-        "x": 2,
-        "y": 2,
-        "w": 636,
-        "h": 726
+        "x": 0,
+        "y": 0,
+        "w": 392,
+        "h": 476
       },
       "rotated": false,
       "trimmed": false,
       "spriteSourceSize": {
-        "x": 0,
-        "y": 0,
-        "w": 636,
-        "h": 726
+        "x": -1,
+        "y": -23,
+        "w": 392,
+        "h": 476
       },
       "sourceSize": {
-        "w": 636,
-        "h": 726
+        "w": 389,
+        "h": 444
       },
       "duration": 42
     },
     "pete_hegseth_sayed_transformed_paired_knee_7f_native_001.webp": {
       "frame": {
-        "x": 642,
-        "y": 2,
-        "w": 636,
-        "h": 726
+        "x": 392,
+        "y": 0,
+        "w": 391,
+        "h": 476
       },
       "rotated": false,
       "trimmed": false,
       "spriteSourceSize": {
-        "x": 0,
-        "y": 0,
-        "w": 636,
-        "h": 726
+        "x": -1,
+        "y": -23,
+        "w": 391,
+        "h": 476
       },
       "sourceSize": {
-        "w": 636,
-        "h": 726
+        "w": 389,
+        "h": 444
       },
       "duration": 42
     },
     "pete_hegseth_sayed_transformed_paired_knee_7f_native_002.webp": {
       "frame": {
-        "x": 1282,
-        "y": 2,
-        "w": 636,
-        "h": 726
+        "x": 783,
+        "y": 0,
+        "w": 392,
+        "h": 476
       },
       "rotated": false,
       "trimmed": false,
       "spriteSourceSize": {
-        "x": 0,
-        "y": 0,
-        "w": 636,
-        "h": 726
+        "x": -2,
+        "y": -23,
+        "w": 392,
+        "h": 476
       },
       "sourceSize": {
-        "w": 636,
-        "h": 726
+        "w": 389,
+        "h": 444
       },
       "duration": 42
     },
     "pete_hegseth_sayed_transformed_paired_knee_7f_native_003.webp": {
       "frame": {
-        "x": 2,
-        "y": 732,
-        "w": 636,
-        "h": 726
+        "x": 0,
+        "y": 476,
+        "w": 392,
+        "h": 448
       },
       "rotated": false,
       "trimmed": false,
       "spriteSourceSize": {
-        "x": 0,
-        "y": 0,
-        "w": 636,
-        "h": 726
+        "x": -1,
+        "y": -8,
+        "w": 392,
+        "h": 448
       },
       "sourceSize": {
-        "w": 636,
-        "h": 726
+        "w": 389,
+        "h": 444
       },
       "duration": 42
     },
     "pete_hegseth_sayed_transformed_paired_knee_7f_native_004.webp": {
       "frame": {
-        "x": 642,
-        "y": 732,
-        "w": 636,
-        "h": 726
+        "x": 392,
+        "y": 476,
+        "w": 391,
+        "h": 448
       },
       "rotated": false,
       "trimmed": false,
       "spriteSourceSize": {
-        "x": 0,
-        "y": 0,
-        "w": 636,
-        "h": 726
+        "x": -1,
+        "y": -8,
+        "w": 391,
+        "h": 448
       },
       "sourceSize": {
-        "w": 636,
-        "h": 726
+        "w": 389,
+        "h": 444
       },
       "duration": 42
     },
     "pete_hegseth_sayed_transformed_paired_knee_7f_native_005.webp": {
       "frame": {
-        "x": 1282,
-        "y": 732,
-        "w": 636,
-        "h": 726
+        "x": 783,
+        "y": 476,
+        "w": 392,
+        "h": 448
       },
       "rotated": false,
       "trimmed": false,
       "spriteSourceSize": {
-        "x": 0,
-        "y": 0,
-        "w": 636,
-        "h": 726
+        "x": -2,
+        "y": -8,
+        "w": 392,
+        "h": 448
       },
       "sourceSize": {
-        "w": 636,
-        "h": 726
+        "w": 389,
+        "h": 444
       },
       "duration": 42
     },
     "pete_hegseth_sayed_transformed_paired_knee_7f_native_006.webp": {
       "frame": {
-        "x": 2,
-        "y": 1462,
-        "w": 636,
-        "h": 726
+        "x": 0,
+        "y": 924,
+        "w": 392,
+        "h": 415
       },
       "rotated": false,
       "trimmed": false,
       "spriteSourceSize": {
-        "x": 0,
-        "y": 0,
-        "w": 636,
-        "h": 726
+        "x": -1,
+        "y": 23,
+        "w": 392,
+        "h": 415
       },
       "sourceSize": {
-        "w": 636,
-        "h": 726
+        "w": 389,
+        "h": 444
       },
       "duration": 42
     }
@@ -154,8 +154,8 @@
     "image": "abdul_el_sayed_grapple_pete_ww_strike.webp",
     "format": "RGBA8888",
     "size": {
-      "w": 1920,
-      "h": 2190
+      "w": 1175,
+      "h": 1339
     },
     "scale": "1",
     "frameTags": [
@@ -167,8 +167,8 @@
       }
     ],
     "anchor": {
-      "x": 150,
-      "y": 710
+      "x": 91.796875,
+      "y": 434.1050228310502
     },
     "referenceAlignment": {
       "referenceBounds": {
@@ -182,10 +182,10 @@
       "normalized": true
     },
     "pairedEnemyRoot": {
-      "x": 490,
-      "y": 710
+      "x": 299.86979166666663,
+      "y": 434.1050228310502
     },
-    "bodyScale": 0.35714285714285715,
+    "bodyScale": 0.5835866261398177,
     "holdFrame": 6,
     "animationId": "246b8ce9-7e63-4c4a-93f5-5939dd57e671",
     "savedOriginalFrames": [
@@ -209,8 +209,14 @@
     ],
     "contactFrame": 3,
     "nativePixels": true,
-    "reviewStatus": "verified: actual-game hold, held-hit and recovery; identity comparison captured 2026-10-09",
+    "reviewStatus": "candidate: identity correction; in-game review pending",
     "impactZ": 110,
-    "impactXOffset": 35
+    "impactXOffset": 35,
+    "identityCorrection": {
+      "source": "built-in image edit of native Makko bake",
+      "version": "correction19",
+      "sourceAnimationId": "246b8ce9-7e63-4c4a-93f5-5939dd57e671",
+      "resampled": false
+    }
   }
 }

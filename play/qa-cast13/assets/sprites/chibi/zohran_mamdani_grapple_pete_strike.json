@@ -2,127 +2,127 @@
   "frames": {
     "pete_hegseth_mamdani_normal_paired_knee_6f_native_000.webp": {
       "frame": {
-        "x": 2,
-        "y": 2,
-        "w": 707,
-        "h": 780
+        "x": 0,
+        "y": 0,
+        "w": 487,
+        "h": 544
       },
       "rotated": false,
       "trimmed": false,
       "spriteSourceSize": {
-        "x": 0,
-        "y": 0,
-        "w": 707,
-        "h": 780
+        "x": -1,
+        "y": -14,
+        "w": 487,
+        "h": 544
       },
       "sourceSize": {
-        "w": 707,
-        "h": 780
+        "w": 485,
+        "h": 535
       },
       "duration": 42
     },
     "pete_hegseth_mamdani_normal_paired_knee_6f_native_001.webp": {
       "frame": {
-        "x": 713,
-        "y": 2,
-        "w": 707,
-        "h": 780
+        "x": 487,
+        "y": 0,
+        "w": 488,
+        "h": 544
       },
       "rotated": false,
       "trimmed": false,
       "spriteSourceSize": {
-        "x": 0,
-        "y": 0,
-        "w": 707,
-        "h": 780
+        "x": -2,
+        "y": -14,
+        "w": 488,
+        "h": 544
       },
       "sourceSize": {
-        "w": 707,
-        "h": 780
+        "w": 485,
+        "h": 535
       },
       "duration": 42
     },
     "pete_hegseth_mamdani_normal_paired_knee_6f_native_002.webp": {
       "frame": {
-        "x": 1424,
-        "y": 2,
-        "w": 707,
-        "h": 780
+        "x": 975,
+        "y": 0,
+        "w": 487,
+        "h": 544
       },
       "rotated": false,
       "trimmed": false,
       "spriteSourceSize": {
-        "x": 0,
-        "y": 0,
-        "w": 707,
-        "h": 780
+        "x": -1,
+        "y": -14,
+        "w": 487,
+        "h": 544
       },
       "sourceSize": {
-        "w": 707,
-        "h": 780
+        "w": 485,
+        "h": 535
       },
       "duration": 42
     },
     "pete_hegseth_mamdani_normal_paired_knee_6f_native_003.webp": {
       "frame": {
-        "x": 2,
-        "y": 786,
-        "w": 707,
-        "h": 780
+        "x": 0,
+        "y": 544,
+        "w": 487,
+        "h": 532
       },
       "rotated": false,
       "trimmed": false,
       "spriteSourceSize": {
-        "x": 0,
-        "y": 0,
-        "w": 707,
-        "h": 780
+        "x": -1,
+        "y": 8,
+        "w": 487,
+        "h": 532
       },
       "sourceSize": {
-        "w": 707,
-        "h": 780
+        "w": 485,
+        "h": 535
       },
       "duration": 42
     },
     "pete_hegseth_mamdani_normal_paired_knee_6f_native_004.webp": {
       "frame": {
-        "x": 713,
-        "y": 786,
-        "w": 707,
-        "h": 780
+        "x": 487,
+        "y": 544,
+        "w": 488,
+        "h": 532
       },
       "rotated": false,
       "trimmed": false,
       "spriteSourceSize": {
-        "x": 0,
-        "y": 0,
-        "w": 707,
-        "h": 780
+        "x": -2,
+        "y": 8,
+        "w": 488,
+        "h": 532
       },
       "sourceSize": {
-        "w": 707,
-        "h": 780
+        "w": 485,
+        "h": 535
       },
       "duration": 42
     },
     "pete_hegseth_mamdani_normal_paired_knee_6f_native_005.webp": {
       "frame": {
-        "x": 1424,
-        "y": 786,
-        "w": 707,
-        "h": 780
+        "x": 975,
+        "y": 544,
+        "w": 487,
+        "h": 532
       },
       "rotated": false,
       "trimmed": false,
       "spriteSourceSize": {
-        "x": 0,
-        "y": 0,
-        "w": 707,
-        "h": 780
+        "x": -1,
+        "y": 8,
+        "w": 487,
+        "h": 532
       },
       "sourceSize": {
-        "w": 707,
-        "h": 780
+        "w": 485,
+        "h": 535
       },
       "duration": 42
     }
@@ -133,8 +133,8 @@
     "image": "zohran_mamdani_grapple_pete_strike.webp",
     "format": "RGBA8888",
     "size": {
-      "w": 2133,
-      "h": 1568
+      "w": 1462,
+      "h": 1076
     },
     "scale": "1",
     "frameTags": [
@@ -146,8 +146,8 @@
       }
     ],
     "anchor": {
-      "x": 180,
-      "y": 760
+      "x": 123.37552742616035,
+      "y": 521.530612244898
     },
     "referenceAlignment": {
       "referenceBounds": {
@@ -161,10 +161,10 @@
       "normalized": true
     },
     "pairedEnemyRoot": {
-      "x": 545,
-      "y": 760
+      "x": 373.55368026254104,
+      "y": 521.530612244898
     },
-    "bodyScale": 0.3333333333333333,
+    "bodyScale": 0.4863201094391244,
     "holdFrame": 5,
     "animationId": "607aaf9b-02dd-48fa-81c5-e073be2af5d0",
     "savedOriginalFrames": [
@@ -186,7 +186,7 @@
     ],
     "contactFrame": 1,
     "nativePixels": true,
-    "reviewStatus": "verified: actual-game hold, held-hit and recovery; identity comparison captured 2026-10-09",
+    "reviewStatus": "candidate: identity correction; in-game review pending",
     "impactZ": 95,
     "impactXOffset": 35,
     "paletteCorrection": {
@@ -199,6 +199,12 @@
       ],
       "alphaAndGeometryPreserved": true,
       "date": "2026-10-09"
+    },
+    "identityCorrection": {
+      "source": "built-in image edit of native Makko bake",
+      "version": "correction19",
+      "sourceAnimationId": "607aaf9b-02dd-48fa-81c5-e073be2af5d0",
+      "resampled": false
     }
   }
 }

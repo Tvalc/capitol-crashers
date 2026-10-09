@@ -2,85 +2,85 @@
   "frames": {
     "abdul_el-sayed_grapple_greene_strike_000.png": {
       "frame": {
-        "x": 2,
-        "y": 2,
-        "w": 664,
-        "h": 561
+        "x": 0,
+        "y": 0,
+        "w": 556,
+        "h": 493
       },
       "rotated": false,
       "trimmed": true,
       "spriteSourceSize": {
-        "x": 14,
-        "y": 78,
-        "w": 664,
-        "h": 561
+        "x": 10,
+        "y": 32,
+        "w": 556,
+        "h": 493
       },
       "sourceSize": {
-        "w": 823,
-        "h": 639
+        "w": 685,
+        "h": 533
       },
       "duration": 250
     },
     "abdul_el-sayed_grapple_greene_strike_001.png": {
       "frame": {
-        "x": 670,
-        "y": 2,
-        "w": 664,
-        "h": 561
+        "x": 556,
+        "y": 0,
+        "w": 557,
+        "h": 493
       },
       "rotated": false,
       "trimmed": true,
       "spriteSourceSize": {
-        "x": 14,
-        "y": 78,
-        "w": 664,
-        "h": 561
+        "x": 10,
+        "y": 32,
+        "w": 557,
+        "h": 493
       },
       "sourceSize": {
-        "w": 823,
-        "h": 639
+        "w": 685,
+        "h": 533
       },
       "duration": 250
     },
     "abdul_el-sayed_grapple_greene_strike_002.png": {
       "frame": {
-        "x": 1338,
-        "y": 2,
-        "w": 664,
-        "h": 561
+        "x": 1113,
+        "y": 0,
+        "w": 556,
+        "h": 493
       },
       "rotated": false,
       "trimmed": true,
       "spriteSourceSize": {
-        "x": 14,
-        "y": 78,
-        "w": 664,
-        "h": 561
+        "x": 11,
+        "y": 32,
+        "w": 556,
+        "h": 493
       },
       "sourceSize": {
-        "w": 823,
-        "h": 639
+        "w": 685,
+        "h": 533
       },
       "duration": 250
     },
     "abdul_el-sayed_grapple_greene_strike_003.png": {
       "frame": {
-        "x": 2,
-        "y": 567,
-        "w": 664,
-        "h": 561
+        "x": 0,
+        "y": 493,
+        "w": 556,
+        "h": 449
       },
       "rotated": false,
       "trimmed": true,
       "spriteSourceSize": {
-        "x": 14,
-        "y": 78,
-        "w": 664,
-        "h": 561
+        "x": 10,
+        "y": 81,
+        "w": 556,
+        "h": 449
       },
       "sourceSize": {
-        "w": 823,
-        "h": 639
+        "w": 685,
+        "h": 533
       },
       "duration": 250
     }
@@ -91,8 +91,8 @@
     "image": "abdul_el_sayed_grapple_greene_strike.webp",
     "format": "RGBA8888",
     "size": {
-      "w": 2004,
-      "h": 1130
+      "w": 1669,
+      "h": 942
     },
     "scale": "1",
     "frameTags": [
@@ -104,8 +104,8 @@
       }
     ],
     "anchor": {
-      "x": 210,
-      "y": 620
+      "x": 174.89520958083833,
+      "y": 516.8495575221239
     },
     "referenceAlignment": {
       "referenceBounds": {
@@ -118,10 +118,10 @@
       },
       "normalized": true
     },
-    "bodyScale": 0.45454545454545453,
+    "bodyScale": 0.5457813606405578,
     "pairedEnemyRoot": {
-      "x": 550,
-      "y": 620
+      "x": 458.0588822355289,
+      "y": 516.8495575221239
     },
     "animationId": "7d874bb3-6bb5-47b1-9a6d-e60b206f9bcb",
     "savedOriginalFrames": [
@@ -142,6 +142,12 @@
     ],
     "contactFrame": 3,
     "nativePixels": true,
-    "reviewStatus": "verified: actual-game hold, held-hit and recovery; identity comparison captured 2026-10-09"
+    "reviewStatus": "candidate: identity correction; in-game review pending",
+    "identityCorrection": {
+      "source": "built-in image edit of native Makko bake",
+      "version": "correction19",
+      "sourceAnimationId": "7d874bb3-6bb5-47b1-9a6d-e60b206f9bcb",
+      "resampled": false
+    }
   }
 }

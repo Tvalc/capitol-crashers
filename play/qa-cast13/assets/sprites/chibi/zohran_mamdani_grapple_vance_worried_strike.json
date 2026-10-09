@@ -2,148 +2,148 @@
   "frames": {
     "jd_vance_mamdani_sad_heavy_revision_7f_native_000.webp": {
       "frame": {
-        "x": 2,
-        "y": 2,
-        "w": 681,
-        "h": 808
+        "x": 0,
+        "y": 0,
+        "w": 384,
+        "h": 468
       },
       "rotated": false,
       "trimmed": false,
       "spriteSourceSize": {
-        "x": 0,
-        "y": 0,
-        "w": 681,
-        "h": 808
+        "x": -1,
+        "y": -17,
+        "w": 384,
+        "h": 468
       },
       "sourceSize": {
-        "w": 681,
-        "h": 808
+        "w": 382,
+        "h": 453
       },
       "duration": 42
     },
     "jd_vance_mamdani_sad_heavy_revision_7f_native_001.webp": {
       "frame": {
-        "x": 687,
-        "y": 2,
-        "w": 681,
-        "h": 808
+        "x": 384,
+        "y": 0,
+        "w": 384,
+        "h": 468
       },
       "rotated": false,
       "trimmed": false,
       "spriteSourceSize": {
-        "x": 0,
-        "y": 0,
-        "w": 681,
-        "h": 808
+        "x": -1,
+        "y": -17,
+        "w": 384,
+        "h": 468
       },
       "sourceSize": {
-        "w": 681,
-        "h": 808
+        "w": 382,
+        "h": 453
       },
       "duration": 42
     },
     "jd_vance_mamdani_sad_heavy_revision_7f_native_002.webp": {
       "frame": {
-        "x": 1372,
-        "y": 2,
-        "w": 681,
-        "h": 808
+        "x": 768,
+        "y": 0,
+        "w": 384,
+        "h": 468
       },
       "rotated": false,
       "trimmed": false,
       "spriteSourceSize": {
-        "x": 0,
-        "y": 0,
-        "w": 681,
-        "h": 808
+        "x": -1,
+        "y": -17,
+        "w": 384,
+        "h": 468
       },
       "sourceSize": {
-        "w": 681,
-        "h": 808
+        "w": 382,
+        "h": 453
       },
       "duration": 42
     },
     "jd_vance_mamdani_sad_heavy_revision_7f_native_003.webp": {
       "frame": {
-        "x": 2,
-        "y": 814,
-        "w": 681,
-        "h": 808
+        "x": 0,
+        "y": 468,
+        "w": 384,
+        "h": 453
       },
       "rotated": false,
       "trimmed": false,
       "spriteSourceSize": {
-        "x": 0,
-        "y": 0,
-        "w": 681,
-        "h": 808
+        "x": -1,
+        "y": -1,
+        "w": 384,
+        "h": 453
       },
       "sourceSize": {
-        "w": 681,
-        "h": 808
+        "w": 382,
+        "h": 453
       },
       "duration": 42
     },
     "jd_vance_mamdani_sad_heavy_revision_7f_native_004.webp": {
       "frame": {
-        "x": 687,
-        "y": 814,
-        "w": 681,
-        "h": 808
+        "x": 384,
+        "y": 468,
+        "w": 384,
+        "h": 453
       },
       "rotated": false,
       "trimmed": false,
       "spriteSourceSize": {
-        "x": 0,
-        "y": 0,
-        "w": 681,
-        "h": 808
+        "x": -1,
+        "y": -1,
+        "w": 384,
+        "h": 453
       },
       "sourceSize": {
-        "w": 681,
-        "h": 808
+        "w": 382,
+        "h": 453
       },
       "duration": 42
     },
     "jd_vance_mamdani_sad_heavy_revision_7f_native_005.webp": {
       "frame": {
-        "x": 1372,
-        "y": 814,
-        "w": 681,
-        "h": 808
+        "x": 768,
+        "y": 468,
+        "w": 384,
+        "h": 453
       },
       "rotated": false,
       "trimmed": false,
       "spriteSourceSize": {
-        "x": 0,
-        "y": 0,
-        "w": 681,
-        "h": 808
+        "x": -1,
+        "y": -1,
+        "w": 384,
+        "h": 453
       },
       "sourceSize": {
-        "w": 681,
-        "h": 808
+        "w": 382,
+        "h": 453
       },
       "duration": 42
     },
     "jd_vance_mamdani_sad_heavy_revision_7f_native_006.webp": {
       "frame": {
-        "x": 2,
-        "y": 1626,
-        "w": 681,
-        "h": 808
+        "x": 0,
+        "y": 921,
+        "w": 384,
+        "h": 444
       },
       "rotated": false,
       "trimmed": false,
       "spriteSourceSize": {
-        "x": 0,
-        "y": 0,
-        "w": 681,
-        "h": 808
+        "x": -1,
+        "y": 8,
+        "w": 384,
+        "h": 444
       },
       "sourceSize": {
-        "w": 681,
-        "h": 808
+        "w": 382,
+        "h": 453
       },
       "duration": 42
     }
@@ -154,8 +154,8 @@
     "image": "zohran_mamdani_grapple_vance_worried_strike.webp",
     "format": "RGBA8888",
     "size": {
-      "w": 2055,
-      "h": 2436
+      "w": 1152,
+      "h": 1365
     },
     "scale": "1",
     "frameTags": [
@@ -167,8 +167,8 @@
       }
     ],
     "anchor": {
-      "x": 180,
-      "y": 790
+      "x": 100.9051094890511,
+      "y": 442.67241379310343
     },
     "referenceAlignment": {
       "referenceBounds": {
@@ -182,10 +182,10 @@
       "normalized": true
     },
     "pairedEnemyRoot": {
-      "x": 525,
-      "y": 790
+      "x": 294.30656934306575,
+      "y": 442.67241379310343
     },
-    "bodyScale": 0.32051282051282054,
+    "bodyScale": 0.5717481303418803,
     "holdFrame": 6,
     "animationId": "093d93e8-fab7-4260-b735-ade73b413100",
     "savedOriginalFrames": [
@@ -209,8 +209,14 @@
     ],
     "contactFrame": 2,
     "nativePixels": true,
-    "reviewStatus": "verified: actual hold/contact/recovery and normalized idle transition in mv-scale-board.jpg; approved identity retained",
+    "reviewStatus": "candidate: identity correction; in-game review pending",
     "impactZ": 70,
-    "impactXOffset": 45
+    "impactXOffset": 45,
+    "identityCorrection": {
+      "source": "built-in image edit of native Makko bake",
+      "version": "correction19",
+      "sourceAnimationId": "093d93e8-fab7-4260-b735-ade73b413100",
+      "resampled": false
+    }
   }
 }

@@ -2,148 +2,148 @@
   "frames": {
     "jd_vance_sayed_sad_heavy_revision_7f_native_000.webp": {
       "frame": {
-        "x": 2,
-        "y": 2,
-        "w": 689,
-        "h": 746
+        "x": 0,
+        "y": 0,
+        "w": 402,
+        "h": 441
       },
       "rotated": false,
       "trimmed": false,
       "spriteSourceSize": {
-        "x": 0,
-        "y": 0,
-        "w": 689,
-        "h": 746
+        "x": -1,
+        "y": -8,
+        "w": 402,
+        "h": 441
       },
       "sourceSize": {
-        "w": 689,
-        "h": 746
+        "w": 399,
+        "h": 433
       },
       "duration": 42
     },
     "jd_vance_sayed_sad_heavy_revision_7f_native_001.webp": {
       "frame": {
-        "x": 695,
-        "y": 2,
-        "w": 689,
-        "h": 746
+        "x": 402,
+        "y": 0,
+        "w": 401,
+        "h": 441
       },
       "rotated": false,
       "trimmed": false,
       "spriteSourceSize": {
-        "x": 0,
-        "y": 0,
-        "w": 689,
-        "h": 746
+        "x": -1,
+        "y": -8,
+        "w": 401,
+        "h": 441
       },
       "sourceSize": {
-        "w": 689,
-        "h": 746
+        "w": 399,
+        "h": 433
       },
       "duration": 42
     },
     "jd_vance_sayed_sad_heavy_revision_7f_native_002.webp": {
       "frame": {
-        "x": 1388,
-        "y": 2,
-        "w": 689,
-        "h": 746
+        "x": 803,
+        "y": 0,
+        "w": 402,
+        "h": 441
       },
       "rotated": false,
       "trimmed": false,
       "spriteSourceSize": {
-        "x": 0,
-        "y": 0,
-        "w": 689,
-        "h": 746
+        "x": -1,
+        "y": -8,
+        "w": 402,
+        "h": 441
       },
       "sourceSize": {
-        "w": 689,
-        "h": 746
+        "w": 399,
+        "h": 433
       },
       "duration": 42
     },
     "jd_vance_sayed_sad_heavy_revision_7f_native_003.webp": {
       "frame": {
-        "x": 2,
-        "y": 752,
-        "w": 689,
-        "h": 746
+        "x": 0,
+        "y": 441,
+        "w": 402,
+        "h": 436
       },
       "rotated": false,
       "trimmed": false,
       "spriteSourceSize": {
-        "x": 0,
-        "y": 0,
-        "w": 689,
-        "h": 746
+        "x": -1,
+        "y": -1,
+        "w": 402,
+        "h": 436
       },
       "sourceSize": {
-        "w": 689,
-        "h": 746
+        "w": 399,
+        "h": 433
       },
       "duration": 42
     },
     "jd_vance_sayed_sad_heavy_revision_7f_native_004.webp": {
       "frame": {
-        "x": 695,
-        "y": 752,
-        "w": 689,
-        "h": 746
+        "x": 402,
+        "y": 441,
+        "w": 401,
+        "h": 436
       },
       "rotated": false,
       "trimmed": false,
       "spriteSourceSize": {
-        "x": 0,
-        "y": 0,
-        "w": 689,
-        "h": 746
+        "x": -1,
+        "y": -1,
+        "w": 401,
+        "h": 436
       },
       "sourceSize": {
-        "w": 689,
-        "h": 746
+        "w": 399,
+        "h": 433
       },
       "duration": 42
     },
     "jd_vance_sayed_sad_heavy_revision_7f_native_005.webp": {
       "frame": {
-        "x": 1388,
-        "y": 752,
-        "w": 689,
-        "h": 746
+        "x": 803,
+        "y": 441,
+        "w": 402,
+        "h": 436
       },
       "rotated": false,
       "trimmed": false,
       "spriteSourceSize": {
-        "x": 0,
-        "y": 0,
-        "w": 689,
-        "h": 746
+        "x": -1,
+        "y": -1,
+        "w": 402,
+        "h": 436
       },
       "sourceSize": {
-        "w": 689,
-        "h": 746
+        "w": 399,
+        "h": 433
       },
       "duration": 42
     },
     "jd_vance_sayed_sad_heavy_revision_7f_native_006.webp": {
       "frame": {
-        "x": 2,
-        "y": 1502,
-        "w": 689,
-        "h": 746
+        "x": 0,
+        "y": 877,
+        "w": 402,
+        "h": 428
       },
       "rotated": false,
       "trimmed": false,
       "spriteSourceSize": {
-        "x": 0,
-        "y": 0,
-        "w": 689,
-        "h": 746
+        "x": -1,
+        "y": 5,
+        "w": 402,
+        "h": 428
       },
       "sourceSize": {
-        "w": 689,
-        "h": 746
+        "w": 399,
+        "h": 433
       },
       "duration": 42
     }
@@ -154,8 +154,8 @@
     "image": "abdul_el_sayed_grapple_vance_worried_strike.webp",
     "format": "RGBA8888",
     "size": {
-      "w": 2079,
-      "h": 2250
+      "w": 1205,
+      "h": 1305
     },
     "scale": "1",
     "frameTags": [
@@ -167,8 +167,8 @@
       }
     ],
     "anchor": {
-      "x": 155,
-      "y": 733
+      "x": 89.83886483886484,
+      "y": 425.14
     },
     "referenceAlignment": {
       "referenceBounds": {
@@ -182,10 +182,10 @@
       "normalized": true
     },
     "pairedEnemyRoot": {
-      "x": 530,
-      "y": 733
+      "x": 307.1909571909572,
+      "y": 425.14
     },
-    "bodyScale": 0.3457814661134163,
+    "bodyScale": 0.59658063738572,
     "holdFrame": 6,
     "animationId": "dff5b7df-04ab-4b8f-976c-1320557441b5",
     "savedOriginalFrames": [
@@ -209,8 +209,14 @@
     ],
     "contactFrame": 3,
     "nativePixels": true,
-    "reviewStatus": "verified: actual hold/contact/recovery and normalized idle transition in sv-scale-board.jpg; approved identity retained",
+    "reviewStatus": "candidate: identity correction; in-game review pending",
     "impactZ": 90,
-    "impactXOffset": 65
+    "impactXOffset": 65,
+    "identityCorrection": {
+      "source": "built-in image edit of native Makko bake",
+      "version": "correction19",
+      "sourceAnimationId": "dff5b7df-04ab-4b8f-976c-1320557441b5",
+      "resampled": false
+    }
   }
 }
