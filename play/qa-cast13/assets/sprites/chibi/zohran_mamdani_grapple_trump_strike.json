@@ -19,7 +19,9 @@
         "w": 715,
         "h": 624
       },
-      "duration": 250
+      "duration": 250,
+      "grappleScale": 1.0,
+      "groundAnchorY": 602
     },
     "zohran_mamdani_zohran_mamdani_grapple_trump_strike_001.png": {
       "frame": {
@@ -40,7 +42,9 @@
         "w": 715,
         "h": 624
       },
-      "duration": 250
+      "duration": 250,
+      "grappleScale": 1.0,
+      "groundAnchorY": 602
     },
     "zohran_mamdani_zohran_mamdani_grapple_trump_strike_002.png": {
       "frame": {
@@ -61,7 +65,9 @@
         "w": 715,
         "h": 624
       },
-      "duration": 250
+      "duration": 250,
+      "grappleScale": 1.0,
+      "groundAnchorY": 602
     },
     "zohran_mamdani_zohran_mamdani_grapple_trump_strike_003.png": {
       "frame": {
@@ -82,7 +88,9 @@
         "w": 715,
         "h": 624
       },
-      "duration": 250
+      "duration": 250,
+      "grappleScale": 1.0,
+      "groundAnchorY": 602
     },
     "zohran_mamdani_zohran_mamdani_grapple_trump_strike_004.png": {
       "frame": {
@@ -103,7 +111,9 @@
         "w": 715,
         "h": 624
       },
-      "duration": 250
+      "duration": 250,
+      "grappleScale": 1.0,
+      "groundAnchorY": 602
     },
     "zohran_mamdani_zohran_mamdani_grapple_trump_strike_005.png": {
       "frame": {
@@ -124,7 +134,9 @@
         "w": 715,
         "h": 624
       },
-      "duration": 250
+      "duration": 250,
+      "grappleScale": 1.0,
+      "groundAnchorY": 602
     }
   },
   "meta": {
@@ -160,7 +172,7 @@
       },
       "normalized": true
     },
-    "bodyScale": 0.43252595155709345,
+    "bodyScale": 0.3949333726425566,
     "pairedEnemyRoot": {
       "x": 540,
       "y": 602
@@ -185,6 +197,22 @@
     ],
     "contactFrame": 2,
     "nativePixels": true,
-    "reviewStatus": "verified: actual hold/contact/recovery and normalized idle transition in mt-scale-board.jpg; approved identity retained"
+    "reviewStatus": "verified: actual hold/contact/recovery and normalized idle transition in mt-scale-board.jpg; approved identity retained",
+    "scaleCalibration": {
+      "version": "scale20",
+      "method": "joint held stature; shared transform preserves grip; common-mode drift only",
+      "heroHoldBefore": 266.0034602076125,
+      "enemyHoldBefore": 262.97577854671283,
+      "factor": 0.9130859575495909,
+      "frameFactors": [
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ],
+      "pixelsChanged": false
+    }
   }
 }

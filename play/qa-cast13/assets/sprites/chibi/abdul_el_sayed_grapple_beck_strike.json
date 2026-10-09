@@ -19,7 +19,9 @@
         "w": 694,
         "h": 674
       },
-      "duration": 250
+      "duration": 250,
+      "grappleScale": 1.0,
+      "groundAnchorY": 648
     },
     "abdul_el-sayed_grapple_beck_strike_001.png": {
       "frame": {
@@ -40,7 +42,9 @@
         "w": 694,
         "h": 674
       },
-      "duration": 250
+      "duration": 250,
+      "grappleScale": 1.0,
+      "groundAnchorY": 648
     },
     "abdul_el-sayed_grapple_beck_strike_002.png": {
       "frame": {
@@ -61,7 +65,9 @@
         "w": 694,
         "h": 674
       },
-      "duration": 250
+      "duration": 250,
+      "grappleScale": 1.0,
+      "groundAnchorY": 648
     },
     "abdul_el-sayed_grapple_beck_strike_003.png": {
       "frame": {
@@ -82,7 +88,9 @@
         "w": 694,
         "h": 674
       },
-      "duration": 250
+      "duration": 250,
+      "grappleScale": 1.0,
+      "groundAnchorY": 648
     },
     "abdul_el-sayed_grapple_beck_strike_004.png": {
       "frame": {
@@ -103,7 +111,9 @@
         "w": 694,
         "h": 674
       },
-      "duration": 250
+      "duration": 250,
+      "grappleScale": 1.037764,
+      "groundAnchorY": 648
     },
     "abdul_el-sayed_grapple_beck_strike_005.png": {
       "frame": {
@@ -124,7 +134,9 @@
         "w": 694,
         "h": 674
       },
-      "duration": 250
+      "duration": 250,
+      "grappleScale": 1.033581,
+      "groundAnchorY": 648
     },
     "abdul_el-sayed_grapple_beck_strike_006.png": {
       "frame": {
@@ -145,7 +157,9 @@
         "w": 694,
         "h": 674
       },
-      "duration": 250
+      "duration": 250,
+      "grappleScale": 1.0,
+      "groundAnchorY": 648
     },
     "abdul_el-sayed_grapple_beck_strike_007.png": {
       "frame": {
@@ -166,7 +180,9 @@
         "w": 694,
         "h": 674
       },
-      "duration": 250
+      "duration": 250,
+      "grappleScale": 1.0,
+      "groundAnchorY": 648
     },
     "abdul_el-sayed_grapple_beck_strike_008.png": {
       "frame": {
@@ -187,7 +203,9 @@
         "w": 694,
         "h": 674
       },
-      "duration": 250
+      "duration": 250,
+      "grappleScale": 1.0,
+      "groundAnchorY": 648
     }
   },
   "meta": {
@@ -223,7 +241,7 @@
       },
       "normalized": true
     },
-    "bodyScale": 0.4098360655737705,
+    "bodyScale": 0.378523770012112,
     "pairedEnemyRoot": {
       "x": 525,
       "y": 648
@@ -254,6 +272,25 @@
     ],
     "contactFrame": 3,
     "nativePixels": true,
-    "reviewStatus": "candidate: in-game visual QA pending"
+    "reviewStatus": "candidate: in-game visual QA pending",
+    "scaleCalibration": {
+      "version": "scale20",
+      "method": "joint held stature; shared transform preserves grip; common-mode drift only",
+      "heroHoldBefore": 257.78688524590166,
+      "enemyHoldBefore": 270.4918032786885,
+      "factor": 0.9235979988295533,
+      "frameFactors": [
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.037764,
+        1.033581,
+        1.0,
+        1.0,
+        1.0
+      ],
+      "pixelsChanged": false
+    }
   }
 }

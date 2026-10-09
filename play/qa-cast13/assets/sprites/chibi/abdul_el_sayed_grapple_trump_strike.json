@@ -19,7 +19,9 @@
         "w": 785,
         "h": 530
       },
-      "duration": 250
+      "duration": 250,
+      "grappleScale": 1.0,
+      "groundAnchorY": 510
     },
     "abdul_el-sayed_grapple_trump_strike_001.png": {
       "frame": {
@@ -40,7 +42,9 @@
         "w": 785,
         "h": 530
       },
-      "duration": 250
+      "duration": 250,
+      "grappleScale": 1.0,
+      "groundAnchorY": 510
     },
     "abdul_el-sayed_grapple_trump_strike_002.png": {
       "frame": {
@@ -61,7 +65,9 @@
         "w": 785,
         "h": 530
       },
-      "duration": 250
+      "duration": 250,
+      "grappleScale": 1.0,
+      "groundAnchorY": 510
     },
     "abdul_el-sayed_grapple_trump_strike_003.png": {
       "frame": {
@@ -82,7 +88,9 @@
         "w": 785,
         "h": 530
       },
-      "duration": 250
+      "duration": 250,
+      "grappleScale": 1.025901,
+      "groundAnchorY": 510
     },
     "abdul_el-sayed_grapple_trump_strike_004.png": {
       "frame": {
@@ -103,7 +111,9 @@
         "w": 785,
         "h": 530
       },
-      "duration": 250
+      "duration": 250,
+      "grappleScale": 1.0,
+      "groundAnchorY": 510
     },
     "abdul_el-sayed_grapple_trump_strike_005.png": {
       "frame": {
@@ -124,7 +134,9 @@
         "w": 785,
         "h": 530
       },
-      "duration": 250
+      "duration": 250,
+      "grappleScale": 1.0,
+      "groundAnchorY": 510
     },
     "abdul_el-sayed_grapple_trump_strike_006.png": {
       "frame": {
@@ -145,7 +157,9 @@
         "w": 785,
         "h": 530
       },
-      "duration": 250
+      "duration": 250,
+      "grappleScale": 1.0,
+      "groundAnchorY": 510
     },
     "abdul_el-sayed_grapple_trump_strike_007.png": {
       "frame": {
@@ -166,7 +180,9 @@
         "w": 785,
         "h": 530
       },
-      "duration": 250
+      "duration": 250,
+      "grappleScale": 1.0,
+      "groundAnchorY": 510
     }
   },
   "meta": {
@@ -202,7 +218,7 @@
       },
       "normalized": true
     },
-    "bodyScale": 0.5154639175257731,
+    "bodyScale": 0.46982841501623096,
     "pairedEnemyRoot": {
       "x": 590,
       "y": 510
@@ -231,6 +247,24 @@
     ],
     "contactFrame": 3,
     "nativePixels": true,
-    "reviewStatus": "verified: actual hold/contact/recovery and normalized idle transition in st-scale-board.jpg; approved identity retained"
+    "reviewStatus": "verified: actual hold/contact/recovery and normalized idle transition in st-scale-board.jpg; approved identity retained",
+    "scaleCalibration": {
+      "version": "scale20",
+      "method": "joint held stature; shared transform preserves grip; common-mode drift only",
+      "heroHoldBefore": 266.49484536082474,
+      "enemyHoldBefore": 263.40206185567007,
+      "factor": 0.9114671251314882,
+      "frameFactors": [
+        1.0,
+        1.0,
+        1.0,
+        1.025901,
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ],
+      "pixelsChanged": false
+    }
   }
 }

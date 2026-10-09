@@ -19,7 +19,9 @@
         "w": 389,
         "h": 444
       },
-      "duration": 42
+      "duration": 42,
+      "grappleScale": 0.96729,
+      "groundAnchorY": 434.1050228310502
     },
     "pete_hegseth_sayed_transformed_paired_knee_7f_native_001.webp": {
       "frame": {
@@ -40,7 +42,9 @@
         "w": 389,
         "h": 444
       },
-      "duration": 42
+      "duration": 42,
+      "grappleScale": 0.970866,
+      "groundAnchorY": 434.1050228310502
     },
     "pete_hegseth_sayed_transformed_paired_knee_7f_native_002.webp": {
       "frame": {
@@ -61,7 +65,9 @@
         "w": 389,
         "h": 444
       },
-      "duration": 42
+      "duration": 42,
+      "grappleScale": 0.969638,
+      "groundAnchorY": 434.1050228310502
     },
     "pete_hegseth_sayed_transformed_paired_knee_7f_native_003.webp": {
       "frame": {
@@ -82,7 +88,9 @@
         "w": 389,
         "h": 444
       },
-      "duration": 42
+      "duration": 42,
+      "grappleScale": 0.967258,
+      "groundAnchorY": 434.1050228310502
     },
     "pete_hegseth_sayed_transformed_paired_knee_7f_native_004.webp": {
       "frame": {
@@ -103,7 +111,9 @@
         "w": 389,
         "h": 444
       },
-      "duration": 42
+      "duration": 42,
+      "grappleScale": 1.0,
+      "groundAnchorY": 434.1050228310502
     },
     "pete_hegseth_sayed_transformed_paired_knee_7f_native_005.webp": {
       "frame": {
@@ -124,7 +134,9 @@
         "w": 389,
         "h": 444
       },
-      "duration": 42
+      "duration": 42,
+      "grappleScale": 0.954497,
+      "groundAnchorY": 434.1050228310502
     },
     "pete_hegseth_sayed_transformed_paired_knee_7f_native_006.webp": {
       "frame": {
@@ -145,7 +157,9 @@
         "w": 389,
         "h": 444
       },
-      "duration": 42
+      "duration": 42,
+      "grappleScale": 1.0,
+      "groundAnchorY": 434.1050228310502
     }
   },
   "meta": {
@@ -185,7 +199,7 @@
       "x": 299.86979166666663,
       "y": 434.1050228310502
     },
-    "bodyScale": 0.5835866261398177,
+    "bodyScale": 0.6086318775461173,
     "holdFrame": 6,
     "animationId": "246b8ce9-7e63-4c4a-93f5-5939dd57e671",
     "savedOriginalFrames": [
@@ -217,6 +231,23 @@
       "version": "correction19",
       "sourceAnimationId": "246b8ce9-7e63-4c4a-93f5-5939dd57e671",
       "resampled": false
+    },
+    "scaleCalibration": {
+      "version": "scale20",
+      "method": "joint held stature; shared transform preserves grip; common-mode drift only",
+      "heroHoldBefore": 229.93313069908817,
+      "enemyHoldBefore": 236.35258358662617,
+      "factor": 1.0429160818368362,
+      "frameFactors": [
+        0.96729,
+        0.970866,
+        0.969638,
+        0.967258,
+        1.0,
+        0.954497,
+        1.0
+      ],
+      "pixelsChanged": false
     }
   }
 }

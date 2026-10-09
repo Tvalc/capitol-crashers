@@ -19,7 +19,9 @@
         "w": 399,
         "h": 433
       },
-      "duration": 42
+      "duration": 42,
+      "grappleScale": 1.0,
+      "groundAnchorY": 425.14
     },
     "jd_vance_sayed_sad_heavy_revision_7f_native_001.webp": {
       "frame": {
@@ -40,7 +42,9 @@
         "w": 399,
         "h": 433
       },
-      "duration": 42
+      "duration": 42,
+      "grappleScale": 1.0,
+      "groundAnchorY": 425.14
     },
     "jd_vance_sayed_sad_heavy_revision_7f_native_002.webp": {
       "frame": {
@@ -61,7 +65,9 @@
         "w": 399,
         "h": 433
       },
-      "duration": 42
+      "duration": 42,
+      "grappleScale": 1.0,
+      "groundAnchorY": 425.14
     },
     "jd_vance_sayed_sad_heavy_revision_7f_native_003.webp": {
       "frame": {
@@ -82,7 +88,9 @@
         "w": 399,
         "h": 433
       },
-      "duration": 42
+      "duration": 42,
+      "grappleScale": 1.0,
+      "groundAnchorY": 425.14
     },
     "jd_vance_sayed_sad_heavy_revision_7f_native_004.webp": {
       "frame": {
@@ -103,7 +111,9 @@
         "w": 399,
         "h": 433
       },
-      "duration": 42
+      "duration": 42,
+      "grappleScale": 1.0,
+      "groundAnchorY": 425.14
     },
     "jd_vance_sayed_sad_heavy_revision_7f_native_005.webp": {
       "frame": {
@@ -124,7 +134,9 @@
         "w": 399,
         "h": 433
       },
-      "duration": 42
+      "duration": 42,
+      "grappleScale": 1.0,
+      "groundAnchorY": 425.14
     },
     "jd_vance_sayed_sad_heavy_revision_7f_native_006.webp": {
       "frame": {
@@ -145,7 +157,9 @@
         "w": 399,
         "h": 433
       },
-      "duration": 42
+      "duration": 42,
+      "grappleScale": 1.0,
+      "groundAnchorY": 425.14
     }
   },
   "meta": {
@@ -185,7 +199,7 @@
       "x": 307.1909571909572,
       "y": 425.14
     },
-    "bodyScale": 0.59658063738572,
+    "bodyScale": 0.5916870415647921,
     "holdFrame": 6,
     "animationId": "dff5b7df-04ab-4b8f-976c-1320557441b5",
     "savedOriginalFrames": [
@@ -217,6 +231,23 @@
       "version": "correction19",
       "sourceAnimationId": "dff5b7df-04ab-4b8f-976c-1320557441b5",
       "resampled": false
+    },
+    "scaleCalibration": {
+      "version": "scale20",
+      "method": "joint held stature; shared transform preserves grip; common-mode drift only",
+      "heroHoldBefore": 244.00148069075948,
+      "enemyHoldBefore": 244.00148069075948,
+      "factor": 0.9917972600613185,
+      "frameFactors": [
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ],
+      "pixelsChanged": false
     }
   }
 }

@@ -19,7 +19,9 @@
         "w": 545,
         "h": 476
       },
-      "duration": 42
+      "duration": 42,
+      "grappleScale": 1.0,
+      "groundAnchorY": 470.4763719512195
     },
     "zohran_mamdani_paired_greene_hold_hit_6f_native_001.webp": {
       "frame": {
@@ -40,7 +42,9 @@
         "w": 545,
         "h": 476
       },
-      "duration": 42
+      "duration": 42,
+      "grappleScale": 1.0,
+      "groundAnchorY": 470.4763719512195
     },
     "zohran_mamdani_paired_greene_hold_hit_6f_native_002.webp": {
       "frame": {
@@ -61,7 +65,9 @@
         "w": 545,
         "h": 476
       },
-      "duration": 42
+      "duration": 42,
+      "grappleScale": 1.0,
+      "groundAnchorY": 470.4763719512195
     },
     "zohran_mamdani_paired_greene_hold_hit_6f_native_003.webp": {
       "frame": {
@@ -82,7 +88,9 @@
         "w": 545,
         "h": 476
       },
-      "duration": 42
+      "duration": 42,
+      "grappleScale": 1.0,
+      "groundAnchorY": 470.4763719512195
     },
     "zohran_mamdani_paired_greene_hold_hit_6f_native_004.webp": {
       "frame": {
@@ -103,7 +111,9 @@
         "w": 545,
         "h": 476
       },
-      "duration": 42
+      "duration": 42,
+      "grappleScale": 1.0,
+      "groundAnchorY": 470.4763719512195
     },
     "zohran_mamdani_paired_greene_hold_hit_6f_native_005.webp": {
       "frame": {
@@ -124,7 +134,9 @@
         "w": 545,
         "h": 476
       },
-      "duration": 42
+      "duration": 42,
+      "grappleScale": 1.0,
+      "groundAnchorY": 470.4763719512195
     }
   },
   "meta": {
@@ -164,7 +176,7 @@
       "x": 422.6595744680851,
       "y": 470.4763719512195
     },
-    "bodyScale": 0.5360401459854015,
+    "bodyScale": 0.5319052900363674,
     "holdFrame": 0,
     "animationId": "3ddb9586-b292-43b2-92cc-7040ac08ba52",
     "savedOriginalFrames": [
@@ -196,6 +208,22 @@
       "version": "correction19",
       "sourceAnimationId": "3ddb9586-b292-43b2-92cc-7040ac08ba52",
       "resampled": false
+    },
+    "scaleCalibration": {
+      "version": "scale20",
+      "method": "joint held stature; shared transform preserves grip; common-mode drift only",
+      "heroHoldBefore": 246.5784671532847,
+      "enemyHoldBefore": 238.00182481751827,
+      "factor": 0.9922862942635892,
+      "frameFactors": [
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ],
+      "pixelsChanged": false
     }
   }
 }

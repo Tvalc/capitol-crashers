@@ -19,7 +19,9 @@
         "w": 499,
         "h": 352
       },
-      "duration": 250
+      "duration": 250,
+      "grappleScale": 1.0,
+      "groundAnchorY": 348.8627450980392
     },
     "abdul_el-sayed_grapple_cruz_strike_001.png": {
       "frame": {
@@ -40,7 +42,9 @@
         "w": 499,
         "h": 352
       },
-      "duration": 250
+      "duration": 250,
+      "grappleScale": 1.0,
+      "groundAnchorY": 348.8627450980392
     },
     "abdul_el-sayed_grapple_cruz_strike_002.png": {
       "frame": {
@@ -61,7 +65,9 @@
         "w": 499,
         "h": 352
       },
-      "duration": 250
+      "duration": 250,
+      "grappleScale": 1.0,
+      "groundAnchorY": 348.8627450980392
     },
     "abdul_el-sayed_grapple_cruz_strike_003.png": {
       "frame": {
@@ -82,7 +88,9 @@
         "w": 499,
         "h": 352
       },
-      "duration": 250
+      "duration": 250,
+      "grappleScale": 1.0,
+      "groundAnchorY": 348.8627450980392
     },
     "abdul_el-sayed_grapple_cruz_strike_004.png": {
       "frame": {
@@ -103,7 +111,9 @@
         "w": 499,
         "h": 352
       },
-      "duration": 250
+      "duration": 250,
+      "grappleScale": 1.0,
+      "groundAnchorY": 348.8627450980392
     },
     "abdul_el-sayed_grapple_cruz_strike_005.png": {
       "frame": {
@@ -124,7 +134,9 @@
         "w": 499,
         "h": 352
       },
-      "duration": 250
+      "duration": 250,
+      "grappleScale": 1.0,
+      "groundAnchorY": 348.8627450980392
     },
     "abdul_el-sayed_grapple_cruz_strike_006.png": {
       "frame": {
@@ -145,7 +157,9 @@
         "w": 499,
         "h": 352
       },
-      "duration": 250
+      "duration": 250,
+      "grappleScale": 1.0,
+      "groundAnchorY": 348.8627450980392
     },
     "abdul_el-sayed_grapple_cruz_strike_007.png": {
       "frame": {
@@ -166,7 +180,9 @@
         "w": 499,
         "h": 352
       },
-      "duration": 250
+      "duration": 250,
+      "grappleScale": 1.0,
+      "groundAnchorY": 348.8627450980392
     }
   },
   "meta": {
@@ -202,7 +218,7 @@
       },
       "normalized": true
     },
-    "bodyScale": 0.7968435191403627,
+    "bodyScale": 0.7477169603594317,
     "pairedEnemyRoot": {
       "x": 345.1116729877792,
       "y": 348.8627450980392
@@ -240,6 +256,24 @@
       "version": "correction19",
       "sourceAnimationId": "3c433d80-9914-40eb-9885-e6061283c71f",
       "resampled": false
+    },
+    "scaleCalibration": {
+      "version": "scale20",
+      "method": "joint held stature; shared transform preserves grip; common-mode drift only",
+      "heroHoldBefore": 249.4120214909335,
+      "enemyHoldBefore": 274.11417058428475,
+      "factor": 0.9383485494944743,
+      "frameFactors": [
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ],
+      "pixelsChanged": false
     }
   }
 }

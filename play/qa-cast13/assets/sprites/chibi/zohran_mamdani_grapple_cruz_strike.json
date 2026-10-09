@@ -19,7 +19,9 @@
         "w": 401,
         "h": 323
       },
-      "duration": 42
+      "duration": 42,
+      "grappleScale": 1.0,
+      "groundAnchorY": 318.8679245283019
     },
     "zohran_mamdani_grapple_cruz_canonical11_001.webp": {
       "frame": {
@@ -40,7 +42,9 @@
         "w": 401,
         "h": 323
       },
-      "duration": 42
+      "duration": 42,
+      "grappleScale": 1.0,
+      "groundAnchorY": 318.8679245283019
     },
     "zohran_mamdani_grapple_cruz_canonical11_002.webp": {
       "frame": {
@@ -61,7 +65,9 @@
         "w": 401,
         "h": 323
       },
-      "duration": 42
+      "duration": 42,
+      "grappleScale": 1.0,
+      "groundAnchorY": 318.8679245283019
     },
     "zohran_mamdani_grapple_cruz_canonical11_003.webp": {
       "frame": {
@@ -82,7 +88,9 @@
         "w": 401,
         "h": 323
       },
-      "duration": 42
+      "duration": 42,
+      "grappleScale": 1.0,
+      "groundAnchorY": 318.8679245283019
     },
     "zohran_mamdani_grapple_cruz_canonical11_004.webp": {
       "frame": {
@@ -103,7 +111,9 @@
         "w": 401,
         "h": 323
       },
-      "duration": 42
+      "duration": 42,
+      "grappleScale": 1.0,
+      "groundAnchorY": 318.8679245283019
     },
     "zohran_mamdani_grapple_cruz_canonical11_005.webp": {
       "frame": {
@@ -124,7 +134,9 @@
         "w": 401,
         "h": 323
       },
-      "duration": 42
+      "duration": 42,
+      "grappleScale": 1.0,
+      "groundAnchorY": 318.8679245283019
     },
     "zohran_mamdani_grapple_cruz_canonical11_006.webp": {
       "frame": {
@@ -145,7 +157,9 @@
         "w": 401,
         "h": 323
       },
-      "duration": 42
+      "duration": 42,
+      "grappleScale": 1.0,
+      "groundAnchorY": 318.8679245283019
     },
     "zohran_mamdani_grapple_cruz_canonical11_007.webp": {
       "frame": {
@@ -166,7 +180,9 @@
         "w": 401,
         "h": 323
       },
-      "duration": 42
+      "duration": 42,
+      "grappleScale": 1.0,
+      "groundAnchorY": 318.8679245283019
     },
     "zohran_mamdani_grapple_cruz_canonical11_008.webp": {
       "frame": {
@@ -187,7 +203,9 @@
         "w": 401,
         "h": 323
       },
-      "duration": 42
+      "duration": 42,
+      "grappleScale": 1.0,
+      "groundAnchorY": 318.8679245283019
     },
     "zohran_mamdani_grapple_cruz_canonical11_009.webp": {
       "frame": {
@@ -208,7 +226,9 @@
         "w": 401,
         "h": 323
       },
-      "duration": 42
+      "duration": 42,
+      "grappleScale": 1.0,
+      "groundAnchorY": 318.8679245283019
     },
     "zohran_mamdani_grapple_cruz_canonical11_010.webp": {
       "frame": {
@@ -229,7 +249,9 @@
         "w": 401,
         "h": 323
       },
-      "duration": 42
+      "duration": 42,
+      "grappleScale": 1.0,
+      "groundAnchorY": 318.8679245283019
     }
   },
   "meta": {
@@ -308,6 +330,27 @@
       "version": "correction18",
       "sourceAnimationId": "f26e9095-b35b-4001-a908-404a25904a99",
       "resampled": false
+    },
+    "scaleCalibration": {
+      "version": "scale20",
+      "method": "joint held stature; shared transform preserves grip; common-mode drift only",
+      "heroHoldBefore": 236.55646234996394,
+      "enemyHoldBefore": 248.5847570457248,
+      "factor": 1.0,
+      "frameFactors": [
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ],
+      "pixelsChanged": false
     }
   }
 }

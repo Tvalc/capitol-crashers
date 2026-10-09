@@ -19,7 +19,9 @@
         "w": 409,
         "h": 423
       },
-      "duration": 42
+      "duration": 42,
+      "grappleScale": 1.0,
+      "groundAnchorY": 416.99346405228755
     },
     "pete_hegseth_mamdani_transformed_compact_7f_native_001.webp": {
       "frame": {
@@ -40,7 +42,9 @@
         "w": 409,
         "h": 423
       },
-      "duration": 42
+      "duration": 42,
+      "grappleScale": 1.0,
+      "groundAnchorY": 416.99346405228755
     },
     "pete_hegseth_mamdani_transformed_compact_7f_native_002.webp": {
       "frame": {
@@ -61,7 +65,9 @@
         "w": 409,
         "h": 423
       },
-      "duration": 42
+      "duration": 42,
+      "grappleScale": 1.0,
+      "groundAnchorY": 416.99346405228755
     },
     "pete_hegseth_mamdani_transformed_compact_7f_native_003.webp": {
       "frame": {
@@ -82,7 +88,9 @@
         "w": 409,
         "h": 423
       },
-      "duration": 42
+      "duration": 42,
+      "grappleScale": 1.0,
+      "groundAnchorY": 416.99346405228755
     },
     "pete_hegseth_mamdani_transformed_compact_7f_native_004.webp": {
       "frame": {
@@ -103,7 +111,9 @@
         "w": 409,
         "h": 423
       },
-      "duration": 42
+      "duration": 42,
+      "grappleScale": 1.0,
+      "groundAnchorY": 416.99346405228755
     },
     "pete_hegseth_mamdani_transformed_compact_7f_native_005.webp": {
       "frame": {
@@ -124,7 +134,9 @@
         "w": 409,
         "h": 423
       },
-      "duration": 42
+      "duration": 42,
+      "grappleScale": 1.0,
+      "groundAnchorY": 416.99346405228755
     },
     "pete_hegseth_mamdani_transformed_compact_7f_native_006.webp": {
       "frame": {
@@ -145,7 +157,9 @@
         "w": 409,
         "h": 423
       },
-      "duration": 42
+      "duration": 42,
+      "grappleScale": 1.0,
+      "groundAnchorY": 416.99346405228755
     }
   },
   "meta": {
@@ -185,7 +199,7 @@
       "x": 309.7391304347826,
       "y": 416.99346405228755
     },
-    "bodyScale": 0.5995828988529719,
+    "bodyScale": 0.6094393371273403,
     "holdFrame": 6,
     "animationId": "9b48ff98-8105-47a1-bee9-f83c5e8576ec",
     "savedOriginalFrames": [
@@ -217,6 +231,23 @@
       "version": "correction19",
       "sourceAnimationId": "9b48ff98-8105-47a1-bee9-f83c5e8576ec",
       "resampled": false
+    },
+    "scaleCalibration": {
+      "version": "scale20",
+      "method": "joint held stature; shared transform preserves grip; common-mode drift only",
+      "heroHoldBefore": 239.23357664233578,
+      "enemyHoldBefore": 235.63607924921794,
+      "factor": 1.0164388248784684,
+      "frameFactors": [
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ],
+      "pixelsChanged": false
     }
   }
 }

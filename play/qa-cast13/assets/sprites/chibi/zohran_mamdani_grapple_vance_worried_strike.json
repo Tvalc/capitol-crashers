@@ -19,7 +19,9 @@
         "w": 382,
         "h": 453
       },
-      "duration": 42
+      "duration": 42,
+      "grappleScale": 1.0,
+      "groundAnchorY": 442.67241379310343
     },
     "jd_vance_mamdani_sad_heavy_revision_7f_native_001.webp": {
       "frame": {
@@ -40,7 +42,9 @@
         "w": 382,
         "h": 453
       },
-      "duration": 42
+      "duration": 42,
+      "grappleScale": 1.0,
+      "groundAnchorY": 442.67241379310343
     },
     "jd_vance_mamdani_sad_heavy_revision_7f_native_002.webp": {
       "frame": {
@@ -61,7 +65,9 @@
         "w": 382,
         "h": 453
       },
-      "duration": 42
+      "duration": 42,
+      "grappleScale": 1.0,
+      "groundAnchorY": 442.67241379310343
     },
     "jd_vance_mamdani_sad_heavy_revision_7f_native_003.webp": {
       "frame": {
@@ -82,7 +88,9 @@
         "w": 382,
         "h": 453
       },
-      "duration": 42
+      "duration": 42,
+      "grappleScale": 1.0,
+      "groundAnchorY": 442.67241379310343
     },
     "jd_vance_mamdani_sad_heavy_revision_7f_native_004.webp": {
       "frame": {
@@ -103,7 +111,9 @@
         "w": 382,
         "h": 453
       },
-      "duration": 42
+      "duration": 42,
+      "grappleScale": 1.0,
+      "groundAnchorY": 442.67241379310343
     },
     "jd_vance_mamdani_sad_heavy_revision_7f_native_005.webp": {
       "frame": {
@@ -124,7 +134,9 @@
         "w": 382,
         "h": 453
       },
-      "duration": 42
+      "duration": 42,
+      "grappleScale": 1.0,
+      "groundAnchorY": 442.67241379310343
     },
     "jd_vance_mamdani_sad_heavy_revision_7f_native_006.webp": {
       "frame": {
@@ -145,7 +157,9 @@
         "w": 382,
         "h": 453
       },
-      "duration": 42
+      "duration": 42,
+      "grappleScale": 1.0,
+      "groundAnchorY": 442.67241379310343
     }
   },
   "meta": {
@@ -185,7 +199,7 @@
       "x": 294.30656934306575,
       "y": 442.67241379310343
     },
-    "bodyScale": 0.5717481303418803,
+    "bodyScale": 0.5730554823614717,
     "holdFrame": 6,
     "animationId": "093d93e8-fab7-4260-b735-ade73b413100",
     "savedOriginalFrames": [
@@ -217,6 +231,23 @@
       "version": "correction19",
       "sourceAnimationId": "093d93e8-fab7-4260-b735-ade73b413100",
       "resampled": false
+    },
+    "scaleCalibration": {
+      "version": "scale20",
+      "method": "joint held stature; shared transform preserves grip; common-mode drift only",
+      "heroHoldBefore": 240.7059628739316,
+      "enemyHoldBefore": 242.99295539529913,
+      "factor": 1.0022865873104119,
+      "frameFactors": [
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ],
+      "pixelsChanged": false
     }
   }
 }

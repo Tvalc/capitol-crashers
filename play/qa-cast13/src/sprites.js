@@ -149,6 +149,7 @@ export function readFrames(data, width, height) {
   }
   if (!frames.length) throw new Error("Animation has no frames.");
   for (const item of frames) {
+    if (item.grappleScale !== undefined && (!Number.isFinite(item.grappleScale) || item.grappleScale <= 0 || item.grappleScale > 2)) throw new Error("Animation contains an invalid grapple scale.");
     const cell = item.frame;
     if (!cell || ![cell.x, cell.y, cell.w, cell.h].every(Number.isFinite) ||
         cell.x < 0 || cell.y < 0 || cell.w <= 0 || cell.h <= 0 ||
@@ -163,7 +164,7 @@ function assetRoot(name) { if (name.includes("_grapple_")) return "/play/qa-cast
 
 function loadOne(sprite, clip, name) {
   const image = new Image();
-  const version = name.includes("_grapple_") ? "correction19" : /chibi\/(zohran_mamdani|abdul_el_sayed)_grab$/.test(name) ? "grip08b" : name === "chibi/jd_vance_worried_death" ? "chibi-death24" : "hd5";
+  const version = name.includes("_grapple_") ? "scale20" : /chibi\/(zohran_mamdani|abdul_el_sayed)_grab$/.test(name) ? "grip08b" : name === "chibi/jd_vance_worried_death" ? "chibi-death24" : "hd5";
   const dataPromise = fetch(`${assetRoot(name)}/${name}.json?v=${version}`).then((res) => {
     if (!res.ok) throw new Error(`Could not load ${name}: ${res.status}`);
     return res.json();
@@ -431,7 +432,8 @@ export function drawGrapplePair(ctx, hero, enemy, sx, scale) {
   const frame = sheet.frames[index], cell = frame.frame;
   ctx.save();
   ctx.translate(sx, hero.y);
-  ctx.scale(scale * sheet.bodyScale * hero.facing, scale * sheet.bodyScale);
+  const frameScale = frame.grappleScale ?? 1;
+  ctx.scale(scale * sheet.bodyScale * frameScale * hero.facing, scale * sheet.bodyScale * frameScale);
   const offset = frame.trimmed ? frame.spriteSourceSize : null;
   ctx.drawImage(sheet.image, cell.x, cell.y, cell.w, cell.h, -sheet.anchor.x + (offset?.x || 0), -sheet.anchor.y + (offset?.y || 0), cell.w, cell.h);
   ctx.restore();

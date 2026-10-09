@@ -19,7 +19,9 @@
         "w": 685,
         "h": 533
       },
-      "duration": 250
+      "duration": 250,
+      "grappleScale": 1.0,
+      "groundAnchorY": 516.8495575221239
     },
     "abdul_el-sayed_grapple_greene_strike_001.png": {
       "frame": {
@@ -40,7 +42,9 @@
         "w": 685,
         "h": 533
       },
-      "duration": 250
+      "duration": 250,
+      "grappleScale": 1.0,
+      "groundAnchorY": 516.8495575221239
     },
     "abdul_el-sayed_grapple_greene_strike_002.png": {
       "frame": {
@@ -61,7 +65,9 @@
         "w": 685,
         "h": 533
       },
-      "duration": 250
+      "duration": 250,
+      "grappleScale": 1.0,
+      "groundAnchorY": 516.8495575221239
     },
     "abdul_el-sayed_grapple_greene_strike_003.png": {
       "frame": {
@@ -82,7 +88,9 @@
         "w": 685,
         "h": 533
       },
-      "duration": 250
+      "duration": 250,
+      "grappleScale": 1.051638,
+      "groundAnchorY": 516.8495575221239
     }
   },
   "meta": {
@@ -118,7 +126,7 @@
       },
       "normalized": true
     },
-    "bodyScale": 0.5457813606405578,
+    "bodyScale": 0.540605004166535,
     "pairedEnemyRoot": {
       "x": 458.0588822355289,
       "y": 516.8495575221239
@@ -148,6 +156,20 @@
       "version": "correction19",
       "sourceAnimationId": "7d874bb3-6bb5-47b1-9a6d-e60b206f9bcb",
       "resampled": false
+    },
+    "scaleCalibration": {
+      "version": "scale20",
+      "method": "joint held stature; shared transform preserves grip; common-mode drift only",
+      "heroHoldBefore": 243.96426820632934,
+      "enemyHoldBefore": 245.05583092761046,
+      "factor": 0.9905156957578259,
+      "frameFactors": [
+        1.0,
+        1.0,
+        1.0,
+        1.051638
+      ],
+      "pixelsChanged": false
     }
   }
 }
