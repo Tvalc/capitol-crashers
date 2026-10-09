@@ -207,6 +207,13 @@ import { advanceGait } from "./animation-clock.js?v=chibi-site2";
 export { advanceGait };
 
 function advance(game) {
+  // Ads: one break at the end of each match, before the next street. See play/ads/CONTRACT.md.
+  if (!game.adBreakDone) {
+    game.adBreakDone = true; game.mode = "break";
+    window.A2A?.ads?.break("match_end", () => { game.mode = "play"; advance(game); });
+    return;
+  }
+  game.adBreakDone = false;
   const story = game.player.fighter.story || {};
   const wonPanel = game.stage.panel;
   if (game.stageIndex >= STAGES.length - 1) {
@@ -316,6 +323,18 @@ function boot() {
   if (typeof window !== "undefined") window.__cc = game; // debug/automation hook
   const practiceRequested = new URLSearchParams(window.location.search).has("practice");
   let assetsReady = false;
+  // Ads: the module pauses and resumes the loop around every ad through these two. See play/ads/CONTRACT.md.
+  let adHold = false;
+  window.A2A?.ads?.init({ game: "crashers", pause: () => { adHold = true; input.clear(); }, resume: () => { adHold = false; canvas.focus({ preventScroll: true }); }, flags: {} });
+  game.mode = "preroll";
+  let prerolled = false;
+  function showTitle() {
+    if (prerolled) return;
+    prerolled = true;
+    // Ads: one preroll before the title screen; #ad-frame carries the frame line. See play/ads/CONTRACT.md.
+    const after = () => { document.getElementById("ad-frame").hidden = true; game.mode = "title"; if (practiceRequested && assetsReady) beginPractice(game, "mamdani"); };
+    if (window.A2A?.ads) window.A2A.ads.preroll(after); else after();
+  }
   const startButton = document.getElementById("start");
   const assetStatus = document.createElement("p");
   assetStatus.setAttribute("role", "status");
@@ -328,13 +347,13 @@ function boot() {
       assetsReady = true;
       assetStatus.textContent = "Ready to play.";
       startButton.textContent = "Step in";
-      if (practiceRequested && game.mode === "title") beginPractice(game, "mamdani");
     } catch (error) {
       assetStatus.textContent = "Some animations could not load. Check your connection and retry.";
       startButton.textContent = "Retry loading";
       console.error(error);
     }
     startButton.disabled = false;
+    showTitle();
   }
   prepareSprites();
   const titlePanel = document.getElementById("title-panel");
@@ -346,15 +365,17 @@ function boot() {
   let shownStory = null;
   const pausePanel = document.getElementById("pause-panel");
   const pauseToggle = document.getElementById("pause-toggle");
-  function setPaused(value) {
+  function setPaused(value, byPlayer = false) {
     if (game.mode !== "play") return;
     game.paused = value;
     input.clear();
     sync();
     if (value) document.getElementById("resume").focus();
     else canvas.focus({ preventScroll: true });
+    // Ads: a pause-type break only when the player opens the menu, never on blur. See play/ads/CONTRACT.md.
+    if (value && byPlayer) window.A2A?.ads?.break("pause", () => {});
   }
-  pauseToggle.addEventListener("click", () => setPaused(!game.paused));
+  pauseToggle.addEventListener("click", () => setPaused(!game.paused, true));
   document.getElementById("resume").addEventListener("click", () => setPaused(false));
   function restartCurrent() {
     input.clear();
@@ -409,7 +430,7 @@ function boot() {
     });
   }
   fullscreenButton.addEventListener("click", toggleFullscreen);
-  stagePause.addEventListener("click", () => setPaused(true));
+  stagePause.addEventListener("click", () => setPaused(true, true));
   document.addEventListener("fullscreenchange", syncFullscreen);
   document.addEventListener("webkitfullscreenchange", syncFullscreen);
   window.addEventListener("blur", () => { if (!ignoreBlur) setPaused(true); });
@@ -431,7 +452,7 @@ function boot() {
         return;
       }
       e.preventDefault();
-      setPaused(!game.paused);
+      setPaused(!game.paused, true);
     }
   }, true);
   document.querySelectorAll(".fighter").forEach(button => {
@@ -499,6 +520,7 @@ function boot() {
     clearPanel.hidden = !(game.mode === "play" && game.clearT > 0);
     endPanel.hidden = game.mode !== "ending";
     overPanel.hidden = game.mode !== "gameover";
+    reviveButton.hidden = game.mode !== "gameover" || reviveUsed || game.practice || !window.A2A?.ads;
     storyPanel.hidden = game.mode !== "story";
     touchBar?.classList.toggle("idle", game.mode !== "play" || game.paused);
     if (game.mode === "story" && shownStory !== game.storyId) {
@@ -556,6 +578,17 @@ function boot() {
     game.player = null;
     game.enemies = [];
   });
+  // Ads: rewarded revive, once per session, only offered when a run ends. See play/ads/CONTRACT.md.
+  const reviveButton = document.getElementById("revive");
+  let reviveUsed = false;
+  reviveButton.addEventListener("click", () => {
+    reviveButton.disabled = true;
+    window.A2A?.ads?.reward("revive", () => {
+      reviveUsed = true; game.lives = 1; game.mode = "play"; game.paused = false;
+      game.player = makePlayer(game.player.fighter, game.cameraX + 220, 550); game.player.invuln = 1.7;
+      canvas.focus({ preventScroll: true });
+    }, () => { reviveButton.disabled = false; });
+  });
 
   const touchBar = window.mountTouchControls?.(document.querySelector(".stage"), {
     pad: {
@@ -600,7 +633,7 @@ function boot() {
     }
     if (window.devicePixelRatio !== dprSeen) { dprSeen = window.devicePixelRatio; fitCanvas(); }
     if (assetsReady) {
-      updateGame(game, game.mode === "play" ? snap : blankInput(), dt);
+      if (!adHold) updateGame(game, game.mode === "play" ? snap : blankInput(), dt);
       ctx.setTransform(pixelScale, 0, 0, pixelScale, 0, 0);
       draw(ctx, game);
     }

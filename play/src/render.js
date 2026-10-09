@@ -69,7 +69,7 @@ export function draw(ctx, game) {
   const sprites = [];
   for (const prop of game.stage?.scenery || []) {
     const img=art[prop.art];const h=img?prop.w*img.height/img.width:prop.h;
-    sprites.push({y:prop.y,draw:()=>painted(ctx,prop.art,prop.x-cam-prop.w/2,prop.y-h,prop.w,h)});
+    sprites.push({y:prop.y,draw:()=>{painted(ctx,prop.art,prop.x-cam-prop.w/2,prop.y-h,prop.w,h);drawShelterAd(ctx,prop,prop.x-cam-prop.w/2,prop.y-h,prop.w,h);}});
   }
   for (const sign of game.stage?.signs || []) {
     sprites.push({ y: WORLD.floorTop + 1, draw: () => drawSign(ctx, sign, cam) });
@@ -197,6 +197,13 @@ function drawPlanes(ctx, game) {
     wrappedText(ctx,plane.text,x+width*.744,plane.y-height*.035-(multiline?7:0),width*.43,14);
   }
   ctx.restore();
+}
+
+// Ads: the bus shelter's poster frame is the street's one sponsor surface. See play/ads/CONTRACT.md.
+function drawShelterAd(ctx,prop,x,y,w,h) {
+  if (prop.art!=='scenery-bus-stop-night') return;
+  const ad=window.A2A?.ads?.surface('billboard_1');
+  if (ad?.kind==='image' && ad.image?.naturalWidth) ctx.drawImage(ad.image,x+w*.138,y+h*.352,w*.1,h*.37);
 }
 
 // Sidewalk sign posts along the street carry the slogans.
