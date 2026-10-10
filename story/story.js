@@ -1,4 +1,4 @@
-import { PAGES, PLANKS, SOURCES } from "./panels.js?v=likeness6";
+import { PAGES, PLANKS, SOURCES } from "./panels.js?v=articulate1";
 
 const ART_DIR = "../art/story/chibi/";
 const ART_VER = "likeness6";
