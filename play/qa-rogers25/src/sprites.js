@@ -1,5 +1,5 @@
 import { registerHelpAction } from "./help-actions.js?v=idle21";
-import { playerMoveWindow } from "./player.js?v=phone27";
+import { playerMoveWindow } from "./player.js?v=phone28";
 import { WORLD } from "./stages.js?v=bench28";
 
 const CLIPS = {
@@ -155,6 +155,7 @@ function assetRoot(name) { if(name.includes("mike_rogers") || name.includes("_gr
 function loadOne(sprite, clip, name) {
   if (sheets.has(clipKey(sprite, clip))) return Promise.resolve();
   const image = new Image();
+  const extension = name.includes("mike_rogers") ? "png" : "webp";
   const version = name.includes("_grapple_") ? "identity21" : /chibi\/(zohran_mamdani|abdul_el_sayed)_grab$/.test(name) ? "grip08b" : name === "chibi/jd_vance_worried_death" ? "chibi-death24" : "hd5";
   const dataPromise = fetch(`${assetRoot(name)}/${name}.json?v=${version}`).then((res) => {
     if (!res.ok) throw new Error(`Could not load ${name}: ${res.status}`);
@@ -166,12 +167,12 @@ function loadOne(sprite, clip, name) {
     image.onerror = () => {
       if (!retried) {
         retried = true;
-        image.src = `${assetRoot(name)}/${name}.webp?v=${version}&retry=1`;
+        image.src = `${assetRoot(name)}/${name}.${extension}?v=${version}&retry=1`;
         return;
       }
       reject(new Error(`Could not load sprite image: ${name}`));
     };
-    image.src = `${assetRoot(name)}/${name}.webp?v=${version}`;
+    image.src = `${assetRoot(name)}/${name}.${extension}?v=${version}`;
   });
   return Promise.all([dataPromise, imagePromise]).then(([data, img]) => {
     const frames = readFrames(data, img.naturalWidth, img.naturalHeight);
