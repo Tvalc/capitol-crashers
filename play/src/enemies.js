@@ -1,7 +1,7 @@
-import { updateRogers, updateRogersForm } from "./rogers.js?v=flight39";
-import { melee, updateBody } from "./combat.js?v=flight39";
-import { WORLD } from "./stages.js?v=flight39";
-import { spawnSatellite, spawnShot, spawnSombrero } from "./weapons.js?v=flight39";
+import { updateRogers, updateRogersForm } from "./rogers.js?v=flight39b";
+import { melee, updateBody } from "./combat.js?v=flight39b";
+import { WORLD } from "./stages.js?v=flight39b";
+import { spawnSatellite, spawnShot, spawnSombrero } from "./weapons.js?v=flight39b";
 
 const KINDS = {
   rogers: { name:"Mike Rogers",sprite:"rogers",hp:180,speed:90,w:48,h:100,dmg:14,reach:58,scale:1,boss:true },

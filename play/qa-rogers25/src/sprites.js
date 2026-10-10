@@ -1,6 +1,6 @@
-import { registerHelpAction } from "./help-actions.js?v=flight39";
-import { playerMoveWindow } from "./player.js?v=flight39";
-import { WORLD } from "./stages.js?v=flight39";
+import { registerHelpAction } from "./help-actions.js?v=flight39b";
+import { playerMoveWindow } from "./player.js?v=flight39b";
+import { WORLD } from "./stages.js?v=flight39b";
 
 const CLIPS = {
   rogers_vacation: ["flight","idle","walk","run","attack","special","bill","hit","death","change"],
@@ -161,7 +161,7 @@ function loadOne(sprite, clip, name) {
   if (sheets.has(clipKey(sprite, clip))) return Promise.resolve();
   const image = new Image();
   const extension = /^chibi\/mike_rogers_(idle|walk|orders|run|bill|hit|death)$/.test(name) ? "png" : "webp";
-  const version = name.includes("rogers") ? "flight39" : name.includes("mike_rogers") || name.includes("_grapple_rogers_") ? "original31" : name.includes("_grapple_") ? "identity21" : /chibi\/(zohran_mamdani|abdul_el_sayed)_grab$/.test(name) ? "grip08b" : name === "chibi/jd_vance_worried_death" ? "chibi-death24" : "hd5";
+  const version = name.includes("rogers") ? "flight39b" : name.includes("mike_rogers") || name.includes("_grapple_rogers_") ? "original31" : name.includes("_grapple_") ? "identity21" : /chibi\/(zohran_mamdani|abdul_el_sayed)_grab$/.test(name) ? "grip08b" : name === "chibi/jd_vance_worried_death" ? "chibi-death24" : "hd5";
   const dataPromise = fetch(`${assetRoot(name)}/${name}.json?v=${version}`).then((res) => {
     if (!res.ok) throw new Error(`Could not load ${name}: ${res.status}`);
     return res.json();
@@ -219,7 +219,7 @@ function loadOne(sprite, clip, name) {
 
 // Missing sheet = 404 on the JSON, nothing else requested, never an error.
 function loadSoft(sprite, clip, name) {
-  const version = name.includes("rogers") ? "flight39" : name.includes("mike_rogers") || name.includes("_grapple_rogers_") ? "original31" : name.includes("_grapple_") ? "identity21" : /chibi\/(zohran_mamdani|abdul_el_sayed)_grab$/.test(name) ? "grip08b" : name === "chibi/jd_vance_worried_death" ? "chibi-death24" : "hd5";
+  const version = name.includes("rogers") ? "flight39b" : name.includes("mike_rogers") || name.includes("_grapple_rogers_") ? "original31" : name.includes("_grapple_") ? "identity21" : /chibi\/(zohran_mamdani|abdul_el_sayed)_grab$/.test(name) ? "grip08b" : name === "chibi/jd_vance_worried_death" ? "chibi-death24" : "hd5";
   return fetch(`${assetRoot(name)}/${name}.json?v=${version}`, { method: "HEAD" })
     .then((res) => (res.ok ? loadOne(sprite, clip, name) : null))
     .catch(() => null);

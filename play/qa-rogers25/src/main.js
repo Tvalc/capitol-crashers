@@ -1,16 +1,16 @@
-import { addLaserEncounter, updateLaserEncounters } from "./laser-encounter.js?v=flight39";
-import { propFootprints, collideProps, steerAroundProps } from "./prop-collision.js?v=flight39";
-import { play, unlock } from "./audio.js?v=flight39";
-import { separate, tickToss, wallBounce } from "./combat.js?v=flight39";
-import { makeEnemy, updateEnemy } from "./enemies.js?v=flight39";
-import { blankInput, createInput } from "./input.js?v=flight39";
-import { fighterById, makePlayer, updatePlayer, bufferPlayerInput } from "./player.js?v=flight39";
-import { draw, loadEnvironment } from "./render.js?v=flight39";
-import { cloneStage, STAGES, WORLD } from "./stages.js?v=flight39";
-import { updatePickups, updateProjectiles } from "./weapons.js?v=flight39";
-import { loadSprites, ensureGrapplePair } from "./sprites.js?v=flight39";
+import { addLaserEncounter, updateLaserEncounters } from "./laser-encounter.js?v=flight39b";
+import { propFootprints, collideProps, steerAroundProps } from "./prop-collision.js?v=flight39b";
+import { play, unlock } from "./audio.js?v=flight39b";
+import { separate, tickToss, wallBounce } from "./combat.js?v=flight39b";
+import { makeEnemy, updateEnemy } from "./enemies.js?v=flight39b";
+import { blankInput, createInput } from "./input.js?v=flight39b";
+import { fighterById, makePlayer, updatePlayer, bufferPlayerInput } from "./player.js?v=flight39b";
+import { draw, loadEnvironment } from "./render.js?v=flight39b";
+import { cloneStage, STAGES, WORLD } from "./stages.js?v=flight39b";
+import { updatePickups, updateProjectiles } from "./weapons.js?v=flight39b";
+import { loadSprites, ensureGrapplePair } from "./sprites.js?v=flight39b";
 import { PAGES } from "/story/panels.js";
-import { followingWitness, makeCitizen, spawnCelebration, updateCitizens, witnessTestifies } from "./citizens.js?v=flight39";
+import { followingWitness, makeCitizen, spawnCelebration, updateCitizens, witnessTestifies } from "./citizens.js?v=flight39b";
 
 // Comic panels that exist as short animated loops (OpenArt), shown between stages.
 const MOTION = { p21: "../art/story/motion/p21.mp4", p27: "../art/story/motion/p27.mp4" };
@@ -238,7 +238,7 @@ export function updateGame(game, input, dt) {
   game.enemies = game.enemies.filter((enemy) => !(enemy.state === "dead" && enemy.deadT <= 0));
 }
 
-import { advanceGait } from "./animation-clock.js?v=flight39";
+import { advanceGait } from "./animation-clock.js?v=flight39b";
 export { advanceGait };
 
 function advance(game) {

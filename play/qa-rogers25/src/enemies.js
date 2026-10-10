@@ -1,7 +1,7 @@
-import { updateRogers, updateRogersForm } from "./rogers.js?v=flight39";
-import { melee, updateBody } from "./combat.js?v=flight39";
-import { WORLD } from "./stages.js?v=flight39";
-import { spawnSatellite, spawnShot, spawnSombrero } from "./weapons.js?v=flight39";
+import { updateRogers, updateRogersForm } from "./rogers.js?v=flight39b";
+import { melee, updateBody } from "./combat.js?v=flight39b";
+import { WORLD } from "./stages.js?v=flight39b";
+import { spawnSatellite, spawnShot, spawnSombrero } from "./weapons.js?v=flight39b";
 
 
 const KINDS = {
