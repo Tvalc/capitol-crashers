@@ -1,14 +1,14 @@
-import { addLaserEncounter, updateLaserEncounters } from "./laser-encounter.js?v=rogers25";
+import { addLaserEncounter, updateLaserEncounters } from "./laser-encounter.js?v=phone27";
 import { propFootprints, collideProps, steerAroundProps } from "./prop-collision.js?v=grapple-release23";
 import { play, unlock } from "./audio.js?v=chibi-site2";
-import { separate, tickToss, wallBounce } from "./combat.js?v=rogers25";
-import { makeEnemy, updateEnemy } from "./enemies.js?v=rogers25";
+import { separate, tickToss, wallBounce } from "./combat.js?v=phone27";
+import { makeEnemy, updateEnemy } from "./enemies.js?v=phone27";
 import { blankInput, createInput } from "./input.js?v=chibi-site2";
-import { fighterById, makePlayer, updatePlayer, bufferPlayerInput } from "./player.js?v=rogers25";
-import { draw, loadEnvironment } from "./render.js?v=rogers25";
+import { fighterById, makePlayer, updatePlayer, bufferPlayerInput } from "./player.js?v=phone27";
+import { draw, loadEnvironment } from "./render.js?v=phone27";
 import { cloneStage, STAGES, WORLD } from "./stages.js?v=bench28";
-import { updatePickups, updateProjectiles } from "./weapons.js?v=rogers25";
-import { loadSprites, ensureGrapplePair } from "./sprites.js?v=rogers25";
+import { updatePickups, updateProjectiles } from "./weapons.js?v=phone27";
+import { loadSprites, ensureGrapplePair } from "./sprites.js?v=phone27";
 import { PAGES } from "/story/panels.js";
 import { followingWitness, makeCitizen, spawnCelebration, updateCitizens, witnessTestifies } from "./citizens.js?v=idle21";
 
@@ -362,7 +362,7 @@ function boot() {
       startButton.textContent = "Step in";
       if (practiceRequested && game.mode === "title") beginPractice(game, "mamdani", false, new URLSearchParams(window.location.search).get("opponent") || "cruz");
     } catch (error) {
-      assetStatus.textContent = "Some animations could not load. Check your connection and retry.";
+      assetStatus.textContent = `Loading failed: ${error.message}. Tap Retry loading.`;
       startButton.textContent = "Retry loading";
       console.error(error);
     }

@@ -1,5 +1,5 @@
 import { registerHelpAction } from "./help-actions.js?v=idle21";
-import { playerMoveWindow } from "./player.js?v=rogers25";
+import { playerMoveWindow } from "./player.js?v=phone27";
 import { WORLD } from "./stages.js?v=bench28";
 
 const CLIPS = {
@@ -105,35 +105,21 @@ function clipKey(sprite, clip) {
   return `${sprite}:${clip}`;
 }
 
-export function loadSprites() {
+// This isolated review needs only its three fighters, not the campaign cast.
+export async function loadSprites() {
   const jobs = [];
-  for (const [sprite, clips] of Object.entries(CLIPS)) {
-    for (const clip of clips) {
-      const name = `${FILE[sprite]}_${clip}`;
-      jobs.push(loadOne(sprite, clip, name));
+  for (const sprite of ["zohran", "abdul", "rogers"]) {
+    for (const clip of CLIPS[sprite]) jobs.push(() => loadOne(sprite, clip, `${FILE[sprite]}_${clip}`));
+  }
+  const failures = [];
+  let next = 0;
+  await Promise.all(Array.from({length: 3}, async () => {
+    while (next < jobs.length) {
+      const job = jobs[next++];
+      try { await job(); } catch (error) { failures.push(error.message); }
     }
-  }
-  for (const sprite of ["zohran", "abdul"]) {
-    for (const kind of ["hungry", "sick", "evicted", "worker", "witness", "rescue"]) jobs.push(loadOne(sprite, `help_${kind}`, `${FILE[sprite]}_help_${kind}`));
-  }
-  const soft = [];
-  for (const [sprite, clips] of Object.entries(SOFT_CLIPS)) {
-    for (const clip of clips) soft.push(loadSoft(sprite, clip, `${FILE[sprite]}_${clip}`));
-  }
-  const optional = [];
-  for (const [sprite, clips] of Object.entries(OPTIONAL_CLIPS)) {
-    for (const clip of clips) if(clip !== "depart") optional.push(loadOne(sprite, clip, `${OPTIONAL_FILE[sprite]}_${clip}`));
-  }
-  return Promise.allSettled([...jobs, ...optional, ...soft]).then((results) => {
-    for(const sprite of Object.keys(OPTIONAL_CLIPS)) {
-      if(sheets.has(`${sprite}:walk`)) sheets.set(`${sprite}:depart`,sheets.get(`${sprite}:walk`));
-    }
-    if (sheets.has("greene:run") && !sheets.has("greene:walk")) {
-      sheets.set("greene:walk", sheets.get("greene:run"));
-    }
-      const failures = results.filter(result => result.status === "rejected");
-    if (failures.length) throw new Error(`${failures.length} animation sheets failed to load: ${failures.map(result => result.reason?.message || result.reason).join("; ")}`);
-  });
+  }));
+  if (failures.length) throw new Error(failures.join("; "));
 }
 
 // Arrays carry explicit playback order. Named atlas frames carry sequence numbers;
@@ -167,6 +153,7 @@ export function readFrames(data, width, height) {
 function assetRoot(name) { if(name.includes("mike_rogers") || name.includes("_grapple_rogers_")) return "qa-rogers25/assets/sprites"; return ["chibi/zohran_mamdani_grab", "chibi/ted_cruz_grabbed"].includes(name) ? "qa-grapple09/assets/sprites" : "assets/sprites"; }
 
 function loadOne(sprite, clip, name) {
+  if (sheets.has(clipKey(sprite, clip))) return Promise.resolve();
   const image = new Image();
   const version = name.includes("_grapple_") ? "identity21" : /chibi\/(zohran_mamdani|abdul_el_sayed)_grab$/.test(name) ? "grip08b" : name === "chibi/jd_vance_worried_death" ? "chibi-death24" : "hd5";
   const dataPromise = fetch(`${assetRoot(name)}/${name}.json?v=${version}`).then((res) => {
