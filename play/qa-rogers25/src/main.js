@@ -600,11 +600,9 @@ function boot() {
       down: { key: "ArrowDown", code: "ArrowDown" },
     },
     buttons: [
-      { label: "Light", key: "j", code: "KeyJ", tone: "pink" },
-      { label: "Heavy", key: "k", code: "KeyK", tone: "gold" },
+      { label: "Punch", key: "j", code: "KeyJ", tone: "pink" },
+      { label: "Throw", key: "k", code: "KeyK", tone: "gold" },
       { label: "Grab", key: "g", code: "KeyG", tone: "gold" },
-      { label: "Special", key: "l", code: "KeyL", tone: "blue" },
-      { label: "Jump", key: " ", code: "Space", tone: "cream wide" },
     ],
   });
 

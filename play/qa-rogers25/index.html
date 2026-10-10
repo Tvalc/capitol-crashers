@@ -16,7 +16,22 @@
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4762698707947194" crossorigin="anonymous"></script>
 <link rel="stylesheet" href="../chibi-ui.css?v=mob1">
 <link rel="stylesheet" href="game-page.css?v=packed19">
-</head>
+<style>
+@media(max-width:950px){
+html,body{width:100%;height:100dvh;overflow:hidden!important;display:flex;flex-direction:column}
+.topbar,.site-foot,.practice-hint{display:none!important}
+#practice-controls{display:flex;flex-wrap:wrap;gap:3px;margin:0!important;padding:3px!important;width:100%;box-sizing:border-box;flex:none;font-size:11px}
+#practice-controls button{font-size:11px;min-height:35px;padding:0 5px!important;border-width:7px!important}
+#practice-controls p,#practice-controls label,#practice-pair-status,#practice-controls a{display:none}
+.session-controls:not(#practice-controls){display:none!important}
+.stage{flex:1!important;width:100%!important;min-height:0!important;display:block!important;position:relative!important}
+.stage canvas{display:block!important;width:100%!important;height:100%!important;max-height:none!important;object-fit:contain!important;margin:0!important}
+.touch{position:fixed!important;left:8px!important;right:8px!important;bottom:8px!important;width:auto!important;margin:0!important;z-index:20;pointer-events:none;opacity:.9}
+.touch-pad{width:85px!important;height:85px!important;pointer-events:auto}
+.touch-buttons{display:flex!important;gap:5px!important}
+.touch .touch-btn{color:#fff!important;width:58px!important;height:58px!important;padding:0!important;border-width:6px!important;font-size:12px!important;pointer-events:auto}
+}
+</style></head>
 <body>
   <header class="topbar">
     <a class="brand" href="../">Capitol Crashers</a>
@@ -31,9 +46,9 @@
 
   <div class="session-controls"><button id="pause-toggle" type="button" hidden>Pause · Esc</button></div>
   <div class="session-controls" id="practice-controls" hidden>
-    <button id="practice-mamdani" type="button">Practice Mamdani</button>
-    <button id="practice-sayed" type="button">Practice El-Sayed</button>
-    <button id="practice-reset" type="button">Reset practice</button>
+    <button id="practice-mamdani" type="button">Mamdani</button>
+    <button id="practice-sayed" type="button">El-Sayed</button>
+    <button id="practice-reset" type="button">Reset</button>
     <button id="practice-opponent" type="button">Opponent: stationary</button>
     <label>Opponent <select id="practice-enemy"><option value="rogers">Mike Rogers — encounter preview</option><option value="cruz">Ted Cruz</option><option value="pete">Pete Hegseth</option><option value="pete_ww">Pete — transformed</option><option value="vance">JD Vance</option><option value="greene">Laser relays (MTG operator)</option><option value="trump">Donald Trump</option></select></label><span id="practice-pair-status" role="status"></span>
     <label>Speed <select id="practice-speed"><option value="1">Normal</option><option value="0.25">Quarter speed</option><option value="0.1">Frame review</option></select></label>
