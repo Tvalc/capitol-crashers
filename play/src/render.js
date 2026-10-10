@@ -1,9 +1,9 @@
-const rogersSpeech = new Image(); rogersSpeech.src = "/play/qa-rogers25/assets/sprites/chibi/rogers-speech.webp?v=flight39b";
+const rogersSpeech = new Image(); rogersSpeech.src = "/play/qa-rogers25/assets/sprites/chibi/rogers-speech.webp?v=cast40";
 const rogersCaller = new Image(); rogersCaller.src = "/play/qa-rogers25/assets/rogers-caller.png";
-import { FIGHTERS, poseFor } from "./fighters.js?v=flight39b";
-import { drawSprite, drawGrapplePair, hasGrapplePair } from "./sprites.js?v=flight39b";
-import { WORLD, STAGES } from "./stages.js?v=flight39b";
-import { CITIZEN_KINDS } from "./citizens.js?v=flight39b";
+import { FIGHTERS, poseFor } from "./fighters.js?v=cast40";
+import { drawSprite, drawGrapplePair, hasGrapplePair } from "./sprites.js?v=cast40";
+import { WORLD, STAGES } from "./stages.js?v=cast40";
+import { CITIZEN_KINDS } from "./citizens.js?v=cast40";
 
 const art = {};
 export function loadEnvironment() {

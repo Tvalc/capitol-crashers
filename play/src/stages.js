@@ -71,12 +71,12 @@ const rally = {
     {
       at: 420,
       hint: "Neighbors in need: walk up and press J to help.",
-      group: [{ kind: "cruz", dx: 20, y: 560 }, { kind: "pete", dx: 240, y: 600 }],
+      group: [{ kind: "ice_bro", dx: 20, y: 510 }, { kind: "ice_bro", dx: 240, y: 610 }],
     },
     {
       at: 1020,
-      hint: "Step out of his charge, then hit back.",
-      group: [{ kind: "vance", dx: 80, y: 560 }],
+      hint: "Sidestep the briefcase punch, then hit back.",
+      group: [{ kind: "giuliani", dx: 80, y: 560 }, { kind: "ice_bro", dx: 310, y: 615 }],
     },
     {
       at: 1640,
@@ -140,6 +140,7 @@ const studio = {
         { kind: "cruz", dx: 200, y: 610 },
       ],
     },
+    { at: 1800, hint: "Break up the double act. Dodge the wind-up, punish the recovery.", group: [{kind:"beck",dx:80,y:510},{kind:"bongino",dx:300,y:605}] },
     { at: 2140, group: [{kind: "rogers", dx: 220, y: 560}] },
     {
       at: 3000,

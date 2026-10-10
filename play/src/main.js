@@ -1,16 +1,16 @@
-import { addLaserEncounter, updateLaserEncounters } from "./laser-encounter.js?v=flight39b";
-import { propFootprints, collideProps, steerAroundProps } from "./prop-collision.js?v=flight39b";
-import { play, unlock } from "./audio.js?v=flight39b";
-import { separate, tickToss, wallBounce } from "./combat.js?v=flight39b";
-import { makeEnemy, updateEnemy } from "./enemies.js?v=flight39b";
-import { blankInput, createInput } from "./input.js?v=flight39b";
-import { fighterById, makePlayer, updatePlayer, bufferPlayerInput } from "./player.js?v=flight39b";
-import { draw, loadEnvironment } from "./render.js?v=flight39b";
-import { cloneStage, STAGES, WORLD } from "./stages.js?v=flight39b";
-import { updatePickups, updateProjectiles } from "./weapons.js?v=flight39b";
-import { loadSprites, ensureGrapplePair } from "./sprites.js?v=flight39b";
+import { addLaserEncounter, updateLaserEncounters } from "./laser-encounter.js?v=cast40";
+import { propFootprints, collideProps, steerAroundProps } from "./prop-collision.js?v=cast40";
+import { play, unlock } from "./audio.js?v=cast40";
+import { separate, tickToss, wallBounce } from "./combat.js?v=cast40";
+import { makeEnemy, updateEnemy } from "./enemies.js?v=cast40";
+import { blankInput, createInput } from "./input.js?v=cast40";
+import { fighterById, makePlayer, updatePlayer, bufferPlayerInput } from "./player.js?v=cast40";
+import { draw, loadEnvironment } from "./render.js?v=cast40";
+import { cloneStage, STAGES, WORLD } from "./stages.js?v=cast40";
+import { updatePickups, updateProjectiles } from "./weapons.js?v=cast40";
+import { loadSprites, ensureGrapplePair } from "./sprites.js?v=cast40";
 import { PAGES } from "/story/panels.js";
-import { followingWitness, makeCitizen, spawnCelebration, updateCitizens, witnessTestifies } from "./citizens.js?v=city1";
+import { followingWitness, makeCitizen, spawnCelebration, updateCitizens, witnessTestifies } from "./citizens.js?v=cast40";
 
 // Comic panels that exist as short animated loops (OpenArt), shown between stages.
 const MOTION = { p21: "../art/story/motion/p21.mp4", p27: "../art/story/motion/p27.mp4" };
@@ -80,7 +80,7 @@ export function beginPractice(game, fighterId, active = false, opponent = game.p
   game.storyId = null;
   game.practice = true;
   game.practiceActive = active;
-  game.practiceEnemy = ["rogers", "cruz", "pete", "pete_ww", "vance", "greene", "trump"].includes(opponent) ? opponent : "cruz";
+  game.practiceEnemy = ["ice_bro","bongino","giuliani","beck","rogers", "cruz", "pete", "pete_ww", "vance", "greene", "trump"].includes(opponent) ? opponent : "cruz";
   game.introT = 0;
   game.stage.props = [];
   game.stage.pickups = [];
@@ -89,6 +89,9 @@ export function beginPractice(game, fighterId, active = false, opponent = game.p
   game.enemies = [makeEnemy(game.practiceEnemy === "pete_ww" ? "pete" : game.practiceEnemy, 510, 560)];
   if (game.practiceEnemy === "pete_ww") Object.assign(game.enemies[0], { sprite: "pete_ww", transformed: true, transformTo: null });
   if (game.practiceEnemy === "greene") { game.enemies=[];addLaserEncounter(game,makeEnemy,650);game.practicePairStatus="Destroy the relays; the operator cannot be attacked";game.banner="Break the three laser relays";game.bannerT=3;return; }
+  if(game.practiceEnemy==='ice_bro' && new URLSearchParams(location.search).get('group')==='1') {
+    game.enemies=[makeEnemy('ice_bro',650,495),makeEnemy('ice_bro',850,560),makeEnemy('ice_bro',1050,625)];
+  }
   const practicePlayer = game.player;
   if (game.practiceEnemy === "rogers") {
     Object.assign(game.stage,{id:'debate',name:'TV Station — Studio',campaignLevel:2,encounterRole:'miniboss',length:1280,planes:[],signs:[],marks:[],scenery:[
@@ -239,7 +242,7 @@ export function updateGame(game, input, dt) {
   game.enemies = game.enemies.filter((enemy) => !(enemy.state === "dead" && enemy.deadT <= 0));
 }
 
-import { advanceGait } from "./animation-clock.js?v=flight39b";
+import { advanceGait } from "./animation-clock.js?v=cast40";
 export { advanceGait };
 
 function advance(game) {

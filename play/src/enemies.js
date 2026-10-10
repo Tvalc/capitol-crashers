@@ -1,9 +1,13 @@
-import { updateRogers, updateRogersForm } from "./rogers.js?v=flight39b";
-import { melee, updateBody } from "./combat.js?v=flight39b";
-import { WORLD } from "./stages.js?v=flight39b";
-import { spawnSatellite, spawnShot, spawnSombrero } from "./weapons.js?v=flight39b";
+import { updateRogers, updateRogersForm } from "./rogers.js?v=cast40";
+import { melee, updateBody } from "./combat.js?v=cast40";
+import { WORLD } from "./stages.js?v=cast40";
+import { spawnSatellite, spawnShot, spawnSombrero } from "./weapons.js?v=cast40";
 
 const KINDS = {
+  ice_bro: {name:"ICE Bro",hp:38,speed:100,w:40,h:90,dmg:8,reach:64,scale:1},
+  bongino: {name:"Dan Bongino",hp:110,speed:125,w:44,h:94,dmg:12,reach:78,scale:1},
+  giuliani: {name:"Rudy Giuliani",hp:90,speed:75,w:42,h:90,dmg:11,reach:78,scale:1},
+  beck: {name:"Glenn Beck",hp:82,speed:85,w:42,h:90,dmg:9,reach:82,scale:1},
   rogers: { name:"Mike Rogers",sprite:"rogers",hp:180,speed:90,w:48,h:100,dmg:14,reach:58,scale:1,boss:true },
   laser_relay: { name:"Laser relay", hp:60, speed:0, w:100, h:95, dmg:0, reach:0, scale:1 },
   grunt: {
@@ -1058,6 +1062,52 @@ function updateSignal(enemy, game, dt) {
   approach(enemy, player, dt, enemy.phase2 ? enemy.speed * 1.15 : enemy.speed);
 }
 
+// Each new enemy commits to an attack lane. Sidestepping beats the swing;
+// walking straight backward is punished by the approach step, not homing damage.
+function updateNewCast(enemy, game, dt) {
+  const p=game.player;
+  const profiles={
+    ice_bro:{startup:.32,total:.68,recover:.7,advance:80},
+    bongino:{startup:.42,total:.94,recover:.75,advance:165},
+    giuliani:{startup:.48,total:1.04,recover:1.05,advance:85},
+    beck:{startup:.4,total:1.0,recover:.85,advance:70}
+  };
+  const move=profiles[enemy.kind];
+  if(enemy.state==='attack') {
+    enemy.stateT+=dt;enemy.vy=0;
+    // Wind-up commits direction; no instant turning or lane snapping on impact.
+    enemy.vx=enemy.stateT<move.startup?enemy.facing*move.advance:0;
+    const advance=Math.min(Math.abs(enemy.vx*dt),Math.max(0,(p.x-enemy.x)*enemy.facing-46));
+    enemy.x+=enemy.facing*advance;
+    if(!enemy.hit1 && enemy.stateT>=move.startup) {
+      enemy.hit1=true;
+      melee(game,enemy,{dmg:enemy.dmg,kb:170,lift:12,reach:enemy.reach,already:enemy.swingHits,kind:'light',hitstop:.045});
+    }
+    if(enemy.kind==='beck' && !enemy.hit2 && enemy.stateT>=.72) {
+      enemy.hit2=true;
+      melee(game,enemy,{dmg:enemy.dmg,kb:200,lift:20,reach:enemy.reach,already:new Set(),kind:'light',hitstop:.045});
+    }
+    if(enemy.stateT>=move.total) {
+      enemy.state='idle';enemy.stateT=0;enemy.attackCd=move.recover;
+      enemy.vx=enemy.vy=0;release(game,enemy);
+    }
+    return;
+  }
+  const dx=p.x-enemy.x,dy=p.y-enemy.y;face(enemy,p);
+  if(enemy.attackCd>0 && Math.abs(dx)<150) {
+    enemy.state='idle';enemy.vx=enemy.vy=0;return;
+  }
+  if(Math.abs(dx)<enemy.reach+45 && Math.abs(dy)<27 && enemy.attackCd<=0 && claim(game,enemy)) {
+    enemy.state='attack';enemy.stateT=0;enemy.hit1=enemy.hit2=false;enemy.swingHits=new Set();enemy.vx=enemy.vy=0;return;
+  }
+  // Waiting grunts occupy staggered lanes instead of stacking into one punch target.
+  const waiting=enemy.kind==='ice_bro' && game.attackSlot && game.attackSlot!==enemy.id;
+  const lane=waiting ? (Number(enemy.id.slice(1))%2?60:-60):0;
+  const target={x:p.x-(enemy.facing*(waiting?125:0)),y:clampY(p.y+lane)};
+  approach(enemy,target,dt,enemy.speed);
+  if(enemy.kind==='bongino' && Math.abs(dx)>210) {enemy.state='run';enemy.x+=enemy.vx*dt*.35;}
+}
+
 export function updateEnemy(enemy, game, dt) {
   if (enemy.isMachine) { enemy.flash=Math.max(0,enemy.flash-dt); if (!enemy.alive) enemy.deadT-=dt; return; }
   enemy.anim += dt;
@@ -1077,7 +1127,8 @@ export function updateEnemy(enemy, game, dt) {
   if (enemy.kind === "rogers" && updateRogersForm(enemy, game, dt)) return;
   if (updateTransform(enemy, game, dt)) return;
   if(enemy.kind !== "rogers") checkPhase(enemy, game);
-  if (enemy.kind === "rogers") updateRogers(enemy,game.player,dt,()=>melee(game,enemy,{dmg:enemy.dmg,kb:190,lift:25,reach:58,low:true,already:enemy.swingHits,kind:"heavy",hitstop:.05}));
+  if (["ice_bro","bongino","giuliani","beck"].includes(enemy.kind)) updateNewCast(enemy,game,dt);
+  else if (enemy.kind === "rogers") updateRogers(enemy,game.player,dt,()=>melee(game,enemy,{dmg:enemy.dmg,kb:190,lift:25,reach:58,low:true,already:enemy.swingHits,kind:"heavy",hitstop:.05}));
   else if (enemy.kind === "pete") updateGrunt(enemy, game, dt);
   else if (enemy.kind === "greene") updateGreene(enemy, game, dt);
   else if (enemy.kind === "grunt") updateGrunt(enemy, game, dt);

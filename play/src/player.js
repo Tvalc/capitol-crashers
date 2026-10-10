@@ -1,10 +1,10 @@
-import { helpWindow } from "./help-actions.js?v=flight39b";
-import { play } from "./audio.js?v=flight39b";
-import { hasGrapplePair, grapplePairDistance, grapplePairContactRemaining, grapplePairImpact, grapplePairDuration } from "./sprites.js?v=flight39b";
-import { FIGHTERS } from "./fighters.js?v=flight39b";
-import { integrate, melee, spendSpecial, updateBody } from "./combat.js?v=flight39b";
-import { finishWeapon, launchHeld, noteWeaponSwing, spawnBolt } from "./weapons.js?v=flight39b";
-import { deliverHelp, finishHelp, helpTarget, startHelp } from "./citizens.js?v=flight39b";
+import { helpWindow } from "./help-actions.js?v=cast40";
+import { play } from "./audio.js?v=cast40";
+import { hasGrapplePair, grapplePairDistance, grapplePairContactRemaining, grapplePairImpact, grapplePairDuration } from "./sprites.js?v=cast40";
+import { FIGHTERS } from "./fighters.js?v=cast40";
+import { integrate, melee, spendSpecial, updateBody } from "./combat.js?v=cast40";
+import { finishWeapon, launchHeld, noteWeaponSwing, spawnBolt } from "./weapons.js?v=cast40";
+import { deliverHelp, finishHelp, helpTarget, startHelp } from "./citizens.js?v=cast40";
 
 const LIGHTS = [
   { startup: 0.10, active: 0.09, dmg: 7, kb: 65, lift: 0, stun: 0.32 },

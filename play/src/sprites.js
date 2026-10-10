@@ -1,8 +1,12 @@
-import { registerHelpAction } from "./help-actions.js?v=flight39b";
-import { playerMoveWindow } from "./player.js?v=flight39b";
-import { WORLD } from "./stages.js?v=flight39b";
+import { registerHelpAction } from "./help-actions.js?v=cast40";
+import { playerMoveWindow } from "./player.js?v=cast40";
+import { WORLD } from "./stages.js?v=cast40";
 
 const CLIPS = {
+  ice_bro: ["idle","walk","run","attack","hit","death"],
+  bongino: ["idle","walk","run","attack","hit","death"],
+  giuliani: ["idle","walk","attack","hit","death"],
+  beck: ["walk","attack","hit","death"],
   rogers_vacation: ["flight","idle","walk","run","attack","special","bill","hit","death","change"],
   rogers_tropical: ["idle","walk","run","attack","special","bill","hit","death","change","grabbed","grab_flinch"],
   rogers: ["idle","walk","orders","run","bill","hit","death"],
@@ -32,6 +36,7 @@ const SOFT_CLIPS = {
 };
 
 const FILE = {
+  ice_bro:"chibi/ice_bro", bongino:"chibi/bongino", giuliani:"chibi/giuliani", beck:"chibi/beck",
   rogers_vacation: "chibi/mike_rogers_vacation",
   rogers_tropical: "chibi/mike_rogers_tropical",
   rogers: "chibi/mike_rogers",
@@ -282,6 +287,8 @@ function resolveSheet(sprite, clip) {
 }
 
 function attackWindow(ent) {
+  const castWindows={ice_bro:{startup:.32,active:.08,total:.68},bongino:{startup:.42,active:.1,total:.94},giuliani:{startup:.48,active:.1,total:1.04},beck:{startup:.4,active:.08,total:1}};
+  if(castWindows[ent.kind])return castWindows[ent.kind];
   if (ent.team === "player") {
     const move = playerMoveWindow(ent);
     if (move) return move;
@@ -498,12 +505,17 @@ export function drawSprite(ctx, ent, sx, sc) {
   }
   else if (sprite.startsWith("rogers") && ["orders","bill"].includes(clip)) index = Math.min(count-1,Math.floor(ent.stateT / (clip === "orders" ? 1.05 : (ent.recovery || 1.55)) * count));
   else if (sprite.startsWith("rogers") && ["attack","special"].includes(clip)) index=Math.min(count-1,Math.floor(ent.stateT/(clip==="attack"?1:1.3)*count));
+  else if (sprite === "beck" && clip === "attack") {
+    const second=ent.stateT>=.55,t=second?ent.stateT-.55:ent.stateT,start=second?.17:.4;
+    index=t<start?Math.min(5,Math.floor(t/start*6)):Math.min(count-1,6+Math.floor((t-start)/.15*6));
+  }
   else if (grabPunch && (clip === "attack" || clip === "grab_strike")) {
     const phase = Math.max(0, Math.min(1, 1 - ent.grabStrikeT / .32));
     const punchFrames = clip === "grab_strike" ? Array.from({length:count}, (_,i)=>i) : sprite === "zohran" ? [0, 1, 2, 3, 4, 9, 10, 11] : [0, 1, 2, 3, 8, 9, 10, 11];
     index = Math.min(count - 1, punchFrames[Math.min(punchFrames.length - 1, Math.floor(phase * punchFrames.length))]);
   }
   else if (clip.startsWith("help_")) index = Math.min(count - 1, Math.floor(Math.max(0, ent.stateT - ent.helpAction.approach) / ent.helpAction.total * count));
+  else if (wanted === "idle" && sprite === "beck" && clip === "walk") index = count-1;
   else if (clip === "idle") {
     const step = sheet.fps > 0 ? 1 / sheet.fps : sprite === "zohran" ? 0.14 : sprite === "abdul" ? 1 / 24 : sprite === "vance" ? 1 / 3 : sprite === "cruz" || sprite === "greene" ? 0.16 : 0;
     const idleTime = Math.max(0, (ent.anim || 0) - (ent.idleStartedAt || 0));
