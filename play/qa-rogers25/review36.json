@@ -1,0 +1,244 @@
+[
+  {
+    "name": "Mamdani \u00d7 tropical",
+    "file": "tropical_mamdani_grapple36",
+    "w": 887,
+    "h": 554,
+    "n": 7,
+    "cols": 3,
+    "fps": 8,
+    "group": "New grapple",
+    "id": "27ea9793-f06b-4a48-aaea-bca88d5b9cf4",
+    "bounds": [
+      110,
+      33,
+      775,
+      519
+    ]
+  },
+  {
+    "name": "Tropical idle",
+    "file": "tropical_idle33",
+    "w": 442,
+    "h": 630,
+    "n": 12,
+    "cols": 4,
+    "fps": 6,
+    "group": "Tropical moves",
+    "approved": true,
+    "bounds": [
+      2,
+      2,
+      438,
+      626
+    ]
+  },
+  {
+    "name": "Walk",
+    "file": "tropical_walk36",
+    "w": 495,
+    "h": 654,
+    "n": 10,
+    "cols": 4,
+    "fps": 8,
+    "group": "Tropical moves",
+    "id": "64550da2-ec58-4025-b780-75aaad4dbab4",
+    "bounds": [
+      4,
+      5,
+      485,
+      645
+    ]
+  },
+  {
+    "name": "Panicked run",
+    "file": "tropical_run36b",
+    "w": 460,
+    "h": 572,
+    "n": 12,
+    "cols": 4,
+    "fps": 8,
+    "group": "Tropical moves",
+    "id": "329181ff-1b61-45ff-ba22-0edf0bd94e4e",
+    "bounds": [
+      5,
+      1,
+      451,
+      569
+    ]
+  },
+  {
+    "name": "Sunscreen attack",
+    "file": "tropical_attack36",
+    "w": 576,
+    "h": 603,
+    "n": 12,
+    "cols": 4,
+    "fps": 6,
+    "group": "Tropical moves",
+    "id": "c50f36d3-2918-41cf-b0d6-c30251d164c0",
+    "note": "Sunscreen backfires onto his face; review the gag before integration.",
+    "bounds": [
+      35,
+      1,
+      524,
+      594
+    ]
+  },
+  {
+    "name": "Charging special",
+    "file": "tropical_special36",
+    "w": 717,
+    "h": 616,
+    "n": 12,
+    "cols": 4,
+    "fps": 8,
+    "group": "Tropical moves",
+    "id": "5c3036d3-5549-4b40-97d0-add2395da52f",
+    "bounds": [
+      2,
+      1,
+      713,
+      613
+    ]
+  },
+  {
+    "name": "Vacation break",
+    "file": "tropical_bill36",
+    "w": 448,
+    "h": 536,
+    "n": 12,
+    "cols": 4,
+    "fps": 6,
+    "group": "Tropical moves",
+    "id": "8fc44102-c885-4ddd-a50b-d967c1c2207c",
+    "note": "Towel flourish and forehead wipe replace the broken chair/phone take.",
+    "bounds": [
+      2,
+      5,
+      444,
+      528
+    ]
+  },
+  {
+    "name": "Hit reaction",
+    "file": "tropical_hit36",
+    "w": 1230,
+    "h": 699,
+    "n": 5,
+    "cols": 3,
+    "fps": 8,
+    "group": "Tropical moves",
+    "id": "743d2915-f666-4bac-92f0-4ec4e487cbf3",
+    "note": "Later frames with missing towel excluded.",
+    "bounds": [
+      6,
+      25,
+      1204,
+      674
+    ]
+  },
+  {
+    "name": "Defeat",
+    "file": "tropical_death36",
+    "w": 682,
+    "h": 688,
+    "n": 12,
+    "cols": 4,
+    "fps": 6,
+    "group": "Tropical moves",
+    "id": "ba240b6b-de8b-4ff1-b0d7-5d6c88355632",
+    "bounds": [
+      5,
+      18,
+      675,
+      668
+    ]
+  },
+  {
+    "name": "Held reaction",
+    "file": "tropical_grabbed36",
+    "w": 421,
+    "h": 547,
+    "n": 8,
+    "cols": 3,
+    "fps": 6,
+    "group": "Solo reactions",
+    "id": "5967d3fb-9981-4888-a741-8fd5e9bbcbb2",
+    "note": "Includes cartoon trembling marks; paired grapples remain the main hero interaction.",
+    "bounds": [
+      7,
+      6,
+      407,
+      539
+    ]
+  },
+  {
+    "name": "Hit while held",
+    "file": "tropical_grabflinch36",
+    "w": 448,
+    "h": 663,
+    "n": 4,
+    "cols": 2,
+    "fps": 8,
+    "group": "Solo reactions",
+    "id": "eff6910a-b7b6-4f46-bfcd-0bc3f38182fb",
+    "bounds": [
+      7,
+      31,
+      434,
+      630
+    ]
+  },
+  {
+    "name": "Mamdani \u00d7 jersey",
+    "file": "jersey_mamdani_grapple33",
+    "w": 1280,
+    "h": 562,
+    "n": 12,
+    "cols": 4,
+    "fps": 6,
+    "group": "Previously approved",
+    "approved": true,
+    "bounds": [
+      291,
+      7,
+      662,
+      551
+    ]
+  },
+  {
+    "name": "El-Sayed \u00d7 jersey",
+    "file": "jersey_sayed_punch35_clean",
+    "w": 793,
+    "h": 658,
+    "n": 7,
+    "cols": 3,
+    "fps": 8,
+    "group": "Previously approved",
+    "approved": true,
+    "bounds": [
+      1,
+      137,
+      729,
+      482
+    ]
+  },
+  {
+    "name": "El-Sayed \u00d7 tropical",
+    "file": "tropical_sayed_grapple33",
+    "w": 866,
+    "h": 663,
+    "n": 7,
+    "cols": 3,
+    "fps": 6,
+    "group": "Previously approved",
+    "approved": true,
+    "bounds": [
+      1,
+      2,
+      863,
+      660
+    ]
+  }
+]
