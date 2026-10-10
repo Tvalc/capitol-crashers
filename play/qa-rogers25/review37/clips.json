@@ -1,0 +1,440 @@
+[
+  {
+    "key": "sayed-jersey",
+    "name": "El-Sayed \u00d7 jersey",
+    "src": "review37/sayed-jersey.webp",
+    "frames": [
+      {
+        "x": 0,
+        "y": 0,
+        "w": 444,
+        "h": 444,
+        "floor": 419
+      },
+      {
+        "x": 444,
+        "y": 0,
+        "w": 443,
+        "h": 444,
+        "floor": 419
+      },
+      {
+        "x": 887,
+        "y": 0,
+        "w": 443,
+        "h": 444,
+        "floor": 419
+      },
+      {
+        "x": 1330,
+        "y": 0,
+        "w": 444,
+        "h": 444,
+        "floor": 419
+      },
+      {
+        "x": 0,
+        "y": 444,
+        "w": 444,
+        "h": 443,
+        "floor": 417
+      },
+      {
+        "x": 444,
+        "y": 444,
+        "w": 443,
+        "h": 443,
+        "floor": 417
+      },
+      {
+        "x": 887,
+        "y": 444,
+        "w": 443,
+        "h": 443,
+        "floor": 417
+      },
+      {
+        "x": 1330,
+        "y": 444,
+        "w": 444,
+        "h": 443,
+        "floor": 417
+      }
+    ],
+    "durations": [
+      450,
+      100,
+      65,
+      80,
+      100,
+      90,
+      110,
+      400
+    ],
+    "phases": [
+      "Hold",
+      "Wind-up",
+      "Contact",
+      "Impact",
+      "Recoil",
+      "Retract",
+      "Recover",
+      "Hold"
+    ],
+    "source": "Built-in image generation from canonical Makko reference sheets",
+    "candidate": true
+  },
+  {
+    "key": "mamdani-jersey",
+    "name": "Mamdani \u00d7 jersey",
+    "src": "review37/mamdani-jersey.webp",
+    "frames": [
+      {
+        "x": 0,
+        "y": 0,
+        "w": 444,
+        "h": 444,
+        "floor": 420
+      },
+      {
+        "x": 444,
+        "y": 0,
+        "w": 443,
+        "h": 444,
+        "floor": 420
+      },
+      {
+        "x": 887,
+        "y": 0,
+        "w": 443,
+        "h": 444,
+        "floor": 420
+      },
+      {
+        "x": 1330,
+        "y": 0,
+        "w": 444,
+        "h": 444,
+        "floor": 420
+      },
+      {
+        "x": 0,
+        "y": 444,
+        "w": 444,
+        "h": 443,
+        "floor": 419
+      },
+      {
+        "x": 444,
+        "y": 444,
+        "w": 443,
+        "h": 443,
+        "floor": 419
+      },
+      {
+        "x": 887,
+        "y": 444,
+        "w": 443,
+        "h": 443,
+        "floor": 419
+      },
+      {
+        "x": 1330,
+        "y": 444,
+        "w": 444,
+        "h": 443,
+        "floor": 420
+      }
+    ],
+    "durations": [
+      450,
+      100,
+      65,
+      80,
+      100,
+      90,
+      110,
+      400
+    ],
+    "phases": [
+      "Hold",
+      "Wind-up",
+      "Contact",
+      "Impact",
+      "Recoil",
+      "Retract",
+      "Recover",
+      "Hold"
+    ],
+    "source": "Built-in image generation from canonical Makko reference sheets",
+    "candidate": true
+  },
+  {
+    "key": "sayed-tropical",
+    "name": "El-Sayed \u00d7 tropical",
+    "src": "review37/sayed-tropical.webp",
+    "frames": [
+      {
+        "x": 0,
+        "y": 0,
+        "w": 444,
+        "h": 444,
+        "floor": 421
+      },
+      {
+        "x": 444,
+        "y": 0,
+        "w": 443,
+        "h": 444,
+        "floor": 421
+      },
+      {
+        "x": 887,
+        "y": 0,
+        "w": 443,
+        "h": 444,
+        "floor": 421
+      },
+      {
+        "x": 1330,
+        "y": 0,
+        "w": 444,
+        "h": 444,
+        "floor": 423
+      },
+      {
+        "x": 0,
+        "y": 444,
+        "w": 444,
+        "h": 443,
+        "floor": 422
+      },
+      {
+        "x": 444,
+        "y": 444,
+        "w": 443,
+        "h": 443,
+        "floor": 422
+      },
+      {
+        "x": 887,
+        "y": 444,
+        "w": 443,
+        "h": 443,
+        "floor": 422
+      },
+      {
+        "x": 1330,
+        "y": 444,
+        "w": 444,
+        "h": 443,
+        "floor": 422
+      }
+    ],
+    "durations": [
+      450,
+      100,
+      65,
+      80,
+      100,
+      90,
+      110,
+      400
+    ],
+    "phases": [
+      "Hold",
+      "Wind-up",
+      "Contact",
+      "Impact",
+      "Recoil",
+      "Retract",
+      "Recover",
+      "Hold"
+    ],
+    "source": "Built-in image generation from canonical Makko reference sheets",
+    "candidate": true
+  },
+  {
+    "key": "mamdani-tropical",
+    "name": "Mamdani \u00d7 tropical",
+    "src": "review37/mamdani-tropical.webp",
+    "frames": [
+      {
+        "x": 0,
+        "y": 0,
+        "w": 444,
+        "h": 444,
+        "floor": 422
+      },
+      {
+        "x": 444,
+        "y": 0,
+        "w": 443,
+        "h": 444,
+        "floor": 422
+      },
+      {
+        "x": 887,
+        "y": 0,
+        "w": 443,
+        "h": 444,
+        "floor": 423
+      },
+      {
+        "x": 1330,
+        "y": 0,
+        "w": 444,
+        "h": 444,
+        "floor": 425
+      },
+      {
+        "x": 0,
+        "y": 444,
+        "w": 444,
+        "h": 443,
+        "floor": 423
+      },
+      {
+        "x": 444,
+        "y": 444,
+        "w": 443,
+        "h": 443,
+        "floor": 423
+      },
+      {
+        "x": 887,
+        "y": 444,
+        "w": 443,
+        "h": 443,
+        "floor": 423
+      },
+      {
+        "x": 1330,
+        "y": 444,
+        "w": 444,
+        "h": 443,
+        "floor": 423
+      }
+    ],
+    "durations": [
+      450,
+      100,
+      65,
+      80,
+      100,
+      90,
+      110,
+      400
+    ],
+    "phases": [
+      "Hold",
+      "Wind-up",
+      "Contact",
+      "Impact",
+      "Recoil",
+      "Retract",
+      "Recover",
+      "Hold"
+    ],
+    "source": "Built-in image generation from canonical Makko reference sheets",
+    "candidate": true
+  },
+  {
+    "key": "held",
+    "name": "Tropical \u00b7 held",
+    "src": "review37/held.webp",
+    "frames": [
+      {
+        "x": 0,
+        "y": 0,
+        "w": 543,
+        "h": 724,
+        "floor": 708
+      },
+      {
+        "x": 543,
+        "y": 0,
+        "w": 543,
+        "h": 724,
+        "floor": 708
+      },
+      {
+        "x": 1086,
+        "y": 0,
+        "w": 543,
+        "h": 724,
+        "floor": 708
+      },
+      {
+        "x": 1629,
+        "y": 0,
+        "w": 543,
+        "h": 724,
+        "floor": 708
+      }
+    ],
+    "durations": [
+      300,
+      300,
+      300,
+      300
+    ],
+    "phases": [
+      "Hold",
+      "Hold",
+      "Hold",
+      "Hold"
+    ],
+    "source": "Built-in image generation from canonical Makko reference sheets",
+    "candidate": true
+  },
+  {
+    "key": "flinch",
+    "name": "Tropical \u00b7 hit while held",
+    "src": "review37/flinch.webp",
+    "frames": [
+      {
+        "x": 0,
+        "y": 0,
+        "w": 543,
+        "h": 724,
+        "floor": 711
+      },
+      {
+        "x": 543,
+        "y": 0,
+        "w": 543,
+        "h": 724,
+        "floor": 711
+      },
+      {
+        "x": 1086,
+        "y": 0,
+        "w": 543,
+        "h": 724,
+        "floor": 711
+      },
+      {
+        "x": 1629,
+        "y": 0,
+        "w": 543,
+        "h": 724,
+        "floor": 711
+      }
+    ],
+    "durations": [
+      450,
+      90,
+      130,
+      450
+    ],
+    "phases": [
+      "Hold",
+      "Impact",
+      "Recoil",
+      "Hold"
+    ],
+    "source": "Built-in image generation from canonical Makko reference sheets",
+    "candidate": true
+  }
+]
