@@ -1,6 +1,7 @@
-import { PAGES, PLANKS, SOURCES } from "./panels.js";
+import { PAGES, PLANKS, SOURCES } from "./panels.js?v=likeness6";
 
 const ART_DIR = "../art/story/chibi/";
+const ART_VER = "likeness6";
 const book = document.getElementById("book");
 const planksHost = document.getElementById("planks");
 const sourcesHost = document.getElementById("sources");
@@ -22,7 +23,7 @@ function renderPanel(panel) {
 
   if (panel.art) {
     const img = el("img");
-    img.src = ART_DIR + panel.art;
+    img.src = ART_DIR + panel.art + "?v=" + ART_VER;
     img.alt = panel.alt || panel.scene;
     img.loading = "lazy";
     img.decoding = "async";
