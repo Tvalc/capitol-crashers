@@ -1,14 +1,14 @@
-import { addLaserEncounter, updateLaserEncounters } from "./laser-encounter.js?v=phone28";
+import { addLaserEncounter, updateLaserEncounters } from "./laser-encounter.js?v=studio29";
 import { propFootprints, collideProps, steerAroundProps } from "./prop-collision.js?v=grapple-release23";
 import { play, unlock } from "./audio.js?v=chibi-site2";
-import { separate, tickToss, wallBounce } from "./combat.js?v=phone28";
-import { makeEnemy, updateEnemy } from "./enemies.js?v=phone28";
+import { separate, tickToss, wallBounce } from "./combat.js?v=studio29";
+import { makeEnemy, updateEnemy } from "./enemies.js?v=studio29";
 import { blankInput, createInput } from "./input.js?v=chibi-site2";
-import { fighterById, makePlayer, updatePlayer, bufferPlayerInput } from "./player.js?v=phone28";
-import { draw, loadEnvironment } from "./render.js?v=phone28";
+import { fighterById, makePlayer, updatePlayer, bufferPlayerInput } from "./player.js?v=studio29";
+import { draw, loadEnvironment } from "./render.js?v=studio29";
 import { cloneStage, STAGES, WORLD } from "./stages.js?v=bench28";
-import { updatePickups, updateProjectiles } from "./weapons.js?v=phone28";
-import { loadSprites, ensureGrapplePair } from "./sprites.js?v=phone28";
+import { updatePickups, updateProjectiles } from "./weapons.js?v=studio29";
+import { loadSprites, ensureGrapplePair } from "./sprites.js?v=studio29";
 import { PAGES } from "/story/panels.js";
 import { followingWitness, makeCitizen, spawnCelebration, updateCitizens, witnessTestifies } from "./citizens.js?v=idle21";
 
@@ -91,13 +91,15 @@ export function beginPractice(game, fighterId, active = false, opponent = game.p
   if (game.practiceEnemy === "greene") { game.enemies=[];addLaserEncounter(game,makeEnemy,650);game.practicePairStatus="Destroy the relays; the operator cannot be attacked";game.banner="Break the three laser relays";game.bannerT=3;return; }
   const practicePlayer = game.player;
   if (game.practiceEnemy === "rogers") {
-    Object.assign(game.stage,{id:'debate',planes:[],signs:[],marks:[],scenery:[
+    Object.assign(game.stage,{id:'debate',name:'TV Station — Studio',campaignLevel:2,encounterRole:'miniboss',length:1280,planes:[],signs:[],marks:[],scenery:[
       {art:'debate-facade',x:640,y:451,w:820},
       {art:'debate-lectern-blue',x:175,y:449,w:105},
       {art:'debate-lectern-red',x:1070,y:449,w:105},
       {art:'debate-camera',x:1190,y:449,w:75}
     ]});
-    game.enemies[0].x = 740;
+    game.enemies[0].x = 880;
+    game.enemies[0].title = "Studio miniboss";
+    game.enemies[0].encounterRole = "miniboss";
     game.practicePairStatus = "Encounter preview · sidestep the phone charge · paired grapple not installed";
     game.banner = "Phone call → sidestep → punish the miss";
     game.bannerT = 3;
@@ -346,7 +348,8 @@ function boot() {
   const input = createInput();
   const game = createGame();
   if (typeof window !== "undefined") window.__cc = game; // debug/automation hook
-  const practiceRequested = new URLSearchParams(window.location.search).has("practice");
+  const studioRequested = new URLSearchParams(window.location.search).get("scene") === "studio";
+  const practiceRequested = studioRequested || new URLSearchParams(window.location.search).has("practice");
   let assetsReady = false;
   const startButton = document.getElementById("start");
   const assetStatus = document.createElement("p");
@@ -360,7 +363,7 @@ function boot() {
       assetsReady = true;
       assetStatus.textContent = "Ready to play.";
       startButton.textContent = "Step in";
-      if (practiceRequested && game.mode === "title") beginPractice(game, "mamdani", false, new URLSearchParams(window.location.search).get("opponent") || "cruz");
+      if (practiceRequested && game.mode === "title") beginPractice(game, "mamdani", studioRequested, new URLSearchParams(window.location.search).get("opponent") || "rogers");
     } catch (error) {
       assetStatus.textContent = `Loading failed: ${error.message}. Tap Retry loading.`;
       startButton.textContent = "Retry loading";
