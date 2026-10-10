@@ -1,8 +1,9 @@
-import { melee, updateBody } from "./combat.js?v=grab27";
+import { melee, updateBody } from "./combat.js?v=release24";
 import { WORLD } from "./stages.js?v=bench28";
-import { spawnSatellite, spawnShot, spawnSombrero } from "./weapons.js?v=grab27";
+import { spawnSatellite, spawnShot, spawnSombrero } from "./weapons.js?v=release24";
 
 const KINDS = {
+  laser_relay: { name:"Laser relay", hp:60, speed:0, w:100, h:95, dmg:0, reach:0, scale:1 },
   grunt: {
     name: "Grunt",
     hp: 32,
@@ -148,6 +149,8 @@ const KINDS = {
     transformDur: 1.2,
     transformBanner: "Pete cracks a cold one",
   },
+  // Chibi sheets already normalize actor height. Keep scale shared with paired
+  // grapples; boss size multipliers made actors shrink when a grab began.
   vance: {
     name: "JD Vance",
     sprite: "vance_worried",
@@ -157,7 +160,7 @@ const KINDS = {
     h: 100,
     dmg: 14,
     reach: 62,
-    scale: 1.08,
+    scale: 1,
     body: "#243656",
     trim: "#d7c4a3",
     skin: "#e0b088",
@@ -173,7 +176,7 @@ const KINDS = {
     h: 110,
     dmg: 18,
     reach: 96,
-    scale: 1.2,
+    scale: 1,
     boss: true,
     body: "#1d4e89",
     trim: "#c9a227",
@@ -186,10 +189,12 @@ const KINDS = {
 let seq = 1;
 
 export function makeEnemy(kind, x, y) {
+  if (kind === "greene") kind = "laser_relay";
   const stats = KINDS[kind];
   return {
     id: `e${seq++}`,
     team: "enemy",
+    isMachine: kind === "laser_relay",
     kind,
     sprite: stats.sprite || kind,
     name: stats.name,
@@ -1052,6 +1057,7 @@ function updateSignal(enemy, game, dt) {
 }
 
 export function updateEnemy(enemy, game, dt) {
+  if (enemy.isMachine) { enemy.flash=Math.max(0,enemy.flash-dt); if (!enemy.alive) enemy.deadT-=dt; return; }
   enemy.anim += dt;
   if (enemy.kind === "greene") enemy.laserCd = Math.max(0, (enemy.laserCd ?? 0.45) - dt);
   if (enemy.attackCd > 0) enemy.attackCd -= dt;
@@ -1080,5 +1086,3 @@ export function updateEnemy(enemy, game, dt) {
   else if (enemy.kind === "mara") updateMara(enemy, game, dt);
   else if (enemy.kind === "signal") updateSignal(enemy, game, dt);
 }
-
-

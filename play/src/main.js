@@ -1,14 +1,15 @@
+import { addLaserEncounter, updateLaserEncounters } from "./laser-encounter.js?v=release24";
 import { propFootprints, collideProps, steerAroundProps } from "./prop-collision.js?v=grapple-release23";
 import { play, unlock } from "./audio.js?v=chibi-site2";
-import { separate, tickToss, wallBounce } from "./combat.js?v=grab27";
-import { makeEnemy, updateEnemy } from "./enemies.js?v=grab27";
+import { separate, tickToss, wallBounce } from "./combat.js?v=release24";
+import { makeEnemy, updateEnemy } from "./enemies.js?v=release24";
 import { blankInput, createInput } from "./input.js?v=chibi-site2";
-import { fighterById, makePlayer, updatePlayer, bufferPlayerInput } from "./player.js?v=grab27";
-import { draw, loadEnvironment } from "./render.js?v=grip08b";
+import { fighterById, makePlayer, updatePlayer, bufferPlayerInput } from "./player.js?v=release24";
+import { draw, loadEnvironment } from "./render.js?v=release24";
 import { cloneStage, STAGES, WORLD } from "./stages.js?v=bench28";
-import { updatePickups, updateProjectiles } from "./weapons.js?v=grab27";
-import { loadSprites } from "./sprites.js?v=grip08b";
-import { PAGES } from "../../story/panels.js";
+import { updatePickups, updateProjectiles } from "./weapons.js?v=release24";
+import { loadSprites, ensureGrapplePair } from "./sprites.js?v=release24";
+import { PAGES } from "/story/panels.js";
 import { followingWitness, makeCitizen, spawnCelebration, updateCitizens, witnessTestifies } from "./citizens.js?v=idle21";
 
 // Comic panels that exist as short animated loops (OpenArt), shown between stages.
@@ -79,13 +80,20 @@ export function beginPractice(game, fighterId, active = false, opponent = game.p
   game.storyId = null;
   game.practice = true;
   game.practiceActive = active;
-  game.practiceEnemy = ["cruz", "pete", "vance", "greene", "trump"].includes(opponent) ? opponent : "cruz";
+  game.practiceEnemy = ["cruz", "pete", "pete_ww", "vance", "greene", "trump"].includes(opponent) ? opponent : "cruz";
   game.introT = 0;
   game.stage.props = [];
   game.stage.pickups = [];
   game.citizens = [];
   game.player.x = 420;
-  game.enemies = [makeEnemy(game.practiceEnemy, 510, 560)];
+  game.enemies = [makeEnemy(game.practiceEnemy === "pete_ww" ? "pete" : game.practiceEnemy, 510, 560)];
+  if (game.practiceEnemy === "pete_ww") Object.assign(game.enemies[0], { sprite: "pete_ww", transformed: true, transformTo: null });
+  if (game.practiceEnemy === "greene") { game.enemies=[];addLaserEncounter(game,makeEnemy,650);game.practicePairStatus="Destroy the relays; the operator cannot be attacked";game.banner="Break the three laser relays";game.bannerT=3;return; }
+  const practicePlayer = game.player;
+  game.practicePairStatus = "Loading paired animation…";
+  ensureGrapplePair(game.player, game.enemies[0]).then(ready => {
+    if (game.player === practicePlayer) game.practicePairStatus = ready ? "Paired grapple loaded" : "Older separate poses — paired grapple pending";
+  });
   game.enemies[0].facing = -1;
   game.banner = "Practice · G grab · J strike · K throw";
   game.bannerT = 3;
@@ -116,6 +124,7 @@ export function startStage(game) {
   game.lockCam = null;
   game.waveIndex = 0;
   game.enemies = [];
+  game.laserOperators = [];game.laserWrecks=[];
   game.citizens = (game.stage.citizens || []).map((cit) => makeCitizen(cit.kind, cit.x, cit.y));
   game.projectiles = [];
   game.fx = [];
@@ -154,6 +163,7 @@ export function updateGame(game, input, dt) {
   }
 
   if (game.clearT > 0) {
+    updateLaserEncounters(game,dt);
     game.clearT -= dt;
     updateCitizens(game, dt);
     for (const fx of game.fx) fx.t += dt;
@@ -190,6 +200,7 @@ export function updateGame(game, input, dt) {
     collideProps(before.ent, before, footprints);
   }
   updatePickups(game);
+  updateLaserEncounters(game, dt);
   updateProjectiles(game, dt);
   updateWaves(game);
   // A witness who makes it to the boss puts the receipts on the record.
@@ -243,7 +254,9 @@ function updateWaves(game) {
     game.lockCam = desired;
     const base = desired + 760;
     for (const member of wave.group) {
+      if (member.kind === "greene") { addLaserEncounter(game,makeEnemy,base+member.dx); continue; }
       const enemy = makeEnemy(member.kind, base + member.dx, member.y);
+      ensureGrapplePair(game.player, enemy);
       if (wave.boss) {
         enemy.isBoss = true;
         enemy.title = wave.bossName;
@@ -328,7 +341,7 @@ function boot() {
       assetsReady = true;
       assetStatus.textContent = "Ready to play.";
       startButton.textContent = "Step in";
-      if (practiceRequested && game.mode === "title") beginPractice(game, "mamdani");
+      if (practiceRequested && game.mode === "title") beginPractice(game, "mamdani", false, new URLSearchParams(window.location.search).get("opponent") || "cruz");
     } catch (error) {
       assetStatus.textContent = "Some animations could not load. Check your connection and retry.";
       startButton.textContent = "Retry loading";
@@ -493,6 +506,7 @@ function boot() {
     document.getElementById("practice-controls").hidden = !game.practice;
     document.getElementById("practice-opponent").textContent = game.practiceActive ? "Opponent: active" : "Opponent: stationary";
     document.getElementById("practice-enemy").value = game.practiceEnemy || "cruz";
+    document.getElementById("practice-pair-status").textContent = game.practicePairStatus || "";
     for (const id of ["mamdani", "sayed"]) document.getElementById(`practice-${id}`).setAttribute("aria-pressed", String(game.fighterId === id));
     titlePanel.hidden = game.mode !== "title";
     selectPanel.hidden = game.mode !== "select";
@@ -549,12 +563,14 @@ function boot() {
     game.stage = cloneStage(0);
     game.player = null;
     game.enemies = [];
+  game.laserOperators = [];game.laserWrecks=[];
   });
   document.getElementById("over-again").addEventListener("click", () => {
     game.mode = "title";
     game.stage = cloneStage(0);
     game.player = null;
     game.enemies = [];
+  game.laserOperators = [];game.laserWrecks=[];
   });
 
   const touchBar = window.mountTouchControls?.(document.querySelector(".stage"), {
@@ -573,6 +589,12 @@ function boot() {
     ],
   });
 
+  let practiceSpeed = 1;
+  document.getElementById("practice-speed").addEventListener("change", event => {
+    const speed = Number(event.target.value);
+    practiceSpeed = [1, .25, .1].includes(speed) ? speed : 1;
+    canvas.focus({ preventScroll: true });
+  });
   let last = performance.now();
   function frame(now) {
     const dt = (now - last) / 1000;
@@ -597,10 +619,11 @@ function boot() {
       game.stage = cloneStage(0);
       game.player = null;
       game.enemies = [];
+  game.laserOperators = [];game.laserWrecks=[];
     }
     if (window.devicePixelRatio !== dprSeen) { dprSeen = window.devicePixelRatio; fitCanvas(); }
     if (assetsReady) {
-      updateGame(game, game.mode === "play" ? snap : blankInput(), dt);
+      updateGame(game, game.mode === "play" ? snap : blankInput(), dt * (game.practice ? practiceSpeed : 1));
       ctx.setTransform(pixelScale, 0, 0, pixelScale, 0, 0);
       draw(ctx, game);
     }

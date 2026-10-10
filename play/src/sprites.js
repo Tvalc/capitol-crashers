@@ -1,12 +1,13 @@
 import { registerHelpAction } from "./help-actions.js?v=idle21";
-import { playerMoveWindow } from "./player.js?v=grab27";
+import { playerMoveWindow } from "./player.js?v=release24";
+import { WORLD } from "./stages.js?v=bench28";
 
 const CLIPS = {
   zohran: ["idle", "walk", "run", "jump", "attack", "hit", "death", "cast", "grab", "throw", "lunge", "reversal"],
   abdul: ["idle", "walk", "run", "jump", "attack", "hit", "death", "cast", "grab", "throw", "lunge"],
   trump: ["idle", "walk", "run", "attack", "hit", "death", "cast"],
   vance: ["idle", "walk", "run", "attack", "hit", "death", "cast", "grab"],
-  greene: ["idle", "run", "attack", "hit", "death", "jump", "cast"],
+  greene: ["idle", "run", "attack", "cast"],
   cruz: ["idle", "walk", "run", "attack", "hit", "death"],
   pete: ["idle", "walk", "attack", "hit", "death"],
   pete_ww: ["idle", "walk", "attack", "hit", "death"],
@@ -16,11 +17,11 @@ const CLIPS = {
 // Grab / grabbed sheets are still being made in Makko. These slots load when a sheet exists
 // and are skipped quietly when it does not, so new sheets can be dropped in without code changes.
 const SOFT_CLIPS = {
-  zohran: ["grabbed"],
-  abdul: ["grabbed"],
+  zohran: ["grabbed", "grab_strike"],
+  abdul: ["grabbed", "grab_strike"],
   trump: ["grab", "grabbed"],
   vance: ["grabbed"],
-  greene: ["grab", "grabbed"],
+
   cruz: ["grab", "grabbed"],
   pete: ["grab", "grabbed", "change"],
   pete_ww: ["grab", "grabbed"],
@@ -72,12 +73,31 @@ const FALLBACK = {
   backstep: ["backstep", "hit", "idle"],
   grab: ["grab", "attack", "idle"],
   grabbed: ["grabbed", "hit", "idle"],
+  grab_strike: ["grab_strike", "attack"],
+  grab_flinch: ["grab_flinch", "grabbed", "hit"],
   change: ["change", "hit", "idle"],
 };
 
 const ONCE = new Set(["attack", "hit", "death", "cast", "jump", "lunge", "reversal", "throw", "backstep", "grab"]);
 
 const sheets = new Map();
+// Only reviewed candidates are registered. Load the active matchup, not the
+// whole cast's paired atlases at startup.
+const GRAPPLE_PAIRS = {
+  zohran: new Set(["cruz", "mcconnell", "trump", "vance_worried", "pete_ww", "pete"]),
+  abdul: new Set(["cruz", "trump", "beck", "vance_worried", "pete_ww", "pete"]),
+};
+const pairLoads = new Map();
+export function ensureGrapplePair(hero, enemy) {
+  const sprite = actorSprite(hero), opponent = actorSprite(enemy);
+  if (!GRAPPLE_PAIRS[sprite]?.has(opponent)) return Promise.resolve(false);
+  const clip = `grapple_${opponent}_strike`, key = clipKey(sprite, clip);
+  if (!pairLoads.has(key)) {
+    pairLoads.set(key, loadOne(sprite, clip, `${FILE[sprite]}_${clip}`)
+      .then(() => true).catch(() => false));
+  }
+  return pairLoads.get(key);
+}
 
 function clipKey(sprite, clip) {
   return `${sprite}:${clip}`;
@@ -129,6 +149,7 @@ export function readFrames(data, width, height) {
   }
   if (!frames.length) throw new Error("Animation has no frames.");
   for (const item of frames) {
+    if (item.grappleScale !== undefined && (!Number.isFinite(item.grappleScale) || item.grappleScale <= 0 || item.grappleScale > 2)) throw new Error("Animation contains an invalid grapple scale.");
     const cell = item.frame;
     if (!cell || ![cell.x, cell.y, cell.w, cell.h].every(Number.isFinite) ||
         cell.x < 0 || cell.y < 0 || cell.w <= 0 || cell.h <= 0 ||
@@ -139,25 +160,58 @@ export function readFrames(data, width, height) {
   return frames;
 }
 
+function assetRoot(name) { if (name.includes("_grapple_")) return "/play/assets/sprites"; return ["chibi/zohran_mamdani_grab", "chibi/ted_cruz_grabbed"].includes(name) ? "qa-grapple09/assets/sprites" : "assets/sprites"; }
+
 function loadOne(sprite, clip, name) {
   const image = new Image();
-  const version = /chibi\/(zohran_mamdani|abdul_el_sayed)_grab$/.test(name) ? "grip08b" : name === "chibi/jd_vance_worried_death" ? "chibi-death24" : "hd5";
-  const dataPromise = fetch(`assets/sprites/${name}.json?v=${version}`).then((res) => {
+  const version = name.includes("_grapple_") ? "laser22" : /chibi\/(zohran_mamdani|abdul_el_sayed)_grab$/.test(name) ? "grip08b" : name === "chibi/jd_vance_worried_death" ? "chibi-death24" : "hd5";
+  const dataPromise = fetch(`${assetRoot(name)}/${name}.json?v=${version}`).then((res) => {
     if (!res.ok) throw new Error(`Could not load ${name}: ${res.status}`);
     return res.json();
   });
   const imagePromise = new Promise((resolve, reject) => {
     image.onload = () => resolve(image);
-    image.onerror = reject;
-    image.src = `assets/sprites/${name}.webp?v=${version}`;
+    let retried = false;
+    image.onerror = () => {
+      if (!retried) {
+        retried = true;
+        image.src = `${assetRoot(name)}/${name}.webp?v=${version}&retry=1`;
+        return;
+      }
+      reject(new Error(`Could not load sprite image: ${name}`));
+    };
+    image.src = `${assetRoot(name)}/${name}.webp?v=${version}`;
   });
   return Promise.all([dataPromise, imagePromise]).then(([data, img]) => {
     const frames = readFrames(data, img.naturalWidth, img.naturalHeight);
+    if (clip.startsWith("grapple_")) {
+      const meta = data.meta || {};
+      if (frames.length > 12 || meta.nativePixels !== true || /^reject/i.test(meta.reviewStatus || "")) {
+        throw new Error(`Unreviewable paired animation: ${name}`);
+      }
+      if (![meta.anchor?.x, meta.anchor?.y, meta.pairedEnemyRoot?.x, meta.pairedEnemyRoot?.y, meta.bodyScale].every(Number.isFinite) || meta.bodyScale <= 0) {
+        throw new Error(`Missing paired alignment: ${name}`);
+      }
+      const hold = meta.holdFrame ?? 0;
+      if (!Number.isInteger(hold) || hold < 0 || hold >= frames.length) {
+        throw new Error(`Invalid paired hold frame: ${name}`);
+      }
+      const sequence = meta.playbackSequence || frames.map((_, i) => i);
+      if (!sequence.length || sequence.some(i => !Number.isInteger(i) || i < 0 || i >= frames.length) || !sequence.includes(meta.contactFrame)) {
+        throw new Error(`Invalid paired contact sequence: ${name}`);
+      }
+    }
     if (data.meta?.helpAction) registerHelpAction(sprite, clip.slice(5), data.meta.helpAction);
     sheets.set(clipKey(sprite, clip), {
       image: img,
       frames,
       fps: data.meta?.playbackFps,
+      holdFrame: data.meta?.holdFrame,
+      pairedEnemyRoot: data.meta?.pairedEnemyRoot,
+      playbackSequence: data.meta?.playbackSequence,
+      contactFrame: data.meta?.contactFrame,
+      impactZ: data.meta?.impactZ,
+      impactXOffset: data.meta?.impactXOffset,
       frameDurations: data.meta?.useFrameDurations ? frames.map(frame => frame.duration) : null,
       bodyScale: data.meta?.bodyScale || 1,
       anchor: data.meta?.anchor || { x: (frames[0].sourceSize?.w || frames[0].frame.w) / 2, y: frames[0].sourceSize?.h || frames[0].frame.h },
@@ -167,8 +221,8 @@ function loadOne(sprite, clip, name) {
 
 // Missing sheet = 404 on the JSON, nothing else requested, never an error.
 function loadSoft(sprite, clip, name) {
-  const version = /chibi\/(zohran_mamdani|abdul_el_sayed)_grab$/.test(name) ? "grip08b" : name === "chibi/jd_vance_worried_death" ? "chibi-death24" : "hd5";
-  return fetch(`assets/sprites/${name}.json?v=${version}`, { method: "HEAD" })
+  const version = name.includes("_grapple_") ? "correction19" : /chibi\/(zohran_mamdani|abdul_el_sayed)_grab$/.test(name) ? "grip08b" : name === "chibi/jd_vance_worried_death" ? "chibi-death24" : "hd5";
+  return fetch(`${assetRoot(name)}/${name}.json?v=${version}`, { method: "HEAD" })
     .then((res) => (res.ok ? loadOne(sprite, clip, name) : null))
     .catch(() => null);
 }
@@ -267,8 +321,8 @@ export function poseIndex(ent, count, clip) {
       if (t < 0.36) return contact;
       return Math.min(count - 1, contact + Math.floor((t - 0.36) / 0.26 * (count - contact)));
     }
-    // Return to the extended grip after each punch.
-    return 0;
+    // The new six-frame collar hold settles on its fourth frame.
+    return actorSprite(ent) === "abdul" && count === 6 ? 3 : 0;
   }
   if (clip === "grab" && ent.team !== "player") {
     return Math.min(count - 1, Math.floor(Math.max(0, ent.stateT || 0) / 0.28 * (count - 1)));
@@ -355,13 +409,57 @@ function flinchIndex(ent, count) {
 // than the character's body. Calibrate once per clip, never once per frame.
 export const SPRITE_BODY_SCALE = {};
 
+// One paired grapple interaction supplies its restrained rest pose, pummel,
+// reaction and recovery. It never replaces a normal attack or throw.
+export function hasGrapplePair(hero, enemy) {
+  if (hero.state === "grab" && hero.grapplePairLocked === false) return false;
+  return !!enemy && hasSheet(actorSprite(hero), `grapple_${actorSprite(enemy)}_strike`);
+}
+
+export function grapplePairDistance(hero, enemy) {
+  const sheet = sheets.get(clipKey(actorSprite(hero), `grapple_${actorSprite(enemy)}_strike`));
+  const depth = .86 + (hero.y - WORLD.floorTop) / (WORLD.floorBottom - WORLD.floorTop) * .2;
+  return (sheet.pairedEnemyRoot.x - sheet.anchor.x) * sheet.bodyScale * (hero.scale || 1) * depth * 1.05;
+}
+
+export function drawGrapplePair(ctx, hero, enemy, sx, scale) {
+  if (!hasGrapplePair(hero, enemy)) return false;
+  const strike = hero.grabStrikeT > 0;
+  const sheet = sheets.get(clipKey(actorSprite(hero), `grapple_${actorSprite(enemy)}_strike`));
+  const phase = Math.max(0, Math.min(1, 1 - (hero.grabStrikeT || 0) / .32));
+  const sequence = sheet.playbackSequence || sheet.frames.map((_,i)=>i);
+  const index = strike ? sequence[Math.min(sequence.length - 1, Math.floor(phase * sequence.length))] : (sheet.holdFrame ?? 0);
+  const frame = sheet.frames[index], cell = frame.frame;
+  ctx.save();
+  ctx.translate(sx, hero.y);
+  const frameScale = frame.grappleScale ?? 1;
+  ctx.scale(scale * sheet.bodyScale * frameScale * hero.facing, scale * sheet.bodyScale * frameScale);
+  const offset = frame.trimmed ? frame.spriteSourceSize : null;
+  ctx.drawImage(sheet.image, cell.x, cell.y, cell.w, cell.h, -sheet.anchor.x + (offset?.x || 0), -sheet.anchor.y + (offset?.y || 0), cell.w, cell.h);
+  ctx.restore();
+  return true;
+}
+
+export function grapplePairImpact(hero, enemy) {
+  const sheet = sheets.get(clipKey(actorSprite(hero), `grapple_${actorSprite(enemy)}_strike`));
+  return { impactX: enemy.x - hero.facing * (sheet?.impactXOffset ?? 18), impactZ: sheet?.impactZ ?? 148 };
+}
+
+export function grapplePairContactRemaining(hero, enemy) {
+  const sheet = sheets.get(clipKey(actorSprite(hero), `grapple_${actorSprite(enemy)}_strike`));
+  if (!sheet) return .16;
+  const sequence = sheet.playbackSequence || sheet.frames.map((_,i)=>i);
+  const contact = Math.max(0, sequence.indexOf(sheet.contactFrame ?? 3));
+  return .32 * (1 - contact / sequence.length);
+}
+
 export function drawSprite(ctx, ent, sx, sc) {
   const sprite = actorSprite(ent);
   let wanted = clipFor(ent.state);
   const grabbedFlinch = ent.state === "grabbed" && ent.grabFlinchT > 0;
-  if (grabbedFlinch) wanted = "hit";
+  if (grabbedFlinch && hasSheet(sprite, "grab_flinch")) wanted = "grab_flinch";
   const grabPunch = ent.team === "player" && ent.state === "grab" && ent.grabStrikeT > 0;
-  if (grabPunch) wanted = "attack";
+  if (grabPunch) wanted = "grab_strike";
   if (ent.state === "help" && ent.helpAction) wanted = ent.stateT < ent.helpAction.approach ? "walk" : `help_${ent.helpKind}`;
   if (sprite === "cruz" && ent.state === "windup") wanted = "attack";
   const resolved = resolveSheet(sprite, wanted);
@@ -371,9 +469,9 @@ export function drawSprite(ctx, ent, sx, sc) {
   const count = sheet.frames.length;
   const once = ONCE.has(clip);
   let index;
-  if (grabPunch && clip === "attack") {
-    const phase = Math.max(0, Math.min(1, 1 - ent.grabStrikeT / .24));
-    const punchFrames = sprite === "zohran" ? [0, 1, 2, 3, 4, 9, 10, 11] : [0, 1, 2, 3, 8, 9, 10, 11];
+  if (grabPunch && (clip === "attack" || clip === "grab_strike")) {
+    const phase = Math.max(0, Math.min(1, 1 - ent.grabStrikeT / .32));
+    const punchFrames = clip === "grab_strike" ? Array.from({length:count}, (_,i)=>i) : sprite === "zohran" ? [0, 1, 2, 3, 4, 9, 10, 11] : [0, 1, 2, 3, 8, 9, 10, 11];
     index = Math.min(count - 1, punchFrames[Math.min(punchFrames.length - 1, Math.floor(phase * punchFrames.length))]);
   }
   else if (clip.startsWith("help_")) index = Math.min(count - 1, Math.floor(Math.max(0, ent.stateT - ent.helpAction.approach) / ent.helpAction.total * count));
@@ -398,6 +496,7 @@ export function drawSprite(ctx, ent, sx, sc) {
   else if (clip === "walk" || clip === "run") index = gaitIndex(ent, count, clip, sheet.fps);
   else if (once) index = poseIndex(ent, count, clip);
   else index = Math.floor((ent.anim || 0) / 0.1) % count;
+  if (clip === "grab" && ent.team === "player" && Number.isInteger(sheet.holdFrame)) index = Math.min(sheet.holdFrame, Math.floor(Math.max(0, ent.stateT || 0) / .24 * (sheet.holdFrame + 1)));
   if (sprite === "cruz" && ent.state === "windup") index = 0;
   if (index < 0) index = 0;
   const frame = sheet.frames[index];
@@ -408,7 +507,12 @@ export function drawSprite(ctx, ent, sx, sc) {
   ctx.translate(sx, ent.y - (ent.z || 0));
   const facing = ent.state === "help" && ent.helpAction && ent.stateT < ent.helpAction.approach ? Math.sign(ent.helpAction.targetX - ent.helpAction.fromX) || ent.facing : ent.facing;
   ctx.scale(sc * (facing || 1), sc);
-  if (ent.flash > 0) ctx.filter = "brightness(3)";
+  if (grabbedFlinch && !hasSheet(sprite, "grab_flinch")) {
+    const recoil = Math.sin(Math.PI * (1 - ent.grabFlinchT / .22));
+    ctx.translate(-5 * recoil, 0);
+    ctx.rotate(-.035 * recoil);
+  }
+  if (ent.flash > 0) ctx.filter = ent.state === "grabbed" ? "brightness(1.35)" : "brightness(3)";
   ctx.drawImage(
     sheet.image,
     cell.x, cell.y, cell.w, cell.h,
@@ -417,12 +521,4 @@ export function drawSprite(ctx, ent, sx, sc) {
   ctx.restore();
   return true;
 }
-
-
-
-
-
-
-
-
 

@@ -46,7 +46,14 @@ export function spendSpecial(player) {
 }
 
 export function applyHit(game, spec, target) {
-  if (!target || target.state === "dead" || !target.alive) return false;
+  if (!target || target.untargetable || target.kind === "greene" || target.state === "dead" || !target.alive) return false;
+  if (target.isMachine) {
+    if (spec.team !== "player") return false;
+    target.hp=Math.max(0,target.hp-Math.max(1,Math.round(spec.dmg)));
+    target.flash=.12; game.hitstop=Math.max(game.hitstop||0,.035);
+    if (!target.hp) { target.alive=false;target.state="dead";target.deadT=.35;game.score+=250;(game.laserWrecks??=[]).push({...target}); }
+    return true;
+  }
   if (target.state === "getup") return false;
   if (target.invuln > 0) return false;
   if (target.state === "grabbed" && spec.kind !== "grab") return false;
@@ -66,11 +73,11 @@ export function applyHit(game, spec, target) {
   if (target.hp < 0) target.hp = 0;
   target.chip = Math.min(target.chip, target.hp);
   target.chipTimer = 3;
-  target.flash = 0.12;
+  target.flash = spec.kind === "grab" ? 0.045 : 0.12;
 
   const facing = spec.radial ? Math.sign(target.x - spec.x) || spec.facing || 1 : spec.facing || 1;
   if (game.attackSlot === target.id) game.attackSlot = null;
-  const grabbed = target.state === "grabbed" && spec.kind === "grab";
+  const grabbed = target.state === "grabbed" && spec.kind === "grab" && !spec.knockdown;
   if (grabbed) { target.stateT = 0; target.grabFlinchT = 0.22; }
   if (!grabbed) {
     target.vx = facing * spec.kb;
@@ -108,9 +115,9 @@ export function applyHit(game, spec, target) {
   game.hitstop = Math.max(game.hitstop, spec.hitstop ?? 0.045);
   game.shake = Math.max(game.shake, spec.shake ?? 5);
   game.fx.push({
-    x: spec.x == null ? target.x : Math.max(target.x - target.w * .4, Math.min(target.x + target.w * .4, spec.x)),
+    x: spec.impactX ?? (spec.x == null ? target.x : Math.max(target.x - target.w * .4, Math.min(target.x + target.w * .4, spec.x))),
     y: target.y,
-    z: spec.z == null ? target.z + 50 : Math.max(target.z + 20, Math.min(target.z + target.h * .8, spec.z)),
+    z: spec.impactZ ?? (spec.z == null ? target.z + 50 : Math.max(target.z + 20, Math.min(target.z + target.h * .8, spec.z))),
     t: 0,
     life: 0.22,
     color: spec.team === "player" ? "#f4efe4" : "#ef6b4a",
@@ -170,11 +177,14 @@ export function melee(game, owner, spec) {
     points: spec.points,
     hitstop: spec.hitstop,
     shake: spec.shake,
+    impactX: spec.impactX,
+    impactZ: spec.impactZ,
   };
   const targets = owner.team === "player" ? game.enemies : [game.player];
   let connected = 0;
   for (const target of targets) {
     if (!target || spec.already?.has(target.id)) continue;
+    if (spec.targetId != null && target.id !== spec.targetId) continue;
     if (spec.low && target.z > 36) continue;
     if (!overlaps(hit, target)) continue;
     spec.already?.add(target.id);
@@ -307,7 +317,7 @@ export function separate(list) {
     for (let j = i + 1; j < list.length; j += 1) {
       const a = list[i];
       const b = list[j];
-      if (!a.alive || !b.alive || a.z > 24 || b.z > 24 || ["grabbed", "held"].includes(a.state) || ["grabbed", "held"].includes(b.state)) continue;
+      if (a.isMachine || b.isMachine || !a.alive || !b.alive || a.z > 24 || b.z > 24 || ["grabbed", "held"].includes(a.state) || ["grabbed", "held"].includes(b.state)) continue;
       let dx = b.x - a.x;
       let dy = b.y - a.y;
       const dist = Math.hypot(dx, dy) || 0.001;

@@ -1,0 +1,252 @@
+{
+  "frames": {
+    "pete_hegseth_sayed_transformed_paired_knee_7f_native_000.webp": {
+      "frame": {
+        "x": 0,
+        "y": 0,
+        "w": 392,
+        "h": 475
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": -1,
+        "y": -24,
+        "w": 392,
+        "h": 475
+      },
+      "sourceSize": {
+        "w": 389,
+        "h": 444
+      },
+      "duration": 42,
+      "grappleScale": 0.96729,
+      "groundAnchorY": 433.78082191780817
+    },
+    "pete_hegseth_sayed_transformed_paired_knee_7f_native_001.webp": {
+      "frame": {
+        "x": 392,
+        "y": 0,
+        "w": 391,
+        "h": 475
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": -1,
+        "y": -24,
+        "w": 391,
+        "h": 475
+      },
+      "sourceSize": {
+        "w": 389,
+        "h": 444
+      },
+      "duration": 42,
+      "grappleScale": 0.970866,
+      "groundAnchorY": 433.78082191780817
+    },
+    "pete_hegseth_sayed_transformed_paired_knee_7f_native_002.webp": {
+      "frame": {
+        "x": 783,
+        "y": 0,
+        "w": 392,
+        "h": 475
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": -2,
+        "y": -24,
+        "w": 392,
+        "h": 475
+      },
+      "sourceSize": {
+        "w": 389,
+        "h": 444
+      },
+      "duration": 42,
+      "grappleScale": 0.969638,
+      "groundAnchorY": 433.78082191780817
+    },
+    "pete_hegseth_sayed_transformed_paired_knee_7f_native_003.webp": {
+      "frame": {
+        "x": 0,
+        "y": 475,
+        "w": 392,
+        "h": 449
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": -1,
+        "y": -10,
+        "w": 392,
+        "h": 449
+      },
+      "sourceSize": {
+        "w": 389,
+        "h": 444
+      },
+      "duration": 42,
+      "grappleScale": 0.967258,
+      "groundAnchorY": 433.78082191780817
+    },
+    "pete_hegseth_sayed_transformed_paired_knee_7f_native_004.webp": {
+      "frame": {
+        "x": 392,
+        "y": 475,
+        "w": 391,
+        "h": 449
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": -1,
+        "y": -10,
+        "w": 391,
+        "h": 449
+      },
+      "sourceSize": {
+        "w": 389,
+        "h": 444
+      },
+      "duration": 42,
+      "grappleScale": 1.0,
+      "groundAnchorY": 433.78082191780817
+    },
+    "pete_hegseth_sayed_transformed_paired_knee_7f_native_005.webp": {
+      "frame": {
+        "x": 783,
+        "y": 475,
+        "w": 392,
+        "h": 449
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": -2,
+        "y": -10,
+        "w": 392,
+        "h": 449
+      },
+      "sourceSize": {
+        "w": 389,
+        "h": 444
+      },
+      "duration": 42,
+      "grappleScale": 0.954497,
+      "groundAnchorY": 433.78082191780817
+    },
+    "pete_hegseth_sayed_transformed_paired_knee_7f_native_006.webp": {
+      "frame": {
+        "x": 0,
+        "y": 924,
+        "w": 392,
+        "h": 414
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": -1,
+        "y": 21,
+        "w": 392,
+        "h": 414
+      },
+      "sourceSize": {
+        "w": 389,
+        "h": 444
+      },
+      "duration": 42,
+      "grappleScale": 1.0,
+      "groundAnchorY": 433.78082191780817
+    }
+  },
+  "meta": {
+    "app": "MAKKO Sprite Studio",
+    "version": "1.0.0",
+    "image": "abdul_el_sayed_grapple_pete_ww_strike.webp",
+    "format": "RGBA8888",
+    "size": {
+      "w": 1175,
+      "h": 1338
+    },
+    "scale": "1",
+    "frameTags": [
+      {
+        "name": "animation",
+        "from": 0,
+        "to": 6,
+        "direction": "forward"
+      }
+    ],
+    "anchor": {
+      "x": 91.796875,
+      "y": 433.78082191780817
+    },
+    "referenceAlignment": {
+      "referenceBounds": {
+        "width": 612,
+        "height": 716
+      },
+      "frameBounds": {
+        "width": 636,
+        "height": 726
+      },
+      "normalized": true
+    },
+    "pairedEnemyRoot": {
+      "x": 299.86979166666663,
+      "y": 433.78082191780817
+    },
+    "bodyScale": 0.6086318775461173,
+    "holdFrame": 6,
+    "animationId": "246b8ce9-7e63-4c4a-93f5-5939dd57e671",
+    "savedOriginalFrames": [
+      9,
+      17,
+      25,
+      33,
+      41,
+      65,
+      72
+    ],
+    "playbackSequence": [
+      6,
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6
+    ],
+    "contactFrame": 3,
+    "nativePixels": true,
+    "reviewStatus": "candidate: identity21; runtime alignment checked",
+    "impactZ": 110,
+    "impactXOffset": 35,
+    "identityCorrection": {
+      "source": "built-in image edit using approved idle reference",
+      "version": "identity21",
+      "resampled": false
+    },
+    "scaleCalibration": {
+      "version": "scale20",
+      "method": "joint held stature; shared transform preserves grip; common-mode drift only",
+      "heroHoldBefore": 229.93313069908817,
+      "enemyHoldBefore": 236.35258358662617,
+      "factor": 1.0429160818368362,
+      "frameFactors": [
+        0.96729,
+        0.970866,
+        0.969638,
+        0.967258,
+        1.0,
+        0.954497,
+        1.0
+      ],
+      "pixelsChanged": false
+    }
+  }
+}

@@ -1,0 +1,195 @@
+{
+  "frames": {
+    "zohran_mamdani_grapple_mcconnell_strike_000.png": {
+      "frame": {
+        "x": 2,
+        "y": 2,
+        "w": 610,
+        "h": 560
+      },
+      "rotated": false,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 6,
+        "y": 10,
+        "w": 610,
+        "h": 560
+      },
+      "sourceSize": {
+        "w": 664,
+        "h": 571
+      },
+      "duration": 250,
+      "grappleScale": 1.0,
+      "groundAnchorY": 546
+    },
+    "zohran_mamdani_grapple_mcconnell_strike_001.png": {
+      "frame": {
+        "x": 616,
+        "y": 2,
+        "w": 610,
+        "h": 560
+      },
+      "rotated": false,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 6,
+        "y": 10,
+        "w": 610,
+        "h": 560
+      },
+      "sourceSize": {
+        "w": 664,
+        "h": 571
+      },
+      "duration": 250,
+      "grappleScale": 1.0,
+      "groundAnchorY": 546
+    },
+    "zohran_mamdani_grapple_mcconnell_strike_002.png": {
+      "frame": {
+        "x": 1230,
+        "y": 2,
+        "w": 610,
+        "h": 560
+      },
+      "rotated": false,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 6,
+        "y": 10,
+        "w": 610,
+        "h": 560
+      },
+      "sourceSize": {
+        "w": 664,
+        "h": 571
+      },
+      "duration": 250,
+      "grappleScale": 1.0,
+      "groundAnchorY": 546
+    },
+    "zohran_mamdani_grapple_mcconnell_strike_003.png": {
+      "frame": {
+        "x": 2,
+        "y": 566,
+        "w": 610,
+        "h": 560
+      },
+      "rotated": false,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 6,
+        "y": 10,
+        "w": 610,
+        "h": 560
+      },
+      "sourceSize": {
+        "w": 664,
+        "h": 571
+      },
+      "duration": 250,
+      "grappleScale": 1.0,
+      "groundAnchorY": 546
+    },
+    "zohran_mamdani_grapple_mcconnell_strike_004.png": {
+      "frame": {
+        "x": 616,
+        "y": 566,
+        "w": 610,
+        "h": 560
+      },
+      "rotated": false,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 6,
+        "y": 10,
+        "w": 610,
+        "h": 560
+      },
+      "sourceSize": {
+        "w": 664,
+        "h": 571
+      },
+      "duration": 250,
+      "grappleScale": 1.021706,
+      "groundAnchorY": 546
+    }
+  },
+  "meta": {
+    "app": "MAKKO Sprite Studio",
+    "version": "1.0.0",
+    "image": "zohran_mamdani_grapple_mcconnell_strike.webp",
+    "format": "RGBA8888",
+    "size": {
+      "w": 1842,
+      "h": 1128
+    },
+    "scale": "1",
+    "frameTags": [
+      {
+        "name": "animation",
+        "from": 0,
+        "to": 4,
+        "direction": "forward"
+      }
+    ],
+    "anchor": {
+      "x": 180,
+      "y": 546
+    },
+    "referenceAlignment": {
+      "referenceBounds": {
+        "width": 608,
+        "height": 558
+      },
+      "frameBounds": {
+        "width": 664,
+        "height": 571
+      },
+      "normalized": true
+    },
+    "bodyScale": 0.4431370925234367,
+    "pairedEnemyRoot": {
+      "x": 490,
+      "y": 546
+    },
+    "animationId": "1af1b6ac-4b30-4149-95a5-33c15a61acc2",
+    "savedOriginalFrames": [
+      1,
+      7,
+      13,
+      19,
+      25
+    ],
+    "playbackSequence": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      3,
+      2,
+      1,
+      0
+    ],
+    "contactFrame": 3,
+    "nativePixels": true,
+    "reviewStatus": "candidate: in-game visual QA pending",
+    "scaleCalibration": {
+      "version": "scale20",
+      "method": "joint held stature; shared transform preserves grip; common-mode drift only",
+      "heroHoldBefore": 265.86538461538464,
+      "enemyHoldBefore": 255.28846153846155,
+      "factor": 0.9217251524487483,
+      "frameFactors": [
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.021706
+      ],
+      "pixelsChanged": false
+    }
+  }
+}

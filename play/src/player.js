@@ -1,8 +1,9 @@
 import { helpWindow } from "./help-actions.js?v=idle21";
 import { play } from "./audio.js";
+import { hasGrapplePair, grapplePairDistance, grapplePairContactRemaining, grapplePairImpact } from "./sprites.js?v=release24";
 import { FIGHTERS } from "./fighters.js?v=chibi-site2";
-import { integrate, melee, spendSpecial, updateBody } from "./combat.js?v=grab27";
-import { finishWeapon, launchHeld, noteWeaponSwing, spawnBolt } from "./weapons.js?v=grab27";
+import { integrate, melee, spendSpecial, updateBody } from "./combat.js?v=release24";
+import { finishWeapon, launchHeld, noteWeaponSwing, spawnBolt } from "./weapons.js?v=release24";
 import { deliverHelp, finishHelp, helpTarget, startHelp } from "./citizens.js?v=idle21";
 
 const LIGHTS = [
@@ -284,7 +285,7 @@ function grabTarget(game, player, reach = 100) {
   let best = null;
   let bestDx = reach;
   for (const enemy of game.enemies) {
-    if (!enemy.alive || enemy.isBoss || enemy.z > 16) continue;
+    if (enemy.isMachine || enemy.untargetable || enemy.kind === "greene" || !enemy.alive || (enemy.isBoss && !hasGrapplePair(player, enemy)) || enemy.z > 16) continue;
     if (enemy.state === "down" || enemy.state === "air" || enemy.state === "dead" || enemy.state === "grabbed") continue;
     const dx = (enemy.x - player.x) * player.facing;
     const dy = Math.abs(enemy.y - player.y);
@@ -297,11 +298,15 @@ function grabTarget(game, player, reach = 100) {
 }
 
 function startGrab(game, player, enemy) {
+  // Never swap character art midway through a hold when a lazy sheet arrives.
+  player.grapplePairLocked = undefined;
+  player.grapplePairLocked = hasGrapplePair(player, enemy);
   player.state = "grab";
   player.stateT = 0;
   player.grabId = enemy.id;
   player.grabHits = 0;
   player.grabStrikeT = 0;
+  player.grabStrikeConnected = false;
   player.grabStartX = enemy.x;
   player.grabStartY = enemy.y;
   player.bufferGrab = 0;
@@ -312,7 +317,7 @@ function startGrab(game, player, enemy) {
   enemy.vx = 0;
   enemy.vy = 0;
   enemy.vz = 0;
-  game.banner = "Grabbed · J strike · K throw";
+  game.banner = "Grabbed Â· J strike Â· K throw";
   game.bannerT = 1.1;
 }
 
@@ -541,8 +546,13 @@ function updateJump(player, game, input, dt) {
   }
 }
 
-export function grabContactDistance(player) {
-  return player.fighter.id === "sayed" ? 72 : 57;
+// Pair geometry is measured in world pixels, independent of facing.
+export function grabContactDistance(player, enemy) {
+  if (enemy && hasGrapplePair(player, enemy)) return grapplePairDistance(player, enemy);
+  const distances = player.fighter.id === "sayed"
+    ? { cruz: 83, pete: 79, pete_ww: 88, vance: 72, vance_worried: 72, greene: 82 }
+    : { cruz: 108, pete: 100, pete_ww: 105, vance: 96, vance_worried: 96, greene: 100 };
+  return distances[enemy?.sprite || enemy?.kind] ?? (player.fighter.id === "sayed" ? 78 : 70);
 }
 
 function updateGrab(player, game, input, dt) {
@@ -557,32 +567,39 @@ function updateGrab(player, game, input, dt) {
     player.state = "idle";
     return;
   }
+  // The third pummel releases the victim into knockdown; finish the hero's recovery
+  // without pinning the airborne victim back to the contact position.
+  if (enemy.state !== "grabbed") {
+    if (player.grabStrikeT <= 0) {
+      player.grabId = null; player.grabCd = .55; player.state = "idle";
+    }
+    return;
+  }
   const reachProgress = Math.min(1, player.stateT / 0.24);
   const ease = reachProgress * reachProgress * (3 - 2 * reachProgress);
-  enemy.x = (player.grabStartX ?? player.x + player.facing * grabContactDistance(player)) * (1 - ease) + (player.x + player.facing * grabContactDistance(player)) * ease;
+  enemy.x = (player.grabStartX ?? player.x + player.facing * grabContactDistance(player, enemy)) * (1 - ease) + (player.x + player.facing * grabContactDistance(player, enemy)) * ease;
   enemy.y = (player.grabStartY ?? player.y) * (1 - ease) + player.y * ease;
   enemy.z = 0;
   enemy.facing = -player.facing;
+  // Damage happens at extension, not the key-down / wind-up frame.
+  if (player.grabStrikeT > 0 && player.grabStrikeT <= grapplePairContactRemaining(player, enemy) && !player.grabStrikeConnected) {
+    player.grabStrikeConnected = true;
+    melee(game, player, { dmg: (player.grabHits >= 3 ? 10 : 6) * player.fighter.power, kb: player.grabHits >= 3 ? 180 : 0, lift: player.grabHits >= 3 ? 360 : 0, knockdown: player.grabHits >= 3,
+      reach: Math.max(128, grabContactDistance(player, enemy) + 24), kind: "grab", points: 80, hitstop: .065, shake: 3,
+      targetId: enemy.id, ...grapplePairImpact(player, enemy),
+      already: new Set() });
+  }
   const punch = player.bufferLight > 0 && player.stateT >= 0.24 && player.grabStrikeT === 0;
   if (punch) {
     player.bufferLight = 0;
     player.grabHits += 1;
-    player.grabStrikeT = 0.24;
-    melee(game, player, {
-      dmg: 6 * player.fighter.power,
-      kb: 0,
-      lift: 0,
-      reach: 128,
-      kind: "grab",
-      points: 80,
-      hitstop: 0.04,
-      shake: 3,
-      already: new Set(),
-    });
+    player.grabStrikeT = 0.32;
+    player.grabStrikeConnected = false;
     return;
   }
   const throwNow = player.bufferHeavy > 0;
-  if (player.stateT > 2.5 && !throwNow) {
+  // An expiring hold must not cut a paired impact/recovery sequence in half.
+  if (player.stateT > 2.5 && player.grabStrikeT === 0 && !throwNow) {
     enemy.state = "idle"; enemy.vx = 0; player.grabId = null;
     player.grabCd = 0.45; player.state = "idle"; return;
   }
@@ -605,7 +622,8 @@ function applyThrow(game, player, enemy, dir) {
     kb: 420,
     lift: 520,
     knockdown: true,
-    reach: 128,
+    reach: Math.max(128, grabContactDistance(player, enemy) + 24),
+    targetId: enemy.id,
     kind: "throw",
     points: 250,
     hitstop: 0.07,
@@ -735,7 +753,7 @@ export function updatePlayer(player, game, input, dt) {
     const timing = playerMoveWindow(player);
     const held = game.enemies.find(ent => ent.id === player.grabId);
     if (held?.alive && !player.spawned) {
-      held.x = player.x + player.facing * grabContactDistance(player);
+      held.x = player.x + player.facing * grabContactDistance(player, held);
       held.y = player.y;
       if (player.stateT >= timing.startup) {
         player.spawned = true;
