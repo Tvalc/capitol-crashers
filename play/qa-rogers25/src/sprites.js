@@ -1,5 +1,5 @@
 import { registerHelpAction } from "./help-actions.js?v=idle21";
-import { playerMoveWindow } from "./player.js?v=studio29";
+import { playerMoveWindow } from "./player.js?v=beach30";
 import { WORLD } from "./stages.js?v=bench28";
 
 const CLIPS = {
@@ -156,7 +156,7 @@ function loadOne(sprite, clip, name) {
   if (sheets.has(clipKey(sprite, clip))) return Promise.resolve();
   const image = new Image();
   const extension = name.includes("mike_rogers") ? "png" : "webp";
-  const version = name.includes("mike_rogers") || name.includes("_grapple_rogers_") ? "complete29" : name.includes("_grapple_") ? "identity21" : /chibi\/(zohran_mamdani|abdul_el_sayed)_grab$/.test(name) ? "grip08b" : name === "chibi/jd_vance_worried_death" ? "chibi-death24" : "hd5";
+  const version = name.includes("mike_rogers") || name.includes("_grapple_rogers_") ? "beach30" : name.includes("_grapple_") ? "identity21" : /chibi\/(zohran_mamdani|abdul_el_sayed)_grab$/.test(name) ? "grip08b" : name === "chibi/jd_vance_worried_death" ? "chibi-death24" : "hd5";
   const dataPromise = fetch(`${assetRoot(name)}/${name}.json?v=${version}`).then((res) => {
     if (!res.ok) throw new Error(`Could not load ${name}: ${res.status}`);
     return res.json();
@@ -213,7 +213,7 @@ function loadOne(sprite, clip, name) {
 
 // Missing sheet = 404 on the JSON, nothing else requested, never an error.
 function loadSoft(sprite, clip, name) {
-  const version = name.includes("mike_rogers") || name.includes("_grapple_rogers_") ? "complete29" : name.includes("_grapple_") ? "identity21" : /chibi\/(zohran_mamdani|abdul_el_sayed)_grab$/.test(name) ? "grip08b" : name === "chibi/jd_vance_worried_death" ? "chibi-death24" : "hd5";
+  const version = name.includes("mike_rogers") || name.includes("_grapple_rogers_") ? "beach30" : name.includes("_grapple_") ? "identity21" : /chibi\/(zohran_mamdani|abdul_el_sayed)_grab$/.test(name) ? "grip08b" : name === "chibi/jd_vance_worried_death" ? "chibi-death24" : "hd5";
   return fetch(`${assetRoot(name)}/${name}.json?v=${version}`, { method: "HEAD" })
     .then((res) => (res.ok ? loadOne(sprite, clip, name) : null))
     .catch(() => null);
@@ -464,7 +464,7 @@ export function drawSprite(ctx, ent, sx, sc) {
   const count = sheet.frames.length;
   const once = ONCE.has(clip);
   let index;
-  if (sprite === "rogers" && ["orders","bill"].includes(clip)) index = Math.min(count-1,Math.floor(ent.stateT / (clip === "orders" ? 1.25 : 1.65) * count));
+  if (sprite === "rogers" && ["orders","bill"].includes(clip)) index = Math.min(count-1,Math.floor(ent.stateT / (clip === "orders" ? 1.25 : 3.0) * count));
   else if (grabPunch && (clip === "attack" || clip === "grab_strike")) {
     const phase = Math.max(0, Math.min(1, 1 - ent.grabStrikeT / .32));
     const punchFrames = clip === "grab_strike" ? Array.from({length:count}, (_,i)=>i) : sprite === "zohran" ? [0, 1, 2, 3, 4, 9, 10, 11] : [0, 1, 2, 3, 8, 9, 10, 11];

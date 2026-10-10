@@ -17,7 +17,7 @@ export function updateRogers(enemy, player, dt, strike) {
   }
   if (enemy.state === 'bill') {
     enemy.vx = enemy.vy = 0;
-    if (enemy.stateT >= 1.65) { enter('idle'); enemy.attackCd = .85; }
+    if (enemy.stateT >= 3.0) { enter('idle'); enemy.attackCd = .85; }
     return;
   }
   const dx = player.x - enemy.x, dy = player.y - enemy.y;

@@ -1,14 +1,14 @@
-import { addLaserEncounter, updateLaserEncounters } from "./laser-encounter.js?v=studio29";
+import { addLaserEncounter, updateLaserEncounters } from "./laser-encounter.js?v=beach30";
 import { propFootprints, collideProps, steerAroundProps } from "./prop-collision.js?v=grapple-release23";
 import { play, unlock } from "./audio.js?v=chibi-site2";
-import { separate, tickToss, wallBounce } from "./combat.js?v=studio29";
-import { makeEnemy, updateEnemy } from "./enemies.js?v=studio29";
+import { separate, tickToss, wallBounce } from "./combat.js?v=beach30";
+import { makeEnemy, updateEnemy } from "./enemies.js?v=beach30";
 import { blankInput, createInput } from "./input.js?v=chibi-site2";
-import { fighterById, makePlayer, updatePlayer, bufferPlayerInput } from "./player.js?v=studio29";
-import { draw, loadEnvironment } from "./render.js?v=studio29";
+import { fighterById, makePlayer, updatePlayer, bufferPlayerInput } from "./player.js?v=beach30";
+import { draw, loadEnvironment } from "./render.js?v=beach30";
 import { cloneStage, STAGES, WORLD } from "./stages.js?v=bench28";
-import { updatePickups, updateProjectiles } from "./weapons.js?v=studio29";
-import { loadSprites, ensureGrapplePair } from "./sprites.js?v=studio29";
+import { updatePickups, updateProjectiles } from "./weapons.js?v=beach30";
+import { loadSprites, ensureGrapplePair } from "./sprites.js?v=beach30";
 import { PAGES } from "/story/panels.js";
 import { followingWitness, makeCitizen, spawnCelebration, updateCitizens, witnessTestifies } from "./citizens.js?v=idle21";
 

@@ -1,8 +1,8 @@
-import { melee, updateBody } from "./combat.js?v=studio29";
+import { melee, updateBody } from "./combat.js?v=beach30";
 import { WORLD } from "./stages.js?v=bench28";
-import { spawnSatellite, spawnShot, spawnSombrero } from "./weapons.js?v=studio29";
+import { spawnSatellite, spawnShot, spawnSombrero } from "./weapons.js?v=beach30";
 
-import { updateRogers } from "./rogers.js?v=studio29";
+import { updateRogers } from "./rogers.js?v=beach30";
 
 const KINDS = {
   rogers: { name:"Mike Rogers",sprite:"rogers",hp:180,speed:90,w:48,h:100,dmg:14,reach:58,scale:1,boss:true },
