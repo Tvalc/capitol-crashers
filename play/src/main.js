@@ -10,7 +10,7 @@ import { cloneStage, STAGES, WORLD } from "./stages.js?v=flight39b";
 import { updatePickups, updateProjectiles } from "./weapons.js?v=flight39b";
 import { loadSprites, ensureGrapplePair } from "./sprites.js?v=flight39b";
 import { PAGES } from "/story/panels.js";
-import { followingWitness, makeCitizen, spawnCelebration, updateCitizens, witnessTestifies } from "./citizens.js?v=flight39b";
+import { followingWitness, makeCitizen, spawnCelebration, updateCitizens, witnessTestifies } from "./citizens.js?v=city1";
 
 // Comic panels that exist as short animated loops (OpenArt), shown between stages.
 const MOTION = { p21: "../art/story/motion/p21.mp4", p27: "../art/story/motion/p27.mp4" };
@@ -262,6 +262,7 @@ function updateWaves(game) {
     if (game.enemies.every((enemy) => !enemy.alive) && game.clearT <= 0 && game.mode === "play") {
       // The policy wins: banner, the street changes, the block comes out to cheer.
       game.clearT = 4.2;
+      window.CityRewards?.credit('crashers:policy');
       game.stage.won = true;
       game.banner = game.stage.policy || `${game.stage.name} clear`;
       game.bannerT = 4.2;

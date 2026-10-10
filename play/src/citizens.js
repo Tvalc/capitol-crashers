@@ -195,6 +195,7 @@ export function deliverHelp(game, player, cit) {
     game.stage.marks.push({ x: cit.x, y: WORLD.floorTop - 10, text: stats.mark, t: 0 });
   }
   game.helped = (game.helped || 0) + 1;
+  if (!game.practice && !cit.cityCounted) { cit.cityCounted = true; window.CityRewards?.credit('crashers:help'); }
   if (game.comboKind !== "help") game.combo = 0;
   game.comboKind = "help";
   game.combo += 1;
