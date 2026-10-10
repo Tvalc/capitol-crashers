@@ -122,20 +122,20 @@
   },
   {
     "name": "Hit reaction",
-    "file": "tropical_hit36",
+    "file": "tropical_hit36b",
     "w": 1230,
     "h": 699,
-    "n": 5,
-    "cols": 3,
-    "fps": 8,
+    "n": 3,
+    "cols": 2,
+    "fps": 7,
     "group": "Tropical moves",
     "id": "743d2915-f666-4bac-92f0-4ec4e487cbf3",
-    "note": "Later frames with missing towel excluded.",
+    "note": "Three clean reaction poses; stray-effect and missing-towel frames removed.",
     "bounds": [
-      6,
-      25,
-      1204,
-      674
+      401,
+      102,
+      467,
+      550
     ]
   },
   {
