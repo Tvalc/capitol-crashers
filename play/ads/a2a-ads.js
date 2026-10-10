@@ -10,6 +10,11 @@
  *   A2A.ads.reward(kind, onGranted, onDismissed)   kind: 'revive'
  *   A2A.ads.surface(name)                 -> { kind, src, href, label, sponsor, image }
  *
+ * Saves go through the same file because Playgama wants them in Bridge storage:
+ *
+ *   A2A.saves.load()   -> Promise<{ score, helped, fighter, stage, runs }>
+ *   A2A.saves.save(obj) -> Promise
+ *
  * Config: window.A2A_ADS = { enabled: false, stub: true } (the default: dark).
  * Full contract and the rules for editing this file: play/ads/CONTRACT.md.
  */
@@ -20,6 +25,7 @@
     enabled: false,          // true once AdSense says Ready and Tony flips it
     stub: true,              // resolve everything instantly, grant rewards, house creatives
     bridge: true,            // load the Playgama Bridge SDK (mock platform locally)
+    google: true,            // false: never load the Google tag, whatever enabled/stub say (Playgama build)
     client: "ca-pub-4762698707947194",
     frequencyHint: "180s",   // data-ad-frequency-hint for adBreak 'next'
     test: false,             // data-adbreak-test="on" while testing live Google ads
@@ -289,9 +295,10 @@
         state.bridge = bridge;
         const platformId = bridgePlatformId();
         if (bridge && platformId && platformId !== "mock") state.network = "bridge";
-        else if (cfg.enabled && !cfg.stub) state.network = "google";
+        else if (cfg.enabled && !cfg.stub && cfg.google !== false) state.network = "google";
         else state.network = "stub";
         if (state.network === "google") loadGoogle();
+        sendBridgeMessage("in_game_loading_started");
         emit("init", platformId || "none", state.network);
       });
       return api;
@@ -304,7 +311,10 @@
         state.busy = false;
         emit("preroll", "page", outcome);
         cb();
-        sendBridgeMessage("game_ready");   // the title is up and the player can interact
+        sendBridgeMessage("in_game_loading_stopped");
+        // game_ready only after the first playable frame has been drawn with the title up.
+        var raf = window.requestAnimationFrame || function (fn) { setTimeout(fn, 32); };
+        raf(function () { raf(function () { sendBridgeMessage("game_ready"); }); });
       });
       if (state.prerollDone) return finish("already");
       state.prerollDone = true;
@@ -381,6 +391,55 @@
     },
   };
 
+  // ---- saves: Bridge storage first, one array call each way --------------
+
+  const SAVE_KEYS = ["cc_score", "cc_helped", "cc_fighter", "cc_stage", "cc_runs"];
+  const SAVE_DEFAULTS = { score: 0, helped: 0, fighter: "mamdani", stage: 0, runs: 0 };
+
+  function fromValues(values) {
+    const out = Object.assign({}, SAVE_DEFAULTS);
+    if (!Array.isArray(values)) return out;
+    const names = Object.keys(SAVE_DEFAULTS);
+    names.forEach(function (name, i) {
+      const value = values[i];
+      if (value === null || value === undefined || value === "") return;
+      out[name] = typeof SAVE_DEFAULTS[name] === "number" ? (Number(value) || 0) : String(value);
+    });
+    return out;
+  }
+  function toValues(obj) {
+    return Object.keys(SAVE_DEFAULTS).map(function (name) {
+      const value = obj && obj[name] !== undefined ? obj[name] : SAVE_DEFAULTS[name];
+      return typeof SAVE_DEFAULTS[name] === "number" ? Number(value) || 0 : String(value);
+    });
+  }
+  // Only reached when the Bridge is missing or its storage rejects (never on Playgama).
+  function localGet() {
+    try { return SAVE_KEYS.map(function (key) { return window.localStorage.getItem(key); }); } catch (error) { return null; }
+  }
+  function localSet(values) {
+    try { SAVE_KEYS.forEach(function (key, i) { window.localStorage.setItem(key, String(values[i])); }); } catch (error) { /* private mode */ }
+  }
+
+  const saves = {
+    load: function () {
+      return loadBridge().then(function (bridge) {
+        const storage = bridge && bridge.storage;
+        if (!storage || typeof storage.get !== "function") return fromValues(localGet());
+        return storage.get(SAVE_KEYS).then(fromValues).catch(function () { return fromValues(localGet()); });
+      });
+    },
+    save: function (obj) {
+      const values = toValues(obj);
+      return loadBridge().then(function (bridge) {
+        const storage = bridge && bridge.storage;
+        if (!storage || typeof storage.set !== "function") return localSet(values);
+        return storage.set(SAVE_KEYS, values).catch(function () { localSet(values); });
+      });
+    },
+  };
+
   window.A2A = window.A2A || {};
   window.A2A.ads = api;
+  window.A2A.saves = saves;
 })();

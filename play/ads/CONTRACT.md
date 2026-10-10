@@ -69,6 +69,7 @@ Set in `play/index.html` before the module loads:
 | `enabled` | `false` | `true` once AdSense says Ready. With `stub: false`, loads the Google tag and routes preroll / next / pause / reward through `adBreak()`. |
 | `stub` | `true` | Every call resolves at once, rewards are granted, surfaces return house creatives, no ad-network script is loaded. |
 | `bridge` | `true` | Load the Playgama Bridge SDK from the Playgama CDN and call `bridge.initialize()`. Locally this is the mock platform; on Playgama ads route through the Bridge instead of Google. `false` skips the SDK. |
+| `google` | `true` | `false` never loads the Google tag whatever `enabled` and `stub` say. The Playgama build sets this. |
 | `client` | `ca-pub-4762698707947194` | AdSense publisher id. |
 | `frequencyHint` | `"180s"` | `data-ad-frequency-hint` on the Google tag; paces `next` breaks. |
 | `test` | `false` | Adds `data-adbreak-test="on"` for testing live Google ads. |
@@ -115,12 +116,46 @@ and nothing on the Capitol approach. In-world surfaces are for sponsor, house an
 Playgama/Anzu intrinsic creatives only; Google creatives can never be drawn into the
 canvas.
 
+## Saves
+
+Playgama wants progress in Bridge storage, never `localStorage`, loaded and saved in one
+array-keyed call. The module exposes:
+
+```js
+A2A.saves.load()       // Promise<{ score, helped, fighter, stage, runs }>, defaults when empty
+A2A.saves.save(obj)    // Promise; one bridge.storage.set(keys, values) call
+```
+
+Keys are `cc_score`, `cc_helped`, `cc_fighter`, `cc_stage`, `cc_runs`. The module falls back
+to `localStorage` only when the Bridge is missing or its storage rejects, which never happens
+on Playgama. The game (`play/src/main.js`, the `saved` object in `boot()`) loads once at boot,
+saves when the furthest street or the fighter changes and once per run at Knocked down or
+the ending, and offers "Continue · <street>" on the fighter card when a later street has been
+reached. Reloading restores the fighter, the best score line and the Continue button.
+
+## Playgama build
+
+```
+npm run build:playgama          # or: node tools/build-playgama.mjs [--music <dir>]
+```
+
+Writes `dist/playgama/` and `dist/capitol-crashers-playgama.zip` with `index.html` at the
+archive root and every asset copied inside: sprites, environment and story art, the two
+story clips, the house creatives, and the soundtrack when a music folder is found next to
+this repo (`../political-arcades/horse/assets/music`). The build rewrites the `../` paths,
+drops the Patreon, comic, footer and privacy links, sets `A2A_ADS` to
+`{ enabled: false, stub: true, google: false, build: "playgama" }`, skips the optional
+parallax loads, and fails if any file name is not Latin, any resource other than the Bridge
+is external, any analytics or AdSense tag is present, or the archive passes 300 MB. `dist/`
+is ignored by git. Uploading the zip is a separate step through Tony's Playgama account.
+
 ## Playgama
 
 The module loads Bridge SDK JS Core (v2 stable, 2.3.0 at the time of writing) from
 `https://bridge.playgama.com/v2/stable/playgama-bridge.js`, awaits `bridge.initialize()`,
-subscribes to `PAUSE_STATE_CHANGED` and `AUDIO_STATE_CHANGED`, and sends
-`platform.sendMessage("game_ready")` after the preroll callback, when the title is up.
+subscribes to `PAUSE_STATE_CHANGED` and `AUDIO_STATE_CHANGED`, sends
+`in_game_loading_started` at init and `in_game_loading_stopped` after the preroll, and sends
+`platform.sendMessage("game_ready")` two animation frames later, once the title has been drawn.
 Its config is `play/playgama-bridge-config.json` (must sit next to `index.html`).
 On Playgama, `break("match_end")` is `showInterstitial("match_end")`, `reward("revive")`
 is `showRewarded("revive")` granted only on the `rewarded` state, and `break("pause")`

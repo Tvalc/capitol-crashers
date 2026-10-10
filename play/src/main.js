@@ -335,6 +335,11 @@ function boot() {
     const after = () => { document.getElementById("ad-frame").hidden = true; game.mode = "title"; if (practiceRequested && assetsReady) beginPractice(game, "mamdani"); };
     if (window.A2A?.ads) window.A2A.ads.preroll(after); else after();
   }
+  // Saves: best score, furthest street and the fighter, through Bridge storage. See play/ads/CONTRACT.md.
+  const saved = { score: 0, helped: 0, fighter: "mamdani", stage: 0, runs: 0 };
+  let savedRun = false;
+  window.A2A?.saves?.load().then((data) => { Object.assign(saved, data); if (game.mode !== "play") game.fighterId = fighterById(saved.fighter) ? saved.fighter : "mamdani"; });
+  function persist() { window.A2A?.saves?.save(saved); }
   const startButton = document.getElementById("start");
   const assetStatus = document.createElement("p");
   assetStatus.setAttribute("role", "status");
@@ -503,7 +508,8 @@ function boot() {
       quote.textContent = `${bubble.who ? `${bubble.who}: ` : ""}“${bubble.text}”`;
       copy.append(quote);
     }
-    document.getElementById("story-more").href = `../story/#${panel.id}`;
+    const more = document.getElementById("story-more");
+    if (more) more.href = `../story/#${panel.id}`;
   }
 
   function sync() {
@@ -517,6 +523,20 @@ function boot() {
     for (const id of ["mamdani", "sayed"]) document.getElementById(`practice-${id}`).setAttribute("aria-pressed", String(game.fighterId === id));
     titlePanel.hidden = game.mode !== "title";
     selectPanel.hidden = game.mode !== "select";
+    // Saves: record progress at the moments that matter, never every frame. See play/ads/CONTRACT.md.
+    if (game.mode === "play" && !game.practice) {
+      if (game.stageIndex > saved.stage || saved.fighter !== game.fighterId) { saved.stage = Math.max(saved.stage, game.stageIndex); saved.fighter = game.fighterId; persist(); }
+      savedRun = false;
+    } else if ((game.mode === "gameover" || game.mode === "ending") && !savedRun && !game.practice) {
+      savedRun = true; saved.runs += 1;
+      if (game.score > saved.score) saved.score = game.score;
+      if (game.helped > saved.helped) saved.helped = game.helped;
+      persist();
+    }
+    continueButton.hidden = !(saved.stage > 0 && saved.stage < STAGES.length);
+    continueButton.textContent = `Continue · ${STAGES[saved.stage]?.name || ""}`;
+    bestLine.hidden = !(saved.runs > 0);
+    bestLine.textContent = `Best score ${saved.score} · most helped ${saved.helped} · runs ${saved.runs}`;
     clearPanel.hidden = !(game.mode === "play" && game.clearT > 0);
     endPanel.hidden = game.mode !== "ending";
     overPanel.hidden = game.mode !== "gameover";
@@ -540,7 +560,7 @@ function boot() {
         `${game.player?.name || "You"} made it to the Capitol. Helped ${game.helped}, stopped ${game.stopped}, ${game.testified} on the record. Score ${game.score}.`;
     }
     if (game.mode === "gameover") {
-      document.getElementById("over-copy").textContent = `Helped ${game.helped}. Score ${game.score}. Get up. The block still needs you.`;
+      document.getElementById("over-copy").textContent = `Helped ${game.helped}. Score ${game.score}. Best ${saved.score}. Get up. The block still needs you.`;
     }
   }
 
@@ -560,6 +580,15 @@ function boot() {
   document.getElementById("run").addEventListener("click", () => {
     unlock();
     beginRun(game, game.fighterId);
+  });
+  // Saves: pick the run up at the furthest street reached. See play/ads/CONTRACT.md.
+  const continueButton = document.getElementById("continue-run");
+  const bestLine = document.getElementById("best-line");
+  continueButton.addEventListener("click", () => {
+    unlock();
+    beginRun(game, game.fighterId);
+    game.stageIndex = Math.min(saved.stage, STAGES.length - 1);
+    startStage(game);
   });
   document.getElementById("story-next").addEventListener("click", () => {
     unlock();
