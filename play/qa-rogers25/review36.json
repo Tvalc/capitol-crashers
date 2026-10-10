@@ -1,5 +1,23 @@
 [
   {
+    "name": "Tropical entrance option",
+    "file": "tropical_entrance36",
+    "w": 628,
+    "h": 652,
+    "n": 12,
+    "cols": 4,
+    "fps": 6,
+    "group": "Entrance choice",
+    "id": "2734f896-e928-484e-8592-478c2b48e817",
+    "note": "A towel flourish after the outfit switch. This does NOT show the jersey turning into the tropical outfit. Review whether this entrance works for the third stage.",
+    "bounds": [
+      12,
+      4,
+      587,
+      646
+    ]
+  },
+  {
     "name": "Mamdani \u00d7 tropical",
     "file": "tropical_mamdani_grapple36",
     "w": 887,
