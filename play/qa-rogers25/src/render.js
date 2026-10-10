@@ -1,8 +1,8 @@
 const rogersCaller = new Image(); rogersCaller.src = new URL("../assets/rogers-caller.png", import.meta.url).href;
-import { FIGHTERS, poseFor } from "./fighters.js?v=chibi-site2";
-import { drawSprite, drawGrapplePair, hasGrapplePair } from "./sprites.js?v=original31";
-import { WORLD, STAGES } from "./stages.js?v=bench28";
-import { CITIZEN_KINDS } from "./citizens.js?v=idle21";
+import { FIGHTERS, poseFor } from "./fighters.js?v=encounter38";
+import { drawSprite, drawGrapplePair, hasGrapplePair } from "./sprites.js?v=encounter38";
+import { WORLD, STAGES } from "./stages.js?v=encounter38";
+import { CITIZEN_KINDS } from "./citizens.js?v=encounter38";
 
 const art = {};
 export function loadEnvironment() {

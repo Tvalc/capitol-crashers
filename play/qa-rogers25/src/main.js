@@ -1,16 +1,16 @@
-import { addLaserEncounter, updateLaserEncounters } from "./laser-encounter.js?v=original31";
-import { propFootprints, collideProps, steerAroundProps } from "./prop-collision.js?v=grapple-release23";
-import { play, unlock } from "./audio.js?v=chibi-site2";
-import { separate, tickToss, wallBounce } from "./combat.js?v=original31";
-import { makeEnemy, updateEnemy } from "./enemies.js?v=original31";
-import { blankInput, createInput } from "./input.js?v=chibi-site2";
-import { fighterById, makePlayer, updatePlayer, bufferPlayerInput } from "./player.js?v=original31";
-import { draw, loadEnvironment } from "./render.js?v=original31";
-import { cloneStage, STAGES, WORLD } from "./stages.js?v=bench28";
-import { updatePickups, updateProjectiles } from "./weapons.js?v=original31";
-import { loadSprites, ensureGrapplePair } from "./sprites.js?v=original31";
+import { addLaserEncounter, updateLaserEncounters } from "./laser-encounter.js?v=encounter38";
+import { propFootprints, collideProps, steerAroundProps } from "./prop-collision.js?v=encounter38";
+import { play, unlock } from "./audio.js?v=encounter38";
+import { separate, tickToss, wallBounce } from "./combat.js?v=encounter38";
+import { makeEnemy, updateEnemy } from "./enemies.js?v=encounter38";
+import { blankInput, createInput } from "./input.js?v=encounter38";
+import { fighterById, makePlayer, updatePlayer, bufferPlayerInput } from "./player.js?v=encounter38";
+import { draw, loadEnvironment } from "./render.js?v=encounter38";
+import { cloneStage, STAGES, WORLD } from "./stages.js?v=encounter38";
+import { updatePickups, updateProjectiles } from "./weapons.js?v=encounter38";
+import { loadSprites, ensureGrapplePair } from "./sprites.js?v=encounter38";
 import { PAGES } from "/story/panels.js";
-import { followingWitness, makeCitizen, spawnCelebration, updateCitizens, witnessTestifies } from "./citizens.js?v=idle21";
+import { followingWitness, makeCitizen, spawnCelebration, updateCitizens, witnessTestifies } from "./citizens.js?v=encounter38";
 
 // Comic panels that exist as short animated loops (OpenArt), shown between stages.
 const MOTION = { p21: "../art/story/motion/p21.mp4", p27: "../art/story/motion/p27.mp4" };
@@ -98,15 +98,18 @@ export function beginPractice(game, fighterId, active = false, opponent = game.p
       {art:'debate-camera',x:1190,y:449,w:75}
     ]});
     game.enemies[0].x = 880;
+    const form=game.rogersForm || Math.min(3,Math.max(1,Number(new URLSearchParams(location.search).get('form'))||1));
+    game.enemies[0].sprite=['rogers','rogers_vacation','rogers_tropical'][form-1];
+    game.enemies[0].hp=game.enemies[0].hpMax*(4-form)/3;
     game.enemies[0].title = "Studio miniboss";
     game.enemies[0].encounterRole = "miniboss";
     game.practicePairStatus = "Encounter preview · sidestep the phone charge · paired grapple not installed";
-    game.banner = "Phone call → sidestep → punish the miss";
+    game.banner = form === 1 ? "Phone call → sidestep → punish the miss" : "Bait the rush → sidestep → grab during recovery";
     game.bannerT = 3;
-    ensureGrapplePair(game.player,game.enemies[0]).then(ready=>{
+    Promise.all(["rogers","rogers_vacation","rogers_tropical"].map(sprite=>ensureGrapplePair(game.player,{sprite}))).then(ready=>{
       if(game.player===practicePlayer) {
-        game.practicePairStatus=ready?'Paired grapple loaded · G grab · J strike · K throw':'Encounter preview · paired grapple pending';
-        if(ready && !active) game.enemies[0].x=480;
+        game.practicePairStatus=ready.every(Boolean)?'Paired grapple loaded · G grab · J strike · K throw':'Encounter preview · paired grapple pending';
+        if(ready.every(Boolean) && !active) game.enemies[0].x=480;
       }
     });
     return;
@@ -235,7 +238,7 @@ export function updateGame(game, input, dt) {
   game.enemies = game.enemies.filter((enemy) => !(enemy.state === "dead" && enemy.deadT <= 0));
 }
 
-import { advanceGait } from "./animation-clock.js?v=chibi-site2";
+import { advanceGait } from "./animation-clock.js?v=encounter38";
 export { advanceGait };
 
 function advance(game) {
@@ -278,6 +281,7 @@ function updateWaves(game) {
       if (member.kind === "greene") { addLaserEncounter(game,makeEnemy,base+member.dx); continue; }
       const enemy = makeEnemy(member.kind, base + member.dx, member.y);
       ensureGrapplePair(game.player, enemy);
+      if(enemy.kind === "rogers") for(const sprite of ["rogers_vacation","rogers_tropical"]) ensureGrapplePair(game.player,{sprite});
       if (wave.boss) {
         enemy.isBoss = true;
         enemy.title = wave.bossName;
@@ -399,6 +403,11 @@ function boot() {
   }
   document.getElementById("restart-run").addEventListener("click", restartCurrent);
   document.getElementById("practice-reset").addEventListener("click", restartCurrent);
+  const formSelect=document.createElement('select'); formSelect.id='rogers-form';formSelect.setAttribute('aria-label','Rogers form');
+  formSelect.innerHTML='<option value="1">Suit</option><option value="2">Vacation jersey</option><option value="3">Full Florida</option>';
+  formSelect.value=new URLSearchParams(location.search).get('form')||'1';
+  document.getElementById('practice-controls').append(formSelect);
+  formSelect.addEventListener('change',()=>{game.rogersForm=Number(formSelect.value);input.clear();beginPractice(game,game.fighterId,game.practiceActive,'rogers');});
   document.getElementById("practice-opponent").addEventListener("click", () => {
     input.clear(); beginPractice(game, game.fighterId, !game.practiceActive); canvas.focus({ preventScroll: true });
   });

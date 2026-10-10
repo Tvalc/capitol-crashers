@@ -1,8 +1,10 @@
-import { melee, updateBody } from "./combat.js?v=release24";
-import { WORLD } from "./stages.js?v=bench28";
-import { spawnSatellite, spawnShot, spawnSombrero } from "./weapons.js?v=release24";
+import { updateRogers, updateRogersForm } from "./rogers.js?v=encounter38";
+import { melee, updateBody } from "./combat.js?v=encounter38";
+import { WORLD } from "./stages.js?v=encounter38";
+import { spawnSatellite, spawnShot, spawnSombrero } from "./weapons.js?v=encounter38";
 
 const KINDS = {
+  rogers: { name:"Mike Rogers",sprite:"rogers",hp:180,speed:90,w:48,h:100,dmg:14,reach:58,scale:1,boss:true },
   laser_relay: { name:"Laser relay", hp:60, speed:0, w:100, h:95, dmg:0, reach:0, scale:1 },
   grunt: {
     name: "Grunt",
@@ -1072,9 +1074,11 @@ export function updateEnemy(enemy, game, dt) {
     release(game, enemy);
     return;
   }
+  if (enemy.kind === "rogers" && updateRogersForm(enemy, game, dt)) return;
   if (updateTransform(enemy, game, dt)) return;
-  checkPhase(enemy, game);
-  if (enemy.kind === "pete") updateGrunt(enemy, game, dt);
+  if(enemy.kind !== "rogers") checkPhase(enemy, game);
+  if (enemy.kind === "rogers") updateRogers(enemy,game.player,dt,()=>melee(game,enemy,{dmg:enemy.dmg,kb:190,lift:25,reach:58,low:true,already:enemy.swingHits,kind:"heavy",hitstop:.05}));
+  else if (enemy.kind === "pete") updateGrunt(enemy, game, dt);
   else if (enemy.kind === "greene") updateGreene(enemy, game, dt);
   else if (enemy.kind === "grunt") updateGrunt(enemy, game, dt);
   else if (enemy.kind === "cruz") updateCruz(enemy, game, dt);

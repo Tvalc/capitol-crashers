@@ -1,16 +1,16 @@
-import { addLaserEncounter, updateLaserEncounters } from "./laser-encounter.js?v=release24";
-import { propFootprints, collideProps, steerAroundProps } from "./prop-collision.js?v=grapple-release23";
-import { play, unlock } from "./audio.js?v=chibi-site2";
-import { separate, tickToss, wallBounce } from "./combat.js?v=release24";
-import { makeEnemy, updateEnemy } from "./enemies.js?v=release24";
-import { blankInput, createInput } from "./input.js?v=chibi-site2";
-import { fighterById, makePlayer, updatePlayer, bufferPlayerInput } from "./player.js?v=release24";
-import { draw, loadEnvironment } from "./render.js?v=release24";
-import { cloneStage, STAGES, WORLD } from "./stages.js?v=bench28";
-import { updatePickups, updateProjectiles } from "./weapons.js?v=release24";
-import { loadSprites, ensureGrapplePair } from "./sprites.js?v=release24";
+import { addLaserEncounter, updateLaserEncounters } from "./laser-encounter.js?v=encounter38";
+import { propFootprints, collideProps, steerAroundProps } from "./prop-collision.js?v=encounter38";
+import { play, unlock } from "./audio.js?v=encounter38";
+import { separate, tickToss, wallBounce } from "./combat.js?v=encounter38";
+import { makeEnemy, updateEnemy } from "./enemies.js?v=encounter38";
+import { blankInput, createInput } from "./input.js?v=encounter38";
+import { fighterById, makePlayer, updatePlayer, bufferPlayerInput } from "./player.js?v=encounter38";
+import { draw, loadEnvironment } from "./render.js?v=encounter38";
+import { cloneStage, STAGES, WORLD } from "./stages.js?v=encounter38";
+import { updatePickups, updateProjectiles } from "./weapons.js?v=encounter38";
+import { loadSprites, ensureGrapplePair } from "./sprites.js?v=encounter38";
 import { PAGES } from "/story/panels.js";
-import { followingWitness, makeCitizen, spawnCelebration, updateCitizens, witnessTestifies } from "./citizens.js?v=idle21";
+import { followingWitness, makeCitizen, spawnCelebration, updateCitizens, witnessTestifies } from "./citizens.js?v=encounter38";
 
 // Comic panels that exist as short animated loops (OpenArt), shown between stages.
 const MOTION = { p21: "../art/story/motion/p21.mp4", p27: "../art/story/motion/p27.mp4" };
@@ -80,7 +80,7 @@ export function beginPractice(game, fighterId, active = false, opponent = game.p
   game.storyId = null;
   game.practice = true;
   game.practiceActive = active;
-  game.practiceEnemy = ["cruz", "pete", "pete_ww", "vance", "greene", "trump"].includes(opponent) ? opponent : "cruz";
+  game.practiceEnemy = ["rogers", "cruz", "pete", "pete_ww", "vance", "greene", "trump"].includes(opponent) ? opponent : "cruz";
   game.introT = 0;
   game.stage.props = [];
   game.stage.pickups = [];
@@ -90,6 +90,31 @@ export function beginPractice(game, fighterId, active = false, opponent = game.p
   if (game.practiceEnemy === "pete_ww") Object.assign(game.enemies[0], { sprite: "pete_ww", transformed: true, transformTo: null });
   if (game.practiceEnemy === "greene") { game.enemies=[];addLaserEncounter(game,makeEnemy,650);game.practicePairStatus="Destroy the relays; the operator cannot be attacked";game.banner="Break the three laser relays";game.bannerT=3;return; }
   const practicePlayer = game.player;
+  if (game.practiceEnemy === "rogers") {
+    Object.assign(game.stage,{id:'debate',name:'TV Station — Studio',campaignLevel:2,encounterRole:'miniboss',length:1280,planes:[],signs:[],marks:[],scenery:[
+      {art:'debate-facade',x:640,y:451,w:820},
+      {art:'debate-lectern-blue',x:175,y:449,w:105},
+      {art:'debate-lectern-red',x:1070,y:449,w:105},
+      {art:'debate-camera',x:1190,y:449,w:75}
+    ]});
+    game.enemies[0].x = 880;
+    const form=game.rogersForm || Math.min(3,Math.max(1,Number(new URLSearchParams(location.search).get('form'))||1));
+    game.enemies[0].sprite=['rogers','rogers_vacation','rogers_tropical'][form-1];
+    game.enemies[0].hp=game.enemies[0].hpMax*(4-form)/3;
+    game.enemies[0].title = "Studio miniboss";
+    game.enemies[0].encounterRole = "miniboss";
+    game.practicePairStatus = "Encounter preview · sidestep the phone charge · paired grapple not installed";
+    game.banner = form === 1 ? "Phone call → sidestep → punish the miss" : "Bait the rush → sidestep → grab during recovery";
+    game.bannerT = 3;
+    Promise.all(["rogers","rogers_vacation","rogers_tropical"].map(sprite=>ensureGrapplePair(game.player,{sprite}))).then(ready=>{
+      if(game.player===practicePlayer) {
+        game.practicePairStatus=ready.every(Boolean)?'Paired grapple loaded · G grab · J strike · K throw':'Encounter preview · paired grapple pending';
+        if(ready.every(Boolean) && !active) game.enemies[0].x=480;
+      }
+    });
+    return;
+  }
+
   game.practicePairStatus = "Loading paired animation…";
   ensureGrapplePair(game.player, game.enemies[0]).then(ready => {
     if (game.player === practicePlayer) game.practicePairStatus = ready ? "Paired grapple loaded" : "Older separate poses — paired grapple pending";
@@ -214,7 +239,7 @@ export function updateGame(game, input, dt) {
   game.enemies = game.enemies.filter((enemy) => !(enemy.state === "dead" && enemy.deadT <= 0));
 }
 
-import { advanceGait } from "./animation-clock.js?v=chibi-site2";
+import { advanceGait } from "./animation-clock.js?v=encounter38";
 export { advanceGait };
 
 function advance(game) {
@@ -257,6 +282,7 @@ function updateWaves(game) {
       if (member.kind === "greene") { addLaserEncounter(game,makeEnemy,base+member.dx); continue; }
       const enemy = makeEnemy(member.kind, base + member.dx, member.y);
       ensureGrapplePair(game.player, enemy);
+      if(enemy.kind === "rogers") for(const sprite of ["rogers_vacation","rogers_tropical"]) ensureGrapplePair(game.player,{sprite});
       if (wave.boss) {
         enemy.isBoss = true;
         enemy.title = wave.bossName;
@@ -327,7 +353,8 @@ function boot() {
   const input = createInput();
   const game = createGame();
   if (typeof window !== "undefined") window.__cc = game; // debug/automation hook
-  const practiceRequested = new URLSearchParams(window.location.search).has("practice");
+  const studioRequested = new URLSearchParams(window.location.search).get("scene") === "studio";
+  const practiceRequested = studioRequested || new URLSearchParams(window.location.search).has("practice");
   let assetsReady = false;
   const startButton = document.getElementById("start");
   const assetStatus = document.createElement("p");
@@ -341,7 +368,7 @@ function boot() {
       assetsReady = true;
       assetStatus.textContent = "Ready to play.";
       startButton.textContent = "Step in";
-      if (practiceRequested && game.mode === "title") beginPractice(game, "mamdani", false, new URLSearchParams(window.location.search).get("opponent") || "cruz");
+      if (practiceRequested && game.mode === "title") beginPractice(game, "mamdani", studioRequested, new URLSearchParams(window.location.search).get("opponent") || (studioRequested ? "rogers" : "cruz"));
     } catch (error) {
       assetStatus.textContent = "Some animations could not load. Check your connection and retry.";
       startButton.textContent = "Retry loading";
@@ -377,6 +404,11 @@ function boot() {
   }
   document.getElementById("restart-run").addEventListener("click", restartCurrent);
   document.getElementById("practice-reset").addEventListener("click", restartCurrent);
+  const formSelect=document.createElement('select'); formSelect.id='rogers-form';formSelect.setAttribute('aria-label','Rogers form');
+  formSelect.innerHTML='<option value="1">Suit</option><option value="2">Vacation jersey</option><option value="3">Full Florida</option>';
+  formSelect.value=new URLSearchParams(location.search).get('form')||'1';
+  document.getElementById('practice-controls').append(formSelect);
+  formSelect.addEventListener('change',()=>{game.rogersForm=Number(formSelect.value);input.clear();beginPractice(game,game.fighterId,game.practiceActive,'rogers');});
   document.getElementById("practice-opponent").addEventListener("click", () => {
     input.clear(); beginPractice(game, game.fighterId, !game.practiceActive); canvas.focus({ preventScroll: true });
   });

@@ -140,8 +140,9 @@ const studio = {
         { kind: "cruz", dx: 200, y: 610 },
       ],
     },
+    { at: 2140, group: [{kind: "rogers", dx: 220, y: 560}] },
     {
-      at: 2600,
+      at: 3000,
       boss: true,
       bossName: "The Lobbyist",
       group: [{ kind: "vance", dx: 200, y: 560 }],

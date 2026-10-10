@@ -1,10 +1,10 @@
-import { helpWindow } from "./help-actions.js?v=idle21";
-import { play } from "./audio.js";
-import { hasGrapplePair, grapplePairDistance, grapplePairContactRemaining, grapplePairImpact } from "./sprites.js?v=original31";
-import { FIGHTERS } from "./fighters.js?v=chibi-site2";
-import { integrate, melee, spendSpecial, updateBody } from "./combat.js?v=original31";
-import { finishWeapon, launchHeld, noteWeaponSwing, spawnBolt } from "./weapons.js?v=original31";
-import { deliverHelp, finishHelp, helpTarget, startHelp } from "./citizens.js?v=idle21";
+import { helpWindow } from "./help-actions.js?v=encounter38";
+import { play } from "./audio.js?v=encounter38";
+import { hasGrapplePair, grapplePairDistance, grapplePairContactRemaining, grapplePairImpact, grapplePairDuration } from "./sprites.js?v=encounter38";
+import { FIGHTERS } from "./fighters.js?v=encounter38";
+import { integrate, melee, spendSpecial, updateBody } from "./combat.js?v=encounter38";
+import { finishWeapon, launchHeld, noteWeaponSwing, spawnBolt } from "./weapons.js?v=encounter38";
+import { deliverHelp, finishHelp, helpTarget, startHelp } from "./citizens.js?v=encounter38";
 
 const LIGHTS = [
   { startup: 0.10, active: 0.09, dmg: 7, kb: 65, lift: 0, stun: 0.32 },
@@ -593,13 +593,13 @@ function updateGrab(player, game, input, dt) {
   if (punch) {
     player.bufferLight = 0;
     player.grabHits += 1;
-    player.grabStrikeT = 0.32;
+    player.grabStrikeT = grapplePairDuration(player, enemy);
     player.grabStrikeConnected = false;
     return;
   }
   const throwNow = player.bufferHeavy > 0;
   // An expiring hold must not cut a paired impact/recovery sequence in half.
-  if (player.stateT > 2.5 && player.grabStrikeT === 0 && !throwNow) {
+  if (player.stateT > 3.5 && player.grabStrikeT === 0 && !throwNow) {
     enemy.state = "idle"; enemy.vx = 0; player.grabId = null;
     player.grabCd = 0.45; player.state = "idle"; return;
   }
