@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <base href="/play/">
+  <meta name="robots" content="noindex">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <title>Capitol Crashers</title>
+  <link rel="canonical" href="https://capitolcrashers.com/play/" />
+  <meta
+    name="description"
+    content="Capitol Crashers is the first machine on at Political Arcades. Play as Zohran Mamdani or Abdul El-Sayed: feed the block, freeze the rent, and stop the Landlord on the way to the Capitol."
+  />
+  <link rel="stylesheet" href="styles.css?v=mob2" />
+  <link rel="stylesheet" href="touch.css?v=mob1" />
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4762698707947194" crossorigin="anonymous"></script>
+<link rel="stylesheet" href="../chibi-ui.css?v=mob1">
+<link rel="stylesheet" href="game-page.css?v=packed19">
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="../">Capitol Crashers</a>
+    <div class="top-actions">
+      <a class="patreon" data-patreon hidden target="_blank" rel="noopener noreferrer">Support on Patreon</a>
+    </div>
+  </header>
+
+  <aside class="ad-slot" id="ad-slot" hidden>
+    <p class="ad-label">Ad</p>
+  </aside>
+
+  <div class="session-controls"><button id="pause-toggle" type="button" hidden>Pause · Esc</button></div>
+  <div class="session-controls" id="practice-controls" hidden>
+    <button id="practice-mamdani" type="button">Practice Mamdani</button>
+    <button id="practice-sayed" type="button">Practice El-Sayed</button>
+    <button id="practice-reset" type="button">Reset practice</button>
+    <button id="practice-opponent" type="button">Opponent: stationary</button>
+    <label>Opponent <select id="practice-enemy"><option value="rogers">Mike Rogers — encounter preview</option><option value="cruz">Ted Cruz</option><option value="pete">Pete Hegseth</option><option value="pete_ww">Pete — transformed</option><option value="vance">JD Vance</option><option value="greene">Laser relays (MTG operator)</option><option value="trump">Donald Trump</option></select></label><span id="practice-pair-status" role="status"></span>
+    <label>Speed <select id="practice-speed"><option value="1">Normal</option><option value="0.25">Quarter speed</option><option value="0.1">Frame review</option></select></label>
+    <a href="./">Full game</a>
+    <p>Move: arrows / WASD · J: strike · G: grab · K: throw · Space: jump. Reset brings the selected opponent back beside you.</p>
+  </div>
+  <main class="stage">
+    <section class="card" id="pause-panel" hidden aria-labelledby="pause-title">
+      <h2 id="pause-title">Paused</h2><p>Your fight will wait. Resume when you are ready.</p>
+      <div class="actions"><button type="button" class="play" id="resume">Resume</button><button type="button" id="restart-run">Restart run</button><button type="button" id="choose-again">Choose fighter</button><button type="button" id="fullscreen">Fullscreen</button></div>
+      <p class="hint">Ctrl+F toggles fullscreen.</p>
+    </section>
+    <button type="button" id="stage-pause" class="stage-pause" hidden>Pause</button>
+    <canvas id="game" width="1280" height="720" tabindex="0" aria-label="Capitol Crashers"></canvas>
+
+    <section class="card" id="title-panel">
+      <p class="eyebrow">Political Arcades · machine 01</p>
+      <h1>Capitol<br />Crashers</h1>
+      <p class="tag">Two fighters. A block that needs them. The Landlord at the end of the street.</p>
+      <ul class="how">
+        <li>Neighbors in need stand along the street. Walk up and press J to help: a meal, care, a rent freeze, a job. Nobody gets hit.</li>
+        <li>A witness with receipts will follow you. Keep them standing and they put a third of the boss on the record.</li>
+        <li>Arrows or WASD move. Double-tap forward to run, then J to strike a villain. Double-tap back to retreat.</li>
+        <li>J light combo, K heavy, L special, Space jump. Hold forward and K to lunge. Hold back and K to reverse. J as you get up.</li>
+        <li>Press G to grab a nearby enemy. J punches; walking never grabs. K throws. Hold back and K to throw behind you.</li>
+        <li>Walk over a pipe or bottle to take it. J swings a pipe. K throws it.</li>
+      </ul>
+      <div class="actions">
+        <button type="button" class="play" id="start">Step in</button>
+        <a class="patreon" data-patreon hidden target="_blank" rel="noopener noreferrer">Support on Patreon</a>
+      </div>
+    </section>
+
+    <section class="card" id="select-panel" hidden>
+      <p class="eyebrow">Who steps in</p>
+      <h2>Pick a fighter</h2>
+      <div class="roster">
+        <button type="button" class="fighter on" id="pick-mamdani" data-id="mamdani">
+          <strong>Zohran Mamdani</strong>
+          <span>Long reach, heavy hits, slow feet. Walked the length of Manhattan in one night.</span>
+        </button>
+        <button type="button" class="fighter" id="pick-sayed" data-id="sayed">
+          <strong>Abdul El-Sayed</strong>
+          <span>Fast feet, short combo window, lighter hits. Captained wrestling, football and lacrosse.</span>
+        </button>
+      </div>
+      <p class="hint">Left and right to choose. Enter to start.</p>
+      <div class="actions">
+        <button type="button" class="play" id="run">Save America</button>
+        <button type="button" id="practice-start">Practice moves</button>
+      </div>
+    </section>
+
+    <section class="card comic" id="story-panel" hidden>
+      <div class="story-frame" id="story-frame"></div>
+      <div class="story-copy" id="story-copy"></div>
+      <div class="actions">
+        <button type="button" class="play" id="story-next">Continue</button>
+        <a class="story-more" id="story-more" href="../story/" target="_blank" rel="noopener">Read the whole comic</a>
+      </div>
+      <p class="hint">Enter or Space to continue.</p>
+    </section>
+
+    <section class="card slim" id="clear-panel" hidden>
+      <p class="eyebrow">Policy passed</p>
+      <h2 id="clear-title">Rent frozen</h2>
+      <p id="clear-copy"></p>
+    </section>
+
+    <section class="card" id="end-panel" hidden>
+      <p class="eyebrow">Last block clear</p>
+      <h2>Made it to the Capitol</h2>
+      <p id="end-copy"></p>
+      <div class="actions">
+        <button type="button" class="play" id="end-again">Run it back</button>
+        <a class="patreon" data-patreon hidden target="_blank" rel="noopener noreferrer">Support on Patreon</a>
+      </div>
+    </section>
+
+    <section class="card" id="over-panel" hidden>
+      <p class="eyebrow">Down</p>
+      <h2>Knocked down</h2>
+      <p id="over-copy"></p>
+      <div class="actions">
+        <button type="button" class="play" id="over-again">Run it back</button>
+        <a class="patreon" data-patreon hidden target="_blank" rel="noopener noreferrer">Support on Patreon</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-foot">
+    <p>Capitol Crashers is an original game on the floor at <a href="https://politicalarcades.com/">Political Arcades</a>. It is an unofficial cartoon, not authorized by Zohran Mamdani, Abdul El-Sayed, or any candidate or campaign committee.</p>
+    <p><a href="privacy.html">Privacy</a></p>
+  </footer>
+  <script src="touch.js?v=mob1"></script>
+  <script type="module" src="qa-rogers25/src/main.js?v=rogers25"></script>
+  <script type="module" src="site.js"></script>
+  <script src="../soundtrack.js?v=ux2" data-controls></script>
+</body>
+</html>
+
+
+
+
+
+
+
+
