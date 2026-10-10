@@ -1,5 +1,5 @@
 import { registerHelpAction } from "./help-actions.js?v=idle21";
-import { playerMoveWindow } from "./player.js?v=beach30";
+import { playerMoveWindow } from "./player.js?v=original31";
 import { WORLD } from "./stages.js?v=bench28";
 
 const CLIPS = {
@@ -156,7 +156,7 @@ function loadOne(sprite, clip, name) {
   if (sheets.has(clipKey(sprite, clip))) return Promise.resolve();
   const image = new Image();
   const extension = name.includes("mike_rogers") ? "png" : "webp";
-  const version = name.includes("mike_rogers") || name.includes("_grapple_rogers_") ? "beach30" : name.includes("_grapple_") ? "identity21" : /chibi\/(zohran_mamdani|abdul_el_sayed)_grab$/.test(name) ? "grip08b" : name === "chibi/jd_vance_worried_death" ? "chibi-death24" : "hd5";
+  const version = name.includes("mike_rogers") || name.includes("_grapple_rogers_") ? "original31" : name.includes("_grapple_") ? "identity21" : /chibi\/(zohran_mamdani|abdul_el_sayed)_grab$/.test(name) ? "grip08b" : name === "chibi/jd_vance_worried_death" ? "chibi-death24" : "hd5";
   const dataPromise = fetch(`${assetRoot(name)}/${name}.json?v=${version}`).then((res) => {
     if (!res.ok) throw new Error(`Could not load ${name}: ${res.status}`);
     return res.json();
@@ -213,7 +213,7 @@ function loadOne(sprite, clip, name) {
 
 // Missing sheet = 404 on the JSON, nothing else requested, never an error.
 function loadSoft(sprite, clip, name) {
-  const version = name.includes("mike_rogers") || name.includes("_grapple_rogers_") ? "beach30" : name.includes("_grapple_") ? "identity21" : /chibi\/(zohran_mamdani|abdul_el_sayed)_grab$/.test(name) ? "grip08b" : name === "chibi/jd_vance_worried_death" ? "chibi-death24" : "hd5";
+  const version = name.includes("mike_rogers") || name.includes("_grapple_rogers_") ? "original31" : name.includes("_grapple_") ? "identity21" : /chibi\/(zohran_mamdani|abdul_el_sayed)_grab$/.test(name) ? "grip08b" : name === "chibi/jd_vance_worried_death" ? "chibi-death24" : "hd5";
   return fetch(`${assetRoot(name)}/${name}.json?v=${version}`, { method: "HEAD" })
     .then((res) => (res.ok ? loadOne(sprite, clip, name) : null))
     .catch(() => null);
