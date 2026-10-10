@@ -1,4 +1,4 @@
-import { spawnSatellite } from './weapons.js?v=encounter38';
+import { spawnSatellite } from './weapons.js?v=flight39';
 const smooth = t => { t=Math.max(0,Math.min(1,t)); return t*t*(3-2*t); };
 export function addLaserEncounter(game, makeEnemy, x) {
   const left=game.lockCam??game.cameraX??0;

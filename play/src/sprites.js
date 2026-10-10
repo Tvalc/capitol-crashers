@@ -1,9 +1,9 @@
-import { registerHelpAction } from "./help-actions.js?v=encounter38";
-import { playerMoveWindow } from "./player.js?v=encounter38";
-import { WORLD } from "./stages.js?v=encounter38";
+import { registerHelpAction } from "./help-actions.js?v=flight39";
+import { playerMoveWindow } from "./player.js?v=flight39";
+import { WORLD } from "./stages.js?v=flight39";
 
 const CLIPS = {
-  rogers_vacation: ["idle","walk","run","attack","special","bill","hit","death","change"],
+  rogers_vacation: ["flight","idle","walk","run","attack","special","bill","hit","death","change"],
   rogers_tropical: ["idle","walk","run","attack","special","bill","hit","death","change","grabbed","grab_flinch"],
   rogers: ["idle","walk","orders","run","bill","hit","death"],
   zohran: ["idle", "walk", "run", "jump", "attack", "hit", "death", "cast", "grab", "throw", "lunge", "reversal"],
@@ -171,7 +171,7 @@ function assetRoot(name) { if(name.includes("mike_rogers") || name.includes("_gr
 function loadOne(sprite, clip, name) {
   const image = new Image();
   const extension = /^chibi\/mike_rogers_(idle|walk|orders|run|bill|hit|death)$/.test(name) ? "png" : "webp";
-  const version = name.includes("rogers") ? "encounter38" : name.includes("_grapple_") ? "laser22" : /chibi\/(zohran_mamdani|abdul_el_sayed)_grab$/.test(name) ? "grip08b" : name === "chibi/jd_vance_worried_death" ? "chibi-death24" : "hd5";
+  const version = name.includes("rogers") ? "flight39" : name.includes("_grapple_") ? "laser22" : /chibi\/(zohran_mamdani|abdul_el_sayed)_grab$/.test(name) ? "grip08b" : name === "chibi/jd_vance_worried_death" ? "chibi-death24" : "hd5";
   const dataPromise = fetch(`${assetRoot(name)}/${name}.json?v=${version}`).then((res) => {
     if (!res.ok) throw new Error(`Could not load ${name}: ${res.status}`);
     return res.json();
@@ -229,7 +229,7 @@ function loadOne(sprite, clip, name) {
 
 // Missing sheet = 404 on the JSON, nothing else requested, never an error.
 function loadSoft(sprite, clip, name) {
-  const version = name.includes("rogers") ? "encounter38" : name.includes("_grapple_") ? "correction19" : /chibi\/(zohran_mamdani|abdul_el_sayed)_grab$/.test(name) ? "grip08b" : name === "chibi/jd_vance_worried_death" ? "chibi-death24" : "hd5";
+  const version = name.includes("rogers") ? "flight39" : name.includes("_grapple_") ? "correction19" : /chibi\/(zohran_mamdani|abdul_el_sayed)_grab$/.test(name) ? "grip08b" : name === "chibi/jd_vance_worried_death" ? "chibi-death24" : "hd5";
   return fetch(`${assetRoot(name)}/${name}.json?v=${version}`, { method: "HEAD" })
     .then((res) => (res.ok ? loadOne(sprite, clip, name) : null))
     .catch(() => null);
@@ -479,7 +479,7 @@ export function grapplePairContactRemaining(hero, enemy) {
 export function drawSprite(ctx, ent, sx, sc) {
   const sprite = actorSprite(ent);
   let wanted = clipFor(ent.state);
-  if (sprite.startsWith("rogers")) { if (["orders","bill"].includes(ent.state)) wanted=ent.state; if(ent.state==="vacationSpecial") wanted="special"; }
+  if (sprite.startsWith("rogers")) { if (["orders","bill"].includes(ent.state)) wanted=ent.state; if(ent.state==="vacationSpecial") wanted="special"; if(ent.state.startsWith("umbrella")) wanted="flight"; }
   const grabbedFlinch = ent.state === "grabbed" && ent.grabFlinchT > 0;
   if (grabbedFlinch && hasSheet(sprite, "grab_flinch")) wanted = "grab_flinch";
   const grabPunch = ent.team === "player" && ent.state === "grab" && ent.grabStrikeT > 0;
@@ -493,7 +493,12 @@ export function drawSprite(ctx, ent, sx, sc) {
   const count = sheet.frames.length;
   const once = ONCE.has(clip) || clip === "special";
   let index;
-  if (grabPunch && (clip === "attack" || clip === "grab_strike")) {
+  if (clip === "flight") {
+    index=ent.state==="umbrellaRise"?Math.min(2,Math.floor(ent.stateT/.22)):ent.state==="umbrellaHover"?3+Math.floor(ent.stateT/.2)%2:ent.state==="umbrellaDive"?5:ent.stateT<.45?6:7;
+  }
+  else if (sprite.startsWith("rogers") && ["orders","bill"].includes(clip)) index = Math.min(count-1,Math.floor(ent.stateT / (clip === "orders" ? 1.05 : (ent.recovery || 1.55)) * count));
+  else if (sprite.startsWith("rogers") && ["attack","special"].includes(clip)) index=Math.min(count-1,Math.floor(ent.stateT/(clip==="attack"?1:1.3)*count));
+  else if (grabPunch && (clip === "attack" || clip === "grab_strike")) {
     const phase = Math.max(0, Math.min(1, 1 - ent.grabStrikeT / .32));
     const punchFrames = clip === "grab_strike" ? Array.from({length:count}, (_,i)=>i) : sprite === "zohran" ? [0, 1, 2, 3, 4, 9, 10, 11] : [0, 1, 2, 3, 8, 9, 10, 11];
     index = Math.min(count - 1, punchFrames[Math.min(punchFrames.length - 1, Math.floor(phase * punchFrames.length))]);

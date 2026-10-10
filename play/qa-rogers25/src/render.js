@@ -1,8 +1,9 @@
+const rogersSpeech = new Image(); rogersSpeech.src = "/play/qa-rogers25/assets/sprites/chibi/rogers-speech.webp?v=flight39";
 const rogersCaller = new Image(); rogersCaller.src = new URL("../assets/rogers-caller.png", import.meta.url).href;
-import { FIGHTERS, poseFor } from "./fighters.js?v=encounter38";
-import { drawSprite, drawGrapplePair, hasGrapplePair } from "./sprites.js?v=encounter38";
-import { WORLD, STAGES } from "./stages.js?v=encounter38";
-import { CITIZEN_KINDS } from "./citizens.js?v=encounter38";
+import { FIGHTERS, poseFor } from "./fighters.js?v=flight39";
+import { drawSprite, drawGrapplePair, hasGrapplePair } from "./sprites.js?v=flight39";
+import { WORLD, STAGES } from "./stages.js?v=flight39";
+import { CITIZEN_KINDS } from "./citizens.js?v=flight39";
 
 const art = {};
 export function loadEnvironment() {
@@ -379,6 +380,14 @@ function drawPerson(ctx, ent, cam, game) {
 
   if (ent === holder && pairedVictim && drawGrapplePair(ctx, holder, pairedVictim, sx, spriteScale)) return;
   if (drawSprite(ctx, ent, sx, spriteScale)) label(ctx, ent, sx);
+  if(ent.sprite==="rogers_tropical" && ["attack","vacationSpecial","bill"].includes(ent.state) && rogersSpeech.naturalWidth) {
+    const joke=ent.state==="bill"?["WAIT... THIS IS", "SUNSCREEN!"]:["I'M FIGHTING", "FOR MICHIGAN!"];
+    const bx=Math.max(140,Math.min(ctx.canvas.width-140,sx));
+    const by=Math.max(112,ent.y-325);
+    ctx.save();ctx.drawImage(rogersSpeech,bx-145,by-55,290,125);
+    ctx.fillStyle="#171721";ctx.textAlign="center";
+    fittedText(ctx,joke[0],bx,by-4,225,17);fittedText(ctx,joke[1],bx,by+17,225,18);ctx.restore();
+  }
   if (ent.kind === "rogers" && ent.state === "orders" && rogersCaller.complete && rogersCaller.naturalWidth) {
     const pop = Math.min(1, ent.stateT / .15);
     const width = 112 * pop, height = width * rogersCaller.naturalHeight / rogersCaller.naturalWidth;

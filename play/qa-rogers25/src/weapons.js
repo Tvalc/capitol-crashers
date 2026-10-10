@@ -1,5 +1,5 @@
-import { play } from "./audio.js?v=encounter38";
-import { applyHit } from "./combat.js?v=encounter38";
+import { play } from "./audio.js?v=flight39";
+import { applyHit } from "./combat.js?v=flight39";
 
 export function launchHeld(game, owner) {
   const held = owner.holding;
