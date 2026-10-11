@@ -1,7 +1,7 @@
 import { PAGES, SOURCES } from "./panels.js?v=readable1";
 
 const ART_DIR = "../art/story/chibi/";
-const ART_VER = "three2";
+const ART_VER = "noglasses1";
 const book = document.getElementById("book");
 const sourcesHost = document.getElementById("sources");
 

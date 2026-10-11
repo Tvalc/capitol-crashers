@@ -949,7 +949,7 @@ export const PAGES = [
           39,
           66
         ],
-        "prompt": "Wide 16:9 splash, matching the fighter-select screen: a rain-slick avenue at night leading to the lit U.S. Capitol dome. Seen from behind, three chibi men walk toward the Capitol: Zohran Mamdani in a dark suit and polka-dot tie, James Talarico in a navy suit with glasses and light brown hair, Abdul El-Sayed in a black henley. Puddles reflecting neon magenta, cyan and gold. Epic, hopeful, cinematic. No lettering."
+        "prompt": "Wide 16:9 splash, matching the fighter-select screen: a rain-slick avenue at night leading to the lit U.S. Capitol dome. Seen from behind, three chibi men walk toward the Capitol: Zohran Mamdani in a dark suit and polka-dot tie, James Talarico in a navy suit with light brown hair, Abdul El-Sayed in a black henley. Puddles reflecting neon magenta, cyan and gold. Epic, hopeful, cinematic. No lettering."
       }
     ]
   },
