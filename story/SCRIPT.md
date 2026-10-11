@@ -1,4 +1,4 @@
-# Two Roads to the Capitol: script and Makko prompts
+# Three Roads to the Capitol: script and Makko prompts
 
 Generated from `story/panels.js`. Edit that file, not this one.
 
@@ -27,9 +27,9 @@ Keep all lettering out of the art. Captions and speech bubbles are added by the 
 
 **Makko prompt:**
 
-> Wide 16:9 splash, matching the fighter-select screen: a rain-slick avenue at night leading to the lit U.S. Capitol dome. Seen from behind and slightly to the side, Zohran Mamdani (dark suit, polka-dot tie) and Abdul El-Sayed (black henley) walk side by side toward the Capitol, puddles reflecting neon magenta, cyan and gold. Epic, hopeful, cinematic.
+> Wide 16:9 splash, matching the fighter-select screen: a rain-slick avenue at night leading to the lit U.S. Capitol dome. Seen from behind, three chibi men walk toward the Capitol: Zohran Mamdani in a dark suit and polka-dot tie, James Talarico in a navy suit with glasses and light brown hair, Abdul El-Sayed in a black henley. Puddles reflecting neon magenta, cyan and gold. Epic, hopeful, cinematic. No lettering.
 
-### open-n · How two roads begin · (The origin)
+### open-n · How three roads begin · (The origin)
 
 - **Shape:** narration page
 - **Caption:** One road begins in Kampala in 1991. One begins in Michigan in 1984. One begins in Round Rock, Texas, in 1989.
@@ -40,11 +40,12 @@ Keep all lettering out of the art. Captions and speech bubbles are added by the 
 
 ### p01 · Kampala, Uganda · (Kampala · 1991)
 
-- **Shape:** half, tall
+- **Shape:** half
 - **Narrator:** Begin with a name that is already a map.
-- **Caption:** October 18, 1991. Kampala, Uganda. Zohran Kwame Mamdani is born. His middle name honors Kwame Nkrumah, Ghana's first president.
-- **Caption:** His mother is the filmmaker Mira Nair. His father is Mahmood Mamdani, a scholar of colonialism. The boy will grow up between continents. The work will wait for him in Queens.
-- **Sources:** [1](https://www.cnn.com/politics/zohran-mamdani-fast-facts), [2](https://www.theafricareport.com/386712/zohran-mamdani-10-things-about-uganda-born-democratic-nominee-for-new-york-city-mayor/)
+- **Caption:** October 18, 1991. Kampala, Uganda. Zohran Kwame Mamdani is born. His mother, the filmmaker Mira Nair, names him Zohran: the first star in the sky. His middle name honors Kwame Nkrumah, Ghana's first president.
+- **Caption:** His father is Mahmood Mamdani, a scholar of colonialism. Growing up, his mother teaches him a filmmaker's rule that becomes a politician's. The boy will grow up between continents. The work will wait for him in Queens.
+- **Nair:** "You have to have the heart of a poet and the skin of an elephant."
+- **Sources:** [1](https://www.cnn.com/politics/zohran-mamdani-fast-facts), [2](https://www.theafricareport.com/386712/zohran-mamdani-10-things-about-uganda-born-democratic-nominee-for-new-york-city-mayor/), [74](https://www.vulture.com/article/what-mira-nair-taught-zohran-mamdani.html), [75](https://theindianeye.com/2025/10/07/qa-with-zohran-mamdani-the-values-and-ideals-given-by-my-family-make-me-a-proud-indian-american/)
 
 **Makko prompt:**
 
@@ -54,29 +55,45 @@ Keep all lettering out of the art. Captions and speech bubbles are added by the 
 
 - **Shape:** half
 - **Narrator:** Meanwhile, seven years earlier, another map is drawn in Michigan.
-- **Caption:** October 31, 1984. Southeast Michigan. Abdulrahman "Abdul" El-Sayed is born.
-- **Caption:** His father emigrated from Alexandria, Egypt, in 1979 to earn an engineering doctorate at Wayne State University. The son will later say he is as Michigan as you get. He will spend a career proving it.
-- **Sources:** [3](https://bridgemi.com/michigan-government/who-is-abdul-el-sayed-what-to-know-about-michigan-democrats-us-senate-winner/), [4](https://abdulforsenate.com/about/)
+- **Caption:** October 31, 1984. Southeast Michigan. Abdulrahman "Abdul" El-Sayed is born. His father emigrated from Alexandria, Egypt, in 1979 to earn an engineering doctorate at Wayne State University. The son will later say he is as Michigan as you get.
+- **Caption:** As a boy he tells Baba he wants to be a doctor, to save a life every day. Baba thinks a moment. His reasoning stuck. So did the boy's.
+- **Baba:** "Abdulrahman, wouldn't it be better to learn why people die, then teach everyone around you to save lives?"
+- **Sources:** [3](https://bridgemi.com/michigan-government/who-is-abdul-el-sayed-what-to-know-about-michigan-democrats-us-senate-winner/), [4](https://abdulforsenate.com/about/), [5](https://record.umich.edu/articles/u-m-dual-md-phd-student-named-rhodes-scholar/)
 
 **Makko prompt:**
 
 > Early-1980s autumn campus at dusk. A young Egyptian engineer in his late twenties, short dark hair, thin mustache only, no full beard, brown corduroy jacket, stack of engineering textbooks, brick university buildings, Detroit skyline, faded Mediterranean lighthouse in the clouds. Not the bearded fighter. No readable text.
 
-### t01 · Round Rock, Texas · (Round Rock · 1989)
+### t01 · Born, then kept · (Round Rock · 1989)
 
 - **Shape:** half
-- **Caption:** May 17, 1989. Round Rock, Texas, outside Austin. James Talarico is born.
-- **Caption:** His mother is Tamara Causey, the daughter of a Baptist preacher. Mark Talarico later adopts him and gives him the name.
-- **Caption:** He grows up in the Round Rock public schools and at St. Andrew's Presbyterian Church. He will call himself an eighth-generation Texan.
-- **Sources:** [61](https://www.britannica.com/biography/James-Talarico)
+- **Narrator:** Meanwhile, in Texas, a third map.
+- **Caption:** May 17, 1989. Round Rock, Texas. James Talarico is born to Tamara Causey, a preacher's daughter from Laredo. His birth father does not stay.
+- **Caption:** One night her love rises to meet it. She packs their life into a Ford Escort and drives him to the hotel where she works. The manager lets them stay until they find a small apartment in East Austin.
+- **Caption:** The luckiest day, he will say, is the day they meet Mark Talarico: the man who adopts him, gives him the name, and raises him as his own.
+- **Sources:** [61](https://www.britannica.com/biography/James-Talarico), [72](https://jamestalarico.com/meet-james-talarico/), [73](https://www.usatoday.com/story/opinion/columnist/2026/06/06/james-talarico-texas-masculinity/90420159007/)
 
 **Makko prompt:**
 
-> Warm suburban Texas evening, 1989. A young white mother holds a newborn on a porch in Round Rock, live oak and a pickup in the yard, Baptist-church steeple far off. She is the parent, not a politician. No lettering.
+> Warm suburban Texas dusk, 1989. One newborn only. A young white Texan mother, fair skin, long chestnut hair, cardigan and jeans, holds the baby beside a packed light-blue hatchback. A distant silhouette of a man walks away down the street. A kind white man in his thirties with glasses kneels with empty open hands, about to receive that same baby. Live oaks, porch light. Dignified, not slapstick. No lettering.
+
+### t01b · What a man does · (East Austin)
+
+- **Shape:** half
+- **Narrator:** Two people teach him the fight. Then what a man looks like when nobody is watching.
+- **Caption:** There is no room for a nursery, so he sleeps in a crib in her closet. She decorates it with toys and pictures. No one is going to tell her it is not a nursery.
+- **Caption:** Every Saturday morning his dad mows their lawn. Then, without anyone asking, he mows the elderly widow's lawn next door.
+- **Talarico:** "Like my students, my mom was a fighter."
+- **Talarico:** "He never talked about it. He just did it. Because that's what a man does."
+- **Sources:** [72](https://jamestalarico.com/meet-james-talarico/), [73](https://www.usatoday.com/story/opinion/columnist/2026/06/06/james-talarico-texas-masculinity/90420159007/), [76](https://jamestalarico.substack.com/p/my-mom-taught-me-how-to-fight)
+
+**Makko prompt:**
+
+> Split suburban Texas Saturday morning, no lettering. Left: a kind white father with glasses mows a lawn while a small brown-haired boy watches from the porch; an elderly widow waves from next door. Right: the same white Texan mother, sweater and jeans, proudly hangs toys and pictures in a small closet with a crib squeezed inside. Not a South Asian filmmaker. No basketball uniforms.
 
 ### p03 · Three-sport captain · (Bloomfield Hills)
 
-- **Shape:** half
+- **Shape:** wide
 - **Narrator:** Before the white coat, the helmet.
 - **Caption:** At Bloomfield Hills Andover High School he captains three teams at once: football, wrestling, and lacrosse.
 - **Caption:** Friday night is already a public. He just does not know yet what the public will ask of him.
@@ -128,7 +145,7 @@ Keep all lettering out of the art. Captions and speech bubbles are added by the 
 ### p06 · Rhodes Scholar, doctor, professor · (Oxford · New York)
 
 - **Shape:** wide
-- **Narrator:** His father had asked a harder question than becoming a doctor: learn why people die, then teach everyone to save lives.
+- **Narrator:** Baba's question still holds. The boy who wanted to save a life every day keeps both answers: the hospital and the map of why people die.
 - **Caption:** He is named a Rhodes Scholar. At Oxford he earns a doctorate in public health. At Columbia he earns his M.D.
 - **Caption:** He then teaches epidemiology at Columbia, studying how poverty makes people sick. Then he decides that studying is not enough. He goes home.
 - **Sources:** [5](https://record.umich.edu/articles/u-m-dual-md-phd-student-named-rhodes-scholar/), [6](https://www.vagelos.columbia.edu/about-us/columbia-medicine-magazine/archives/fall-winter-2016/alumni-news-notes/alumni-profile-abdul-el-sayed14), [7](https://www.publichealth.columbia.edu/news/mailmans-el-sayed-takes-health-reins-detroit)
@@ -477,7 +494,7 @@ Keep all lettering out of the art. Captions and speech bubbles are added by the 
 
 ## Part 6: The roads meet
 
-### p26 · Two roads meet · (The road to the Capitol)
+### p26 · Three roads meet · (The road to the Capitol)
 
 - **Shape:** wide, splash
 - **Caption:** One already governs the largest city in America.
@@ -487,7 +504,7 @@ Keep all lettering out of the art. Captions and speech bubbles are added by the 
 
 **Makko prompt:**
 
-> Wide 16:9 splash, matching the fighter-select screen: a rain-slick avenue at night leading to the lit U.S. Capitol dome. Seen from behind and slightly to the side, Zohran Mamdani (dark suit, polka-dot tie) and Abdul El-Sayed (black henley) walk side by side toward the Capitol, puddles reflecting neon magenta, cyan and gold. Epic, hopeful, cinematic.
+> Wide 16:9 splash, matching the fighter-select screen: a rain-slick avenue at night leading to the lit U.S. Capitol dome. Seen from behind, three chibi men walk toward the Capitol: Zohran Mamdani in a dark suit and polka-dot tie, James Talarico in a navy suit with glasses and light brown hair, Abdul El-Sayed in a black henley. Puddles reflecting neon magenta, cyan and gold. Epic, hopeful, cinematic. No lettering.
 
 ## Issue #2: Previously
 

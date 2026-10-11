@@ -119,8 +119,19 @@
     "path": "C:\\Users\\19415\\Downloads\\asset-gen-8ebc344e-6c62-430c-87db-3354d4e93c0b-0_0.webp"
   },
   "p26": {
-    "src": "https://api.makko.ai/storage/v1/object/public/collection-node-images/e7eb8cac-6b98-43ce-ba67-dd2ed0947b87/generated/4349e5d5-2ae0-4cb5-9c53-a2ee03538f4c_376/asset-gen-f0eeef58-b8d0-43de-8124-7b4a97d7dc48-0_0.webp",
-    "path": "C:\\Users\\19415\\Downloads\\asset-gen-f0eeef58-b8d0-43de-8124-7b4a97d7dc48-0_0.webp"
+    "src": "generated three-walker splash from prior p26 plus Talarico likeness",
+    "path": "C:\\Users\\19415\\cc-publish\\art\\story\\chibi\\p26.webp",
+    "note": "Added Talarico between Mamdani and El-Sayed; navy suit, glasses, light brown hair"
+  },
+  "t01": {
+    "src": "generated Texas birth panel",
+    "path": "C:\\Users\\19415\\cc-publish\\art\\story\\chibi\\t01.webp",
+    "note": "Birth, birth father walking away, Mark kneeling to take the baby; one infant"
+  },
+  "t01b": {
+    "src": "generated Texas childhood panel",
+    "path": "C:\\Users\\19415\\cc-publish\\art\\story\\chibi\\t01b.webp",
+    "note": "Saturday lawn mowing with widow neighbor; closet nursery; no baked lettering"
   },
   "p25": {
     "src": "https://api.makko.ai/storage/v1/object/public/collection-node-images/e7eb8cac-6b98-43ce-ba67-dd2ed0947b87/generated/4349e5d5-2ae0-4cb5-9c53-a2ee03538f4c_401/asset-gen-e815777d-30b1-41f9-a86c-a3ce5471ef79-0_0.webp",
