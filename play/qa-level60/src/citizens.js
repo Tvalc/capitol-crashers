@@ -1,10 +1,10 @@
-import { helpAction } from "./help-actions.js?v=level60";
+import { helpAction } from "./help-actions.js?v=props61";
 // Citizens are the people the fighters stop for. They never take damage and
 // never deal it. Standing next to one and pressing strike helps them.
 // Witnesses are the exception: once helped they follow the fighter to the boss,
 // and villains can knock them down on the way.
-import { play } from "./audio.js?v=level60";
-import { WORLD } from "./stages.js?v=level60";
+import { play } from "./audio.js?v=props61";
+import { WORLD } from "./stages.js?v=props61";
 
 export const CITIZEN_KINDS = {
   hungry: {

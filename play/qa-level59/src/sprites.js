@@ -1,6 +1,6 @@
-import { registerHelpAction } from "./help-actions.js?v=stage59";
-import { playerMoveWindow } from "./player.js?v=stage59";
-import { WORLD } from "./stages.js?v=stage59";
+import { registerHelpAction } from "./help-actions.js?v=props61";
+import { playerMoveWindow } from "./player.js?v=props61";
+import { WORLD } from "./stages.js?v=props61";
 
 const CLIPS = {
   bovino: ["idle","walk","hit","change","shout","throw"],
@@ -570,7 +570,10 @@ export function drawSprite(ctx, ent, sx, sc) {
   sc *= frame.renderScale ?? 1;
   const cell = frame.frame;
   const offset = frame.trimmed ? frame.spriteSourceSize : null;
-  const anchorY = !(ent.z > 0) ? (frame.groundAnchorY ?? sheet.anchor.y) : sheet.anchor.y;
+  // Beck's final seated frames contain a fallen chalkboard below his body.
+  // Ground the seat/hand contact, rather than using the board's bottom edge.
+  const groundedBeck = sprite === "beck" && clip === "death" && index >= 7;
+  const anchorY = groundedBeck ? 478 : !(ent.z > 0) ? (frame.groundAnchorY ?? sheet.anchor.y) : sheet.anchor.y;
   ctx.save();
   ctx.translate(sx, ent.y - (ent.z || 0));
   const facing = ent.state === "help" && ent.helpAction && ent.stateT < ent.helpAction.approach ? Math.sign(ent.helpAction.targetX - ent.helpAction.fromX) || ent.facing : ent.facing;

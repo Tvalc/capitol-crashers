@@ -1,9 +1,9 @@
 import { updateTrumpPattern, partnerCommitting } from "./trump.mjs";
-import { updateRogers, updateRogersForm } from "./rogers.js?v=stage59";
+import { updateRogers, updateRogersForm } from "./rogers.js?v=props61";
 import { isBovino, updateBovino } from "./bovino/adapter.js?v=bovino45";
-import { melee, updateBody } from "./combat.js?v=stage59";
-import { WORLD } from "./stages.js?v=stage59";
-import { spawnSatellite, spawnShot, spawnSombrero } from "./weapons.js?v=stage59";
+import { melee, updateBody } from "./combat.js?v=props61";
+import { WORLD } from "./stages.js?v=props61";
+import { spawnSatellite, spawnShot, spawnSombrero } from "./weapons.js?v=props61";
 
 const KINDS = {
   bovino: {name:"Bovino — Four in a Coat",hp:100,speed:62,w:44,h:100,dmg:8,reach:65,scale:1,boss:true},

@@ -1,18 +1,18 @@
 import { saveCheckpoint, readCheckpoint, clearCheckpoint } from "./checkpoint.mjs";
-import { addLaserEncounter, updateLaserEncounters } from "./laser-encounter.js?v=level60";
-import { propFootprints, collideProps, steerAroundProps } from "./prop-collision.js?v=level60";
-import { play, unlock } from "./audio.js?v=level60";
-import { separate, tickToss, wallBounce, applyHit } from "./combat.js?v=level60";
+import { addLaserEncounter, updateLaserEncounters } from "./laser-encounter.js?v=props61";
+import { propFootprints, collideProps, steerAroundProps } from "./prop-collision.js?v=props61";
+import { play, unlock } from "./audio.js?v=props61";
+import { separate, tickToss, wallBounce, applyHit } from "./combat.js?v=props61";
 import { updateBovinoHazards, splitBovino } from "./bovino/adapter.js?v=bovino45";
-import { makeEnemy, updateEnemy } from "./enemies.js?v=level60";
-import { blankInput, createInput } from "./input.js?v=level60";
-import { fighterById, makePlayer, updatePlayer, bufferPlayerInput } from "./player.js?v=level60";
-import { draw, loadEnvironment } from "./render.js?v=level60";
-import { cloneStage, STAGES, WORLD } from "./stages.js?v=level60";
-import { updatePickups, updateProjectiles } from "./weapons.js?v=level60";
-import { loadSprites, ensureGrapplePair } from "./sprites.js?v=level60";
+import { makeEnemy, updateEnemy } from "./enemies.js?v=props61";
+import { blankInput, createInput } from "./input.js?v=props61";
+import { fighterById, makePlayer, updatePlayer, bufferPlayerInput } from "./player.js?v=props61";
+import { draw, loadEnvironment } from "./render.js?v=props61";
+import { cloneStage, STAGES, WORLD } from "./stages.js?v=props61";
+import { updatePickups, updateProjectiles } from "./weapons.js?v=props61";
+import { loadSprites, ensureGrapplePair } from "./sprites.js?v=props61";
 import { PAGES } from "/story/panels.js";
-import { followingWitness, makeCitizen, spawnCelebration, updateCitizens, witnessTestifies } from "./citizens.js?v=level60";
+import { followingWitness, makeCitizen, spawnCelebration, updateCitizens, witnessTestifies } from "./citizens.js?v=props61";
 
 // Comic panels that exist as short animated loops (OpenArt), shown between stages.
 const MOTION = { p21: "../art/story/motion/p21.mp4", p27: "../art/story/motion/p27.mp4" };
@@ -264,7 +264,7 @@ export function updateGame(game, input, dt) {
   game.enemies = game.enemies.filter((enemy) => !(enemy.state === "dead" && enemy.deadT <= 0));
 }
 
-import { advanceGait } from "./animation-clock.js?v=level60";
+import { advanceGait } from "./animation-clock.js?v=props61";
 export { advanceGait };
 
 function advance(game) {

@@ -1,7 +1,7 @@
-import { play } from "./audio.js?v=level60";
+import { play } from "./audio.js?v=props61";
 import { interruptBovino, splitBovino } from "./bovino/adapter.js?v=bovino45";
-import { WORLD } from "./stages.js?v=level60";
-import { followingWitness, knockWitness } from "./citizens.js?v=level60";
+import { WORLD } from "./stages.js?v=props61";
+import { followingWitness, knockWitness } from "./citizens.js?v=props61";
 
 export function integrate(ent, dt) {
   ent.z += ent.vz * dt;

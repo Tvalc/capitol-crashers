@@ -1,10 +1,10 @@
 import { drawBovinoHazards } from "./bovino/render.js?v=bovino45";
 const rogersSpeech = new Image(); rogersSpeech.src = "/play/qa-rogers25/assets/sprites/chibi/rogers-speech.webp?v=cast40";
 const rogersCaller = new Image(); rogersCaller.src = "/play/qa-rogers25/assets/rogers-caller.png";
-import { FIGHTERS, poseFor } from "./fighters.js?v=stage59";
-import { drawSprite, drawGrapplePair, hasGrapplePair } from "./sprites.js?v=stage59";
-import { WORLD, STAGES } from "./stages.js?v=stage59";
-import { CITIZEN_KINDS } from "./citizens.js?v=stage59";
+import { FIGHTERS, poseFor } from "./fighters.js?v=props61";
+import { drawSprite, drawGrapplePair, hasGrapplePair } from "./sprites.js?v=props61";
+import { WORLD, STAGES } from "./stages.js?v=props61";
+import { CITIZEN_KINDS } from "./citizens.js?v=props61";
 
 const art = {};
 export function loadEnvironment() {
@@ -12,7 +12,7 @@ export function loadEnvironment() {
   const required = Promise.all(names.map(name => new Promise((resolve,reject) => {
     const image=new Image(); image.onload=()=>{art[name]=image;resolve();};
     image.onerror=()=>reject(new Error(`Missing Makko artwork: ${name}`));
-    image.src=`../art/chibi/${name}.webp?v=idle21`;
+    image.src=["bin","bottle"].includes(name)?`/play/qa-props61/${name}.webp?v=61`:`../art/chibi/${name}.webp?v=idle21`;
   })));
   // Parallax layers, the banner plane and icicles are optional until their art lands.
   const optional = [];
@@ -286,12 +286,16 @@ function drawWin(ctx, game) {
 
 function drawProp(ctx, game, prop, cam) {
   const name = game.stage.id === 'studio' ? 'bin' : game.stage.id === 'capitol' ? 'barrel' : 'crate';
-  painted(ctx, name, prop.x - cam - prop.w / 2, prop.y - prop.h, prop.w, prop.h);
+  const image=art[name];if(!image)return;
+  const h=name==='bin'?90:prop.h,w=name==='bin'?h*image.width/image.height:prop.w;
+  painted(ctx, name, prop.x - cam - w / 2, prop.y - h, w, h);
 }
 
 function drawPickup(ctx,pickup,cam) {
   const name=pickup.kind==='pipe'?'pipe':pickup.kind==='bottle'?'bottle':'food';
-  painted(ctx,name,pickup.x-cam-22,pickup.y-34,44,34);
+  const image=art[name];if(!image)return;
+  const h=pickup.kind==='bottle'?42:34,w=pickup.kind==='bottle'?h*image.width/image.height:44;
+  painted(ctx,name,pickup.x-cam-w/2,pickup.y-h,w,h);
 }
 
 const hatSprite = typeof Image === "undefined" ? { complete: false } : new Image();
@@ -346,7 +350,8 @@ function drawShot(ctx, shot, cam) {
   ctx.translate(x, y);
   ctx.rotate(shot.spin);
   const name=shot.kind==='pipe'||shot.kind==='bolt'?'pipe':'bottle';
-  painted(ctx,name,-20,-15,40,30);
+  const img=art[name],h=name==='bottle'?38:30,w=name==='bottle'&&img?h*img.width/img.height:40;
+  painted(ctx,name,-w/2,-h/2,w,h);
   ctx.restore();
 }
 
