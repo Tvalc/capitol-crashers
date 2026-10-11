@@ -77,6 +77,9 @@ body {
 
 .ad-slot[hidden] { display: none !important; }
 
+.ad-line { color: var(--muted); font-size: 15px; line-height: 1.45; margin: 10px 0 0; }
+#ad-frame[hidden] { display: none !important; }
+
 .ad-label {
   position: absolute;
   top: 4px;

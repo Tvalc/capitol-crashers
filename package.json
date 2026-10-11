@@ -1,0 +1,8 @@
+{
+  "name": "capitol-crashers",
+  "private": true,
+  "description": "Capitol Crashers, the belt-scrolling brawler on Political Arcades. Static site; no dependencies.",
+  "scripts": {
+    "build:playgama": "node tools/build-playgama.mjs"
+  }
+}
