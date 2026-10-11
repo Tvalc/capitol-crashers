@@ -19,11 +19,11 @@ Keep all lettering out of the art. Captions and speech bubbles are added by the 
 ### open · The street still runs · (October 2026)
 
 - **Shape:** wide, splash
-- **Kicker:** Page one
-- **Narrator:** Start here. Not at the beginning. At the street they are walking now.
+- **Caption:** Start here. Not at the beginning. At the street they are walking now.
 - **Caption:** In New York, a mayor who announced in October 2024 while polling in single digits now runs the largest city in America: the first Muslim, the first South Asian, and the first African-born to hold that office.
-- **Caption:** In Michigan, a doctor who rebuilt a privatized health department has won a Democratic Senate nomination by fewer than 15,000 votes. He faces Republican Mike Rogers on November 3, 2026. The work is not finished.
-- **Sources:** [1](https://www.cnn.com/politics/zohran-mamdani-fast-facts), [10](https://www.pbs.org/newshour/politics/how-zohran-mamdani-rose-from-queens-lawmaker-to-mayor-of-new-york), [27](https://www.nbcnews.com/politics/2025-elections/new-york-city-mayor-results), [37](https://michiganadvance.com/2026/08/05/abdul-el-sayed-squeaks-out-win-over-haley-stevens-in-hotly-contested-democratic-us-senate-primary/), [39](https://www.washingtonpost.com/politics/2026/09/17/michigan-senate-race-poll-finds-abdul-el-sayed-has-narrow-edge-over-mike-rogers/)
+- **Caption:** In Michigan, a doctor who rebuilt a privatized health department has won a Democratic Senate nomination by fewer than 15,000 votes. He faces Republican Mike Rogers on November 3, 2026.
+- **Caption:** In Texas, a former sixth-grade teacher and state representative has won a Democratic Senate nomination over Representative Jasmine Crockett. He faces Republican Ken Paxton on November 3, 2026. The work is not finished.
+- **Sources:** [1](https://www.cnn.com/politics/zohran-mamdani-fast-facts), [10](https://www.pbs.org/newshour/politics/how-zohran-mamdani-rose-from-queens-lawmaker-to-mayor-of-new-york), [27](https://www.nbcnews.com/politics/2025-elections/new-york-city-mayor-results), [37](https://michiganadvance.com/2026/08/05/abdul-el-sayed-squeaks-out-win-over-haley-stevens-in-hotly-contested-democratic-us-senate-primary/), [39](https://www.washingtonpost.com/politics/2026/09/17/michigan-senate-race-poll-finds-abdul-el-sayed-has-narrow-edge-over-mike-rogers/), [64](https://apnews.com/article/texas-election-senate-crockett-talarico-cornyn-paxton-hunt-4d2fa601c0dab451c2cbd7c6f1483547), [65](https://ballotpedia.org/United_States_Senate_election_in_Texas,_2026_(March_3_Democratic_primary)), [66](https://apnews.com/article/texas-senate-cornyn-paxton-trump-talarico-4fa609e7ddb93b47ac4e3398a12a472e)
 
 **Makko prompt:**
 
@@ -32,13 +32,11 @@ Keep all lettering out of the art. Captions and speech bubbles are added by the 
 ### open-n · How two roads begin · (The origin)
 
 - **Shape:** narration page
-- **Kicker:** Two roads
-- **Narrator:** An origin is a promise: the boy on the next page is the man who will have to answer for the fight twenty pages from now.
-- **Caption:** The pictures in this book heighten a night, a coat, a crowd. The captions do not invent. They stay with certified tallies, quoted speech, and the platforms these men ran on. No named children. No invented crimes.
-- **Caption:** Turn the page. One road begins in Kampala in 1991. The other begins in Michigan in 1984. They do not meet for a long time. They rhyme before they meet.
-- **Sources:** [1](https://www.cnn.com/politics/zohran-mamdani-fast-facts), [3](https://bridgemi.com/michigan-government/who-is-abdul-el-sayed-what-to-know-about-michigan-democrats-us-senate-winner/)
+- **Caption:** One road begins in Kampala in 1991. One begins in Michigan in 1984. One begins in Round Rock, Texas, in 1989.
+- **Caption:** They do not meet for a long time. All three run toward the same unfinished street.
+- **Sources:** [1](https://www.cnn.com/politics/zohran-mamdani-fast-facts), [3](https://bridgemi.com/michigan-government/who-is-abdul-el-sayed-what-to-know-about-michigan-democrats-us-senate-winner/), [61](https://www.britannica.com/biography/James-Talarico)
 
-## Part 1: Born on two maps
+## Part 1: Born on three maps
 
 ### p01 · Kampala, Uganda · (Kampala · 1991)
 
@@ -63,6 +61,18 @@ Keep all lettering out of the art. Captions and speech bubbles are added by the 
 **Makko prompt:**
 
 > Early-1980s autumn campus at dusk. A young Egyptian engineer in his late twenties, short dark hair, thin mustache only, no full beard, brown corduroy jacket, stack of engineering textbooks, brick university buildings, Detroit skyline, faded Mediterranean lighthouse in the clouds. Not the bearded fighter. No readable text.
+
+### t01 · Round Rock, Texas · (Round Rock · 1989)
+
+- **Shape:** half
+- **Caption:** May 17, 1989. Round Rock, Texas, outside Austin. James Talarico is born.
+- **Caption:** His mother is Tamara Causey, the daughter of a Baptist preacher. Mark Talarico later adopts him and gives him the name.
+- **Caption:** He grows up in the Round Rock public schools and at St. Andrew's Presbyterian Church. He will call himself an eighth-generation Texan.
+- **Sources:** [61](https://www.britannica.com/biography/James-Talarico)
+
+**Makko prompt:**
+
+> Warm suburban Texas evening, 1989. A young white mother holds a newborn on a porch in Round Rock, live oak and a pickup in the yard, Baptist-church steeple far off. She is the parent, not a politician. No lettering.
 
 ### p03 · Three-sport captain · (Bloomfield Hills)
 
@@ -108,11 +118,10 @@ Keep all lettering out of the art. Captions and speech bubbles are added by the 
 ### n02 · They leave home · (Meanwhile)
 
 - **Shape:** narration page
-- **Kicker:** Meanwhile
-- **Narrator:** Childhood is the map. What comes next is the training: the degrees, the kitchen tables, the years nobody put on a poster.
 - **Caption:** One boy will study how poverty makes people sick, then walk into a hollowed-out health department and be told to rebuild it.
-- **Caption:** The other will rap under the 7 train, then sit at foreclosure tables in Queens and decide that counseling is not enough. The roads do not meet yet. They rhyme.
-- **Sources:** [6](https://www.vagelos.columbia.edu/about-us/columbia-medicine-magazine/archives/fall-winter-2016/alumni-news-notes/alumni-profile-abdul-el-sayed14), [9](https://www.brickunderground.com/live/how-owners-facing-foreclosure-get-help-housing-counselors-chhaya-mamdani), [11](https://www.statnews.com/2016/05/03/detroit-health-director/)
+- **Caption:** One will rap under the 7 train, then sit at foreclosure tables in Queens and decide that counseling is not enough.
+- **Caption:** One will teach sixth-grade English in San Antonio, then walk a Texas House district Republicans had held for years.
+- **Sources:** [6](https://www.vagelos.columbia.edu/about-us/columbia-medicine-magazine/archives/fall-winter-2016/alumni-news-notes/alumni-profile-abdul-el-sayed14), [9](https://www.brickunderground.com/live/how-owners-facing-foreclosure-get-help-housing-counselors-chhaya-mamdani), [11](https://www.statnews.com/2016/05/03/detroit-health-director/), [61](https://www.britannica.com/biography/James-Talarico), [62](https://www.texastribune.org/2026/01/16/james-talarico-texas-senate-democrat-teacher-election-2026/)
 
 ## Part 2: The years that built them
 
@@ -152,16 +161,37 @@ Keep all lettering out of the art. Captions and speech bubbles are added by the 
 
 > Night in a small Queens kitchen. A young South Asian housing counselor: full dark beard, thick styled dark hair, light blue shirt, leaning over foreclosure papers. Across from him an anxious older immigrant couple who do not look like him: a gray-haired father and a mother, different faces. Warm lamp, cold blue window. He is the only young bearded man. No second politician. No short-cropped hair. No henley. No stethoscope. No lettering.
 
+### t02 · Sixth-grade English · (San Antonio · 2011)
+
+- **Shape:** half
+- **Caption:** After the University of Texas he joins Teach For America. He teaches sixth-grade English at Rhodes Middle School on San Antonio's west side.
+- **Caption:** He will later say that if you can handle the drama of a middle-school classroom, you can handle the drama at the state capitol.
+- **Sources:** [61](https://www.britannica.com/biography/James-Talarico), [62](https://www.texastribune.org/2026/01/16/james-talarico-texas-senate-democrat-teacher-election-2026/)
+
+**Makko prompt:**
+
+> A west-side San Antonio middle-school classroom, 2011. A young white teacher in his early twenties, short brown hair, clean-shaven, light shirt, sleeves rolled, stands at a chalkboard with sixth-graders at desks. Ordinary fluorescent light. He is not Mamdani and not El-Sayed. No lettering.
+
+### t03 · He walks the district · (Texas House · 2018)
+
+- **Shape:** half
+- **Caption:** Harvard, then home: a master's in education policy. In 2018 he runs for the Texas House in a district Republicans had held since 2010.
+- **Caption:** He walks the length of it. He beats Republican Cynthia Flores. At 29 he is the youngest member of the legislature.
+- **Sources:** [61](https://www.britannica.com/biography/James-Talarico)
+
+**Makko prompt:**
+
+> A young white Texan in his late twenties, short brown hair, clean-shaven, boots and a pickup, walking a suburban highway shoulder with a clipboard, live oaks and campaign-yard signs with no readable words. Heat haze. He is not the Queens or Detroit fighters. No lettering.
+
 ## Meanwhile: The first tests
 
 ### n03 · The first tests · (First fights)
 
 - **Shape:** narration page
-- **Kicker:** First fights
-- **Narrator:** Every origin has a first fight: the room that is empty, the door that does not open, the night you stay anyway.
 - **Caption:** Detroit hands a thirty-year-old epidemiologist a privatized health department: five city employees, eighty-five contractors, and an order to rebuild it.
-- **Caption:** Astoria hands a housing counselor a ten-year incumbent. He wins by 423 votes. Neither fight is a myth. The record keeps the numbers.
-- **Sources:** [11](https://www.statnews.com/2016/05/03/detroit-health-director/), [18](https://politicsny.com/2020/07/22/dsa-backed-mamdani-unseats-simotas-in-36-ad-race/), [54](https://vote.nyc/sites/default/files/pdf/election_results/2020/20200623Primary%20Election/01402400036Queens%20Democratic%20Member%20of%20the%20Assembly%2036th%20Assembly%20District%20Recap.pdf)
+- **Caption:** Astoria hands a housing counselor a ten-year incumbent. He wins by 423 votes.
+- **Caption:** Austin hands a twenty-nine-year-old teacher a Republican legislature. He still files education bills, and he wins four terms.
+- **Sources:** [11](https://www.statnews.com/2016/05/03/detroit-health-director/), [18](https://politicsny.com/2020/07/22/dsa-backed-mamdani-unseats-simotas-in-36-ad-race/), [54](https://vote.nyc/sites/default/files/pdf/election_results/2020/20200623Primary%20Election/01402400036Queens%20Democratic%20Member%20of%20the%20Assembly%2036th%20Assembly%20District%20Recap.pdf), [61](https://www.britannica.com/biography/James-Talarico)
 
 ## Part 3: First fights
 
@@ -205,12 +235,23 @@ Keep all lettering out of the art. Captions and speech bubbles are added by the 
 - **Shape:** third
 - **Narrator:** Then he tries the bigger room, and the bigger room says no.
 - **Caption:** In 2018 he runs for governor on single-payer health care. Senator Bernie Sanders endorses him. Alexandria Ocasio-Cortez campaigns beside him.
-- **Caption:** He loses the Democratic primary to Gretchen Whitmer. He does not leave the work. The next chapter is written from the loss.
+- **Caption:** He loses the Democratic primary to Gretchen Whitmer. He does not leave the work.
 - **Sources:** [15](https://www.detroitnews.com/story/news/local/michigan/2018/06/06/el-sayed-universal-health-michigan/677394002/), [16](https://www.wkar.org/politics-government/2018-07-26/bernie-sanders-endorses-el-sayed-in-michigans-governors-race), [17](https://bridgemi.com/michigan-government/gretchen-whitmer-wins-democratic-primary-michigan-governor/), [55](https://apnews.com/gubernatorial-elections-34d51f5ae23345058d368f77f41a9cb1)
 
 **Makko prompt:**
 
 > Square 1:1. A packed Michigan rally at night, confetti and phone lights. A young Egyptian-American candidate raises a fist at the mic; a white-haired older senator in a rumpled suit claps beside him. Then a hint of rain starting. Magenta and cyan stage light.
+
+### t04 · Un-Christian, he says · (Austin · 2023)
+
+- **Shape:** wide
+- **Caption:** In the House he is also a Presbyterian seminarian at Austin Presbyterian Theological Seminary.
+- **Caption:** When a bill would require the Ten Commandments on every classroom wall, he tells a committee it is unconstitutional, un-American, and un-Christian. He cites the gospel warning against public prayer as a show.
+- **Sources:** [61](https://www.britannica.com/biography/James-Talarico)
+
+**Makko prompt:**
+
+> Texas House committee room. A young white man in his thirties, short brown hair, clean-shaven, dark suit, speaking at a microphone. No Ten Commandments poster with readable text. Wood dais, flags with no readable words. He is not Mamdani and not El-Sayed. No lettering.
 
 ### p13 · The upset · (Astoria · 2020)
 
@@ -255,11 +296,10 @@ Keep all lettering out of the art. Captions and speech bubbles are added by the 
 ### n04 · After the loss · (Long odds)
 
 - **Shape:** narration page
-- **Kicker:** Long odds
-- **Narrator:** A loss is not the end of the book. It is the page turn.
 - **Caption:** El-Sayed loses a governor's primary in 2018 and goes back to the work: a book, a podcast, then Wayne County. Mamdani wins an Assembly seat by 423 votes, then sits with taxi drivers until City Hall blinks.
-- **Caption:** Both men will soon run for offices the polls say they cannot win. The next pages are those races.
-- **Sources:** [17](https://bridgemi.com/michigan-government/gretchen-whitmer-wins-democratic-primary-michigan-governor/), [18](https://politicsny.com/2020/07/22/dsa-backed-mamdani-unseats-simotas-in-36-ad-race/), [21](https://www.cityandstateny.com/politics/2021/11/activist-lawmakers-share-taxi-drivers-victory/186641/), [22](https://www.abramsbooks.com/product/healing-politics_9781683358138/)
+- **Caption:** Talarico, diagnosed with Type 1 diabetes during that first House campaign, helps pass a 2021 law capping insulin copays for people on state-regulated health plans.
+- **Caption:** All three will soon run for offices the polls say they cannot win.
+- **Sources:** [17](https://bridgemi.com/michigan-government/gretchen-whitmer-wins-democratic-primary-michigan-governor/), [18](https://politicsny.com/2020/07/22/dsa-backed-mamdani-unseats-simotas-in-36-ad-race/), [21](https://www.cityandstateny.com/politics/2021/11/activist-lawmakers-share-taxi-drivers-victory/186641/), [22](https://www.abramsbooks.com/product/healing-politics_9781683358138/), [61](https://www.britannica.com/biography/James-Talarico)
 
 ## Part 4: Long odds
 
@@ -327,16 +367,38 @@ Keep all lettering out of the art. Captions and speech bubbles are added by the 
 
 > Landscape 4:3. A small rented Detroit campaign office at night, folding tables, four staffers on laptops, a hand-painted banner (no readable text). An Egyptian-American man in rolled shirtsleeves grins and holds up a fistful of paper receipts. Gold desk lamps, cyan laptop glow.
 
+### t05 · He announces · (Texas · 2025–2026)
+
+- **Shape:** half
+- **Caption:** On September 9, 2025, he announces a campaign for the United States Senate.
+- **Caption:** On March 3, 2026, he defeats Representative Jasmine Crockett in the Democratic primary, 52.4 percent to 46.2 percent.
+- **Talarico:** "Tonight, the people of our state gave this country a little bit of hope."
+- **Sources:** [63](https://www.texastribune.org/2025/09/09/james-talarico-texas-senate-democrat-primary/), [64](https://apnews.com/article/texas-election-senate-crockett-talarico-cornyn-paxton-hunt-4d2fa601c0dab451c2cbd7c6f1483547), [65](https://ballotpedia.org/United_States_Senate_election_in_Texas,_2026_(March_3_Democratic_primary)), [61](https://www.britannica.com/biography/James-Talarico)
+
+**Makko prompt:**
+
+> Election-night stage in Texas. A young white man in his thirties, short brown hair, clean-shaven, dark suit, at a podium, crowd and phone lights. He is not Mamdani and not El-Sayed. No readable signs. No lettering.
+
+### t06 · Paxton wins the other primary · (Texas · May 26, 2026)
+
+- **Shape:** half
+- **Caption:** On May 26, 2026, Attorney General Ken Paxton defeats Senator John Cornyn in the Republican runoff, 63.8 percent to 36.2 percent, with an endorsement from President Trump.
+- **Caption:** Talarico faces Paxton on November 3. Democrats have not won a statewide race in Texas since 1994.
+- **Sources:** [66](https://apnews.com/article/texas-senate-cornyn-paxton-trump-talarico-4fa609e7ddb93b47ac4e3398a12a472e), [61](https://www.britannica.com/biography/James-Talarico)
+
+**Makko prompt:**
+
+> Split night: left, a Texas campaign crowd under gold light; right, a dark TV debate stage with two empty podiums. No faces copied from other fighters. No lettering.
+
 ## Meanwhile: When the work lands
 
 ### n05 · When the work lands · (The work)
 
 - **Shape:** narration page
-- **Kicker:** Landing
-- **Narrator:** A campaign is a poster. A term is a test. The next pages are whether the work lands.
 - **Caption:** Mamdani takes the oath in a closed subway station and starts delivering the platform: a rent freeze, the first 2-K seats, city grocery sites, a record settlement for delivery workers.
 - **Caption:** El-Sayed launches for Senate with three lines and a stack of receipts, then wins a primary the money was supposed to buy for someone else.
-- **Sources:** [30](https://www.nyc.gov/mayors-office/news/2026/01/mayor-zohran-mamdani-inaugural-address), [33](https://gothamist.com/news/nyc-rent-guidelines-board-approves-2-year-rent-freeze-fulfilling-mamdani-campaign-pledge), [34](https://www.nyc.gov/mayors-office/news/2026/03/mayor-mamdani-and-governor-hochul-announce-first-four-communitie), [36](https://www.nyc.gov/mayors-office/news/2026/09/mayor-mamdani-wins-record--131-5-million-from-doordash-for-deliv), [37](https://michiganadvance.com/2026/08/05/abdul-el-sayed-squeaks-out-win-over-haley-stevens-in-hotly-contested-democratic-us-senate-primary/)
+- **Caption:** Talarico wins a Senate primary in Texas, then has to face Ken Paxton in a state no Democrat has carried statewide since 1994.
+- **Sources:** [30](https://www.nyc.gov/mayors-office/news/2026/01/mayor-zohran-mamdani-inaugural-address), [33](https://gothamist.com/news/nyc-rent-guidelines-board-approves-2-year-rent-freeze-fulfilling-mamdani-campaign-pledge), [34](https://www.nyc.gov/mayors-office/news/2026/03/mayor-mamdani-and-governor-hochul-announce-first-four-communitie), [36](https://www.nyc.gov/mayors-office/news/2026/09/mayor-mamdani-wins-record--131-5-million-from-doordash-for-deliv), [37](https://michiganadvance.com/2026/08/05/abdul-el-sayed-squeaks-out-win-over-haley-stevens-in-hotly-contested-democratic-us-senate-primary/), [65](https://ballotpedia.org/United_States_Senate_election_in_Texas,_2026_(March_3_Democratic_primary)), [66](https://apnews.com/article/texas-senate-cornyn-paxton-trump-talarico-4fa609e7ddb93b47ac4e3398a12a472e)
 
 ## Part 5: The work starts paying
 
@@ -369,7 +431,7 @@ Keep all lettering out of the art. Captions and speech bubbles are added by the 
 ### p23 · City grocery · (East Harlem · Hunts Point)
 
 - **Shape:** third
-- **Narrator:** Food is not a side quest. It is the plot.
+- **Narrator:** The first city grocery sites are East Harlem and Hunts Point.
 - **Caption:** The first sites announced for city-owned grocery stores: La Marqueta in East Harlem and The Peninsula in Hunts Point. He has pledged five stores, one in each borough.
 - **Caption:** His campaign plan: a network of city stores that pay no rent and no property tax, and sell at wholesale, so the savings go to shoppers.
 - **Sources:** [35](https://time.com/article/2026/05/21/mamdani-city-owned-grocery-stores-east-harlem-manhattan-the-bronx/), [40](https://web.archive.org/web/20250702081752/https://www.zohranfornyc.com/)
@@ -409,21 +471,19 @@ Keep all lettering out of the art. Captions and speech bubbles are added by the 
 ### n06 · The same rain · (The roads meet)
 
 - **Shape:** narration page
-- **Kicker:** Meanwhile
-- **Narrator:** Cut the two roads into one frame. The rain is the same rain.
-- **Caption:** New York has a mayor. Michigan has a nominee. One man already governs the largest city in America. The other still has to win November 3.
-- **Caption:** They have never been the same person. They have always been the same argument: that public power should land where people live.
-- **Sources:** [27](https://www.nbcnews.com/politics/2025-elections/new-york-city-mayor-results), [37](https://michiganadvance.com/2026/08/05/abdul-el-sayed-squeaks-out-win-over-haley-stevens-in-hotly-contested-democratic-us-senate-primary/), [39](https://www.washingtonpost.com/politics/2026/09/17/michigan-senate-race-poll-finds-abdul-el-sayed-has-narrow-edge-over-mike-rogers/)
+- **Caption:** New York has a mayor. Michigan has a nominee. Texas has a nominee.
+- **Caption:** One man already governs the largest city in America. Two still have to win on November 3: El-Sayed against Mike Rogers, Talarico against Ken Paxton.
+- **Sources:** [27](https://www.nbcnews.com/politics/2025-elections/new-york-city-mayor-results), [37](https://michiganadvance.com/2026/08/05/abdul-el-sayed-squeaks-out-win-over-haley-stevens-in-hotly-contested-democratic-us-senate-primary/), [39](https://www.washingtonpost.com/politics/2026/09/17/michigan-senate-race-poll-finds-abdul-el-sayed-has-narrow-edge-over-mike-rogers/), [66](https://apnews.com/article/texas-senate-cornyn-paxton-trump-talarico-4fa609e7ddb93b47ac4e3398a12a472e)
 
 ## Part 6: The roads meet
 
 ### p26 · Two roads meet · (The road to the Capitol)
 
 - **Shape:** wide, splash
-- **Narrator:** The last page of Issue #1 is not a victory lap. It is the same street as page one, seen from the other end.
-- **Caption:** One already governs the largest city in America. The other faces Republican Mike Rogers for the United States Senate on November 3, 2026.
-- **Caption:** Two roads. One unfinished fight. Turn the book over. Issue #2 is waiting, and it is about a mother.
-- **Sources:** [39](https://www.washingtonpost.com/politics/2026/09/17/michigan-senate-race-poll-finds-abdul-el-sayed-has-narrow-edge-over-mike-rogers/)
+- **Caption:** One already governs the largest city in America.
+- **Caption:** El-Sayed faces Republican Mike Rogers in Michigan on November 3, 2026. Talarico faces Republican Ken Paxton in Texas the same day.
+- **Caption:** Three roads. One unfinished fight. Issue #2 is about a mother.
+- **Sources:** [39](https://www.washingtonpost.com/politics/2026/09/17/michigan-senate-race-poll-finds-abdul-el-sayed-has-narrow-edge-over-mike-rogers/), [66](https://apnews.com/article/texas-senate-cornyn-paxton-trump-talarico-4fa609e7ddb93b47ac4e3398a12a472e)
 
 **Makko prompt:**
 
@@ -434,10 +494,8 @@ Keep all lettering out of the art. Captions and speech bubbles are added by the 
 ### n-h · Previously · (Issue #2)
 
 - **Shape:** narration page
-- **Kicker:** The healer
-- **Narrator:** Issue #2 is not a detour. It is the smear, answered.
 - **Caption:** On October 8, 2026, on a Michigan debate stage, Republican Mike Rogers reached for Abdul El-Sayed's mother. He suggested a watchlist. He named a workplace. He compared her to his own mother at a chamber of commerce.
-- **Caption:** The next pages are not a rumor. They are her training, her calendar, her own words, and the Justice Department's. She was never charged. She is still on the job.
+- **Caption:** She was never charged. She is still on the job. The next pages are her training, her calendar, her own words, and the Justice Department's.
 - **Sources:** [47](https://www.huffpost.com/entry/mike-rogers-pulls-the-your-mom-card-on-el-sayed-in-michigan-senate-debate_n_6ac7b573e4b09d2661d5b26c), [48](https://www.snopes.com/news/2026/08/25/el-sayed-mother-charity-terrorism/), [49](http://www.theiscm.net/councellor.html), [50](https://npiregistry.cms.hhs.gov/provider-view/1316388754)
 
 ## Issue #2: The Healer
@@ -445,8 +503,7 @@ Keep all lettering out of the art. Captions and speech bubbles are added by the 
 ### h01 · The healer · (Missouri · the woman they tried to smear)
 
 - **Shape:** wide, splash
-- **Narrator:** A man on television reached for a watchlist. This issue reaches for the record.
-- **Caption:** On the debate stage, Rogers went after his opponent's mother. The next pages are who she is.
+- **Caption:** On the debate stage, Rogers went after his opponent's mother.
 - **Caption:** Fatten Elkomy. A psychiatric nurse practitioner. Never charged. Still on the job. The coat is not a costume. It is the work.
 - **Sources:** [47](https://www.huffpost.com/entry/mike-rogers-pulls-the-your-mom-card-on-el-sayed-in-michigan-senate-debate_n_6ac7b573e4b09d2661d5b26c), [48](https://www.snopes.com/news/2026/08/25/el-sayed-mother-charity-terrorism/), [49](http://www.theiscm.net/councellor.html)
 
@@ -459,7 +516,7 @@ Keep all lettering out of the art. Captions and speech bubbles are added by the 
 - **Shape:** half, tall
 - **Narrator:** Before Missouri. Before the smear. Alexandria, and a white coat that is earned.
 - **Caption:** In 1983 she graduates from Alexandria University's School of Medicine.
-- **Caption:** That is her training. That is where the work begins. If you skip this page, you are telling a different story.
+- **Caption:** That is her training. That is where the work begins.
 - **Sources:** [49](http://www.theiscm.net/councellor.html)
 
 **Makko prompt:**
@@ -573,10 +630,8 @@ Keep all lettering out of the art. Captions and speech bubbles are added by the 
 ### n-end · Close on a license · (End of issue)
 
 - **Shape:** narration page
-- **Kicker:** To be continued
-- **Narrator:** Close the issue on a clinic door, not a debate clip.
 - **Caption:** She trained in Alexandria. She kept training in Missouri. Federal prosecutors convicted others at that office; they did not charge her. The public registry still lists her clinics.
-- **Caption:** A candidate reached for a watchlist. The book answers with a license. The street in Issue #1 is still wet. The general election is still ahead.
+- **Caption:** A candidate reached for a watchlist. She still has a license. The general election is still ahead.
 - **Sources:** [48](https://www.snopes.com/news/2026/08/25/el-sayed-mother-charity-terrorism/), [50](https://npiregistry.cms.hhs.gov/provider-view/1316388754), [52](https://www.justice.gov/archive/opa/pr/2008/January/08_nsd_029.html), [39](https://www.washingtonpost.com/politics/2026/09/17/michigan-senate-race-poll-finds-abdul-el-sayed-has-narrow-edge-over-mike-rogers/)
 
 ## Meanwhile: What they fight for
@@ -584,11 +639,8 @@ Keep all lettering out of the art. Captions and speech bubbles are added by the 
 ### n07 · What they fight for · (The powers)
 
 - **Shape:** narration page
-- **Kicker:** Back matter
-- **Narrator:** The last pages of the book are the powers. Not the costume. The work they promised in public.
-- **Caption:** These planks are taken from the sites they ran on. Zohran for NYC. Abdul for Senate. Shortened for the page. Cited in the sources.
-- **Caption:** A poster is a face. A program is a list. This is the list.
-- **Sources:** [40](https://web.archive.org/web/20250702081752/https://www.zohranfornyc.com/), [41](https://abdulforsenate.com/priorities/)
+- **Caption:** These planks are taken from the sites they ran on. Zohran for NYC. Abdul for Senate. Talarico for Texas. Shortened here. Cited in the sources.
+- **Sources:** [40](https://web.archive.org/web/20250702081752/https://www.zohranfornyc.com/), [41](https://abdulforsenate.com/priorities/), [67](https://jamestalarico.com/issue/public-education/), [68](https://jamestalarico.com/issue/labor-business/), [69](https://jamestalarico.com/issue/corruption-democracy/), [70](https://jamestalarico.com/issue/taxes-cost-of-living/)
 
 ## Part 7: The powers
 
@@ -672,7 +724,7 @@ Keep all lettering out of the art. Captions and speech bubbles are added by the 
 ### p34 · Who pays · (New York)
 
 - **Shape:** third
-- **Narrator:** Who pays for the powers.
+- **Narrator:** Who pays.
 - **Caption:** Match New Jersey's 11.5 percent corporate tax, about $5 billion. A 2 percent city tax on income over $1 million. Another $1 billion from procurement reform, auditors, and fines on corrupt landlords.
 - **Sources:** [40](https://web.archive.org/web/20250702081752/https://www.zohranfornyc.com/)
 
@@ -778,3 +830,53 @@ Keep all lettering out of the art. Captions and speech bubbles are added by the 
 **Makko prompt:**
 
 > El-Sayed at a diplomacy table.
+
+### t07 · Public schools · (Texas)
+
+- **Shape:** third
+- **Caption:** Reject private-school voucher programs that, he says, defund public schools. Universal pre-K for 3- and 4-year-olds, more teachers, more counselors, and phonics-based reading help.
+- **Sources:** [67](https://jamestalarico.com/issue/public-education/)
+
+**Makko prompt:**
+
+> Young white Texan, short brown hair, clean-shaven, in a public-school hallway with teachers. Not Mamdani, not El-Sayed. No lettering.
+
+### t08 · $15 an hour · (Texas)
+
+- **Shape:** third
+- **Caption:** Raise the federal minimum wage to $15 an hour, expand overtime, and pass paid family leave. He says he has never taken corporate PAC money.
+- **Sources:** [68](https://jamestalarico.com/issue/labor-business/), [69](https://jamestalarico.com/issue/corruption-democracy/)
+
+**Makko prompt:**
+
+> Young white Texan at a small-business counter with workers. Short brown hair, clean-shaven. No lettering.
+
+### t09 · Money out · (Texas)
+
+- **Shape:** third
+- **Caption:** Ban super PACs and corporate PACs. Ban partisan gerrymandering. Ban members of Congress from trading individual stocks.
+- **Sources:** [69](https://jamestalarico.com/issue/corruption-democracy/)
+
+**Makko prompt:**
+
+> Young white Texan sweeping stacked cash off a desk. Short brown hair, clean-shaven. No lettering.
+
+### t10 · Costs · (Texas)
+
+- **Shape:** half
+- **Caption:** A public health-insurance option, insulin and drug caps, down-payment help for first-time buyers, and a halt to corporate landlords using software to hike rents together.
+- **Sources:** [70](https://jamestalarico.com/issue/taxes-cost-of-living/), [71](https://www.texastribune.org/2026/08/05/texas-senate-james-talarico-economic-agenda-ken-paxton/)
+
+**Makko prompt:**
+
+> Young white Texan at a kitchen table with a working family and a pharmacy bottle with no readable label. Short brown hair, clean-shaven. No lettering.
+
+### t11 · Child care · (Texas)
+
+- **Shape:** half
+- **Caption:** Universal child care and paid family leave, plus a permanently expanded Child Tax Credit. He rolled the package out in August 2026 as a New American Dream agenda.
+- **Sources:** [71](https://www.texastribune.org/2026/08/05/texas-senate-james-talarico-economic-agenda-ken-paxton/)
+
+**Makko prompt:**
+
+> Young white Texan in a toddler classroom doorway. Short brown hair, clean-shaven. No lettering.

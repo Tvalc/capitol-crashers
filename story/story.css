@@ -222,6 +222,7 @@ figure.panel { margin: 0; }
 
 .panel.queens { --tone-a: #c99a0e; --tone-b: #1c1608; }
 .panel.detroit { --tone-a: #0076b6; --tone-b: #04223a; }
+.panel.texas { --tone-a: #c4a574; --tone-b: #2a1c0c; }
 .panel.both { --tone-a: #5b2a8c; --tone-b: #140a2a; }
 
 /* Where-are-we tag */
@@ -270,12 +271,10 @@ figure.panel { margin: 0; }
 }
 
 .caption.voice {
-  background: #15243b;
-  color: #fff8e9;
-  font-family: Georgia, "Times New Roman", serif;
-  font-style: italic;
+  background: transparent;
+  color: inherit;
+  font-style: normal;
   text-transform: none;
-  letter-spacing: 0.01em;
 }
 
 .kicker {

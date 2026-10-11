@@ -1,4 +1,4 @@
-import { PAGES, PLANKS, SOURCES } from "./panels.js?v=narrative3";
+import { PAGES, PLANKS, SOURCES } from "./panels.js?v=talarico1";
 
 const ART_DIR = "../art/story/chibi/";
 const ART_VER = "likeness6";
@@ -13,15 +13,10 @@ function el(tag, className, text) {
   return node;
 }
 
-function captionClass(cap) {
-  return cap.kind === "voice" ? "caption voice" : "caption";
-}
-
 function renderLettering(panel) {
   const lettering = el("figcaption", "lettering");
-  if (panel.kicker) lettering.append(el("p", "kicker", panel.kicker));
   for (const cap of panel.captions || []) {
-    lettering.append(el("p", captionClass(cap), cap.text));
+    lettering.append(el("p", "caption", cap.text));
   }
   return lettering;
 }
@@ -85,7 +80,7 @@ function renderPanel(panel) {
   node.append(frame);
   const copy = el("div", "panel-copy");
   if (dialogue.childElementCount) copy.append(dialogue);
-  if (panel.kicker || (panel.captions && panel.captions.length)) {
+  if (panel.captions && panel.captions.length) {
     copy.append(renderLettering(panel));
   }
   node.append(copy);

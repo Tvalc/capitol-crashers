@@ -11,3 +11,44 @@ body:has(#book) { font-family: var(--body); }
 .grid .panel.narration {
   grid-column: 1 / -1;
 }
+
+.chapter span,
+.tag,
+.kicker,
+.queens .tag,
+.detroit .tag,
+.both .tag,
+.texas .tag,
+.panel.narration .tag {
+  font-family: "Share Tech Mono", ui-monospace, monospace;
+  font-size: 12px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: #ffb020;
+  background: none;
+  border: 0;
+  text-shadow: none;
+}
+
+.caption,
+.caption.voice,
+.panel.narration .caption,
+.panel.narration .caption.voice {
+  font-family: "Source Sans 3", system-ui, sans-serif;
+  font-style: normal;
+  font-size: 17px;
+  line-height: 1.55;
+  color: #f6efe4;
+  text-transform: none;
+}
+
+.panel.narration {
+  background: #120f16;
+  color: #f6efe4;
+}
+
+.panel.narration .lettering {
+  max-width: 46em;
+}
+
+.plank.texas { box-shadow: inset 3px 0 0 #c4a574; }
