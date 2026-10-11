@@ -56,6 +56,8 @@ html = html.replace(/\s*<a class="patreon"[^>]*>Support on Patreon<\/a>/g, "");
 html = must(html, 'id="story-more"', "story-more").replace(/\s*<a class="story-more"[^>]*>Read the whole comic<\/a>/, "");
 html = must(html, '<footer class="site-foot">', "footer").replace(/<footer class="site-foot">[\s\S]*?<\/footer>\n/, "");
 html = must(html, '../soundtrack.js', "soundtrack").replace('../soundtrack.js', 'soundtrack.js');
+// The shared city bridge talks to politicalarcades.com by postMessage and checks the host name; the game treats it as optional.
+html = html.replace(/\s*<script src="\/shared\/city-rewards\.js[^"]*"><\/script>/g, "");
 html = must(html, 'window.A2A_ADS = { enabled: false, stub: true };', "A2A_ADS").replace(
   'window.A2A_ADS = { enabled: false, stub: true };',
   'window.A2A_ADS = { enabled: false, stub: true, google: false, build: "playgama" };');
@@ -76,6 +78,8 @@ for (const file of fs.readdirSync(path.join(out, "src"))) {
   const p = path.join(out, "src", file);
   let js = fs.readFileSync(p, "utf8");
   js = js.replace(/"\.\.\/\.\.\/story\/panels\.js"/g, '"../story/panels.js"');   // module import: relative to src/
+  js = js.replace(/"\/story\/panels\.js"/g, '"../story/panels.js"');
+  js = js.replace(/\/play\/qa-/g, "qa-");                                        // QA sprite folders, relative to index.html
   js = js.replace(/\.\.\/art\//g, "art/");                                       // image and video src: relative to index.html
   js = js.replace(/`\.\.\/story\/#\$\{panel\.id\}`/g, '"#"');                   // no comic site in the build
   if (file === "render.js") {                                                   // optional parallax art does not exist yet: no 404s in the build
@@ -88,6 +92,10 @@ copyTree("story", "story", (rel) => rel === "story/panels.js");
 
 // ---- art and sprites ------------------------------------------------------------
 copyTree("play/assets", "assets");
+// Sprites the game still reads from QA folders (see assetRoot() in play/src/sprites.js and render.js).
+// sprites.js loads the seven base Rogers clips as png and everything else as webp; skip the unused twins.
+copyTree("play/qa-rogers25/assets", "qa-rogers25/assets", (rel) => !/\/mike_rogers_(idle|walk|orders|run|bill|hit|death)\.webp$/.test(rel));
+copyTree("play/qa-grapple09/assets/sprites", "qa-grapple09/assets/sprites", (rel) => /\/(zohran_mamdani_grab|ted_cruz_grabbed)\.[a-z]+$/.test(rel));
 copyTree("art/chibi", "art/chibi", (rel) => !rel.endsWith(".json") || rel.endsWith("provenance.json"));
 copyTree("art/story/chibi", "art/story/chibi");
 copyTree("art/story/motion", "art/story/motion");
@@ -97,7 +105,11 @@ let soundtrack = read("soundtrack.js");
 const musicDir = musicCandidates.find((dir) => fs.existsSync(dir));
 if (musicDir) {
   const have = new Set(fs.readdirSync(musicDir).filter((f) => f.endsWith(".mp3")).map((f) => f.slice(0, -4)));
-  const listed = [...soundtrack.matchAll(/'([a-z0-9-]+)'/g)].map((m) => m[1]).filter((t) => have.has(t));
+  const block = (soundtrack.match(/const tracks = \[([\s\S]*?)\];/) || ["", ""])[1];
+  const wanted = [...block.matchAll(/'([a-z0-9-]+)'/g)].map((m) => m[1]);
+  const listed = wanted.filter((t) => have.has(t));
+  const missing = wanted.filter((t) => !have.has(t));
+  if (missing.length) log(`music: ${missing.length} track(s) listed in soundtrack.js are not in ${musicDir} and were left out: ${missing.join(", ")}`);
   fs.mkdirSync(path.join(out, "music"), { recursive: true });
   for (const track of listed) fs.copyFileSync(path.join(musicDir, `${track}.mp3`), path.join(out, "music", `${track}.mp3`));
   soundtrack = must(soundtrack, "https://politicalarcades.com/horse/assets/music/", "music url").replace("https://politicalarcades.com/horse/assets/music/", "music/");
