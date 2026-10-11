@@ -12,11 +12,12 @@ for (const link of patreonLinks) {
 
 const slot = document.getElementById("ad-slot");
 if (slot && SITE.adsenseClient && SITE.adsenseSlot) {
-  const script = document.createElement("script");
+  const existing = document.querySelector('script[src*="pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"]');
+  const script = existing || document.createElement("script");
   script.async = true;
   script.crossOrigin = "anonymous";
   script.src = `https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=${encodeURIComponent(SITE.adsenseClient)}`;
-  document.head.appendChild(script);
+  if (!existing) document.head.appendChild(script);
 
   const unit = document.createElement("ins");
   unit.className = "adsbygoogle";
@@ -28,7 +29,6 @@ if (slot && SITE.adsenseClient && SITE.adsenseSlot) {
   slot.appendChild(unit);
   slot.hidden = false;
 
-  script.addEventListener("load", () => {
-    (window.adsbygoogle = window.adsbygoogle || []).push({});
-  });
+  // The Google queue works both before and after its asynchronous loader is ready.
+  (window.adsbygoogle = window.adsbygoogle || []).push({});
 }
