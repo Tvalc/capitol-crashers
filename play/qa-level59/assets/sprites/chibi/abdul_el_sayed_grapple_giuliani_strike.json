@@ -1,0 +1,188 @@
+{
+  "frames": {
+    "abdul_el-sayed_grapple_giuliani_clean6_000.png": {
+      "frame": {
+        "x": 2,
+        "y": 2,
+        "w": 863,
+        "h": 630
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 863,
+        "h": 630
+      },
+      "sourceSize": {
+        "w": 863,
+        "h": 630
+      },
+      "duration": 55
+    },
+    "abdul_el-sayed_grapple_giuliani_clean6_001.png": {
+      "frame": {
+        "x": 869,
+        "y": 2,
+        "w": 863,
+        "h": 630
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 863,
+        "h": 630
+      },
+      "sourceSize": {
+        "w": 863,
+        "h": 630
+      },
+      "duration": 55
+    },
+    "abdul_el-sayed_grapple_giuliani_clean6_002.png": {
+      "frame": {
+        "x": 1736,
+        "y": 2,
+        "w": 863,
+        "h": 630
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 863,
+        "h": 630
+      },
+      "sourceSize": {
+        "w": 863,
+        "h": 630
+      },
+      "duration": 55
+    },
+    "abdul_el-sayed_grapple_giuliani_clean6_003.png": {
+      "frame": {
+        "x": 2,
+        "y": 636,
+        "w": 863,
+        "h": 630
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 863,
+        "h": 630
+      },
+      "sourceSize": {
+        "w": 863,
+        "h": 630
+      },
+      "duration": 55
+    },
+    "abdul_el-sayed_grapple_giuliani_clean6_004.png": {
+      "frame": {
+        "x": 869,
+        "y": 636,
+        "w": 863,
+        "h": 630
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 863,
+        "h": 630
+      },
+      "sourceSize": {
+        "w": 863,
+        "h": 630
+      },
+      "duration": 55
+    },
+    "abdul_el-sayed_grapple_giuliani_clean6_005.png": {
+      "frame": {
+        "x": 1736,
+        "y": 636,
+        "w": 863,
+        "h": 630
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 863,
+        "h": 630
+      },
+      "sourceSize": {
+        "w": 863,
+        "h": 630
+      },
+      "duration": 55
+    }
+  },
+  "meta": {
+    "app": "MAKKO Sprite Studio",
+    "version": "1.0.0",
+    "image": "abdul_el_sayed_grapple_giuliani_strike.webp",
+    "format": "RGBA8888",
+    "size": {
+      "w": 2601,
+      "h": 1268
+    },
+    "scale": "1",
+    "frameTags": [
+      {
+        "name": "animation",
+        "from": 0,
+        "to": 5,
+        "direction": "forward"
+      }
+    ],
+    "anchor": {
+      "x": 250,
+      "y": 627
+    },
+    "referenceAlignment": {
+      "referenceBounds": {
+        "width": 859,
+        "height": 615
+      },
+      "frameBounds": {
+        "width": 863,
+        "height": 630
+      },
+      "normalized": true
+    },
+    "nativePixels": true,
+    "bodyScale": 0.3968253968253968,
+    "pairedEnemyRoot": {
+      "x": 630,
+      "y": 627
+    },
+    "holdFrame": 0,
+    "contactFrame": 2,
+    "playbackSequence": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      4,
+      3,
+      2,
+      1,
+      0
+    ],
+    "strikeDuration": 0.605,
+    "reviewStatus": "Earlier user-approved art; integrated locally pending gameplay alignment review",
+    "sourceArchive": "abdul_el-sayed_grapple_giuliani_clean6.zip"
+  }
+}

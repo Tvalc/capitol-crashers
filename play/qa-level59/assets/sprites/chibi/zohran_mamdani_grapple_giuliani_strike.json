@@ -1,0 +1,165 @@
+{
+  "frames": {
+    "zohran_mamdani_zohran_mamdani_grapple_giuliani_clean5_000.png": {
+      "frame": {
+        "x": 2,
+        "y": 2,
+        "w": 724,
+        "h": 573
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 724,
+        "h": 573
+      },
+      "sourceSize": {
+        "w": 724,
+        "h": 573
+      },
+      "duration": 55
+    },
+    "zohran_mamdani_zohran_mamdani_grapple_giuliani_clean5_001.png": {
+      "frame": {
+        "x": 730,
+        "y": 2,
+        "w": 724,
+        "h": 573
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 724,
+        "h": 573
+      },
+      "sourceSize": {
+        "w": 724,
+        "h": 573
+      },
+      "duration": 55
+    },
+    "zohran_mamdani_zohran_mamdani_grapple_giuliani_clean5_002.png": {
+      "frame": {
+        "x": 1458,
+        "y": 2,
+        "w": 724,
+        "h": 573
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 724,
+        "h": 573
+      },
+      "sourceSize": {
+        "w": 724,
+        "h": 573
+      },
+      "duration": 55
+    },
+    "zohran_mamdani_zohran_mamdani_grapple_giuliani_clean5_003.png": {
+      "frame": {
+        "x": 2,
+        "y": 579,
+        "w": 724,
+        "h": 573
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 724,
+        "h": 573
+      },
+      "sourceSize": {
+        "w": 724,
+        "h": 573
+      },
+      "duration": 55
+    },
+    "zohran_mamdani_zohran_mamdani_grapple_giuliani_clean5_004.png": {
+      "frame": {
+        "x": 730,
+        "y": 579,
+        "w": 724,
+        "h": 573
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 724,
+        "h": 573
+      },
+      "sourceSize": {
+        "w": 724,
+        "h": 573
+      },
+      "duration": 55
+    }
+  },
+  "meta": {
+    "app": "MAKKO Sprite Studio",
+    "version": "1.0.0",
+    "image": "zohran_mamdani_grapple_giuliani_strike.webp",
+    "format": "RGBA8888",
+    "size": {
+      "w": 2184,
+      "h": 1154
+    },
+    "scale": "1",
+    "frameTags": [
+      {
+        "name": "animation",
+        "from": 0,
+        "to": 4,
+        "direction": "forward"
+      }
+    ],
+    "anchor": {
+      "x": 181,
+      "y": 570
+    },
+    "referenceAlignment": {
+      "referenceBounds": {
+        "width": 706,
+        "height": 564
+      },
+      "frameBounds": {
+        "width": 724,
+        "height": 573
+      },
+      "normalized": true
+    },
+    "nativePixels": true,
+    "bodyScale": 0.4363001745200698,
+    "pairedEnemyRoot": {
+      "x": 529,
+      "y": 570
+    },
+    "holdFrame": 0,
+    "contactFrame": 2,
+    "playbackSequence": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      3,
+      2,
+      1,
+      0
+    ],
+    "strikeDuration": 0.495,
+    "reviewStatus": "Earlier user-approved art; integrated locally pending gameplay alignment review",
+    "sourceArchive": "zohran_mamdani_zohran_mamdani_grapple_giuliani_clean5.zip"
+  }
+}

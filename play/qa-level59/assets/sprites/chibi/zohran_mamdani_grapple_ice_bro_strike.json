@@ -1,0 +1,248 @@
+{
+  "frames": {
+    "zohran_mamdani_zohran_mamdani_grapple_bongino_clean9_000.png": {
+      "frame": {
+        "x": 2,
+        "y": 2,
+        "w": 849,
+        "h": 635
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 849,
+        "h": 635
+      },
+      "sourceSize": {
+        "w": 849,
+        "h": 635
+      },
+      "duration": 55
+    },
+    "zohran_mamdani_zohran_mamdani_grapple_bongino_clean9_001.png": {
+      "frame": {
+        "x": 855,
+        "y": 2,
+        "w": 849,
+        "h": 635
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 849,
+        "h": 635
+      },
+      "sourceSize": {
+        "w": 849,
+        "h": 635
+      },
+      "duration": 55
+    },
+    "zohran_mamdani_zohran_mamdani_grapple_bongino_clean9_002.png": {
+      "frame": {
+        "x": 1708,
+        "y": 2,
+        "w": 849,
+        "h": 635
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 849,
+        "h": 635
+      },
+      "sourceSize": {
+        "w": 849,
+        "h": 635
+      },
+      "duration": 55
+    },
+    "zohran_mamdani_zohran_mamdani_grapple_bongino_clean9_003.png": {
+      "frame": {
+        "x": 2,
+        "y": 641,
+        "w": 849,
+        "h": 635
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 849,
+        "h": 635
+      },
+      "sourceSize": {
+        "w": 849,
+        "h": 635
+      },
+      "duration": 55
+    },
+    "zohran_mamdani_zohran_mamdani_grapple_bongino_clean9_004.png": {
+      "frame": {
+        "x": 855,
+        "y": 641,
+        "w": 849,
+        "h": 635
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 849,
+        "h": 635
+      },
+      "sourceSize": {
+        "w": 849,
+        "h": 635
+      },
+      "duration": 55
+    },
+    "zohran_mamdani_zohran_mamdani_grapple_bongino_clean9_005.png": {
+      "frame": {
+        "x": 1708,
+        "y": 641,
+        "w": 849,
+        "h": 635
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 849,
+        "h": 635
+      },
+      "sourceSize": {
+        "w": 849,
+        "h": 635
+      },
+      "duration": 55
+    },
+    "zohran_mamdani_zohran_mamdani_grapple_bongino_clean9_006.png": {
+      "frame": {
+        "x": 2,
+        "y": 1280,
+        "w": 849,
+        "h": 635
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 849,
+        "h": 635
+      },
+      "sourceSize": {
+        "w": 849,
+        "h": 635
+      },
+      "duration": 55
+    },
+    "zohran_mamdani_zohran_mamdani_grapple_bongino_clean9_007.png": {
+      "frame": {
+        "x": 855,
+        "y": 1280,
+        "w": 849,
+        "h": 635
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 849,
+        "h": 635
+      },
+      "sourceSize": {
+        "w": 849,
+        "h": 635
+      },
+      "duration": 55
+    },
+    "zohran_mamdani_zohran_mamdani_grapple_bongino_clean9_008.png": {
+      "frame": {
+        "x": 1708,
+        "y": 1280,
+        "w": 849,
+        "h": 635
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 849,
+        "h": 635
+      },
+      "sourceSize": {
+        "w": 849,
+        "h": 635
+      },
+      "duration": 55
+    }
+  },
+  "meta": {
+    "app": "MAKKO Sprite Studio",
+    "version": "1.0.0",
+    "image": "zohran_mamdani_grapple_ice_bro_strike.webp",
+    "format": "RGBA8888",
+    "size": {
+      "w": 2559,
+      "h": 1917
+    },
+    "scale": "1",
+    "frameTags": [
+      {
+        "name": "animation",
+        "from": 0,
+        "to": 8,
+        "direction": "forward"
+      }
+    ],
+    "anchor": {
+      "x": 212,
+      "y": 632
+    },
+    "referenceAlignment": {
+      "referenceBounds": {
+        "width": 846,
+        "height": 614
+      },
+      "frameBounds": {
+        "width": 849,
+        "height": 635
+      },
+      "normalized": true
+    },
+    "nativePixels": true,
+    "bodyScale": 0.3937007874015748,
+    "pairedEnemyRoot": {
+      "x": 662,
+      "y": 632
+    },
+    "holdFrame": 0,
+    "contactFrame": 2,
+    "playbackSequence": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      2,
+      1,
+      0
+    ],
+    "strikeDuration": 0.44,
+    "reviewStatus": "Earlier approved art; timing candidate awaiting gameplay review",
+    "sourceArchive": "zohran_mamdani_zohran_mamdani_grapple_bongino_clean9.zip"
+  }
+}

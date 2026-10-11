@@ -1,0 +1,269 @@
+{
+  "frames": {
+    "abdul_el-sayed_grapple_bongino_clean10_000.png": {
+      "frame": {
+        "x": 2,
+        "y": 2,
+        "w": 780,
+        "h": 671
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 780,
+        "h": 671
+      },
+      "sourceSize": {
+        "w": 780,
+        "h": 671
+      },
+      "duration": 55
+    },
+    "abdul_el-sayed_grapple_bongino_clean10_001.png": {
+      "frame": {
+        "x": 786,
+        "y": 2,
+        "w": 780,
+        "h": 671
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 780,
+        "h": 671
+      },
+      "sourceSize": {
+        "w": 780,
+        "h": 671
+      },
+      "duration": 55
+    },
+    "abdul_el-sayed_grapple_bongino_clean10_002.png": {
+      "frame": {
+        "x": 1570,
+        "y": 2,
+        "w": 780,
+        "h": 671
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 780,
+        "h": 671
+      },
+      "sourceSize": {
+        "w": 780,
+        "h": 671
+      },
+      "duration": 55
+    },
+    "abdul_el-sayed_grapple_bongino_clean10_003.png": {
+      "frame": {
+        "x": 2354,
+        "y": 2,
+        "w": 780,
+        "h": 671
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 780,
+        "h": 671
+      },
+      "sourceSize": {
+        "w": 780,
+        "h": 671
+      },
+      "duration": 55
+    },
+    "abdul_el-sayed_grapple_bongino_clean10_004.png": {
+      "frame": {
+        "x": 2,
+        "y": 677,
+        "w": 780,
+        "h": 671
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 780,
+        "h": 671
+      },
+      "sourceSize": {
+        "w": 780,
+        "h": 671
+      },
+      "duration": 55
+    },
+    "abdul_el-sayed_grapple_bongino_clean10_005.png": {
+      "frame": {
+        "x": 786,
+        "y": 677,
+        "w": 780,
+        "h": 671
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 780,
+        "h": 671
+      },
+      "sourceSize": {
+        "w": 780,
+        "h": 671
+      },
+      "duration": 55
+    },
+    "abdul_el-sayed_grapple_bongino_clean10_006.png": {
+      "frame": {
+        "x": 1570,
+        "y": 677,
+        "w": 780,
+        "h": 671
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 780,
+        "h": 671
+      },
+      "sourceSize": {
+        "w": 780,
+        "h": 671
+      },
+      "duration": 55
+    },
+    "abdul_el-sayed_grapple_bongino_clean10_007.png": {
+      "frame": {
+        "x": 2354,
+        "y": 677,
+        "w": 780,
+        "h": 671
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 780,
+        "h": 671
+      },
+      "sourceSize": {
+        "w": 780,
+        "h": 671
+      },
+      "duration": 55
+    },
+    "abdul_el-sayed_grapple_bongino_clean10_008.png": {
+      "frame": {
+        "x": 2,
+        "y": 1352,
+        "w": 780,
+        "h": 671
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 780,
+        "h": 671
+      },
+      "sourceSize": {
+        "w": 780,
+        "h": 671
+      },
+      "duration": 55
+    },
+    "abdul_el-sayed_grapple_bongino_clean10_009.png": {
+      "frame": {
+        "x": 786,
+        "y": 1352,
+        "w": 780,
+        "h": 671
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 780,
+        "h": 671
+      },
+      "sourceSize": {
+        "w": 780,
+        "h": 671
+      },
+      "duration": 55
+    }
+  },
+  "meta": {
+    "app": "MAKKO Sprite Studio",
+    "version": "1.0.0",
+    "image": "abdul_el_sayed_grapple_ice_bro_strike.webp",
+    "format": "RGBA8888",
+    "size": {
+      "w": 3136,
+      "h": 2025
+    },
+    "scale": "1",
+    "frameTags": [
+      {
+        "name": "animation",
+        "from": 0,
+        "to": 9,
+        "direction": "forward"
+      }
+    ],
+    "anchor": {
+      "x": 234,
+      "y": 668
+    },
+    "referenceAlignment": {
+      "referenceBounds": {
+        "width": 764,
+        "height": 659
+      },
+      "frameBounds": {
+        "width": 780,
+        "height": 671
+      },
+      "normalized": true
+    },
+    "nativePixels": true,
+    "bodyScale": 0.37257824143070045,
+    "pairedEnemyRoot": {
+      "x": 593,
+      "y": 668
+    },
+    "holdFrame": 0,
+    "contactFrame": 5,
+    "playbackSequence": [
+      0,
+      1,
+      5,
+      6,
+      7,
+      8,
+      9,
+      0
+    ],
+    "strikeDuration": 0.44,
+    "reviewStatus": "Earlier approved art; timing candidate awaiting gameplay review",
+    "sourceArchive": "abdul_el-sayed_grapple_bongino_clean10.zip"
+  }
+}

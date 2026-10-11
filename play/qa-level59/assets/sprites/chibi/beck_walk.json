@@ -1,0 +1,273 @@
+{
+  "frames": {
+    "walk_00.png": {
+      "frame": {
+        "x": 0,
+        "y": 0,
+        "w": 284,
+        "h": 461
+      },
+      "sourceSize": {
+        "w": 284,
+        "h": 461
+      },
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 284,
+        "h": 461
+      },
+      "duration": 143,
+      "groundAnchorY": 450,
+      "anchorX": 155
+    },
+    "walk_01.png": {
+      "frame": {
+        "x": 284,
+        "y": 0,
+        "w": 284,
+        "h": 461
+      },
+      "sourceSize": {
+        "w": 284,
+        "h": 461
+      },
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 284,
+        "h": 461
+      },
+      "duration": 143,
+      "groundAnchorY": 457,
+      "anchorX": 160
+    },
+    "walk_02.png": {
+      "frame": {
+        "x": 568,
+        "y": 0,
+        "w": 285,
+        "h": 461
+      },
+      "sourceSize": {
+        "w": 285,
+        "h": 461
+      },
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 285,
+        "h": 461
+      },
+      "duration": 143,
+      "groundAnchorY": 458,
+      "anchorX": 164
+    },
+    "walk_03.png": {
+      "frame": {
+        "x": 853,
+        "y": 0,
+        "w": 284,
+        "h": 461
+      },
+      "sourceSize": {
+        "w": 284,
+        "h": 461
+      },
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 284,
+        "h": 461
+      },
+      "duration": 143,
+      "groundAnchorY": 458,
+      "anchorX": 153
+    },
+    "walk_04.png": {
+      "frame": {
+        "x": 0,
+        "y": 461,
+        "w": 284,
+        "h": 461
+      },
+      "sourceSize": {
+        "w": 284,
+        "h": 461
+      },
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 284,
+        "h": 461
+      },
+      "duration": 143,
+      "groundAnchorY": 453,
+      "anchorX": 166
+    },
+    "walk_05.png": {
+      "frame": {
+        "x": 284,
+        "y": 461,
+        "w": 284,
+        "h": 461
+      },
+      "sourceSize": {
+        "w": 284,
+        "h": 461
+      },
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 284,
+        "h": 461
+      },
+      "duration": 143,
+      "groundAnchorY": 453,
+      "anchorX": 159
+    },
+    "walk_06.png": {
+      "frame": {
+        "x": 568,
+        "y": 461,
+        "w": 285,
+        "h": 461
+      },
+      "sourceSize": {
+        "w": 285,
+        "h": 461
+      },
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 285,
+        "h": 461
+      },
+      "duration": 143,
+      "groundAnchorY": 455,
+      "anchorX": 160
+    },
+    "walk_07.png": {
+      "frame": {
+        "x": 853,
+        "y": 461,
+        "w": 284,
+        "h": 461
+      },
+      "sourceSize": {
+        "w": 284,
+        "h": 461
+      },
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 284,
+        "h": 461
+      },
+      "duration": 143,
+      "groundAnchorY": 457,
+      "anchorX": 160
+    },
+    "walk_08.png": {
+      "frame": {
+        "x": 0,
+        "y": 922,
+        "w": 284,
+        "h": 461
+      },
+      "sourceSize": {
+        "w": 284,
+        "h": 461
+      },
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 284,
+        "h": 461
+      },
+      "duration": 143,
+      "groundAnchorY": 456,
+      "anchorX": 155
+    },
+    "walk_09.png": {
+      "frame": {
+        "x": 284,
+        "y": 922,
+        "w": 284,
+        "h": 461
+      },
+      "sourceSize": {
+        "w": 284,
+        "h": 461
+      },
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 284,
+        "h": 461
+      },
+      "duration": 143,
+      "groundAnchorY": 452,
+      "anchorX": 162
+    },
+    "walk_10.png": {
+      "frame": {
+        "x": 568,
+        "y": 922,
+        "w": 285,
+        "h": 461
+      },
+      "sourceSize": {
+        "w": 285,
+        "h": 461
+      },
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 285,
+        "h": 461
+      },
+      "duration": 143,
+      "groundAnchorY": 451,
+      "anchorX": 156
+    },
+    "walk_11.png": {
+      "frame": {
+        "x": 853,
+        "y": 922,
+        "w": 284,
+        "h": 461
+      },
+      "sourceSize": {
+        "w": 284,
+        "h": 461
+      },
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 284,
+        "h": 461
+      },
+      "duration": 143,
+      "groundAnchorY": 455,
+      "anchorX": 153
+    }
+  },
+  "meta": {
+    "image": "beck_walk.webp",
+    "size": {
+      "w": 1137,
+      "h": 1383
+    },
+    "anchor": {
+      "x": 160,
+      "y": 455
+    },
+    "bodyScale": 0.64,
+    "playbackFps": 7,
+    "sourceTool": "Makko saved 12-frame walk; built-in image generation palette correction",
+    "nativePixels": true,
+    "reviewStatus": "User approved revision58",
+    "notes": "Original marching sequence. Frame anchors stabilize body registration. No blended frames or ghosting."
+  }
+}
