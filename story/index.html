@@ -5,20 +5,18 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Three Roads to the Capitol · Capitol Crashers</title>
   <link rel="canonical" href="https://capitolcrashers.com/story/" />
-  <meta name="description" content="A comic origin story. Zohran Mamdani in New York, Abdul El-Sayed in Michigan, and James Talarico in Texas: where they came from, the fights they took on, and what they are fighting for." />
+  <meta name="description" content="A fan comic in four issues. Zohran Mamdani, Abdul El-Sayed and James Talarico: where they came from, who tried to stop them, and where they say they're taking us." />
   <meta property="og:type" content="article" />
   <meta property="og:site_name" content="Capitol Crashers" />
   <meta property="og:title" content="Three Roads to the Capitol" />
-  <meta property="og:description" content="A comic origin story of Zohran Mamdani, Abdul El-Sayed, and James Talarico." />
+  <meta property="og:description" content="Mamdani, El-Sayed and Talarico: the fan comic. Every quote on the record, every fact sourced." />
   <meta property="og:url" content="https://capitolcrashers.com/story/" />
-  <meta property="og:image" content="https://capitolcrashers.com/art/chibi/hero.webp" />
+  <meta property="og:image" content="https://capitolcrashers.com/art/story/chibi/cover.webp" />
   <meta name="twitter:card" content="summary_large_image" />
-  <link rel="stylesheet" href="story.css?v=talarico1" />
-  <link rel="stylesheet" href="../chibi-ui.css?v=2" />
-  <link rel="stylesheet" href="reading-layout.css?v=talarico1" />
-  <link rel="stylesheet" href="story-home.css?v=1" />
+  <link rel="preload" href="../fonts/bangers-400.woff2" as="font" type="font/woff2" crossorigin />
+  <link rel="preload" href="../fonts/comic-neue-700.woff2" as="font" type="font/woff2" crossorigin />
   <link rel="stylesheet" href="../arcade.css?v=2" />
-  <link rel="stylesheet" href="story-arcade.css?v=3" />
+  <link rel="stylesheet" href="comic.css?v=roads2" />
 </head>
 <body>
   <header class="topbar">
@@ -27,45 +25,47 @@
       <a href="../">Cabinet</a>
       <a href="../play/">Play</a>
       <a href="https://politicalarcades.com/#listen">Songs</a>
-      <a href="https://capitolcrashers.com/story/#planks">Platform</a>
+      <a href="#planks">Platform</a>
     </nav>
     <a class="btn" href="../play/">Play free</a>
     <a class="btn btn-patreon" href="https://www.patreon.com/c/PoliticalArcade" target="_blank" rel="noopener noreferrer">Patreon</a>
   </header>
 
   <header class="cover">
-    <img src="../art/chibi/hero.webp" width="960" height="540" alt="Zohran Mamdani and Abdul El-Sayed square up on a rainy street in front of the Capitol." />
+    <img src="../art/story/chibi/cover.webp?v=roads2" width="1328" height="596" alt="Zohran Mamdani, Abdul El-Sayed and James Talarico stand together on a rainy avenue as a storm of money swirls over the Capitol." />
     <div class="masthead">
-      <p class="issue">Capitol Crashers · Issues #1–2</p>
-      <h1>Three Roads<br />to the Capitol</h1>
-      <p class="dek">Zohran Mamdani from Kampala to City Hall. Abdul El-Sayed from Michigan to a Senate nomination. James Talarico from a San Antonio classroom to a Texas Senate race. Issue #2 is for the woman a candidate tried to turn into a smear: the healer.</p>
-      <p class="dek"><a href="#n-h">Issue #2 · The Healer</a></p>
+      <p class="issue">Capitol Crashers · Issues #1–4</p>
+      <h1>Three Roads to the Capitol</h1>
+      <p class="dek">A filmmaker’s son from Uganda. An engineer’s son from Michigan. A preacher’s grandson from Texas. Where they came from, who spent millions trying to stop them, and where they say they’re taking us.</p>
+      <ul class="contents" aria-label="Contents">
+        <li><a href="#issue-1">#1 Where they come from</a></li>
+        <li><a href="#issue-2">#2 The money comes</a></li>
+        <li><a href="#issue-3">#3 Show up and debate</a></li>
+        <li><a href="#issue-4">#4 Where they’re taking us</a></li>
+      </ul>
     </div>
   </header>
 
   <main class="book" id="book"></main>
 
-  <section class="book">
-    <section class="page">
-      <h2 class="chapter"><span>Back matter</span>What they're fighting for</h2>
-      <p class="plank-note">Taken from the sites they ran on: Zohran for NYC, Abdul for Senate, and Talarico for Texas. Each card is the plank. The sources are below.</p>
-      <div class="planks" id="planks"></div>
-    </section>
+  <section class="back" id="planks-section">
+    <h2>What they’re running on</h2>
+    <p class="plank-note">Straight from the sites they ran on: Zohran for NYC, Abdul for Senate and Talarico for Texas. Where something has already passed, stalled or been blocked, the card says so.</p>
+    <div class="planks" id="planks"></div>
   </section>
 
   <footer class="end">
     <div class="acts">
-      <a class="go" href="../play/">Step in and play</a>
-      <a class="go alt" href="https://www.patreon.com/c/PoliticalArcade" target="_blank" rel="noopener noreferrer">Support on Patreon</a>
+      <a class="btn btn-big" href="../play/">Step in and play</a>
+      <a class="btn btn-big btn-patreon" href="https://www.patreon.com/c/PoliticalArcade" target="_blank" rel="noopener noreferrer">Support on Patreon</a>
     </div>
     <h2>Sources</h2>
     <ol class="sources" id="sources"></ol>
-    <p class="fine">Three Roads to the Capitol is an unofficial fan comic from <a href="https://politicalarcades.com/">AdsToAid</a>. It is not authorized, paid for, or reviewed by Zohran Mamdani, Abdul El-Sayed, James Talarico, or any candidate or campaign committee. Scenes are dramatized; the facts in captions are drawn from the sources above.</p>
+    <p class="fine">Three Roads to the Capitol is an unofficial fan comic from <a href="https://politicalarcades.com/">AdsToAid</a>. It is not authorized, paid for, or reviewed by Zohran Mamdani, Abdul El-Sayed, James Talarico, or any candidate or campaign committee. Scenes are drawn as satire and dramatization. Every line in a speech bubble is a documented quote from the person speaking, and every fact in a caption comes from the sources above.</p>
     <p class="fine"><a href="../privacy.html">Privacy</a></p>
   </footer>
 
-  <script type="module" src="story.js?v=talarico1"></script>
+  <script type="module" src="story.js?v=roads2"></script>
   <script src="../soundtrack.js?v=nobombs1" data-controls></script>
 </body>
 </html>
-
