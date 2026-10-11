@@ -1,10 +1,10 @@
-import { helpAction } from "./help-actions.js?v=idle21";
+import { helpAction } from "./help-actions.js?v=cast40";
 // Citizens are the people the fighters stop for. They never take damage and
 // never deal it. Standing next to one and pressing strike helps them.
 // Witnesses are the exception: once helped they follow the fighter to the boss,
 // and villains can knock them down on the way.
-import { play } from "./audio.js";
-import { WORLD } from "./stages.js?v=bench28";
+import { play } from "./audio.js?v=cast40";
+import { WORLD } from "./stages.js?v=cast40";
 
 export const CITIZEN_KINDS = {
   hungry: {
@@ -195,6 +195,7 @@ export function deliverHelp(game, player, cit) {
     game.stage.marks.push({ x: cit.x, y: WORLD.floorTop - 10, text: stats.mark, t: 0 });
   }
   game.helped = (game.helped || 0) + 1;
+  if (!game.practice && !cit.cityCounted) { cit.cityCounted = true; window.CityRewards?.credit('crashers:help'); }
   if (game.comboKind !== "help") game.combo = 0;
   game.comboKind = "help";
   game.combo += 1;

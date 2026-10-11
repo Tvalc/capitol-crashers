@@ -13,7 +13,7 @@
   <link rel="stylesheet" href="touch.css?v=mob1" />
 <link rel="stylesheet" href="../chibi-ui.css?v=mob1">
 <link rel="stylesheet" href="game-page.css?v=packed19">
-</head>
+<script src="/shared/city-rewards.js?v=1.1"></script></head>
 <body>
   <header class="topbar">
     <a class="brand" href="../">Capitol Crashers</a>
@@ -28,7 +28,8 @@
     <button id="practice-sayed" type="button">Practice El-Sayed</button>
     <button id="practice-reset" type="button">Reset practice</button>
     <button id="practice-opponent" type="button">Opponent: stationary</button>
-    <label>Opponent <select id="practice-enemy"><option value="cruz">Ted Cruz</option><option value="pete">Pete Hegseth</option><option value="vance">JD Vance</option><option value="greene">MTG</option><option value="trump">Donald Trump</option></select></label>
+    <label>Opponent <select id="practice-enemy"><option value="ice_bro">ICE Bro (grunt)</option><option value="bongino">Bongino (trenchcoat)</option><option value="giuliani">Rudy Giuliani</option><option value="beck">Glenn Beck</option><option value="rogers">Mike Rogers</option><option value="cruz">Ted Cruz</option><option value="pete">Pete Hegseth</option><option value="pete_ww">Pete — transformed</option><option value="vance">JD Vance</option><option value="greene">Laser relays (MTG operator)</option><option value="trump">Donald Trump</option></select></label><span id="practice-pair-status" role="status"></span>
+    <label>Speed <select id="practice-speed"><option value="1">Normal</option><option value="0.25">Quarter speed</option><option value="0.1">Frame review</option></select></label>
     <a href="./">Full game</a>
     <p>Move: arrows / WASD · J: strike · G: grab · K: throw · Space: jump. Reset brings the selected opponent back beside you.</p>
   </div>
@@ -133,8 +134,8 @@
   <script src="touch.js?v=mob1"></script>
   <!-- Ads: dark by default. Flip enabled/stub in one place; see ads/CONTRACT.md. -->
   <script>window.A2A_ADS = { enabled: false, stub: true };</script>
-  <script src="ads/a2a-ads.js?v=a2a1"></script>
-  <script type="module" src="src/main.js?v=a2a1"></script>
+  <script src="ads/a2a-ads.js?v=a2a2"></script>
+  <script type="module" src="src/main.js?v=a2a2"></script>
   <script type="module" src="site.js"></script>
   <script src="../soundtrack.js?v=ux2" data-controls></script>
 </body>

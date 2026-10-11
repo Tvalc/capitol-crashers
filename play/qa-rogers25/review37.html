@@ -1,0 +1,445 @@
+<!doctype html><html lang="en"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Rogers · grapple corrections</title><style>*{box-sizing:border-box}body{margin:0;background:#111925;color:#fff;font:16px/1.5 system-ui}header,main,footer{max-width:1200px;margin:auto;padding:20px}h1{font-size:clamp(26px,5vw,40px);margin:0}p{max-width:800px;color:#c9d8e9}main{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,420px),1fr));gap:18px}article{background:#202e40;border:2px solid #42566f;border-radius:14px;padding:16px;min-width:0}h2{font-size:22px;margin:0 0 5px}canvas{display:block;width:100%;height:auto;background:#152131;border-radius:8px}button,select{background:#142135;color:white;border:1px solid #6b819a;border-radius:7px;padding:10px;font:inherit;cursor:pointer}.controls{display:flex;gap:7px;flex-wrap:wrap;margin:10px 0}button:focus-visible{outline:3px solid #ffd477}.phase{color:#ffd477;font-weight:700;min-height:25px}.small{font-size:13px;color:#b8cada}textarea{width:100%;min-height:65px;background:#152131;color:white;border:1px solid #6b819a;border-radius:7px;padding:8px;font:inherit}article[data-status="approve"]{border-color:#76d8a5}article[data-status="redo"]{border-color:#ffab83}.status{min-height:24px;color:#a5e1c0}a{color:#a8d4ff}</style><header><h1>Rogers · grapple corrections</h1><p>Four paired punches, plus the tropical held reactions. Each pair stays on one animation clock: grip → punch → reaction → return to grip. Use <b>Punch once</b> or step through the frames.</p><p class="small">New review candidates, not installed in the live game. The other approved actions are unchanged. These repairs use image generation guided by the canonical Makko reference sheets. Eight frames per pair; four per solo reaction.</p><div class="controls"><button id="pause">Pause all</button><button id="export">Download review notes</button></div><p class="small">Your decisions stay in this browser. Download the notes to share them.</p></header><main></main><footer><a href="review36.html">Previous review</a> · Check skin, clothes, wrists, both arms and hand contact. Playback is silent.</footer><script>
+const clips=[
+  {
+    "key": "sayed-jersey",
+    "name": "El-Sayed \u00d7 jersey",
+    "src": "review37/sayed-jersey.webp",
+    "frames": [
+      {
+        "x": 0,
+        "y": 0,
+        "w": 444,
+        "h": 444,
+        "floor": 419
+      },
+      {
+        "x": 444,
+        "y": 0,
+        "w": 443,
+        "h": 444,
+        "floor": 419
+      },
+      {
+        "x": 887,
+        "y": 0,
+        "w": 443,
+        "h": 444,
+        "floor": 419
+      },
+      {
+        "x": 1330,
+        "y": 0,
+        "w": 444,
+        "h": 444,
+        "floor": 419
+      },
+      {
+        "x": 0,
+        "y": 444,
+        "w": 444,
+        "h": 443,
+        "floor": 417
+      },
+      {
+        "x": 444,
+        "y": 444,
+        "w": 443,
+        "h": 443,
+        "floor": 417
+      },
+      {
+        "x": 887,
+        "y": 444,
+        "w": 443,
+        "h": 443,
+        "floor": 417
+      },
+      {
+        "x": 1330,
+        "y": 444,
+        "w": 444,
+        "h": 443,
+        "floor": 417
+      }
+    ],
+    "durations": [
+      450,
+      100,
+      65,
+      80,
+      100,
+      90,
+      110,
+      400
+    ],
+    "phases": [
+      "Hold",
+      "Wind-up",
+      "Contact",
+      "Impact",
+      "Recoil",
+      "Retract",
+      "Recover",
+      "Hold"
+    ],
+    "source": "Built-in image generation from canonical Makko reference sheets",
+    "candidate": true
+  },
+  {
+    "key": "mamdani-jersey",
+    "name": "Mamdani \u00d7 jersey",
+    "src": "review37/mamdani-jersey.webp",
+    "frames": [
+      {
+        "x": 0,
+        "y": 0,
+        "w": 444,
+        "h": 444,
+        "floor": 420
+      },
+      {
+        "x": 444,
+        "y": 0,
+        "w": 443,
+        "h": 444,
+        "floor": 420
+      },
+      {
+        "x": 887,
+        "y": 0,
+        "w": 443,
+        "h": 444,
+        "floor": 420
+      },
+      {
+        "x": 1330,
+        "y": 0,
+        "w": 444,
+        "h": 444,
+        "floor": 420
+      },
+      {
+        "x": 0,
+        "y": 444,
+        "w": 444,
+        "h": 443,
+        "floor": 419
+      },
+      {
+        "x": 444,
+        "y": 444,
+        "w": 443,
+        "h": 443,
+        "floor": 419
+      },
+      {
+        "x": 887,
+        "y": 444,
+        "w": 443,
+        "h": 443,
+        "floor": 419
+      },
+      {
+        "x": 1330,
+        "y": 444,
+        "w": 444,
+        "h": 443,
+        "floor": 420
+      }
+    ],
+    "durations": [
+      450,
+      100,
+      65,
+      80,
+      100,
+      90,
+      110,
+      400
+    ],
+    "phases": [
+      "Hold",
+      "Wind-up",
+      "Contact",
+      "Impact",
+      "Recoil",
+      "Retract",
+      "Recover",
+      "Hold"
+    ],
+    "source": "Built-in image generation from canonical Makko reference sheets",
+    "candidate": true
+  },
+  {
+    "key": "sayed-tropical",
+    "name": "El-Sayed \u00d7 tropical",
+    "src": "review37/sayed-tropical.webp",
+    "frames": [
+      {
+        "x": 0,
+        "y": 0,
+        "w": 444,
+        "h": 444,
+        "floor": 421
+      },
+      {
+        "x": 444,
+        "y": 0,
+        "w": 443,
+        "h": 444,
+        "floor": 421
+      },
+      {
+        "x": 887,
+        "y": 0,
+        "w": 443,
+        "h": 444,
+        "floor": 421
+      },
+      {
+        "x": 1330,
+        "y": 0,
+        "w": 444,
+        "h": 444,
+        "floor": 423
+      },
+      {
+        "x": 0,
+        "y": 444,
+        "w": 444,
+        "h": 443,
+        "floor": 422
+      },
+      {
+        "x": 444,
+        "y": 444,
+        "w": 443,
+        "h": 443,
+        "floor": 422
+      },
+      {
+        "x": 887,
+        "y": 444,
+        "w": 443,
+        "h": 443,
+        "floor": 422
+      },
+      {
+        "x": 1330,
+        "y": 444,
+        "w": 444,
+        "h": 443,
+        "floor": 422
+      }
+    ],
+    "durations": [
+      450,
+      100,
+      65,
+      80,
+      100,
+      90,
+      110,
+      400
+    ],
+    "phases": [
+      "Hold",
+      "Wind-up",
+      "Contact",
+      "Impact",
+      "Recoil",
+      "Retract",
+      "Recover",
+      "Hold"
+    ],
+    "source": "Built-in image generation from canonical Makko reference sheets",
+    "candidate": true
+  },
+  {
+    "key": "mamdani-tropical",
+    "name": "Mamdani \u00d7 tropical",
+    "src": "review37/mamdani-tropical.webp",
+    "frames": [
+      {
+        "x": 0,
+        "y": 0,
+        "w": 444,
+        "h": 444,
+        "floor": 422
+      },
+      {
+        "x": 444,
+        "y": 0,
+        "w": 443,
+        "h": 444,
+        "floor": 422
+      },
+      {
+        "x": 887,
+        "y": 0,
+        "w": 443,
+        "h": 444,
+        "floor": 423
+      },
+      {
+        "x": 1330,
+        "y": 0,
+        "w": 444,
+        "h": 444,
+        "floor": 425
+      },
+      {
+        "x": 0,
+        "y": 444,
+        "w": 444,
+        "h": 443,
+        "floor": 423
+      },
+      {
+        "x": 444,
+        "y": 444,
+        "w": 443,
+        "h": 443,
+        "floor": 423
+      },
+      {
+        "x": 887,
+        "y": 444,
+        "w": 443,
+        "h": 443,
+        "floor": 423
+      },
+      {
+        "x": 1330,
+        "y": 444,
+        "w": 444,
+        "h": 443,
+        "floor": 423
+      }
+    ],
+    "durations": [
+      450,
+      100,
+      65,
+      80,
+      100,
+      90,
+      110,
+      400
+    ],
+    "phases": [
+      "Hold",
+      "Wind-up",
+      "Contact",
+      "Impact",
+      "Recoil",
+      "Retract",
+      "Recover",
+      "Hold"
+    ],
+    "source": "Built-in image generation from canonical Makko reference sheets",
+    "candidate": true
+  },
+  {
+    "key": "held",
+    "name": "Tropical \u00b7 held",
+    "src": "review37/held.webp",
+    "frames": [
+      {
+        "x": 0,
+        "y": 0,
+        "w": 543,
+        "h": 724,
+        "floor": 708
+      },
+      {
+        "x": 543,
+        "y": 0,
+        "w": 543,
+        "h": 724,
+        "floor": 708
+      },
+      {
+        "x": 1086,
+        "y": 0,
+        "w": 543,
+        "h": 724,
+        "floor": 708
+      },
+      {
+        "x": 1629,
+        "y": 0,
+        "w": 543,
+        "h": 724,
+        "floor": 708
+      }
+    ],
+    "durations": [
+      300,
+      300,
+      300,
+      300
+    ],
+    "phases": [
+      "Hold",
+      "Hold",
+      "Hold",
+      "Hold"
+    ],
+    "source": "Built-in image generation from canonical Makko reference sheets",
+    "candidate": true
+  },
+  {
+    "key": "flinch",
+    "name": "Tropical \u00b7 hit while held",
+    "src": "review37/flinch.webp",
+    "frames": [
+      {
+        "x": 0,
+        "y": 0,
+        "w": 543,
+        "h": 724,
+        "floor": 711
+      },
+      {
+        "x": 543,
+        "y": 0,
+        "w": 543,
+        "h": 724,
+        "floor": 711
+      },
+      {
+        "x": 1086,
+        "y": 0,
+        "w": 543,
+        "h": 724,
+        "floor": 711
+      },
+      {
+        "x": 1629,
+        "y": 0,
+        "w": 543,
+        "h": 724,
+        "floor": 711
+      }
+    ],
+    "durations": [
+      450,
+      90,
+      130,
+      450
+    ],
+    "phases": [
+      "Hold",
+      "Impact",
+      "Recoil",
+      "Hold"
+    ],
+    "source": "Built-in image generation from canonical Makko reference sheets",
+    "candidate": true
+  }
+];const cards=[];let globalPause=false,last=performance.now();let notes={};try{notes=JSON.parse(localStorage.getItem('rogers37')||'{}')}catch{}const save=()=>localStorage.setItem('rogers37',JSON.stringify(notes));
+for(const c of clips){const a=document.createElement('article');a.innerHTML='<h2></h2><div class="small"></div><canvas width="640" height="510"></canvas><div class="phase"></div><div class="controls"><button class="once">Punch once</button><button class="loop">Pause</button><button class="prev">← Frame</button><button class="next">Frame →</button><select aria-label="Playback speed"><option value="1">Normal speed</option><option value="0.5">Half speed</option></select></div><div class="controls"><button class="approve">Looks good</button><button class="redo">Needs work</button></div><textarea aria-label="Review note" placeholder="Optional note"></textarea><div class="status"></div>';a.querySelector('h2').textContent=c.name;a.querySelector('.small').textContent=c.frames.length+' frames · fixed scale · shared contact timing';document.querySelector('main').append(a);Object.assign(c,{a,img:new Image(),ctx:a.querySelector('canvas').getContext('2d'),k:0,t:0,playing:true,once:false,speed:1});c.img.src=c.src;c.img.onerror=()=>a.querySelector('.status').textContent='Image failed to load. Reload this page.';const d=notes[c.key]||(notes[c.key]={});const sync=()=>{a.dataset.status=d.decision||'';a.querySelector('.status').textContent=d.decision==='approve'?'Marked good':d.decision==='redo'?'Marked for changes':'';save()};sync();a.querySelector('textarea').value=d.note||'';a.querySelector('textarea').oninput=e=>{d.note=e.target.value;save()};a.querySelector('.approve').onclick=()=>{d.decision='approve';sync()};a.querySelector('.redo').onclick=()=>{d.decision='redo';sync()};const pause=()=>{c.playing=false;a.querySelector('.loop').textContent='Loop'};a.querySelector('.once').textContent=c.frames.length===8?'Punch once':'Play once';a.querySelector('.once').onclick=()=>{c.k=0;c.t=0;c.once=true;c.playing=true;globalPause=false;document.querySelector('#pause').textContent='Pause all';a.querySelector('.loop').textContent='Pause'};a.querySelector('.loop').onclick=e=>{c.playing=!c.playing;c.once=false;e.target.textContent=c.playing?'Pause':'Loop'};a.querySelector('.next').onclick=()=>{pause();c.k=(c.k+1)%c.frames.length;c.t=0};a.querySelector('.prev').onclick=()=>{pause();c.k=(c.k+c.frames.length-1)%c.frames.length;c.t=0};a.querySelector('select').onchange=e=>c.speed=Number(e.target.value);cards.push(c)}
+document.querySelector('#pause').onclick=e=>{globalPause=!globalPause;e.target.textContent=globalPause?'Play all':'Pause all'};document.querySelector('#export').onclick=()=>{const a=document.createElement('a');a.href=URL.createObjectURL(new Blob([JSON.stringify({review:'rogers37',notes},null,2)],{type:'application/json'}));a.download='rogers37-decisions.json';a.click();setTimeout(()=>URL.revokeObjectURL(a.href),1000)};
+function draw(now){const dt=Math.min(100,now-last);last=now;for(const c of cards){if(!c.img.complete||!c.img.naturalWidth)continue;if(c.playing&&!globalPause){c.t+=dt*c.speed;while(c.t>=c.durations[c.k]){c.t-=c.durations[c.k];c.k++;if(c.k>=c.frames.length){c.k=0;if(c.once){c.playing=false;c.t=0;c.a.querySelector('.loop').textContent='Loop';break}}}}const f=c.frames[c.k],s=Math.min(610/Math.max(...c.frames.map(f=>f.w)),465/Math.max(...c.frames.map(f=>f.h)));c.ctx.clearRect(0,0,640,510);c.ctx.drawImage(c.img,f.x,f.y,f.w,f.h,(640-f.w*s)/2,490-f.floor*s,f.w*s,f.h*s);c.a.querySelector('.phase').textContent=(c.k+1)+' / '+c.frames.length+' · '+c.phases[c.k]}requestAnimationFrame(draw)}requestAnimationFrame(draw);
+</script></html>

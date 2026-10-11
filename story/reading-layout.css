@@ -22,9 +22,11 @@ body:has(#book) .frame>img{position:static;display:block;width:100%;height:auto;
 .planks{gap:20px}.plank{background:#fff8e9;box-shadow:none}
 .topbar{gap:12px;padding:12px 16px}
 @media(min-width:761px){
- .grid>.panel:last-child:nth-child(odd){grid-column:1/-1;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);align-content:start}
- .grid>.panel:last-child:nth-child(odd) .frame{grid-column:1;border-right:3px solid #211d24}
- .grid>.panel:last-child:nth-child(odd) .panel-copy{grid-column:2;align-self:start}
+ .grid>.panel:only-child,
+ .grid>.panel.splash:only-child{grid-column:1/-1}
+ .grid>.panel:last-child:nth-child(odd):not(:only-child){grid-column:1/-1;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);align-content:start}
+ .grid>.panel:last-child:nth-child(odd):not(:only-child) .frame{grid-column:1;border-right:3px solid #211d24}
+ .grid>.panel:last-child:nth-child(odd):not(:only-child) .panel-copy{grid-column:2;align-self:start}
 }
 @media(max-width:760px){
  .cover,.book,.end{width:calc(100% - 24px)}

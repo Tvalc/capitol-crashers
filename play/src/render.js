@@ -1,7 +1,9 @@
-import { FIGHTERS, poseFor } from "./fighters.js?v=chibi-site2";
-import { drawSprite } from "./sprites.js?v=grip08b";
-import { WORLD, STAGES } from "./stages.js?v=bench28";
-import { CITIZEN_KINDS } from "./citizens.js?v=idle21";
+const rogersSpeech = new Image(); rogersSpeech.src = "/play/qa-rogers25/assets/sprites/chibi/rogers-speech.webp?v=cast40";
+const rogersCaller = new Image(); rogersCaller.src = "/play/qa-rogers25/assets/rogers-caller.png";
+import { FIGHTERS, poseFor } from "./fighters.js?v=cast40";
+import { drawSprite, drawGrapplePair, hasGrapplePair } from "./sprites.js?v=cast40";
+import { WORLD, STAGES } from "./stages.js?v=cast40";
+import { CITIZEN_KINDS } from "./citizens.js?v=cast40";
 
 const art = {};
 export function loadEnvironment() {
@@ -17,7 +19,9 @@ export function loadEnvironment() {
     const image = new Image(); image.onload = () => { art[key] = image; resolve(); }; image.onerror = () => resolve(); image.src = src;
   }));
   for (const stage of STAGES) for (const layer of stage.layers || []) tryLoad(`${stage.id}-${layer.name}`, `../art/parallax/${stage.id}/${layer.name}.webp?v=1`);
+  for(const name of ["platform","relay","relay-damaged","relay-wreck"]) tryLoad("laser-"+name,new URL(`../assets/laser23/${name}.webp`,import.meta.url).href);
   tryLoad("icicles", "../art/parallax/icicles.webp?v=1");
+  for(const name of ["skyline","facade","ground","lectern-blue","lectern-red","camera"]) tryLoad("debate-"+name,`/play/qa-rogers25/assets/debate25/${name}.webp`);
   return Promise.all([required, ...optional]);
 }
 function painted(ctx,name,x,y,w,h) {
@@ -66,7 +70,13 @@ export function draw(ctx, game) {
   }
   drawStreet(ctx, game, cam);
   drawPlanes(ctx, game);
+  for (const op of game.laserOperators || []) if(op.alive) {
+ const deck=art["laser-platform"];
+ if(deck)ctx.drawImage(deck,op.platformX-cam,op.platformY-50,op.deckW,op.deckW*deck.height/deck.width);
+ drawSprite(ctx,op,op.x-cam,.55);
+ }
   const sprites = [];
+  for(const wreck of game.laserWrecks||[]) sprites.push({y:wreck.y,draw:()=>drawPerson(ctx,wreck,cam,game)});
   for (const prop of game.stage?.scenery || []) {
     const img=art[prop.art];const h=img?prop.w*img.height/img.width:prop.h;
     sprites.push({y:prop.y,draw:()=>{painted(ctx,prop.art,prop.x-cam-prop.w/2,prop.y-h,prop.w,h);drawShelterAd(ctx,prop,prop.x-cam-prop.w/2,prop.y-h,prop.w,h);}});
@@ -133,6 +143,16 @@ function preview(id, x, game) {
 }
 
 function drawStreet(ctx,game,cam) {
+  if(game.stage.id==='debate' && art['debate-skyline']) {
+    const sky=art['debate-skyline'];
+    const width=1440,height=width*sky.height/sky.width;
+    for(let x=-((cam*.15)%width);x<WORLD.viewW;x+=width) ctx.drawImage(sky,x,-height+470,width,height);
+    const ground=art['debate-ground'];
+    // Repeat only the paving surface; repeating the whole prop creates floating steps.
+    if(ground) for(let y=438;y<WORLD.viewH;y+=78) for(let x=-(cam%900);x<WORLD.viewW;x+=900) ctx.drawImage(ground,180,10,1590,145,x,y,901,79);
+    return;
+  }
+
   const image=art[game.stage.id] || art.rally;
   if(!image)return;
   if(game.stage.id==='rally' && art['nyc-background'] && art['nyc-pavement'] && art['nyc-sidewalk']) {
@@ -333,6 +353,17 @@ function drawFx(ctx,fx,cam) {
 }
 
 function drawPerson(ctx, ent, cam, game) {
+  if (ent.isMachine) {
+    const x=ent.x-cam;
+    const key=!ent.alive?'laser-relay-wreck':ent.hp<=ent.hpMax*.5?'laser-relay-damaged':'laser-relay';
+    const img=art[key];
+    if(img){const h=150,w=h*img.width/img.height;ctx.drawImage(img,x-w/2,ent.y-h,w,h);}
+    if(ent.alive)bar(ctx,x-48,ent.y-170,96,13,ent);
+    return;
+  }
+  const holder = game.player;
+  const pairedVictim = holder?.state === "grab" ? game.enemies.find(enemy => enemy.id === holder.grabId && enemy.state === "grabbed") : null;
+  if (pairedVictim && ent === pairedVictim && hasGrapplePair(holder, pairedVictim)) return;
   if (ent.team === "citizen" && ent.helpOwner?.state === "help" && ent.helpOwner.stateT >= ent.helpOwner.helpAction.approach) return;
   if (ent.team === "player" && ent.invuln > 0 && Math.floor(game.time * 16) % 2 === 0 && ent.state !== "special") return;
   const depth = 0.86 + ((ent.y - WORLD.floorTop) / (WORLD.floorBottom - WORLD.floorTop)) * 0.2;
@@ -355,7 +386,21 @@ function drawPerson(ctx, ent, cam, game) {
   ctx.fill();
   ctx.restore();
 
+  if (ent === holder && pairedVictim && drawGrapplePair(ctx, holder, pairedVictim, sx, spriteScale)) return;
+  if (ent.kind === "rogers" && ent.state === "orders" && rogersCaller.complete && rogersCaller.naturalWidth) {
+    const pop = Math.min(1, ent.stateT / .15);
+    const width = 112 * pop, height = width * rogersCaller.naturalHeight / rogersCaller.naturalWidth;
+    ctx.drawImage(rogersCaller, sx + 65 - width / 2, ent.y - 265 - height, width, height);
+  }
   if (drawSprite(ctx, ent, sx, spriteScale)) label(ctx, ent, sx);
+  if(ent.sprite==="rogers_tropical" && ["attack","vacationSpecial","bill"].includes(ent.state) && rogersSpeech.naturalWidth) {
+    const joke=ent.state==="bill"?["WAIT... THIS IS", "SUNSCREEN!"]:["I'M FIGHTING", "FOR MICHIGAN!"];
+    const bx=Math.max(140,Math.min(ctx.canvas.width-140,sx));
+    const by=Math.max(112,ent.y-325);
+    ctx.save();ctx.drawImage(rogersSpeech,bx-145,by-55,290,125);
+    ctx.fillStyle="#171721";ctx.textAlign="center";
+    fittedText(ctx,joke[0],bx,by-4,225,17);fittedText(ctx,joke[1],bx,by+17,225,18);ctx.restore();
+  }
 }
 
 function label(ctx, ent, sx) {

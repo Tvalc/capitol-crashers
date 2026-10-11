@@ -1,15 +1,16 @@
-import { propFootprints, collideProps, steerAroundProps } from "./prop-collision.js?v=grapple-release23";
-import { play, unlock } from "./audio.js?v=chibi-site2";
-import { separate, tickToss, wallBounce } from "./combat.js?v=grab27";
-import { makeEnemy, updateEnemy } from "./enemies.js?v=grab27";
-import { blankInput, createInput } from "./input.js?v=chibi-site2";
-import { fighterById, makePlayer, updatePlayer, bufferPlayerInput } from "./player.js?v=grab27";
-import { draw, loadEnvironment } from "./render.js?v=grip08b";
-import { cloneStage, STAGES, WORLD } from "./stages.js?v=bench28";
-import { updatePickups, updateProjectiles } from "./weapons.js?v=grab27";
-import { loadSprites } from "./sprites.js?v=grip08b";
-import { PAGES } from "../../story/panels.js";
-import { followingWitness, makeCitizen, spawnCelebration, updateCitizens, witnessTestifies } from "./citizens.js?v=idle21";
+import { addLaserEncounter, updateLaserEncounters } from "./laser-encounter.js?v=cast40";
+import { propFootprints, collideProps, steerAroundProps } from "./prop-collision.js?v=cast40";
+import { play, unlock } from "./audio.js?v=cast40";
+import { separate, tickToss, wallBounce } from "./combat.js?v=cast40";
+import { makeEnemy, updateEnemy } from "./enemies.js?v=cast40";
+import { blankInput, createInput } from "./input.js?v=cast40";
+import { fighterById, makePlayer, updatePlayer, bufferPlayerInput } from "./player.js?v=cast40";
+import { draw, loadEnvironment } from "./render.js?v=cast40";
+import { cloneStage, STAGES, WORLD } from "./stages.js?v=cast40";
+import { updatePickups, updateProjectiles } from "./weapons.js?v=cast40";
+import { loadSprites, ensureGrapplePair } from "./sprites.js?v=cast40";
+import { PAGES } from "/story/panels.js";
+import { followingWitness, makeCitizen, spawnCelebration, updateCitizens, witnessTestifies } from "./citizens.js?v=cast40";
 
 // Comic panels that exist as short animated loops (OpenArt), shown between stages.
 const MOTION = { p21: "../art/story/motion/p21.mp4", p27: "../art/story/motion/p27.mp4" };
@@ -79,13 +80,48 @@ export function beginPractice(game, fighterId, active = false, opponent = game.p
   game.storyId = null;
   game.practice = true;
   game.practiceActive = active;
-  game.practiceEnemy = ["cruz", "pete", "vance", "greene", "trump"].includes(opponent) ? opponent : "cruz";
+  game.practiceEnemy = ["ice_bro","bongino","giuliani","beck","rogers", "cruz", "pete", "pete_ww", "vance", "greene", "trump"].includes(opponent) ? opponent : "cruz";
   game.introT = 0;
   game.stage.props = [];
   game.stage.pickups = [];
   game.citizens = [];
   game.player.x = 420;
-  game.enemies = [makeEnemy(game.practiceEnemy, 510, 560)];
+  game.enemies = [makeEnemy(game.practiceEnemy === "pete_ww" ? "pete" : game.practiceEnemy, 510, 560)];
+  if (game.practiceEnemy === "pete_ww") Object.assign(game.enemies[0], { sprite: "pete_ww", transformed: true, transformTo: null });
+  if (game.practiceEnemy === "greene") { game.enemies=[];addLaserEncounter(game,makeEnemy,650);game.practicePairStatus="Destroy the relays; the operator cannot be attacked";game.banner="Break the three laser relays";game.bannerT=3;return; }
+  if(game.practiceEnemy==='ice_bro' && new URLSearchParams(location.search).get('group')==='1') {
+    game.enemies=[makeEnemy('ice_bro',650,495),makeEnemy('ice_bro',850,560),makeEnemy('ice_bro',1050,625)];
+  }
+  const practicePlayer = game.player;
+  if (game.practiceEnemy === "rogers") {
+    Object.assign(game.stage,{id:'debate',name:'TV Station — Studio',campaignLevel:2,encounterRole:'miniboss',length:1280,planes:[],signs:[],marks:[],scenery:[
+      {art:'debate-facade',x:640,y:451,w:820},
+      {art:'debate-lectern-blue',x:175,y:449,w:105},
+      {art:'debate-lectern-red',x:1070,y:449,w:105},
+      {art:'debate-camera',x:1190,y:449,w:75}
+    ]});
+    game.enemies[0].x = 880;
+    const form=game.rogersForm || Math.min(3,Math.max(1,Number(new URLSearchParams(location.search).get('form'))||1));
+    game.enemies[0].sprite=['rogers','rogers_vacation','rogers_tropical'][form-1];
+    game.enemies[0].hp=game.enemies[0].hpMax*(4-form)/3;
+    game.enemies[0].title = "Studio miniboss";
+    game.enemies[0].encounterRole = "miniboss";
+    game.practicePairStatus = "Encounter preview · sidestep the phone charge · paired grapple not installed";
+    game.banner = form === 1 ? "Phone call → sidestep → punish the miss" : "Bait the rush → sidestep → grab during recovery";
+    game.bannerT = 3;
+    Promise.all(["rogers","rogers_vacation","rogers_tropical"].map(sprite=>ensureGrapplePair(game.player,{sprite}))).then(ready=>{
+      if(game.player===practicePlayer) {
+        game.practicePairStatus=ready.every(Boolean)?'Paired grapple loaded · G grab · J strike · K throw':'Encounter preview · paired grapple pending';
+        if(ready.every(Boolean) && !active) game.enemies[0].x=480;
+      }
+    });
+    return;
+  }
+
+  game.practicePairStatus = "Loading paired animation…";
+  ensureGrapplePair(game.player, game.enemies[0]).then(ready => {
+    if (game.player === practicePlayer) game.practicePairStatus = ready ? "Paired grapple loaded" : "Older separate poses — paired grapple pending";
+  });
   game.enemies[0].facing = -1;
   game.banner = "Practice · G grab · J strike · K throw";
   game.bannerT = 3;
@@ -116,6 +152,7 @@ export function startStage(game) {
   game.lockCam = null;
   game.waveIndex = 0;
   game.enemies = [];
+  game.laserOperators = [];game.laserWrecks=[];
   game.citizens = (game.stage.citizens || []).map((cit) => makeCitizen(cit.kind, cit.x, cit.y));
   game.projectiles = [];
   game.fx = [];
@@ -154,6 +191,7 @@ export function updateGame(game, input, dt) {
   }
 
   if (game.clearT > 0) {
+    updateLaserEncounters(game,dt);
     game.clearT -= dt;
     updateCitizens(game, dt);
     for (const fx of game.fx) fx.t += dt;
@@ -190,6 +228,7 @@ export function updateGame(game, input, dt) {
     collideProps(before.ent, before, footprints);
   }
   updatePickups(game);
+  updateLaserEncounters(game, dt);
   updateProjectiles(game, dt);
   updateWaves(game);
   // A witness who makes it to the boss puts the receipts on the record.
@@ -203,7 +242,7 @@ export function updateGame(game, input, dt) {
   game.enemies = game.enemies.filter((enemy) => !(enemy.state === "dead" && enemy.deadT <= 0));
 }
 
-import { advanceGait } from "./animation-clock.js?v=chibi-site2";
+import { advanceGait } from "./animation-clock.js?v=cast40";
 export { advanceGait };
 
 function advance(game) {
@@ -233,6 +272,7 @@ function updateWaves(game) {
     if (game.enemies.every((enemy) => !enemy.alive) && game.clearT <= 0 && game.mode === "play") {
       // The policy wins: banner, the street changes, the block comes out to cheer.
       game.clearT = 4.2;
+      window.CityRewards?.credit('crashers:policy');
       game.stage.won = true;
       game.banner = game.stage.policy || `${game.stage.name} clear`;
       game.bannerT = 4.2;
@@ -250,7 +290,10 @@ function updateWaves(game) {
     game.lockCam = desired;
     const base = desired + 760;
     for (const member of wave.group) {
+      if (member.kind === "greene") { addLaserEncounter(game,makeEnemy,base+member.dx); continue; }
       const enemy = makeEnemy(member.kind, base + member.dx, member.y);
+      ensureGrapplePair(game.player, enemy);
+      if(enemy.kind === "rogers") for(const sprite of ["rogers_vacation","rogers_tropical"]) ensureGrapplePair(game.player,{sprite});
       if (wave.boss) {
         enemy.isBoss = true;
         enemy.title = wave.bossName;
@@ -321,7 +364,8 @@ function boot() {
   const input = createInput();
   const game = createGame();
   if (typeof window !== "undefined") window.__cc = game; // debug/automation hook
-  const practiceRequested = new URLSearchParams(window.location.search).has("practice");
+  const studioRequested = new URLSearchParams(window.location.search).get("scene") === "studio";
+  const practiceRequested = studioRequested || new URLSearchParams(window.location.search).has("practice");
   let assetsReady = false;
   // Ads: the module pauses and resumes the loop around every ad through these two. See play/ads/CONTRACT.md.
   let adHold = false;
@@ -332,7 +376,7 @@ function boot() {
     if (prerolled) return;
     prerolled = true;
     // Ads: one preroll before the title screen; #ad-frame carries the frame line. See play/ads/CONTRACT.md.
-    const after = () => { document.getElementById("ad-frame").hidden = true; game.mode = "title"; if (practiceRequested && assetsReady) beginPractice(game, "mamdani"); };
+    const after = () => { document.getElementById("ad-frame").hidden = true; game.mode = "title"; if (practiceRequested && assetsReady) beginPractice(game, "mamdani", studioRequested, new URLSearchParams(window.location.search).get("opponent") || (studioRequested ? "rogers" : "cruz")); };
     if (window.A2A?.ads) window.A2A.ads.preroll(after); else after();
   }
   // Saves: best score, furthest street and the fighter, through Bridge storage. See play/ads/CONTRACT.md.
@@ -390,6 +434,11 @@ function boot() {
   }
   document.getElementById("restart-run").addEventListener("click", restartCurrent);
   document.getElementById("practice-reset").addEventListener("click", restartCurrent);
+  const formSelect=document.createElement('select'); formSelect.id='rogers-form';formSelect.setAttribute('aria-label','Rogers form');
+  formSelect.innerHTML='<option value="1">Suit</option><option value="2">Vacation jersey</option><option value="3">Full Florida</option>';
+  formSelect.value=new URLSearchParams(location.search).get('form')||'1';
+  document.getElementById('practice-controls').append(formSelect);
+  formSelect.addEventListener('change',()=>{game.rogersForm=Number(formSelect.value);input.clear();beginPractice(game,game.fighterId,game.practiceActive,'rogers');});
   document.getElementById("practice-opponent").addEventListener("click", () => {
     input.clear(); beginPractice(game, game.fighterId, !game.practiceActive); canvas.focus({ preventScroll: true });
   });
@@ -520,6 +569,7 @@ function boot() {
     document.getElementById("practice-controls").hidden = !game.practice;
     document.getElementById("practice-opponent").textContent = game.practiceActive ? "Opponent: active" : "Opponent: stationary";
     document.getElementById("practice-enemy").value = game.practiceEnemy || "cruz";
+    document.getElementById("practice-pair-status").textContent = game.practicePairStatus || "";
     for (const id of ["mamdani", "sayed"]) document.getElementById(`practice-${id}`).setAttribute("aria-pressed", String(game.fighterId === id));
     titlePanel.hidden = game.mode !== "title";
     selectPanel.hidden = game.mode !== "select";
@@ -600,12 +650,14 @@ function boot() {
     game.stage = cloneStage(0);
     game.player = null;
     game.enemies = [];
+  game.laserOperators = [];game.laserWrecks=[];
   });
   document.getElementById("over-again").addEventListener("click", () => {
     game.mode = "title";
     game.stage = cloneStage(0);
     game.player = null;
     game.enemies = [];
+  game.laserOperators = [];game.laserWrecks=[];
   });
   // Ads: rewarded revive, once per session, only offered when a run ends. See play/ads/CONTRACT.md.
   const reviveButton = document.getElementById("revive");
@@ -635,6 +687,12 @@ function boot() {
     ],
   });
 
+  let practiceSpeed = 1;
+  document.getElementById("practice-speed").addEventListener("change", event => {
+    const speed = Number(event.target.value);
+    practiceSpeed = [1, .25, .1].includes(speed) ? speed : 1;
+    canvas.focus({ preventScroll: true });
+  });
   let last = performance.now();
   function frame(now) {
     const dt = (now - last) / 1000;
@@ -659,10 +717,11 @@ function boot() {
       game.stage = cloneStage(0);
       game.player = null;
       game.enemies = [];
+  game.laserOperators = [];game.laserWrecks=[];
     }
     if (window.devicePixelRatio !== dprSeen) { dprSeen = window.devicePixelRatio; fitCanvas(); }
     if (assetsReady) {
-      if (!adHold) updateGame(game, game.mode === "play" ? snap : blankInput(), dt);
+      if (!adHold) updateGame(game, game.mode === "play" ? snap : blankInput(), dt * (game.practice ? practiceSpeed : 1));
       ctx.setTransform(pixelScale, 0, 0, pixelScale, 0, 0);
       draw(ctx, game);
     }

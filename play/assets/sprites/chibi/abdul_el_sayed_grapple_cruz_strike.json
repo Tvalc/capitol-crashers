@@ -1,0 +1,278 @@
+{
+  "frames": {
+    "abdul_el-sayed_grapple_cruz_strike_000.png": {
+      "frame": {
+        "x": 0,
+        "y": 0,
+        "w": 496,
+        "h": 351
+      },
+      "rotated": false,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 1,
+        "y": -1,
+        "w": 496,
+        "h": 351
+      },
+      "sourceSize": {
+        "w": 499,
+        "h": 352
+      },
+      "duration": 250,
+      "grappleScale": 1.0,
+      "groundAnchorY": 348.8627450980392
+    },
+    "abdul_el-sayed_grapple_cruz_strike_001.png": {
+      "frame": {
+        "x": 496,
+        "y": 0,
+        "w": 497,
+        "h": 351
+      },
+      "rotated": false,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": -1,
+        "w": 497,
+        "h": 351
+      },
+      "sourceSize": {
+        "w": 499,
+        "h": 352
+      },
+      "duration": 250,
+      "grappleScale": 1.0,
+      "groundAnchorY": 348.8627450980392
+    },
+    "abdul_el-sayed_grapple_cruz_strike_002.png": {
+      "frame": {
+        "x": 993,
+        "y": 0,
+        "w": 496,
+        "h": 351
+      },
+      "rotated": false,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 1,
+        "y": -1,
+        "w": 496,
+        "h": 351
+      },
+      "sourceSize": {
+        "w": 499,
+        "h": 352
+      },
+      "duration": 250,
+      "grappleScale": 1.0,
+      "groundAnchorY": 348.8627450980392
+    },
+    "abdul_el-sayed_grapple_cruz_strike_003.png": {
+      "frame": {
+        "x": 0,
+        "y": 351,
+        "w": 496,
+        "h": 353
+      },
+      "rotated": false,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 1,
+        "y": -4,
+        "w": 496,
+        "h": 353
+      },
+      "sourceSize": {
+        "w": 499,
+        "h": 352
+      },
+      "duration": 250,
+      "grappleScale": 1.0,
+      "groundAnchorY": 348.8627450980392
+    },
+    "abdul_el-sayed_grapple_cruz_strike_004.png": {
+      "frame": {
+        "x": 496,
+        "y": 351,
+        "w": 497,
+        "h": 353
+      },
+      "rotated": false,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": -4,
+        "w": 497,
+        "h": 353
+      },
+      "sourceSize": {
+        "w": 499,
+        "h": 352
+      },
+      "duration": 250,
+      "grappleScale": 1.0,
+      "groundAnchorY": 348.8627450980392
+    },
+    "abdul_el-sayed_grapple_cruz_strike_005.png": {
+      "frame": {
+        "x": 993,
+        "y": 351,
+        "w": 496,
+        "h": 353
+      },
+      "rotated": false,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 1,
+        "y": -4,
+        "w": 496,
+        "h": 353
+      },
+      "sourceSize": {
+        "w": 499,
+        "h": 352
+      },
+      "duration": 250,
+      "grappleScale": 1.0,
+      "groundAnchorY": 348.8627450980392
+    },
+    "abdul_el-sayed_grapple_cruz_strike_006.png": {
+      "frame": {
+        "x": 0,
+        "y": 704,
+        "w": 496,
+        "h": 352
+      },
+      "rotated": false,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 1,
+        "y": -1,
+        "w": 496,
+        "h": 352
+      },
+      "sourceSize": {
+        "w": 499,
+        "h": 352
+      },
+      "duration": 250,
+      "grappleScale": 1.0,
+      "groundAnchorY": 348.8627450980392
+    },
+    "abdul_el-sayed_grapple_cruz_strike_007.png": {
+      "frame": {
+        "x": 496,
+        "y": 704,
+        "w": 497,
+        "h": 352
+      },
+      "rotated": false,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": -1,
+        "w": 497,
+        "h": 352
+      },
+      "sourceSize": {
+        "w": 499,
+        "h": 352
+      },
+      "duration": 250,
+      "grappleScale": 1.0,
+      "groundAnchorY": 348.8627450980392
+    }
+  },
+  "meta": {
+    "app": "MAKKO Sprite Studio",
+    "version": "1.0.0",
+    "image": "abdul_el_sayed_grapple_cruz_strike.webp",
+    "format": "RGBA8888",
+    "size": {
+      "w": 1489,
+      "h": 1056
+    },
+    "scale": "1",
+    "frameTags": [
+      {
+        "name": "animation",
+        "from": 0,
+        "to": 7,
+        "direction": "forward"
+      }
+    ],
+    "anchor": {
+      "x": 100.3961230509903,
+      "y": 348.8627450980392
+    },
+    "referenceAlignment": {
+      "referenceBounds": {
+        "width": 781,
+        "height": 555
+      },
+      "frameBounds": {
+        "width": 795,
+        "height": 561
+      },
+      "normalized": true
+    },
+    "bodyScale": 0.7477169603594317,
+    "pairedEnemyRoot": {
+      "x": 345.1116729877792,
+      "y": 348.8627450980392
+    },
+    "animationId": "3c433d80-9914-40eb-9885-e6061283c71f",
+    "savedOriginalFrames": [
+      1,
+      7,
+      13,
+      25,
+      37,
+      43,
+      49,
+      55
+    ],
+    "playbackSequence": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      3,
+      2,
+      1,
+      0
+    ],
+    "contactFrame": 4,
+    "nativePixels": true,
+    "reviewStatus": "candidate: identity21; runtime alignment checked",
+    "identityCorrection": {
+      "source": "built-in image edit using approved idle reference",
+      "version": "identity21",
+      "resampled": false
+    },
+    "scaleCalibration": {
+      "version": "scale20",
+      "method": "joint held stature; shared transform preserves grip; common-mode drift only",
+      "heroHoldBefore": 249.4120214909335,
+      "enemyHoldBefore": 274.11417058428475,
+      "factor": 0.9383485494944743,
+      "frameFactors": [
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ],
+      "pixelsChanged": false
+    }
+  }
+}
