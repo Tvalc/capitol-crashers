@@ -1,0 +1,394 @@
+/* Three Roads to the Capitol: the reading page.
+   The site chrome (top bar, buttons, dark ground) comes from ../arcade.css.
+   Everything inside the book is a printed comic: cream paper, black panel
+   borders, white gutters, lettering set on the art by the page so it stays
+   editable and spelled right. */
+
+@font-face { font-family: "Bangers"; src: url("../fonts/bangers-400.woff2") format("woff2"); font-display: swap; }
+@font-face { font-family: "Comic Neue"; font-weight: 700; src: url("../fonts/comic-neue-700.woff2") format("woff2"); font-display: swap; }
+
+:root {
+  --paper: #f5eedd;
+  --paper-edge: #e3d6b8;
+  --ink-k: #15111a;
+  --cap: #ffe58a;
+  --cap-voice: #fdf8ec;
+  --bubble: #ffffff;
+  --queens-c: #ffc61a;
+  --detroit-c: #4fa3e0;
+  --texas-c: #e2803a;
+  --both-c: #ff4d8d;
+  --letter: "Comic Neue", "Comic Sans MS", "Chalkboard SE", system-ui, sans-serif;
+  --shout: "Bangers", Impact, "Arial Black", sans-serif;
+}
+
+/* Cover */
+
+.cover {
+  width: min(1120px, calc(100% - 32px));
+  margin: 28px auto 0;
+  color: #f6efe4;
+}
+.cover img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border: 4px solid var(--ink-k);
+  border-radius: 6px;
+  box-shadow: 0 0 0 2px rgba(246, 239, 228, 0.12);
+}
+.cover .masthead { padding: 22px 0 6px; }
+.cover .issue {
+  margin: 0 0 6px;
+  font-family: var(--mono, ui-monospace, monospace);
+  font-size: 12px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: #ffb020;
+}
+.cover h1 {
+  margin: 0;
+  font-family: var(--shout);
+  font-weight: 400;
+  font-size: clamp(44px, 8vw, 96px);
+  line-height: 0.9;
+  letter-spacing: 0.02em;
+  color: #ffd23a;
+  -webkit-text-stroke: 2px var(--ink-k);
+  text-shadow: 4px 4px 0 #ff4d8d, 8px 8px 0 var(--ink-k);
+  text-wrap: balance;
+}
+.cover .dek {
+  max-width: 52ch;
+  margin: 14px 0 0;
+  font-size: clamp(16px, 2vw, 19px);
+  line-height: 1.45;
+  color: #f6efe4;
+}
+.cover .contents {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 16px 0 0;
+  padding: 0;
+  list-style: none;
+}
+.cover .contents a {
+  display: inline-block;
+  padding: 7px 12px;
+  border: 1px solid rgba(246, 239, 228, 0.28);
+  border-radius: 999px;
+  color: #f6efe4;
+  font-family: var(--mono, ui-monospace, monospace);
+  font-size: 12px;
+  letter-spacing: 0.06em;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+.cover .contents a:hover { border-color: #ffb020; color: #ffb020; }
+
+/* The book */
+
+.book {
+  width: min(1120px, calc(100% - 32px));
+  margin: 28px auto 0;
+  padding: clamp(14px, 2.4vw, 28px);
+  box-sizing: border-box;
+  background: var(--paper);
+  border: 4px solid var(--ink-k);
+  border-radius: 4px;
+  color: var(--ink-k);
+}
+
+.page { margin: 0 0 clamp(28px, 4vw, 48px); scroll-margin-top: 80px; }
+.page:last-child { margin-bottom: 0; }
+
+.chapter {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  margin: 0 0 14px;
+  padding: 0 0 10px;
+  border-bottom: 4px solid var(--ink-k);
+}
+.chapter .label {
+  font-family: var(--mono, ui-monospace, monospace);
+  font-size: 12px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: #8a5a00;
+}
+.chapter .title {
+  font-family: var(--shout);
+  font-weight: 400;
+  font-size: clamp(30px, 4.6vw, 52px);
+  line-height: 0.95;
+  letter-spacing: 0.02em;
+  text-wrap: balance;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: clamp(8px, 1.2vw, 14px);
+}
+
+figure.panel { margin: 0; min-width: 0; }
+.panel { position: relative; background: #fff; border: 3px solid var(--ink-k); }
+.panel.wide { grid-column: 1 / -1; }
+.panel.half { grid-column: span 1; }
+
+.frame { position: relative; container: frame / inline-size; overflow: hidden; background: #fff; }
+.frame > img { display: block; width: 100%; height: auto; aspect-ratio: 16 / 9; object-fit: cover; }
+
+.frame .scene {
+  display: grid;
+  place-items: center;
+  aspect-ratio: 16 / 9;
+  padding: 24px;
+  text-align: center;
+  color: rgba(255, 255, 255, 0.75);
+  background: linear-gradient(160deg, #3a1f5c, #140a2a);
+  font-family: var(--shout);
+  font-size: clamp(22px, 3vw, 36px);
+}
+
+/* Lettering on the art */
+
+.lettering { position: absolute; inset: 0; pointer-events: none; --lt: clamp(11px, 1.6cqw, 19px); }
+.half .lettering { --lt: clamp(10px, 2.75cqw, 16px); }
+
+.tag {
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 0.35em 0.7em 0.4em;
+  background: var(--ink-k);
+  color: #fff;
+  font-family: var(--shout);
+  font-size: calc(var(--lt) * 0.95);
+  letter-spacing: 0.1em;
+  line-height: 1;
+  z-index: 3;
+}
+.queens .tag { background: var(--queens-c); color: var(--ink-k); }
+.detroit .tag { background: var(--detroit-c); color: var(--ink-k); }
+.texas .tag { background: var(--texas-c); color: var(--ink-k); }
+.both .tag { background: var(--both-c); color: #fff; }
+
+.caps {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5em;
+  max-width: 44%;
+  z-index: 2;
+}
+.wide .caps { max-width: 36%; }
+.caps.tl { top: 2.4%; left: 1.6%; align-items: flex-start; }
+.caps.tr { top: 9%; right: 1.6%; align-items: flex-end; }
+.caps.bl { bottom: 2.4%; left: 1.6%; align-items: flex-start; }
+.caps.br { bottom: 2.4%; right: 1.6%; align-items: flex-end; }
+.caps.bc { bottom: 2.4%; left: 50%; transform: translateX(-50%); align-items: center; max-width: 70%; }
+
+.cap {
+  margin: 0;
+  padding: 0.45em 0.65em 0.5em;
+  background: var(--cap);
+  border: 2px solid var(--ink-k);
+  box-shadow: 2px 2px 0 var(--ink-k);
+  font-family: var(--letter);
+  font-weight: 700;
+  font-size: var(--lt);
+  line-height: 1.22;
+  text-transform: uppercase;
+  color: var(--ink-k);
+}
+.cap.voice { background: var(--cap-voice); font-style: italic; }
+
+.bubble {
+  position: absolute;
+  left: var(--x);
+  top: var(--y);
+  width: var(--w);
+  margin: 0;
+  padding: 0.7em 0.95em 0.75em;
+  transform: translate(-50%, -50%);
+  background: var(--bubble);
+  border: 2px solid var(--ink-k);
+  border-radius: 48% / 44%;
+  font-family: var(--letter);
+  font-weight: 700;
+  font-size: var(--lt);
+  line-height: 1.2;
+  text-align: center;
+  text-transform: uppercase;
+  color: var(--ink-k);
+  z-index: 2;
+}
+.bubble .who { display: none; }
+
+/* Tails: a small triangle with an outline, made from two stacked borders. */
+.bubble::before, .bubble::after {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 0;
+  border-style: solid;
+}
+.bubble.tail-s::before  { left: 46%; bottom: -1.05em; border-width: 1.05em 0.5em 0 0.5em; border-color: var(--ink-k) transparent transparent; }
+.bubble.tail-s::after   { left: calc(46% + 2px); bottom: -0.78em; border-width: 0.8em 0.38em 0 0.38em; border-color: var(--bubble) transparent transparent; }
+.bubble.tail-sw::before { left: 18%; bottom: -1.05em; border-width: 1.05em 0.9em 0 0; border-color: var(--ink-k) transparent transparent; }
+.bubble.tail-sw::after  { left: calc(18% + 2px); bottom: -0.74em; border-width: 0.76em 0.62em 0 0; border-color: var(--bubble) transparent transparent; }
+.bubble.tail-se::before { right: 18%; bottom: -1.05em; border-width: 1.05em 0 0 0.9em; border-color: var(--ink-k) transparent transparent; }
+.bubble.tail-se::after  { right: calc(18% + 2px); bottom: -0.74em; border-width: 0.76em 0 0 0.62em; border-color: var(--bubble) transparent transparent; }
+.bubble.tail-n::before  { left: 46%; top: -1.05em; border-width: 0 0.5em 1.05em 0.5em; border-color: transparent transparent var(--ink-k); }
+.bubble.tail-n::after   { left: calc(46% + 2px); top: -0.78em; border-width: 0 0.38em 0.8em 0.38em; border-color: transparent transparent var(--bubble); }
+.bubble.tail-w::before  { left: -1.05em; top: 46%; border-width: 0.5em 1.05em 0.5em 0; border-color: transparent var(--ink-k) transparent transparent; }
+.bubble.tail-w::after   { left: -0.78em; top: calc(46% + 2px); border-width: 0.38em 0.8em 0.38em 0; border-color: transparent var(--bubble) transparent transparent; }
+.bubble.tail-e::before  { right: -1.05em; top: 46%; border-width: 0.5em 0 0.5em 1.05em; border-color: transparent transparent transparent var(--ink-k); }
+.bubble.tail-e::after   { right: -0.78em; top: calc(46% + 2px); border-width: 0.38em 0 0.38em 0.8em; border-color: transparent transparent transparent var(--bubble); }
+.bubble.tail-none::before, .bubble.tail-none::after { display: none; }
+.bubble.tail-ne::before { right: 18%; top: -1.05em; border-width: 0 0 1.05em 0.9em; border-color: transparent transparent var(--ink-k); }
+.bubble.tail-ne::after  { right: calc(18% + 2px); top: -0.74em; border-width: 0 0 0.76em 0.62em; border-color: transparent transparent var(--bubble); }
+.bubble.tail-nw::before { left: 18%; top: -1.05em; border-width: 0 0.9em 1.05em 0; border-color: transparent transparent var(--ink-k); }
+.bubble.tail-nw::after  { left: calc(18% + 2px); top: -0.74em; border-width: 0 0.62em 0.76em 0; border-color: transparent transparent var(--bubble); }
+
+.bubble.shout {
+  border-radius: 0.3em;
+  font-family: var(--shout);
+  font-weight: 400;
+  font-size: calc(var(--lt) * 1.25);
+  letter-spacing: 0.04em;
+}
+
+.sfx {
+  position: absolute;
+  left: var(--x);
+  top: var(--y);
+  transform: translate(-50%, -50%) rotate(var(--r));
+  font-family: var(--shout);
+  font-size: calc(var(--lt) * 3.6);
+  line-height: 1;
+  letter-spacing: 0.03em;
+  color: #ffd23a;
+  -webkit-text-stroke: 0.06em var(--ink-k);
+  paint-order: stroke fill;
+  text-shadow: 0.08em 0.08em 0 #ff4d8d, 0.14em 0.14em 0 var(--ink-k);
+  white-space: nowrap;
+  z-index: 1;
+}
+
+.cite {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  padding: 2px 7px;
+  background: rgba(21, 17, 26, 0.72);
+  color: #fff;
+  font-family: var(--mono, ui-monospace, monospace);
+  font-size: 10px;
+  letter-spacing: 0.04em;
+  text-decoration: none;
+  z-index: 4;
+  pointer-events: auto;
+}
+.cite:hover { background: var(--ink-k); color: #ffb020; }
+
+/* Narrow panels: the lettering moves under the art instead of covering it. */
+@container frame (max-width: 400px) {
+  .panel .frame .lettering {
+    position: static;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    padding: 10px 10px 26px;
+    background: #fff;
+    border-top: 3px solid var(--ink-k);
+    --lt: 14.5px;
+  }
+  .tag { position: absolute; top: 0; right: 0; font-size: 12px; }
+  .panel .frame .caps { position: static; max-width: none; transform: none; align-items: stretch; }
+  .panel .frame .bubble {
+    position: relative;
+    left: auto;
+    top: auto;
+    width: auto;
+    transform: none;
+    margin: 4px 6px 12px 18px;
+    border-radius: 18px;
+    text-align: left;
+  }
+  .bubble .who { display: inline; margin-right: 0.4em; color: #6b5d4a; }
+  .bubble .who::after { content: ":"; }
+  .bubble::before, .bubble::after { top: auto; right: auto; }
+  .bubble[class*="tail-"]::before { left: -0.9em; bottom: 0.6em; top: auto; border-width: 0.45em 0.95em 0.45em 0; border-color: transparent var(--ink-k) transparent transparent; }
+  .bubble[class*="tail-"]::after { left: -0.66em; bottom: calc(0.6em + 2px); top: auto; border-width: 0.34em 0.7em 0.34em 0; border-color: transparent var(--bubble) transparent transparent; }
+  .sfx { position: static; align-self: flex-start; margin: 2px 0 0 4px; transform: rotate(-4deg); font-size: 28px; }
+  .cite { bottom: 0; }
+}
+
+/* Narration: a black band between scenes, set big, used sparingly. */
+
+.panel.narration {
+  grid-column: 1 / -1;
+  padding: clamp(20px, 4vw, 44px) clamp(18px, 4vw, 56px);
+  background: var(--ink-k);
+  color: #f6efe4;
+}
+.panel.narration .tag {
+  position: static;
+  display: inline-block;
+  margin: 0 0 14px;
+  font-size: 13px;
+}
+.narration-body { max-width: 40em; }
+.narration-body p {
+  margin: 0 0 0.7em;
+  font-family: var(--letter);
+  font-weight: 700;
+  font-size: clamp(16px, 1.9vw, 21px);
+  line-height: 1.4;
+  text-transform: uppercase;
+}
+.narration-body p.big {
+  font-family: var(--shout);
+  font-weight: 400;
+  font-size: clamp(28px, 4.4vw, 52px);
+  line-height: 1;
+  letter-spacing: 0.02em;
+  color: #ffd23a;
+  text-transform: none;
+}
+.narration-body p:last-child { margin-bottom: 0; }
+.panel.narration .cite { position: static; display: inline-block; margin-top: 12px; background: transparent; color: rgba(246, 239, 228, 0.6); }
+
+@media (max-width: 760px) {
+  .grid { grid-template-columns: minmax(0, 1fr); }
+  .panel.half { grid-column: 1; }
+}
+
+/* Back matter */
+
+.back { width: min(1120px, calc(100% - 32px)); margin: 28px auto 0; color: #f6efe4; }
+.back h2 { font-family: var(--shout); font-weight: 400; font-size: clamp(30px, 4vw, 44px); margin: 0 0 6px; letter-spacing: 0.02em; }
+.back .plank-note { max-width: 60ch; margin: 0 0 18px; color: rgba(246, 239, 228, 0.75); line-height: 1.5; }
+.planks { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 300px), 1fr)); gap: 14px; }
+.plank { display: flex; flex-direction: column; gap: 6px; padding: 16px 18px; background: #14111a; border: 1px solid rgba(246, 239, 228, 0.12); border-radius: 10px; }
+.plank small { font-family: var(--mono, ui-monospace, monospace); font-size: 11px; letter-spacing: 0.16em; text-transform: uppercase; color: #ffb020; }
+.plank.queens { box-shadow: inset 3px 0 0 var(--queens-c); }
+.plank.detroit { box-shadow: inset 3px 0 0 var(--detroit-c); }
+.plank.texas { box-shadow: inset 3px 0 0 var(--texas-c); }
+.plank h3 { margin: 0; font-size: 19px; }
+.plank p { margin: 0; line-height: 1.5; color: rgba(246, 239, 228, 0.86); }
+.plank-cite { margin-top: auto; font-family: var(--mono, ui-monospace, monospace); font-size: 11px; color: rgba(246, 239, 228, 0.55); }
+
+.end { width: min(1120px, calc(100% - 32px)); margin: 36px auto 48px; color: #f6efe4; }
+.end .acts { display: flex; flex-wrap: wrap; gap: 12px; margin: 0 0 28px; }
+.end h2 { font-family: var(--shout); font-weight: 400; font-size: 32px; margin: 0 0 10px; letter-spacing: 0.02em; }
+.sources { margin: 0; padding-left: 2.4em; columns: 2 360px; column-gap: 32px; font-size: 13px; line-height: 1.5; color: rgba(246, 239, 228, 0.8); }
+.sources li { break-inside: avoid; margin: 0 0 6px; }
+.sources a { color: #ffb020; word-break: break-word; }
+.sources li:target { color: #fff; background: rgba(255, 176, 32, 0.16); }
+.fine { max-width: 70ch; font-size: 13px; line-height: 1.5; color: rgba(246, 239, 228, 0.6); }
+.fine a { color: inherit; }
