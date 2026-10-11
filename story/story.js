@@ -1,7 +1,7 @@
 import { PAGES, PLANKS, SOURCES } from "./panels.js?v=roads2";
 
 const ART_DIR = "../art/story/chibi/";
-const ART_VER = "roads2";
+const ART_VER = "roads3";
 const book = document.getElementById("book");
 const planksHost = document.getElementById("planks");
 const sourcesHost = document.getElementById("sources");
@@ -45,6 +45,14 @@ function renderBubble(line) {
 }
 
 function renderPanel(panel) {
+  if (panel.kind === "person") {
+    const node = el("div", `person ${panel.where || "both"}`);
+    node.id = panel.id;
+    node.append(el("span", "person-name", panel.name));
+    if (panel.line) node.append(el("span", "person-line", panel.line));
+    return node;
+  }
+
   if (panel.kind === "narration") {
     const node = el("figure", `panel narration ${panel.where || "both"}`);
     node.id = panel.id;

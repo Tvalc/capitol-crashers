@@ -76,6 +76,13 @@ export const PAGES = [
     "chapter": "Born on three maps",
     "panels": [
       {
+        "id": "who-1",
+        "kind": "person",
+        "where": "queens",
+        "name": "Zohran Mamdani",
+        "line": "Kampala → the Bronx"
+      },
+      {
         "id": "p01",
         "where": "queens",
         "size": "half",
@@ -97,51 +104,6 @@ export const PAGES = [
           2
         ],
         "prompt": "Warm golden-hour Kampala hillside with red-earth roads and jacaranda trees. A young South Asian woman filmmaker with long dark wavy hair and a middle-aged Ugandan-Indian scholar in his mid-forties cradle a newborn wrapped in a patterned cloth. The scholar has round glasses, receding salt-and-pepper hair, a thin scholarly face, and no full beard. They are parents, not the young bearded fighters. Loving, hopeful. No lettering."
-      },
-      {
-        "id": "p02",
-        "where": "detroit",
-        "size": "half",
-        "art": "p02.webp",
-        "tag": "Michigan · 1984",
-        "alt": "A young Egyptian engineer with textbooks on a Detroit campus at dusk.",
-        "captions": [
-          {
-            "text": "Southeast Michigan. Halloween, 1984. Abdul El-Sayed is born.",
-            "at": "tl"
-          },
-          {
-            "text": "His dad came from Alexandria, Egypt, for an engineering PhD at Wayne State.",
-            "at": "br"
-          }
-        ],
-        "cites": [
-          3,
-          4
-        ],
-        "prompt": "Early-1980s autumn campus at dusk. A young Egyptian engineer in his late twenties, short dark hair, thin mustache only, no full beard, brown corduroy jacket, stack of engineering textbooks, brick university buildings, Detroit skyline, faded Mediterranean lighthouse in the clouds. Not the bearded fighter. No readable text."
-      },
-      {
-        "id": "t01",
-        "where": "texas",
-        "size": "wide",
-        "art": "t01.webp",
-        "tag": "Round Rock · 1989",
-        "alt": "A young mother holds her newborn on a porch swing in Round Rock, Texas, at sunset.",
-        "captions": [
-          {
-            "text": "Round Rock, Texas. May 17, 1989. James Talarico is born.",
-            "at": "tl"
-          },
-          {
-            "text": "His mom’s father is a Baptist preacher. Later, Mark Talarico adopts him and gives him his name.",
-            "at": "bl"
-          }
-        ],
-        "cites": [
-          61
-        ],
-        "prompt": "Round Rock, Texas, 1989: a young mother on a porch swing cradles a newborn, live oak, old pickup, church steeple, sunset."
       },
       {
         "id": "p04",
@@ -172,6 +134,36 @@ export const PAGES = [
           10
         ],
         "prompt": "Skinny teenage South Asian boy on a patchy Bronx cricket field in white cricket kit, swinging a bat, red ball exploding off. Younger version of the adult with a full dark beard and thick styled dark hair: less beard, still dark hair with volume, not a professional cricket star. Split background Table Mountain and New York skyline. No readable text."
+      },
+      {
+        "id": "who-2",
+        "kind": "person",
+        "where": "detroit",
+        "name": "Abdul El-Sayed",
+        "line": "Southeast Michigan → Ann Arbor"
+      },
+      {
+        "id": "p02",
+        "where": "detroit",
+        "size": "half",
+        "art": "p02.webp",
+        "tag": "Michigan · 1984",
+        "alt": "A young Egyptian engineer with textbooks on a Detroit campus at dusk.",
+        "captions": [
+          {
+            "text": "Southeast Michigan. Halloween, 1984. Abdul El-Sayed is born.",
+            "at": "tl"
+          },
+          {
+            "text": "His dad came from Alexandria, Egypt, for an engineering PhD at Wayne State.",
+            "at": "br"
+          }
+        ],
+        "cites": [
+          3,
+          4
+        ],
+        "prompt": "Early-1980s autumn campus at dusk. A young Egyptian engineer in his late twenties, short dark hair, thin mustache only, no full beard, brown corduroy jacket, stack of engineering textbooks, brick university buildings, Detroit skyline, faded Mediterranean lighthouse in the clouds. Not the bearded fighter. No readable text."
       },
       {
         "id": "p03",
@@ -225,6 +217,57 @@ export const PAGES = [
           110
         ],
         "prompt": "Square 1:1. A young Egyptian-American graduate in a black gown and maize-and-blue stole speaks at a podium, huge stadium crowd behind him in the rain of confetti. Low heroic angle, gold and blue light."
+      },
+      {
+        "id": "who-3",
+        "kind": "person",
+        "where": "texas",
+        "name": "James Talarico",
+        "line": "Round Rock, Texas"
+      },
+      {
+        "id": "t01",
+        "where": "texas",
+        "size": "half",
+        "art": "t01.webp",
+        "tag": "Round Rock · 1989",
+        "alt": "A young mother holds her newborn on a porch swing in Round Rock, Texas, at sunset.",
+        "captions": [
+          {
+            "text": "Round Rock, Texas. May 17, 1989. James Talarico is born.",
+            "at": "tl"
+          },
+          {
+            "text": "His mom’s father is a Baptist preacher. Later, Mark Talarico adopts him and gives him his name.",
+            "at": "bl"
+          }
+        ],
+        "cites": [
+          61
+        ],
+        "prompt": "Round Rock, Texas, 1989: a young mother on a porch swing cradles a newborn, live oak, old pickup, church steeple, sunset."
+      },
+      {
+        "id": "tyouth",
+        "where": "texas",
+        "size": "half",
+        "art": "tyouth.webp",
+        "tag": "Round Rock",
+        "alt": "A lanky teenage Talarico carries a too-tall stack of folding chairs at a church potluck while church ladies cheer.",
+        "captions": [
+          {
+            "text": "He grows up in Round Rock’s public schools and at St. Andrew’s Presbyterian Church.",
+            "at": "tl"
+          },
+          {
+            "text": "He calls himself an eighth-generation Texan.",
+            "at": "br"
+          }
+        ],
+        "cites": [
+          61
+        ],
+        "prompt": "Round Rock church potluck, around 2004: lanky teenage Talarico carries a too-tall stack of folding chairs while church ladies and kids cheer."
       }
     ]
   },
@@ -233,6 +276,66 @@ export const PAGES = [
     "label": "Issue #1 · Part 2",
     "chapter": "Before politics",
     "panels": [
+      {
+        "id": "who-4",
+        "kind": "person",
+        "where": "queens",
+        "name": "Zohran Mamdani",
+        "line": "Maine → Queens"
+      },
+      {
+        "id": "p07",
+        "where": "queens",
+        "size": "half",
+        "art": "p07.webp",
+        "tag": "Queens · 2019",
+        "alt": "Mamdani raps in a tracksuit under the 7 train beside an elderly woman in a sari.",
+        "captions": [
+          {
+            "text": "College in Maine. Then a detour: he raps as “Mr. Cardamom.”",
+            "at": "tl"
+          },
+          {
+            "text": "His 2019 video “Nani” stars Madhur Jaffrey as his grandmother.",
+            "at": "br"
+          }
+        ],
+        "cites": [
+          2,
+          8
+        ],
+        "prompt": "Landscape 4:3. A young South Asian man in a bright tracksuit raps on a busy Jackson Heights, Queens street under the elevated 7 train, beside a regal elderly Indian grandmother in a sari who is clearly the star. Halal cart steam, colorful shop signs (no readable words), playful magenta and gold lighting."
+      },
+      {
+        "id": "p08",
+        "where": "queens",
+        "size": "half",
+        "art": "p08.webp",
+        "tag": "Queens · 2018",
+        "alt": "Mamdani as a housing counselor goes over foreclosure papers with an older immigrant couple at their kitchen table.",
+        "captions": [
+          {
+            "text": "2018. He becomes a foreclosure counselor in Queens, helping families keep their homes.",
+            "at": "tl"
+          },
+          {
+            "text": "He says this job is the reason he ran for office.",
+            "at": "br"
+          }
+        ],
+        "cites": [
+          9,
+          10
+        ],
+        "prompt": "Night in a small Queens kitchen. A young South Asian housing counselor: full dark beard, thick styled dark hair, light blue shirt, leaning over foreclosure papers. Across from him an anxious older immigrant couple who do not look like him: a gray-haired father and a mother, different faces. Warm lamp, cold blue window. He is the only young bearded man. No second politician. No short-cropped hair. No henley. No stethoscope. No lettering."
+      },
+      {
+        "id": "who-5",
+        "kind": "person",
+        "where": "detroit",
+        "name": "Abdul El-Sayed",
+        "line": "Oxford → New York → Detroit"
+      },
       {
         "id": "p06",
         "where": "detroit",
@@ -268,32 +371,16 @@ export const PAGES = [
         "prompt": "Wide 16:9 montage in three overlapping beats, left to right: the spires of Oxford at dusk with a young man in an academic gown; the same man pulling on a white doctor's coat in a New York hospital corridor; the same man at a chalkboard covered in charts and maps of a city, lecturing. One continuous figure, gold-to-cyan lighting gradient."
       },
       {
-        "id": "p07",
-        "where": "queens",
-        "size": "half",
-        "art": "p07.webp",
-        "tag": "Queens · 2019",
-        "alt": "Mamdani raps in a tracksuit under the 7 train beside an elderly woman in a sari.",
-        "captions": [
-          {
-            "text": "College in Maine. Then a detour: he raps as “Mr. Cardamom.”",
-            "at": "tl"
-          },
-          {
-            "text": "His 2019 video “Nani” stars Madhur Jaffrey as his grandmother.",
-            "at": "br"
-          }
-        ],
-        "cites": [
-          2,
-          8
-        ],
-        "prompt": "Landscape 4:3. A young South Asian man in a bright tracksuit raps on a busy Jackson Heights, Queens street under the elevated 7 train, beside a regal elderly Indian grandmother in a sari who is clearly the star. Halal cart steam, colorful shop signs (no readable words), playful magenta and gold lighting."
+        "id": "who-6",
+        "kind": "person",
+        "where": "texas",
+        "name": "James Talarico",
+        "line": "San Antonio"
       },
       {
         "id": "t02",
         "where": "texas",
-        "size": "half",
+        "size": "wide",
         "art": "t02.webp",
         "tag": "San Antonio · 2011",
         "alt": "A young Talarico teaches a lively sixth-grade English class.",
@@ -312,29 +399,6 @@ export const PAGES = [
           62
         ],
         "prompt": "A west-side San Antonio classroom, 2011: young Talarico at a whiteboard with a paperback, sixth-graders with hands up."
-      },
-      {
-        "id": "p08",
-        "where": "queens",
-        "size": "wide",
-        "art": "p08.webp",
-        "tag": "Queens · 2018",
-        "alt": "Mamdani as a housing counselor goes over foreclosure papers with an older immigrant couple at their kitchen table.",
-        "captions": [
-          {
-            "text": "2018. He becomes a foreclosure counselor in Queens, helping families keep their homes.",
-            "at": "tl"
-          },
-          {
-            "text": "He says this job is the reason he ran for office.",
-            "at": "br"
-          }
-        ],
-        "cites": [
-          9,
-          10
-        ],
-        "prompt": "Night in a small Queens kitchen. A young South Asian housing counselor: full dark beard, thick styled dark hair, light blue shirt, leaning over foreclosure papers. Across from him an anxious older immigrant couple who do not look like him: a gray-haired father and a mother, different faces. Warm lamp, cold blue window. He is the only young bearded man. No second politician. No short-cropped hair. No henley. No stethoscope. No lettering."
       }
     ]
   },
@@ -344,63 +408,11 @@ export const PAGES = [
     "chapter": "First fights",
     "panels": [
       {
-        "id": "p09",
-        "where": "detroit",
-        "size": "wide",
-        "art": "p09.webp",
-        "tag": "Detroit · 2015",
-        "alt": "A young El-Sayed walks into a nearly empty Detroit city office, morning light cutting through the windows.",
-        "captions": [
-          {
-            "text": "Detroit privatized its health department in 2012. By 2015 it’s down to five people.",
-            "at": "tl"
-          },
-          {
-            "text": "The mayor gives it to a 30-year-old doctor with one instruction: rebuild it.",
-            "at": "br"
-          }
-        ],
-        "cites": [
-          11,
-          12
-        ],
-        "prompt": "Wide 16:9 splash. A young Egyptian-American man in a suit and loosened tie walks into a nearly empty, dusty Detroit city office: overturned chairs, dead fluorescent lights, a few boxes. Morning light cuts through tall windows onto him like a spotlight. Detroit's east-side skyline through the glass. Heroic low angle, gold light, deep blue shadows."
-      },
-      {
-        "id": "p10",
-        "where": "detroit",
-        "size": "half",
-        "art": "p10.webp",
-        "tag": "Detroit schools",
-        "alt": "A grinning schoolgirl puts on her first pair of glasses in a mobile eye clinic.",
-        "captions": [
-          {
-            "text": "Free eye exams and free glasses for Detroit schoolkids, from a van parked outside the school.",
-            "at": "bl"
-          }
-        ],
-        "cites": [
-          13
-        ],
-        "prompt": "Square 1:1. Inside a mobile eye-clinic van parked outside a Detroit school, a grinning Black schoolgirl puts on her first pair of glasses and sees clearly; the blurry world behind her snaps into focus. Bright, joyful cyan and gold."
-      },
-      {
-        "id": "p11",
-        "where": "detroit",
-        "size": "half",
-        "art": "p11.webp",
-        "tag": "Detroit",
-        "alt": "A young mother holds her baby on a porch with two volunteer mentors.",
-        "captions": [
-          {
-            "text": "Too many Detroit babies die before their first birthday. His team helps launch SisterFriends: volunteer mentors for new moms.",
-            "at": "bl"
-          }
-        ],
-        "cites": [
-          14
-        ],
-        "prompt": "Square 1:1. A young Detroit mother holding her baby on a porch, surrounded by two smiling volunteer women mentors with a bag of baby supplies. Warm sunrise light, soft magenta glow."
+        "id": "who-7",
+        "kind": "person",
+        "where": "queens",
+        "name": "Zohran Mamdani",
+        "line": "Astoria → City Hall"
       },
       {
         "id": "p13",
@@ -478,6 +490,127 @@ export const PAGES = [
           57
         ],
         "prompt": "Night outside a grand city hall. Older immigrant taxi drivers in jackets on folding chairs with blankets, yellow cabs behind them. One thin young South Asian man with a full dark beard and styled dark hair sits among them, exhausted but unbowed. He is the only young man. No second politician. No short-cropped hair. No henley. Rain, yellow cab lights. No readable text."
+      },
+      {
+        "id": "who-8",
+        "kind": "person",
+        "where": "detroit",
+        "name": "Abdul El-Sayed",
+        "line": "Detroit → the governor’s race"
+      },
+      {
+        "id": "p09",
+        "where": "detroit",
+        "size": "wide",
+        "art": "p09.webp",
+        "tag": "Detroit · 2015",
+        "alt": "A young El-Sayed walks into a nearly empty Detroit city office, morning light cutting through the windows.",
+        "captions": [
+          {
+            "text": "Detroit privatized its health department in 2012. By 2015 it’s down to five people.",
+            "at": "tl"
+          },
+          {
+            "text": "The mayor gives it to a 30-year-old doctor with one instruction: rebuild it.",
+            "at": "br"
+          }
+        ],
+        "cites": [
+          11,
+          12
+        ],
+        "prompt": "Wide 16:9 splash. A young Egyptian-American man in a suit and loosened tie walks into a nearly empty, dusty Detroit city office: overturned chairs, dead fluorescent lights, a few boxes. Morning light cuts through tall windows onto him like a spotlight. Detroit's east-side skyline through the glass. Heroic low angle, gold light, deep blue shadows."
+      },
+      {
+        "id": "p10",
+        "where": "detroit",
+        "size": "half",
+        "art": "p10.webp",
+        "tag": "Detroit schools",
+        "alt": "A grinning schoolgirl puts on her first pair of glasses in a mobile eye clinic.",
+        "captions": [
+          {
+            "text": "Free eye exams and free glasses for Detroit schoolkids, from a van parked outside the school.",
+            "at": "bl"
+          }
+        ],
+        "cites": [
+          13
+        ],
+        "prompt": "Square 1:1. Inside a mobile eye-clinic van parked outside a Detroit school, a grinning Black schoolgirl puts on her first pair of glasses and sees clearly; the blurry world behind her snaps into focus. Bright, joyful cyan and gold."
+      },
+      {
+        "id": "p11",
+        "where": "detroit",
+        "size": "half",
+        "art": "p11.webp",
+        "tag": "Detroit",
+        "alt": "A young mother holds her baby on a porch with two volunteer mentors.",
+        "captions": [
+          {
+            "text": "Too many Detroit babies die before their first birthday. His team helps launch SisterFriends: volunteer mentors for new moms.",
+            "at": "bl"
+          }
+        ],
+        "cites": [
+          14
+        ],
+        "prompt": "Square 1:1. A young Detroit mother holding her baby on a porch, surrounded by two smiling volunteer women mentors with a bag of baby supplies. Warm sunrise light, soft magenta glow."
+      },
+      {
+        "id": "p12",
+        "where": "detroit",
+        "size": "half",
+        "art": "p12.webp",
+        "tag": "Michigan · 2018",
+        "alt": "El-Sayed raises a fist at a packed rally while Bernie Sanders claps beside him.",
+        "captions": [
+          {
+            "text": "He runs for governor on single-payer health care. Bernie Sanders endorses him.",
+            "at": "tl"
+          },
+          {
+            "text": "He loses the primary. He goes back to work.",
+            "at": "br"
+          }
+        ],
+        "cites": [
+          15,
+          16,
+          17
+        ],
+        "prompt": "Square 1:1. A packed Michigan rally at night, confetti and phone lights. A young Egyptian-American candidate raises a fist at the mic; a white-haired older senator in a rumpled suit claps beside him. Then a hint of rain starting. Magenta and cyan stage light."
+      },
+      {
+        "id": "p16",
+        "where": "detroit",
+        "size": "half",
+        "art": "p16.webp",
+        "tag": "Detroit · 2020–2025",
+        "alt": "El-Sayed records a podcast at night, a hardcover book on the desk.",
+        "captions": [
+          {
+            "text": "A book. A podcast. Then Wayne County’s health department.",
+            "at": "tl"
+          },
+          {
+            "text": "Narcan stations, about $95 million in medical debt wiped out, 10,000 pairs of glasses.",
+            "at": "br"
+          }
+        ],
+        "cites": [
+          22,
+          23,
+          111
+        ],
+        "prompt": "Landscape 4:3. Late night in a Detroit home studio: an Egyptian-American man in a sweater talks into a podcast microphone, a hardcover book on the desk, the Detroit skyline and the Guardian Building glowing through the window. Cozy gold light, cyan monitor glow."
+      },
+      {
+        "id": "who-9",
+        "kind": "person",
+        "where": "texas",
+        "name": "James Talarico",
+        "line": "The Texas House"
       },
       {
         "id": "t03",
@@ -583,54 +716,6 @@ export const PAGES = [
           72
         ],
         "prompt": "Texas House committee room: Talarico at the witness microphone, a small Bible beside his notes, stern legislators on a wooden dais."
-      },
-      {
-        "id": "p12",
-        "where": "detroit",
-        "size": "half",
-        "art": "p12.webp",
-        "tag": "Michigan · 2018",
-        "alt": "El-Sayed raises a fist at a packed rally while Bernie Sanders claps beside him.",
-        "captions": [
-          {
-            "text": "He runs for governor on single-payer health care. Bernie Sanders endorses him.",
-            "at": "tl"
-          },
-          {
-            "text": "He loses the primary. He goes back to work.",
-            "at": "br"
-          }
-        ],
-        "cites": [
-          15,
-          16,
-          17
-        ],
-        "prompt": "Square 1:1. A packed Michigan rally at night, confetti and phone lights. A young Egyptian-American candidate raises a fist at the mic; a white-haired older senator in a rumpled suit claps beside him. Then a hint of rain starting. Magenta and cyan stage light."
-      },
-      {
-        "id": "p16",
-        "where": "detroit",
-        "size": "half",
-        "art": "p16.webp",
-        "tag": "Detroit · 2020–2025",
-        "alt": "El-Sayed records a podcast at night, a hardcover book on the desk.",
-        "captions": [
-          {
-            "text": "A book. A podcast. Then Wayne County’s health department.",
-            "at": "tl"
-          },
-          {
-            "text": "Narcan stations, about $95 million in medical debt wiped out, 10,000 pairs of glasses.",
-            "at": "br"
-          }
-        ],
-        "cites": [
-          22,
-          23,
-          111
-        ],
-        "prompt": "Landscape 4:3. Late night in a Detroit home studio: an Egyptian-American man in a sweater talks into a podcast microphone, a hardcover book on the desk, the Detroit skyline and the Guardian Building glowing through the window. Cozy gold light, cyan monitor glow."
       }
     ]
   },
@@ -653,6 +738,13 @@ export const PAGES = [
             "text": "And every time one of them got close, the people with the most to lose came after them."
           }
         ]
+      },
+      {
+        "id": "who-10",
+        "kind": "person",
+        "where": "queens",
+        "name": "Zohran Mamdani",
+        "line": "Running for mayor of New York"
       },
       {
         "id": "pplunge",
@@ -1006,6 +1098,13 @@ export const PAGES = [
         ]
       },
       {
+        "id": "who-11",
+        "kind": "person",
+        "where": "detroit",
+        "name": "Abdul El-Sayed",
+        "line": "Running for U.S. Senate in Michigan"
+      },
+      {
         "id": "p20",
         "where": "detroit",
         "size": "half",
@@ -1076,6 +1175,63 @@ export const PAGES = [
         "prompt": "Wide 16:9 splash. Primary night in Detroit: an Egyptian-American man in a dark suit bursts through a wall of floating dollar bills and attack-ad TV screens, fists raised, cheering crowd behind him. Detroit skyline and the Renaissance Center glowing magenta and gold. Explosive, triumphant."
       },
       {
+        "id": "who-12",
+        "kind": "person",
+        "where": "texas",
+        "name": "James Talarico",
+        "line": "Running for U.S. Senate in Texas"
+      },
+      {
+        "id": "tvoucher",
+        "where": "texas",
+        "size": "half",
+        "art": "tvoucher.webp",
+        "tag": "Austin · 2025",
+        "alt": "Talarico at a House floor microphone points at a giant golden funnel draining money from a public school into a private academy.",
+        "captions": [
+          {
+            "text": "2025: Texas passes private-school vouchers, moving public money to private schools.",
+            "at": "tl"
+          },
+          {
+            "text": "On the House floor he calls the bill a “scam.”",
+            "at": "br"
+          }
+        ],
+        "cites": [
+          124
+        ],
+        "prompt": "Satire on the Texas House floor: Talarico at a microphone points at a golden funnel sucking money out of a public schoolhouse into a gated private academy."
+      },
+      {
+        "id": "trogan",
+        "where": "texas",
+        "size": "half",
+        "art": "trogan.webp",
+        "tag": "July 2025",
+        "alt": "A bald podcast host leans across the microphones, impressed, as Talarico laughs.",
+        "captions": [
+          {
+            "text": "He goes on The Joe Rogan Experience and talks faith, Texas and loving your enemies.",
+            "at": "tl"
+          }
+        ],
+        "bubbles": [
+          {
+            "who": "Rogan",
+            "text": "You need to run for president.",
+            "x": 80,
+            "y": 20,
+            "tail": "s",
+            "w": 22
+          }
+        ],
+        "cites": [
+          125
+        ],
+        "prompt": "Podcast studio: a muscular bald host in headphones leans in, impressed, pointing at Talarico, who laughs across the microphones."
+      },
+      {
         "id": "tquorum",
         "where": "texas",
         "size": "wide",
@@ -1096,9 +1252,9 @@ export const PAGES = [
           {
             "who": "Talarico",
             "text": "It’s time to fight back.",
-            "x": 52,
-            "y": 22,
-            "tail": "s",
+            "x": 17,
+            "y": 72,
+            "tail": "e",
             "w": 18
           }
         ],
@@ -1107,6 +1263,29 @@ export const PAGES = [
           87
         ],
         "prompt": "Night tarmac, Austin, 2025: Texas Democratic legislators with suitcases board a chartered jet; Talarico turns back on the stairs."
+      },
+      {
+        "id": "tpulled",
+        "where": "texas",
+        "size": "half",
+        "art": "tpulled.webp",
+        "tag": "2026",
+        "alt": "A network executive yanks the plug on a TV studio while every phone in the city shows Talarico grinning.",
+        "captions": [
+          {
+            "text": "CBS pulls Stephen Colbert’s interview with him, citing equal-time rules. On YouTube it gets 8.4 million views.",
+            "at": "tl"
+          },
+          {
+            "text": "In September ABC pulls Jimmy Kimmel’s. 8.3 million views in three days.",
+            "at": "br"
+          }
+        ],
+        "cites": [
+          126,
+          127
+        ],
+        "prompt": "Satire: a faceless network executive yanks a giant plug in a TV studio while every phone screen in the city outside shows Talarico grinning."
       },
       {
         "id": "t05",
@@ -1140,21 +1319,22 @@ export const PAGES = [
       {
         "id": "pintro",
         "where": "texas",
-        "size": "half",
+        "size": "wide",
         "art": "pintro.webp",
         "tag": "Meet Ken Paxton",
         "alt": "Ken Paxton smirks on the Texas Capitol steps as an endless blank scroll unrolls behind him.",
         "captions": [
           {
-            "text": "His opponent: Attorney General Ken Paxton. Indicted for securities fraud in 2015; resolved in 2024 with a deal: community service, ethics classes and about $271,000 in restitution.",
+            "text": "His opponent: Ken Paxton, Texas attorney general. In May 2026 he beats Sen. John Cornyn in the runoff, with Trump’s endorsement.",
             "at": "tl"
           },
           {
-            "text": "Impeached by the Texas House in 2023, 121 to 23. Acquitted by the Senate.",
+            "text": "His record: indicted for securities fraud in 2015, resolved with a deal in 2024. Impeached by the Texas House in 2023, 121 to 23. Acquitted by the Senate.",
             "at": "br"
           }
         ],
         "cites": [
+          66,
           74,
           78
         ],
@@ -1217,6 +1397,70 @@ export const PAGES = [
           84
         ],
         "prompt": "Satire: two faceless billionaires in white Stetsons sit atop oil derricks working puppet controls; Ken Paxton dangles as a marionette."
+      },
+      {
+        "id": "tcogdell",
+        "where": "texas",
+        "size": "half",
+        "art": "tcogdell.webp",
+        "tag": "June 2026",
+        "alt": "An older defense lawyer shakes Talarico's hand at a podcast desk while Paxton presses his face to the window in shock.",
+        "captions": [
+          {
+            "text": "Paxton’s own lawyer from the impeachment trial endorses Talarico.",
+            "at": "tl"
+          }
+        ],
+        "bubbles": [
+          {
+            "who": "Cogdell",
+            "text": "I think Ken has lost sight of his core mission, which is to represent the people of Texas.",
+            "x": 24,
+            "y": 74,
+            "tail": "n",
+            "w": 34
+          }
+        ],
+        "cites": [
+          128
+        ],
+        "prompt": "A Houston law office: an older silver-haired defense lawyer shakes Talarico's hand at a podcast mic; Paxton presses his face to the window, jaw dropped."
+      },
+      {
+        "id": "tdream",
+        "where": "texas",
+        "size": "half",
+        "art": "tdream.webp",
+        "tag": "Arlington · Aug 2026",
+        "alt": "Talarico, sleeves rolled up, pounds the podium at a packed rally of working Texans.",
+        "captions": [
+          {
+            "text": "He calls his plan the New American Dream.",
+            "at": "tl"
+          }
+        ],
+        "bubbles": [
+          {
+            "who": "Talarico",
+            "text": "We have an affordability crisis because we have a corruption crisis.",
+            "x": 80,
+            "y": 36,
+            "tail": "w",
+            "w": 28
+          },
+          {
+            "who": "Talarico",
+            "text": "Trickle-down economics isn’t a theory. It’s theft.",
+            "x": 26,
+            "y": 78,
+            "tail": "ne",
+            "w": 28
+          }
+        ],
+        "cites": [
+          71
+        ],
+        "prompt": "Arlington rally, August 2026: Talarico with sleeves rolled up pounds the podium, a huge cheering crowd of working Texans."
       }
     ]
   },
@@ -1239,6 +1483,13 @@ export const PAGES = [
             "text": "In Michigan, Mike Rogers. In Texas, Ken Paxton. One skips the first debate. The other skips all of them."
           }
         ]
+      },
+      {
+        "id": "who-13",
+        "kind": "person",
+        "where": "detroit",
+        "name": "Abdul El-Sayed",
+        "line": "vs. Mike Rogers"
       },
       {
         "id": "rflorida",
@@ -1550,6 +1801,13 @@ export const PAGES = [
         "prompt": "One older Egyptian woman only, matching the attached clinic nurse: short dark hair silver at the temples, weathered brown skin, laugh lines, white coat flaring like a cape over teal scrubs, teal clogs, no hijab. She walks toward a small clinic at dawn, patients waving in the windows, gold sunrise at her back. Adult face in her late fifties, not a child. No lettering."
       },
       {
+        "id": "who-14",
+        "kind": "person",
+        "where": "texas",
+        "name": "James Talarico",
+        "line": "vs. Ken Paxton"
+      },
+      {
         "id": "tnodebate",
         "where": "texas",
         "size": "wide",
@@ -1571,7 +1829,7 @@ export const PAGES = [
             "who": "Talarico",
             "text": "He is a puppet politician, and I want him to prove me wrong.",
             "x": 74,
-            "y": 20,
+            "y": 16,
             "tail": "s",
             "w": 28
           }
@@ -2448,5 +2706,30 @@ export const SOURCES = [
     "n": 123,
     "label": "Newsweek, the first Michigan Senate debate.",
     "url": "https://www.newsweek.com/mike-rogers-abdul-el-sayed-first-debate-michigan-12543810"
+  },
+  {
+    "n": 124,
+    "label": "KUT, the Texas House passes school vouchers.",
+    "url": "https://www.kut.org/politics/2025-04-16/texas-house-billions-school-funding-voucher"
+  },
+  {
+    "n": 125,
+    "label": "Mediaite, Joe Rogan urges Talarico to run for president.",
+    "url": "https://www.mediaite.com/media/podcasts/joe-rogan-urges-texas-progressive-you-need-to-run-for-president"
+  },
+  {
+    "n": 126,
+    "label": "KSAT, Colbert blasts CBS for nixing the Talarico interview.",
+    "url": "https://www.ksat.com/news/texas/2026/02/17/stephen-colbert-blasts-cbs-for-nixing-james-talarico-interview/"
+  },
+  {
+    "n": 127,
+    "label": "KEDT, Kimmel's Talarico interview won't air on ABC.",
+    "url": "https://www.kedt.org/texas-news/2026-09-10/jimmy-kimmels-interview-with-james-talarico-wont-air-on-abc-will-go-to-youtube-instead"
+  },
+  {
+    "n": 128,
+    "label": "Texas Tribune, Paxton's impeachment lawyer endorses Talarico.",
+    "url": "https://www.texastribune.org/2026/06/08/texas-ken-paxton-impeachment-lawyer-dan-cogdell-james-talarico-endorsement-senate/"
   }
 ];

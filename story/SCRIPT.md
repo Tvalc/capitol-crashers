@@ -27,6 +27,10 @@ A real person only says words they are on the record saying; every caption fact 
 
 ## Issue #1 · Part 1: Born on three maps
 
+### who-1
+
+- **Shape:** wide · art `none`
+
 ### p01 · Kampala · 1991
 
 - **Shape:** half · art `p01.webp`
@@ -35,24 +39,6 @@ A real person only says words they are on the record saying; every caption fact 
 - **Sources:** [1](https://www.cnn.com/politics/zohran-mamdani-fast-facts), [2](https://www.theafricareport.com/386712/zohran-mamdani-10-things-about-uganda-born-democratic-nominee-for-new-york-city-mayor/)
 
 **Art prompt:** Warm golden-hour Kampala hillside with red-earth roads and jacaranda trees. A young South Asian woman filmmaker with long dark wavy hair and a middle-aged Ugandan-Indian scholar in his mid-forties cradle a newborn wrapped in a patterned cloth. The scholar has round glasses, receding salt-and-pepper hair, a thin scholarly face, and no full beard. They are parents, not the young bearded fighters. Loving, hopeful. No lettering.
-
-### p02 · Michigan · 1984
-
-- **Shape:** half · art `p02.webp`
-- **Caption (tl):** Southeast Michigan. Halloween, 1984. Abdul El-Sayed is born.
-- **Caption (br):** His dad came from Alexandria, Egypt, for an engineering PhD at Wayne State.
-- **Sources:** [3](https://bridgemi.com/michigan-government/who-is-abdul-el-sayed-what-to-know-about-michigan-democrats-us-senate-winner/), [4](https://abdulforsenate.com/about/)
-
-**Art prompt:** Early-1980s autumn campus at dusk. A young Egyptian engineer in his late twenties, short dark hair, thin mustache only, no full beard, brown corduroy jacket, stack of engineering textbooks, brick university buildings, Detroit skyline, faded Mediterranean lighthouse in the clouds. Not the bearded fighter. No readable text.
-
-### t01 · Round Rock · 1989
-
-- **Shape:** wide · art `t01.webp`
-- **Caption (tl):** Round Rock, Texas. May 17, 1989. James Talarico is born.
-- **Caption (bl):** His mom’s father is a Baptist preacher. Later, Mark Talarico adopts him and gives him his name.
-- **Sources:** [61](https://www.britannica.com/biography/James-Talarico)
-
-**Art prompt:** Round Rock, Texas, 1989: a young mother on a porch swing cradles a newborn, live oak, old pickup, church steeple, sunset.
 
 ### p04 · The Bronx
 
@@ -63,6 +49,19 @@ A real person only says words they are on the record saying; every caption fact 
 - **Sources:** [1](https://www.cnn.com/politics/zohran-mamdani-fast-facts), [2](https://www.theafricareport.com/386712/zohran-mamdani-10-things-about-uganda-born-democratic-nominee-for-new-york-city-mayor/), [10](https://www.pbs.org/newshour/politics/how-zohran-mamdani-rose-from-queens-lawmaker-to-mayor-of-new-york)
 
 **Art prompt:** Skinny teenage South Asian boy on a patchy Bronx cricket field in white cricket kit, swinging a bat, red ball exploding off. Younger version of the adult with a full dark beard and thick styled dark hair: less beard, still dark hair with volume, not a professional cricket star. Split background Table Mountain and New York skyline. No readable text.
+
+### who-2
+
+- **Shape:** wide · art `none`
+
+### p02 · Michigan · 1984
+
+- **Shape:** half · art `p02.webp`
+- **Caption (tl):** Southeast Michigan. Halloween, 1984. Abdul El-Sayed is born.
+- **Caption (br):** His dad came from Alexandria, Egypt, for an engineering PhD at Wayne State.
+- **Sources:** [3](https://bridgemi.com/michigan-government/who-is-abdul-el-sayed-what-to-know-about-michigan-democrats-us-senate-winner/), [4](https://abdulforsenate.com/about/)
+
+**Art prompt:** Early-1980s autumn campus at dusk. A young Egyptian engineer in his late twenties, short dark hair, thin mustache only, no full beard, brown corduroy jacket, stack of engineering textbooks, brick university buildings, Detroit skyline, faded Mediterranean lighthouse in the clouds. Not the bearded fighter. No readable text.
 
 ### p03 · Bloomfield Hills
 
@@ -82,7 +81,55 @@ A real person only says words they are on the record saying; every caption fact 
 
 **Art prompt:** Square 1:1. A young Egyptian-American graduate in a black gown and maize-and-blue stole speaks at a podium, huge stadium crowd behind him in the rain of confetti. Low heroic angle, gold and blue light.
 
+### who-3
+
+- **Shape:** wide · art `none`
+
+### t01 · Round Rock · 1989
+
+- **Shape:** half · art `t01.webp`
+- **Caption (tl):** Round Rock, Texas. May 17, 1989. James Talarico is born.
+- **Caption (bl):** His mom’s father is a Baptist preacher. Later, Mark Talarico adopts him and gives him his name.
+- **Sources:** [61](https://www.britannica.com/biography/James-Talarico)
+
+**Art prompt:** Round Rock, Texas, 1989: a young mother on a porch swing cradles a newborn, live oak, old pickup, church steeple, sunset.
+
+### tyouth · Round Rock
+
+- **Shape:** half · art `tyouth.webp`
+- **Caption (tl):** He grows up in Round Rock’s public schools and at St. Andrew’s Presbyterian Church.
+- **Caption (br):** He calls himself an eighth-generation Texan.
+- **Sources:** [61](https://www.britannica.com/biography/James-Talarico)
+
+**Art prompt:** Round Rock church potluck, around 2004: lanky teenage Talarico carries a too-tall stack of folding chairs while church ladies and kids cheer.
+
 ## Issue #1 · Part 2: Before politics
+
+### who-4
+
+- **Shape:** wide · art `none`
+
+### p07 · Queens · 2019
+
+- **Shape:** half · art `p07.webp`
+- **Caption (tl):** College in Maine. Then a detour: he raps as “Mr. Cardamom.”
+- **Caption (br):** His 2019 video “Nani” stars Madhur Jaffrey as his grandmother.
+- **Sources:** [2](https://www.theafricareport.com/386712/zohran-mamdani-10-things-about-uganda-born-democratic-nominee-for-new-york-city-mayor/), [8](https://www.vice.com/en/article/madhur-jaffrey-nani-rap-video/)
+
+**Art prompt:** Landscape 4:3. A young South Asian man in a bright tracksuit raps on a busy Jackson Heights, Queens street under the elevated 7 train, beside a regal elderly Indian grandmother in a sari who is clearly the star. Halal cart steam, colorful shop signs (no readable words), playful magenta and gold lighting.
+
+### p08 · Queens · 2018
+
+- **Shape:** half · art `p08.webp`
+- **Caption (tl):** 2018. He becomes a foreclosure counselor in Queens, helping families keep their homes.
+- **Caption (br):** He says this job is the reason he ran for office.
+- **Sources:** [9](https://www.brickunderground.com/live/how-owners-facing-foreclosure-get-help-housing-counselors-chhaya-mamdani), [10](https://www.pbs.org/newshour/politics/how-zohran-mamdani-rose-from-queens-lawmaker-to-mayor-of-new-york)
+
+**Art prompt:** Night in a small Queens kitchen. A young South Asian housing counselor: full dark beard, thick styled dark hair, light blue shirt, leaning over foreclosure papers. Across from him an anxious older immigrant couple who do not look like him: a gray-haired father and a mother, different faces. Warm lamp, cold blue window. He is the only young bearded man. No second politician. No short-cropped hair. No henley. No stethoscope. No lettering.
+
+### who-5
+
+- **Shape:** wide · art `none`
 
 ### p06 · Oxford · New York
 
@@ -94,59 +141,24 @@ A real person only says words they are on the record saying; every caption fact 
 
 **Art prompt:** Wide 16:9 montage in three overlapping beats, left to right: the spires of Oxford at dusk with a young man in an academic gown; the same man pulling on a white doctor's coat in a New York hospital corridor; the same man at a chalkboard covered in charts and maps of a city, lecturing. One continuous figure, gold-to-cyan lighting gradient.
 
-### p07 · Queens · 2019
+### who-6
 
-- **Shape:** half · art `p07.webp`
-- **Caption (tl):** College in Maine. Then a detour: he raps as “Mr. Cardamom.”
-- **Caption (br):** His 2019 video “Nani” stars Madhur Jaffrey as his grandmother.
-- **Sources:** [2](https://www.theafricareport.com/386712/zohran-mamdani-10-things-about-uganda-born-democratic-nominee-for-new-york-city-mayor/), [8](https://www.vice.com/en/article/madhur-jaffrey-nani-rap-video/)
-
-**Art prompt:** Landscape 4:3. A young South Asian man in a bright tracksuit raps on a busy Jackson Heights, Queens street under the elevated 7 train, beside a regal elderly Indian grandmother in a sari who is clearly the star. Halal cart steam, colorful shop signs (no readable words), playful magenta and gold lighting.
+- **Shape:** wide · art `none`
 
 ### t02 · San Antonio · 2011
 
-- **Shape:** half · art `t02.webp`
+- **Shape:** wide · art `t02.webp`
 - **Caption (tl):** Teach For America. Sixth-grade English on San Antonio’s west side.
 - **Caption (bl):** His promise on his last day of teaching: “I would fight for them every single day of my life.”
 - **Sources:** [61](https://www.britannica.com/biography/James-Talarico), [62](https://www.texastribune.org/2026/01/16/james-talarico-texas-senate-democrat-teacher-election-2026/)
 
 **Art prompt:** A west-side San Antonio classroom, 2011: young Talarico at a whiteboard with a paperback, sixth-graders with hands up.
 
-### p08 · Queens · 2018
-
-- **Shape:** wide · art `p08.webp`
-- **Caption (tl):** 2018. He becomes a foreclosure counselor in Queens, helping families keep their homes.
-- **Caption (br):** He says this job is the reason he ran for office.
-- **Sources:** [9](https://www.brickunderground.com/live/how-owners-facing-foreclosure-get-help-housing-counselors-chhaya-mamdani), [10](https://www.pbs.org/newshour/politics/how-zohran-mamdani-rose-from-queens-lawmaker-to-mayor-of-new-york)
-
-**Art prompt:** Night in a small Queens kitchen. A young South Asian housing counselor: full dark beard, thick styled dark hair, light blue shirt, leaning over foreclosure papers. Across from him an anxious older immigrant couple who do not look like him: a gray-haired father and a mother, different faces. Warm lamp, cold blue window. He is the only young bearded man. No second politician. No short-cropped hair. No henley. No stethoscope. No lettering.
-
 ## Issue #1 · Part 3: First fights
 
-### p09 · Detroit · 2015
+### who-7
 
-- **Shape:** wide · art `p09.webp`
-- **Caption (tl):** Detroit privatized its health department in 2012. By 2015 it’s down to five people.
-- **Caption (br):** The mayor gives it to a 30-year-old doctor with one instruction: rebuild it.
-- **Sources:** [11](https://www.statnews.com/2016/05/03/detroit-health-director/), [12](https://www.americanrhodes.org/news-1071.html)
-
-**Art prompt:** Wide 16:9 splash. A young Egyptian-American man in a suit and loosened tie walks into a nearly empty, dusty Detroit city office: overturned chairs, dead fluorescent lights, a few boxes. Morning light cuts through tall windows onto him like a spotlight. Detroit's east-side skyline through the glass. Heroic low angle, gold light, deep blue shadows.
-
-### p10 · Detroit schools
-
-- **Shape:** half · art `p10.webp`
-- **Caption (bl):** Free eye exams and free glasses for Detroit schoolkids, from a van parked outside the school.
-- **Sources:** [13](https://wdet.org/posts/2016/10/12/83985-new-program-provides-free-eye-exam-and-glasses-to-dpscd-students)
-
-**Art prompt:** Square 1:1. Inside a mobile eye-clinic van parked outside a Detroit school, a grinning Black schoolgirl puts on her first pair of glasses and sees clearly; the blurry world behind her snaps into focus. Bright, joyful cyan and gold.
-
-### p11 · Detroit
-
-- **Shape:** half · art `p11.webp`
-- **Caption (bl):** Too many Detroit babies die before their first birthday. His team helps launch SisterFriends: volunteer mentors for new moms.
-- **Sources:** [14](https://detroitmi.gov/news/mayor-duggan-and-dr-khaldun-announce-historic-drop-infant-mortality-rate-city-detroit-2019-had)
-
-**Art prompt:** Square 1:1. A young Detroit mother holding her baby on a porch, surrounded by two smiling volunteer women mentors with a bag of baby supplies. Warm sunrise light, soft magenta glow.
+- **Shape:** wide · art `none`
 
 ### p13 · Astoria · 2020
 
@@ -175,6 +187,57 @@ A real person only says words they are on the record saying; every caption fact 
 - **Sources:** [20](https://www.thecity.nyc/2021/10/21/nyc-cabbies-go-on-hunger-strike-taxi-medallion-debts/), [21](https://www.cityandstateny.com/politics/2021/11/activist-lawmakers-share-taxi-drivers-victory/186641/), [57](https://www.cityandstateny.com/politics/2021/10/taxi-drivers-plan-hunger-strike-debt-relief/186185/)
 
 **Art prompt:** Night outside a grand city hall. Older immigrant taxi drivers in jackets on folding chairs with blankets, yellow cabs behind them. One thin young South Asian man with a full dark beard and styled dark hair sits among them, exhausted but unbowed. He is the only young man. No second politician. No short-cropped hair. No henley. Rain, yellow cab lights. No readable text.
+
+### who-8
+
+- **Shape:** wide · art `none`
+
+### p09 · Detroit · 2015
+
+- **Shape:** wide · art `p09.webp`
+- **Caption (tl):** Detroit privatized its health department in 2012. By 2015 it’s down to five people.
+- **Caption (br):** The mayor gives it to a 30-year-old doctor with one instruction: rebuild it.
+- **Sources:** [11](https://www.statnews.com/2016/05/03/detroit-health-director/), [12](https://www.americanrhodes.org/news-1071.html)
+
+**Art prompt:** Wide 16:9 splash. A young Egyptian-American man in a suit and loosened tie walks into a nearly empty, dusty Detroit city office: overturned chairs, dead fluorescent lights, a few boxes. Morning light cuts through tall windows onto him like a spotlight. Detroit's east-side skyline through the glass. Heroic low angle, gold light, deep blue shadows.
+
+### p10 · Detroit schools
+
+- **Shape:** half · art `p10.webp`
+- **Caption (bl):** Free eye exams and free glasses for Detroit schoolkids, from a van parked outside the school.
+- **Sources:** [13](https://wdet.org/posts/2016/10/12/83985-new-program-provides-free-eye-exam-and-glasses-to-dpscd-students)
+
+**Art prompt:** Square 1:1. Inside a mobile eye-clinic van parked outside a Detroit school, a grinning Black schoolgirl puts on her first pair of glasses and sees clearly; the blurry world behind her snaps into focus. Bright, joyful cyan and gold.
+
+### p11 · Detroit
+
+- **Shape:** half · art `p11.webp`
+- **Caption (bl):** Too many Detroit babies die before their first birthday. His team helps launch SisterFriends: volunteer mentors for new moms.
+- **Sources:** [14](https://detroitmi.gov/news/mayor-duggan-and-dr-khaldun-announce-historic-drop-infant-mortality-rate-city-detroit-2019-had)
+
+**Art prompt:** Square 1:1. A young Detroit mother holding her baby on a porch, surrounded by two smiling volunteer women mentors with a bag of baby supplies. Warm sunrise light, soft magenta glow.
+
+### p12 · Michigan · 2018
+
+- **Shape:** half · art `p12.webp`
+- **Caption (tl):** He runs for governor on single-payer health care. Bernie Sanders endorses him.
+- **Caption (br):** He loses the primary. He goes back to work.
+- **Sources:** [15](https://www.detroitnews.com/story/news/local/michigan/2018/06/06/el-sayed-universal-health-michigan/677394002/), [16](https://www.wkar.org/politics-government/2018-07-26/bernie-sanders-endorses-el-sayed-in-michigans-governors-race), [17](https://bridgemi.com/michigan-government/gretchen-whitmer-wins-democratic-primary-michigan-governor/)
+
+**Art prompt:** Square 1:1. A packed Michigan rally at night, confetti and phone lights. A young Egyptian-American candidate raises a fist at the mic; a white-haired older senator in a rumpled suit claps beside him. Then a hint of rain starting. Magenta and cyan stage light.
+
+### p16 · Detroit · 2020–2025
+
+- **Shape:** half · art `p16.webp`
+- **Caption (tl):** A book. A podcast. Then Wayne County’s health department.
+- **Caption (br):** Narcan stations, about $95 million in medical debt wiped out, 10,000 pairs of glasses.
+- **Sources:** [22](https://www.abramsbooks.com/product/healing-politics_9781683358138/), [23](https://www.waynecountymi.gov/News/Executive/2022/Dr.-Abdul-El-Sayed-joins-Health-Human-Veterans-Services-Department), [111](https://bridgemi.com/michigan-government/abdul-el-sayed-under-the-microscope-from-public-health-to-politics/)
+
+**Art prompt:** Landscape 4:3. Late night in a Detroit home studio: an Egyptian-American man in a sweater talks into a podcast microphone, a hardcover book on the desk, the Detroit skyline and the Guardian Building glowing through the window. Cozy gold light, cyan monitor glow.
+
+### who-9
+
+- **Shape:** wide · art `none`
 
 ### t03 · Texas · 2018
 
@@ -213,24 +276,6 @@ A real person only says words they are on the record saying; every caption fact 
 
 **Art prompt:** Texas House committee room: Talarico at the witness microphone, a small Bible beside his notes, stern legislators on a wooden dais.
 
-### p12 · Michigan · 2018
-
-- **Shape:** half · art `p12.webp`
-- **Caption (tl):** He runs for governor on single-payer health care. Bernie Sanders endorses him.
-- **Caption (br):** He loses the primary. He goes back to work.
-- **Sources:** [15](https://www.detroitnews.com/story/news/local/michigan/2018/06/06/el-sayed-universal-health-michigan/677394002/), [16](https://www.wkar.org/politics-government/2018-07-26/bernie-sanders-endorses-el-sayed-in-michigans-governors-race), [17](https://bridgemi.com/michigan-government/gretchen-whitmer-wins-democratic-primary-michigan-governor/)
-
-**Art prompt:** Square 1:1. A packed Michigan rally at night, confetti and phone lights. A young Egyptian-American candidate raises a fist at the mic; a white-haired older senator in a rumpled suit claps beside him. Then a hint of rain starting. Magenta and cyan stage light.
-
-### p16 · Detroit · 2020–2025
-
-- **Shape:** half · art `p16.webp`
-- **Caption (tl):** A book. A podcast. Then Wayne County’s health department.
-- **Caption (br):** Narcan stations, about $95 million in medical debt wiped out, 10,000 pairs of glasses.
-- **Sources:** [22](https://www.abramsbooks.com/product/healing-politics_9781683358138/), [23](https://www.waynecountymi.gov/News/Executive/2022/Dr.-Abdul-El-Sayed-joins-Health-Human-Veterans-Services-Department), [111](https://bridgemi.com/michigan-government/abdul-el-sayed-under-the-microscope-from-public-health-to-politics/)
-
-**Art prompt:** Landscape 4:3. Late night in a Detroit home studio: an Egyptian-American man in a sweater talks into a podcast microphone, a hardcover book on the desk, the Detroit skyline and the Guardian Building glowing through the window. Cozy gold light, cyan monitor glow.
-
 ## Issue #2: The money comes
 
 ### n2 · 2024–2026
@@ -238,6 +283,10 @@ A real person only says words they are on the record saying; every caption fact 
 - **Shape:** narration band
 - **Caption:** Then they ran for the big jobs.
 - **Caption:** And every time one of them got close, the people with the most to lose came after them.
+
+### who-10
+
+- **Shape:** wide · art `none`
 
 ### pplunge · Coney Island · Jan 1, 2025
 
@@ -351,6 +400,10 @@ A real person only says words they are on the record saying; every caption fact 
 - **Caption:** Albany hasn’t paid for free buses. The governor blocked his tax on millionaires. Landlords are suing to undo the freeze. He keeps pushing.
 - **Sources:** [100](https://www.washingtontimes.com/news/2026/apr/9/zohran-mamdani-concedes-free-bus-pledge-wont-fulfilled-year/), [101](https://gothamist.com/news/ny-lawmakers-back-mamdani-push-to-tax-the-rich-setting-up-clash-with-hochul), [102](https://news.bloomberglaw.com/new-york-brief/nyc-landlords-sue-to-invalidate-mamdani-backed-rent-freeze)
 
+### who-11
+
+- **Shape:** wide · art `none`
+
 ### p20 · Detroit · April 2025
 
 - **Shape:** half · art `p20.webp`
@@ -371,6 +424,28 @@ A real person only says words they are on the record saying; every caption fact 
 
 **Art prompt:** Wide 16:9 splash. Primary night in Detroit: an Egyptian-American man in a dark suit bursts through a wall of floating dollar bills and attack-ad TV screens, fists raised, cheering crowd behind him. Detroit skyline and the Renaissance Center glowing magenta and gold. Explosive, triumphant.
 
+### who-12
+
+- **Shape:** wide · art `none`
+
+### tvoucher · Austin · 2025
+
+- **Shape:** half · art `tvoucher.webp`
+- **Caption (tl):** 2025: Texas passes private-school vouchers, moving public money to private schools.
+- **Caption (br):** On the House floor he calls the bill a “scam.”
+- **Sources:** [124](https://www.kut.org/politics/2025-04-16/texas-house-billions-school-funding-voucher)
+
+**Art prompt:** Satire on the Texas House floor: Talarico at a microphone points at a golden funnel sucking money out of a public schoolhouse into a gated private academy.
+
+### trogan · July 2025
+
+- **Shape:** half · art `trogan.webp`
+- **Caption (tl):** He goes on The Joe Rogan Experience and talks faith, Texas and loving your enemies.
+- **Rogan:** “You need to run for president.”
+- **Sources:** [125](https://www.mediaite.com/media/podcasts/joe-rogan-urges-texas-progressive-you-need-to-run-for-president)
+
+**Art prompt:** Podcast studio: a muscular bald host in headphones leans in, impressed, pointing at Talarico, who laughs across the microphones.
+
 ### tquorum · August 2025
 
 - **Shape:** wide · art `tquorum.webp`
@@ -380,6 +455,15 @@ A real person only says words they are on the record saying; every caption fact 
 - **Sources:** [86](https://www.yahoo.com/news/articles/texas-legislator-james-talarico-democratic-232949168.html), [87](https://www.ksat.com/news/texas/2026/05/15/texas-supreme-court-rejects-abbotts-request-to-remove-democratic-rep-gene-wu-from-office-over-redistricting-protest/)
 
 **Art prompt:** Night tarmac, Austin, 2025: Texas Democratic legislators with suitcases board a chartered jet; Talarico turns back on the stairs.
+
+### tpulled · 2026
+
+- **Shape:** half · art `tpulled.webp`
+- **Caption (tl):** CBS pulls Stephen Colbert’s interview with him, citing equal-time rules. On YouTube it gets 8.4 million views.
+- **Caption (br):** In September ABC pulls Jimmy Kimmel’s. 8.3 million views in three days.
+- **Sources:** [126](https://www.ksat.com/news/texas/2026/02/17/stephen-colbert-blasts-cbs-for-nixing-james-talarico-interview/), [127](https://www.kedt.org/texas-news/2026-09-10/jimmy-kimmels-interview-with-james-talarico-wont-air-on-abc-will-go-to-youtube-instead)
+
+**Art prompt:** Satire: a faceless network executive yanks a giant plug in a TV studio while every phone screen in the city outside shows Talarico grinning.
 
 ### t05 · March 3, 2026
 
@@ -392,10 +476,10 @@ A real person only says words they are on the record saying; every caption fact 
 
 ### pintro · Meet Ken Paxton
 
-- **Shape:** half · art `pintro.webp`
-- **Caption (tl):** His opponent: Attorney General Ken Paxton. Indicted for securities fraud in 2015; resolved in 2024 with a deal: community service, ethics classes and about $271,000 in restitution.
-- **Caption (br):** Impeached by the Texas House in 2023, 121 to 23. Acquitted by the Senate.
-- **Sources:** [74](https://www.texastribune.org/2023/05/27/ken-paxton-texas-house-impeachment-vote), [78](https://www.texastribune.org/2024/03/25/ken-paxton-plea-deal-securities-fraud-felony/)
+- **Shape:** wide · art `pintro.webp`
+- **Caption (tl):** His opponent: Ken Paxton, Texas attorney general. In May 2026 he beats Sen. John Cornyn in the runoff, with Trump’s endorsement.
+- **Caption (br):** His record: indicted for securities fraud in 2015, resolved with a deal in 2024. Impeached by the Texas House in 2023, 121 to 23. Acquitted by the Senate.
+- **Sources:** [66](https://apnews.com/article/texas-senate-cornyn-paxton-trump-talarico-4fa609e7ddb93b47ac4e3398a12a472e), [74](https://www.texastribune.org/2023/05/27/ken-paxton-texas-house-impeachment-vote), [78](https://www.texastribune.org/2024/03/25/ken-paxton-plea-deal-securities-fraud-felony/)
 
 **Art prompt:** Satire: Ken Paxton smirks on the pink-granite Texas Capitol steps as an endless blank scroll unrolls down the stairs; an armadillo stares.
 
@@ -418,6 +502,25 @@ A real person only says words they are on the record saying; every caption fact 
 
 **Art prompt:** Satire: two faceless billionaires in white Stetsons sit atop oil derricks working puppet controls; Ken Paxton dangles as a marionette.
 
+### tcogdell · June 2026
+
+- **Shape:** half · art `tcogdell.webp`
+- **Caption (tl):** Paxton’s own lawyer from the impeachment trial endorses Talarico.
+- **Cogdell:** “I think Ken has lost sight of his core mission, which is to represent the people of Texas.”
+- **Sources:** [128](https://www.texastribune.org/2026/06/08/texas-ken-paxton-impeachment-lawyer-dan-cogdell-james-talarico-endorsement-senate/)
+
+**Art prompt:** A Houston law office: an older silver-haired defense lawyer shakes Talarico's hand at a podcast mic; Paxton presses his face to the window, jaw dropped.
+
+### tdream · Arlington · Aug 2026
+
+- **Shape:** half · art `tdream.webp`
+- **Caption (tl):** He calls his plan the New American Dream.
+- **Talarico:** “We have an affordability crisis because we have a corruption crisis.”
+- **Talarico:** “Trickle-down economics isn’t a theory. It’s theft.”
+- **Sources:** [71](https://www.texastribune.org/2026/08/05/texas-senate-james-talarico-economic-agenda-ken-paxton/)
+
+**Art prompt:** Arlington rally, August 2026: Talarico with sleeves rolled up pounds the podium, a huge cheering crowd of working Texans.
+
 ## Issue #3: Show up and debate
 
 ### n3 · Fall 2026
@@ -425,6 +528,10 @@ A real person only says words they are on the record saying; every caption fact 
 - **Shape:** narration band
 - **Caption:** Fall 2026. Time to face them.
 - **Caption:** In Michigan, Mike Rogers. In Texas, Ken Paxton. One skips the first debate. The other skips all of them.
+
+### who-13
+
+- **Shape:** wide · art `none`
 
 ### rflorida · Cape Coral, Florida
 
@@ -526,6 +633,10 @@ A real person only says words they are on the record saying; every caption fact 
 - **Sources:** [50](https://npiregistry.cms.hhs.gov/provider-view/1316388754), [122](https://politifact.com/article/2026/oct/08/michigan-senate-debate-fact-check-el-sayed-rogers/)
 
 **Art prompt:** One older Egyptian woman only, matching the attached clinic nurse: short dark hair silver at the temples, weathered brown skin, laugh lines, white coat flaring like a cape over teal scrubs, teal clogs, no hijab. She walks toward a small clinic at dawn, patients waving in the windows, gold sunrise at her back. Adult face in her late fifties, not a child. No lettering.
+
+### who-14
+
+- **Shape:** wide · art `none`
 
 ### tnodebate · Texas · 2026
 
