@@ -6,3 +6,8 @@ body:has(#book) { font-family: var(--body); }
 .cover h1 { color: #fff; text-shadow: 0 0 2px #fff, 0 0 18px rgba(255, 77, 141, 0.9), 0 0 42px rgba(255, 77, 141, 0.45); }
 .issue { color: var(--amber); }
 .issue::before { content: "▸ "; color: var(--pink); }
+
+.grid .panel.splash,
+.grid .panel.narration {
+  grid-column: 1 / -1;
+}

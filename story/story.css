@@ -269,6 +269,68 @@ figure.panel { margin: 0; }
   box-shadow: 3px 3px 0 var(--ink);
 }
 
+.caption.voice {
+  background: #15243b;
+  color: #fff8e9;
+  font-family: Georgia, "Times New Roman", serif;
+  font-style: italic;
+  text-transform: none;
+  letter-spacing: 0.01em;
+}
+
+.kicker {
+  margin: 0 0 4px;
+  font-family: Bangers, Impact, sans-serif;
+  font-size: 18px;
+  letter-spacing: 0.12em;
+  color: var(--gold);
+  text-shadow: 2px 2px 0 var(--ink);
+}
+
+.panel.narration {
+  grid-column: 1 / -1;
+  background: #15243b;
+  color: #fff8e9;
+  box-shadow: 6px 6px 0 var(--ink);
+}
+
+.panel.narration .lettering {
+  background: transparent;
+  border: 0;
+  padding: 22px 24px 26px;
+  gap: 12px;
+}
+
+.panel.narration .caption {
+  border: 0;
+  background: transparent;
+  box-shadow: none;
+  color: #fff8e9;
+  text-transform: none;
+  font-size: 17px;
+  line-height: 1.55;
+  padding: 0;
+}
+
+.panel.narration .caption.voice {
+  color: var(--gold);
+  font-size: 19px;
+  line-height: 1.45;
+}
+
+.panel.narration .tag {
+  background: var(--gold);
+  color: var(--ink);
+}
+
+.panel.narration .cite {
+  position: static;
+  display: block;
+  text-align: right;
+  background: transparent;
+  color: rgba(255, 248, 233, 0.7);
+}
+
 .bubble {
   max-width: min(62%, 320px);
   padding: 10px 14px;

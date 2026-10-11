@@ -1,4 +1,4 @@
-import { PAGES, PLANKS, SOURCES } from "./panels.js?v=articulate1";
+import { PAGES, PLANKS, SOURCES } from "./panels.js?v=narrative3";
 
 const ART_DIR = "../art/story/chibi/";
 const ART_VER = "likeness6";
@@ -13,7 +13,38 @@ function el(tag, className, text) {
   return node;
 }
 
+function captionClass(cap) {
+  return cap.kind === "voice" ? "caption voice" : "caption";
+}
+
+function renderLettering(panel) {
+  const lettering = el("figcaption", "lettering");
+  if (panel.kicker) lettering.append(el("p", "kicker", panel.kicker));
+  for (const cap of panel.captions || []) {
+    lettering.append(el("p", captionClass(cap), cap.text));
+  }
+  return lettering;
+}
+
+function renderCites(panel, className) {
+  if (!panel.cites || !panel.cites.length) return null;
+  const cite = el("a", className, `src ${panel.cites.join(", ")}`);
+  cite.href = `#src-${panel.cites[0]}`;
+  cite.setAttribute("aria-label", `Sources ${panel.cites.join(", ")}`);
+  return cite;
+}
+
 function renderPanel(panel) {
+  if (panel.kind === "narration") {
+    const node = el("figure", `panel narration ${panel.where || "both"}`);
+    node.id = panel.id;
+    if (panel.tag) node.append(el("span", "tag", panel.tag));
+    node.append(renderLettering(panel));
+    const cite = renderCites(panel, "cite");
+    if (cite) node.append(cite);
+    return node;
+  }
+
   const size = panel.size && panel.size !== "wide" ? ` ${panel.size}` : "";
   const extra = `${panel.tall ? " tall" : ""}${panel.splash ? " splash" : ""}`;
   const node = el("figure", `panel ${panel.where}${size}${extra}`);
@@ -48,24 +79,14 @@ function renderPanel(panel) {
 
   if (panel.sfx) frame.append(el("span", "sfx", panel.sfx.text));
 
-  if (panel.cites && panel.cites.length) {
-    const cite = el("a", "cite", `src ${panel.cites.join(", ")}`);
-    cite.href = `#src-${panel.cites[0]}`;
-    cite.setAttribute("aria-label", `Sources ${panel.cites.join(", ")}`);
-    frame.append(cite);
-  }
+  const cite = renderCites(panel, "cite");
+  if (cite) frame.append(cite);
 
   node.append(frame);
   const copy = el("div", "panel-copy");
   if (dialogue.childElementCount) copy.append(dialogue);
-
-  const captions = panel.captions || [];
-  if (captions.length) {
-    const lettering = el("figcaption", "lettering");
-    for (const cap of captions) {
-      lettering.append(el("p", "caption", cap.text));
-    }
-    copy.append(lettering);
+  if (panel.kicker || (panel.captions && panel.captions.length)) {
+    copy.append(renderLettering(panel));
   }
   node.append(copy);
 
@@ -111,4 +132,3 @@ for (const source of SOURCES) {
   item.append(link);
   sourcesHost.append(item);
 }
-

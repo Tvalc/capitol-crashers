@@ -16,8 +16,46 @@ export const STYLE =
 
 export const PAGES = [
   {
+    label: "Issue #1",
+    chapter: "The street still runs",
+    panels: [
+      {
+        id: "open",
+        where: "both",
+        size: "wide",
+        splash: true,
+        tag: "October 2026",
+        scene: "The street still runs",
+        art: "p26.webp",
+        alt: "Mamdani and El-Sayed walk side by side up a rain-slick avenue toward the Capitol.",
+        kicker: "Page one",
+        captions: [
+          { kind: "voice", text: "Start here. Not at the beginning. At the street they are walking now." },
+          { text: "In New York, a mayor who announced in October 2024 while polling in single digits now runs the largest city in America: the first Muslim, the first South Asian, and the first African-born to hold that office." },
+          { text: "In Michigan, a doctor who rebuilt a privatized health department has won a Democratic Senate nomination by fewer than 15,000 votes. He faces Republican Mike Rogers on November 3, 2026. The work is not finished." },
+        ],
+        cites: [1, 10, 27, 37, 39],
+        prompt: "Wide 16:9 splash, matching the fighter-select screen: a rain-slick avenue at night leading to the lit U.S. Capitol dome. Seen from behind and slightly to the side, Zohran Mamdani (dark suit, polka-dot tie) and Abdul El-Sayed (black henley) walk side by side toward the Capitol, puddles reflecting neon magenta, cyan and gold. Epic, hopeful, cinematic.",
+      },
+      {
+        id: "open-n",
+        kind: "narration",
+        where: "both",
+        tag: "The origin",
+        scene: "How two roads begin",
+        kicker: "Two roads",
+        captions: [
+          { kind: "voice", text: "An origin is a promise: the boy on the next page is the man who will have to answer for the fight twenty pages from now." },
+          { text: "The pictures in this book heighten a night, a coat, a crowd. The captions do not invent. They stay with certified tallies, quoted speech, and the platforms these men ran on. No named children. No invented crimes." },
+          { text: "Turn the page. One road begins in Kampala in 1991. The other begins in Michigan in 1984. They do not meet for a long time. They rhyme before they meet." },
+        ],
+        cites: [1, 3],
+      },
+    ],
+  },
+  {
     label: "Part 1",
-    chapter: "Two beginnings",
+    chapter: "Born on two maps",
     panels: [
       {
         id: "p01",
@@ -29,8 +67,9 @@ export const PAGES = [
         art: "p01.webp",
         alt: "A newborn in Kampala, held by his mother, a filmmaker, and his father, a scholar.",
         captions: [
-          { text: "October 18, 1991. Kampala, Uganda. Zohran Kwame Mamdani is born. His middle name honors Kwame Nkrumah, Ghana's first president.", pos: "tl" },
-          { text: "His mother is the filmmaker Mira Nair. His father is Mahmood Mamdani, a scholar of colonialism.", pos: "bl" },
+          { kind: "voice", text: "Begin with a name that is already a map." },
+          { text: "October 18, 1991. Kampala, Uganda. Zohran Kwame Mamdani is born. His middle name honors Kwame Nkrumah, Ghana's first president." },
+          { text: "His mother is the filmmaker Mira Nair. His father is Mahmood Mamdani, a scholar of colonialism. The boy will grow up between continents. The work will wait for him in Queens." },
         ],
         cites: [1, 2],
         prompt: "Warm golden-hour Kampala hillside with red-earth roads and jacaranda trees. A young South Asian woman filmmaker with long dark wavy hair and a middle-aged Ugandan-Indian scholar in his mid-forties cradle a newborn wrapped in a patterned cloth. The scholar has round glasses, receding salt-and-pepper hair, a thin scholarly face, and no full beard. They are parents, not the young bearded fighters. Loving, hopeful. No lettering.",
@@ -44,8 +83,9 @@ export const PAGES = [
         art: "p02.webp",
         alt: "An Egyptian engineer walks toward Wayne State University in Detroit.",
         captions: [
-          { text: "October 31, 1984. Southeast Michigan. Abdulrahman \"Abdul\" El-Sayed is born.", pos: "tl" },
-          { text: "His father emigrated from Alexandria, Egypt, in 1979 to earn an engineering doctorate at Wayne State University.", pos: "bl" },
+          { kind: "voice", text: "Meanwhile, seven years earlier, another map is drawn in Michigan." },
+          { text: "October 31, 1984. Southeast Michigan. Abdulrahman \"Abdul\" El-Sayed is born." },
+          { text: "His father emigrated from Alexandria, Egypt, in 1979 to earn an engineering doctorate at Wayne State University. The son will later say he is as Michigan as you get. He will spend a career proving it." },
         ],
         cites: [3, 4],
         prompt: "Early-1980s autumn campus at dusk. A young Egyptian engineer in his late twenties, short dark hair, thin mustache only, no full beard, brown corduroy jacket, stack of engineering textbooks, brick university buildings, Detroit skyline, faded Mediterranean lighthouse in the clouds. Not the bearded fighter. No readable text.",
@@ -58,7 +98,11 @@ export const PAGES = [
         scene: "Three-sport captain",
         art: "p03.webp",
         alt: "A teenage El-Sayed in lacrosse gear under stadium lights.",
-        captions: [{ text: "At Bloomfield Hills Andover High School he captains three teams at once: football, wrestling, and lacrosse.", pos: "tl" }],
+        captions: [
+          { kind: "voice", text: "Before the white coat, the helmet." },
+          { text: "At Bloomfield Hills Andover High School he captains three teams at once: football, wrestling, and lacrosse." },
+          { text: "Friday night is already a public. He just does not know yet what the public will ask of him." },
+        ],
         sfx: { text: "CRACK!" },
         cites: [3],
         prompt: "Landscape 4:3. A determined Egyptian-American high-school athlete in a lacrosse helmet mid-shot, stick whipping forward, under Friday-night stadium lights in suburban Michigan. Dynamic action lines, sparks of neon cyan on the ball. Football and wrestling gear visible on a bench in the background.",
@@ -72,8 +116,9 @@ export const PAGES = [
         art: "p04.webp",
         alt: "A teenage Mamdani swings a cricket bat on a Bronx field, the city skyline behind him.",
         captions: [
-          { text: "His family lives in Cape Town, then moves to New York City when he is seven.", pos: "tl" },
-          { text: "At the Bronx High School of Science he co-founds the school's first cricket team.", pos: "bl" },
+          { kind: "voice", text: "Cut east. The other boy is already moving." },
+          { text: "His family lives in Cape Town, then moves to New York City when he is seven. The Bronx becomes home." },
+          { text: "At the Bronx High School of Science he co-founds the school's first cricket team. A sport almost nobody plays on that field. He helps build the team anyway, because it is not already there." },
         ],
         sfx: { text: "THWACK!" },
         cites: [1, 2, 10],
@@ -87,7 +132,11 @@ export const PAGES = [
         scene: "Commencement",
         art: "p05.webp",
         alt: "El-Sayed at a podium in a graduation gown.",
-        captions: [{ text: "University of Michigan, class of 2007. He delivers the student commencement address.", pos: "tl" }],
+        captions: [
+          { kind: "voice", text: "A stadium in Ann Arbor. A first-generation kid at the microphone. The record keeps the words." },
+          { text: "University of Michigan, class of 2007. He delivers the student commencement address." },
+          { text: "Bill Clinton, the keynote, tells the crowd he wishes every person who believes civilizations cannot reach across religious divides could have heard it." },
+        ],
         bubbles: [{ who: "El-Sayed", text: "I realized I loved Michigan because the person who leaves here today is better than the one who came.", pos: "center low" }],
         cites: [5],
         prompt: "Square 1:1. A young Egyptian-American graduate in a black gown and maize-and-blue stole speaks at a podium, huge stadium crowd behind him in the rain of confetti. Low heroic angle, gold and blue light.",
@@ -95,8 +144,28 @@ export const PAGES = [
     ],
   },
   {
+    label: "Meanwhile",
+    chapter: "Cut between cities",
+    panels: [
+      {
+        id: "n02",
+        kind: "narration",
+        where: "both",
+        tag: "Meanwhile",
+        scene: "They leave home",
+        kicker: "Meanwhile",
+        captions: [
+          { kind: "voice", text: "Childhood is the map. What comes next is the training: the degrees, the kitchen tables, the years nobody put on a poster." },
+          { text: "One boy will study how poverty makes people sick, then walk into a hollowed-out health department and be told to rebuild it." },
+          { text: "The other will rap under the 7 train, then sit at foreclosure tables in Queens and decide that counseling is not enough. The roads do not meet yet. They rhyme." },
+        ],
+        cites: [6, 9, 11],
+      },
+    ],
+  },
+  {
     label: "Part 2",
-    chapter: "The training arc",
+    chapter: "The years that built them",
     panels: [
       {
         id: "p06",
@@ -107,8 +176,9 @@ export const PAGES = [
         art: "p06.webp",
         alt: "A montage: Oxford spires, a Columbia white coat, an epidemiology lecture hall.",
         captions: [
-          { text: "He is named a Rhodes Scholar. At Oxford he earns a doctorate in public health. At Columbia he earns his M.D.", pos: "tl" },
-          { text: "He then teaches epidemiology at Columbia, studying how poverty makes people sick.", pos: "br" },
+          { kind: "voice", text: "His father had asked a harder question than becoming a doctor: learn why people die, then teach everyone to save lives." },
+          { text: "He is named a Rhodes Scholar. At Oxford he earns a doctorate in public health. At Columbia he earns his M.D." },
+          { text: "He then teaches epidemiology at Columbia, studying how poverty makes people sick. Then he decides that studying is not enough. He goes home." },
         ],
         cites: [5, 6, 7],
         prompt: "Wide 16:9 montage in three overlapping beats, left to right: the spires of Oxford at dusk with a young man in an academic gown; the same man pulling on a white doctor's coat in a New York hospital corridor; the same man at a chalkboard covered in charts and maps of a city, lecturing. One continuous figure, gold-to-cyan lighting gradient.",
@@ -122,8 +192,9 @@ export const PAGES = [
         art: "p07.webp",
         alt: "Mamdani on a Jackson Heights street with his grandmother in a music video.",
         captions: [
-          { text: "He graduates from Bowdoin College in 2014 with a degree in Africana Studies. Then a detour: he records as the rapper \"Mr. Cardamom.\"", pos: "tl" },
-          { text: "His 2019 video \"Nani\" stars the actress Madhur Jaffrey as his grandmother.", pos: "bl" },
+          { kind: "voice", text: "Not every origin is a lecture hall. Some of them have a beat." },
+          { text: "He graduates from Bowdoin College in 2014 with a degree in Africana Studies. Then a detour: he records as the rapper \"Mr. Cardamom.\"" },
+          { text: "His 2019 video \"Nani\" stars the actress Madhur Jaffrey as his grandmother. Queens is already in the frame." },
         ],
         cites: [2, 8],
         prompt: "Landscape 4:3. A young South Asian man in a bright tracksuit raps on a busy Jackson Heights, Queens street under the elevated 7 train, beside a regal elderly Indian grandmother in a sari who is clearly the star. Halal cart steam, colorful shop signs (no readable words), playful magenta and gold lighting.",
@@ -137,11 +208,32 @@ export const PAGES = [
         art: "p08.webp",
         alt: "Mamdani at a family's kitchen table going over foreclosure papers.",
         captions: [
-          { text: "In 2018 he becomes a foreclosure-prevention counselor at Chhaya CDC in Queens, helping homeowners stay in their homes.", pos: "tl" },
-          { text: "He says that work is why he runs for office.", pos: "br" },
+          { kind: "voice", text: "This is the kitchen-table origin. The one that does not photograph like a rally." },
+          { text: "In 2018 he becomes a foreclosure-prevention counselor at Chhaya CDC in Queens, helping homeowners stay in their homes." },
+          { text: "He says that work is why he runs for office. The papers on the table are the first fight. The oath will come later. The table comes first." },
         ],
         cites: [9, 10],
         prompt: "Night in a small Queens kitchen. A young South Asian housing counselor: full dark beard, thick styled dark hair, light blue shirt, leaning over foreclosure papers. Across from him an anxious older immigrant couple who do not look like him: a gray-haired father and a mother, different faces. Warm lamp, cold blue window. He is the only young bearded man. No second politician. No short-cropped hair. No henley. No stethoscope. No lettering.",
+      },
+    ],
+  },
+  {
+    label: "Meanwhile",
+    chapter: "The first tests",
+    panels: [
+      {
+        id: "n03",
+        kind: "narration",
+        where: "both",
+        tag: "First fights",
+        scene: "The first tests",
+        kicker: "First fights",
+        captions: [
+          { kind: "voice", text: "Every origin has a first fight: the room that is empty, the door that does not open, the night you stay anyway." },
+          { text: "Detroit hands a thirty-year-old epidemiologist a privatized health department: five city employees, eighty-five contractors, and an order to rebuild it." },
+          { text: "Astoria hands a housing counselor a ten-year incumbent. He wins by 423 votes. Neither fight is a myth. The record keeps the numbers." },
+        ],
+        cites: [11, 18, 54],
       },
     ],
   },
@@ -159,8 +251,9 @@ export const PAGES = [
         art: "p09.webp",
         alt: "El-Sayed walks into a nearly empty Detroit Health Department office.",
         captions: [
-          { text: "In 2012, Detroit's health department was privatized. When he arrives in 2015, five city employees and eighty-five contractors remain.", pos: "tl" },
-          { text: "Mayor Mike Duggan gives the job to a thirty-year-old epidemiologist, with one instruction: rebuild it.", pos: "bl" },
+          { kind: "voice", text: "The empty office is the first fight that counts." },
+          { text: "In 2012, Detroit's health department was privatized. When he arrives in 2015, five city employees and eighty-five contractors remain." },
+          { text: "Mayor Mike Duggan gives the job to a thirty-year-old epidemiologist, with one instruction: rebuild it. He is thirty. The city is not a seminar." },
         ],
         cites: [11, 12, 53],
         prompt: "Wide 16:9 splash. A young Egyptian-American man in a suit and loosened tie walks into a nearly empty, dusty Detroit city office: overturned chairs, dead fluorescent lights, a few boxes. Morning light cuts through tall windows onto him like a spotlight. Detroit's east-side skyline through the glass. Heroic low angle, gold light, deep blue shadows.",
@@ -173,7 +266,11 @@ export const PAGES = [
         scene: "Glasses for kids",
         art: "p10.webp",
         alt: "A Detroit kid tries on new glasses in a mobile eye clinic.",
-        captions: [{ text: "In 2016 the department offers free eye exams and free glasses to Detroit public-school students, through a mobile clinic.", pos: "tl" }],
+        captions: [
+          { kind: "voice", text: "The work starts small enough to hold in two hands." },
+          { text: "In 2016 the department offers free eye exams and free glasses to Detroit public-school students, through a mobile clinic." },
+          { text: "A child puts on a pair and the blackboard comes into focus. A city that can see is a city that can learn." },
+        ],
         cites: [13],
         prompt: "Square 1:1. Inside a mobile eye-clinic van parked outside a Detroit school, a grinning Black schoolgirl puts on her first pair of glasses and sees clearly; the blurry world behind her snaps into focus. Bright, joyful cyan and gold.",
       },
@@ -185,7 +282,10 @@ export const PAGES = [
         scene: "SisterFriends",
         art: "p11.webp",
         alt: "Volunteer mentors with a new mother and her baby.",
-        captions: [{ text: "His work on infant mortality helps launch SisterFriends Detroit, pairing new mothers with volunteer mentors through the baby's first birthday.", pos: "tl" }],
+        captions: [
+          { kind: "voice", text: "Detroit's infant mortality is the fight he cannot leave on a chart." },
+          { text: "His work on infant mortality helps launch SisterFriends Detroit, pairing new mothers with volunteer mentors through the baby's first birthday. The mentors are the cape." },
+        ],
         cites: [14],
         prompt: "Square 1:1. A young Detroit mother holding her baby on a porch, surrounded by two smiling volunteer women mentors with a bag of baby supplies. Warm sunrise light, soft magenta glow.",
       },
@@ -198,8 +298,9 @@ export const PAGES = [
         art: "p12.webp",
         alt: "El-Sayed on stage at a rally, Bernie Sanders beside him.",
         captions: [
-          { text: "In 2018 he runs for governor on single-payer health care. Senator Bernie Sanders endorses him. Alexandria Ocasio-Cortez campaigns beside him.", pos: "tl" },
-          { text: "He loses the Democratic primary. He does not leave the work.", pos: "bl" },
+          { kind: "voice", text: "Then he tries the bigger room, and the bigger room says no." },
+          { text: "In 2018 he runs for governor on single-payer health care. Senator Bernie Sanders endorses him. Alexandria Ocasio-Cortez campaigns beside him." },
+          { text: "He loses the Democratic primary to Gretchen Whitmer. He does not leave the work. The next chapter is written from the loss." },
         ],
         cites: [15, 16, 17, 55],
         prompt: "Square 1:1. A packed Michigan rally at night, confetti and phone lights. A young Egyptian-American candidate raises a fist at the mic; a white-haired older senator in a rumpled suit claps beside him. Then a hint of rain starting. Magenta and cyan stage light.",
@@ -212,7 +313,11 @@ export const PAGES = [
         scene: "The upset",
         art: "p13.webp",
         alt: "Mamdani knocks on an Astoria row-house door at night. He is the only politician in the frame.",
-        captions: [{ text: "In the 2020 Democratic primary he unseats ten-year incumbent Aravella Simotas by 423 votes — 8,410 to 7,987 — and enters the State Assembly.", pos: "tl" }],
+        captions: [
+          { kind: "voice", text: "Meanwhile in Astoria, the other road knocks on doors until the doors answer." },
+          { text: "In the 2020 Democratic primary he unseats ten-year incumbent Aravella Simotas by 423 votes — 8,410 to 7,987 — and enters the State Assembly." },
+          { text: "The Board of Elections certifies the count. Upsets are not magic. They are margins." },
+        ],
         sfx: { text: "UPSET!" },
         cites: [18, 54],
         prompt: "Night in Astoria, Queens. One young South Asian man only: full dark beard, thick styled dark hair with volume on top, dark suit and blue polka-dot tie, clipboard, knocking on a brick row-house door under the elevated train. He is the only politician. No second man. No short-cropped hair. No black henley. No stethoscope. No lettering.",
@@ -226,8 +331,9 @@ export const PAGES = [
         art: "p14.webp",
         alt: "A packed city bus riding free.",
         captions: [
-          { text: "He wins a fare-free bus pilot. On five routes, weekday ridership rises 30 percent.", pos: "tl" },
-          { text: "His platform goes further: no fare on every city bus, plus priority lanes, queue-jump signals, and loading zones.", pos: "bl" },
+          { kind: "voice", text: "A bus is not a metaphor until the fare comes off." },
+          { text: "He wins a fare-free bus pilot. On five routes, weekday ridership rises 30 percent." },
+          { text: "His platform goes further: no fare on every city bus, plus priority lanes, queue-jump signals, and loading zones. The pilot is the proof. The platform is the promise." },
         ],
         cites: [19, 40],
         prompt: "A crowded blue-and-white New York City bus at dusk, riders of every age boarding through all doors, no fare box, big smiles. Everyday riders only. No politicians. No henley. No stethoscope. No lettering.",
@@ -242,12 +348,33 @@ export const PAGES = [
         art: "p15.webp",
         alt: "Taxi drivers and Mamdani on hunger strike outside City Hall at night.",
         captions: [
-          { text: "October 2021. Taxi drivers carry crushing medallion debt. He joins their fifteen-day hunger strike outside City Hall and is arrested as protesters block Broadway.", pos: "tl" },
-          { text: "On day 15 the city reaches a deal with the largest lender: loans restructured to $200,000, then $170,000 after a $30,000 city grant, with monthly payments capped at $1,122.", pos: "br" },
+          { kind: "voice", text: "Some fights you win by sitting still until the city cannot look away." },
+          { text: "October 2021. Taxi drivers carry crushing medallion debt. He joins their fifteen-day hunger strike outside City Hall and is arrested as protesters block Broadway." },
+          { text: "On day 15 the city reaches a deal with the largest lender: loans restructured to $200,000, then $170,000 after a $30,000 city grant, with monthly payments capped at $1,122. He will later take the oath with those drivers still in the story." },
         ],
         sfx: { text: "DAY 15" },
         cites: [20, 21, 57],
         prompt: "Night outside a grand city hall. Older immigrant taxi drivers in jackets on folding chairs with blankets, yellow cabs behind them. One thin young South Asian man with a full dark beard and styled dark hair sits among them, exhausted but unbowed. He is the only young man. No second politician. No short-cropped hair. No henley. Rain, yellow cab lights. No readable text.",
+      },
+    ],
+  },
+  {
+    label: "Meanwhile",
+    chapter: "After the loss",
+    panels: [
+      {
+        id: "n04",
+        kind: "narration",
+        where: "both",
+        tag: "Long odds",
+        scene: "After the loss",
+        kicker: "Long odds",
+        captions: [
+          { kind: "voice", text: "A loss is not the end of the book. It is the page turn." },
+          { text: "El-Sayed loses a governor's primary in 2018 and goes back to the work: a book, a podcast, then Wayne County. Mamdani wins an Assembly seat by 423 votes, then sits with taxi drivers until City Hall blinks." },
+          { text: "Both men will soon run for offices the polls say they cannot win. The next pages are those races." },
+        ],
+        cites: [17, 18, 21, 22],
       },
     ],
   },
@@ -264,7 +391,9 @@ export const PAGES = [
         art: "p16.webp",
         alt: "El-Sayed at a microphone for his podcast, a copy of his book on the desk.",
         captions: [
-          { text: "In 2020 he publishes Healing Politics. He hosts the public-health podcast America Dissected. In 2023 he returns to government as director of Wayne County Health, Human and Veterans Services.", pos: "tl" },
+          { kind: "voice", text: "After a loss, the work does not applaud. It waits." },
+          { text: "In 2020 he publishes Healing Politics. He hosts the public-health podcast America Dissected. In 2023 he returns to government as director of Wayne County Health, Human and Veterans Services." },
+          { text: "The receipts are accumulating. He will say so out loud." },
         ],
         cites: [22, 23, 3],
         prompt: "Landscape 4:3. Late night in a Detroit home studio: an Egyptian-American man in a sweater talks into a podcast microphone, a hardcover book on the desk, the Detroit skyline and the Guardian Building glowing through the window. Cozy gold light, cyan monitor glow.",
@@ -277,7 +406,11 @@ export const PAGES = [
         scene: "The long walk",
         art: "p17.webp",
         alt: "Mamdani walking down Broadway at night.",
-        captions: [{ text: "On October 23, 2024, he announces a race for mayor, polling in single digits. In the last weekend of the June 2025 primary, he walks the length of Manhattan overnight, from Inwood to the Battery.", pos: "tl" }],
+        captions: [
+          { kind: "voice", text: "He announces while the polls still treat him as a rumor. Then he walks the length of the island anyway." },
+          { text: "On October 23, 2024, he announces a race for mayor, polling in single digits. In the last weekend of the June 2025 primary, he walks the length of Manhattan overnight, from Inwood to the Battery." },
+          { text: "Hell Gate finds him after midnight, still walking. The quote is not a slogan. It is a job description." },
+        ],
         bubbles: [{ who: "Mamdani", text: "New Yorkers need to see their mayor, talk to their mayor, ask their mayor questions. They need to even yell at their mayor.", pos: "right low" }],
         cites: [24, 1],
         prompt: "Landscape 4:3. Summer night on an empty Manhattan avenue, a lone young South Asian man in sneakers and rolled sleeves walks toward the camera, followers with phones trailing behind, skyscrapers glowing magenta and gold, steam rising from a manhole.",
@@ -292,8 +425,9 @@ export const PAGES = [
         art: "p18.webp",
         alt: "Mamdani on stage on election night, arms raised, confetti falling.",
         captions: [
-          { text: "On June 24, 2025, he defeats former Governor Andrew Cuomo in the Democratic primary, 56.4 percent to 43.6 percent in the final ranked-choice round.", pos: "tl" },
-          { text: "On November 4 he is elected mayor: New York's first Muslim mayor, first South Asian mayor, and first African-born mayor.", pos: "bl" },
+          { kind: "voice", text: "The night the rumor becomes the result." },
+          { text: "On June 24, 2025, he defeats former Governor Andrew Cuomo, a Democrat, in the Democratic primary, 56.4 percent to 43.6 percent in the final ranked-choice round." },
+          { text: "On November 4 he is elected mayor: New York's first Muslim mayor, first South Asian mayor, and first African-born mayor. Hope, he tells the room, is alive. The work will have to prove it." },
         ],
         bubbles: [{ who: "Mamdani", text: "Hope is alive.", pos: "right high", shout: true }],
         cites: [26, 27, 28, 10, 59],
@@ -307,7 +441,11 @@ export const PAGES = [
         scene: "The oath",
         art: "p19.webp",
         alt: "Mamdani sworn in at midnight in the old City Hall subway station.",
-        captions: [{ text: "Just after midnight on January 1, 2026, he takes the oath in the old City Hall subway station.", pos: "tl" }],
+        captions: [
+          { kind: "voice", text: "Midnight. A closed station. An oath under tile and brass." },
+          { text: "Just after midnight on January 1, 2026, he takes the oath in the decommissioned City Hall subway station. The vault is closed to riders. It is open for one ceremony." },
+          { text: "The work begins before the sun. The city is already measuring whether the courage will last past the tile." },
+        ],
         bubbles: [{ who: "Mamdani", text: "We may not always succeed, but never will we be accused of lacking the courage to try.", pos: "center low" }],
         cites: [29, 30],
         prompt: "Landscape 4:3. The decommissioned City Hall subway station at midnight: curved Guastavino tile arches, brass chandeliers, skylights. A young South Asian man in a dark coat raises his right hand, left hand on two Qurans held by his wife; a small circle of witnesses. Glowing gold and green tile light.",
@@ -321,8 +459,9 @@ export const PAGES = [
         art: "p20.webp",
         alt: "El-Sayed launching his Senate campaign.",
         captions: [
-          { text: "On April 17, 2025, he launches a campaign for the United States Senate. Senator Bernie Sanders endorses him the same day.", pos: "tl" },
-          { text: "His campaign states the work in three lines: get money out of politics, put money in your pocket, and pass Medicare for All.", pos: "bl" },
+          { kind: "voice", text: "Cut back to Michigan. The other road launches with three lines and a fistful of paper." },
+          { text: "On April 17, 2025, he launches a campaign for the United States Senate. Senator Bernie Sanders endorses him the same day." },
+          { text: "His campaign states the work in three lines: get money out of politics, put money in your pocket, and pass Medicare for All. He tells Bridge Michigan he has his receipts." },
         ],
         bubbles: [{ who: "El-Sayed", text: "If you want a fighter, I've got my receipts.", pos: "right low" }],
         cites: [31, 32, 41, 56],
@@ -331,8 +470,28 @@ export const PAGES = [
     ],
   },
   {
+    label: "Meanwhile",
+    chapter: "When the work lands",
+    panels: [
+      {
+        id: "n05",
+        kind: "narration",
+        where: "both",
+        tag: "The work",
+        scene: "When the work lands",
+        kicker: "Landing",
+        captions: [
+          { kind: "voice", text: "A campaign is a poster. A term is a test. The next pages are whether the work lands." },
+          { text: "Mamdani takes the oath in a closed subway station and starts delivering the platform: a rent freeze, the first 2-K seats, city grocery sites, a record settlement for delivery workers." },
+          { text: "El-Sayed launches for Senate with three lines and a stack of receipts, then wins a primary the money was supposed to buy for someone else." },
+        ],
+        cites: [30, 33, 34, 36, 37],
+      },
+    ],
+  },
+  {
     label: "Part 5",
-    chapter: "Landing punches",
+    chapter: "The work starts paying",
     panels: [
       {
         id: "p21",
@@ -343,8 +502,9 @@ export const PAGES = [
         art: "p21.webp",
         alt: "Tenants cheering outside a Rent Guidelines Board vote.",
         captions: [
-          { text: "On June 25, 2026, the Rent Guidelines Board votes to freeze rents: zero percent on one-year and two-year leases, covering about one million rent-stabilized apartments — the first freeze on two-year leases in the city's history.", pos: "tl" },
-          { text: "That was the pledge on his campaign site: freeze the rent for every stabilized tenant. The site says more than two million New Yorkers live in those apartments.", pos: "bl" },
+          { kind: "voice", text: "The first power that lands is the one he ran on." },
+          { text: "On June 25, 2026, the Rent Guidelines Board votes to freeze rents: zero percent on one-year and two-year leases, covering about one million rent-stabilized apartments — the first freeze on two-year leases in the city's history." },
+          { text: "That was the pledge on his campaign site: freeze the rent for every stabilized tenant. The site says more than two million New Yorkers live in those apartments." },
         ],
         bubbles: [{ who: "Mamdani", text: "A historic victory for New York City tenants.", pos: "left low" }],
         sfx: { text: "FROZEN!" },
@@ -360,8 +520,9 @@ export const PAGES = [
         art: "p22.webp",
         alt: "Toddlers in a bright new classroom.",
         captions: [
-          { text: "Free, full-day child care for two-year-olds, beginning September 2026, with more than 2,000 seats in the first four communities.", pos: "tl" },
-          { text: "The platform he ran on: free care from six weeks to five years, and child-care workers paid on par with public-school teachers.", pos: "bl" },
+          { kind: "voice", text: "The next power is a classroom door that no longer costs a fortune to open." },
+          { text: "Free, full-day child care for two-year-olds, beginning September 2026, with more than 2,000 seats in the first four communities." },
+          { text: "The platform he ran on: free care from six weeks to five years, and child-care workers paid on par with public-school teachers. This is the first slice of that promise." },
         ],
         cites: [34, 40],
         prompt: "A bright New York toddler classroom. Two-year-olds painting and stacking blocks. One parent waving goodbye at the door with relief. Warm joyful light. No politicians. No bearded men in suits. No henley. No stethoscope. No lettering on the walls.",
@@ -375,8 +536,9 @@ export const PAGES = [
         art: "p23.webp",
         alt: "A city-owned grocery store under construction.",
         captions: [
-          { text: "The first sites announced for city-owned grocery stores: La Marqueta in East Harlem and The Peninsula in Hunts Point. He has pledged five stores, one in each borough.", pos: "tl" },
-          { text: "His campaign plan: a network of city stores that pay no rent and no property tax, and sell at wholesale, so the savings go to shoppers.", pos: "bl" },
+          { kind: "voice", text: "Food is not a side quest. It is the plot." },
+          { text: "The first sites announced for city-owned grocery stores: La Marqueta in East Harlem and The Peninsula in Hunts Point. He has pledged five stores, one in each borough." },
+          { text: "His campaign plan: a network of city stores that pay no rent and no property tax, and sell at wholesale, so the savings go to shoppers." },
         ],
         cites: [35, 40],
         prompt: "La Marqueta in East Harlem under an elevated railroad viaduct at dusk, market stalls being built out, crates of fresh produce, construction lights. Everyday shoppers and workers. No politicians. No henley. No stethoscope. No lettering.",
@@ -389,7 +551,11 @@ export const PAGES = [
         scene: "Delivery workers get paid",
         art: "p24.webp",
         alt: "Delivery workers on e-bikes in the rain, a giant check behind them.",
-        captions: [{ text: "In September 2026 the city announces a $131.5 million settlement with DoorDash. More than $115 million is to go to more than 260,000 underpaid delivery workers.", pos: "tl" }],
+        captions: [
+          { kind: "voice", text: "Rain. E-bikes. A settlement large enough to count as a punch." },
+          { text: "In September 2026 the city announces a $131.5 million settlement with DoorDash. More than $115 million is to go to more than 260,000 underpaid delivery workers." },
+          { text: "The city calls it the largest worker settlement in New York City history, and the largest settlement for delivery workers in American municipal history." },
+        ],
         sfx: { text: "PAID!" },
         cites: [36],
         prompt: "Wide 2:1. A line of food-delivery workers on e-bikes in the rain on a New York avenue, insulated bags on their backs, raising fists and cheering as gold coins rain down around them. Neon storefront reflections, cyan and gold.",
@@ -404,8 +570,9 @@ export const PAGES = [
         art: "p25.webp",
         alt: "El-Sayed on primary night in Detroit, arms raised.",
         captions: [
-          { text: "August 4, 2026. Outside groups spend tens of millions to defeat him, including more than $40 million from AIPAC's super PAC backing Representative Haley Stevens.", pos: "tl" },
-          { text: "He wins the Democratic nomination by fewer than 15,000 votes. By the next day, both of his primary rivals have endorsed him.", pos: "bl" },
+          { kind: "voice", text: "The money arrives to stop him. The votes arrive anyway." },
+          { text: "August 4, 2026. Outside groups spend tens of millions to defeat him, including more than $40 million from AIPAC's super PAC backing Representative Haley Stevens." },
+          { text: "He wins the Democratic nomination by fewer than 15,000 votes. By the next day, both of his primary rivals have endorsed him. The general election is still ahead. Rogers is waiting." },
         ],
         sfx: { text: "WON!" },
         cites: [37, 38, 58, 60],
@@ -414,8 +581,28 @@ export const PAGES = [
     ],
   },
   {
+    label: "Meanwhile",
+    chapter: "The same rain",
+    panels: [
+      {
+        id: "n06",
+        kind: "narration",
+        where: "both",
+        tag: "The roads meet",
+        scene: "The same rain",
+        kicker: "Meanwhile",
+        captions: [
+          { kind: "voice", text: "Cut the two roads into one frame. The rain is the same rain." },
+          { text: "New York has a mayor. Michigan has a nominee. One man already governs the largest city in America. The other still has to win November 3." },
+          { text: "They have never been the same person. They have always been the same argument: that public power should land where people live." },
+        ],
+        cites: [27, 37, 39],
+      },
+    ],
+  },
+  {
     label: "Part 6",
-    chapter: "Same street",
+    chapter: "The roads meet",
     panels: [
       {
         id: "p26",
@@ -427,11 +614,32 @@ export const PAGES = [
         art: "p26.webp",
         alt: "Mamdani and El-Sayed walk side by side up a rain-slick avenue toward the Capitol.",
         captions: [
-          { text: "One already governs the largest city in America.", pos: "tl" },
-          { text: "The other faces Republican Mike Rogers for the United States Senate on November 3, 2026. The work is not finished.", pos: "bl" },
+          { kind: "voice", text: "The last page of Issue #1 is not a victory lap. It is the same street as page one, seen from the other end." },
+          { text: "One already governs the largest city in America. The other faces Republican Mike Rogers for the United States Senate on November 3, 2026." },
+          { text: "Two roads. One unfinished fight. Turn the book over. Issue #2 is waiting, and it is about a mother." },
         ],
         cites: [39],
         prompt: "Wide 16:9 splash, matching the fighter-select screen: a rain-slick avenue at night leading to the lit U.S. Capitol dome. Seen from behind and slightly to the side, Zohran Mamdani (dark suit, polka-dot tie) and Abdul El-Sayed (black henley) walk side by side toward the Capitol, puddles reflecting neon magenta, cyan and gold. Epic, hopeful, cinematic.",
+      },
+    ],
+  },
+  {
+    label: "Issue #2",
+    chapter: "Previously",
+    panels: [
+      {
+        id: "n-h",
+        kind: "narration",
+        where: "detroit",
+        tag: "Issue #2",
+        scene: "Previously",
+        kicker: "The healer",
+        captions: [
+          { kind: "voice", text: "Issue #2 is not a detour. It is the smear, answered." },
+          { text: "On October 8, 2026, on a Michigan debate stage, Republican Mike Rogers reached for Abdul El-Sayed's mother. He suggested a watchlist. He named a workplace. He compared her to his own mother at a chamber of commerce." },
+          { text: "The next pages are not a rumor. They are her training, her calendar, her own words, and the Justice Department's. She was never charged. She is still on the job." },
+        ],
+        cites: [47, 48, 49, 50],
       },
     ],
   },
@@ -449,8 +657,9 @@ export const PAGES = [
         art: "h01.webp",
         alt: "An older Egyptian nurse in a white coat stands like a superhero, gold light around her, children safe behind her cape.",
         captions: [
-          { text: "On the debate stage, Rogers went after his mother. This is who she is.", pos: "tl" },
-          { text: "Fatten Elkomy. A psychiatric nurse practitioner. Never charged. Still on the job.", pos: "bl" },
+          { kind: "voice", text: "A man on television reached for a watchlist. This issue reaches for the record." },
+          { text: "On the debate stage, Rogers went after his opponent's mother. The next pages are who she is." },
+          { text: "Fatten Elkomy. A psychiatric nurse practitioner. Never charged. Still on the job. The coat is not a costume. It is the work." },
         ],
         cites: [47, 48, 49],
         prompt:
@@ -466,8 +675,9 @@ export const PAGES = [
         art: "h02.webp",
         alt: "A young Egyptian woman in a white coat on the steps of a medical school by the sea.",
         captions: [
-          { text: "In 1983 she graduates from Alexandria University's School of Medicine.", pos: "tl" },
-          { text: "That is her training. That is where the work begins.", pos: "bl" },
+          { kind: "voice", text: "Before Missouri. Before the smear. Alexandria, and a white coat that is earned." },
+          { text: "In 1983 she graduates from Alexandria University's School of Medicine." },
+          { text: "That is her training. That is where the work begins. If you skip this page, you are telling a different story." },
         ],
         cites: [49],
         prompt:
@@ -482,8 +692,9 @@ export const PAGES = [
         art: "h03-chibi.webp",
         alt: "The same woman older, in a clinic, listening to a patient.",
         captions: [
-          { text: "In the United States she earns dual master's degrees in health administration and health informatics, then a master's and a doctorate in psychiatric and mental-health nursing.", pos: "tl" },
-          { text: "She becomes a board-certified psychiatric nurse practitioner. She has worked at a community mental-health agency in Missouri since 2018.", pos: "bl" },
+          { kind: "voice", text: "She keeps training. The United States is not the end of the sentence. It is the next degree." },
+          { text: "In the United States she earns dual master's degrees in health administration and health informatics, then a master's and a doctorate in psychiatric and mental-health nursing." },
+          { text: "She becomes a board-certified psychiatric nurse practitioner. She has worked at a community mental-health agency in Missouri since 2018. The public registry still lists the clinics." },
         ],
         cites: [49, 50],
         prompt:
@@ -498,8 +709,9 @@ export const PAGES = [
         art: "h04.webp",
         alt: "The nurse sits with schoolchildren, listening, a cape of gold light behind her chair.",
         captions: [
-          { text: "A local school posted that she would begin as counselor on April 3, 2026, every other Friday, from eight in the morning until three.", pos: "tl" },
-          { text: "Thirteen years as a psychiatric and mental-health provider. That is the calendar. That is the cape.", pos: "bl" },
+          { kind: "voice", text: "The calendar is the alibi the smear never wanted." },
+          { text: "A local school posted that she would begin as counselor on April 3, 2026, every other Friday, from eight in the morning until three." },
+          { text: "Thirteen years as a psychiatric and mental-health provider. That is the calendar. That is the cape." },
         ],
         cites: [49],
         prompt:
@@ -521,8 +733,9 @@ export const PAGES = [
         art: "h05.webp",
         alt: "The nurse at a charity desk covered in child-sponsorship files and kids' drawings.",
         captions: [
-          { text: "In the early 2000s she worked at a Missouri humanitarian aid office. Court files from those years show transfer requests labeled for child sponsorship and for orphans.", pos: "tl" },
-          { text: "In 2004 she told the Columbia Daily Tribune: \"I've been working there serving orphans and children with at least one deceased parent, and it breaks my heart they're not going to get any help.\"", pos: "bl" },
+          { kind: "voice", text: "The job she named, in her own voice, twenty-two years before a debate stage tried to rename it." },
+          { text: "In the early 2000s she worked at a Missouri humanitarian aid office. Court files from those years show transfer requests labeled for child sponsorship and for orphans." },
+          { text: "In 2004 she told the Columbia Daily Tribune: \"I've been working there serving orphans and children with at least one deceased parent, and it breaks my heart they're not going to get any help.\"" },
         ],
         cites: [48],
         prompt:
@@ -537,8 +750,9 @@ export const PAGES = [
         art: "h06.webp",
         alt: "The nurse walks out of a federal building into gold light, files remaining behind her unmarked.",
         captions: [
-          { text: "She told the Tribune that FBI agents interviewed her for three hours about that work.", pos: "tl" },
-          { text: "She was never charged and never named as a defendant. Fact-checkers found no evidence she knew of any crime at the office.", pos: "bl" },
+          { kind: "voice", text: "They asked. They did not charge. Fact-checkers later looked for a crime with her name on it and did not find one." },
+          { text: "She told the Tribune that FBI agents interviewed her for three hours about that work." },
+          { text: "She was never charged and never named as a defendant. Fact-checkers found no evidence she knew of any crime at the office. El-Sayed was raised by his stepmother and his father. The smear still went looking for a mother." },
         ],
         cites: [48],
         prompt:
@@ -559,8 +773,9 @@ export const PAGES = [
         art: "h07.webp",
         alt: "A TV debate: an older gray-haired man jabs a finger from one podium; El-Sayed stands calm at the other. Two people only.",
         captions: [
-          { text: "On the Senate debate stage, Rogers suggested Flock cameras bothered his opponent because \"someone in your family that might be on a watchlist.\"", pos: "tl" },
-          { text: "El-Sayed: \"You're gonna go after my mom?\" Rogers said her workplace \"was indicted for funneling money\" to al-Qaeda. \"That's your mom. My mom worked at a small chamber of commerce. I'll put her up any day for that.\"", pos: "bl" },
+          { kind: "voice", text: "October 8, 2026. Live television. The oldest trick in the book, played in prime time." },
+          { text: "On the Senate debate stage, Rogers suggested Flock cameras bothered his opponent because \"someone in your family that might be on a watchlist.\"" },
+          { text: "El-Sayed: \"You're gonna go after my mom?\" Rogers said her workplace \"was indicted for funneling money\" to al-Qaeda. \"That's your mom. My mom worked at a small chamber of commerce. I'll put her up any day for that.\"" },
         ],
         cites: [47],
         prompt:
@@ -575,8 +790,9 @@ export const PAGES = [
         art: "h08.webp",
         alt: "A gold stethoscope pins a true court paper over a fake terror headline.",
         captions: [
-          { text: "Federal prosecutors later convicted officers of the U.S. office of illegal transfers to Iraq under sanctions. She was not among them.", pos: "tl" },
-          { text: "When the Justice Department brought a related indictment, it said the case \"does not charge any of the defendants with material support of terrorism, nor does it allege that they knowingly financed acts of terror.\"", pos: "bl" },
+          { kind: "voice", text: "Say the Justice Department part out loud. Do not let a debate line do the work of an indictment." },
+          { text: "Federal prosecutors later convicted officers of the U.S. office of illegal transfers to Iraq under sanctions. She was not among them." },
+          { text: "When the Justice Department brought a related indictment, it said the case \"does not charge any of the defendants with material support of terrorism, nor does it allege that they knowingly financed acts of terror.\"" },
         ],
         cites: [48, 52],
         prompt:
@@ -591,7 +807,9 @@ export const PAGES = [
         art: "h09.webp",
         alt: "El-Sayed at the debate podium, unbothered, while Rogers points from the other stand. Two people only.",
         captions: [
-          { text: "El-Sayed: \"He wants this to be about anything but his own record.\" \"Going after my mom, my sister, but he's got nothing to actually say about me.\"", pos: "tl" },
+          { kind: "voice", text: "He had nothing on the son, so he reached for the mother. The son named the move." },
+          { text: "El-Sayed: \"He wants this to be about anything but his own record.\" \"Going after my mom, my sister, but he's got nothing to actually say about me.\"" },
+          { text: "The next page is not his answer. It is hers: she is still walking into work." },
         ],
         cites: [47],
         prompt:
@@ -613,8 +831,9 @@ export const PAGES = [
         art: "h11.webp",
         alt: "The nurse walks toward a clinic at dawn, coat flaring like a cape, gold sun at her back, children and patients in the windows.",
         captions: [
-          { text: "She remains a psychiatric nurse practitioner in Missouri, with an active license and clinic addresses on the public registry.", pos: "tl" },
-          { text: "A Senate candidate tried to turn her into a watchlist. The record shows what she is: a healer. The coat is the cape.", pos: "bl" },
+          { kind: "voice", text: "Last page. Dawn. A clinic door. No watchlist. A license." },
+          { text: "She remains a psychiatric nurse practitioner in Missouri, with an active license and clinic addresses on the public registry." },
+          { text: "A Senate candidate tried to turn her into a watchlist. The record shows what she is: a healer. The coat is the cape." },
         ],
         cites: [50, 48],
         prompt:
@@ -623,26 +842,100 @@ export const PAGES = [
     ],
   },
   {
-    label: "Part 7",
-    chapter: "The platforms",
+    label: "Issue #2",
+    chapter: "Close on a license",
     panels: [
-      { id: "p27", where: "queens", size: "third", tag: "New York", scene: "Freeze the rent", art: "p27.webp", alt: "Mamdani in front of an apartment building as frost breaks off it.", captions: [{ text: "Freeze the rent for every stabilized tenant. His campaign says more than two million New Yorkers live in those apartments.", pos: "tl" }], cites: [40], prompt: "Mamdani, rent freeze, ice on an apartment building." },
-      { id: "p28", where: "queens", size: "third", tag: "New York", scene: "Fast, fare-free buses", art: "p28.webp", alt: "Mamdani beside a city bus in a priority lane.", captions: [{ text: "End the fare on every city bus. Speed them with priority lanes, queue-jump signals, and loading zones so double-parkers stay out of the way.", pos: "tl" }], cites: [40], prompt: "Mamdani, fare-free bus in a priority lane." },
-      { id: "p29", where: "queens", size: "third", tag: "New York", scene: "Community safety", art: "p29.webp", alt: "Mamdani with outreach workers helping a rider in a subway station.", captions: [{ text: "A Department of Community Safety: mental-health crisis response, outreach workers in 100 subway stations, gun-violence programs, and an 800 percent increase for hate-violence prevention. Police keep a role. They stop being the safety net.", pos: "tl" }], cites: [40], prompt: "Mamdani, subway outreach, no fight." },
-      { id: "p30", where: "queens", size: "third", tag: "New York", scene: "No-cost childcare", art: "p30.webp", alt: "Mamdani in the doorway of a toddler classroom.", captions: [{ text: "Free child care from six weeks to five years. Child-care workers paid on par with public-school teachers.", pos: "tl" }], cites: [40], prompt: "One young South Asian man only: full dark beard, thick styled dark hair with volume on top, dark suit and blue polka-dot tie, in the doorway of a toddler classroom. He is the only politician. No second man. No henley. No stethoscope. No lettering." },
-      { id: "p31", where: "queens", size: "third", tag: "New York", scene: "City-owned groceries", art: "p31.webp", alt: "Mamdani inside a city grocery stacked with produce.", captions: [{ text: "A network of city-owned stores. No rent, no property tax, and wholesale prices, so the savings go to shoppers.", pos: "tl" }], cites: [40], prompt: "One young South Asian man only: full dark beard, thick styled dark hair with volume on top, dark suit and blue polka-dot tie, inside a city grocery stacked with produce. He is the only politician. No second man. No henley. No stethoscope. No lettering." },
-      { id: "p32", where: "queens", size: "third", tag: "New York", scene: "200,000 homes", art: "p32.webp", alt: "Mamdani in front of new apartment buildings and construction workers.", captions: [{ text: "Triple production of permanently affordable, union-built, rent-stabilized homes: 200,000 new units over ten years. Any project that is 100 percent affordable is fast-tracked.", pos: "tl" }], cites: [40], prompt: "One young South Asian man only: full dark beard, thick styled dark hair with volume on top, dark suit and blue polka-dot tie, in front of new apartment buildings with construction workers. He is the only politician. No second man. No henley. No stethoscope. No lettering." },
-      { id: "p33", where: "queens", size: "third", tag: "New York", scene: "Bad landlords", art: "p33.webp", alt: "Mamdani with city workers repairing a neglected apartment hallway.", captions: [{ text: "One office for code enforcement. If the owner will not make the repair, the city does it and sends the bill. In the worst cases, the city takes the building.", pos: "tl" }], cites: [40], prompt: "Mamdani, city repair crew in a hallway." },
-      { id: "p34", where: "queens", size: "third", tag: "New York", scene: "Who pays", art: "p34.webp", alt: "Mamdani between glass towers and a working family.", captions: [{ text: "Match New Jersey's 11.5 percent corporate tax, about $5 billion. A 2 percent city tax on income over $1 million. Another $1 billion from procurement reform, auditors, and fines on corrupt landlords.", pos: "tl" }], cites: [40], prompt: "One young South Asian man only: full dark beard, thick styled dark hair with volume on top, dark suit and blue polka-dot tie, standing between glass office towers and a working family. He is the only politician. No second man. No short-cropped hair. No black henley. No stethoscope. No lettering." },
-      { id: "p35", where: "queens", size: "third", tag: "New York", scene: "$30 by 2030", art: "p35.webp", alt: "Mamdani with workers holding pay envelopes.", captions: [{ text: "Raise New York City's minimum wage to $30 an hour by 2030.", pos: "tl" }], cites: [46], prompt: "One young South Asian man only: full dark beard, thick styled dark hair with volume on top, dark suit and blue polka-dot tie, standing with city workers in safety vests holding pay envelopes. He is the only politician. No second man. No short-cropped hair. No black henley. No stethoscope. No lettering." },
-      { id: "p36", where: "detroit", size: "third", tag: "Michigan", scene: "Medicare for All", art: "p36.webp", alt: "El-Sayed in a public clinic as patients get care.", captions: [{ text: "Medicare for every American, cradle to grave, including vision, dental, and hearing. No premiums, copays, or deductibles. Automatic, and accepted everywhere. He also wants medical debt abolished.", pos: "tl" }], cites: [42], prompt: "El-Sayed, public clinic." },
-      { id: "p37", where: "detroit", size: "third", tag: "Michigan", scene: "Money out of politics", art: "p37.webp", alt: "El-Sayed sweeping corporate cash off a table.", captions: [{ text: "He says he has never taken a dime of corporate money and never will. Overturn Citizens United. Ban outside spending by corporate 501(c)(4)s, super PACs, and 527s. Public election funding and spending caps.", pos: "tl" }], cites: [43], prompt: "El-Sayed, sweeping dark money aside." },
-      { id: "p38", where: "detroit", size: "third", tag: "Michigan", scene: "Put money in your pocket", art: "p38.webp", alt: "El-Sayed at a Michigan kitchen table with a working family.", captions: [{ text: "Tax capital gains over $1 million like ordinary income. Close the stepped-up basis loophole. A federal tax exemption on the first $50,000. One good job should raise a family.", pos: "tl" }], cites: [44], prompt: "El-Sayed, kitchen table, money staying with a family." },
-      { id: "p39", where: "detroit", size: "third", tag: "Michigan", scene: "Housing", art: "p39.webp", alt: "El-Sayed handing keys to a family in front of a new house.", captions: [{ text: "A building boom and a federal renter bill of rights. Ban large corporations from owning homes they speculate on, and ban software that lets landlords fix rents together.", pos: "tl" }], cites: [44], prompt: "El-Sayed, family getting house keys." },
-      { id: "p40", where: "detroit", size: "third", tag: "Michigan", scene: "Clean water", art: "p40.webp", alt: "El-Sayed on a Great Lakes shore as workers pull lead pipes.", captions: [{ text: "At least 50 gallons of clean water a person a day. Bills capped at 2 percent of household income, and no shutoffs for families who cannot pay. Every lead pipe in Michigan out by 2030. Shut down Line 5.", pos: "tl" }], cites: [43], prompt: "El-Sayed, clean water, lead pipes, Line 5." },
-      { id: "p41", where: "detroit", size: "third", tag: "Michigan", scene: "Schools", art: "p41.webp", alt: "El-Sayed in a public-school classroom with a teacher and students.", captions: [{ text: "Universal child care and pre-K. A $60,000 minimum salary for teachers. Fully fund the Individuals with Disabilities Education Act. A debt-free, tuition-free path through college or an apprenticeship.", pos: "tl" }], cites: [44], prompt: "El-Sayed, public school classroom." },
-      { id: "p42", where: "detroit", size: "half", tag: "Michigan", scene: "Data centers", art: "p42.webp", alt: "El-Sayed standing between a neighborhood and a data center.", captions: [{ text: "Data centers pay their own power, so household rates do not rise. Closed-loop cooling, so they do not drain the water. Neighbors get a say.", pos: "tl" }], cites: [45], prompt: "El-Sayed between houses and a data center." },
-      { id: "p43", where: "detroit", size: "half", tag: "Michigan", scene: "Diplomacy", art: "p43.webp", alt: "El-Sayed at a diplomatic table.", captions: [{ text: "A foreign policy centered on diplomacy, cooperation, and human rights. No blank-check funding for foreign militaries, including Egypt, Israel, Saudi Arabia, and the UAE. He supports an immediate arms embargo on Israel.", pos: "tl" }], cites: [43], prompt: "El-Sayed at a diplomacy table." },
+      {
+        id: "n-end",
+        kind: "narration",
+        where: "detroit",
+        tag: "End of issue",
+        scene: "Close on a license",
+        kicker: "To be continued",
+        captions: [
+          { kind: "voice", text: "Close the issue on a clinic door, not a debate clip." },
+          { text: "She trained in Alexandria. She kept training in Missouri. Federal prosecutors convicted others at that office; they did not charge her. The public registry still lists her clinics." },
+          { text: "A candidate reached for a watchlist. The book answers with a license. The street in Issue #1 is still wet. The general election is still ahead." },
+        ],
+        cites: [48, 50, 52, 39],
+      },
+    ],
+  },
+  {
+    label: "Meanwhile",
+    chapter: "What they fight for",
+    panels: [
+      {
+        id: "n07",
+        kind: "narration",
+        where: "both",
+        tag: "The powers",
+        scene: "What they fight for",
+        kicker: "Back matter",
+        captions: [
+          { kind: "voice", text: "The last pages of the book are the powers. Not the costume. The work they promised in public." },
+          { text: "These planks are taken from the sites they ran on. Zohran for NYC. Abdul for Senate. Shortened for the page. Cited in the sources." },
+          { text: "A poster is a face. A program is a list. This is the list." },
+        ],
+        cites: [40, 41],
+      },
+    ],
+  },
+  {
+    label: "Part 7",
+    chapter: "The powers",
+    panels: [
+      { id: "p27", where: "queens", size: "third", tag: "New York", scene: "Freeze the rent", art: "p27.webp", alt: "Mamdani in front of an apartment building as frost breaks off it.", captions: [
+          { kind: "voice", text: "He ran on this. Then the board voted, and the freeze was real." },
+          { text: "Freeze the rent for every stabilized tenant. His campaign says more than two million New Yorkers live in those apartments.", pos: "tl" }], cites: [40], prompt: "Mamdani, rent freeze, ice on an apartment building." },
+      { id: "p28", where: "queens", size: "third", tag: "New York", scene: "Fast, fare-free buses", art: "p28.webp", alt: "Mamdani beside a city bus in a priority lane.", captions: [
+          { kind: "voice", text: "The pilot was five routes. The promise is the whole grid." },
+          { text: "End the fare on every city bus. Speed them with priority lanes, queue-jump signals, and loading zones so double-parkers stay out of the way.", pos: "tl" }], cites: [40], prompt: "Mamdani, fare-free bus in a priority lane." },
+      { id: "p29", where: "queens", size: "third", tag: "New York", scene: "Community safety", art: "p29.webp", alt: "Mamdani with outreach workers helping a rider in a subway station.", captions: [
+          { kind: "voice", text: "Safety as a department, not only as a siren." },
+          { text: "A Department of Community Safety: mental-health crisis response, outreach workers in 100 subway stations, gun-violence programs, and an 800 percent increase for hate-violence prevention. Police keep a role. They stop being the safety net.", pos: "tl" }], cites: [40], prompt: "Mamdani, subway outreach, no fight." },
+      { id: "p30", where: "queens", size: "third", tag: "New York", scene: "No-cost childcare", art: "p30.webp", alt: "Mamdani in the doorway of a toddler classroom.", captions: [
+          { kind: "voice", text: "The 2-K seats are the first slice of this." },
+          { text: "Free child care from six weeks to five years. Child-care workers paid on par with public-school teachers.", pos: "tl" }], cites: [40], prompt: "One young South Asian man only: full dark beard, thick styled dark hair with volume on top, dark suit and blue polka-dot tie, in the doorway of a toddler classroom. He is the only politician. No second man. No henley. No stethoscope. No lettering." },
+      { id: "p31", where: "queens", size: "third", tag: "New York", scene: "City-owned groceries", art: "p31.webp", alt: "Mamdani inside a city grocery stacked with produce.", captions: [
+          { kind: "voice", text: "A public option at the register." },
+          { text: "A network of city-owned stores. No rent, no property tax, and wholesale prices, so the savings go to shoppers.", pos: "tl" }], cites: [40], prompt: "One young South Asian man only: full dark beard, thick styled dark hair with volume on top, dark suit and blue polka-dot tie, inside a city grocery stacked with produce. He is the only politician. No second man. No henley. No stethoscope. No lettering." },
+      { id: "p32", where: "queens", size: "third", tag: "New York", scene: "200,000 homes", art: "p32.webp", alt: "Mamdani in front of new apartment buildings and construction workers.", captions: [
+          { kind: "voice", text: "Homes as a production target, not a press release." },
+          { text: "Triple production of permanently affordable, union-built, rent-stabilized homes: 200,000 new units over ten years. Any project that is 100 percent affordable is fast-tracked.", pos: "tl" }], cites: [40], prompt: "One young South Asian man only: full dark beard, thick styled dark hair with volume on top, dark suit and blue polka-dot tie, in front of new apartment buildings with construction workers. He is the only politician. No second man. No henley. No stethoscope. No lettering." },
+      { id: "p33", where: "queens", size: "third", tag: "New York", scene: "Bad landlords", art: "p33.webp", alt: "Mamdani with city workers repairing a neglected apartment hallway.", captions: [
+          { kind: "voice", text: "If the owner will not, the city will." },
+          { text: "One office for code enforcement. If the owner will not make the repair, the city does it and sends the bill. In the worst cases, the city takes the building.", pos: "tl" }], cites: [40], prompt: "Mamdani, city repair crew in a hallway." },
+      { id: "p34", where: "queens", size: "third", tag: "New York", scene: "Who pays", art: "p34.webp", alt: "Mamdani between glass towers and a working family.", captions: [
+          { kind: "voice", text: "Who pays for the powers." },
+          { text: "Match New Jersey's 11.5 percent corporate tax, about $5 billion. A 2 percent city tax on income over $1 million. Another $1 billion from procurement reform, auditors, and fines on corrupt landlords.", pos: "tl" }], cites: [40], prompt: "One young South Asian man only: full dark beard, thick styled dark hair with volume on top, dark suit and blue polka-dot tie, standing between glass office towers and a working family. He is the only politician. No second man. No short-cropped hair. No black henley. No stethoscope. No lettering." },
+      { id: "p35", where: "queens", size: "third", tag: "New York", scene: "$30 by 2030", art: "p35.webp", alt: "Mamdani with workers holding pay envelopes.", captions: [
+          { kind: "voice", text: "A wage with a year on it." },
+          { text: "Raise New York City's minimum wage to $30 an hour by 2030.", pos: "tl" }], cites: [46], prompt: "One young South Asian man only: full dark beard, thick styled dark hair with volume on top, dark suit and blue polka-dot tie, standing with city workers in safety vests holding pay envelopes. He is the only politician. No second man. No short-cropped hair. No black henley. No stethoscope. No lettering." },
+      { id: "p36", where: "detroit", size: "third", tag: "Michigan", scene: "Medicare for All", art: "p36.webp", alt: "El-Sayed in a public clinic as patients get care.", captions: [
+          { kind: "voice", text: "He wrote the book on this. Then he ran on it." },
+          { text: "Medicare for every American, cradle to grave, including vision, dental, and hearing. No premiums, copays, or deductibles. Automatic, and accepted everywhere. He also wants medical debt abolished.", pos: "tl" }], cites: [42], prompt: "El-Sayed, public clinic." },
+      { id: "p37", where: "detroit", size: "third", tag: "Michigan", scene: "Money out of politics", art: "p37.webp", alt: "El-Sayed sweeping corporate cash off a table.", captions: [
+          { kind: "voice", text: "The first line on the site is the first line of the fight." },
+          { text: "He says he has never taken a dime of corporate money and never will. Overturn Citizens United. Ban outside spending by corporate 501(c)(4)s, super PACs, and 527s. Public election funding and spending caps.", pos: "tl" }], cites: [43], prompt: "El-Sayed, sweeping dark money aside." },
+      { id: "p38", where: "detroit", size: "third", tag: "Michigan", scene: "Put money in your pocket", art: "p38.webp", alt: "El-Sayed at a Michigan kitchen table with a working family.", captions: [
+          { kind: "voice", text: "Put money in your pocket is not a metaphor." },
+          { text: "Tax capital gains over $1 million like ordinary income. Close the stepped-up basis loophole. A federal tax exemption on the first $50,000. One good job should raise a family.", pos: "tl" }], cites: [44], prompt: "El-Sayed, kitchen table, money staying with a family." },
+      { id: "p39", where: "detroit", size: "third", tag: "Michigan", scene: "Housing", art: "p39.webp", alt: "El-Sayed handing keys to a family in front of a new house.", captions: [
+          { kind: "voice", text: "A building boom with a renter's bill of rights." },
+          { text: "A building boom and a federal renter bill of rights. Ban large corporations from owning homes they speculate on, and ban software that lets landlords fix rents together.", pos: "tl" }], cites: [44], prompt: "El-Sayed, family getting house keys." },
+      { id: "p40", where: "detroit", size: "third", tag: "Michigan", scene: "Clean water", art: "p40.webp", alt: "El-Sayed on a Great Lakes shore as workers pull lead pipes.", captions: [
+          { kind: "voice", text: "Michigan is water. The plank starts there." },
+          { text: "At least 50 gallons of clean water a person a day. Bills capped at 2 percent of household income, and no shutoffs for families who cannot pay. Every lead pipe in Michigan out by 2030. Shut down Line 5.", pos: "tl" }], cites: [43], prompt: "El-Sayed, clean water, lead pipes, Line 5." },
+      { id: "p41", where: "detroit", size: "third", tag: "Michigan", scene: "Schools", art: "p41.webp", alt: "El-Sayed in a public-school classroom with a teacher and students.", captions: [
+          { kind: "voice", text: "Teachers, kids, a debt-free path." },
+          { text: "Universal child care and pre-K. A $60,000 minimum salary for teachers. Fully fund the Individuals with Disabilities Education Act. A debt-free, tuition-free path through college or an apprenticeship.", pos: "tl" }], cites: [44], prompt: "El-Sayed, public school classroom." },
+      { id: "p42", where: "detroit", size: "half", tag: "Michigan", scene: "Data centers", art: "p42.webp", alt: "El-Sayed standing between a neighborhood and a data center.", captions: [
+          { kind: "voice", text: "The servers do not get to bill the neighbors." },
+          { text: "Data centers pay their own power, so household rates do not rise. Closed-loop cooling, so they do not drain the water. Neighbors get a say.", pos: "tl" }], cites: [45], prompt: "El-Sayed between houses and a data center." },
+      { id: "p43", where: "detroit", size: "half", tag: "Michigan", scene: "Diplomacy", art: "p43.webp", alt: "El-Sayed at a diplomatic table.", captions: [
+          { kind: "voice", text: "Diplomacy as the center, not the footnote." },
+          { text: "A foreign policy centered on diplomacy, cooperation, and human rights. No blank-check funding for foreign militaries, including Egypt, Israel, Saudi Arabia, and the UAE. He supports an immediate arms embargo on Israel.", pos: "tl" }], cites: [43], prompt: "El-Sayed at a diplomacy table." },
     ],
   },
 ];
