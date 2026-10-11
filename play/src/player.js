@@ -1,10 +1,11 @@
-import { helpWindow } from "./help-actions.js?v=cast40";
-import { play } from "./audio.js?v=cast40";
-import { hasGrapplePair, grapplePairDistance, grapplePairContactRemaining, grapplePairImpact, grapplePairDuration } from "./sprites.js?v=cast40";
-import { FIGHTERS } from "./fighters.js?v=cast40";
-import { integrate, melee, spendSpecial, updateBody } from "./combat.js?v=cast40";
-import { finishWeapon, launchHeld, noteWeaponSwing, spawnBolt } from "./weapons.js?v=cast40";
-import { deliverHelp, finishHelp, helpTarget, startHelp } from "./citizens.js?v=cast40";
+import { interruptBovino } from "./bovino/adapter.js?v=bovino45";
+import { helpWindow } from "./help-actions.js?v=bovino47";
+import { play } from "./audio.js?v=bovino47";
+import { hasGrapplePair, grapplePairDistance, grapplePairContactRemaining, grapplePairImpact, grapplePairDuration } from "./sprites.js?v=bovino47";
+import { FIGHTERS } from "./fighters.js?v=bovino47";
+import { integrate, melee, spendSpecial, updateBody } from "./combat.js?v=bovino47";
+import { finishWeapon, launchHeld, noteWeaponSwing, spawnBolt } from "./weapons.js?v=bovino47";
+import { deliverHelp, finishHelp, helpTarget, startHelp } from "./citizens.js?v=bovino47";
 
 const LIGHTS = [
   { startup: 0.10, active: 0.09, dmg: 7, kb: 65, lift: 0, stun: 0.32 },
@@ -298,6 +299,7 @@ function grabTarget(game, player, reach = 100) {
 }
 
 function startGrab(game, player, enemy) {
+  interruptBovino(game,enemy);
   // Never swap character art midway through a hold when a lazy sheet arrives.
   player.grapplePairLocked = undefined;
   player.grapplePairLocked = hasGrapplePair(player, enemy);
@@ -317,7 +319,7 @@ function startGrab(game, player, enemy) {
   enemy.vx = 0;
   enemy.vy = 0;
   enemy.vz = 0;
-  game.banner = "Grabbed Â· J strike Â· K throw";
+  game.banner = "Grabbed | J strike | K throw";
   game.bannerT = 1.1;
 }
 
@@ -816,3 +818,4 @@ export function updatePlayer(player, game, input, dt) {
 export function fighterById(id) {
   return FIGHTERS[id] || FIGHTERS.mamdani;
 }
+

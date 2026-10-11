@@ -1,6 +1,7 @@
-import { play } from "./audio.js?v=cast40";
-import { WORLD } from "./stages.js?v=cast40";
-import { followingWitness, knockWitness } from "./citizens.js?v=cast40";
+import { play } from "./audio.js?v=bovino47";
+import { interruptBovino, splitBovino } from "./bovino/adapter.js?v=bovino45";
+import { WORLD } from "./stages.js?v=bovino47";
+import { followingWitness, knockWitness } from "./citizens.js?v=bovino47";
 
 export function integrate(ent, dt) {
   ent.z += ent.vz * dt;
@@ -57,6 +58,7 @@ export function applyHit(game, spec, target) {
   if (target.state === "getup") return false;
   if (target.invuln > 0) return false;
   if (target.state === "grabbed" && spec.kind !== "grab") return false;
+  interruptBovino(game,target);
 
   let dmg = spec.dmg;
   if (target.armor) dmg *= target.armor;
@@ -137,6 +139,7 @@ export function applyHit(game, spec, target) {
   }
 
   if (target.hp <= 0) {
+    if (splitBovino(game,target)) return true;
     target.hp = 0;
     target.chip = 0;
     target.state = "dead";
@@ -335,3 +338,4 @@ export function separate(list) {
     }
   }
 }
+

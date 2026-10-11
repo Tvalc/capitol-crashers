@@ -1,4 +1,4 @@
-import { spawnSatellite } from './weapons.js?v=cast40';
+import { spawnSatellite } from './weapons.js?v=bovino47';
 const smooth = t => { t=Math.max(0,Math.min(1,t)); return t*t*(3-2*t); };
 export function addLaserEncounter(game, makeEnemy, x) {
   const left=game.lockCam??game.cameraX??0;
@@ -58,3 +58,4 @@ export function updateLaserEncounters(game,dt){
   }
   for(const shot of game.projectiles)if(shot.sourceRelay&&!game.enemies.some(e=>e.id===shot.sourceRelay&&e.alive))shot.alive=false;
 }
+

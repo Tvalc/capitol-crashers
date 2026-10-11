@@ -1,10 +1,10 @@
-import { helpAction } from "./help-actions.js?v=cast40";
+import { helpAction } from "./help-actions.js?v=bovino47";
 // Citizens are the people the fighters stop for. They never take damage and
 // never deal it. Standing next to one and pressing strike helps them.
 // Witnesses are the exception: once helped they follow the fighter to the boss,
 // and villains can knock them down on the way.
-import { play } from "./audio.js?v=cast40";
-import { WORLD } from "./stages.js?v=cast40";
+import { play } from "./audio.js?v=bovino47";
+import { WORLD } from "./stages.js?v=bovino47";
 
 export const CITIZEN_KINDS = {
   hungry: {
@@ -325,3 +325,5 @@ export function spawnCelebration(game, count = 4) {
     game.citizens.push(cit);
   }
 }
+
+

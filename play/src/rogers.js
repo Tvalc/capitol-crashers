@@ -88,3 +88,5 @@ export function updateRogers(enemy, player, dt, strike) {
   enemy.x+=enemy.vx*dt;enemy.y+=enemy.vy*dt;
   enemy.state=enemy.vx||enemy.vy?'walk':'idle';
 }
+
+

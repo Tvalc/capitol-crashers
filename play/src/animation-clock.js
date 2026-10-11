@@ -10,3 +10,5 @@ export function advanceGait(ent, oldX, oldY) {
   ent.gaitFacing = ent.facing;
   ent.gaitDistance = (ent.gaitDistance || 0) + Math.hypot(ent.x - oldX, (ent.y - oldY) / 0.72);
 }
+
+

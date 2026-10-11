@@ -1,11 +1,14 @@
-import { updateRogers, updateRogersForm } from "./rogers.js?v=cast40";
-import { melee, updateBody } from "./combat.js?v=cast40";
-import { WORLD } from "./stages.js?v=cast40";
-import { spawnSatellite, spawnShot, spawnSombrero } from "./weapons.js?v=cast40";
+import { updateRogers, updateRogersForm } from "./rogers.js?v=bovino47";
+import { isBovino, updateBovino } from "./bovino/adapter.js?v=bovino45";
+import { melee, updateBody } from "./combat.js?v=bovino47";
+import { WORLD } from "./stages.js?v=bovino47";
+import { spawnSatellite, spawnShot, spawnSombrero } from "./weapons.js?v=bovino47";
 
 const KINDS = {
+  bovino: {name:"Bovino — Four in a Coat",hp:100,speed:62,w:44,h:100,dmg:8,reach:65,scale:1,boss:true},
+  bovino_mini: {name:"Mini Bovino",hp:32,speed:98,w:28,h:55,dmg:8,reach:45,scale:1},
   ice_bro: {name:"ICE Bro",hp:38,speed:100,w:40,h:90,dmg:8,reach:64,scale:1},
-  bongino: {name:"Dan Bongino",hp:110,speed:125,w:44,h:94,dmg:12,reach:78,scale:1},
+  bongino: {sprite:"ice_bro",name:"Dan Bongino",hp:110,speed:125,w:44,h:94,dmg:12,reach:78,scale:1},
   giuliani: {name:"Rudy Giuliani",hp:90,speed:75,w:42,h:90,dmg:11,reach:78,scale:1},
   beck: {name:"Glenn Beck",hp:82,speed:85,w:42,h:90,dmg:9,reach:82,scale:1},
   rogers: { name:"Mike Rogers",sprite:"rogers",hp:180,speed:90,w:48,h:100,dmg:14,reach:58,scale:1,boss:true },
@@ -1111,6 +1114,7 @@ function updateNewCast(enemy, game, dt) {
 export function updateEnemy(enemy, game, dt) {
   if (enemy.isMachine) { enemy.flash=Math.max(0,enemy.flash-dt); if (!enemy.alive) enemy.deadT-=dt; return; }
   enemy.anim += dt;
+  if (enemy.state === 'bovinoSplit') { updateBovino(enemy,game,dt,makeEnemy); return; }
   if (enemy.kind === "greene") enemy.laserCd = Math.max(0, (enemy.laserCd ?? 0.45) - dt);
   if (enemy.attackCd > 0) enemy.attackCd -= dt;
   if (updateBody(enemy, dt)) {
@@ -1125,6 +1129,7 @@ export function updateEnemy(enemy, game, dt) {
     return;
   }
   if (enemy.kind === "rogers" && updateRogersForm(enemy, game, dt)) return;
+  if (isBovino(enemy)) { updateBovino(enemy,game,dt,makeEnemy); return; }
   if (updateTransform(enemy, game, dt)) return;
   if(enemy.kind !== "rogers") checkPhase(enemy, game);
   if (["ice_bro","bongino","giuliani","beck"].includes(enemy.kind)) updateNewCast(enemy,game,dt);
@@ -1141,3 +1146,4 @@ export function updateEnemy(enemy, game, dt) {
   else if (enemy.kind === "mara") updateMara(enemy, game, dt);
   else if (enemy.kind === "signal") updateSignal(enemy, game, dt);
 }
+

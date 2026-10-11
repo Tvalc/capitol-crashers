@@ -1,16 +1,17 @@
-import { addLaserEncounter, updateLaserEncounters } from "./laser-encounter.js?v=cast40";
-import { propFootprints, collideProps, steerAroundProps } from "./prop-collision.js?v=cast40";
-import { play, unlock } from "./audio.js?v=cast40";
-import { separate, tickToss, wallBounce } from "./combat.js?v=cast40";
-import { makeEnemy, updateEnemy } from "./enemies.js?v=cast40";
-import { blankInput, createInput } from "./input.js?v=cast40";
-import { fighterById, makePlayer, updatePlayer, bufferPlayerInput } from "./player.js?v=cast40";
-import { draw, loadEnvironment } from "./render.js?v=cast40";
-import { cloneStage, STAGES, WORLD } from "./stages.js?v=cast40";
-import { updatePickups, updateProjectiles } from "./weapons.js?v=cast40";
-import { loadSprites, ensureGrapplePair } from "./sprites.js?v=cast40";
+import { addLaserEncounter, updateLaserEncounters } from "./laser-encounter.js?v=bovino47";
+import { propFootprints, collideProps, steerAroundProps } from "./prop-collision.js?v=bovino47";
+import { play, unlock } from "./audio.js?v=bovino47";
+import { separate, tickToss, wallBounce, applyHit } from "./combat.js?v=bovino47";
+import { updateBovinoHazards, splitBovino } from "./bovino/adapter.js?v=bovino45";
+import { makeEnemy, updateEnemy } from "./enemies.js?v=bovino47";
+import { blankInput, createInput } from "./input.js?v=bovino47";
+import { fighterById, makePlayer, updatePlayer, bufferPlayerInput } from "./player.js?v=bovino47";
+import { draw, loadEnvironment } from "./render.js?v=bovino47";
+import { cloneStage, STAGES, WORLD } from "./stages.js?v=bovino47";
+import { updatePickups, updateProjectiles } from "./weapons.js?v=bovino47";
+import { loadSprites, ensureGrapplePair } from "./sprites.js?v=bovino47";
 import { PAGES } from "/story/panels.js";
-import { followingWitness, makeCitizen, spawnCelebration, updateCitizens, witnessTestifies } from "./citizens.js?v=cast40";
+import { followingWitness, makeCitizen, spawnCelebration, updateCitizens, witnessTestifies } from "./citizens.js?v=bovino47";
 
 // Comic panels that exist as short animated loops (OpenArt), shown between stages.
 const MOTION = { p21: "../art/story/motion/p21.mp4", p27: "../art/story/motion/p27.mp4" };
@@ -80,7 +81,7 @@ export function beginPractice(game, fighterId, active = false, opponent = game.p
   game.storyId = null;
   game.practice = true;
   game.practiceActive = active;
-  game.practiceEnemy = ["ice_bro","bongino","giuliani","beck","rogers", "cruz", "pete", "pete_ww", "vance", "greene", "trump"].includes(opponent) ? opponent : "cruz";
+  game.practiceEnemy = ["bovino","bovino_mini","ice_bro","bongino","giuliani","beck","rogers", "cruz", "pete", "pete_ww", "vance", "greene", "trump"].includes(opponent) ? opponent : "cruz";
   game.introT = 0;
   game.stage.props = [];
   game.stage.pickups = [];
@@ -118,6 +119,7 @@ export function beginPractice(game, fighterId, active = false, opponent = game.p
     return;
   }
 
+  if (game.practiceEnemy === "bovino") ensureGrapplePair(game.player, {sprite:"bovino_mini"});
   game.practicePairStatus = "Loading paired animation…";
   ensureGrapplePair(game.player, game.enemies[0]).then(ready => {
     if (game.player === practicePlayer) game.practicePairStatus = ready ? "Paired grapple loaded" : "Older separate poses — paired grapple pending";
@@ -155,6 +157,7 @@ export function startStage(game) {
   game.laserOperators = [];game.laserWrecks=[];
   game.citizens = (game.stage.citizens || []).map((cit) => makeCitizen(cit.kind, cit.x, cit.y));
   game.projectiles = [];
+  game.bovinoHazards=[];game.bovinoCoats=[];
   game.fx = [];
   game.pending = [];
   game.attackSlot = null;
@@ -230,6 +233,7 @@ export function updateGame(game, input, dt) {
   updatePickups(game);
   updateLaserEncounters(game, dt);
   updateProjectiles(game, dt);
+  updateBovinoHazards(game,dt,applyHit);
   updateWaves(game);
   // A witness who makes it to the boss puts the receipts on the record.
   const bossNow = game.enemies.find((enemy) => enemy.isBoss && enemy.alive);
@@ -242,7 +246,7 @@ export function updateGame(game, input, dt) {
   game.enemies = game.enemies.filter((enemy) => !(enemy.state === "dead" && enemy.deadT <= 0));
 }
 
-import { advanceGait } from "./animation-clock.js?v=cast40";
+import { advanceGait } from "./animation-clock.js?v=bovino47";
 export { advanceGait };
 
 function advance(game) {
@@ -286,6 +290,7 @@ function updateWaves(game) {
       if (member.kind === "greene") { addLaserEncounter(game,makeEnemy,base+member.dx); continue; }
       const enemy = makeEnemy(member.kind, base + member.dx, member.y);
       ensureGrapplePair(game.player, enemy);
+      if(enemy.kind === "bovino") ensureGrapplePair(game.player,{sprite:"bovino_mini"});
       if(enemy.kind === "rogers") for(const sprite of ["rogers_vacation","rogers_tropical"]) ensureGrapplePair(game.player,{sprite});
       if (wave.boss) {
         enemy.isBoss = true;
@@ -408,6 +413,15 @@ function boot() {
   }
   document.getElementById("restart-run").addEventListener("click", restartCurrent);
   document.getElementById("practice-reset").addEventListener("click", restartCurrent);
+  const bovinoTools=document.createElement('span');
+  const splitTest=document.createElement('button');splitTest.textContent='Test coat split';
+  splitTest.addEventListener('click',()=>{const coat=game.enemies.find(e=>e.kind==='bovino'&&e.alive);if(coat){coat.hp=0;splitBovino(game,coat);}canvas.focus();});
+  let grappleDemo=null;
+  const grappleTest=document.createElement('button');grappleTest.textContent='Preview grab + punch';
+  grappleTest.addEventListener('click',()=>{restartCurrent();grappleDemo={age:0,grab:false,punch:false};});
+  const bovinoStatus=document.createElement('span');bovinoStatus.setAttribute('role','status');
+  bovinoTools.append(splitTest,grappleTest,bovinoStatus);document.getElementById('practice-controls').append(bovinoTools);
+
   const formSelect=document.createElement('select'); formSelect.id='rogers-form';formSelect.setAttribute('aria-label','Rogers form');
   formSelect.innerHTML='<option value="1">Suit</option><option value="2">Vacation jersey</option><option value="3">Full Florida</option>';
   formSelect.value=new URLSearchParams(location.search).get('form')||'1';
@@ -543,6 +557,10 @@ function boot() {
     document.getElementById("practice-opponent").textContent = game.practiceActive ? "Opponent: active" : "Opponent: stationary";
     document.getElementById("practice-enemy").value = game.practiceEnemy || "cruz";
     document.getElementById("practice-pair-status").textContent = game.practicePairStatus || "";
+    formSelect.hidden=game.practiceEnemy!=="rogers";
+    bovinoTools.hidden=!game.practice || !game.practiceEnemy?.startsWith('bovino');
+    bovinoStatus.textContent=` Minis: ${game.enemies.filter(e=>e.kind==='bovino_mini'&&e.alive).length} | Hazards: ${(game.bovinoHazards||[]).length}`;
+
     for (const id of ["mamdani", "sayed"]) document.getElementById(`practice-${id}`).setAttribute("aria-pressed", String(game.fighterId === id));
     titlePanel.hidden = game.mode !== "title";
     selectPanel.hidden = game.mode !== "select";
@@ -636,6 +654,13 @@ function boot() {
     const dt = (now - last) / 1000;
     last = now;
     const snap = input.snapshot();
+    if(grappleDemo && game.practice && assetsReady){
+      grappleDemo.age+=dt*practiceSpeed;
+      if(grappleDemo.age>.1&&!grappleDemo.grab){snap.grab=true;grappleDemo.grab=true;}
+      if(grappleDemo.age>.5&&!grappleDemo.punch){snap.light=true;grappleDemo.punch=true;}
+      if(grappleDemo.age>1.2)grappleDemo=null;
+    }
+
     if (snap.light || snap.heavy || snap.special || snap.grab || snap.jump || snap.confirm || snap.x || snap.y) unlock();
     if (game.mode === "title" && snap.confirm && assetsReady) {
       play("ui");
@@ -672,6 +697,7 @@ function boot() {
 if (typeof document !== "undefined") boot();
 
 export { blankInput };
+
 
 
 

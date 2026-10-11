@@ -1,8 +1,10 @@
-import { registerHelpAction } from "./help-actions.js?v=cast40";
-import { playerMoveWindow } from "./player.js?v=cast40";
-import { WORLD } from "./stages.js?v=cast40";
+import { registerHelpAction } from "./help-actions.js?v=bovino47";
+import { playerMoveWindow } from "./player.js?v=bovino47";
+import { WORLD } from "./stages.js?v=bovino47";
 
 const CLIPS = {
+  bovino: ["idle","walk","hit","change","shout","throw"],
+  bovino_mini: ["idle","walk","hit","death","throw","shout"],
   ice_bro: ["idle","walk","run","attack","hit","death"],
   bongino: ["idle","walk","run","attack","hit","death"],
   giuliani: ["idle","walk","attack","hit","death"],
@@ -36,6 +38,7 @@ const SOFT_CLIPS = {
 };
 
 const FILE = {
+  bovino:"chibi/bovino", bovino_mini:"chibi/bovino_mini",
   ice_bro:"chibi/ice_bro", bongino:"chibi/bongino", giuliani:"chibi/giuliani", beck:"chibi/beck",
   rogers_vacation: "chibi/mike_rogers_vacation",
   rogers_tropical: "chibi/mike_rogers_tropical",
@@ -95,8 +98,8 @@ const sheets = new Map();
 // Only reviewed candidates are registered. Load the active matchup, not the
 // whole cast's paired atlases at startup.
 const GRAPPLE_PAIRS = {
-  zohran: new Set(["rogers", "rogers_vacation", "rogers_tropical", "cruz", "mcconnell", "trump", "vance_worried", "pete_ww", "pete"]),
-  abdul: new Set(["rogers", "rogers_vacation", "rogers_tropical", "cruz", "trump", "beck", "vance_worried", "pete_ww", "pete"]),
+  zohran: new Set(["bovino","bovino_mini","rogers", "rogers_vacation", "rogers_tropical", "cruz", "mcconnell", "trump", "vance_worried", "pete_ww", "pete"]),
+  abdul: new Set(["bovino","bovino_mini","rogers", "rogers_vacation", "rogers_tropical", "cruz", "trump", "beck", "vance_worried", "pete_ww", "pete"]),
 };
 const pairLoads = new Map();
 export function ensureGrapplePair(hero, enemy) {
@@ -176,7 +179,7 @@ function assetRoot(name) { if(name.includes("mike_rogers") || name.includes("_gr
 function loadOne(sprite, clip, name) {
   const image = new Image();
   const extension = /^chibi\/mike_rogers_(idle|walk|orders|run|bill|hit|death)$/.test(name) ? "png" : "webp";
-  const version = name.includes("rogers") ? "flight39b" : name.includes("_grapple_") ? "laser22" : /chibi\/(zohran_mamdani|abdul_el_sayed)_grab$/.test(name) ? "grip08b" : name === "chibi/jd_vance_worried_death" ? "chibi-death24" : "hd5";
+  const version = name.includes("bovino") ? "bovino47" : name.includes("rogers") ? "flight39b" : name.includes("_grapple_") ? "laser22" : /chibi\/(zohran_mamdani|abdul_el_sayed)_grab$/.test(name) ? "grip08b" : name === "chibi/jd_vance_worried_death" ? "chibi-death24" : "hd5";
   const dataPromise = fetch(`${assetRoot(name)}/${name}.json?v=${version}`).then((res) => {
     if (!res.ok) throw new Error(`Could not load ${name}: ${res.status}`);
     return res.json();
@@ -234,7 +237,7 @@ function loadOne(sprite, clip, name) {
 
 // Missing sheet = 404 on the JSON, nothing else requested, never an error.
 function loadSoft(sprite, clip, name) {
-  const version = name.includes("rogers") ? "flight39b" : name.includes("_grapple_") ? "correction19" : /chibi\/(zohran_mamdani|abdul_el_sayed)_grab$/.test(name) ? "grip08b" : name === "chibi/jd_vance_worried_death" ? "chibi-death24" : "hd5";
+  const version = name.includes("bovino") ? "bovino47" : name.includes("rogers") ? "flight39b" : name.includes("_grapple_") ? "correction19" : /chibi\/(zohran_mamdani|abdul_el_sayed)_grab$/.test(name) ? "grip08b" : name === "chibi/jd_vance_worried_death" ? "chibi-death24" : "hd5";
   return fetch(`${assetRoot(name)}/${name}.json?v=${version}`, { method: "HEAD" })
     .then((res) => (res.ok ? loadOne(sprite, clip, name) : null))
     .catch(() => null);
@@ -250,6 +253,9 @@ export function actorSprite(ent) {
 }
 
 export function clipFor(state) {
+  if (state === "bovinoSplit") return "change";
+  if (state === "bovinoThrow") return "throw";
+  if (state === "bovinoShout") return "shout";
   if (state === "help") return "grab";
   if (state === "need") return "idle";
   if (state === "helped" || state === "testified") return "cheer";
@@ -500,7 +506,16 @@ export function drawSprite(ctx, ent, sx, sc) {
   const count = sheet.frames.length;
   const once = ONCE.has(clip) || clip === "special";
   let index;
-  if (clip === "flight") {
+  if (sprite.startsWith("bovino") && ["change","throw","shout"].includes(clip)) {
+    const t=ent.stateT||0;
+    if(clip==="change") index=Math.min(count-1,Math.floor(t/1.1*count));
+    else {
+      const release=clip==="throw"?.72:.85;
+      const contact=sprite === "bovino_mini" ? (clip === "throw" ? 3 : 2) : (clip === "throw" ? 2 : Math.min(count-1,5));
+      index=t<release?Math.min(contact-1,Math.floor(t/release*contact)):Math.min(count-1,contact+Math.floor((t-release)/.9*(count-contact)));
+    }
+  }
+  else if (clip === "flight") {
     index=ent.state==="umbrellaRise"?Math.min(2,Math.floor(ent.stateT/.22)):ent.state==="umbrellaHover"?3+Math.floor(ent.stateT/.2)%2:ent.state==="umbrellaDive"?5:ent.stateT<.45?6:7;
   }
   else if (sprite.startsWith("rogers") && ["orders","bill"].includes(clip)) index = Math.min(count-1,Math.floor(ent.stateT / (clip === "orders" ? 1.05 : (ent.recovery || 1.55)) * count));
@@ -562,4 +577,5 @@ export function drawSprite(ctx, ent, sx, sc) {
   ctx.restore();
   return true;
 }
+
 

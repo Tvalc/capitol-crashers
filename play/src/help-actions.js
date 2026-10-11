@@ -10,3 +10,5 @@ export function helpWindow(player) {
   const action = player.helpAction;
   return action ? { startup: action.approach + action.contact, active: .1, total: action.approach + action.total } : { startup: .2, active: .1, total: .62 };
 }
+
+

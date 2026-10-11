@@ -1,5 +1,5 @@
-import { play } from "./audio.js?v=cast40";
-import { applyHit } from "./combat.js?v=cast40";
+import { play } from "./audio.js?v=bovino47";
+import { applyHit } from "./combat.js?v=bovino47";
 
 export function launchHeld(game, owner) {
   const held = owner.holding;
@@ -287,3 +287,5 @@ export function finishWeapon(player) {
     play("break");
   }
 }
+
+

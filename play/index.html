@@ -14,6 +14,17 @@
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4762698707947194" crossorigin="anonymous"></script>
 <link rel="stylesheet" href="../chibi-ui.css?v=mob1">
 <link rel="stylesheet" href="game-page.css?v=packed19">
+<style>
+@media(max-width:760px){
+ body:has(#practice-controls:not([hidden])){height:auto;overflow:auto}
+ body:has(#practice-controls:not([hidden])) .stage{flex:none}
+ body:has(#practice-controls:not([hidden])) #game{flex:none;width:100%;height:auto;aspect-ratio:16/9;min-height:210px}
+ #practice-controls{display:flex;flex-wrap:wrap;gap:4px;margin:4px 0;padding:0 8px}
+ #practice-controls[hidden]{display:none}
+ #practice-controls button{font-size:12px;padding:0 5px!important;min-height:40px}
+ #practice-controls p{font-size:12px;margin:3px 0}
+}
+</style>
 <script src="/shared/city-rewards.js?v=1.1"></script></head>
 <body>
   <header class="topbar">
@@ -33,7 +44,7 @@
     <button id="practice-sayed" type="button">Practice El-Sayed</button>
     <button id="practice-reset" type="button">Reset practice</button>
     <button id="practice-opponent" type="button">Opponent: stationary</button>
-    <label>Opponent <select id="practice-enemy"><option value="ice_bro">ICE Bro (grunt)</option><option value="bongino">Bongino (trenchcoat)</option><option value="giuliani">Rudy Giuliani</option><option value="beck">Glenn Beck</option><option value="rogers">Mike Rogers</option><option value="cruz">Ted Cruz</option><option value="pete">Pete Hegseth</option><option value="pete_ww">Pete — transformed</option><option value="vance">JD Vance</option><option value="greene">Laser relays (MTG operator)</option><option value="trump">Donald Trump</option></select></label><span id="practice-pair-status" role="status"></span>
+    <label>Opponent <select id="practice-enemy"><option value="bovino">Bovino — four in a coat</option><option value="bovino_mini">Bovino — miniature</option><option value="ice_bro">ICE Bro (grunt)</option><option value="bongino">Bongino (grunt)</option><option value="giuliani">Rudy Giuliani</option><option value="beck">Glenn Beck</option><option value="rogers">Mike Rogers</option><option value="cruz">Ted Cruz</option><option value="pete">Pete Hegseth</option><option value="pete_ww">Pete — transformed</option><option value="vance">JD Vance</option><option value="greene">Laser relays (MTG operator)</option><option value="trump">Donald Trump</option></select></label><span id="practice-pair-status" role="status"></span>
     <label>Speed <select id="practice-speed"><option value="1">Normal</option><option value="0.25">Quarter speed</option><option value="0.1">Frame review</option></select></label>
     <a href="./">Full game</a>
     <p>Move: arrows / WASD · J: strike · G: grab · K: throw · Space: jump. Reset brings the selected opponent back beside you.</p>
@@ -127,11 +138,12 @@
     <p><a href="privacy.html">Privacy</a></p>
   </footer>
   <script src="touch.js?v=mob1"></script>
-  <script type="module" src="src/main.js?v=cast40"></script>
+  <script type="module" src="src/main.js?v=bovino47"></script>
   <script type="module" src="site.js"></script>
   <script src="../soundtrack.js?v=ux2" data-controls></script>
 </body>
 </html>
+
 
 
 

@@ -65,3 +65,5 @@ export function steerAroundProps(ent, before, boxes, dt, top, bottom) {
   ent.x=Math.abs(route.lane-ent.y)>1 ? before.x : before.x+direction*speed*dt;
   ent.vx=(ent.x-before.x)/dt; ent.vy=step/dt;
 }
+
+

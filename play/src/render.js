@@ -1,9 +1,10 @@
+import { drawBovinoHazards } from "./bovino/render.js?v=bovino45";
 const rogersSpeech = new Image(); rogersSpeech.src = "/play/qa-rogers25/assets/sprites/chibi/rogers-speech.webp?v=cast40";
 const rogersCaller = new Image(); rogersCaller.src = "/play/qa-rogers25/assets/rogers-caller.png";
-import { FIGHTERS, poseFor } from "./fighters.js?v=cast40";
-import { drawSprite, drawGrapplePair, hasGrapplePair } from "./sprites.js?v=cast40";
-import { WORLD, STAGES } from "./stages.js?v=cast40";
-import { CITIZEN_KINDS } from "./citizens.js?v=cast40";
+import { FIGHTERS, poseFor } from "./fighters.js?v=bovino47";
+import { drawSprite, drawGrapplePair, hasGrapplePair } from "./sprites.js?v=bovino47";
+import { WORLD, STAGES } from "./stages.js?v=bovino47";
+import { CITIZEN_KINDS } from "./citizens.js?v=bovino47";
 
 const art = {};
 export function loadEnvironment() {
@@ -100,6 +101,8 @@ export function draw(ctx, game) {
   for (const shot of game.projectiles || []) {
     sprites.push({ y: shot.y, draw: () => drawShot(ctx, shot, cam) });
   }
+  for(const hazard of game.bovinoHazards||[]) sprites.push({y:hazard.y,draw:()=>drawBovinoHazards(ctx,{bovinoHazards:[hazard]},cam)});
+  for(const coat of game.bovinoCoats||[]) sprites.push({y:coat.y,draw:()=>drawBovinoHazards(ctx,{bovinoCoats:[coat]},cam)});
   for (const enemy of game.enemies || []) {
     sprites.push({ y: enemy.y, draw: () => drawPerson(ctx, enemy, cam, game) });
   }
@@ -518,3 +521,4 @@ function bar(ctx, x, y, w, h, ent) {
     h * faceH
   );
 }
+

@@ -208,6 +208,11 @@ const capitol = {
       ],
     },
     {
+      at: 2120,
+      hint: "Interrupt the canister windup. Four small problems inside one big coat.",
+      group: [{ kind: "bovino", dx: 140, y: 560 }],
+    },
+    {
       at: 2680,
       boss: true,
       bossName: "The Insurance Exec",
@@ -247,3 +252,4 @@ export function cloneStage(index) {
     won: false,
   };
 }
+
