@@ -1,9 +1,8 @@
-import { PAGES, PLANKS, SOURCES } from "./panels.js?v=talarico3";
+import { PAGES, SOURCES } from "./panels.js?v=readable1";
 
 const ART_DIR = "../art/story/chibi/";
 const ART_VER = "three2";
 const book = document.getElementById("book");
-const planksHost = document.getElementById("planks");
 const sourcesHost = document.getElementById("sources");
 
 function el(tag, className, text) {
@@ -16,7 +15,14 @@ function el(tag, className, text) {
 function renderLettering(panel) {
   const lettering = el("figcaption", "lettering");
   for (const cap of panel.captions || []) {
-    lettering.append(el("p", "caption", cap.text));
+    if (cap.quote) {
+      const quote = el("blockquote", "story-quote");
+      quote.append(el("p", "quote-text", `“${cap.text}”`));
+      quote.append(el("footer", "quote-speaker", cap.who));
+      lettering.append(quote);
+    } else {
+      lettering.append(el("p", "caption", cap.text));
+    }
   }
   return lettering;
 }
@@ -64,14 +70,6 @@ function renderPanel(panel) {
 
   if (panel.tag) frame.append(el("span", "tag", panel.tag));
 
-  const dialogue = el("div", "dialogue");
-  for (const line of panel.bubbles || []) {
-    const bubble = el("blockquote", "dialogue-line");
-    if (line.who) bubble.append(el("span", "who", line.who));
-    bubble.append(document.createTextNode(line.text));
-    dialogue.append(bubble);
-  }
-
   if (panel.sfx) frame.append(el("span", "sfx", panel.sfx.text));
 
   const cite = renderCites(panel, "cite");
@@ -79,7 +77,6 @@ function renderPanel(panel) {
 
   node.append(frame);
   const copy = el("div", "panel-copy");
-  if (dialogue.childElementCount) copy.append(dialogue);
   if (panel.captions && panel.captions.length) {
     copy.append(renderLettering(panel));
   }
@@ -90,29 +87,20 @@ function renderPanel(panel) {
 
 for (const page of PAGES) {
   const section = el("section", "page");
+  if (page.id) section.id = page.id;
   if (page.chapter) {
     const head = el("h2", "chapter");
     if (page.label) head.append(el("span", "", page.label));
     head.append(document.createTextNode(page.chapter));
     section.append(head);
   }
+  if (page.id === "planks") {
+    section.append(el("p", "plank-note", "These summaries describe campaign proposals, not a list of completed programs. Each panel links to its sources. Actions taken in office are described separately in the biographies above."));
+  }
   const grid = el("div", "grid");
   for (const panel of page.panels) grid.append(renderPanel(panel));
   section.append(grid);
   book.append(section);
-}
-
-for (const plank of PLANKS) {
-  const card = el("article", `plank ${plank.where}`);
-  card.append(el("small", "", plank.who));
-  card.append(el("h3", "", plank.title));
-  card.append(el("p", "", plank.text));
-  if (plank.cites) {
-    const cite = el("a", "plank-cite", `src ${plank.cites.join(", ")}`);
-    cite.href = `#src-${plank.cites[0]}`;
-    card.append(cite);
-  }
-  planksHost.append(card);
 }
 
 for (const source of SOURCES) {
@@ -127,3 +115,4 @@ for (const source of SOURCES) {
   item.append(link);
   sourcesHost.append(item);
 }
+

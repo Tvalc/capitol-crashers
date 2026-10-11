@@ -1,0 +1,12 @@
+/* Context and quotation share one reading order in the DOM and on screen. */
+.story-contents{display:flex;flex-wrap:wrap;gap:10px 20px;margin-top:24px;max-width:64ch}
+.story-contents a{display:inline-flex;align-items:center;min-height:44px;color:#ffb020;text-underline-offset:4px}
+.page,.panel{scroll-margin-top:120px}
+.story-quote{margin:4px 0;padding:12px 16px;border-left:3px solid #ffb020;background:rgba(255,176,32,.06);color:#f6efe4;font-size:17px;line-height:1.55}
+.story-quote .quote-text{margin:0;font-style:normal}
+.story-quote .quote-speaker{display:block;margin:8px 0 0;padding:0;color:#c9c0b2;font-size:14px;line-height:1.45}
+.lettering{gap:16px}
+/* Reserve illustration space so chapter links stay put while lazy images load. */
+body:has(#book) .frame>img{aspect-ratio:16/9;object-fit:contain;background:#07060a}
+.plank-note{color:#c9c0b2;line-height:1.55;font-weight:400}
+@media(max-width:760px){.page,.panel{scroll-margin-top:180px}.story-quote{padding:12px;font-size:16px}.story-contents{gap:6px 18px}}
