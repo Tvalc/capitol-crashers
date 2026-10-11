@@ -1,7 +1,7 @@
-import { PAGES, PLANKS, SOURCES } from "./panels.js?v=talarico2";
+import { PAGES, PLANKS, SOURCES } from "./panels.js?v=talarico3";
 
 const ART_DIR = "../art/story/chibi/";
-const ART_VER = "three1";
+const ART_VER = "three2";
 const book = document.getElementById("book");
 const planksHost = document.getElementById("planks");
 const sourcesHost = document.getElementById("sources");

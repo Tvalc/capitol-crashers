@@ -256,6 +256,8 @@ export const PAGES = [
         size: "half",
         tag: "San Antonio · 2011",
         scene: "Sixth-grade English",
+        art: "t02.webp",
+        alt: "Young Talarico teaching sixth-grade English in a San Antonio classroom.",
         captions: [
           { text: "After the University of Texas he joins Teach For America. He teaches sixth-grade English at Rhodes Middle School on San Antonio's west side." },
           { text: "He will later say that if you can handle the drama of a middle-school classroom, you can handle the drama at the state capitol." },
@@ -269,6 +271,8 @@ export const PAGES = [
         size: "half",
         tag: "Texas House · 2018",
         scene: "He walks the district",
+        art: "t03.webp",
+        alt: "Talarico walking a Texas suburban highway shoulder with a clipboard.",
         captions: [
           { text: "Harvard, then home: a master's in education policy. In 2018 he runs for the Texas House in a district Republicans had held since 2010." },
           { text: "He walks the length of it. He beats Republican Cynthia Flores. At 29 he is the youngest member of the legislature." },
@@ -371,6 +375,8 @@ export const PAGES = [
         size: "wide",
         tag: "Austin · 2023",
         scene: "Un-Christian, he says",
+        art: "t04.webp",
+        alt: "Talarico speaking at a Texas House committee microphone.",
         captions: [
           { text: "In the House he is also a Presbyterian seminarian at Austin Presbyterian Theological Seminary." },
           { text: "When a bill would require the Ten Commandments on every classroom wall, he tells a committee it is unconstitutional, un-American, and un-Christian. He cites the gospel warning against public prayer as a show." },
@@ -545,6 +551,8 @@ export const PAGES = [
         size: "half",
         tag: "Texas · 2025–2026",
         scene: "He announces",
+        art: "t05.webp",
+        alt: "Talarico at an election-night podium under Texas flags.",
         captions: [
           { text: "On September 9, 2025, he announces a campaign for the United States Senate." },
           { text: "On March 3, 2026, he defeats Representative Jasmine Crockett in the Democratic primary, 52.4 percent to 46.2 percent." },
@@ -559,6 +567,8 @@ export const PAGES = [
         size: "half",
         tag: "Texas · May 26, 2026",
         scene: "Paxton wins the other primary",
+        art: "t06.webp",
+        alt: "Talarico's rally on one side, two empty debate podiums waiting on the other.",
         captions: [
           { text: "On May 26, 2026, Attorney General Ken Paxton defeats Senator John Cornyn in the Republican runoff, 63.8 percent to 36.2 percent, with an endorsement from President Trump." },
           { text: "Talarico faces Paxton on November 3. Democrats have not won a statewide race in Texas since 1994." },
@@ -1024,15 +1034,15 @@ export const PAGES = [
       { id: "p43", where: "detroit", size: "half", tag: "Michigan", scene: "Diplomacy", art: "p43.webp", alt: "El-Sayed at a diplomatic table.", captions: [
           { kind: "voice", text: "Diplomacy as the center, not the footnote." },
           { text: "A foreign policy centered on diplomacy, cooperation, and human rights. No blank-check funding for foreign militaries, including Egypt, Israel, Saudi Arabia, and the UAE. He supports an immediate arms embargo on Israel.", pos: "tl" }], cites: [43], prompt: "El-Sayed at a diplomacy table." },
-      { id: "t07", where: "texas", size: "third", tag: "Texas", scene: "Public schools", captions: [
+      { id: "t07", where: "texas", size: "third", tag: "Texas", scene: "Public schools", art: "t07.webp", alt: "Talarico in a public-school hallway with a teacher and students.", captions: [
           { text: "Reject private-school voucher programs that, he says, defund public schools. Universal pre-K for 3- and 4-year-olds, more teachers, more counselors, and phonics-based reading help." }], cites: [67], prompt: "Young white Texan, short brown hair, clean-shaven, in a public-school hallway with teachers. Not Mamdani, not El-Sayed. No lettering." },
-      { id: "t08", where: "texas", size: "third", tag: "Texas", scene: "$15 an hour", captions: [
+      { id: "t08", where: "texas", size: "third", tag: "Texas", scene: "$15 an hour", art: "t08.webp", alt: "Talarico at a Texas shop counter with workers holding pay envelopes.", captions: [
           { text: "Raise the federal minimum wage to $15 an hour, expand overtime, and pass paid family leave. He says he has never taken corporate PAC money." }], cites: [68, 69], prompt: "Young white Texan at a small-business counter with workers. Short brown hair, clean-shaven. No lettering." },
-      { id: "t09", where: "texas", size: "third", tag: "Texas", scene: "Money out", captions: [
+      { id: "t09", where: "texas", size: "third", tag: "Texas", scene: "Money out", art: "t09.webp", alt: "Talarico sweeping stacks of cash off a desk.", captions: [
           { text: "Ban super PACs and corporate PACs. Ban partisan gerrymandering. Ban members of Congress from trading individual stocks." }], cites: [69], prompt: "Young white Texan sweeping stacked cash off a desk. Short brown hair, clean-shaven. No lettering." },
-      { id: "t10", where: "texas", size: "half", tag: "Texas", scene: "Costs", captions: [
+      { id: "t10", where: "texas", size: "half", tag: "Texas", scene: "Costs", art: "t10.webp", alt: "Talarico at a kitchen table with a worried working couple.", captions: [
           { text: "A public health-insurance option, insulin and drug caps, down-payment help for first-time buyers, and a halt to corporate landlords using software to hike rents together." }], cites: [70, 71], prompt: "Young white Texan at a kitchen table with a working family and a pharmacy bottle with no readable label. Short brown hair, clean-shaven. No lettering." },
-      { id: "t11", where: "texas", size: "half", tag: "Texas", scene: "Child care", captions: [
+      { id: "t11", where: "texas", size: "half", tag: "Texas", scene: "Child care", art: "t11.webp", alt: "Talarico in the doorway of a toddler classroom.", captions: [
           { text: "Universal child care and paid family leave, plus a permanently expanded Child Tax Credit. He rolled the package out in August 2026 as a New American Dream agenda." }], cites: [71], prompt: "Young white Texan in a toddler classroom doorway. Short brown hair, clean-shaven. No lettering." },
     ],
   },
