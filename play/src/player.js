@@ -5,7 +5,7 @@ import { hasGrapplePair, grapplePairDistance, grapplePairContactRemaining, grapp
 import { FIGHTERS } from "./fighters.js?v=bovino47";
 import { integrate, melee, spendSpecial, updateBody } from "./combat.js?v=bovino47";
 import { finishWeapon, launchHeld, noteWeaponSwing, spawnBolt } from "./weapons.js?v=bovino47";
-import { deliverHelp, finishHelp, helpTarget, startHelp } from "./citizens.js?v=bovino47";
+import { deliverHelp, finishHelp, helpTarget, startHelp } from "./citizens.js?v=resources1";
 
 const LIGHTS = [
   { startup: 0.10, active: 0.09, dmg: 7, kb: 65, lift: 0, stun: 0.32 },
