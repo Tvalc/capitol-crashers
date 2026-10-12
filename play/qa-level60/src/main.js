@@ -59,6 +59,7 @@ export function createGame() {
 }
 
 export function beginRun(game, fighterId, practice = false) {
+  if(!practice)window.ArcadeAnalytics?.capture("game_started",{game:"capitol_crashers"});
   game.practice = practice;
   game.mode = "play";
   game.paused = false;
