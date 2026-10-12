@@ -1,3 +1,4 @@
+import { advanceFlyover } from "./plane-motion.mjs?v=plane72";
 import {currentBanter} from "./banter.mjs?v=cast62";
 import { drawBovinoHazards } from "./bovino/render.js?v=bovino45";
 const rogersSpeech = new Image(); rogersSpeech.src = "/play/qa-rogers25/assets/sprites/chibi/rogers-speech.webp?v=cast40";
@@ -264,7 +265,8 @@ function drawStreet(ctx,game,cam) {
   }
 }
 
-// Planes tow the message across the sky, independent of the street scroll.
+// Planes tow the message nose-first, compensating for forward street scrolling.
+const flyovers = new WeakMap();
 function drawPlanes(ctx, game) {
   const planes = game.stage?.planes || [];
   const image = art["plane-loop"];
@@ -273,15 +275,18 @@ function drawPlanes(ctx, game) {
   ctx.font = "800 20px Bungee, Segoe UI, sans-serif";
   ctx.textAlign = "center"; ctx.textBaseline = "middle";
   const width = 360, height = width * 204 / 960;
+  let state = flyovers.get(game);
+  if (!state || state.stage !== game.stage || game.time < state.time) {
+    state = { stage: game.stage, planes: [] };
+    flyovers.set(game, state);
+  }
+  state.time = game.time;
   for (const [index, plane] of planes.entries()) {
     // Brief flyovers separated by quiet sky; no permanently circling slogan.
-    const elapsed = game.time - (8 + index * 22);
-    if (elapsed < 0) continue;
-    const phase = elapsed % 58;
-    const speed = 165;
-    if (phase > (WORLD.viewW + width + 200) / speed) continue;
-    const span = WORLD.viewW + width + 200;
-    const x = WORLD.viewW + 100 - phase * speed;
+    const motion = advanceFlyover(state.planes[index], game.time, game.cameraX || 0, index, WORLD.viewW);
+    state.planes[index] = motion;
+    if (!motion || motion.x + width < 0) continue;
+    const x = motion.x;
     // The entire authored sprite travels left: nose at left, rope and banner behind at right.
     const frame=Math.floor(game.time*18+plane.start)%12;
     ctx.drawImage(image,frame%4*960,Math.floor(frame/4)*204,960,204,x,plane.y-height/2,width,height);
