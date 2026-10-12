@@ -118,3 +118,14 @@ html.is-fullscreen .touch-btn { pointer-events: auto; }
   .touch-buttons { grid-template-columns: repeat(2, 58px); gap: 10px; }
   .touch-btn { width: 58px; height: 58px; font-size: 11px; letter-spacing: 0; }
 }
+
+/* Repeated taps and holds belong to the game, not the browser selection UI. */
+.stage,.stage *,.touch,.touch *,.session-controls button,.top-actions button{
+ -webkit-user-select:none!important;user-select:none!important;
+ -webkit-touch-callout:none!important;
+}
+.stage img,.touch img{-webkit-user-drag:none;user-drag:none}
+#game,.touch-pad,.touch-btn{touch-action:none}
+.stage button,.session-controls button,.top-actions button{touch-action:manipulation}
+.stage :is(input,textarea,select,[contenteditable=true]){-webkit-user-select:text!important;user-select:text!important;-webkit-touch-callout:default!important}
+

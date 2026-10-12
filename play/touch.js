@@ -8,6 +8,17 @@
 //
 // A key is { key, code } as it would appear on a KeyboardEvent.
 (function () {
+  // Safari can open selection/copy UI on rapid taps even when the pad itself
+  // prevents pointer defaults. Guard the canvas, HUD and game overlays too.
+  function preventGameSelection(ev) {
+    const target = ev.target instanceof Element ? ev.target : ev.target?.parentElement;
+    if (!target || target.closest('input, textarea, select, [contenteditable="true"]')) return;
+    if (target.closest('.stage, .touch, .session-controls button, .top-actions button')) ev.preventDefault();
+  }
+  document.addEventListener('selectstart', preventGameSelection);
+  document.addEventListener('contextmenu', preventGameSelection);
+  document.addEventListener('dragstart', preventGameSelection);
+
   function send(type, k) {
     window.dispatchEvent(new KeyboardEvent(type, { key: k.key, code: k.code, bubbles: true, cancelable: true }));
   }
@@ -127,3 +138,4 @@
     return bar;
   };
 })();
+
