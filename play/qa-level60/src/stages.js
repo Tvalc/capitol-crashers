@@ -39,11 +39,9 @@ const rally = {
   accent: "#e0a45a",
   building: "#232a38",
   trim: "#8ea0b8",
-  layers: [
-    { name: "sky", speed: 0.04 },
-    { name: "skyline", speed: 0.18 },
-    { name: "blocks", speed: 1 },
-  ],
+  // Rally parallax art (art/parallax/rally/{sky,skyline,blocks}.webp) has not landed yet;
+  // list the layers again when it does. Requesting the missing files only logged 404s.
+  layers: [],
   scenery: [
     {art:'nyc-lamp',x:80,y:459,w:82,h:330},
     {art:'nyc-lamp',x:1710,y:459,w:82,h:330},

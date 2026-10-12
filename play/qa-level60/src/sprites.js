@@ -28,7 +28,7 @@ const CLIPS = {
 // Grab / grabbed sheets are still being made in Makko. These slots load when a sheet exists
 // and are skipped quietly when it does not, so new sheets can be dropped in without code changes.
 const SOFT_CLIPS = {
-  zohran: ["grabbed", "grab_strike"],
+  zohran: ["grabbed"], // add "grab_strike" back once zohran_mamdani_grab_strike.json is baked
   abdul: ["grabbed", "grab_strike"],
   trump: ["grab", "grabbed"],
   vance: ["grabbed"],
