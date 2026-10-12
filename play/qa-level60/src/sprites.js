@@ -617,4 +617,3 @@ export function drawSprite(ctx, ent, sx, sc) {
   return true;
 }
 
-

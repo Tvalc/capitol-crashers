@@ -824,4 +824,3 @@ export function updatePlayer(player, game, input, dt) {
 export function fighterById(id) {
   return FIGHTERS[id] || FIGHTERS.mamdani;
 }
-

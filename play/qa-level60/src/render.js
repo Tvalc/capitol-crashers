@@ -569,4 +569,3 @@ export function bar(ctx, x, y, w, h, ent) {
   ctx.restore();
 }
 
-
