@@ -1,11 +1,11 @@
 import { interruptBovino } from "./bovino/adapter.js?v=bovino45";
-import { helpWindow } from "./help-actions.js?v=props61";
-import { play } from "./audio.js?v=props61";
-import { ensureGrapplePair, hasRegisteredGrapplePair, hasGrapplePair, grapplePairDistance, grapplePairContactRemaining, grapplePairImpact, grapplePairDuration } from "./sprites.js?v=props61";
-import { FIGHTERS } from "./fighters.js?v=props61";
-import { integrate, melee, spendSpecial, updateBody } from "./combat.js?v=props61";
-import { finishWeapon, launchHeld, noteWeaponSwing, spawnBolt } from "./weapons.js?v=props61";
-import { deliverHelp, finishHelp, helpTarget, startHelp } from "./citizens.js?v=props61";
+import { helpWindow } from "./help-actions.js?v=cast62";
+import { play } from "./audio.js?v=cast62";
+import { ensureGrapplePair, hasRegisteredGrapplePair, hasGrapplePair, grapplePairDistance, grapplePairContactRemaining, grapplePairImpact, grapplePairDuration } from "./sprites.js?v=cast62";
+import { FIGHTERS } from "./fighters.js?v=cast62";
+import { integrate, melee, spendSpecial, updateBody } from "./combat.js?v=cast62";
+import { finishWeapon, launchHeld, noteWeaponSwing, spawnBolt } from "./weapons.js?v=cast62";
+import { deliverHelp, finishHelp, helpTarget, startHelp } from "./citizens.js?v=cast62";
 
 const LIGHTS = [
   { startup: 0.10, active: 0.09, dmg: 7, kb: 65, lift: 0, stun: 0.32 },

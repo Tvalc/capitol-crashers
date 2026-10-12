@@ -1,10 +1,11 @@
+import {currentBanter} from "./banter.mjs?v=cast62";
 import { drawBovinoHazards } from "./bovino/render.js?v=bovino45";
 const rogersSpeech = new Image(); rogersSpeech.src = "/play/qa-rogers25/assets/sprites/chibi/rogers-speech.webp?v=cast40";
 const rogersCaller = new Image(); rogersCaller.src = "/play/qa-rogers25/assets/rogers-caller.png";
-import { FIGHTERS, poseFor } from "./fighters.js?v=props61";
-import { drawSprite, drawGrapplePair, hasGrapplePair } from "./sprites.js?v=props61";
-import { WORLD, STAGES } from "./stages.js?v=props61";
-import { CITIZEN_KINDS } from "./citizens.js?v=props61";
+import { FIGHTERS, poseFor } from "./fighters.js?v=cast62";
+import { drawSprite, drawGrapplePair, hasGrapplePair } from "./sprites.js?v=cast62";
+import { WORLD, STAGES } from "./stages.js?v=cast62";
+import { CITIZEN_KINDS } from "./citizens.js?v=cast62";
 
 const art = {};
 export function loadEnvironment() {
@@ -121,7 +122,17 @@ export function draw(ctx, game) {
   for (const sprite of sprites) sprite.draw();
   if (game.stage?.won) drawWin(ctx, game);
   for (const fx of game.fx || []) drawFx(ctx, fx, cam);
-  if (game.mode === "play") drawHud(ctx, game);
+  if (game.mode === "play") {
+    const bubble=currentBanter(game);
+    if(bubble && rogersSpeech.naturalWidth) {
+      const ent=bubble.actor,bx=Math.max(155,Math.min(ctx.canvas.width-155,ent.x-cam));
+      const by=Math.max(130,ent.y-(ent.z||0)-(ent.team==='scenery'?170:320));
+      ctx.save();ctx.drawImage(rogersSpeech,bx-145,by-55,290,125);
+      ctx.fillStyle='#171721';ctx.textAlign='center';
+      fittedText(ctx,bubble.text[0],bx,by-4,225,17);fittedText(ctx,bubble.text[1],bx,by+17,225,18);ctx.restore();
+    }
+    drawHud(ctx, game);
+  }
   ctx.restore();
 }
 
@@ -450,7 +461,7 @@ function label(ctx, ent, sx) {
   ctx.font = "700 16px Segoe UI, sans-serif";
   ctx.textAlign = "center";
   // Chibi sheets stand about 2.4x the logical body height; keep the tag clear of the hair.
-  ctx.fillText(ent.title ? `${ent.title} · ${ent.name}` : ent.name, sx, ent.y - ent.z - (ent.h || 90) * (ent.scale || 1) * 2.4 - 14);
+  ctx.fillText(ent.title ? `${ent.title} Â· ${ent.name}` : ent.name, sx, ent.y - ent.z - (ent.h || 90) * (ent.scale || 1) * 2.4 - 14);
 }
 
 function innerPlate(x, y, w, h) {
@@ -473,40 +484,19 @@ function drawHud(ctx, game) {
   ctx.textBaseline = "top";
   ctx.fillStyle = "#f4efe4";
   ctx.font = "700 20px Segoe UI, sans-serif";
-  fittedText(ctx,player.name,left.x,left.y,left.w,20);
+  fittedText(ctx,`${player.name} · ${game.lives} lives`,left.x,left.y,left.w,20);
   const barH = 26;
   const barY = left.y + 28;
   bar(ctx, left.x, barY, left.w, barH, player);
   ctx.font = "600 16px Segoe UI, sans-serif";
   ctx.fillStyle = "#e2b657";
-  fittedText(ctx,`Lives ${game.lives}   ·   Helped ${game.helped || 0}`,left.x,barY+barH+8,left.w,16);
-
-  const sw = 240;
-  const sh = 104;
-  const sx = WORLD.viewW - 14 - sw;
-  painted(ctx, "panel", sx, 10, sw, sh);
-  const score = innerPlate(sx, 10, sw, sh);
-  ctx.textAlign = "center";
-  ctx.textBaseline = "middle";
-  ctx.fillStyle = "#f4efe4";
-  const scoreText = String(game.score).padStart(6, "0");
-  if (game.combo >= 2) {
-    ctx.font = "700 22px Segoe UI, sans-serif";
-    ctx.fillText(scoreText, score.x + score.w / 2, score.y + score.h * 0.34);
-    ctx.fillStyle = "#ef6b4a";
-    ctx.font = "800 18px Segoe UI, sans-serif";
-    ctx.fillStyle = game.comboKind === "help" ? "#5fd38a" : "#ef6b4a";
-    fittedText(ctx,game.comboKind === "help" ? `${game.combo} HELPED` : `${game.combo} HITS`,score.x+score.w/2,score.y+score.h*.72,score.w,18);
-  } else {
-    ctx.font = "700 26px Segoe UI, sans-serif";
-    ctx.fillText(scoreText, score.x + score.w / 2, score.y + score.h / 2);
-  }
+  fittedText(ctx,game.practice ? "Practice · no city rewards" : `${game.cityCare || 0} care · ${game.cityWins || 0} civic wins`,left.x,barY+barH+8,left.w,16);
 
   const boss = (game.enemies || []).find((enemy) => enemy.isBoss && enemy.alive);
   if (boss) {
     const bw = 440;
     const bh = 104;
-    const bx = (WORLD.viewW - bw) / 2;
+    const bx = WORLD.viewW - 14 - bw;
     painted(ctx, "panel", bx, 8, bw, bh);
     const box = innerPlate(bx, 8, bw, bh);
     ctx.textAlign = "center";
@@ -545,24 +535,17 @@ function drawHud(ctx, game) {
   ctx.restore();
 }
 
-function bar(ctx, x, y, w, h, ent) {
-  painted(ctx, "button-gold", x, y, w, h);
-  const image = art["button-teal"];
-  const ratio = Math.max(0, Math.min(1, ent.hp / ent.hpMax));
-  if (!image || ratio <= 0) return;
-  const insetX = 0.08;
-  const insetY = 0.24;
-  const faceW = 1 - insetX * 2;
-  const faceH = 1 - insetY * 2;
-  ctx.drawImage(
-    image,
-    image.width * insetX,
-    image.height * insetY,
-    image.width * faceW * ratio,
-    image.height * faceH,
-    x + w * insetX,
-    y + h * insetY,
-    w * faceW * ratio,
-    h * faceH
-  );
+export function bar(ctx, x, y, w, h, ent) {
+  // A stable track and fixed left edge make damage legible at every health level.
+  const ratio = ent.hpMax > 0 ? Math.max(0, Math.min(1, ent.hp / ent.hpMax)) : 0;
+  ctx.save();
+  ctx.fillStyle = "#101b24";
+  ctx.fillRect(x, y, w, h);
+  ctx.fillStyle = ratio <= .25 ? "#ef795f" : "#66d2bb";
+  ctx.fillRect(x + 3, y + 3, Math.max(0, w - 6) * ratio, Math.max(0, h - 6));
+  ctx.strokeStyle = "#e2b657";
+  ctx.lineWidth = 2;
+  ctx.strokeRect(x + 1, y + 1, w - 2, h - 2);
+  ctx.restore();
 }
+

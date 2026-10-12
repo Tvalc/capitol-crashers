@@ -1,6 +1,8 @@
-import { registerHelpAction } from "./help-actions.js?v=props61";
-import { playerMoveWindow } from "./player.js?v=props61";
-import { WORLD } from "./stages.js?v=props61";
+const visor62 = new Image(); visor62.src="/play/qa-visor62/visor.webp";
+const visorBoxes62={"walk": [[119, 57, 240, 97], [123, 63, 238, 94], [123, 59, 240, 95], [119, 56, 244, 86], [119, 52, 238, 90], [121, 59, 241, 86], [127, 68, 243, 82], [131, 64, 241, 80], [128, 58, 241, 82], [125, 59, 242, 85]], "run": [[135, 71, 202, 64], [139, 56, 202, 60], [132, 49, 199, 65], [132, 66, 202, 66], [135, 62, 203, 68], [129, 44, 199, 69], [137, 62, 201, 66], [141, 61, 204, 66], [133, 46, 199, 66], [131, 60, 203, 65], [141, 59, 202, 64], [136, 48, 203, 63]]};
+import { registerHelpAction } from "./help-actions.js?v=cast62";
+import { playerMoveWindow } from "./player.js?v=cast62";
+import { WORLD } from "./stages.js?v=cast62";
 
 const CLIPS = {
   bovino: ["idle","walk","hit","change","shout","throw"],
@@ -479,6 +481,10 @@ export function drawGrapplePair(ctx, hero, enemy, sx, scale) {
   ctx.scale(scale * sheet.bodyScale * frameScale * hero.facing, scale * sheet.bodyScale * frameScale);
   const offset = frame.trimmed ? frame.spriteSourceSize : null;
   ctx.drawImage(sheet.image, cell.x, cell.y, cell.w, cell.h, -sheet.anchor.x + (offset?.x || 0), -(frame.groundAnchorY ?? sheet.anchor.y) + (offset?.y || 0), cell.w, cell.h);
+  if(sprite === "rogers_tropical" && visorBoxes62[clip] && visor62.naturalWidth) {
+    const [vx,vy,vw,vh]=visorBoxes62[clip][index];
+    ctx.drawImage(visor62,vx-(frame.anchorX ?? sheet.anchor.x)+(offset?.x||0),vy-anchorY+(offset?.y||0),vw,vh);
+  }
   ctx.restore();
   return true;
 }
@@ -589,6 +595,10 @@ export function drawSprite(ctx, ent, sx, sc) {
     cell.x, cell.y, cell.w, cell.h,
     -(frame.anchorX ?? sheet.anchor.x) + (offset?.x || 0), -anchorY + (offset?.y || 0), cell.w, cell.h,
   );
+  if(sprite === "rogers_tropical" && visorBoxes62[clip] && visor62.naturalWidth) {
+    const [vx,vy,vw,vh]=visorBoxes62[clip][index];
+    ctx.drawImage(visor62,vx-(frame.anchorX ?? sheet.anchor.x)+(offset?.x||0),vy-anchorY+(offset?.y||0),vw,vh);
+  }
   ctx.restore();
   return true;
 }

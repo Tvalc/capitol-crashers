@@ -1,18 +1,18 @@
 import { saveCheckpoint, readCheckpoint, clearCheckpoint } from "./checkpoint.mjs";
-import { addLaserEncounter, updateLaserEncounters } from "./laser-encounter.js?v=props61";
-import { propFootprints, collideProps, steerAroundProps } from "./prop-collision.js?v=props61";
-import { play, unlock } from "./audio.js?v=props61";
-import { separate, tickToss, wallBounce, applyHit } from "./combat.js?v=props61";
+import { addLaserEncounter, updateLaserEncounters } from "./laser-encounter.js?v=cast62";
+import { propFootprints, collideProps, steerAroundProps } from "./prop-collision.js?v=cast62";
+import { play, unlock } from "./audio.js?v=cast62";
+import { separate, tickToss, wallBounce, applyHit } from "./combat.js?v=cast62";
 import { updateBovinoHazards, splitBovino } from "./bovino/adapter.js?v=bovino45";
-import { makeEnemy, updateEnemy } from "./enemies.js?v=props61";
-import { blankInput, createInput } from "./input.js?v=props61";
-import { fighterById, makePlayer, updatePlayer, bufferPlayerInput } from "./player.js?v=props61";
-import { draw, loadEnvironment } from "./render.js?v=props61";
-import { cloneStage, STAGES, WORLD } from "./stages.js?v=props61";
-import { updatePickups, updateProjectiles } from "./weapons.js?v=props61";
-import { loadSprites, ensureGrapplePair } from "./sprites.js?v=props61";
+import { makeEnemy, updateEnemy } from "./enemies.js?v=cast62";
+import { blankInput, createInput } from "./input.js?v=cast62";
+import { fighterById, makePlayer, updatePlayer, bufferPlayerInput } from "./player.js?v=cast62";
+import { draw, loadEnvironment } from "./render.js?v=cast62";
+import { cloneStage, STAGES, WORLD } from "./stages.js?v=cast62";
+import { updatePickups, updateProjectiles } from "./weapons.js?v=cast62";
+import { loadSprites, ensureGrapplePair } from "./sprites.js?v=cast62";
 import { PAGES } from "/story/panels.js";
-import { followingWitness, makeCitizen, spawnCelebration, updateCitizens, witnessTestifies } from "./citizens.js?v=props61";
+import { followingWitness, makeCitizen, spawnCelebration, updateCitizens, witnessTestifies } from "./citizens.js?v=cast62";
 
 // Comic panels that exist as short animated loops (OpenArt), shown between stages.
 const MOTION = { p21: "../art/story/motion/p21.mp4", p27: "../art/story/motion/p27.mp4" };
@@ -39,6 +39,8 @@ export function createGame() {
     enemies: [],
     citizens: [],
     helped: 0,
+    cityCare: 0,
+    cityWins: 0,
     stopped: 0,
     testified: 0,
     comboKind: "hit",
@@ -67,6 +69,8 @@ export function beginRun(game, fighterId, practice = false) {
   game.combo = 0;
   game.comboT = 0;
   game.helped = 0;
+  game.cityCare = 0;
+  game.cityWins = 0;
   game.stopped = 0;
   game.testified = 0;
   game.hitstop = 0;
@@ -264,7 +268,7 @@ export function updateGame(game, input, dt) {
   game.enemies = game.enemies.filter((enemy) => !(enemy.state === "dead" && enemy.deadT <= 0));
 }
 
-import { advanceGait } from "./animation-clock.js?v=props61";
+import { advanceGait } from "./animation-clock.js?v=cast62";
 export { advanceGait };
 
 function advance(game) {
@@ -288,7 +292,7 @@ function updateWaves(game) {
     if (game.enemies.every((enemy) => !enemy.alive) && game.clearT <= 0 && game.mode === "play") {
       // The policy wins: banner, the street changes, the block comes out to cheer.
       game.clearT = game.stage.chapterEnd ? 4.2 : 1.8;
-      if(game.stage.chapterEnd) window.CityRewards?.credit('crashers:policy');
+      if(game.stage.chapterEnd && window.CityRewards?.credit('crashers:policy')) game.cityWins++;
       game.stage.won = true;
       game.banner = game.stage.policy || `${game.stage.name} clear`;
       game.bannerT = 4.2;
@@ -649,10 +653,10 @@ function boot() {
     }
     if (game.mode === "ending") {
       document.getElementById("end-copy").textContent =
-        `${game.player?.name || "You"} made it to the Capitol. Helped ${game.helped}, stopped ${game.stopped}, ${game.testified} on the record. Score ${game.score}.`;
+        `${game.player?.name || "You"} made it to the Capitol. Helped ${game.helped}, stopped ${game.stopped}, ${game.testified} on the record. City resources: ${game.cityCare} care · ${game.cityWins} civic wins.`;
     }
     if (game.mode === "gameover") {
-      document.getElementById("over-copy").textContent = `Helped ${game.helped}. Score ${game.score}. Get up. The block still needs you.`;
+      document.getElementById("over-copy").textContent = `Helped ${game.helped}. City resources: ${game.cityCare} care · ${game.cityWins} civic wins. Get up. The block still needs you.`;
     }
   }
 
