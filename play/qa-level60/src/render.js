@@ -45,7 +45,8 @@ export function loadEnvironment(stage = null) {
       add('stage56-' + name, `/play/qa-level59/assets/scenery56/${name}.webp?v=59`);
   }
   for (const layer of stage.layers || []) add(`${stage.id}-${layer.name}`, `../art/parallax/${stage.id}/${layer.name}.webp?v=1`, true);
-  if (stage.id === 'rally') add('icicles', '../art/parallax/icicles.webp?v=1', true);
+  // Icicles art (art/parallax/icicles.webp) has not landed yet; restore this line when it does.
+  // if (stage.id === 'rally') add('icicles', '../art/parallax/icicles.webp?v=1', true);
   const debate = new Set((stage.scenery || []).filter(p => p.art.startsWith('debate-')).map(p => p.art.slice(7)));
   if (stage.id === 'debate') { debate.add('skyline'); debate.add('ground'); }
   for (const name of debate) add('debate-' + name, `/play/qa-rogers25/assets/debate25/${name}.webp`);
