@@ -11,6 +11,7 @@ import { draw, loadEnvironment } from "./render.js?v=load63";
 import { cloneStage, STAGES, WORLD } from "./stages.js?v=cast62";
 import { updatePickups, updateProjectiles } from "./weapons.js?v=cast62";
 import { loadSprites, ensureGrapplePair } from "./sprites.js?v=load63";
+import { requestSceneAssets } from "./scene-assets.js?v=warm64";
 import { PAGES } from "/story/panels.js";
 import { followingWitness, makeCitizen, spawnCelebration, updateCitizens, witnessTestifies } from "./citizens.js?v=cast62";
 
@@ -434,7 +435,12 @@ function boot() {
   sceneRetry.textContent = 'Retry loading';
   scenePanel.append(sceneMessage, sceneRetry);
   document.querySelector('.stage').append(scenePanel);
-  let sceneStage = null, scenePlayer = null, sceneReady = false, sceneGeneration = 0;
+  let sceneStage = null, scenePlayer = null, sceneReady = false, sceneGeneration = 0, sceneRecord = null;
+  function warmScene(stage, fighterId) {
+    if (!stage) return;
+    // Speculation never blocks the menu. A failure can be retried when actually needed.
+    requestSceneAssets(stage, fighterId).promise.catch(() => {});
+  }
   sceneRetry.addEventListener('click', () => { sceneStage = null; input.clear(); });
   function ensureScene() {
     if (!game.player || !['play', 'story'].includes(game.mode)) {
@@ -447,24 +453,21 @@ function boot() {
       sceneRetry.hidden = true;
       sceneRetry.style.display = 'none';
       sceneMessage.textContent = `Loading ${game.stage.name}…`;
-      const kinds = game.practice ? [game.practiceEnemy] : game.stage.waves.flatMap(w => [...w.group.map(e => e.kind), ...(w.support ? [w.support.kind] : [])]);
-      const sprites = new Set([game.player.fighter.sprite]);
-      for (const kind of kinds) {
-        sprites.add(kind === 'greene' ? 'greene' : makeEnemy(kind, 0, 560).sprite);
-        if (kind === 'pete' || kind === 'pete_ww') { sprites.add('pete'); sprites.add('pete_ww'); }
-        if (kind === 'bovino') sprites.add('bovino_mini');
-        if (kind === 'rogers') { sprites.add('rogers_vacation'); sprites.add('rogers_tropical'); }
-      }
-      Promise.all([loadEnvironment(game.stage), loadSprites({ sprites: [...sprites], onProgress: (done, total) => {
-        if (generation === sceneGeneration) sceneMessage.textContent = `Loading ${game.stage.name}… ${done}/${total} animations`;
-      } })]).then(() => {
+      sceneRecord = requestSceneAssets(game.stage, game.fighterId, game.practice ? game.practiceEnemy : null);
+      sceneReady = sceneRecord.ready;
+      sceneRecord.promise.then(() => {
         if (generation !== sceneGeneration) return;
         sceneReady = true; input.clear();
+        // Fetch just one stage ahead while the player is busy in this one.
+        if (!game.practice) warmScene(STAGES[game.stageIndex + 1], game.fighterId);
       }).catch(error => {
         if (generation !== sceneGeneration) return;
         sceneMessage.textContent = 'Some game art could not load. Check your connection and try again.';
         sceneRetry.hidden = false; sceneRetry.style.display = 'inline-block'; console.error(error);
       });
+    }
+    if (!sceneReady && sceneRetry.hidden && sceneRecord?.total) {
+      sceneMessage.textContent = `Loading ${game.stage.name}… ${sceneRecord.done}/${sceneRecord.total} animations`;
     }
     scenePanel.hidden = sceneReady || game.mode === 'story';
     scenePanel.style.display = scenePanel.hidden ? 'none' : 'grid';
@@ -480,6 +483,10 @@ function boot() {
     startStage(game);game.mode='play';canvas.focus();
   });
   resumeCheckpoint.hidden=!readCheckpoint(localStorage,STAGES);
+  for (const event of ['pointerenter', 'focus']) resumeCheckpoint.addEventListener(event, () => {
+    const saved = readCheckpoint(localStorage, STAGES);
+    if (saved) warmScene(STAGES[saved.index], saved.fighterId);
+  });
   function launchLevelTest() {
     const params = new URLSearchParams(location.search);
     const selected = document.getElementById('leveltest-stage')?.value || params.get('stage') || 'station-exterior';
@@ -505,6 +512,8 @@ function boot() {
     bar.append(stage,hero,start,encounter,fight); document.body.append(bar);
   }
   prepareSprites();
+  // Opening the cabinet is intent to play: use title, selection and story time to download.
+  if (!practiceRequested && !levelTest) warmScene(STAGES[0], game.fighterId);
   const titlePanel = document.getElementById("title-panel");
   const selectPanel = document.getElementById("select-panel");
   const clearPanel = document.getElementById("clear-panel");
@@ -719,8 +728,10 @@ function boot() {
     button.addEventListener("click", () => {
       unlock();
       game.fighterId = button.dataset.id;
+      warmScene(STAGES[0], game.fighterId);
       play("ui");
     });
+    for (const event of ['pointerenter', 'focus']) button.addEventListener(event, () => warmScene(STAGES[0], button.dataset.id));
   });
   document.getElementById("run").addEventListener("click", () => {
     unlock();
@@ -789,6 +800,7 @@ function boot() {
       let index = order.indexOf(game.fighterId);
       if (snap.justLeft) index = (index + order.length - 1) % order.length;
       if (snap.justRight) index = (index + 1) % order.length;
+      if (game.fighterId !== order[index]) warmScene(STAGES[0], order[index]);
       game.fighterId = order[index];
       if (snap.confirm) beginRun(game, game.fighterId);
     } else if (game.mode === "story" && snap.confirm) {
@@ -817,10 +829,3 @@ function boot() {
 if (typeof document !== "undefined") boot();
 
 export { blankInput };
-
-
-
-
-
-
-
