@@ -1,7 +1,7 @@
 import { interruptBovino } from "./bovino/adapter.js?v=bovino45";
 import { helpWindow } from "./help-actions.js?v=cast62";
 import { play } from "./audio.js?v=cast62";
-import { ensureGrapplePair, hasRegisteredGrapplePair, hasGrapplePair, grapplePairDistance, grapplePairContactRemaining, grapplePairImpact, grapplePairDuration } from "./sprites.js?v=cast62";
+import { ensureGrapplePair, hasRegisteredGrapplePair, hasGrapplePair, grapplePairDistance, grapplePairContactRemaining, grapplePairImpact, grapplePairDuration } from "./sprites.js?v=load63";
 import { FIGHTERS } from "./fighters.js?v=cast62";
 import { integrate, melee, spendSpecial, updateBody } from "./combat.js?v=cast62";
 import { finishWeapon, launchHeld, noteWeaponSwing, spawnBolt } from "./weapons.js?v=cast62";

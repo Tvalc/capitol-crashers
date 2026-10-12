@@ -3,34 +3,54 @@ import { drawBovinoHazards } from "./bovino/render.js?v=bovino45";
 const rogersSpeech = new Image(); rogersSpeech.src = "/play/qa-rogers25/assets/sprites/chibi/rogers-speech.webp?v=cast40";
 const rogersCaller = new Image(); rogersCaller.src = "/play/qa-rogers25/assets/rogers-caller.png";
 import { FIGHTERS, poseFor } from "./fighters.js?v=cast62";
-import { drawSprite, drawGrapplePair, hasGrapplePair } from "./sprites.js?v=cast62";
+import { drawSprite, drawGrapplePair, hasGrapplePair } from "./sprites.js?v=load63";
 import { WORLD, STAGES } from "./stages.js?v=cast62";
 import { CITIZEN_KINDS } from "./citizens.js?v=cast62";
 
 const art = {};
-export function loadEnvironment() {
-  const names=['rally','studio','capitol','crate','bin','hydrant','barrel','pipe','bottle','food','impact','button-teal','street-panel','plane-loop','nyc-background','nyc-pavement','nyc-sidewalk','nyc-lamp','scenery-pantry-night','scenery-bus-stop-night','scenery-bench-night','scenery-planter-night','scenery-kiosk-night','scenery-bench','scenery-planter'];
-  const required = Promise.all(names.map(name => new Promise((resolve,reject) => {
-    const image=new Image(); image.onload=()=>{art[name]=image;resolve();};
-    image.onerror=()=>reject(new Error(`Missing Makko artwork: ${name}`));
-    image.src=["bin","bottle"].includes(name)?`/play/qa-props61/${name}.webp?v=61`:`../art/chibi/${name}.webp?v=idle21`;
-  })));
-  // Parallax layers, the banner plane and icicles are optional until their art lands.
-  const optional = [];
-  for(const name of ['station','spin','backstage','floor']) optional.push(new Promise((resolve,reject)=>{
-    const image=new Image();image.onload=()=>{art['level60-'+name]=image;resolve();};
-    image.onerror=()=>reject(new Error('Missing Level 2 scenery: '+name));
-    image.src=`/play/qa-level60/assets/${name}.webp`;
-  }));
-  const tryLoad = (key, src) => optional.push(new Promise((resolve) => {
-    const image = new Image(); image.onload = () => { art[key] = image; resolve(); }; image.onerror = () => resolve(); image.src = src;
-  }));
-  for (const stage of STAGES) for (const layer of stage.layers || []) tryLoad(`${stage.id}-${layer.name}`, `../art/parallax/${stage.id}/${layer.name}.webp?v=1`);
-  for(const name of ["platform","relay","relay-damaged","relay-wreck"]) tryLoad("laser-"+name,`/play/assets/laser23/${name}.webp`);
-  tryLoad("icicles", "../art/parallax/icicles.webp?v=1");
-  for(const name of ["skyline","facade","ground","lectern-blue","lectern-red","camera"]) tryLoad("debate-"+name,`/play/qa-rogers25/assets/debate25/${name}.webp`);
-  for (const name of ["skyline","block-facade","eviction-facade","checkpoint-facade","rally-facade"]) tryLoad("stage56-"+name,`/play/qa-level59/assets/scenery56/${name}.webp?v=59`);
-  return Promise.all([required, ...optional]);
+const environmentLoads = new Map();
+function loadArt(key, src, optional = false) {
+  if (!environmentLoads.has(key)) {
+    const job = new Promise((resolve, reject) => {
+      const image = new Image();
+      image.onload = () => { art[key] = image; resolve(); };
+      image.onerror = () => reject(new Error(`Could not load scenery: ${key}`));
+      image.src = src;
+    }).catch(error => { environmentLoads.delete(key); if (!optional) throw error; });
+    environmentLoads.set(key, job);
+  }
+  return environmentLoads.get(key);
+}
+export function loadEnvironment(stage = null) {
+  const base = name => loadArt(name, ["bin", "bottle"].includes(name)
+    ? `/play/qa-props61/${name}.webp?v=61` : `../art/chibi/${name}.webp?v=idle21`);
+  // The title needs a backdrop and panel; no later-stage scenery blocks entry.
+  if (!stage) return Promise.all(['rally', 'street-panel'].map(base));
+  const names = new Set(['rally', 'street-panel', 'crate', 'bin', 'hydrant', 'barrel', 'pipe', 'bottle', 'food', 'impact']);
+  if (['rally', 'studio', 'capitol'].includes(stage.id)) names.add(stage.id);
+  if (stage.id === 'rally' || stage.architecture || (stage.setArt && !stage.indoor)) {
+    for (const name of ['nyc-background', 'nyc-pavement', 'nyc-sidewalk']) names.add(name);
+  }
+  if (stage.planes?.length) names.add('plane-loop');
+  for (const prop of stage.scenery || []) if (!prop.art.startsWith('debate-')) names.add(prop.art);
+  const jobs = [...names].map(base);
+  const add = (key, src, optional = false) => jobs.push(loadArt(key, src, optional));
+  if (stage.setArt) {
+    add('level60-' + stage.setArt, `/play/qa-level60/assets/${stage.setArt}.webp`);
+    if (stage.indoor) add('level60-floor', '/play/qa-level60/assets/floor.webp');
+  }
+  if (stage.architecture || (stage.setArt && !stage.indoor)) {
+    for (const name of ['skyline', ...(stage.architecture ? [stage.architecture] : [])])
+      add('stage56-' + name, `/play/qa-level59/assets/scenery56/${name}.webp?v=59`);
+  }
+  for (const layer of stage.layers || []) add(`${stage.id}-${layer.name}`, `../art/parallax/${stage.id}/${layer.name}.webp?v=1`, true);
+  if (stage.id === 'rally') add('icicles', '../art/parallax/icicles.webp?v=1', true);
+  const debate = new Set((stage.scenery || []).filter(p => p.art.startsWith('debate-')).map(p => p.art.slice(7)));
+  if (stage.id === 'debate') { debate.add('skyline'); debate.add('ground'); }
+  for (const name of debate) add('debate-' + name, `/play/qa-rogers25/assets/debate25/${name}.webp`);
+  // Relays can appear in campaign or practice, so keep their small prop set available.
+  for (const name of ['platform', 'relay', 'relay-damaged', 'relay-wreck']) add('laser-' + name, `/play/assets/laser23/${name}.webp`);
+  return Promise.all(jobs);
 }
 function painted(ctx,name,x,y,w,h) {
   if (['panel','banner','button-gold','button-teal'].includes(name)) {

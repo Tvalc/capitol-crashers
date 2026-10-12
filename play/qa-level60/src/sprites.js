@@ -1,7 +1,7 @@
 const visor62 = new Image(); visor62.src="/play/qa-visor62/visor.webp";
 const visorBoxes62={"walk": [[119, 57, 240, 97], [123, 63, 238, 94], [123, 59, 240, 95], [119, 56, 244, 86], [119, 52, 238, 90], [121, 59, 241, 86], [127, 68, 243, 82], [131, 64, 241, 80], [128, 58, 241, 82], [125, 59, 242, 85]], "run": [[135, 71, 202, 64], [139, 56, 202, 60], [132, 49, 199, 65], [132, 66, 202, 66], [135, 62, 203, 68], [129, 44, 199, 69], [137, 62, 201, 66], [141, 61, 204, 66], [133, 46, 199, 66], [131, 60, 203, 65], [141, 59, 202, 64], [136, 48, 203, 63]]};
 import { registerHelpAction } from "./help-actions.js?v=cast62";
-import { playerMoveWindow } from "./player.js?v=cast62";
+import { playerMoveWindow } from "./player.js?v=load63";
 import { WORLD } from "./stages.js?v=cast62";
 
 const CLIPS = {
@@ -56,7 +56,7 @@ const FILE = {
   vance_worried: "chibi/jd_vance_worried",
 };
 
-// All citizen artwork is authored in Makko and required at startup.
+// Load the citizen cast for play (including the end-of-stage celebration), not the menu.
 const OPTIONAL_CLIPS = {
   citizen_hungry: ["idle", "cheer", "walk", "depart"],
   citizen_sick: ["idle", "cheer", "walk", "depart"],
@@ -123,23 +123,28 @@ function clipKey(sprite, clip) {
   return `${sprite}:${clip}`;
 }
 
-export function loadSprites() {
+export function loadSprites({ sprites = Object.keys(CLIPS), title = false, onProgress = () => {} } = {}) {
+  const selected = new Set(sprites);
+  let completed = 0;
+  const track = job => job.then(value => { onProgress(++completed, jobs.length); return value; });
   const jobs = [];
   for (const [sprite, clips] of Object.entries(CLIPS)) {
-    for (const clip of clips) {
+    if (!selected.has(sprite)) continue;
+    for (const clip of title ? ["idle"] : clips) {
       const name = `${FILE[sprite]}_${clip}`;
-      jobs.push(loadOne(sprite, clip, name));
+      jobs.push(track(loadOne(sprite, clip, name)));
     }
   }
-  for (const sprite of ["zohran", "abdul"]) {
-    for (const kind of ["hungry", "sick", "evicted", "worker", "witness", "rescue"]) jobs.push(loadOne(sprite, `help_${kind}`, `${FILE[sprite]}_help_${kind}`));
+  for (const sprite of title ? [] : ["zohran", "abdul"].filter(id => selected.has(id))) {
+    for (const kind of ["hungry", "sick", "evicted", "worker", "witness", "rescue"]) jobs.push(track(loadOne(sprite, `help_${kind}`, `${FILE[sprite]}_help_${kind}`)));
   }
   const soft = [];
-  for (const [sprite, clips] of Object.entries(SOFT_CLIPS)) {
+  for (const [sprite, clips] of Object.entries(title ? {} : SOFT_CLIPS)) {
+    if (!selected.has(sprite)) continue;
     for (const clip of clips) soft.push(loadSoft(sprite, clip, `${FILE[sprite]}_${clip}`));
   }
   const optional = [];
-  for (const [sprite, clips] of Object.entries(OPTIONAL_CLIPS)) {
+  for (const [sprite, clips] of Object.entries(title ? {} : OPTIONAL_CLIPS)) {
     for (const clip of clips) if(clip !== "depart") optional.push(loadOne(sprite, clip, `${OPTIONAL_FILE[sprite]}_${clip}`));
   }
   return Promise.allSettled([...jobs, ...optional, ...soft]).then((results) => {
@@ -187,7 +192,20 @@ const PREVIEW_FILES=new Set(["assets/scenery56/block-facade.webp", "assets/scene
 function previewAsset(path){return '/play/'+(PREVIEW_FILES.has(path)?'qa-level59/':'')+path;}
 function assetRoot(name){return originalAssetRoot(name);}
 
+const sheetLoads = new Map();
 function loadOne(sprite, clip, name) {
+  const key = clipKey(sprite, clip);
+  if (sheets.has(key)) return Promise.resolve();
+  if (!sheetLoads.has(key)) {
+    sheetLoads.set(key, fetchSheet(sprite, clip, name).catch(error => {
+      sheetLoads.delete(key);
+      throw error;
+    }));
+  }
+  return sheetLoads.get(key);
+}
+
+function fetchSheet(sprite, clip, name) {
   const image = new Image();
   const extension = /^chibi\/mike_rogers_(idle|walk|orders|run|bill|hit|death)$/.test(name) ? "png" : "webp";
   const version = name === "chibi/beck_walk" ? "walk58" : name.includes("bovino") ? "bovino47" : name.includes("rogers") ? "visor52" : name.includes("_grapple_") ? "laser22" : /chibi\/(zohran_mamdani|abdul_el_sayed)_grab$/.test(name) ? "grip08b" : name === "chibi/jd_vance_worried_death" ? "chibi-death24" : /chibi\/(beck|ice_bro)_/.test(name) ? "beck55" : "hd5";
@@ -481,10 +499,6 @@ export function drawGrapplePair(ctx, hero, enemy, sx, scale) {
   ctx.scale(scale * sheet.bodyScale * frameScale * hero.facing, scale * sheet.bodyScale * frameScale);
   const offset = frame.trimmed ? frame.spriteSourceSize : null;
   ctx.drawImage(sheet.image, cell.x, cell.y, cell.w, cell.h, -sheet.anchor.x + (offset?.x || 0), -(frame.groundAnchorY ?? sheet.anchor.y) + (offset?.y || 0), cell.w, cell.h);
-  if(sprite === "rogers_tropical" && visorBoxes62[clip] && visor62.naturalWidth) {
-    const [vx,vy,vw,vh]=visorBoxes62[clip][index];
-    ctx.drawImage(visor62,vx-(frame.anchorX ?? sheet.anchor.x)+(offset?.x||0),vy-anchorY+(offset?.y||0),vw,vh);
-  }
   ctx.restore();
   return true;
 }
