@@ -1,1 +1,32 @@
 #title-panel .actions{margin:16px 0}#title-panel .controls-guide{text-align:left;font-size:14px;margin-top:18px}#title-panel .controls-guide summary{cursor:pointer;color:#ffe18b;padding:12px 0;font-weight:800}#title-panel .touch-start{font-size:14px;line-height:1.6;color:#c8d7db}.city-pause-link{display:inline-block;padding:12px;color:#ffdc80;font-weight:800}@media(max-width:700px){#title-panel h1{font-size:clamp(30px,8vw,44px);margin:8px 0}#title-panel .tag{font-size:14px;line-height:1.5}#title-panel .eyebrow{font-size:10px}#title-panel{padding:18px!important}#title-panel .actions{position:static}#title-panel .play{min-height:48px}}
+
+/* Phone panels scroll from their top; gameplay leaves a dedicated thumb area. */
+@media(max-width:760px){
+ .topbar{padding:6px 12px;min-height:32px}
+ .topbar .brand{font-size:13px}
+ .stage{overflow:hidden}
+ .card{margin:auto;overscroll-behavior:contain;scroll-padding-block:16px;touch-action:pan-y;-webkit-overflow-scrolling:touch}
+ #title-panel .actions{display:grid;grid-template-columns:1fr;gap:10px;width:100%;margin:14px 0}
+ #title-panel .actions>*{width:100%;margin:0;justify-content:center;text-align:center}
+ #title-panel .tag{font-size:13px;line-height:1.45}
+ #title-panel .touch-start{font-size:13px;line-height:1.45}
+ #title-panel .controls-guide{margin-top:10px}
+ .touch{flex-shrink:0;gap:12px;padding:10px max(12px,env(safe-area-inset-right)) max(10px,env(safe-area-inset-bottom)) max(12px,env(safe-area-inset-left))}
+ .touch-pad{width:120px;height:120px;flex:0 0 120px}
+ .touch-buttons{grid-template-columns:repeat(2,minmax(56px,68px));gap:10px}
+ .touch-btn{width:100%;min-width:0;height:60px}
+ .touch-btn.wide{height:48px}
+ .stage .touch-btn{touch-action:none}
+}
+@media(max-width:360px){
+ .touch-pad{width:108px;height:108px;flex-basis:108px}
+ .touch-buttons{grid-template-columns:repeat(2,56px);gap:8px}
+ .touch-btn{height:54px}
+}
+@media(orientation:landscape) and (max-height:520px){
+ .touch-pad{width:108px;height:108px;flex-basis:108px}
+ .touch-buttons{grid-template-columns:repeat(2,56px);gap:8px}
+ .touch-btn{height:48px}
+ .touch-btn.wide{height:44px}
+ .card{top:8px;bottom:8px;max-height:calc(100% - 16px)}
+}
