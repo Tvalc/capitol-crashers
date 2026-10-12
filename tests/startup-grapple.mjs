@@ -21,6 +21,24 @@ const mod=n=>import(pathToFileURL(path.join(src,n)).href+'?v=load63');
 const sprites=await mod('sprites.js'),render=await mod('render.js'),main=await mod('main.js');
 const {STAGES}=await import(pathToFileURL(path.join(src,'stages.js')).href+'?v=cast62');
 const {makeEnemy}=await import(pathToFileURL(path.join(src,'enemies.js')).href+'?v=cast62');
+const {createSceneAssetCache,sceneSprites}=await import(pathToFileURL(path.join(src,'scene-assets.js')).href+'?v=warm64');
+let downloads=0,finish;
+const cache=createSceneAssetCache(()=>{downloads++;return new Promise(resolve=>{finish=resolve;});});
+const warming=cache(STAGES[0],'mamdani');
+assert.equal(downloads,1,'Opening the workflow must start the download immediately');
+assert.equal(cache({...STAGES[0]},'mamdani'),warming,'Entering gameplay must join the in-flight preload');
+finish();await warming.promise;
+assert.equal(cache({...STAGES[0]},'mamdani').ready,true,'Completed preload must avoid a loading-screen flash');
+assert.equal(downloads,1,'Entry must not repeat the download');
+assert.notEqual(cache(STAGES[0],'sayed'),warming,'Changing fighters requests their assets');
+finish();
+let attempts=0;
+const retryCache=createSceneAssetCache(()=>++attempts===1?Promise.reject(new Error('offline')):Promise.resolve());
+await assert.rejects(retryCache(STAGES[0],'mamdani').promise);
+await retryCache(STAGES[0],'mamdani').promise;
+assert.equal(attempts,2,'A failed speculative load must remain retriable');
+assert.deepEqual(sceneSprites(STAGES[0],'mamdani'),['zohran','ice_bro']);
+assert.ok(sceneSprites(STAGES[7],'sayed').includes('rogers_tropical'));
 const ctx=new Proxy({measureText:t=>({width:String(t).length*10}),drawImage:image=>assert.ok(image,'Missing rendered image'),createLinearGradient:()=>({addColorStop(){}})}, {get:(o,k)=>k in o?o[k]:(()=>{})});
 requests.length=0;
 await Promise.all([sprites.loadSprites({sprites:['zohran','abdul'],title:true}),render.loadEnvironment()]);
@@ -62,6 +80,6 @@ report.requests=requests.filter(x=>!x.url.includes('test-missing')&&!x.url.inclu
 // Remove only the fresh, dedicated temporary fixture directory.
 assert.ok(path.resolve(src).startsWith(path.resolve(os.tmpdir()) + path.sep + 'crashers-regression-'));
 await fs.rm(src,{recursive:true,force:true});
-console.log(`PASS: menu is 2 sprite sheets + 2 scenery images; deduplication; ${STAGES.length} stage load/render simulations; ${pairs} paired grabs at hold/strike/recovery; scenery retry.`);
+console.log(`PASS: immediate prefetch, in-flight/completed handoff, fighter switching and retry; menu budget/deduplication; ${STAGES.length} stage load/render simulations; ${pairs} paired grabs; scenery retry.`);
 
 
