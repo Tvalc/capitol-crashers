@@ -6,11 +6,11 @@ import { separate, tickToss, wallBounce, applyHit } from "./combat.js?v=cast62";
 import { updateBovinoHazards, splitBovino } from "./bovino/adapter.js?v=bovino45";
 import { makeEnemy, updateEnemy } from "./enemies.js?v=cast62";
 import { blankInput, createInput } from "./input.js?v=cast62";
-import { fighterById, makePlayer, updatePlayer, bufferPlayerInput } from "./player.js?v=cast62";
-import { draw, loadEnvironment } from "./render.js?v=cast62";
+import { fighterById, makePlayer, updatePlayer, bufferPlayerInput } from "./player.js?v=load63";
+import { draw, loadEnvironment } from "./render.js?v=load63";
 import { cloneStage, STAGES, WORLD } from "./stages.js?v=cast62";
 import { updatePickups, updateProjectiles } from "./weapons.js?v=cast62";
-import { loadSprites, ensureGrapplePair } from "./sprites.js?v=cast62";
+import { loadSprites, ensureGrapplePair } from "./sprites.js?v=load63";
 import { PAGES } from "/story/panels.js";
 import { followingWitness, makeCitizen, spawnCelebration, updateCitizens, witnessTestifies } from "./citizens.js?v=cast62";
 
@@ -409,7 +409,7 @@ function boot() {
     startButton.disabled = true;
     assetStatus.textContent = "Loading fighters and animations…";
     try {
-      await Promise.all([loadSprites(), loadEnvironment()]);
+      await Promise.all([loadSprites({ sprites: ["zohran", "abdul"], title: true }), loadEnvironment()]);
       assetsReady = true;
       assetStatus.textContent = "Ready to play.";
       startButton.textContent = "Step in";
@@ -421,6 +421,54 @@ function boot() {
       console.error(error);
     }
     startButton.disabled = false;
+  }
+  // A stage object is replaced on restart, checkpoint resume and stage transition.
+  // Keep the simulation stopped until that exact scene is ready, including practice swaps.
+  const scenePanel = document.createElement('div');
+  scenePanel.id = 'scene-loading';
+  scenePanel.hidden = true;
+  scenePanel.style.cssText = 'position:absolute;inset:0;z-index:30;background:#101827f2;color:#fff;place-content:center;text-align:center;padding:24px';
+  const sceneMessage = document.createElement('p');
+  sceneMessage.setAttribute('role', 'status');
+  const sceneRetry = document.createElement('button');
+  sceneRetry.textContent = 'Retry loading';
+  scenePanel.append(sceneMessage, sceneRetry);
+  document.querySelector('.stage').append(scenePanel);
+  let sceneStage = null, scenePlayer = null, sceneReady = false, sceneGeneration = 0;
+  sceneRetry.addEventListener('click', () => { sceneStage = null; input.clear(); });
+  function ensureScene() {
+    if (!game.player || !['play', 'story'].includes(game.mode)) {
+      scenePanel.hidden = true; scenePanel.style.display = 'none';
+      return true;
+    }
+    if (sceneStage !== game.stage || scenePlayer !== game.player) {
+      sceneStage = game.stage; scenePlayer = game.player; sceneReady = false;
+      const generation = ++sceneGeneration;
+      sceneRetry.hidden = true;
+      sceneRetry.style.display = 'none';
+      sceneMessage.textContent = `Loading ${game.stage.name}…`;
+      const kinds = game.practice ? [game.practiceEnemy] : game.stage.waves.flatMap(w => [...w.group.map(e => e.kind), ...(w.support ? [w.support.kind] : [])]);
+      const sprites = new Set([game.player.fighter.sprite]);
+      for (const kind of kinds) {
+        sprites.add(kind === 'greene' ? 'greene' : makeEnemy(kind, 0, 560).sprite);
+        if (kind === 'pete' || kind === 'pete_ww') { sprites.add('pete'); sprites.add('pete_ww'); }
+        if (kind === 'bovino') sprites.add('bovino_mini');
+        if (kind === 'rogers') { sprites.add('rogers_vacation'); sprites.add('rogers_tropical'); }
+      }
+      Promise.all([loadEnvironment(game.stage), loadSprites({ sprites: [...sprites], onProgress: (done, total) => {
+        if (generation === sceneGeneration) sceneMessage.textContent = `Loading ${game.stage.name}… ${done}/${total} animations`;
+      } })]).then(() => {
+        if (generation !== sceneGeneration) return;
+        sceneReady = true; input.clear();
+      }).catch(error => {
+        if (generation !== sceneGeneration) return;
+        sceneMessage.textContent = 'Some game art could not load. Check your connection and try again.';
+        sceneRetry.hidden = false; sceneRetry.style.display = 'inline-block'; console.error(error);
+      });
+    }
+    scenePanel.hidden = sceneReady || game.mode === 'story';
+    scenePanel.style.display = scenePanel.hidden ? 'none' : 'grid';
+    return sceneReady;
   }
   const resumeCheckpoint=document.createElement('button');
   resumeCheckpoint.textContent='Continue from checkpoint';
@@ -725,7 +773,7 @@ function boot() {
     const dt = (now - last) / 1000;
     last = now;
     const snap = input.snapshot();
-    if(grappleDemo && game.practice && assetsReady){
+    if(grappleDemo && game.practice && assetsReady && sceneReady){
       grappleDemo.age+=dt*practiceSpeed;
       if(grappleDemo.age>.1&&!grappleDemo.grab){snap.grab=true;grappleDemo.grab=true;}
       if(grappleDemo.age>.5&&!grappleDemo.punch){snap.light=true;grappleDemo.punch=true;}
@@ -755,9 +803,10 @@ function boot() {
     }
     if (window.devicePixelRatio !== dprSeen) { dprSeen = window.devicePixelRatio; fitCanvas(); }
     if (assetsReady) {
-      updateGame(game, game.mode === "play" ? snap : blankInput(), dt * (game.practice ? practiceSpeed : 1));
+      if (ensureScene()) updateGame(game, game.mode === "play" ? snap : blankInput(), dt * (game.practice ? practiceSpeed : 1));
       ctx.setTransform(pixelScale, 0, 0, pixelScale, 0, 0);
-      draw(ctx, game);
+      // A wave clear can change stage inside updateGame. Gate that scene before drawing it.
+      if (ensureScene()) draw(ctx, game);
     }
     sync();
     requestAnimationFrame(frame);
@@ -768,6 +817,7 @@ function boot() {
 if (typeof document !== "undefined") boot();
 
 export { blankInput };
+
 
 
 

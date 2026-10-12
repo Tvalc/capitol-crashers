@@ -1,0 +1,67 @@
+import fs from 'node:fs/promises';
+import path from 'node:path';
+import { pathToFileURL, fileURLToPath } from 'node:url';
+import os from 'node:os';
+import assert from 'node:assert/strict';
+const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
+const src = await fs.mkdtemp(path.join(os.tmpdir(), 'crashers-regression-'));
+await fs.cp(path.join(root,'play/qa-level60/src'),src,{recursive:true});
+const mainPath=path.join(src,'main.js');
+await fs.writeFile(mainPath,(await fs.readFile(mainPath,'utf8')).replace('import { PAGES } from "/story/panels.js";', 'const PAGES = [];'));
+const requests=[];let fail='';
+const fixture={frames:[{frame:{x:0,y:0,w:100,h:100},duration:100}],meta:{nativePixels:true,anchor:{x:50,y:100},pairedEnemyRoot:{x:80,y:100},bodyScale:1,holdFrame:0,playbackSequence:[0],contactFrame:0}};
+globalThis.Image=class {
+ naturalWidth=4096;naturalHeight=4096;width=4096;height=4096;
+ set src(value){this.url=value;requests.push({type:'image',url:value});queueMicrotask(()=>value.includes(fail)&&fail?this.onerror?.():this.onload?.());}
+};
+globalThis.fetch=async(url,options={})=>{requests.push({type:options.method||'GET',url});return {ok: !(fail&&url.includes(fail)),status:503,json:async()=>fixture};};
+globalThis.window={};globalThis.location={search:''};
+const saved=new Map();globalThis.localStorage={getItem:k=>saved.get(k),setItem:(k,v)=>saved.set(k,v),removeItem:k=>saved.delete(k)};
+const mod=n=>import(pathToFileURL(path.join(src,n)).href+'?v=load63');
+const sprites=await mod('sprites.js'),render=await mod('render.js'),main=await mod('main.js');
+const {STAGES}=await import(pathToFileURL(path.join(src,'stages.js')).href+'?v=cast62');
+const {makeEnemy}=await import(pathToFileURL(path.join(src,'enemies.js')).href+'?v=cast62');
+const ctx=new Proxy({measureText:t=>({width:String(t).length*10}),drawImage:image=>assert.ok(image,'Missing rendered image'),createLinearGradient:()=>({addColorStop(){}})}, {get:(o,k)=>k in o?o[k]:(()=>{})});
+requests.length=0;
+await Promise.all([sprites.loadSprites({sprites:['zohran','abdul'],title:true}),render.loadEnvironment()]);
+const title=[...requests];
+assert.equal(title.filter(x=>x.type==='GET').length,2);
+assert.equal(title.filter(x=>x.type==='image').length,4);
+assert.ok(title.every(x=>!x.url.includes('rogers')&&!x.url.includes('bovino')));
+let before=requests.length;
+await Promise.all([sprites.loadSprites({sprites:['zohran','abdul'],title:true}),render.loadEnvironment()]);
+assert.equal(requests.length,before,'Menu requests should be cached');
+const report={title,stages:[]};
+for(const [index,stage] of STAGES.entries()){
+ const game=main.createGame();main.beginRun(game,index%2?'sayed':'mamdani');game.stageIndex=index;main.startStage(game);game.mode='play';
+ const kinds=stage.waves.flatMap(w=>[...w.group.map(e=>e.kind),...(w.support?[w.support.kind]:[])]);
+ const ids=new Set([game.player.fighter.sprite]);
+ for(const kind of kinds){ids.add(kind==='greene'?'greene':makeEnemy(kind,0,560).sprite);if(kind==='pete')ids.add('pete_ww');if(kind==='bovino')ids.add('bovino_mini');if(kind==='rogers'){ids.add('rogers_vacation');ids.add('rogers_tropical');}}
+ before=requests.length;
+ await Promise.all([sprites.loadSprites({sprites:[...ids]}),render.loadEnvironment(stage)]);
+ render.draw(ctx,game);
+ for(let i=0;i<180;i++){main.updateGame(game,main.blankInput(),1/60);render.draw(ctx,game);}
+ report.stages.push({stage:stage.stageKey,sprites:[...ids],newRequests:requests.slice(before)});
+}
+let pairs=0;
+for(const heroSprite of ['zohran','abdul'])for(const enemySprite of ['ice_bro','giuliani','bovino','bovino_mini','rogers','rogers_vacation','rogers_tropical','cruz','trump','beck','vance_worried','pete_ww','pete','mcconnell']){
+ const hero={team:'player',fighter:{sprite:heroSprite},y:560,facing:1},enemy={sprite:enemySprite};
+ if(!sprites.hasRegisteredGrapplePair(hero,enemy))continue;
+ assert.equal(await sprites.ensureGrapplePair(hero,enemy),true);
+ for(const remaining of [0,.6,.3,.01]){hero.grabStrikeT=remaining;assert.equal(sprites.drawGrapplePair(ctx,hero,enemy,420,1),true);}
+ pairs++;
+}
+// Failed required assets must reject and be retriable; overlapping loads share work.
+fail='donald_trump_grabbed'; // soft failure is allowed and must not poison future required loads
+await sprites.loadSprites({sprites:['trump']});fail='';
+fail='test-missing';
+await assert.rejects(render.loadEnvironment({...STAGES[0],setArt:'test-missing',indoor:true}));
+fail='';await render.loadEnvironment({...STAGES[0],setArt:'test-missing',indoor:true});
+report.pairedGrabs=pairs;
+report.requests=requests.filter(x=>!x.url.includes('test-missing')&&!x.url.includes('donald_trump_grabbed'));
+// Remove only the fresh, dedicated temporary fixture directory.
+assert.ok(path.resolve(src).startsWith(path.resolve(os.tmpdir()) + path.sep + 'crashers-regression-'));
+await fs.rm(src,{recursive:true,force:true});
+console.log(`PASS: menu is 2 sprite sheets + 2 scenery images; deduplication; ${STAGES.length} stage load/render simulations; ${pairs} paired grabs at hold/strike/recovery; scenery retry.`);
+
+
