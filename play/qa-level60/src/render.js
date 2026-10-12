@@ -2,7 +2,7 @@ import { advanceFlyover } from "./plane-motion.mjs?v=plane72";
 import {currentBanter} from "./banter.mjs?v=cast62";
 import { drawBovinoHazards } from "./bovino/render.js?v=bovino45";
 const rogersSpeech = new Image(); rogersSpeech.src = "/play/qa-rogers25/assets/sprites/chibi/rogers-speech.webp?v=cast40";
-const rogersCaller = new Image(); rogersCaller.src = "/play/qa-rogers25/assets/rogers-caller.png";
+const rogersCaller = new Image(); rogersCaller.src = "/play/qa-rogers25/assets/rogers-caller.webp";
 import { FIGHTERS, poseFor } from "./fighters.js?v=cast62";
 import { drawSprite, drawGrapplePair, hasGrapplePair } from "./sprites.js?v=load63";
 import { WORLD, STAGES } from "./stages.js?v=cast62";
