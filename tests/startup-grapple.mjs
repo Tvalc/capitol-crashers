@@ -69,6 +69,20 @@ for(const heroSprite of ['zohran','abdul'])for(const enemySprite of ['ice_bro','
  for(const remaining of [0,.6,.3,.01]){hero.grabStrikeT=remaining;assert.equal(sprites.drawGrapplePair(ctx,hero,enemy,420,1),true);}
  pairs++;
 }
+// Prompts follow the same rescue range as the actual action, including lane and hold state.
+const neighbor={id:'neighbor',kind:'hungry',state:'need',x:150,y:500,alive:true};
+const guideGame={player:{state:'idle',x:100,y:500,z:0},citizens:[neighbor]};
+assert.equal(main.actionGuidance(guideGame,true).attack,'Help');
+assert.match(main.actionGuidance(guideGame,false).hint,/Press J to save/);
+guideGame.player.y=550;
+assert.equal(main.actionGuidance(guideGame,true).attack,'Attack','Different street lane is not in rescue range');
+guideGame.player.y=500;guideGame.player.x=0;
+assert.equal(main.actionGuidance(guideGame,true).attack,'Attack','Distant neighbor must not show Help');
+guideGame.player.x=100;guideGame.player.state='grab';guideGame.player.grabId='enemy';
+assert.deepEqual(main.actionGuidance(guideGame,true),{attack:'Attack',heavy:'Throw',hint:'Enemy grabbed. Tap Attack to hit, or Throw to toss them.'});
+guideGame.player.state='help';guideGame.player.grabId=null;
+assert.equal(main.actionGuidance(guideGame,true).attack,'Helping');
+console.log('PASS: contextual Help / Attack / Throw labels, rescue distance, street lane, hold and help states.');
 // Failed required assets must reject and be retriable; overlapping loads share work.
 fail='donald_trump_grabbed'; // soft failure is allowed and must not poison future required loads
 await sprites.loadSprites({sprites:['trump']});fail='';
