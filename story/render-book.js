@@ -7,11 +7,11 @@
 // Lettering is set on the art: caption boxes grouped by corner, speech bubbles
 // placed by center point with a tail toward the speaker, and SFX. On narrow
 // screens comic.css moves the lettering under the art.
-import { PAGES, PLANKS, SOURCES } from "./panels.js?v=combined1";
-import { ART_SIZES } from "./art-widths.js?v=combined1";
+import { PAGES, PLANKS, SOURCES } from "./panels.js?v=aoc1";
+import { ART_SIZES } from "./art-widths.js?v=aoc1";
 
 const ART_DIR = "../art/story/chibi/";
-const ART_VER = "combined1";
+const ART_VER = "aoc1";
 // The book is at most 1120px wide; half panels take half of it. Phones are one column.
 const SIZES_WIDE = "(max-width: 760px) calc(100vw - 40px), 1060px";
 const SIZES_HALF = "(max-width: 760px) calc(100vw - 40px), 530px";

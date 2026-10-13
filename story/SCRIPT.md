@@ -14,14 +14,14 @@ Keep all lettering out of the art. Captions and speech bubbles are added by the 
 
 > Chibi comic illustration matching the Capitol Crashers comic: big heads, short bodies, clean black outlines, soft cel shading, rich painterly light. No text, no lettering, no speech bubbles, no signs with words.
 
-## Issue #1: Three lives in public service
+## Issue #1: Four lives in public service
 
 ### open-n · undefined · (About this issue)
 
 - **Shape:** narration page
-- **Caption:** Three people. Three kinds of work: housing counseling, public health and teaching.
-- **Caption:** This comic follows each of them from childhood through public service and the campaigns that came next. Start with Mamdani in New York, then El-Sayed in Michigan and Talarico in Texas. The scenes showing them together are imagined; the facts are sourced.
-- **Sources:** [1](https://www.cnn.com/politics/zohran-mamdani-fast-facts), [3](https://bridgemi.com/michigan-government/who-is-abdul-el-sayed-what-to-know-about-michigan-democrats-us-senate-winner/), [61](https://www.britannica.com/biography/James-Talarico)
+- **Caption:** Three people in the game. One more whose hearings we collect.
+- **Caption:** This comic follows Mamdani, El-Sayed and Talarico from childhood through the races they’re in now. It also follows Alexandria Ocasio-Cortez: Bronx to the House floor. The scenes showing them together are imagined; the facts are sourced.
+- **Sources:** [1](https://www.cnn.com/politics/zohran-mamdani-fast-facts), [3](https://bridgemi.com/michigan-government/who-is-abdul-el-sayed-what-to-know-about-michigan-democrats-us-senate-winner/), [61](https://www.britannica.com/biography/James-Talarico), [149](https://www.womenshistory.org/education-resources/biographies/alexandria-ocasio-cortez)
 
 ## Chapter 1 · Zohran Mamdani: Growing up and working in Queens
 
@@ -575,12 +575,130 @@ Keep all lettering out of the art. Captions and speech bubbles are added by the 
 
 > Arlington rally, August 2026: Talarico with sleeves rolled up pounds the podium, a huge cheering crowd of working Texans.
 
+## Chapter 4 · Alexandria Ocasio-Cortez: Bronx, Yorktown, and the bar
+
+### a01 · undefined · (Parkchester · 1989)
+
+- **Shape:** wide
+- **Caption:** Parkchester, the Bronx. October 13, 1989. Alexandria Ocasio-Cortez is born.
+- **Caption:** Her father, Sergio, is a Bronx architect. Her mother, Blanca, grew up in Arecibo, Puerto Rico, and cleaned houses.
+- **Caption:** They move about 30 minutes north to Yorktown for stronger public schools. She still spends weekends with family in the Bronx. The gap in what a ZIP code can buy is the first politics she notices.
+- **Sources:** [149](https://www.womenshistory.org/education-resources/biographies/alexandria-ocasio-cortez), [150](https://ocasio-cortez.house.gov/about), [151](https://www.ocasiocortez.com/about)
+
+**Makko prompt:**
+
+> Split Bronx 1990s: Parkchester courtyard family with a toddler girl; same family on a Yorktown stoop with a school bus. No lettering.
+
+### a01b · undefined · (2008)
+
+- **Shape:** wide
+- **Caption:** Sophomore year at Boston University. Sergio dies of cancer at 48. Medical bills put the house at risk.
+- **Caption:** Blanca takes another job driving a school bus. Alexandria interned in Ted Kennedy’s office on immigration cases; after graduation she works two jobs to keep the family afloat.
+- **Sources:** [150](https://ocasio-cortez.house.gov/about), [151](https://www.ocasiocortez.com/about), [149](https://www.womenshistory.org/education-resources/biographies/alexandria-ocasio-cortez)
+
+**Makko prompt:**
+
+> Night kitchen, 2008: mother at a table of envelopes, daughter with a hand on her shoulder, empty drafting table. No lettering.
+
+### a02 · undefined · (Manhattan · Flats Fix)
+
+- **Shape:** wide
+- **Caption:** She bartends and waits tables at Flats Fix, a taqueria by Union Square, to help her mother and pay student loans.
+- **Caption:** Years later, when a president mocks the job, she answers on the record:
+- **Ocasio-Cortez:** "I’m proud to be a bartender."
+- **Ocasio-Cortez:** "Ain’t nothing wrong with that."
+- **Sources:** [152](https://www.bonappetit.com/story/alexandria-ocasio-cortez-lessons-from-restaurants), [153](https://finance.yahoo.com/news/aoc-bartender-proud-comments-174354768.html), [150](https://ocasio-cortez.house.gov/about)
+
+**Makko prompt:**
+
+> Manhattan taqueria bar: young Latina bartender with gold hoops shaking a tin. No lettering.
+
+## Ocasio-Cortez · 2018–2019: The upset, then the House
+
+### a03 · undefined · (NY-14 · 2018)
+
+- **Shape:** half
+- **Caption:** After Standing Rock she runs for Congress. Joe Crowley has held the seat since 1999. She takes no corporate PAC money.
+- **Caption:** Staff write their job titles on Post-its. Time later quoted her: everyone said she was cute, maybe next time.
+- **Sources:** [150](https://ocasio-cortez.house.gov/about), [154](https://ballotpedia.org/Alexandria_Ocasio-Cortez)
+
+**Makko prompt:**
+
+> Bronx stoop, 2018: young woman in a red dress knocks with a clipboard. No lettering.
+
+### a04 · undefined · (June 26, 2018)
+
+- **Shape:** half
+- **Caption:** She beats Crowley about 57 percent to 43. The New York Times calls it the most significant loss for a Democratic incumbent in more than a decade.
+- **Caption:** At 29 she becomes the youngest woman ever sworn into Congress.
+- **Sources:** [154](https://ballotpedia.org/Alexandria_Ocasio-Cortez), [150](https://ocasio-cortez.house.gov/about)
+
+**Makko prompt:**
+
+> Election-night Bronx: young Latina in a white blazer, arms up, confetti. No lettering.
+
+### a05 · undefined · (February 7, 2019)
+
+- **Shape:** wide
+- **Caption:** Her first legislation is the Green New Deal resolution, introduced with Senator Ed Markey.
+- **Caption:** It is a ten-year mobilization: union jobs, infrastructure, and cutting carbon. It is a resolution, not an enacted law.
+- **Sources:** [150](https://ocasio-cortez.house.gov/about), [156](https://www.cbsnews.com/news/green-new-deal-alexandria-ocasio-cortez-introduces-2020-policy-test/)
+
+**Makko prompt:**
+
+> Capitol steps: young Latina and older white senator hold a blank green document, turbines in the sky. No lettering.
+
+## Ocasio-Cortez · Hearings: The clips in Greatest Hits
+
+### a06 · undefined · (February 2019)
+
+- **Shape:** half
+- **Caption:** Oversight hearing. She walks witnesses through a five-minute ethics hypothetical about money in the White House.
+- **Caption:** That clip, uncut, is in Greatest Hits.
+- **Sources:** [159](https://www.youtube.com/watch?v=TJlpS4vhKP0), [158](https://politicalarcades.com/greatest-hits/)
+
+**Makko prompt:**
+
+> House oversight room: young Latina at a dais pointing at two nervous witnesses. No lettering.
+
+### a07 · undefined · (October 2019)
+
+- **Shape:** half
+- **Caption:** She asks Mark Zuckerberg whether Facebook will run a political ad it knows is a lie.
+- **Caption:** That hearing is in Greatest Hits too.
+- **Sources:** [160](https://www.youtube.com/watch?v=LFQZFFq7sis), [158](https://politicalarcades.com/greatest-hits/)
+
+**Makko prompt:**
+
+> House hearing: young Latina at a microphone, tech-CEO type in a gray shirt at the table. No lettering.
+
+### a08 · undefined · (July 23, 2020)
+
+- **Shape:** wide
+- **Caption:** A Florida Republican accosts her on the Capitol steps. On the floor he cites his wife and daughters. She answers from the Congressional Record:
+- **Ocasio-Cortez:** "I am someone’s daughter too."
+- **Ocasio-Cortez:** "They did not raise me to accept abuse from men."
+- **Sources:** [157](https://www.govinfo.gov/content/pkg/CREC-2020-07-23/html/CREC-2020-07-23-pt1-PgH3702-2.htm)
+
+**Makko prompt:**
+
+> House floor: young Latina at a microphone, dignified. No lettering.
+
+### aoc-hits · undefined · (Greatest Hits)
+
+- **Shape:** narration page
+- **Caption:** Thirty-four of her hearings and speeches are collected, uncut, at politicalarcades.com/greatest-hits.
+- **Caption:** Original publisher edits. No added narration. Watch her, then come back.
+- **Sources:** [158](https://politicalarcades.com/greatest-hits/)
+
+## Issue #1 · Conclusion: Three in the game, one in the House
+
 ### concl · undefined · (October 2026)
 
 - **Shape:** narration page
-- **Caption:** Mamdani is mayor of New York. El-Sayed and Talarico are on the ballot for the U.S. Senate in Michigan and Texas.
-- **Caption:** Their stories are separate; the scenes of them together are imagined. Capitol Crashers puts them in one game because housing, health care and schools connect their work. Now the fun part: the men with the money.
-- **Sources:** [39](https://www.washingtonpost.com/politics/2026/09/17/michigan-senate-race-poll-finds-abdul-el-sayed-has-narrow-edge-over-mike-rogers/), [66](https://apnews.com/article/texas-senate-cornyn-paxton-trump-talarico-4fa609e7ddb93b47ac4e3398a12a472e)
+- **Caption:** Mamdani is mayor of New York. El-Sayed and Talarico are on the ballot for the U.S. Senate. Ocasio-Cortez is already in the House.
+- **Caption:** Their stories are separate; the scenes of them together are imagined. Capitol Crashers puts three of them in one game. Her hearings live in Greatest Hits. Now the fun part: the men with the money.
+- **Sources:** [39](https://www.washingtonpost.com/politics/2026/09/17/michigan-senate-race-poll-finds-abdul-el-sayed-has-narrow-edge-over-mike-rogers/), [66](https://apnews.com/article/texas-senate-cornyn-paxton-trump-talarico-4fa609e7ddb93b47ac4e3398a12a472e), [158](https://politicalarcades.com/greatest-hits/)
 
 ## Issue #2: Show up and debate
 

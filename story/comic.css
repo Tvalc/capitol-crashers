@@ -17,6 +17,7 @@
   --queens-c: #ffc61a;
   --detroit-c: #4fa3e0;
   --texas-c: #e2803a;
+  --bronx-c: #e23b4a;
   --both-c: #ff4d8d;
   --letter: "Comic Neue", "Comic Sans MS", "Chalkboard SE", system-ui, sans-serif;
   --shout: "Bangers", Impact, "Arial Black", sans-serif;
@@ -174,6 +175,7 @@ figure.panel { margin: 0; min-width: 0; }
 .queens .tag { background: var(--queens-c); color: var(--ink-k); }
 .detroit .tag { background: var(--detroit-c); color: var(--ink-k); }
 .texas .tag { background: var(--texas-c); color: var(--ink-k); }
+.bronx .tag { background: var(--bronx-c); color: #fff; }
 .both .tag { background: var(--both-c); color: #fff; }
 
 .caps {
@@ -346,6 +348,7 @@ figure.panel { margin: 0; min-width: 0; }
 .person.queens { border-left-color: var(--queens-c); }
 .person.detroit { border-left-color: var(--detroit-c); }
 .person.texas { border-left-color: var(--texas-c); }
+.person.bronx { border-left-color: var(--bronx-c); }
 .person-name {
   font-family: var(--shout);
   font-size: clamp(22px, 2.8vw, 32px);
@@ -411,6 +414,7 @@ figure.panel { margin: 0; min-width: 0; }
 .plank.queens { box-shadow: inset 3px 0 0 var(--queens-c); }
 .plank.detroit { box-shadow: inset 3px 0 0 var(--detroit-c); }
 .plank.texas { box-shadow: inset 3px 0 0 var(--texas-c); }
+.plank.bronx { box-shadow: inset 3px 0 0 var(--bronx-c); }
 .plank h3 { margin: 0; font-size: 19px; }
 .plank p { margin: 0; line-height: 1.5; color: rgba(246, 239, 228, 0.86); }
 .plank-cite { margin-top: auto; font-family: var(--mono, ui-monospace, monospace); font-size: 11px; color: rgba(246, 239, 228, 0.55); }

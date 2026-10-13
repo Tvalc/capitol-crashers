@@ -21,7 +21,7 @@ export const PAGES = [
   {
     "id": "issue-1",
     "label": "Issue #1",
-    "chapter": "Three lives in public service",
+    "chapter": "Four lives in public service",
     "panels": [
       {
         "id": "open-n",
@@ -30,17 +30,18 @@ export const PAGES = [
         "tag": "About this issue",
         "captions": [
           {
-            "text": "Three people. Three kinds of work: housing counseling, public health and teaching.",
+            "text": "Three people in the game. One more whose hearings we collect.",
             "big": true
           },
           {
-            "text": "This comic follows each of them from childhood through public service and the campaigns that came next. Start with Mamdani in New York, then El-Sayed in Michigan and Talarico in Texas. The scenes showing them together are imagined; the facts are sourced."
+            "text": "This comic follows Mamdani, El-Sayed and Talarico from childhood through the races they’re in now. It also follows Alexandria Ocasio-Cortez: Bronx to the House floor. The scenes showing them together are imagined; the facts are sourced."
           }
         ],
         "cites": [
           1,
           3,
-          61
+          61,
+          149
         ]
       }
     ]
@@ -1416,6 +1417,297 @@ export const PAGES = [
         ],
         "prompt": "Arlington rally, August 2026: Talarico with sleeves rolled up pounds the podium, a huge cheering crowd of working Texans."
       },
+    ]
+  },
+  {
+    "id": "aoc",
+    "label": "Chapter 4 · Alexandria Ocasio-Cortez",
+    "chapter": "Bronx, Yorktown, and the bar",
+    "panels": [
+      {
+        "id": "a01",
+        "where": "bronx",
+        "size": "wide",
+        "art": "a01.webp",
+        "tag": "Parkchester · 1989",
+        "alt": "A Puerto Rican father and mother hold their toddler daughter in a Bronx courtyard, then sit with her on the steps of a small suburban house.",
+        "captions": [
+          {
+            "text": "Parkchester, the Bronx. October 13, 1989. Alexandria Ocasio-Cortez is born.",
+            "at": "tl"
+          },
+          {
+            "text": "Her father, Sergio, is a Bronx architect. Her mother, Blanca, grew up in Arecibo, Puerto Rico, and cleaned houses.",
+            "at": "bl"
+          },
+          {
+            "text": "They move about 30 minutes north to Yorktown for stronger public schools. She still spends weekends with family in the Bronx. The gap in what a ZIP code can buy is the first politics she notices.",
+            "at": "br"
+          }
+        ],
+        "cites": [
+          149,
+          150,
+          151
+        ],
+        "prompt": "Split Bronx 1990s: Parkchester courtyard family with a toddler girl; same family on a Yorktown stoop with a school bus. No lettering."
+      },
+      {
+        "id": "a01b",
+        "where": "bronx",
+        "size": "wide",
+        "art": "a01b.webp",
+        "tag": "2008",
+        "alt": "A college-age daughter stands with her mother at a kitchen table covered in envelopes; an empty drafting table and a photo of her father sit in the background.",
+        "captions": [
+          {
+            "text": "Sophomore year at Boston University. Sergio dies of cancer at 48. Medical bills put the house at risk.",
+            "at": "tl"
+          },
+          {
+            "text": "Blanca takes another job driving a school bus. Alexandria interned in Ted Kennedy’s office on immigration cases; after graduation she works two jobs to keep the family afloat.",
+            "at": "br"
+          }
+        ],
+        "cites": [
+          150,
+          151,
+          149
+        ],
+        "prompt": "Night kitchen, 2008: mother at a table of envelopes, daughter with a hand on her shoulder, empty drafting table. No lettering."
+      },
+      {
+        "id": "a02",
+        "where": "bronx",
+        "size": "wide",
+        "art": "a02.webp",
+        "tag": "Manhattan · Flats Fix",
+        "alt": "Ocasio-Cortez behind a taqueria bar, shaking a cocktail tin for regulars.",
+        "captions": [
+          {
+            "text": "She bartends and waits tables at Flats Fix, a taqueria by Union Square, to help her mother and pay student loans.",
+            "at": "tl"
+          },
+          {
+            "text": "Years later, when a president mocks the job, she answers on the record:",
+            "at": "tr"
+          }
+        ],
+        "bubbles": [
+          {
+            "who": "Ocasio-Cortez",
+            "text": "I’m proud to be a bartender.",
+            "x": 28,
+            "y": 22,
+            "tail": "s",
+            "w": 24
+          },
+          {
+            "who": "Ocasio-Cortez",
+            "text": "Ain’t nothing wrong with that.",
+            "x": 78,
+            "y": 70,
+            "tail": "w",
+            "w": 24
+          }
+        ],
+        "cites": [
+          152,
+          153,
+          150
+        ],
+        "prompt": "Manhattan taqueria bar: young Latina bartender with gold hoops shaking a tin. No lettering."
+      }
+    ]
+  },
+  {
+    "id": "aoc-2",
+    "label": "Ocasio-Cortez · 2018–2019",
+    "chapter": "The upset, then the House",
+    "panels": [
+      {
+        "id": "a03",
+        "where": "bronx",
+        "size": "half",
+        "art": "a03.webp",
+        "tag": "NY-14 · 2018",
+        "alt": "Ocasio-Cortez in a red dress knocks on a Bronx walk-up while a neighbor waves from a folding chair.",
+        "captions": [
+          {
+            "text": "After Standing Rock she runs for Congress. Joe Crowley has held the seat since 1999. She takes no corporate PAC money.",
+            "at": "tl"
+          },
+          {
+            "text": "Staff write their job titles on Post-its. Time later quoted her: everyone said she was cute, maybe next time.",
+            "at": "br"
+          }
+        ],
+        "cites": [
+          150,
+          154
+        ],
+        "prompt": "Bronx stoop, 2018: young woman in a red dress knocks with a clipboard. No lettering."
+      },
+      {
+        "id": "a04",
+        "where": "bronx",
+        "size": "half",
+        "art": "a04.webp",
+        "tag": "June 26, 2018",
+        "alt": "Ocasio-Cortez in a white blazer throws her arms up on election night as the room cheers.",
+        "captions": [
+          {
+            "text": "She beats Crowley about 57 percent to 43. The New York Times calls it the most significant loss for a Democratic incumbent in more than a decade.",
+            "at": "tl"
+          },
+          {
+            "text": "At 29 she becomes the youngest woman ever sworn into Congress.",
+            "at": "br"
+          }
+        ],
+        "cites": [
+          154,
+          150
+        ],
+        "prompt": "Election-night Bronx: young Latina in a white blazer, arms up, confetti. No lettering."
+      },
+      {
+        "id": "a05",
+        "where": "bronx",
+        "size": "wide",
+        "art": "a05.webp",
+        "tag": "February 7, 2019",
+        "alt": "Ocasio-Cortez and an older white senator hold a blank green document on the Capitol steps, wind turbines behind them.",
+        "captions": [
+          {
+            "text": "Her first legislation is the Green New Deal resolution, introduced with Senator Ed Markey.",
+            "at": "tl"
+          },
+          {
+            "text": "It is a ten-year mobilization: union jobs, infrastructure, and cutting carbon. It is a resolution, not an enacted law.",
+            "at": "br"
+          }
+        ],
+        "cites": [
+          150,
+          156
+        ],
+        "prompt": "Capitol steps: young Latina and older white senator hold a blank green document, turbines in the sky. No lettering."
+      }
+    ]
+  },
+  {
+    "id": "aoc-3",
+    "label": "Ocasio-Cortez · Hearings",
+    "chapter": "The clips in Greatest Hits",
+    "panels": [
+      {
+        "id": "a06",
+        "where": "bronx",
+        "size": "half",
+        "art": "a06.webp",
+        "tag": "February 2019",
+        "alt": "Ocasio-Cortez at a House dais points at two sweating witnesses.",
+        "captions": [
+          {
+            "text": "Oversight hearing. She walks witnesses through a five-minute ethics hypothetical about money in the White House.",
+            "at": "tl"
+          },
+          {
+            "text": "That clip, uncut, is in Greatest Hits.",
+            "at": "br"
+          }
+        ],
+        "cites": [
+          159,
+          158
+        ],
+        "prompt": "House oversight room: young Latina at a dais pointing at two nervous witnesses. No lettering."
+      },
+      {
+        "id": "a07",
+        "where": "bronx",
+        "size": "half",
+        "art": "a07.webp",
+        "tag": "October 2019",
+        "alt": "Ocasio-Cortez at a microphone questions a man in a gray t-shirt at the witness table.",
+        "captions": [
+          {
+            "text": "She asks Mark Zuckerberg whether Facebook will run a political ad it knows is a lie.",
+            "at": "tl"
+          },
+          {
+            "text": "That hearing is in Greatest Hits too.",
+            "at": "br"
+          }
+        ],
+        "cites": [
+          160,
+          158
+        ],
+        "prompt": "House hearing: young Latina at a microphone, tech-CEO type in a gray shirt at the table. No lettering."
+      },
+      {
+        "id": "a08",
+        "where": "bronx",
+        "size": "wide",
+        "art": "a08.webp",
+        "tag": "July 23, 2020",
+        "alt": "Ocasio-Cortez speaks at a House floor microphone, calm and direct.",
+        "captions": [
+          {
+            "text": "A Florida Republican accosts her on the Capitol steps. On the floor he cites his wife and daughters. She answers from the Congressional Record:",
+            "at": "tl"
+          }
+        ],
+        "bubbles": [
+          {
+            "who": "Ocasio-Cortez",
+            "text": "I am someone’s daughter too.",
+            "x": 22,
+            "y": 28,
+            "tail": "e",
+            "w": 26
+          },
+          {
+            "who": "Ocasio-Cortez",
+            "text": "They did not raise me to accept abuse from men.",
+            "x": 78,
+            "y": 72,
+            "tail": "w",
+            "w": 28
+          }
+        ],
+        "cites": [
+          157
+        ],
+        "prompt": "House floor: young Latina at a microphone, dignified. No lettering."
+      },
+      {
+        "id": "aoc-hits",
+        "kind": "narration",
+        "where": "bronx",
+        "tag": "Greatest Hits",
+        "captions": [
+          {
+            "text": "Thirty-four of her hearings and speeches are collected, uncut, at politicalarcades.com/greatest-hits.",
+            "big": true
+          },
+          {
+            "text": "Original publisher edits. No added narration. Watch her, then come back."
+          }
+        ],
+        "cites": [
+          158
+        ]
+      }
+    ]
+  },
+  {
+    "id": "issue-1-end",
+    "label": "Issue #1 · Conclusion",
+    "chapter": "Three in the game, one in the House",
+    "panels": [
       {
         "id": "concl",
         "kind": "narration",
@@ -1423,16 +1715,17 @@ export const PAGES = [
         "tag": "October 2026",
         "captions": [
           {
-            "text": "Mamdani is mayor of New York. El-Sayed and Talarico are on the ballot for the U.S. Senate in Michigan and Texas.",
+            "text": "Mamdani is mayor of New York. El-Sayed and Talarico are on the ballot for the U.S. Senate. Ocasio-Cortez is already in the House.",
             "big": true
           },
           {
-            "text": "Their stories are separate; the scenes of them together are imagined. Capitol Crashers puts them in one game because housing, health care and schools connect their work. Now the fun part: the men with the money."
+            "text": "Their stories are separate; the scenes of them together are imagined. Capitol Crashers puts three of them in one game. Her hearings live in Greatest Hits. Now the fun part: the men with the money."
           }
         ],
         "cites": [
           39,
-          66
+          66,
+          158
         ]
       }
     ]
@@ -2524,6 +2817,44 @@ export const PLANKS = [
       71
     ],
     "text": "Universal child care, paid family leave and a bigger Child Tax Credit: his New American Dream agenda from August 2026."
+  },
+  {
+    "where": "bronx",
+    "who": "Ocasio-Cortez",
+    "title": "Green New Deal",
+    "cites": [
+      150,
+      156
+    ],
+    "text": "A ten-year national mobilization: union jobs repairing infrastructure, cutting carbon, and tying climate policy to economic and racial justice. Introduced as a resolution in 2019, not as enacted law."
+  },
+  {
+    "where": "bronx",
+    "who": "Ocasio-Cortez",
+    "title": "Medicare for All",
+    "cites": [
+      154
+    ],
+    "text": "A national single-payer health program. She has argued it would lower overall health-care costs."
+  },
+  {
+    "where": "bronx",
+    "who": "Ocasio-Cortez",
+    "title": "Housing",
+    "cites": [
+      154
+    ],
+    "text": "Housing as a right in NY-14, including for families facing eviction and rising rents in the Bronx and Queens."
+  },
+  {
+    "where": "bronx",
+    "who": "Ocasio-Cortez",
+    "title": "Workers",
+    "cites": [
+      153,
+      150
+    ],
+    "text": "Dignity for bartenders, retail workers and bus drivers. She has refused corporate PAC money since the 2018 campaign."
   }
 ];
 
@@ -3087,5 +3418,60 @@ export const SOURCES = [
     "n": 148,
     "label": "Yahoo News, Trump's post and El-Sayed's reply.",
     "url": "https://www.yahoo.com/news/politics/articles/panicked-trump-loses-dem-star-084813690.html"
+  },
+  {
+    "n": 149,
+    "label": "National Women's History Museum, Alexandria Ocasio-Cortez biography.",
+    "url": "https://www.womenshistory.org/education-resources/biographies/alexandria-ocasio-cortez"
+  },
+  {
+    "n": 150,
+    "label": "U.S. House, About Representative Ocasio-Cortez.",
+    "url": "https://ocasio-cortez.house.gov/about"
+  },
+  {
+    "n": 151,
+    "label": "Ocasio-Cortez for Congress, About.",
+    "url": "https://www.ocasiocortez.com/about"
+  },
+  {
+    "n": 152,
+    "label": "Bon Appétit, Ocasio-Cortez on lessons from restaurants.",
+    "url": "https://www.bonappetit.com/story/alexandria-ocasio-cortez-lessons-from-restaurants"
+  },
+  {
+    "n": 153,
+    "label": "Yahoo Finance, Ocasio-Cortez: I'm proud to be a bartender.",
+    "url": "https://finance.yahoo.com/news/aoc-bartender-proud-comments-174354768.html"
+  },
+  {
+    "n": 154,
+    "label": "Ballotpedia, Alexandria Ocasio-Cortez.",
+    "url": "https://ballotpedia.org/Alexandria_Ocasio-Cortez"
+  },
+  {
+    "n": 156,
+    "label": "CBS News, Ocasio-Cortez and Markey introduce the Green New Deal, February 7, 2019.",
+    "url": "https://www.cbsnews.com/news/green-new-deal-alexandria-ocasio-cortez-introduces-2020-policy-test/"
+  },
+  {
+    "n": 157,
+    "label": "Congressional Record, July 23, 2020, Ocasio-Cortez remarks on the House floor.",
+    "url": "https://www.govinfo.gov/content/pkg/CREC-2020-07-23/html/CREC-2020-07-23-pt1-PgH3702-2.htm"
+  },
+  {
+    "n": 158,
+    "label": "Political Arcades, Greatest Hits.",
+    "url": "https://politicalarcades.com/greatest-hits/"
+  },
+  {
+    "n": 159,
+    "label": "CNN, Ocasio-Cortez five-minute ethics hypothetical, February 8, 2019.",
+    "url": "https://www.youtube.com/watch?v=TJlpS4vhKP0"
+  },
+  {
+    "n": 160,
+    "label": "NowThis, Ocasio-Cortez questions Mark Zuckerberg, October 2019.",
+    "url": "https://www.youtube.com/watch?v=LFQZFFq7sis"
   }
 ];
