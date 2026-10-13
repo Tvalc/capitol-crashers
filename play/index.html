@@ -25,7 +25,7 @@
  #practice-controls p{font-size:12px;margin:3px 0}
 }
 </style>
-<script src="/shared/city-rewards.js?v=resources1"></script><link rel="stylesheet" href="launch.css?v=mobile73"><script defer src="/shared/analytics.js?v=ph1"></script><link rel="stylesheet" href="https://politicalarcades.com/shared/buttons.css?v=mobile73"></head>
+<script src="/shared/city-rewards.js?v=resources1"></script><link rel="stylesheet" href="launch.css?v=guidance74"><script defer src="/shared/analytics.js?v=ph1"></script><link rel="stylesheet" href="https://politicalarcades.com/shared/buttons.css?v=mobile73"></head>
 <body>
   <header class="topbar">
     <a class="brand" href="../">Capitol Crashers</a>
@@ -53,7 +53,7 @@
     <section class="card" id="pause-panel" hidden aria-labelledby="pause-title">
       <h2 id="pause-title">Paused</h2><p>Your fight will wait. Resume when you are ready.</p>
       <div class="actions"><button type="button" class="play" id="resume">Resume</button><button type="button" id="restart-run">Restart run</button><button type="button" id="choose-again">Choose fighter</button><button type="button" id="fullscreen">Fullscreen</button></div>
-      <p class="hint">Ctrl+F toggles fullscreen.</p><a class="city-pause-link" href="https://politicalarcades.com/city/" target="_top">My city &amp; supplies →</a>
+      <div class="action-reminder"><p><strong>Save a neighbor:</strong> walk up, then <span class="touch-instruction">tap Help</span><span class="key-instruction">press J</span>.</p><p><strong>After a grab:</strong> <span class="touch-instruction">tap Attack to hit, or Throw to toss them</span><span class="key-instruction">press J to hit, or K to throw</span>.</p></div><p class="hint">Ctrl+F toggles fullscreen.</p><a class="city-pause-link" href="https://politicalarcades.com/city/" target="_top">My city &amp; supplies →</a>
     </section>
     <button type="button" id="stage-pause" class="stage-pause" hidden>Pause</button>
     <canvas id="game" width="1280" height="720" tabindex="0" aria-label="Capitol Crashers"></canvas>
@@ -66,7 +66,7 @@
         <button type="button" class="play" id="start">Step in</button>
         <a class="patreon" data-patreon hidden target="_blank" rel="noopener noreferrer">Support on Patreon</a>
       </div>
-      <p class="touch-start">Use the thumb pad to move and the strike button to help neighbors or fight villains.</p>
+      <p class="touch-start"><strong>Save people:</strong> walk up to a neighbor, then <span class="touch-instruction">tap Help. Attack changes to Help when you are close.</span><span class="key-instruction">press J.</span><br><strong>Grab an enemy:</strong> <span class="touch-instruction">tap Grab, then Attack to hit or Throw to toss them.</span><span class="key-instruction">press G, then J to hit or K to throw.</span></p>
       <details class="controls-guide"><summary>Controls and moves</summary>      <ul class="how">
         <li>Neighbors in need stand along the street. Walk up and press J to help: a meal, care, a rent freeze, a job. Nobody gets hit.</li>
         <li>A witness with receipts will follow you. Keep them standing and they put a third of the boss on the record.</li>
@@ -90,7 +90,7 @@
           <span>Fast feet, short combo window, lighter hits. Captained wrestling, football and lacrosse.</span>
         </button>
       </div>
-      <p class="hint">Left and right to choose. Enter to start.</p>
+      <p class="hint"><span class="touch-instruction">Tap a fighter, then Save America.</span><span class="key-instruction">Left and right to choose. Enter to start.</span></p>
       <div class="actions">
         <button type="button" class="play" id="run">Save America</button>
         <button type="button" id="practice-start">Practice moves</button>
@@ -139,7 +139,7 @@
     <p><a href="privacy.html">Privacy</a></p>
   </footer>
   <script src="touch.js?v=noselect2"></script>
-  <script type="module" src="qa-level60/src/main.js?v=lazy1"></script>
+  <script type="module" src="qa-level60/src/main.js?v=lazy75"></script>
   <script type="module" src="site.js?v=resources1"></script>
   <script src="../soundtrack.js?v=ux2" data-controls></script>
 </body>
