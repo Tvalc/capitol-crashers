@@ -30,15 +30,20 @@ globalThis.location={search:''};globalThis.localStorage={getItem(){return null;}
 globalThis.window={location,devicePixelRatio:1,addEventListener(){}};
 globalThis.document={getElementById:get,querySelector:get,querySelectorAll:()=>fighters,createElement:()=>new Element(),addEventListener(){},body:new Element(),documentElement:new Element()};
 await import(pathToFileURL(file).href+'?v=warm64');
-assert.ok(requests.some(url=>url.includes('ice_bro_attack')),'Stage enemies must start fetching before Step in');
-assert.ok(requests.some(url=>url.includes('zohran_mamdani_help_hungry')),'Selected hero gameplay must preload at entry');
+assert.ok(!requests.some(url=>url.includes('ice_bro_attack')),'Page load must not download Stage 1 before Play');
+assert.ok(!requests.some(url=>url.includes('citizens/')),'Page load must not download citizens before Play');
+assert.ok(!requests.some(url=>url.includes('zohran_mamdani_help_hungry')),'Page load must not download hero gameplay before Play');
 assert.ok(!requests.some(url=>url.includes('mike_rogers_attack')),'Do not download late-game bosses at entry');
 assert.ok(!requests.some(url=>url.includes('abdul_el_sayed_attack')),'Do not compete with the default hero before selection');
 await new Promise(resolve=>setTimeout(resolve,0));
 get('start').fire('click');
+assert.ok(requests.some(url=>url.includes('ice_bro_attack')),'Pressing Play must start fetching Stage 1 enemies');
+assert.ok(requests.some(url=>url.includes('citizens/')),'Pressing Play must start fetching Stage 1 citizens');
+assert.ok(!requests.some(url=>url.includes('_help_')||url.includes('abdul_el_sayed_attack')),'Fighter sheets wait for the pick');
 get('run').fire('click');
 tick(performance.now()+16);
 await new Promise(resolve=>setTimeout(resolve,0));
+assert.ok(requests.some(url=>url.includes('zohran_mamdani_help_hungry')),'Starting the run loads the chosen hero');
 assert.ok(requests.some(url=>url.includes('giuliani_attack')),'Stage two must start fetching while stage one is active');
 const iceRequests=requests.filter(url=>url.includes('ice_bro_attack.json')).length;
 assert.equal(iceRequests,1,'Play must reuse the opening preload');
@@ -47,5 +52,5 @@ assert.ok(requests.some(url=>url.includes('abdul_el_sayed_attack')),'Choosing El
 await new Promise(resolve=>setTimeout(resolve,0));
 assert.ok(path.resolve(src).startsWith(path.resolve(os.tmpdir())+path.sep+'crashers-workflow-'));
 await fs.rm(src,{recursive:true,force:true});
-console.log('PASS: real boot downloads stage one before any click; gameplay reuses it; stage two preloads during play; changing fighters starts their moves.');
+console.log('PASS: page load fetches only the title; Play starts stage one shared art; the run adds the chosen hero and reuses it; stage two preloads during play; changing fighters starts their moves.');
 

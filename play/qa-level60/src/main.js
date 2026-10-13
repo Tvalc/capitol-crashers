@@ -11,7 +11,7 @@ import { draw, loadEnvironment } from "./render.js?v=plane72";
 import { cloneStage, STAGES, WORLD } from "./stages.js?v=cast62";
 import { updatePickups, updateProjectiles } from "./weapons.js?v=cast62";
 import { loadSprites, ensureGrapplePair } from "./sprites.js?v=load63";
-import { requestSceneAssets } from "./scene-assets.js?v=warm64";
+import { requestSceneAssets, warmStageArt } from "./scene-assets.js?v=lazy1";
 import { PAGES } from "/story/panels.js";
 import { followingWitness, helpTarget, makeCitizen, spawnCelebration, updateCitizens, witnessTestifies } from "./citizens.js?v=cast62";
 
@@ -527,8 +527,9 @@ function boot() {
     bar.append(stage,hero,start,encounter,fight); document.body.append(bar);
   }
   prepareSprites();
-  // Opening the cabinet is intent to play: use title, selection and story time to download.
-  if (!practiceRequested && !levelTest) warmScene(STAGES[0], game.fighterId);
+  // Page load fetches only the title. Pressing Play is intent: Stage 1's shared art
+  // downloads during selection and story, and the fighter's sheets follow the pick.
+  function warmOpening() { warmStageArt(STAGES[0]).catch(() => {}); }
   const titlePanel = document.getElementById("title-panel");
   const selectPanel = document.getElementById("select-panel");
   const clearPanel = document.getElementById("clear-panel");
@@ -745,6 +746,7 @@ function boot() {
     if (!assetsReady) { prepareSprites(); return; }
     unlock();
     play("ui");
+    warmOpening();
     game.mode = "select";
   });
   document.querySelectorAll(".fighter").forEach((button) => {
@@ -826,6 +828,7 @@ function boot() {
     if (snap.light || snap.heavy || snap.special || snap.grab || snap.jump || snap.confirm || snap.x || snap.y) unlock();
     if (game.mode === "title" && snap.confirm && assetsReady) {
       play("ui");
+      warmOpening();
       game.mode = "select";
     } else if (game.mode === "select") {
       const order = ["mamdani", "sayed"];
