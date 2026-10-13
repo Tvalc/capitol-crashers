@@ -30,3 +30,23 @@
  .touch-btn.wide{height:44px}
  .card{top:8px;bottom:8px;max-height:calc(100% - 16px)}
 }
+
+/* The action prompt has its own space and disappears with the game controls. */
+.action-hint{position:absolute;bottom:12px;left:20%;right:20%;margin:0;padding:8px 12px;background:#102238f5;color:#fff0d4;border-radius:8px;font:600 14px/1.4 system-ui;text-align:center;pointer-events:none;z-index:4}
+.action-hint[hidden]{display:none}
+.touch-instruction{display:none}.has-touch .touch-instruction{display:inline}.has-touch .key-instruction{display:none}
+.action-reminder{text-align:left;font:14px/1.5 system-ui}.action-reminder p{margin:10px 0}
+.has-touch #pause-panel>.hint{display:none}
+@media(max-width:760px) and (orientation:portrait){
+ .action-hint{position:static;flex:none;align-self:stretch;min-height:50px;display:flex;align-items:center;justify-content:center;margin:0 12px;padding:6px 12px;font-size:13px}
+ .card{box-sizing:border-box}
+ #pause-panel .actions{display:grid;grid-template-columns:1fr;gap:10px}
+ #pause-panel .actions button{width:100%;margin:0}
+}
+@media(orientation:landscape) and (max-height:520px){
+ .action-hint{left:132px;right:150px;bottom:max(8px,env(safe-area-inset-bottom));font-size:12px;padding:6px 10px}
+ .card,.card.slim,.card.comic{left:max(12px,env(safe-area-inset-left));right:max(12px,env(safe-area-inset-right));top:8px;bottom:8px;transform:none;width:min(640px,calc(100% - 24px));height:fit-content;max-height:calc(100% - 16px);margin:auto;overflow:auto;box-sizing:border-box}
+ #pause-panel .actions{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+}
+
+@media(orientation:landscape) and (max-height:520px){body>.city-reward-bar{display:none}.card h1{font-size:36px;margin:8px 0}.card h2{font-size:26px}}

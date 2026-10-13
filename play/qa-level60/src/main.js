@@ -13,12 +13,27 @@ import { updatePickups, updateProjectiles } from "./weapons.js?v=cast62";
 import { loadSprites, ensureGrapplePair } from "./sprites.js?v=load63";
 import { requestSceneAssets } from "./scene-assets.js?v=warm64";
 import { PAGES } from "/story/panels.js";
-import { followingWitness, makeCitizen, spawnCelebration, updateCitizens, witnessTestifies } from "./citizens.js?v=cast62";
+import { followingWitness, helpTarget, makeCitizen, spawnCelebration, updateCitizens, witnessTestifies } from "./citizens.js?v=cast62";
 
 // Comic panels that exist as short animated loops (OpenArt), shown between stages.
 const MOTION = { p21: "../art/story/motion/p21.mp4", p27: "../art/story/motion/p27.mp4" };
 
 const PANELS = Object.fromEntries(PAGES.flatMap((page) => page.panels).map((panel) => [panel.id, panel]));
+
+export function actionGuidance(game, touch) {
+  const player = game.player;
+  const holding = player?.state === "grab" && !!player.grabId;
+  const helping = player?.state === "help";
+  const canHelp = player && !holding && player.z <= 0 && !['dash','down','dead','grabbed','air','getup'].includes(player.state) && !!helpTarget(game, player);
+  const attack = helping ? 'Helping' : canHelp ? 'Help' : 'Attack';
+  const heavy = holding || player?.holding ? 'Throw' : 'Heavy';
+  const hint = holding
+    ? (touch ? 'Enemy grabbed. Tap Attack to hit, or Throw to toss them.' : 'Enemy grabbed. Press J to hit, or K to throw.')
+    : helping ? 'Helping your neighbor...'
+    : canHelp ? (touch ? 'Neighbor in reach. Tap Help to save them.' : 'Neighbor in reach. Press J to save them.')
+    : (touch ? 'Walk up to a neighbor. Attack changes to Help.' : 'Save neighbors: walk up and press J. Grab enemies: G, then J to hit or K to throw.');
+  return {attack, heavy, hint};
+}
 
 export function createGame() {
   return {
@@ -696,7 +711,15 @@ function boot() {
     endPanel.hidden = game.mode !== "ending";
     overPanel.hidden = game.mode !== "gameover";
     storyPanel.hidden = game.mode !== "story";
-    touchBar?.classList.toggle("idle", game.mode !== "play" || game.paused);
+    const controlsVisible = game.mode === "play" && !game.paused && !game.clearT && assetsReady && sceneReady;
+    touchBar?.classList.toggle("idle", !controlsVisible);
+    actionHint.hidden = !controlsVisible;
+    if (controlsVisible) {
+      const {attack, heavy, hint} = actionGuidance(game, document.documentElement.classList.contains('has-touch'));
+      if (attackButton && attackButton.textContent !== attack) attackButton.textContent = attack;
+      if (heavyButton && heavyButton.textContent !== heavy) heavyButton.textContent = heavy;
+      if (actionHint.textContent !== hint) actionHint.textContent = hint;
+    }
     if (game.mode === "story" && shownStory !== game.storyId) {
       shownStory = game.storyId;
       renderStory(PANELS[game.storyId]);
@@ -765,13 +788,22 @@ function boot() {
       down: { key: "ArrowDown", code: "ArrowDown" },
     },
     buttons: [
-      { label: "Light", key: "j", code: "KeyJ", tone: "pink" },
+      { label: "Attack", key: "j", code: "KeyJ", tone: "pink" },
       { label: "Heavy", key: "k", code: "KeyK", tone: "gold" },
       { label: "Grab", key: "g", code: "KeyG", tone: "gold" },
       { label: "Special", key: "l", code: "KeyL", tone: "blue" },
       { label: "Jump", key: " ", code: "Space", tone: "cream wide" },
     ],
   });
+
+  const actionHint = document.createElement('p');
+  actionHint.className = 'action-hint';
+  actionHint.hidden = true;
+  actionHint.setAttribute('role', 'status');
+  actionHint.setAttribute('aria-live', 'polite');
+  if (touchBar) touchBar.before(actionHint); else canvas.after(actionHint);
+  const attackButton = touchBar?.querySelector('.touch-btn.pink');
+  const heavyButton = touchBar?.querySelector('.touch-btn.gold');
 
   let practiceSpeed = 1;
   document.getElementById("practice-speed").addEventListener("change", event => {
