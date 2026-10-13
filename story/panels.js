@@ -1,10 +1,25 @@
-// Reader-focused edition: biographies grouped by person; context precedes quotations.
-// Artwork and source references retained from the existing edition.
-export const STYLE = "Bold American comic-book illustration, heavy black ink outlines, halftone dot shading, rain-slick night lighting with neon magenta, cyan and gold accents, same painted-comic style as the Capitol Crashers fighter-select screen. No text, no lettering, no speech bubbles.";
+// Three Roads to the Capitol: the comic script.
+//
+// Each panel's `art` is a file in art/story/chibi/. Lettering is set by the
+// page, never painted into the art:
+//   captions: [{ text, at }]  at = tl | tr | bl | br | bc (corner of the art)
+//   bubbles:  [{ who, text, x, y, tail, w, shout }]  x/y = bubble center in % of
+//             the art, tail = s | sw | se | n | w | e | none, w = width in %
+//   sfx:      { text, x, y, rot }
+// `cites` are numbers in SOURCES. `prompt` is the art prompt; it is not shown.
+//
+// Rules: a real person only says words they are on the record saying, with a
+// source. Captions are short enough to letter on the art. Panels p08, p09, p12,
+// p15, p21, p25, p26, p27 and p37 are also shown by the game (play/src), so keep
+// those ids.
+//
+// Facts checked against the sources as of October 11, 2026.
+
+export const STYLE = "Chibi comic illustration matching the Capitol Crashers comic: big heads, short bodies, clean black outlines, soft cel shading, rich painterly light. No text, no lettering, no speech bubbles, no signs with words.";
 
 export const PAGES = [
   {
-    "id": "start",
+    "id": "issue-1",
     "label": "Issue #1",
     "chapter": "Three lives in public service",
     "panels": [
@@ -13,13 +28,13 @@ export const PAGES = [
         "kind": "narration",
         "where": "both",
         "tag": "About this issue",
-        "scene": "How three roads begin",
         "captions": [
           {
-            "text": "Zohran Mamdani, Abdul El-Sayed and James Talarico entered politics through different kinds of work: housing counseling, public health and teaching."
+            "text": "Three people. Three kinds of work: housing counseling, public health and teaching.",
+            "big": true
           },
           {
-            "text": "This issue follows each person from childhood through public service and the campaigns that followed. Start with Mamdani in New York, then El-Sayed in Michigan and Talarico in Texas. The illustrations bring them into the world of Capitol Crashers; scenes showing them together are imagined."
+            "text": "This comic follows each of them from childhood through public service and the campaigns that came next. Start with Mamdani in New York, then El-Sayed in Michigan and Talarico in Texas. The scenes showing them together are imagined; the facts are sourced."
           }
         ],
         "cites": [
@@ -39,49 +54,53 @@ export const PAGES = [
         "id": "p01",
         "where": "queens",
         "size": "half",
-        "tag": "Kampala · 1991",
-        "scene": "Kampala, Uganda",
         "art": "p01.webp",
+        "tag": "Kampala · 1991",
         "alt": "A newborn in Kampala, held by his mother, a filmmaker, and his father, a scholar.",
         "captions": [
           {
-            "text": "Zohran Kwame Mamdani was born on October 18, 1991, in Kampala, Uganda. His mother is filmmaker Mira Nair. His father, Mahmood Mamdani, is a scholar of colonialism."
+            "text": "Kampala, Uganda. October 18, 1991. Zohran Kwame Mamdani is born.",
+            "at": "tl"
           },
           {
-            "text": "His mother has described Zohran as meaning the first star in the sky. His middle name honors Kwame Nkrumah, Ghana’s first president."
+            "text": "Mom makes movies: Mira Nair. Dad studies empires: Mahmood Mamdani.",
+            "at": "tr"
           },
           {
-            "text": "Nair also passed on advice about remaining sensitive to other people while enduring criticism:"
-          },
-          {
-            "quote": true,
-            "who": "Mira Nair",
-            "text": "You have to have the heart of a poet and the skin of an elephant."
+            "text": "Mom’s advice: “You have to have the heart of a poet and the skin of an elephant.”",
+            "at": "br"
           }
         ],
         "cites": [
           1,
           2,
-          74,
-          75
+          142,
+          143
         ],
         "prompt": "Warm golden-hour Kampala hillside with red-earth roads and jacaranda trees. A young South Asian woman filmmaker with long dark wavy hair and a middle-aged Ugandan-Indian scholar in his mid-forties cradle a newborn wrapped in a patterned cloth. The scholar has round glasses, receding salt-and-pepper hair, a thin scholarly face, and no full beard. They are parents, not the young bearded fighters. Loving, hopeful. No lettering."
       },
       {
         "id": "p04",
         "where": "queens",
-        "size": "two-thirds",
-        "tag": "Cape Town → New York",
-        "scene": "A cricket bat in the Bronx",
+        "size": "half",
         "art": "p04.webp",
-        "alt": "A teenage Mamdani swings a cricket bat on a Bronx field, the city skyline behind him.",
+        "tag": "The Bronx",
+        "alt": "A teenage Mamdani swings a cricket bat on a patchy Bronx field.",
         "captions": [
           {
-            "text": "Mamdani’s family lived in Cape Town before moving to New York City when he was seven. He later attended the Bronx High School of Science, where he helped establish the school’s first cricket team."
+            "text": "His family moves to New York when he is seven.",
+            "at": "tl"
+          },
+          {
+            "text": "At Bronx Science, nobody plays cricket. So he helps start the school’s first team.",
+            "at": "br"
           }
         ],
         "sfx": {
-          "text": "THWACK!"
+          "text": "THWACK!",
+          "x": 80,
+          "y": 30,
+          "rot": -10
         },
         "cites": [
           1,
@@ -91,45 +110,20 @@ export const PAGES = [
         "prompt": "Skinny teenage South Asian boy on a patchy Bronx cricket field in white cricket kit, swinging a bat, red ball exploding off. Younger version of the adult with a full dark beard and thick styled dark hair: less beard, still dark hair with volume, not a professional cricket star. Split background Table Mountain and New York skyline. No readable text."
       },
       {
-        "id": "p08",
-        "where": "queens",
-        "size": "half",
-        "tag": "Queens · 2018",
-        "scene": "The kitchen table",
-        "art": "p08.webp",
-        "alt": "Mamdani at a family's kitchen table going over foreclosure papers.",
-        "captions": [
-          {
-            "text": "After graduating from Bowdoin College in 2014 with a degree in Africana Studies, Mamdani eventually returned to work in Queens."
-          },
-          {
-            "text": "In 2018, he became a foreclosure-prevention counselor at Chhaya CDC. He helped homeowners understand their options and try to keep their homes."
-          },
-          {
-            "text": "Mamdani has said that this work helped persuade him to run for office. As a counselor, he could help individual families; as a lawmaker, he wanted to change the housing policies affecting them."
-          }
-        ],
-        "cites": [
-          2,
-          9,
-          10
-        ],
-        "prompt": "Night in a small Queens kitchen. A young South Asian housing counselor: full dark beard, thick styled dark hair, light blue shirt, leaning over foreclosure papers. Across from him an anxious older immigrant couple who do not look like him: a gray-haired father and a mother, different faces. Warm lamp, cold blue window. He is the only young bearded man. No second politician. No short-cropped hair. No henley. No stethoscope. No lettering."
-      },
-      {
         "id": "p07",
         "where": "queens",
         "size": "half",
-        "tag": "Queens · 2019",
-        "scene": "Mr. Cardamom",
         "art": "p07.webp",
-        "alt": "Mamdani in a Queens music-video scene with actress Madhur Jaffrey playing a grandmother.",
+        "tag": "Queens · 2019",
+        "alt": "Mamdani raps in a tracksuit under the 7 train beside an elderly woman in a sari.",
         "captions": [
           {
-            "text": "Housing work was one part of Mamdani’s life. He also made music under the name Mr. Cardamom."
+            "text": "College in Maine. Then a detour: he raps as “Mr. Cardamom.”",
+            "at": "tl"
           },
           {
-            "text": "His 2019 video “Nani” featured actress Madhur Jaffrey playing a grandmother. The video drew on the people and streets of Queens."
+            "text": "His 2019 video “Nani” stars Madhur Jaffrey as his grandmother.",
+            "at": "br"
           }
         ],
         "cites": [
@@ -137,11 +131,34 @@ export const PAGES = [
           8
         ],
         "prompt": "Landscape 4:3. A young South Asian man in a bright tracksuit raps on a busy Jackson Heights, Queens street under the elevated 7 train, beside a regal elderly Indian grandmother in a sari who is clearly the star. Halal cart steam, colorful shop signs (no readable words), playful magenta and gold lighting."
+      },
+      {
+        "id": "p08",
+        "where": "queens",
+        "size": "half",
+        "art": "p08.webp",
+        "tag": "Queens · 2018",
+        "alt": "Mamdani as a housing counselor goes over foreclosure papers with an older immigrant couple at their kitchen table.",
+        "captions": [
+          {
+            "text": "2018. He becomes a foreclosure counselor in Queens, helping families keep their homes.",
+            "at": "tl"
+          },
+          {
+            "text": "He says this job is the reason he ran for office.",
+            "at": "br"
+          }
+        ],
+        "cites": [
+          9,
+          10
+        ],
+        "prompt": "Night in a small Queens kitchen. A young South Asian housing counselor: full dark beard, thick styled dark hair, light blue shirt, leaning over foreclosure papers. Across from him an anxious older immigrant couple who do not look like him: a gray-haired father and a mother, different faces. Warm lamp, cold blue window. He is the only young bearded man. No second politician. No short-cropped hair. No henley. No stethoscope. No lettering."
       }
     ]
   },
   {
-    "id": "mamdani-assembly",
+    "id": "mamdani-2",
     "label": "Mamdani · 2020–2023",
     "chapter": "From housing counselor to legislator",
     "panels": [
@@ -149,20 +166,24 @@ export const PAGES = [
         "id": "p13",
         "where": "queens",
         "size": "half",
-        "tag": "Astoria · 2020",
-        "scene": "The upset",
         "art": "p13.webp",
-        "alt": "Mamdani knocks on an Astoria row-house door at night. He is the only politician in the frame.",
+        "tag": "Astoria · 2020",
+        "alt": "Mamdani knocks on a row-house door under the elevated train at night.",
         "captions": [
           {
-            "text": "In 2020, Mamdani ran for the New York State Assembly in Astoria. His opponent in the Democratic primary was Aravella Simotas, who had held the seat for ten years."
+            "text": "He runs for the State Assembly against a ten-year incumbent and knocks on doors until they open.",
+            "at": "tl"
           },
           {
-            "text": "Mamdani won by 423 votes. The certified result was 8,410 votes to 7,987. He went on to enter the State Assembly."
+            "text": "He wins by 423 votes.",
+            "at": "br"
           }
         ],
         "sfx": {
-          "text": "UPSET!"
+          "text": "423!",
+          "x": 80,
+          "y": 62,
+          "rot": -8
         },
         "cites": [
           18,
@@ -171,27 +192,45 @@ export const PAGES = [
         "prompt": "Night in Astoria, Queens. One young South Asian man only: full dark beard, thick styled dark hair with volume on top, dark suit and blue polka-dot tie, clipboard, knocking on a brick row-house door under the elevated train. He is the only politician. No second man. No short-cropped hair. No black henley. No stethoscope. No lettering."
       },
       {
+        "id": "p14",
+        "where": "queens",
+        "size": "half",
+        "art": "p14.webp",
+        "tag": "New York · 2023",
+        "alt": "Riders of every age board a city bus through all its doors.",
+        "captions": [
+          {
+            "text": "He wins a free-bus pilot on five routes. Weekday ridership jumps 30 percent.",
+            "at": "tl"
+          }
+        ],
+        "cites": [
+          19
+        ],
+        "prompt": "A crowded blue-and-white New York City bus at dusk, riders of every age boarding through all doors, no fare box, big smiles. Everyday riders only. No politicians. No henley. No stethoscope. No lettering."
+      },
+      {
         "id": "p15",
         "where": "queens",
         "size": "wide",
-        "splash": true,
-        "tag": "City Hall · 2021",
-        "scene": "Hunger strike",
         "art": "p15.webp",
-        "alt": "Taxi drivers and Mamdani on hunger strike outside City Hall at night.",
+        "tag": "City Hall · 2021",
+        "alt": "Mamdani sits with older taxi drivers on folding chairs outside City Hall at night.",
         "captions": [
           {
-            "text": "In October 2021, New York taxi drivers began a hunger strike over the debts they had taken on to buy taxi medallions, the licenses required to operate their cabs."
+            "text": "Taxi drivers are drowning in medallion debt. He joins their hunger strike outside City Hall.",
+            "at": "tl"
           },
           {
-            "text": "Mamdani joined the drivers outside City Hall. During the protest, he was arrested after demonstrators blocked Broadway."
-          },
-          {
-            "text": "After fifteen days, the city and the largest lender reached a debt-relief agreement. Loans would be restructured to $200,000, then reduced to $170,000 with a $30,000 city grant. Monthly payments would be capped at $1,122."
+            "text": "Day 6: arrested blocking traffic. Day 15: a deal. Loans cut to $170,000, payments capped at $1,122 a month.",
+            "at": "br"
           }
         ],
         "sfx": {
-          "text": "DAY 15"
+          "text": "DAY 15",
+          "x": 84,
+          "y": 30,
+          "rot": -6
         },
         "cites": [
           20,
@@ -199,116 +238,306 @@ export const PAGES = [
           57
         ],
         "prompt": "Night outside a grand city hall. Older immigrant taxi drivers in jackets on folding chairs with blankets, yellow cabs behind them. One thin young South Asian man with a full dark beard and styled dark hair sits among them, exhausted but unbowed. He is the only young man. No second politician. No short-cropped hair. No henley. Rain, yellow cab lights. No readable text."
-      },
-      {
-        "id": "p14",
-        "where": "queens",
-        "size": "half",
-        "tag": "New York · 2023",
-        "scene": "Free buses",
-        "art": "p14.webp",
-        "alt": "A packed city bus riding free.",
-        "captions": [
-          {
-            "text": "While serving in the Assembly, Mamdani advocated for fare-free buses. A 2023 pilot removed fares on five New York City routes."
-          },
-          {
-            "text": "The MTA reported a 30 percent increase in weekday ridership on those routes. Mamdani later campaigned to make every city bus fare-free and to speed service with bus lanes, improved signals and changes to loading zones."
-          }
-        ],
-        "cites": [
-          19,
-          40
-        ],
-        "prompt": "A crowded blue-and-white New York City bus at dusk, riders of every age boarding through all doors, no fare box, big smiles. Everyday riders only. No politicians. No henley. No stethoscope. No lettering."
       }
     ]
   },
   {
-    "id": "mamdani-mayor",
+    "id": "mamdani-3",
     "label": "Mamdani · 2024–2026",
     "chapter": "Running for mayor, then governing",
     "panels": [
       {
-        "id": "p17",
+        "id": "pplunge",
         "where": "queens",
-        "size": "half",
-        "tag": "Manhattan · 2025",
-        "scene": "The long walk",
-        "art": "p17.webp",
-        "alt": "Mamdani walking down Broadway at night.",
+        "size": "wide",
+        "art": "pplunge.webp",
+        "tag": "Coney Island · Jan 1, 2025",
+        "alt": "Mamdani leaps into the icy ocean in a thrift-store suit while a crowd cheers on the beach.",
         "captions": [
           {
-            "text": "Mamdani announced his campaign for mayor on October 23, 2024. Early polls put his support in single digits."
+            "text": "October 2024: he announces for mayor. He’s polling in the single digits.",
+            "at": "tl"
           },
           {
-            "text": "During the final weekend before the June 2025 primary, he walked the length of Manhattan overnight, from Inwood to the Battery, meeting New Yorkers along the way."
-          },
+            "text": "So on New Year’s Day he jumps into the Atlantic in a thrift-store suit.",
+            "at": "br"
+          }
+        ],
+        "bubbles": [
           {
-            "text": "Speaking to Hell Gate during the walk, Mamdani explained why he wanted to make himself available to residents:"
-          },
-          {
-            "quote": true,
-            "who": "Zohran Mamdani",
-            "text": "New Yorkers need to see their mayor, talk to their mayor, ask their mayor questions. They need to even yell at their mayor."
+            "who": "Mamdani",
+            "text": "I’m freezing… your rent as the next mayor of New York City.",
+            "x": 72,
+            "y": 18,
+            "tail": "sw",
+            "w": 28
           }
         ],
         "cites": [
-          24,
-          1
+          1,
+          97
+        ],
+        "prompt": "Coney Island, freezing New Year's Day: Mamdani in a cheap thrift-store suit mid-leap into icy surf, cheering crowd, Wonder Wheel in mist."
+      },
+      {
+        "id": "pcuomo",
+        "where": "queens",
+        "size": "wide",
+        "art": "pcuomo.webp",
+        "tag": "The debate · June 12, 2025",
+        "alt": "Mamdani delivers a line at a debate podium while Andrew Cuomo recoils at his.",
+        "captions": [
+          {
+            "text": "The front-runner: Andrew Cuomo, who resigned as governor in 2021.",
+            "at": "tl"
+          }
+        ],
+        "bubbles": [
+          {
+            "who": "Cuomo",
+            "text": "He’s accomplished nothing… It is laughable and it is dangerous.",
+            "x": 80,
+            "y": 16,
+            "tail": "s",
+            "w": 28
+          },
+          {
+            "who": "Mamdani",
+            "text": "I have never had to resign in disgrace… because I am not you, Mr. Cuomo.",
+            "x": 22,
+            "y": 74,
+            "tail": "ne",
+            "w": 30
+          }
+        ],
+        "cites": [
+          90
+        ],
+        "prompt": "NYC mayoral debate: Mamdani at the left podium, calm, finger raised; Andrew Cuomo at the right podium recoiling, red-faced."
+      },
+      {
+        "id": "p17",
+        "where": "queens",
+        "size": "half",
+        "art": "p17.webp",
+        "tag": "Manhattan · June 2025",
+        "alt": "Mamdani walks an empty Manhattan avenue at night, followers trailing behind.",
+        "captions": [
+          {
+            "text": "The last weekend before the primary, he walks the length of Manhattan overnight.",
+            "at": "tl"
+          }
+        ],
+        "bubbles": [
+          {
+            "who": "Mamdani",
+            "text": "New Yorkers need to see their mayor… They need to even yell at their mayor.",
+            "x": 74,
+            "y": 78,
+            "tail": "n",
+            "w": 40
+          }
+        ],
+        "cites": [
+          24
         ],
         "prompt": "Landscape 4:3. Summer night on an empty Manhattan avenue, a lone young South Asian man in sneakers and rolled sleeves walks toward the camera, followers with phones trailing behind, skyscrapers glowing magenta and gold, steam rising from a manhole."
       },
       {
         "id": "p18",
         "where": "queens",
-        "size": "wide",
-        "splash": true,
-        "tag": "New York · 2025",
-        "scene": "Hope is alive",
+        "size": "half",
         "art": "p18.webp",
-        "alt": "Mamdani on stage on election night, arms raised, confetti falling.",
+        "tag": "June 24, 2025",
+        "alt": "Mamdani raises both arms at a podium as confetti falls on a cheering crowd.",
         "captions": [
           {
-            "text": "Mamdani defeated former governor Andrew Cuomo in the June 2025 Democratic mayoral primary. The final ranked-choice count was 56.4 percent to 43.6 percent."
+            "text": "He beats Cuomo in the primary: 56 to 44 in the final ranked-choice count.",
+            "at": "tl"
           },
           {
-            "text": "On November 4, he won the general election, becoming New York City’s first Muslim, first South Asian and first African-born mayor. In his victory speech, he told supporters:"
-          },
-          {
-            "quote": true,
-            "who": "Zohran Mamdani",
-            "text": "Hope is alive."
+            "text": "Cuomo doesn’t quit. He stays in as an independent.",
+            "at": "br"
           }
         ],
         "cites": [
           26,
-          27,
           28,
-          10,
-          59
+          59,
+          105
+        ],
+        "bubbles": [
+          {
+            "who": "Mamdani",
+            "text": "Hope is alive.",
+            "x": 74,
+            "y": 16,
+            "tail": "sw",
+            "w": 18
+          }
         ],
         "prompt": "Wide 16:9 splash. Election night in a packed Brooklyn venue: a young South Asian man in a dark suit raises both arms at the podium, a sea of cheering supporters, confetti and phone lights, huge gold and magenta stage lighting. Ecstatic, triumphant."
+      },
+      {
+        "id": "ptrump",
+        "where": "queens",
+        "size": "wide",
+        "art": "ptrump.webp",
+        "tag": "Florida · July 1, 2025",
+        "alt": "Trump jabs a finger at a camera at an outdoor podium in front of a swamp and airboats.",
+        "captions": [
+          {
+            "text": "Then the president weighs in.",
+            "at": "tl"
+          },
+          {
+            "text": "Mamdani has been a U.S. citizen since 2018. His answer: “We will not accept this intimidation.”",
+            "at": "br"
+          }
+        ],
+        "bubbles": [
+          {
+            "who": "Trump",
+            "text": "Well then, we’ll have to arrest him.",
+            "x": 62,
+            "y": 18,
+            "tail": "sw",
+            "w": 22
+          }
+        ],
+        "cites": [
+          93,
+          94
+        ],
+        "prompt": "Satire: Trump at an outdoor podium by a Florida swamp, alligators and airboats behind, jabbing a finger at a camera."
+      },
+      {
+        "id": "padams",
+        "where": "queens",
+        "size": "wide",
+        "art": "padams.webp",
+        "tag": "Fall 2025",
+        "alt": "Eric Adams points angrily at Andrew Cuomo with a snake on his shoulders, then the two hug stiffly for the cameras.",
+        "captions": [
+          {
+            "text": "Mayor Eric Adams on Andrew Cuomo: “a snake and a liar.”",
+            "at": "tl"
+          },
+          {
+            "text": "October 2025: Adams drops out and endorses Cuomo.",
+            "at": "br"
+          }
+        ],
+        "bubbles": [
+          {
+            "who": "Adams",
+            "text": "Brothers fight, but when families are attacked, brothers come together.",
+            "x": 75,
+            "y": 20,
+            "tail": "s",
+            "w": 26
+          }
+        ],
+        "cites": [
+          145
+        ],
+        "prompt": "Two-part satire: Eric Adams points furiously at Andrew Cuomo, a cartoon snake on Cuomo's shoulders; then the two hug stiffly for news cameras, the snake clapping in a bow tie."
+      },
+      {
+        "id": "pvolume",
+        "where": "queens",
+        "size": "wide",
+        "art": "pvolume.webp",
+        "tag": "Election night · Nov 4, 2025",
+        "alt": "Mamdani points into a TV camera lens from the podium as the crowd roars.",
+        "captions": [
+          {
+            "text": "He wins with just over half the vote. Turnout tops two million, the most since 1969.",
+            "at": "tl"
+          }
+        ],
+        "bubbles": [
+          {
+            "who": "Mamdani",
+            "text": "So, Donald Trump, since I know you’re watching, I have four words for you:",
+            "x": 70,
+            "y": 16,
+            "tail": "sw",
+            "w": 30
+          },
+          {
+            "who": "Mamdani",
+            "text": "Turn the volume up.",
+            "x": 78,
+            "y": 46,
+            "tail": "w",
+            "w": 18,
+            "shout": true
+          }
+        ],
+        "cites": [
+          27,
+          95
+        ],
+        "prompt": "Election night in Brooklyn: Mamdani leans toward a TV camera and points straight into the lens with a sly grin, confetti, roaring crowd."
+      },
+      {
+        "id": "poval",
+        "where": "queens",
+        "size": "wide",
+        "art": "poval.webp",
+        "tag": "The Oval Office · Nov 21, 2025",
+        "alt": "Trump, beaming at the Resolute desk, pats the arm of a politely smiling Mamdani as reporters crowd in.",
+        "captions": [
+          {
+            "text": "Seventeen days later, they meet. A reporter asks Mamdani if he still thinks Trump is a fascist.",
+            "at": "br"
+          }
+        ],
+        "bubbles": [
+          {
+            "who": "Trump",
+            "text": "That’s okay, you can just say yes… It’s easier than explaining it. I don’t mind.",
+            "x": 22,
+            "y": 16,
+            "tail": "se",
+            "w": 28
+          },
+          {
+            "who": "Trump",
+            "text": "I’ll be cheering for him.",
+            "x": 18,
+            "y": 62,
+            "tail": "e",
+            "w": 18
+          }
+        ],
+        "cites": [
+          96
+        ],
+        "prompt": "The Oval Office: Trump beaming at the Resolute desk pats the arm of Mamdani, who stands politely bemused; reporters with cameras."
       },
       {
         "id": "p19",
         "where": "queens",
         "size": "half",
-        "tag": "City Hall station · Jan 1, 2026",
-        "scene": "The oath",
         "art": "p19.webp",
-        "alt": "Mamdani sworn in at midnight in the old City Hall subway station.",
+        "tag": "Jan 1, 2026",
+        "alt": "Mamdani takes the oath with his hand on two Qurans in a tiled, closed subway station.",
         "captions": [
           {
-            "text": "Just after midnight on January 1, 2026, Mamdani took the oath of office in the decommissioned City Hall subway station."
-          },
+            "text": "Just after midnight, in a closed subway station under City Hall, he takes the oath.",
+            "at": "tl"
+          }
+        ],
+        "bubbles": [
           {
-            "text": "In his inaugural address, he acknowledged that his administration would not succeed at everything it attempted:"
-          },
-          {
-            "quote": true,
-            "who": "Zohran Mamdani",
-            "text": "We may not always succeed, but never will we be accused of lacking the courage to try."
+            "who": "Mamdani",
+            "text": "We may not always succeed, but never will we be accused of lacking the courage to try.",
+            "x": 72,
+            "y": 80,
+            "tail": "n",
+            "w": 44
           }
         ],
         "cites": [
@@ -320,17 +549,18 @@ export const PAGES = [
       {
         "id": "p23",
         "where": "queens",
-        "size": "third",
-        "tag": "East Harlem · Hunts Point",
-        "scene": "City grocery",
+        "size": "half",
         "art": "p23.webp",
-        "alt": "A city-owned grocery store under construction.",
+        "tag": "East Harlem · Hunts Point",
+        "alt": "La Marqueta under the elevated viaduct, market stalls being built.",
         "captions": [
           {
-            "text": "As mayor, Mamdani announced the first locations for planned city-owned grocery stores: La Marqueta in East Harlem and The Peninsula in Hunts Point."
+            "text": "He names the first sites for city-owned grocery stores: La Marqueta in East Harlem and The Peninsula in Hunts Point.",
+            "at": "tl"
           },
           {
-            "text": "His campaign had proposed five stores, one in each borough, to lower grocery costs. The plan called for city stores to avoid rent and property-tax costs and pass savings on to shoppers. The announced locations were sites for future stores."
+            "text": "The plan: no rent, no property tax, and the savings go to shoppers.",
+            "at": "br"
           }
         ],
         "cites": [
@@ -342,75 +572,96 @@ export const PAGES = [
       {
         "id": "p21",
         "where": "queens",
-        "size": "two-thirds",
-        "tag": "New York · June 2026",
-        "scene": "Rent freeze",
+        "size": "half",
         "art": "p21.webp",
-        "alt": "Tenants cheering outside a Rent Guidelines Board vote.",
+        "tag": "June 2026",
+        "alt": "Tenants cheer on the steps of a city building as frost breaks off an apartment facade; Mamdani raises a fist.",
         "captions": [
           {
-            "text": "On June 25, 2026, New York’s Rent Guidelines Board voted for no rent increases on one- and two-year leases in rent-stabilized apartments."
+            "text": "The Rent Guidelines Board freezes the rent on about one million apartments.",
+            "at": "tl"
           },
           {
-            "text": "The decision covered about one million apartments and was the first freeze on two-year leases in the city’s history. It addressed one of Mamdani’s central campaign promises. He described the vote as:"
-          },
-          {
-            "quote": true,
-            "who": "Zohran Mamdani",
-            "text": "A historic victory for New York City tenants."
+            "text": "The first freeze on two-year leases in city history.",
+            "at": "br"
           }
         ],
         "sfx": {
-          "text": "FROZEN!"
+          "text": "FROZEN!",
+          "x": 78,
+          "y": 30,
+          "rot": -8
         },
         "cites": [
-          33,
-          40
+          33
         ],
         "prompt": "Tenants cheering on the steps of a city building at dusk. Frost and ice crystals breaking off an apartment facade. One young South Asian man in a dark suit and blue polka-dot tie, full dark beard, thick styled dark hair, raising a fist with the crowd. He is the only politician in the frame. No second man. No black henley. No stethoscope. Blank protest signs with no readable words. No logos, no names."
       },
       {
         "id": "p22",
         "where": "queens",
-        "size": "third",
-        "tag": "New York · 2026",
-        "scene": "2-K",
+        "size": "half",
         "art": "p22.webp",
-        "alt": "Toddlers in a bright new classroom.",
+        "tag": "September 2026",
+        "alt": "Two-year-olds paint and stack blocks in a bright classroom as a parent waves goodbye.",
         "captions": [
           {
-            "text": "The first phase of free, full-day childcare for two-year-olds began in September 2026, with more than 2,000 seats across four communities."
-          },
-          {
-            "text": "This was narrower than Mamdani’s full campaign proposal, which called for free childcare from six weeks through age five and pay for childcare workers on par with public-school teachers."
+            "text": "Free, full-day child care for two-year-olds starts: more than 2,000 seats in the first four neighborhoods.",
+            "at": "tl"
           }
         ],
         "cites": [
-          34,
-          40
+          34
         ],
         "prompt": "A bright New York toddler classroom. Two-year-olds painting and stacking blocks. One parent waving goodbye at the door with relief. Warm joyful light. No politicians. No bearded men in suits. No henley. No stethoscope. No lettering on the walls."
       },
       {
         "id": "p24",
         "where": "queens",
-        "size": "two-thirds",
-        "tag": "New York · Sept 2026",
-        "scene": "Delivery workers get paid",
+        "size": "wide",
         "art": "p24.webp",
-        "alt": "Delivery workers on e-bikes in the rain, a giant check behind them.",
+        "tag": "September 2026",
+        "alt": "Delivery workers on e-bikes cheer in the rain as gold coins fall around them.",
         "captions": [
           {
-            "text": "In September 2026, New York City announced a $131.5 million settlement with DoorDash. More than $115 million was designated for more than 260,000 underpaid delivery workers."
+            "text": "$131.5 million from DoorDash for about 260,000 underpaid delivery workers.",
+            "at": "tl"
           },
           {
-            "text": "The city described it as its largest worker settlement. The agreement set the amount designated for workers to receive."
+            "text": "DoorDash’s own statement: “Simply put, we screwed up.”",
+            "at": "br"
+          }
+        ],
+        "sfx": {
+          "text": "PAID!",
+          "x": 66,
+          "y": 16,
+          "rot": -6
+        },
+        "cites": [
+          36,
+          104
+        ],
+        "prompt": "Wide 2:1. A line of food-delivery workers on e-bikes in the rain on a New York avenue, insulated bags on their backs, raising fists and cheering as gold coins rain down around them. Neon storefront reflections, cyan and gold."
+      },
+      {
+        "id": "n2b",
+        "kind": "narration",
+        "where": "queens",
+        "tag": "The score so far",
+        "captions": [
+          {
+            "text": "Not everything lands."
+          },
+          {
+            "text": "Albany hasn’t paid for free buses. The governor blocked his tax on millionaires. Landlords are suing to undo the freeze. He keeps pushing."
           }
         ],
         "cites": [
-          36
-        ],
-        "prompt": "Wide 2:1. A line of food-delivery workers on e-bikes in the rain on a New York avenue, insulated bags on their backs, raising fists and cheering as gold coins rain down around them. Neon storefront reflections, cyan and gold."
+          100,
+          101,
+          102
+        ]
       }
     ]
   },
@@ -423,21 +674,21 @@ export const PAGES = [
         "id": "p02",
         "where": "detroit",
         "size": "half",
-        "tag": "Southeast Michigan · 1984",
-        "scene": "Detroit, 1984",
         "art": "p02.webp",
-        "alt": "An Egyptian engineer walks toward Wayne State University in Detroit.",
+        "tag": "Michigan · 1984",
+        "alt": "A young Egyptian engineer with textbooks on a Detroit campus at dusk.",
         "captions": [
           {
-            "text": "Abdulrahman “Abdul” El-Sayed was born in southeast Michigan on October 31, 1984. His father had moved from Alexandria, Egypt, in 1979 to pursue an engineering doctorate at Wayne State University."
+            "text": "Southeast Michigan. Halloween, 1984. Abdul El-Sayed is born.",
+            "at": "tl"
           },
           {
-            "text": "As a boy, Abdul told his father, whom he called Baba, that he wanted to become a doctor and save a life every day. His father asked him to consider another way to help:"
+            "text": "His dad came from Alexandria, Egypt, for an engineering PhD at Wayne State.",
+            "at": "br"
           },
           {
-            "quote": true,
-            "who": "El-Sayed’s father",
-            "text": "Abdulrahman, wouldn’t it be better to learn why people die, then teach everyone around you to save lives?"
+            "text": "His dad’s question: “Abdulrahman, wouldn’t it be better to learn why people die, then teach everyone around you to save lives?”",
+            "at": "bl"
           }
         ],
         "cites": [
@@ -450,18 +701,21 @@ export const PAGES = [
       {
         "id": "p03",
         "where": "detroit",
-        "size": "wide",
-        "tag": "Bloomfield Hills",
-        "scene": "Three-sport captain",
+        "size": "half",
         "art": "p03.webp",
-        "alt": "A teenage El-Sayed in lacrosse gear under stadium lights.",
+        "tag": "Bloomfield Hills",
+        "alt": "A teenage El-Sayed whips a lacrosse shot under stadium lights.",
         "captions": [
           {
-            "text": "El-Sayed attended Bloomfield Hills Andover High School in Michigan. He captained the football, wrestling and lacrosse teams before going on to the University of Michigan."
+            "text": "High school: captain of football, wrestling and lacrosse. All three.",
+            "at": "tl"
           }
         ],
         "sfx": {
-          "text": "CRACK!"
+          "text": "CRACK!",
+          "x": 22,
+          "y": 72,
+          "rot": -8
         },
         "cites": [
           3
@@ -471,26 +725,33 @@ export const PAGES = [
       {
         "id": "p05",
         "where": "detroit",
-        "size": "third",
-        "tag": "Ann Arbor · 2007",
-        "scene": "Commencement",
+        "size": "wide",
         "art": "p05.webp",
-        "alt": "El-Sayed at a podium in a graduation gown.",
+        "tag": "Ann Arbor · 2007",
+        "alt": "El-Sayed in a graduation gown speaks at a podium before a stadium crowd.",
         "captions": [
           {
-            "text": "At the University of Michigan’s 2007 commencement, El-Sayed delivered the student address. He spoke about how his time at the university had changed him:"
+            "text": "University of Michigan, 2007. The keynote speaker is Bill Clinton. The student speaker is Abdul El-Sayed.",
+            "at": "tl"
           },
           {
-            "quote": true,
-            "who": "Abdul El-Sayed",
-            "text": "I realized I loved Michigan because the person who leaves here today is better than the one who came."
-          },
+            "text": "“I realized I loved Michigan because the person who leaves here today is better than the one who came.”",
+            "at": "br"
+          }
+        ],
+        "bubbles": [
           {
-            "text": "Bill Clinton, the keynote speaker, praised the speech as an example of people reaching across religious differences."
+            "who": "El-Sayed",
+            "text": "We need to have the audacity to believe we can change the world.",
+            "x": 76,
+            "y": 22,
+            "tail": "sw",
+            "w": 30
           }
         ],
         "cites": [
-          5
+          5,
+          110
         ],
         "prompt": "Square 1:1. A young Egyptian-American graduate in a black gown and maize-and-blue stole speaks at a podium, huge stadium crowd behind him in the rain of confetti. Low heroic angle, gold and blue light."
       },
@@ -498,29 +759,40 @@ export const PAGES = [
         "id": "p06",
         "where": "detroit",
         "size": "wide",
-        "tag": "Oxford · New York",
-        "scene": "Rhodes Scholar, doctor, professor",
         "art": "p06.webp",
-        "alt": "A montage: Oxford spires, a Columbia white coat, an epidemiology lecture hall.",
+        "tag": "Oxford · New York",
+        "alt": "El-Sayed as an Oxford scholar, a doctor in a hospital corridor, and a lecturer at a chalkboard.",
         "captions": [
           {
-            "text": "El-Sayed pursued both medicine and public health. As a Rhodes Scholar, he earned a doctorate in public health at Oxford. He also earned his medical degree at Columbia."
+            "text": "Rhodes Scholar. Oxford doctorate. Columbia medical degree.",
+            "at": "tl"
           },
           {
-            "text": "He then taught epidemiology at Columbia, studying how conditions such as poverty affect people’s health. In 2015, he returned to Michigan to lead Detroit’s health department."
+            "text": "After one patient’s case, he withdraws his residency application. He wants to fix what makes people sick in the first place.",
+            "at": "br"
+          }
+        ],
+        "bubbles": [
+          {
+            "who": "El-Sayed",
+            "text": "I think I want to be the health commissioner for Detroit.",
+            "x": 50,
+            "y": 14,
+            "tail": "s",
+            "w": 26
           }
         ],
         "cites": [
           5,
           6,
-          7
+          11
         ],
         "prompt": "Wide 16:9 montage in three overlapping beats, left to right: the spires of Oxford at dusk with a young man in an academic gown; the same man pulling on a white doctor's coat in a New York hospital corridor; the same man at a chalkboard covered in charts and maps of a city, lecturing. One continuous figure, gold-to-cyan lighting gradient."
       }
     ]
   },
   {
-    "id": "el-sayed-detroit",
+    "id": "el-sayed-2",
     "label": "El-Sayed · 2015–2018",
     "chapter": "Rebuilding public health in Detroit",
     "panels": [
@@ -528,40 +800,36 @@ export const PAGES = [
         "id": "p09",
         "where": "detroit",
         "size": "wide",
-        "splash": true,
-        "tag": "Detroit · 2015",
-        "scene": "Rebuild it",
         "art": "p09.webp",
-        "alt": "El-Sayed walks into a nearly empty Detroit Health Department office.",
+        "tag": "Detroit · 2015",
+        "alt": "A young El-Sayed walks into a nearly empty Detroit city office, morning light cutting through the windows.",
         "captions": [
           {
-            "text": "Detroit’s health department had been privatized in 2012. When El-Sayed arrived in 2015, it had five city employees and eighty-five contractors."
+            "text": "Detroit privatized its health department in 2012. By 2015 it’s down to five people.",
+            "at": "tl"
           },
           {
-            "text": "Mayor Mike Duggan appointed the thirty-year-old El-Sayed to rebuild the department and restore its ability to provide public-health services."
+            "text": "The mayor gives it to a 30-year-old doctor with one instruction: rebuild it.",
+            "at": "br"
           }
         ],
         "cites": [
           11,
-          12,
-          53
+          12
         ],
         "prompt": "Wide 16:9 splash. A young Egyptian-American man in a suit and loosened tie walks into a nearly empty, dusty Detroit city office: overturned chairs, dead fluorescent lights, a few boxes. Morning light cuts through tall windows onto him like a spotlight. Detroit's east-side skyline through the glass. Heroic low angle, gold light, deep blue shadows."
       },
       {
         "id": "p10",
         "where": "detroit",
-        "size": "third",
-        "tag": "Detroit schools",
-        "scene": "Glasses for kids",
+        "size": "half",
         "art": "p10.webp",
-        "alt": "A Detroit kid tries on new glasses in a mobile eye clinic.",
+        "tag": "Detroit schools",
+        "alt": "A grinning schoolgirl puts on her first pair of glasses in a mobile eye clinic.",
         "captions": [
           {
-            "text": "In 2016, Detroit’s health department helped introduce free eye exams and glasses for public-school students through a mobile clinic."
-          },
-          {
-            "text": "The program brought care to children at school, helping students whose uncorrected vision problems could make it difficult to read or follow lessons."
+            "text": "Free eye exams and free glasses for Detroit schoolkids, from a van parked outside the school.",
+            "at": "bl"
           }
         ],
         "cites": [
@@ -572,17 +840,14 @@ export const PAGES = [
       {
         "id": "p11",
         "where": "detroit",
-        "size": "third",
-        "tag": "Detroit",
-        "scene": "SisterFriends",
+        "size": "half",
         "art": "p11.webp",
-        "alt": "Volunteer mentors with a new mother and her baby.",
+        "tag": "Detroit",
+        "alt": "A young mother holds her baby on a porch with two volunteer mentors.",
         "captions": [
           {
-            "text": "The department also worked to reduce infant mortality. That effort helped lead to SisterFriends Detroit, a program pairing new mothers with volunteer mentors."
-          },
-          {
-            "text": "The mentors supported mothers through their babies’ first birthdays. The program was one part of a broader effort to improve maternal and infant health."
+            "text": "Too many Detroit babies die before their first birthday. His team helps launch SisterFriends: volunteer mentors for new moms.",
+            "at": "bl"
           }
         ],
         "cites": [
@@ -593,54 +858,55 @@ export const PAGES = [
       {
         "id": "p12",
         "where": "detroit",
-        "size": "third",
-        "tag": "Michigan · 2018",
-        "scene": "The first run",
+        "size": "wide",
         "art": "p12.webp",
-        "alt": "El-Sayed on stage at a rally, Bernie Sanders beside him.",
+        "tag": "Michigan · 2018",
+        "alt": "El-Sayed raises a fist at a packed rally while Bernie Sanders claps beside him.",
         "captions": [
           {
-            "text": "In 2018, El-Sayed ran for governor of Michigan, proposing a state single-payer healthcare system."
+            "text": "He runs for governor on single-payer health care. Bernie Sanders endorses him.",
+            "at": "tl"
           },
           {
-            "text": "Bernie Sanders endorsed him, and Alexandria Ocasio-Cortez campaigned with him. El-Sayed lost the Democratic primary to Gretchen Whitmer."
+            "text": "He loses the primary. He goes back to work.",
+            "at": "br"
           }
         ],
         "cites": [
           15,
           16,
-          17,
-          55
+          17
         ],
         "prompt": "Square 1:1. A packed Michigan rally at night, confetti and phone lights. A young Egyptian-American candidate raises a fist at the mic; a white-haired older senator in a rumpled suit claps beside him. Then a hint of rain starting. Magenta and cyan stage light."
       }
     ]
   },
   {
-    "id": "el-sayed-senate",
+    "id": "el-sayed-3",
     "label": "El-Sayed · 2020–2026",
-    "chapter": "Returning to government and running for Senate",
+    "chapter": "Back to government, then the Senate race",
     "panels": [
       {
         "id": "p16",
         "where": "detroit",
         "size": "half",
-        "tag": "Detroit · 2020–2025",
-        "scene": "Back to work",
         "art": "p16.webp",
-        "alt": "El-Sayed at a microphone for his podcast, a copy of his book on the desk.",
+        "tag": "Detroit · 2020–2025",
+        "alt": "El-Sayed records a podcast at night, a hardcover book on the desk.",
         "captions": [
           {
-            "text": "After the primary, El-Sayed continued writing and speaking about public health. He published Healing Politics in 2020 and hosted the podcast America Dissected."
+            "text": "A book. A podcast. Then Wayne County’s health department.",
+            "at": "tl"
           },
           {
-            "text": "In 2023, he returned to local government as director of Wayne County’s Department of Health, Human and Veterans Services."
+            "text": "Narcan stations, about $95 million in medical debt wiped out, 10,000 pairs of glasses.",
+            "at": "br"
           }
         ],
         "cites": [
           22,
           23,
-          3
+          111
         ],
         "prompt": "Landscape 4:3. Late night in a Detroit home studio: an Egyptian-American man in a sweater talks into a podcast microphone, a hardcover book on the desk, the Detroit skyline and the Guardian Building glowing through the window. Cozy gold light, cyan monitor glow."
       },
@@ -648,28 +914,34 @@ export const PAGES = [
         "id": "p20",
         "where": "detroit",
         "size": "half",
-        "tag": "Michigan · 2025",
-        "scene": "Receipts",
         "art": "p20.webp",
-        "alt": "El-Sayed launching his Senate campaign.",
+        "tag": "Detroit · April 2025",
+        "alt": "El-Sayed grins in a small campaign office at night, staffers on laptops.",
         "captions": [
           {
-            "text": "On April 17, 2025, El-Sayed announced a campaign for the United States Senate. Bernie Sanders endorsed him that day."
+            "text": "He runs for the U.S. Senate in three lines: money out of politics, money in your pocket, Medicare for All.",
+            "at": "tl"
           },
           {
-            "text": "His campaign emphasized reducing the influence of money in politics, improving household finances and establishing Medicare for All. In an interview with Bridge Michigan, he pointed to his record in public health:"
-          },
+            "text": "“Now, it’s time to bring that Michigan grit to Washington.”",
+            "at": "tr"
+          }
+        ],
+        "bubbles": [
           {
-            "quote": true,
-            "who": "Abdul El-Sayed",
-            "text": "If you want a fighter, I’ve got my receipts."
+            "who": "El-Sayed",
+            "text": "If you want a fighter, I’ve got my receipts.",
+            "x": 74,
+            "y": 82,
+            "tail": "n",
+            "w": 36
           }
         ],
         "cites": [
           31,
           32,
           41,
-          56
+          112
         ],
         "prompt": "Landscape 4:3. A small rented Detroit campaign office at night, folding tables, four staffers on laptops, a hand-painted banner (no readable text). An Egyptian-American man in rolled shirtsleeves grins and holds up a fistful of paper receipts. Gold desk lamps, cyan laptop glow."
       },
@@ -677,30 +949,39 @@ export const PAGES = [
         "id": "p25",
         "where": "detroit",
         "size": "wide",
-        "splash": true,
-        "tag": "Michigan · Aug 4, 2026",
-        "scene": "The primary",
         "art": "p25.webp",
-        "alt": "El-Sayed on primary night in Detroit, arms raised.",
+        "tag": "Aug 4, 2026",
+        "alt": "El-Sayed bursts through a wall of floating dollar bills and attack-ad screens, fists raised.",
         "captions": [
           {
-            "text": "El-Sayed won Michigan’s Democratic Senate primary on August 4, 2026, by fewer than 15,000 votes."
+            "text": "AIPAC’s super PAC spends about $30 million in the primary, most of it against him.",
+            "at": "tl"
           },
           {
-            "text": "Outside groups had spent heavily in the race, including more than $40 million from AIPAC’s super PAC in support of Representative Haley Stevens. By the following day, both of El-Sayed’s primary rivals had endorsed him."
-          },
+            "text": "He wins by about 15,000 votes.",
+            "at": "br"
+          }
+        ],
+        "bubbles": [
           {
-            "text": "The primary victory made him the Democratic nominee. He would face Republican Mike Rogers in the November 3 general election."
+            "who": "El-Sayed",
+            "text": "The power of our money is greater than the power of their money.",
+            "x": 24,
+            "y": 74,
+            "tail": "ne",
+            "w": 34
           }
         ],
         "sfx": {
-          "text": "WON!"
+          "text": "WON!",
+          "x": 82,
+          "y": 30,
+          "rot": -8
         },
         "cites": [
           37,
-          38,
-          58,
-          60
+          113,
+          114
         ],
         "prompt": "Wide 16:9 splash. Primary night in Detroit: an Egyptian-American man in a dark suit bursts through a wall of floating dollar bills and attack-ad TV screens, fists raised, cheering crowd behind him. Detroit skyline and the Renaissance Center glowing magenta and gold. Explosive, triumphant."
       }
@@ -709,270 +990,987 @@ export const PAGES = [
   {
     "id": "talarico",
     "label": "Chapter 3 · James Talarico",
-    "chapter": "Family, school and the classroom",
+    "chapter": "Family, faith and the classroom",
     "panels": [
       {
         "id": "t01",
         "where": "texas",
-        "size": "half",
-        "tag": "Round Rock · 1989",
-        "scene": "Born, then kept",
+        "size": "wide",
         "art": "t01.webp",
-        "alt": "A young Texas mother holds a newborn beside a packed car while a man walks away and another kneels to take the child.",
+        "tag": "Round Rock · 1989",
+        "alt": "A young mother holds her newborn beside a packed Ford Escort while a man kneels by the car.",
         "captions": [
           {
-            "text": "James Talarico was born on May 17, 1989, in Round Rock, Texas. His mother, Tamara Causey, was a preacher’s daughter from Laredo."
+            "text": "Round Rock, Texas. May 17, 1989. James Talarico is born. His mom, Tamara, is a preacher’s daughter from Laredo.",
+            "at": "tl"
           },
           {
-            "text": "In an account of his childhood, Talarico described his birth father’s drinking and violence. He wrote that his mother left with him after an abusive incident, packing their belongings into her Ford Escort."
+            "text": "He has written that his birth father drank and turned violent. After one abusive night, she packed everything into her Ford Escort and left with him.",
+            "at": "bl"
           },
           {
-            "text": "She took James to the hotel where she worked. Her manager let them stay there until they found a small apartment in East Austin."
+            "text": "Her manager at the hotel where she worked let them stay until they found a small apartment in East Austin.",
+            "at": "br"
           }
         ],
         "cites": [
           61,
-          72,
-          73,
-          76
+          140,
+          141,
+          144
         ],
-        "prompt": "Warm suburban Texas dusk, 1989. One newborn only. A young white Texan mother, fair skin, long chestnut hair, cardigan and jeans, holds the baby beside a packed light-blue hatchback. A distant silhouette of a man walks away down the street. A kind white man in his thirties with glasses kneels with empty open hands, about to receive that same baby. Live oaks, porch light. Dignified, not slapstick. No lettering."
+        "prompt": "Warm suburban Texas evening, 1989. A young white mother holds a newborn on a porch in Round Rock, live oak and a pickup in the yard, Baptist-church steeple far off. She is the parent, not a politician. No lettering."
       },
       {
         "id": "t01b",
         "where": "texas",
-        "size": "half",
-        "tag": "East Austin",
-        "scene": "What a man does",
+        "size": "wide",
         "art": "t01b.webp",
-        "alt": "A father mows a lawn while a boy watches, and a mother turns a closet into a nursery.",
+        "tag": "East Austin",
+        "alt": "A dad mows the lawn while an elderly neighbor waves and a little boy watches; a mother decorates a crib tucked in a closet.",
         "captions": [
           {
-            "text": "The apartment was too small for a separate nursery. Tamara put James’s crib in her closet and decorated the space with toys and pictures. Talarico later described his mother’s determination:"
+            "text": "Mark Talarico adopts him. Every Saturday he mows their lawn, then the elderly widow’s next door, without being asked.",
+            "at": "tl"
           },
           {
-            "quote": true,
-            "who": "James Talarico, remembering his mother",
-            "text": "Like my students, my mom was a fighter."
+            "text": "James: “He never talked about it. He just did it. Because that’s what a man does.”",
+            "at": "bl"
           },
           {
-            "text": "His mother later met Mark Talarico, who adopted James and raised him as his son. James remembers watching his dad mow their lawn every Saturday, then mow the elderly widow’s lawn next door without being asked."
+            "text": "No room for a nursery, so she puts his crib in her closet and decorates it with toys and pictures.",
+            "at": "tr"
           },
           {
-            "quote": true,
-            "who": "James Talarico, remembering his father",
-            "text": "He never talked about it. He just did it. Because that’s what a man does."
+            "text": "James: “Like my students, my mom was a fighter.”",
+            "at": "br"
           }
         ],
         "cites": [
-          72,
-          73,
-          76
+          140,
+          141,
+          144
         ],
-        "prompt": "Split suburban Texas Saturday morning, no lettering. Left: a kind white father with glasses mows a lawn while a small brown-haired boy watches from the porch; an elderly widow waves from next door. Right: the same white Texan mother, sweater and jeans, proudly hangs toys and pictures in a small closet with a crib squeezed inside. Not a South Asian filmmaker. No basketball uniforms."
+        "prompt": "Two-part panel: a dad in glasses mows the lawn as an elderly neighbor waves and young James (round face, big ears, side-parted hair) watches from the steps; a mother decorates a crib inside a closet."
+      },
+      {
+        "id": "tyouth",
+        "where": "texas",
+        "size": "wide",
+        "art": "tyouth.webp",
+        "tag": "Round Rock",
+        "alt": "A lanky teenage Talarico carries a too-tall stack of folding chairs at a church potluck while church ladies cheer.",
+        "captions": [
+          {
+            "text": "He grows up in Round Rock’s public schools and at St. Andrew’s Presbyterian Church.",
+            "at": "tl"
+          },
+          {
+            "text": "He calls himself an eighth-generation Texan.",
+            "at": "br"
+          }
+        ],
+        "cites": [
+          61
+        ],
+        "prompt": "Round Rock church potluck, around 2004: lanky teenage Talarico carries a too-tall stack of folding chairs while church ladies and kids cheer."
       },
       {
         "id": "t02",
         "where": "texas",
-        "size": "half",
-        "tag": "San Antonio · 2011",
-        "scene": "Sixth-grade English",
+        "size": "wide",
         "art": "t02.webp",
-        "alt": "Young Talarico teaching sixth-grade English in a San Antonio classroom.",
+        "tag": "San Antonio · 2011",
+        "alt": "A young Talarico teaches a lively sixth-grade English class.",
         "captions": [
           {
-            "text": "After graduating from the University of Texas, Talarico joined Teach For America. In 2011, he began teaching sixth-grade English at Rhodes Middle School on San Antonio’s west side."
+            "text": "Teach For America. Sixth-grade English on San Antonio’s west side.",
+            "at": "tl"
           },
           {
-            "text": "His experience in the classroom led him toward education policy. He later earned a master’s degree in that field at Harvard."
+            "text": "His promise on his last day of teaching: “I would fight for them every single day of my life.”",
+            "at": "bl"
           }
         ],
         "cites": [
           61,
           62
         ],
-        "prompt": "A west-side San Antonio middle-school classroom, 2011. A young white teacher in his early twenties, short brown hair, clean-shaven, light shirt, sleeves rolled, stands at a chalkboard with sixth-graders at desks. Ordinary fluorescent light. He is not Mamdani and not El-Sayed. No lettering."
+        "prompt": "A west-side San Antonio classroom, 2011: young Talarico at a whiteboard with a paperback, sixth-graders with hands up."
       }
     ]
   },
   {
-    "id": "talarico-house",
-    "label": "Talarico · 2018–2023",
+    "id": "talarico-2",
+    "label": "Talarico · 2018–2025",
     "chapter": "Serving in the Texas House",
     "panels": [
       {
         "id": "t03",
         "where": "texas",
         "size": "half",
-        "tag": "Texas House · 2018",
-        "scene": "He walks the district",
         "art": "t03.webp",
-        "alt": "Talarico walking a Texas suburban highway shoulder with a clipboard.",
+        "tag": "Texas · 2018",
+        "alt": "Talarico, sweaty, shakes hands with a homeowner on a hot suburban doorstep.",
         "captions": [
           {
-            "text": "In 2018, Talarico ran for the Texas House in a district Republicans had held since 2010. He walked the length of the district during the campaign."
+            "text": "He runs for a Texas House seat Republicans have held since 2010.",
+            "at": "tl"
           },
           {
-            "text": "He defeated Republican Cynthia Flores. At twenty-nine, he became the youngest member of the Texas Legislature."
+            "text": "To meet voters, he walks the whole district: about 25 miles.",
+            "at": "br"
           }
         ],
         "cites": [
-          61
+          61,
+          73
         ],
-        "prompt": "A young white Texan in his late twenties, short brown hair, clean-shaven, boots and a pickup, walking a suburban highway shoulder with a clipboard, live oaks and campaign-yard signs with no readable words. Heat haze. He is not the Queens or Detroit fighters. No lettering."
+        "prompt": "Texas suburb, summer 2018: Talarico, sweaty, clipboard, boots, shakes hands with an older homeowner on a doorstep."
       },
       {
-        "id": "n04",
-        "kind": "narration",
+        "id": "thosp",
         "where": "texas",
-        "tag": "Texas · 2021",
-        "scene": "Insulin costs",
+        "size": "half",
+        "art": "thosp.webp",
+        "tag": "The hospital",
+        "alt": "An exhausted Talarico in a hospital bed with an IV, his campaign boots on the chair.",
         "captions": [
           {
-            "text": "During his first House campaign, Talarico was diagnosed with Type 1 diabetes. As a legislator, he helped pass a 2021 law limiting insulin copays for people covered by state-regulated health plans."
+            "text": "Over the last 12 miles he keeps throwing up. Then he sleeps for 36 hours.",
+            "at": "tl"
           },
           {
-            "text": "The law did not apply to every Texan with diabetes. Its coverage depended on the person’s health plan."
+            "text": "Blood sugar: about 900. Diagnosis: Type 1 diabetes. Five days in the hospital.",
+            "at": "br"
           }
         ],
         "cites": [
-          61
-        ]
+          73
+        ],
+        "prompt": "Hospital room at night, 2018: exhausted Talarico in a bed with an IV, dusty campaign boots on the chair, a nurse."
+      },
+      {
+        "id": "tdiab",
+        "where": "texas",
+        "size": "wide",
+        "art": "tdiab.webp",
+        "tag": "The bill",
+        "alt": "Talarico checks his blood sugar at a kitchen table covered in campaign walk lists.",
+        "captions": [
+          {
+            "text": "His first month of insulin costs $684. He puts it on a credit card.",
+            "at": "tl"
+          },
+          {
+            "text": "He wins the seat at 29, the youngest member of the legislature. In 2021 he helps pass a law capping insulin copays for people on state-regulated plans.",
+            "at": "br"
+          }
+        ],
+        "cites": [
+          61,
+          73
+        ],
+        "prompt": "Late night kitchen table, 2018: Talarico in a grey t-shirt pricks his finger with a glucose meter, insulin pen, campaign clipboards."
       },
       {
         "id": "t04",
         "where": "texas",
         "size": "wide",
-        "tag": "Austin · 2023",
-        "scene": "Un-Christian, he says",
         "art": "t04.webp",
-        "alt": "Talarico speaking at a Texas House committee microphone.",
+        "tag": "Austin · 2023",
+        "alt": "Talarico testifies at a microphone before a committee of stern legislators, a Bible on the table.",
         "captions": [
           {
-            "text": "Alongside his legislative work, Talarico studied at Austin Presbyterian Theological Seminary."
+            "text": "2023. A bill would hang the Ten Commandments in every classroom. He’s a seminary student. He testifies against it.",
+            "at": "bl"
+          }
+        ],
+        "bubbles": [
+          {
+            "who": "Talarico",
+            "text": "I know you’re a devout Christian, and so am I.",
+            "x": 19,
+            "y": 52,
+            "tail": "e",
+            "w": 24
           },
           {
-            "text": "In a 2023 committee hearing, he opposed a bill requiring the Ten Commandments to be displayed in public-school classrooms. He called it unconstitutional, un-American and un-Christian, citing the gospel’s warning against public prayer performed for show."
+            "who": "Talarico",
+            "text": "A religion that has to force people to put up a poster to prove its legitimacy is a dead religion.",
+            "x": 82,
+            "y": 62,
+            "tail": "w",
+            "w": 26
           }
         ],
         "cites": [
-          61
+          61,
+          72
         ],
-        "prompt": "Texas House committee room. A young white man in his thirties, short brown hair, clean-shaven, dark suit, speaking at a microphone. No Ten Commandments poster with readable text. Wood dais, flags with no readable words. He is not Mamdani and not El-Sayed. No lettering."
+        "prompt": "Texas House committee room: Talarico at the witness microphone, a small Bible beside his notes, stern legislators on a wooden dais."
+      },
+      {
+        "id": "tvoucher",
+        "where": "texas",
+        "size": "wide",
+        "art": "tvoucher.webp",
+        "tag": "Austin · 2025",
+        "alt": "Talarico at a House floor microphone points at a giant golden funnel draining money from a public school into a private academy.",
+        "captions": [
+          {
+            "text": "2025: Texas passes private-school vouchers, moving public money to private schools.",
+            "at": "tl"
+          },
+          {
+            "text": "On the House floor he calls the bill a “scam.”",
+            "at": "br"
+          }
+        ],
+        "cites": [
+          124
+        ],
+        "prompt": "Satire on the Texas House floor: Talarico at a microphone points at a golden funnel sucking money out of a public schoolhouse into a gated private academy."
+      },
+      {
+        "id": "tquorum",
+        "where": "texas",
+        "size": "wide",
+        "art": "tquorum.webp",
+        "tag": "August 2025",
+        "alt": "Talarico turns back on the stairs of a chartered jet at night as other Texas Democrats board.",
+        "captions": [
+          {
+            "text": "Texas Republicans try to redraw the congressional map in the middle of the decade. He and other House Democrats leave the state to block the vote.",
+            "at": "tl"
+          },
+          {
+            "text": "Republican leaders go to court to throw them out of office. In May 2026 the Texas Supreme Court rules against it.",
+            "at": "br"
+          }
+        ],
+        "bubbles": [
+          {
+            "who": "Talarico",
+            "text": "It’s time to fight back.",
+            "x": 17,
+            "y": 72,
+            "tail": "e",
+            "w": 18
+          }
+        ],
+        "cites": [
+          86,
+          87
+        ],
+        "prompt": "Night tarmac, Austin, 2025: Texas Democratic legislators with suitcases board a chartered jet; Talarico turns back on the stairs."
       }
     ]
   },
   {
-    "id": "talarico-senate",
+    "id": "talarico-3",
     "label": "Talarico · 2025–2026",
-    "chapter": "Running for the United States Senate",
+    "chapter": "Running for the U.S. Senate",
     "panels": [
+      {
+        "id": "trogan",
+        "where": "texas",
+        "size": "half",
+        "art": "trogan.webp",
+        "tag": "July 2025",
+        "alt": "A bald podcast host leans across the microphones, impressed, as Talarico laughs.",
+        "captions": [
+          {
+            "text": "He goes on The Joe Rogan Experience and talks faith, Texas and loving your enemies.",
+            "at": "tl"
+          }
+        ],
+        "bubbles": [
+          {
+            "who": "Rogan",
+            "text": "You need to run for president.",
+            "x": 80,
+            "y": 20,
+            "tail": "s",
+            "w": 22
+          }
+        ],
+        "cites": [
+          125
+        ],
+        "prompt": "Podcast studio: a muscular bald host in headphones leans in, impressed, pointing at Talarico, who laughs across the microphones."
+      },
+      {
+        "id": "tpulled",
+        "where": "texas",
+        "size": "half",
+        "art": "tpulled.webp",
+        "tag": "2026",
+        "alt": "A network executive yanks the plug on a TV studio while every phone in the city shows Talarico grinning.",
+        "captions": [
+          {
+            "text": "CBS pulls Stephen Colbert’s interview with him, citing equal-time rules. On YouTube it gets 8.4 million views.",
+            "at": "tl"
+          },
+          {
+            "text": "In September ABC pulls Jimmy Kimmel’s. 8.3 million views in three days.",
+            "at": "br"
+          }
+        ],
+        "cites": [
+          126,
+          127
+        ],
+        "prompt": "Satire: a faceless network executive yanks a giant plug in a TV studio while every phone screen in the city outside shows Talarico grinning."
+      },
       {
         "id": "t05",
         "where": "texas",
         "size": "half",
-        "tag": "Texas · 2025–2026",
-        "scene": "He announces",
         "art": "t05.webp",
-        "alt": "Talarico at an election-night podium under Texas flags.",
+        "tag": "March 3, 2026",
+        "alt": "Talarico raises both arms on a stage as a crowd cheers on primary night.",
         "captions": [
           {
-            "text": "Talarico announced his campaign for the United States Senate on September 9, 2025."
-          },
+            "text": "He wins the Democratic Senate primary over Congresswoman Jasmine Crockett, 52 to 46.",
+            "at": "tl"
+          }
+        ],
+        "bubbles": [
           {
-            "text": "On March 3, 2026, he defeated Representative Jasmine Crockett in the Democratic primary, receiving 52.4 percent of the vote to her 46.2 percent. Addressing supporters that night, he said:"
-          },
-          {
-            "quote": true,
-            "who": "James Talarico",
-            "text": "Tonight, the people of our state gave this country a little bit of hope."
+            "who": "Talarico",
+            "text": "Tonight, the people of our state gave this country a little bit of hope.",
+            "x": 26,
+            "y": 78,
+            "tail": "ne",
+            "w": 40
           }
         ],
         "cites": [
-          63,
           64,
-          65,
-          61
+          65
         ],
-        "prompt": "Election-night stage in Texas. A young white man in his thirties, short brown hair, clean-shaven, dark suit, at a podium, crowd and phone lights. He is not Mamdani and not El-Sayed. No readable signs. No lettering."
+        "prompt": "Primary night in Austin: Talarico on stage, both arms raised, cheering crowd, blank signs, confetti."
       },
       {
-        "id": "t06",
+        "id": "tcogdell",
         "where": "texas",
         "size": "half",
-        "tag": "Texas · May 26, 2026",
-        "scene": "Paxton wins the other primary",
-        "art": "t06.webp",
-        "alt": "Talarico's rally on one side, two empty debate podiums waiting on the other.",
+        "art": "tcogdell.webp",
+        "tag": "June 2026",
+        "alt": "An older defense lawyer shakes Talarico's hand at a podcast desk while Paxton presses his face to the window in shock.",
         "captions": [
           {
-            "text": "The Republican nominee was decided in a separate runoff on May 26, 2026. Texas Attorney General Ken Paxton defeated Senator John Cornyn, 63.8 percent to 36.2 percent, with President Trump’s endorsement."
-          },
+            "text": "Paxton’s own lawyer from the impeachment trial endorses Talarico.",
+            "at": "tl"
+          }
+        ],
+        "bubbles": [
           {
-            "text": "That set up a November 3 general election between Talarico and Paxton. No Democrat had won a statewide race in Texas since 1994."
+            "who": "Cogdell",
+            "text": "I think Ken has lost sight of his core mission, which is to represent the people of Texas.",
+            "x": 24,
+            "y": 74,
+            "tail": "n",
+            "w": 34
           }
         ],
         "cites": [
-          66,
-          61
+          128
         ],
-        "prompt": "Split night: left, a Texas campaign crowd under gold light; right, a dark TV debate stage with two empty podiums. No faces copied from other fighters. No lettering."
-      }
-    ]
-  },
-  {
-    "id": "issue-one-end",
-    "label": "Issue #1 · Conclusion",
-    "chapter": "Three characters in one game",
-    "panels": [
+        "prompt": "A Houston law office: an older silver-haired defense lawyer shakes Talarico's hand at a podcast mic; Paxton presses his face to the window, jaw dropped."
+      },
       {
-        "id": "p26",
-        "where": "both",
+        "id": "tdream",
+        "where": "texas",
         "size": "wide",
-        "splash": true,
-        "tag": "End of Issue #1 · October 2026",
-        "scene": "Three roads meet",
-        "art": "p26.webp",
-        "alt": "Mamdani, Talarico, and El-Sayed walk toward the Capitol on a rain-slick avenue.",
+        "art": "tdream.webp",
+        "tag": "Arlington · Aug 2026",
+        "alt": "Talarico, sleeves rolled up, pounds the podium at a packed rally of working Texans.",
         "captions": [
           {
-            "text": "By October 2026, Mamdani was serving as mayor of New York City. El-Sayed and Talarico were campaigning for Senate seats in Michigan and Texas."
+            "text": "He calls his plan the New American Dream.",
+            "at": "tl"
+          }
+        ],
+        "bubbles": [
+          {
+            "who": "Talarico",
+            "text": "We have an affordability crisis because we have a corruption crisis.",
+            "x": 80,
+            "y": 36,
+            "tail": "w",
+            "w": 28
           },
           {
-            "text": "Their biographies are separate, and the scene of them walking together is imagined. Capitol Crashers brings them into the same game because housing, healthcare and education connect their public work."
+            "who": "Talarico",
+            "text": "Trickle-down economics isn’t a theory. It’s theft.",
+            "x": 26,
+            "y": 78,
+            "tail": "ne",
+            "w": 28
+          }
+        ],
+        "cites": [
+          71
+        ],
+        "prompt": "Arlington rally, August 2026: Talarico with sleeves rolled up pounds the podium, a huge cheering crowd of working Texans."
+      },
+      {
+        "id": "concl",
+        "kind": "narration",
+        "where": "both",
+        "tag": "October 2026",
+        "captions": [
+          {
+            "text": "Mamdani is mayor of New York. El-Sayed and Talarico are on the ballot for the U.S. Senate in Michigan and Texas.",
+            "big": true
           },
           {
-            "text": "The next issue follows Fatten Elkomy, El-Sayed’s mother, whose former workplace became an issue in the Michigan Senate debate."
+            "text": "Their stories are separate; the scenes of them together are imagined. Capitol Crashers puts them in one game because housing, health care and schools connect their work. Now the fun part: the men with the money."
           }
         ],
         "cites": [
           39,
           66
+        ]
+      }
+    ]
+  },
+  {
+    "id": "issue-2",
+    "label": "Issue #2",
+    "chapter": "Show up and debate",
+    "panels": [
+      {
+        "id": "open",
+        "where": "both",
+        "size": "wide",
+        "art": "open.webp",
+        "tag": "October 2026",
+        "alt": "Mamdani, El-Sayed and Talarico walk side by side up a rain-slick avenue, the Capitol dome lit behind them.",
+        "captions": [
+          {
+            "text": "October 2026. Three men are walking toward the same building.",
+            "at": "tl"
+          },
+          {
+            "text": "One already runs America’s biggest city. The other two are on the ballot November 3. Standing in the way: a lot of money, and the men it backs.",
+            "at": "br"
+          }
         ],
-        "prompt": "Wide 16:9 splash, matching the fighter-select screen: a rain-slick avenue at night leading to the lit U.S. Capitol dome. Seen from behind, three chibi men walk toward the Capitol: Zohran Mamdani in a dark suit and polka-dot tie, James Talarico in a navy suit with light brown hair, Abdul El-Sayed in a black henley. Puddles reflecting neon magenta, cyan and gold. Epic, hopeful, cinematic. No lettering."
+        "cites": [
+          27,
+          37,
+          64,
+          66
+        ],
+        "prompt": "Three men walk side by side up a rain-slick avenue at night toward the lit U.S. Capitol: Mamdani (dark suit, polka-dot tie), El-Sayed (navy suit, short beard), Talarico (navy suit, open collar, cowboy boots). Neon reflections."
+      },
+      {
+        "id": "n3",
+        "kind": "narration",
+        "where": "both",
+        "tag": "Fall 2026",
+        "captions": [
+          {
+            "text": "Fall 2026. Time to face them.",
+            "big": true
+          },
+          {
+            "text": "In Michigan, Mike Rogers. In Texas, Ken Paxton. One skips the first debate. The other skips all of them."
+          }
+        ]
+      },
+      {
+        "id": "who-1",
+        "kind": "person",
+        "where": "detroit",
+        "name": "Abdul El-Sayed",
+        "line": "vs. Mike Rogers"
+      },
+      {
+        "id": "rflorida",
+        "where": "detroit",
+        "size": "wide",
+        "art": "rflorida.webp",
+        "tag": "Cape Coral, Florida",
+        "alt": "Mike Rogers lounges in a hammock outside a pink Florida house, a Michigan snow globe forgotten on the lawn.",
+        "captions": [
+          {
+            "text": "Meet Mike Rogers, former Michigan congressman. In 2022 he buys a $1.6 million house in Cape Coral, Florida.",
+            "at": "tl"
+          },
+          {
+            "text": "In 2023 he claims it as his permanent residence for a tax break. In 2024 he re-registers in Michigan to run for Senate.",
+            "at": "br"
+          }
+        ],
+        "cites": [
+          115
+        ],
+        "prompt": "Satire: stout grey-haired Mike Rogers in a palm-print shirt lounges in a hammock outside a pink Cape Coral house, a Michigan snow globe in the grass."
+      },
+      {
+        "id": "pmoney",
+        "where": "detroit",
+        "size": "wide",
+        "art": "pmoney.webp",
+        "tag": "April 2026",
+        "alt": "Suits aim a fire hose of dollar bills at a snowy Michigan town while Rogers rides the cash wave on a pool float.",
+        "captions": [
+          {
+            "text": "A Washington super PAC, the Senate Leadership Fund, commits $45 million to win Michigan’s Senate seat for Rogers’ side.",
+            "at": "tl"
+          },
+          {
+            "text": "El-Sayed’s pitch is the opposite: no corporate PAC money at all.",
+            "at": "br"
+          }
+        ],
+        "cites": [
+          147,
+          43
+        ],
+        "prompt": "Satire: four faceless suits brace a fire hose blasting dollar bills toward a snowy Michigan town; Rogers in a palm-print shirt rides the money wave on a pool float."
+      },
+      {
+        "id": "pspy",
+        "where": "detroit",
+        "size": "wide",
+        "art": "pspy.webp",
+        "tag": "The side gig",
+        "alt": "Rogers hands a giant telephone receiver to a faceless officer while phone cords run out to thousands of homes.",
+        "captions": [
+          {
+            "text": "For about six years Rogers sat on a security advisory council for the phone giant Telefónica. Pay: about $94,000.",
+            "at": "tl"
+          },
+          {
+            "text": "The company admitted intercepting the communications of 1.58 million Venezuelans for Maduro’s government. His campaign says he didn’t know.",
+            "at": "br"
+          }
+        ],
+        "cites": [
+          146
+        ],
+        "prompt": "Satire: Rogers in a suit hands a giant old telephone receiver to a faceless officer in sunglasses; phone cords run out the window to thousands of tiny houses; an envelope of cash on the table."
+      },
+      {
+        "id": "emptypod",
+        "where": "detroit",
+        "size": "wide",
+        "art": "emptypod.webp",
+        "tag": "Detroit · Sept 15, 2026",
+        "alt": "El-Sayed gestures at an empty podium on a TV debate set as the moderator checks his watch.",
+        "captions": [
+          {
+            "text": "Fox 2 Detroit holds a debate. Rogers doesn’t come. The station leaves his podium up.",
+            "at": "tl"
+          }
+        ],
+        "bubbles": [
+          {
+            "who": "El-Sayed",
+            "text": "I appreciate the Libertarian candidate has now participated more than the Republican candidate has in this debate.",
+            "x": 76,
+            "y": 80,
+            "tail": "n",
+            "w": 36
+          }
+        ],
+        "cites": [
+          116,
+          117
+        ],
+        "prompt": "Detroit TV debate set: El-Sayed at the right podium gestures at an empty left podium; the moderator checks his watch."
+      },
+      {
+        "id": "emptypod-b",
+        "kind": "narration",
+        "where": "detroit",
+        "tag": "Where was he?",
+        "captions": [
+          {
+            "text": "The week before, Rogers gave a speech at a convention in Dallas. Rogers said the Detroit event was “a town hall,” not a debate."
+          },
+          {
+            "text": "El-Sayed, afterward: “It tells you who he is. He’s a coward.”"
+          }
+        ],
+        "cites": [
+          116,
+          117
+        ]
+      },
+      {
+        "id": "yachts",
+        "where": "detroit",
+        "size": "wide",
+        "art": "yachts.webp",
+        "tag": "Grand Rapids · Oct 8, 2026",
+        "alt": "At the debate, El-Sayed holds up two fingers to the camera while a sweating Rogers grips his podium.",
+        "captions": [
+          {
+            "text": "October 8. Rogers shows up.",
+            "at": "tl"
+          },
+          {
+            "text": "El-Sayed holds up two fingers for the camera.",
+            "at": "br"
+          }
+        ],
+        "bubbles": [
+          {
+            "who": "El-Sayed",
+            "text": "How many yachts do you own?",
+            "x": 68,
+            "y": 14,
+            "tail": "s",
+            "w": 20
+          }
+        ],
+        "cites": [
+          118,
+          119
+        ],
+        "prompt": "Debate stage: El-Sayed grins and holds up two fingers to the camera; Mike Rogers in a charcoal suit grips his podium, sweating."
+      },
+      {
+        "id": "slackjaw",
+        "where": "detroit",
+        "size": "half",
+        "bubblesFirst": true,
+        "art": "slackjaw.webp",
+        "tag": "The answer",
+        "alt": "Close-up: Rogers frozen at his podium, jaw hanging open, a bead of sweat, a tumbleweed rolling past.",
+        "bubbles": [
+          {
+            "who": "Rogers",
+            "text": "I never owned a yacht in Florida, brother.",
+            "x": 22,
+            "y": 20,
+            "tail": "se",
+            "w": 30
+          }
+        ],
+        "captions": [
+          {
+            "text": "Records from El-Sayed’s campaign show two boats registered in Maryland.",
+            "at": "br"
+          }
+        ],
+        "cites": [
+          119,
+          120
+        ],
+        "prompt": "Close-up satire: Mike Rogers at a debate podium, jaw hanging open, eyes blank, a bead of sweat, a tumbleweed rolling past."
+      },
+      {
+        "id": "blockm",
+        "where": "detroit",
+        "size": "half",
+        "bubblesFirst": true,
+        "art": "blockm.webp",
+        "tag": "Oxford vs. the block M",
+        "alt": "Rogers tugs on a too-small maize-and-blue sweater with the price tag on while El-Sayed laughs at his podium.",
+        "bubbles": [
+          {
+            "who": "Rogers",
+            "text": "You learn that in Oxford, I guess — how to talk pretty.",
+            "x": 24,
+            "y": 14,
+            "tail": "s",
+            "w": 32
+          },
+          {
+            "who": "El-Sayed",
+            "text": "I don’t just parade around in the block M.",
+            "x": 76,
+            "y": 16,
+            "tail": "s",
+            "w": 28
+          }
+        ],
+        "captions": [
+          {
+            "text": "El-Sayed went to the University of Michigan. Rogers went to Adrian College.",
+            "at": "bl"
+          }
+        ],
+        "cites": [
+          119
+        ],
+        "prompt": "Debate satire: Rogers tugs a too-small maize-and-blue varsity sweater over his suit, price tag dangling; El-Sayed laughs, arms folded."
+      },
+      {
+        "id": "albin",
+        "kind": "narration",
+        "where": "detroit",
+        "tag": "The moderator",
+        "captions": [
+          {
+            "text": "It gets so loud the moderator, Rick Albin, has to ask: “I’d like to be part of the debate, too.”"
+          },
+          {
+            "text": "Afterward: “In 30 years of doing debates… I’ve never seen it continue during the commercial. But it did.”"
+          }
+        ],
+        "cites": [
+          119,
+          121
+        ]
+      },
+      {
+        "id": "h07",
+        "where": "detroit",
+        "size": "wide",
+        "art": "h07.webp",
+        "tag": "Same night",
+        "alt": "Rogers shouts and jabs a finger from his podium; El-Sayed stands calm at his.",
+        "captions": [
+          {
+            "text": "Then Rogers goes after El-Sayed’s mother. Her story is Issue #3.",
+            "at": "br"
+          }
+        ],
+        "bubbles": [
+          {
+            "who": "Rogers",
+            "text": "Let’s open up this can of worms.",
+            "x": 22,
+            "y": 14,
+            "tail": "s",
+            "w": 24
+          },
+          {
+            "who": "El-Sayed",
+            "text": "You talking about my mom?",
+            "x": 80,
+            "y": 14,
+            "tail": "s",
+            "w": 20
+          },
+          {
+            "who": "Rogers",
+            "text": "What your mom was working at — I was going after that organization that was indicted for funneling money to al-Qaida.",
+            "x": 30,
+            "y": 84,
+            "tail": "n",
+            "w": 44
+          }
+        ],
+        "cites": [
+          123,
+          122,
+          47
+        ],
+        "prompt": "TV debate studio with two wooden podiums and harsh spotlights. Empty LED walls with abstract gold graphics and no readable words. Left podium: older white man in his sixties, thinning steel-gray hair combed back, receding hairline, charcoal suit, shouting, jabbing a finger. Right podium: the same Egyptian-American man as the attached references, now in a navy suit and dark tie. Short close-cropped dark hair covering the whole scalp, no receding hairline, short full jaw beard that is not a goatee and not a long bushy beard, thick eyebrows, rounder cheeks, slight closed-mouth smile, unbothered. Only two people. No statue, no golden figure, no nurse, no children, no halo, no lettering."
+      },
+      {
+        "id": "pmohammad",
+        "where": "detroit",
+        "size": "wide",
+        "art": "pmohammad.webp",
+        "tag": "After the debate",
+        "alt": "Trump jabs at his phone in a gold bedroom; El-Sayed reads his phone at a kitchen table, deadpan.",
+        "captions": [
+          {
+            "text": "The president posts that Rogers “completely obliterated Mohammad El-Sayed.”",
+            "at": "tl"
+          }
+        ],
+        "bubbles": [
+          {
+            "who": "El-Sayed",
+            "text": "He knows my name is Abdul. He says it everyday.",
+            "x": 76,
+            "y": 18,
+            "tail": "s",
+            "w": 26
+          }
+        ],
+        "cites": [
+          148
+        ],
+        "prompt": "Two-part satire: Trump hunched over a glowing phone in a gold bedroom at night; El-Sayed at a kitchen table reads his phone and looks at the camera, deadpan, tapping a blank name badge."
+      },
+      {
+        "id": "who-2",
+        "kind": "person",
+        "where": "texas",
+        "name": "James Talarico",
+        "line": "vs. Ken Paxton"
+      },
+      {
+        "id": "pintro",
+        "where": "texas",
+        "size": "wide",
+        "art": "pintro.webp",
+        "tag": "Meet Ken Paxton",
+        "alt": "Ken Paxton smirks on the Texas Capitol steps as an endless blank scroll unrolls behind him.",
+        "captions": [
+          {
+            "text": "His opponent: Ken Paxton, Texas attorney general. In May 2026 he beats Sen. John Cornyn in the runoff, with Trump’s endorsement. No Democrat has won statewide in Texas since 1994.",
+            "at": "tl"
+          },
+          {
+            "text": "His record: indicted for securities fraud in 2015, resolved with a deal in 2024. Impeached by the Texas House in 2023, 121 to 23. Acquitted by the Senate.",
+            "at": "br"
+          }
+        ],
+        "cites": [
+          66,
+          74,
+          78
+        ],
+        "prompt": "Satire: Ken Paxton smirks on the pink-granite Texas Capitol steps as an endless blank scroll unrolls down the stairs; an armadillo stares."
+      },
+      {
+        "id": "ptruck",
+        "where": "texas",
+        "size": "wide",
+        "art": "ptruck.webp",
+        "tag": "2022",
+        "alt": "Paxton sprints across a lawn toward a waiting pickup while a process server holds out an envelope.",
+        "captions": [
+          {
+            "text": "A process server comes to his house with a subpoena.",
+            "at": "tl"
+          },
+          {
+            "text": "NBC News: “Texas AG Paxton fled home in a truck driven by his wife to avoid subpoena, process server alleges.” Paxton cited safety concerns.",
+            "at": "bl"
+          }
+        ],
+        "sfx": {
+          "text": "VROOM!",
+          "x": 84,
+          "y": 82,
+          "rot": -6
+        },
+        "cites": [
+          77
+        ],
+        "prompt": "Comedy chase: Ken Paxton sprints across a suburban lawn to a pickup with its door open; a polite process server holds out an envelope."
+      },
+      {
+        "id": "puppet",
+        "where": "texas",
+        "size": "wide",
+        "art": "puppet.webp",
+        "tag": "The oil money",
+        "alt": "Two faceless billionaires in Stetsons atop oil derricks work Paxton like a marionette.",
+        "captions": [
+          {
+            "text": "Before his impeachment trial, a PAC bankrolled by oil billionaires Tim Dunn and Farris Wilks gives the trial’s judge, Lt. Gov. Dan Patrick, $1 million and a $2 million loan.",
+            "at": "bl"
+          }
+        ],
+        "bubbles": [
+          {
+            "who": "Talarico",
+            "text": "Did Tim Dunn and Farris Wilks, your top two billionaire mega-donors, buy an acquittal in your impeachment trial?",
+            "x": 74,
+            "y": 86,
+            "tail": "none",
+            "w": 42
+          }
+        ],
+        "cites": [
+          75,
+          76,
+          84
+        ],
+        "prompt": "Satire: two faceless billionaires in white Stetsons sit atop oil derricks working puppet controls; Ken Paxton dangles as a marionette."
+      },
+      {
+        "id": "tnodebate",
+        "where": "texas",
+        "size": "wide",
+        "art": "tnodebate.webp",
+        "tag": "Texas · 2026",
+        "alt": "Talarico waits at a debate podium beside an empty one with puppet strings dangling onto it.",
+        "captions": [
+          {
+            "text": "Talarico challenges Paxton to three TV debates. Paxton says the hosts are biased.",
+            "at": "tl"
+          },
+          {
+            "text": "As of October 11: zero debates.",
+            "at": "br"
+          }
+        ],
+        "bubbles": [
+          {
+            "who": "Talarico",
+            "text": "He is a puppet politician, and I want him to prove me wrong.",
+            "x": 74,
+            "y": 16,
+            "tail": "s",
+            "w": 28
+          }
+        ],
+        "cites": [
+          84,
+          85
+        ],
+        "prompt": "Texas debate stage: Talarico waits at the right podium; the left podium is empty except for limp puppet strings and a tiny cowboy hat."
+      },
+      {
+        "id": "prally",
+        "where": "texas",
+        "size": "wide",
+        "art": "prally.webp",
+        "tag": "San Antonio · Oct 2026",
+        "alt": "Paxton shades his eyes at a rally podium, pretending to search the crowd.",
+        "captions": [
+          {
+            "text": "Talarico is home with the flu. Paxton mocks him at a rally.",
+            "at": "tl"
+          },
+          {
+            "text": "Even Trump says Paxton is “ready, willing and able” to debate. Talarico: “I agree… Ball’s in your court.”",
+            "at": "br"
+          }
+        ],
+        "bubbles": [
+          {
+            "who": "Paxton",
+            "text": "Where do you think they hid that little socialist?",
+            "x": 22,
+            "y": 40,
+            "tail": "e",
+            "w": 26
+          }
+        ],
+        "cites": [
+          83
+        ],
+        "prompt": "San Antonio rally: Ken Paxton at a podium shades his eyes and peers over the crowd as if searching for someone hiding."
       }
     ]
   },
   {
     "id": "n-h",
-    "label": "Issue #2 · The Healer",
-    "chapter": "Fatten Elkomy’s story",
+    "label": "Issue #3",
+    "chapter": "The Healer",
     "panels": [
       {
         "id": "h01",
         "where": "detroit",
         "size": "wide",
-        "splash": true,
-        "tag": "Issue #2 · Fatten Elkomy",
-        "scene": "The healer",
         "art": "h01.webp",
-        "alt": "An older Egyptian nurse in a white coat stands like a superhero, gold light around her, children safe behind her cape.",
+        "tag": "Issue #3 · Fatten Elkomy",
+        "alt": "An older Egyptian woman in a white coat that flares like a cape, children safe behind her, attack ads tearing into confetti.",
         "captions": [
           {
-            "text": "Fatten Elkomy is Abdul El-Sayed’s mother and a psychiatric nurse practitioner in Missouri."
+            "text": "Fatten Elkomy: Abdul El-Sayed’s mother, and a psychiatric nurse practitioner in Missouri.",
+            "at": "tl"
           },
           {
-            "text": "During the October 8, 2026, Michigan Senate debate, Mike Rogers raised allegations about a charity where she had worked years earlier. This issue follows her education, her work at that charity and the distinction between allegations against the organization and the record concerning her."
+            "text": "On live TV, Mike Rogers brought up a charity she worked at twenty years ago. Here’s what the record actually says.",
+            "at": "br"
           }
         ],
         "cites": [
@@ -986,46 +1984,39 @@ export const PAGES = [
         "id": "h02",
         "where": "detroit",
         "size": "half",
-        "tall": true,
-        "tag": "Alexandria · 1983",
-        "scene": "She trained as a doctor first",
         "art": "h02.webp",
-        "alt": "A young Egyptian woman in a white coat on the steps of a medical school by the sea.",
+        "tag": "Alexandria · 1983",
+        "alt": "A young woman in a fresh white coat on stone steps by the sea.",
         "captions": [
           {
-            "text": "Elkomy graduated from Alexandria University’s School of Medicine in Egypt in 1983, according to her published biography."
+            "text": "Alexandria, Egypt, 1983: she graduates from medical school.",
+            "at": "tl"
           },
           {
-            "text": "She later continued her education in the United States. Her career eventually focused on psychiatric and mental-health nursing."
+            "text": "Then she keeps studying in the U.S., in psychiatric and mental-health nursing.",
+            "at": "br"
           }
         ],
         "cites": [
           49
         ],
         "prompt": "Bold American comic-book illustration, heavy black ink, halftone, gold Mediterranean light. No text. Portrait 3:4. A young Egyptian woman in a fresh white medical coat on stone steps beside a seafront medical school, lighthouse ghosted in the sky. Hopeful, proud, not grim. Chibi proportions matching the series. Warm gold with a cyan rim light."
-      }
-    ]
-  },
-  {
-    "id": "charity-record",
-    "label": "The Healer · The earlier case",
-    "chapter": "The charity and the investigation",
-    "panels": [
+      },
       {
         "id": "h05",
         "where": "detroit",
-        "size": "two-thirds",
-        "tall": true,
-        "tag": "1999–2004",
-        "scene": "The job she named",
+        "size": "half",
         "art": "h05.webp",
-        "alt": "The nurse at a charity desk covered in child-sponsorship files and kids' drawings.",
+        "tag": "1999–2004",
+        "alt": "The woman in a white coat holds a child's crayon drawing in a modest aid office.",
         "captions": [
           {
-            "text": "In the early 2000s, Elkomy worked at a humanitarian aid office in Missouri. Records discussed by fact-checkers included requests labeled for child sponsorship and support for orphans."
+            "text": "1999 to 2004: she works at a humanitarian aid office in Missouri. Its records include requests for child sponsorship and orphan support.",
+            "at": "tl"
           },
           {
-            "text": "In a 2004 interview with the Columbia Daily Tribune, Elkomy described her work as helping orphans and children who had lost a parent. She said she was distressed that the children might lose that assistance."
+            "text": "2004, to a local paper: “I’ve been working there serving orphans and children with at least one deceased parent.”",
+            "at": "br"
           }
         ],
         "cites": [
@@ -1036,17 +2027,18 @@ export const PAGES = [
       {
         "id": "h06",
         "where": "detroit",
-        "size": "third",
-        "tag": "The record",
-        "scene": "They interviewed her. They did not charge her.",
+        "size": "half",
         "art": "h06.webp",
-        "alt": "The nurse walks out of a federal building into gold light, files remaining behind her unmarked.",
+        "tag": "The record",
+        "alt": "The woman in the white coat walks down federal-building steps into gold light.",
         "captions": [
           {
-            "text": "Federal investigators examined the charity’s activities. Elkomy told the Columbia Daily Tribune that FBI agents interviewed her for three hours."
+            "text": "FBI agents interview her for three hours.",
+            "at": "tl"
           },
           {
-            "text": "According to the cited fact-check, she was never charged or named as a defendant in the case. The fact-checkers also reported finding no evidence that she knew of criminal activity at the office."
+            "text": "She is never charged or named as a defendant. Fact-checkers find no evidence she knew of any crime.",
+            "at": "br"
           }
         ],
         "cites": [
@@ -1058,19 +2050,17 @@ export const PAGES = [
         "id": "h08",
         "where": "detroit",
         "size": "half",
-        "tag": "The federal case · 2008",
-        "scene": "Say the Justice Department part out loud",
         "art": "h08.webp",
-        "alt": "A gold stethoscope pins a true court paper over a fake terror headline.",
+        "tag": "The federal case · 2008",
+        "alt": "The woman pins a court paper over a screaming red attack-ad poster.",
         "captions": [
           {
-            "text": "The organization and several people associated with it faced serious federal charges. A 2008 Justice Department release described alleged sanctions violations, including prohibited transactions benefiting property controlled by a designated terrorist."
+            "text": "2008: the charity and several people tied to it face federal sanctions charges. She isn’t one of them.",
+            "at": "tl"
           },
           {
-            "text": "The same release distinguished those allegations from charges of material support for terrorism or knowingly financing acts of terror. Elkomy was not among the defendants it named."
-          },
-          {
-            "text": "The distinction matters: allegations against an employer do not establish that every employee participated in them."
+            "text": "The Justice Department said the case did not charge anyone with material support of terrorism.",
+            "at": "br"
           }
         ],
         "cites": [
@@ -1078,28 +2068,22 @@ export const PAGES = [
           52
         ],
         "prompt": "Older Egyptian woman matching the clinic nurse: short dark hair going silver, weathered brown skin, white coat, teal scrubs, no hijab. She pins a blank court paper to a wall with a gold stethoscope, covering a crumpled screaming red attack-ad poster with no readable words. Calm face. Magenta scare-poster vs gold clinical light. No lettering."
-      }
-    ]
-  },
-  {
-    "id": "mental-health-work",
-    "label": "The Healer · Her later career",
-    "chapter": "Mental-health care in Missouri",
-    "panels": [
+      },
       {
         "id": "h03",
         "where": "detroit",
         "size": "half",
-        "tag": "Columbia, Missouri",
-        "scene": "Then she kept training",
         "art": "h03-chibi.webp",
-        "alt": "The same woman older, in a clinic, listening to a patient.",
+        "tag": "Columbia, Missouri",
+        "alt": "The woman listens to a tired young man across her clinic desk.",
         "captions": [
           {
-            "text": "Elkomy’s published biography describes further study in the United States: master’s degrees in health administration and health informatics, followed by a master’s degree and a doctorate in psychiatric and mental-health nursing."
+            "text": "Two master’s degrees, then a master’s and a doctorate in psychiatric and mental-health nursing.",
+            "at": "tl"
           },
           {
-            "text": "She became a psychiatric nurse practitioner. The biography says she had worked at a Missouri community mental-health agency since 2018."
+            "text": "Since 2018: a community mental-health agency in Missouri.",
+            "at": "br"
           }
         ],
         "cites": [
@@ -1111,99 +2095,71 @@ export const PAGES = [
       {
         "id": "h04",
         "where": "detroit",
-        "size": "wide",
-        "tag": "Columbia, Missouri · 2026",
-        "scene": "Kids still get the Friday",
+        "size": "half",
         "art": "h04.webp",
-        "alt": "The nurse sits with schoolchildren, listening, a cape of gold light behind her chair.",
+        "tag": "Columbia, Missouri · 2026",
+        "alt": "The woman sits in a classroom circle as a child shows her a crayon drawing.",
         "captions": [
           {
-            "text": "In 2026, a school in Columbia, Missouri, announced that Elkomy would provide counseling beginning April 3, every other Friday from 8 a.m. to 3 p.m."
+            "text": "2026: a school in Columbia, Missouri, announces she’ll counsel students every other Friday, 8 to 3.",
+            "at": "tl"
           },
           {
-            "text": "The school’s biography described thirteen years of experience as a psychiatric and mental-health provider."
+            "text": "Thirteen years as a mental-health provider.",
+            "at": "br"
           }
         ],
         "cites": [
           49
         ],
         "prompt": "One older Egyptian woman only, matching the attached clinic nurse: short dark hair silver at the temples, weathered brown skin, laugh lines, white coat over teal scrubs, teal clogs, no hijab. She sits in a small classroom circle with schoolchildren of several backgrounds. One child shows her a crayon drawing of a house. Soft gold light around her chair. The children do not look like her. No second nurse. No duplicate of her face among the kids. No lettering."
-      }
-    ]
-  },
-  {
-    "id": "debate",
-    "label": "The Healer · October 2026",
-    "chapter": "The debate and the record",
-    "panels": [
-      {
-        "id": "h07",
-        "where": "detroit",
-        "size": "wide",
-        "tag": "Michigan · Oct. 8, 2026",
-        "scene": "He went after her on live television",
-        "art": "h07.webp",
-        "alt": "A TV debate: an older gray-haired man jabs a finger from one podium; El-Sayed stands calm at the other. Two people only.",
-        "captions": [
-          {
-            "text": "On October 8, 2026, El-Sayed and Rogers met for a televised Senate debate in Michigan. During an exchange about Flock surveillance cameras, Rogers suggested that El-Sayed had a family member who might be on a watchlist."
-          },
-          {
-            "text": "El-Sayed asked whether Rogers was going after his mother. Rogers then referred to her former workplace and compared her with his own mother, who had worked at a chamber of commerce."
-          },
-          {
-            "text": "The exchange brought the charity’s history into the campaign, but it did not establish that Elkomy herself had been charged with a crime."
-          }
-        ],
-        "cites": [
-          47
-        ],
-        "prompt": "TV debate studio with two wooden podiums and harsh spotlights. Empty LED walls with abstract gold graphics and no readable words. Left podium: older white man in his sixties, thinning steel-gray hair combed back, receding hairline, charcoal suit, shouting, jabbing a finger. Right podium: the same Egyptian-American man as the attached references, now in a navy suit and dark tie. Short close-cropped dark hair covering the whole scalp, no receding hairline, short full jaw beard that is not a goatee and not a long bushy beard, thick eyebrows, rounder cheeks, slight closed-mouth smile, unbothered. Only two people. No statue, no golden figure, no nurse, no children, no halo, no lettering."
       },
       {
         "id": "h09",
         "where": "detroit",
         "size": "half",
-        "tag": "The line he wanted",
-        "scene": "He had nothing on the son, so he reached for the mother",
         "art": "h09.webp",
-        "alt": "El-Sayed at the debate podium, unbothered, while Rogers points from the other stand. Two people only.",
-        "captions": [
+        "tag": "The answer",
+        "alt": "El-Sayed stands unbothered at his podium while Rogers points at him.",
+        "bubbles": [
           {
-            "text": "El-Sayed responded that Rogers was using his family to divert attention from the candidates’ records."
+            "who": "El-Sayed",
+            "text": "He wants this to be about anything but his own record.",
+            "x": 70,
+            "y": 18,
+            "tail": "s",
+            "w": 34
           },
           {
-            "text": "The account of the debate quotes El-Sayed saying:"
-          },
-          {
-            "quote": true,
-            "who": "Abdul El-Sayed",
-            "text": "He wants this to be about anything but his own record."
-          },
-          {
-            "text": "The debate and the legal record answer different questions. One shows what a candidate alleged on television; the other identifies who was charged and with what."
+            "who": "El-Sayed",
+            "text": "Go ahead and say it. You’ve been tiptoeing around it the whole time, just say it.",
+            "x": 36,
+            "y": 78,
+            "tail": "e",
+            "w": 40
           }
         ],
         "cites": [
-          47
+          47,
+          122
         ],
         "prompt": "Closer on the same two-podium debate. Egyptian-American man matching the attached fighter: short close-cropped dark hair covering the whole scalp, short full jaw beard, thick eyebrows, rounder cheeks, navy suit, slight closed-mouth smile, unbothered at his podium. Older gray-haired man pointing from the left. Only two people. No statue, no golden figure, no nurse, no children, no halo, no lettering."
       },
       {
         "id": "h11",
         "where": "detroit",
-        "size": "wide",
-        "splash": true,
-        "tag": "End of Issue #2",
-        "scene": "The cape is a coat",
+        "size": "half",
         "art": "h11.webp",
-        "alt": "The nurse walks toward a clinic at dawn, coat flaring like a cape, gold sun at her back, children and patients in the windows.",
+        "tag": "Still on the job",
+        "alt": "The woman in the white coat walks toward a small clinic at dawn, patients waving.",
         "captions": [
           {
-            "text": "Elkomy’s public provider-registry entry identifies her as a psychiatric and mental-health nurse practitioner in Missouri."
+            "text": "The public registry still lists her as a psychiatric and mental-health nurse practitioner in Missouri.",
+            "at": "tl"
           },
           {
-            "text": "Her biography and that registry describe a career in care. The fact-check of the charity case reports that she was not charged. Those are the records readers can examine alongside the debate account."
+            "text": "She still has her license. She still goes to work.",
+            "at": "br"
           }
         ],
         "cites": [
@@ -1215,422 +2171,157 @@ export const PAGES = [
     ]
   },
   {
-    "id": "planks",
-    "label": "Appendix · Campaign proposals",
-    "chapter": "Mamdani’s platform",
+    "id": "issue-4",
+    "label": "Issue #4",
+    "chapter": "Where they’re taking us",
     "panels": [
       {
-        "id": "p27",
-        "where": "queens",
-        "size": "third",
-        "tag": "Mamdani · Freeze the rent",
-        "scene": "Freeze the rent",
-        "art": "p27.webp",
-        "alt": "Mamdani in front of an apartment building as frost breaks off it.",
+        "id": "n4",
+        "kind": "narration",
+        "where": "both",
+        "tag": "Not yet",
         "captions": [
           {
-            "text": "Mamdani campaigned to freeze rents for tenants in rent-stabilized apartments. His campaign estimated that more than two million New Yorkers lived in those apartments. The June 2026 board decision is described in his chapter above."
+            "text": "The next pages haven’t happened yet.",
+            "big": true
+          },
+          {
+            "text": "Everything on them is a promise these three put in writing. Read it. Then hold them to it."
           }
         ],
         "cites": [
           40,
-          33
-        ],
-        "prompt": "Mamdani, rent freeze, ice on an apartment building."
+          41,
+          67
+        ]
       },
       {
-        "id": "p28",
+        "id": "p27",
         "where": "queens",
-        "size": "third",
-        "tag": "Mamdani · Fast, fare-free buses",
-        "scene": "Fast, fare-free buses",
-        "art": "p28.webp",
-        "alt": "Mamdani beside a city bus in a priority lane.",
+        "size": "wide",
+        "art": "fny.webp",
+        "tag": "New York",
+        "alt": "A future New York morning: riders board a free bus in a red bus lane, a dad drops a toddler at daycare, Mamdani rides along.",
         "captions": [
           {
-            "text": "Mamdani proposed removing fares on every city bus and speeding service with priority lanes, signals that give buses a head start and designated loading zones to reduce double-parking."
+            "text": "In New York: the rent stays frozen. Every city bus is free and fast. Child care is free from six weeks to five years old.",
+            "at": "tl"
+          },
+          {
+            "text": "A $30 minimum wage by 2030. Paid for with a higher corporate tax and 2 percent more on income over $1 million.",
+            "at": "br"
+          }
+        ],
+        "bubbles": [
+          {
+            "who": "Mamdani",
+            "text": "New York, this power, it’s yours. This city belongs to you.",
+            "x": 57,
+            "y": 15,
+            "tail": "s",
+            "w": 26
           }
         ],
         "cites": [
-          40
+          40,
+          46,
+          95
         ],
-        "prompt": "Mamdani, fare-free bus in a priority lane."
-      },
-      {
-        "id": "p29",
-        "where": "queens",
-        "size": "third",
-        "tag": "Mamdani · Community safety",
-        "scene": "Community safety",
-        "art": "p29.webp",
-        "alt": "Mamdani with outreach workers helping a rider in a subway station.",
-        "captions": [
-          {
-            "text": "Mamdani proposed a Department of Community Safety to coordinate mental-health crisis response, outreach in 100 subway stations, gun-violence programs and expanded hate-violence prevention. The proposal would give civilian services a larger role alongside police."
-          }
-        ],
-        "cites": [
-          40
-        ],
-        "prompt": "Mamdani, subway outreach, no fight."
-      },
-      {
-        "id": "p30",
-        "where": "queens",
-        "size": "third",
-        "tag": "Mamdani · No-cost childcare",
-        "scene": "No-cost childcare",
-        "art": "p30.webp",
-        "alt": "Mamdani in the doorway of a toddler classroom.",
-        "captions": [
-          {
-            "text": "Mamdani’s platform called for free childcare from six weeks through age five, with childcare workers paid on par with public-school teachers."
-          }
-        ],
-        "cites": [
-          40
-        ],
-        "prompt": "One young South Asian man only: full dark beard, thick styled dark hair with volume on top, dark suit and blue polka-dot tie, in the doorway of a toddler classroom. He is the only politician. No second man. No henley. No stethoscope. No lettering."
-      },
-      {
-        "id": "p31",
-        "where": "queens",
-        "size": "third",
-        "tag": "Mamdani · City-owned groceries",
-        "scene": "City-owned groceries",
-        "art": "p31.webp",
-        "alt": "Mamdani inside a city grocery stacked with produce.",
-        "captions": [
-          {
-            "text": "Mamdani proposed a network of city-owned grocery stores that would avoid rent and property-tax costs and sell at wholesale prices, passing savings on to shoppers."
-          }
-        ],
-        "cites": [
-          40
-        ],
-        "prompt": "One young South Asian man only: full dark beard, thick styled dark hair with volume on top, dark suit and blue polka-dot tie, inside a city grocery stacked with produce. He is the only politician. No second man. No henley. No stethoscope. No lettering."
-      },
-      {
-        "id": "p32",
-        "where": "queens",
-        "size": "third",
-        "tag": "Mamdani · 200,000 homes",
-        "scene": "200,000 homes",
-        "art": "p32.webp",
-        "alt": "Mamdani in front of new apartment buildings and construction workers.",
-        "captions": [
-          {
-            "text": "Mamdani proposed building 200,000 permanently affordable, union-built, rent-stabilized homes over ten years. His platform also called for faster approval of projects in which every home is affordable."
-          }
-        ],
-        "cites": [
-          40
-        ],
-        "prompt": "One young South Asian man only: full dark beard, thick styled dark hair with volume on top, dark suit and blue polka-dot tie, in front of new apartment buildings with construction workers. He is the only politician. No second man. No henley. No stethoscope. No lettering."
-      },
-      {
-        "id": "p33",
-        "where": "queens",
-        "size": "third",
-        "tag": "Mamdani · Bad landlords",
-        "scene": "Bad landlords",
-        "art": "p33.webp",
-        "alt": "Mamdani with city workers repairing a neglected apartment hallway.",
-        "captions": [
-          {
-            "text": "Mamdani proposed a single office to enforce housing standards. When landlords failed to make required repairs, the city would arrange the work and bill the owner. The proposal included city acquisition of buildings in the most serious cases."
-          }
-        ],
-        "cites": [
-          40
-        ],
-        "prompt": "Mamdani, city repair crew in a hallway."
-      },
-      {
-        "id": "p34",
-        "where": "queens",
-        "size": "third",
-        "tag": "Mamdani · Who pays",
-        "scene": "Who pays",
-        "art": "p34.webp",
-        "alt": "Mamdani between glass towers and a working family.",
-        "captions": [
-          {
-            "text": "Mamdani proposed raising the corporate tax rate to match New Jersey’s 11.5 percent rate and adding a 2 percent city tax on income above $1 million. His platform projected about $5 billion from the corporate-tax change and another $1 billion from procurement reform, auditing and landlord fines."
-          }
-        ],
-        "cites": [
-          40
-        ],
-        "prompt": "One young South Asian man only: full dark beard, thick styled dark hair with volume on top, dark suit and blue polka-dot tie, standing between glass office towers and a working family. He is the only politician. No second man. No short-cropped hair. No black henley. No stethoscope. No lettering."
-      },
-      {
-        "id": "p35",
-        "where": "queens",
-        "size": "third",
-        "tag": "Mamdani · $30 by 2030",
-        "scene": "$30 by 2030",
-        "art": "p35.webp",
-        "alt": "Mamdani with workers holding pay envelopes.",
-        "captions": [
-          {
-            "text": "Mamdani proposed raising New York City’s minimum wage to $30 an hour by 2030."
-          }
-        ],
-        "cites": [
-          46
-        ],
-        "prompt": "One young South Asian man only: full dark beard, thick styled dark hair with volume on top, dark suit and blue polka-dot tie, standing with city workers in safety vests holding pay envelopes. He is the only politician. No second man. No short-cropped hair. No black henley. No stethoscope. No lettering."
-      }
-    ]
-  },
-  {
-    "id": "el-sayed-platform",
-    "label": "Appendix · Campaign proposals",
-    "chapter": "El-Sayed’s platform",
-    "panels": [
-      {
-        "id": "p36",
-        "where": "detroit",
-        "size": "third",
-        "tag": "El-Sayed · Medicare for All",
-        "scene": "Medicare for All",
-        "art": "p36.webp",
-        "alt": "El-Sayed in a public clinic as patients get care.",
-        "captions": [
-          {
-            "text": "El-Sayed proposes Medicare for All covering medical care, vision, dental care and hearing, without premiums, copays or deductibles. His proposal includes automatic enrollment and nationwide acceptance, while allowing additional union or employer coverage. He also calls for abolishing medical debt."
-          }
-        ],
-        "cites": [
-          42
-        ],
-        "prompt": "El-Sayed, public clinic."
+        "prompt": "Future NYC morning: a free bus in a red bus lane boarding riders of every kind through all doors, a daycare drop-off, Mamdani riding along."
       },
       {
         "id": "p37",
         "where": "detroit",
-        "size": "third",
-        "tag": "El-Sayed · Money out of politics",
-        "scene": "Money out of politics",
-        "art": "p37.webp",
-        "alt": "El-Sayed sweeping corporate cash off a table.",
+        "size": "wide",
+        "art": "fmi.webp",
+        "tag": "Michigan",
+        "alt": "A future Detroit street: a family leaves a clinic with no bill, a crew swaps lead pipes for copper, El-Sayed waves from the clinic steps.",
         "captions": [
           {
-            "text": "El-Sayed says he does not accept corporate money. His platform calls for overturning Citizens United, restricting corporate outside spending, establishing public election funding and setting spending limits."
+            "text": "In Michigan: money out of politics. No corporate PAC money, and a fight to end super PACs.",
+            "at": "tl"
+          },
+          {
+            "text": "Medicare for All: no premiums, no copays, no deductibles. Medical debt wiped out. Every lead pipe gone by 2030.",
+            "at": "br"
+          }
+        ],
+        "bubbles": [
+          {
+            "who": "El-Sayed",
+            "text": "Money out of politics. Money in your pocket. Medicare for All.",
+            "x": 76,
+            "y": 22,
+            "tail": "s",
+            "w": 26
           }
         ],
         "cites": [
-          43
+          42,
+          43,
+          114
         ],
-        "prompt": "El-Sayed, sweeping dark money aside."
+        "prompt": "Future Detroit morning: a family leaves a clinic smiling, a union crew swaps a lead pipe for copper, El-Sayed in a white coat waves from the steps."
       },
       {
-        "id": "p38",
-        "where": "detroit",
-        "size": "third",
-        "tag": "El-Sayed · Put money in your pocket",
-        "scene": "Put money in your pocket",
-        "art": "p38.webp",
-        "alt": "El-Sayed at a Michigan kitchen table with a working family.",
-        "captions": [
-          {
-            "text": "El-Sayed proposes taxing capital gains above $1 million at ordinary income-tax rates, ending the stepped-up basis tax provision and taxing wealth above $1 billion. His platform also calls for exempting the first $50,000 of income from federal tax."
-          }
-        ],
-        "cites": [
-          44
-        ],
-        "prompt": "El-Sayed, kitchen table, money staying with a family."
-      },
-      {
-        "id": "p39",
-        "where": "detroit",
-        "size": "third",
-        "tag": "El-Sayed · Housing",
-        "scene": "Housing",
-        "art": "p39.webp",
-        "alt": "El-Sayed handing keys to a family in front of a new house.",
-        "captions": [
-          {
-            "text": "El-Sayed proposes expanding homebuilding and establishing a federal renter bill of rights. He also calls for restrictions on large corporations buying homes for speculation and on software used by landlords to coordinate rents."
-          }
-        ],
-        "cites": [
-          44
-        ],
-        "prompt": "El-Sayed, family getting house keys."
-      },
-      {
-        "id": "p40",
-        "where": "detroit",
-        "size": "third",
-        "tag": "El-Sayed · Clean water",
-        "scene": "Clean water",
-        "art": "p40.webp",
-        "alt": "El-Sayed on a Great Lakes shore as workers pull lead pipes.",
-        "captions": [
-          {
-            "text": "El-Sayed proposes a clean-water guarantee of at least 50 gallons per person per day, household bills capped at 2 percent of income and protection against shutoffs for families unable to pay. He also calls for removing Michigan’s lead pipes by 2030 and shutting down Line 5."
-          }
-        ],
-        "cites": [
-          43
-        ],
-        "prompt": "El-Sayed, clean water, lead pipes, Line 5."
-      },
-      {
-        "id": "p41",
-        "where": "detroit",
-        "size": "third",
-        "tag": "El-Sayed · Schools",
-        "scene": "Schools",
-        "art": "p41.webp",
-        "alt": "El-Sayed in a public-school classroom with a teacher and students.",
-        "captions": [
-          {
-            "text": "El-Sayed proposes universal childcare and pre-K, a $60,000 minimum salary for teachers, full funding for the Individuals with Disabilities Education Act, and tuition-free paths through college or an apprenticeship."
-          }
-        ],
-        "cites": [
-          44
-        ],
-        "prompt": "El-Sayed, public school classroom."
-      },
-      {
-        "id": "p42",
-        "where": "detroit",
-        "size": "half",
-        "tag": "El-Sayed · Data centers",
-        "scene": "Data centers",
-        "art": "p42.webp",
-        "alt": "El-Sayed standing between a neighborhood and a data center.",
-        "captions": [
-          {
-            "text": "El-Sayed proposes requiring data centers to cover their own power costs and use closed-loop cooling. His platform also calls for local oversight, delivery of promised jobs and construction contractors with registered apprenticeship programs."
-          }
-        ],
-        "cites": [
-          45
-        ],
-        "prompt": "El-Sayed between houses and a data center."
-      },
-      {
-        "id": "p43",
-        "where": "detroit",
-        "size": "half",
-        "tag": "El-Sayed · Diplomacy",
-        "scene": "Diplomacy",
-        "art": "p43.webp",
-        "alt": "El-Sayed at a diplomatic table.",
-        "captions": [
-          {
-            "text": "El-Sayed’s foreign-policy platform emphasizes diplomacy, cooperation and human rights. He opposes unconditional military funding for countries including Egypt, Israel, Saudi Arabia and the UAE, and supports an immediate arms embargo on Israel."
-          }
-        ],
-        "cites": [
-          43
-        ],
-        "prompt": "El-Sayed at a diplomacy table."
-      }
-    ]
-  },
-  {
-    "id": "talarico-platform",
-    "label": "Appendix · Campaign proposals",
-    "chapter": "Talarico’s platform",
-    "panels": [
-      {
-        "id": "t07",
+        "id": "ftx",
         "where": "texas",
-        "size": "third",
-        "tag": "Talarico · Public schools",
-        "scene": "Public schools",
-        "art": "t07.webp",
-        "alt": "Talarico in a public-school hallway with a teacher and students.",
+        "size": "wide",
+        "art": "ftx.webp",
+        "tag": "Texas",
+        "alt": "A future Texas public school: teachers welcome families, Talarico high-fives a kid on the steps.",
         "captions": [
           {
-            "text": "Talarico opposes private-school voucher programs, arguing that they divert resources from public schools. His platform calls for universal pre-K for three- and four-year-olds, more teachers and counselors, and phonics-based reading support."
+            "text": "In Texas: no private-school vouchers. More teachers and counselors. Universal pre-K and child care. Caps on insulin and drug prices.",
+            "at": "tl"
+          },
+          {
+            "text": "Ban super PACs. Ban members of Congress from trading stocks.",
+            "at": "br"
+          }
+        ],
+        "bubbles": [
+          {
+            "who": "Talarico",
+            "text": "I’ll fight to unrig this economy. I’ll fight to raise your pay. I’ll fight to lower your costs.",
+            "x": 70,
+            "y": 16,
+            "tail": "sw",
+            "w": 30
           }
         ],
         "cites": [
-          67
-        ],
-        "prompt": "Young white Texan, short brown hair, clean-shaven, in a public-school hallway with teachers. Not Mamdani, not El-Sayed. No lettering."
-      },
-      {
-        "id": "t08",
-        "where": "texas",
-        "size": "third",
-        "tag": "Talarico · $15 an hour",
-        "scene": "$15 an hour",
-        "art": "t08.webp",
-        "alt": "Talarico at a Texas shop counter with workers holding pay envelopes.",
-        "captions": [
-          {
-            "text": "Talarico proposes a $15 federal minimum wage, broader overtime eligibility and paid family leave. He says he has not accepted corporate PAC money."
-          }
-        ],
-        "cites": [
-          68,
-          69
-        ],
-        "prompt": "Young white Texan at a small-business counter with workers. Short brown hair, clean-shaven. No lettering."
-      },
-      {
-        "id": "t09",
-        "where": "texas",
-        "size": "third",
-        "tag": "Talarico · Money out",
-        "scene": "Money out",
-        "art": "t09.webp",
-        "alt": "Talarico sweeping stacks of cash off a desk.",
-        "captions": [
-          {
-            "text": "Talarico proposes banning super PACs and corporate PACs, ending partisan gerrymandering and prohibiting members of Congress from trading individual stocks."
-          }
-        ],
-        "cites": [
-          69
-        ],
-        "prompt": "Young white Texan sweeping stacked cash off a desk. Short brown hair, clean-shaven. No lettering."
-      },
-      {
-        "id": "t10",
-        "where": "texas",
-        "size": "half",
-        "tag": "Talarico · Costs",
-        "scene": "Costs",
-        "art": "t10.webp",
-        "alt": "Talarico at a kitchen table with a worried working couple.",
-        "captions": [
-          {
-            "text": "Talarico proposes a public health-insurance option, limits on insulin and other prescription-drug costs, help with first-home down payments, and restrictions on rent-setting software used by corporate landlords."
-          }
-        ],
-        "cites": [
+          67,
+          69,
           70,
           71
         ],
-        "prompt": "Young white Texan at a kitchen table with a working family and a pharmacy bottle with no readable label. Short brown hair, clean-shaven. No lettering."
+        "prompt": "Future Texas public school: teachers welcome families at a renovated brick school; Talarico kneels to high-five a kid."
       },
       {
-        "id": "t11",
-        "where": "texas",
-        "size": "half",
-        "tag": "Talarico · Child care",
-        "scene": "Child care",
-        "art": "t11.webp",
-        "alt": "Talarico in the doorway of a toddler classroom.",
+        "id": "p26",
+        "where": "both",
+        "size": "wide",
+        "art": "finale.webp",
+        "tag": "November 3, 2026",
+        "alt": "At dawn, Mamdani, El-Sayed and Talarico stand at the foot of the Capitol steps with a huge crowd of ordinary Americans behind them.",
         "captions": [
           {
-            "text": "Talarico’s August 2026 New American Dream agenda calls for universal childcare, paid family leave and a permanently expanded Child Tax Credit."
+            "text": "November 3, 2026. Two of these roads go through the ballot box. The third goes through City Hall every day.",
+            "at": "tl"
+          },
+          {
+            "text": "How the story ends is up to whoever shows up.",
+            "at": "br"
           }
         ],
         "cites": [
-          71
+          27,
+          37,
+          64,
+          66
         ],
-        "prompt": "Young white Texan in a toddler classroom doorway. Short brown hair, clean-shaven. No lettering."
+        "prompt": "Dawn over the Capitol after rain: Mamdani, El-Sayed and Talarico at the foot of the steps, a huge crowd of nurses, workers, teachers, farmers, parents behind them."
       }
     ]
   }
@@ -1642,18 +2333,20 @@ export const PLANKS = [
     "who": "Mamdani",
     "title": "Freeze the rent",
     "cites": [
-      40
+      40,
+      33
     ],
-    "text": "Freeze the rent for every stabilized tenant. His campaign says more than two million New Yorkers live in those apartments."
+    "text": "Freeze the rent for every stabilized tenant. The Rent Guidelines Board voted a freeze in June 2026; landlords are suing to undo it."
   },
   {
     "where": "queens",
     "who": "Mamdani",
     "title": "Fast, fare-free buses",
     "cites": [
-      40
+      40,
+      100
     ],
-    "text": "End the fare on every city bus. Speed them with priority lanes, queue-jump signals, and loading zones so double-parkers stay out of the way."
+    "text": "End the fare on every city bus and speed them up with priority lanes, queue-jump signals and loading zones. Albany has not funded it yet."
   },
   {
     "where": "queens",
@@ -1662,25 +2355,27 @@ export const PLANKS = [
     "cites": [
       40
     ],
-    "text": "A Department of Community Safety: mental-health crisis response, outreach workers in 100 subway stations, gun-violence programs, and an 800 percent increase for hate-violence prevention. Police keep a role. They stop being the safety net."
+    "text": "A Department of Community Safety: mental-health crisis response, outreach workers in 100 subway stations, gun-violence programs, and an 800 percent increase for hate-violence prevention."
   },
   {
     "where": "queens",
     "who": "Mamdani",
-    "title": "No-cost childcare",
+    "title": "No-cost child care",
     "cites": [
-      40
+      40,
+      34
     ],
-    "text": "Free child care from six weeks to five years. Child-care workers paid on par with public-school teachers."
+    "text": "Free child care from six weeks to five years, with child-care workers paid like public-school teachers. The first 2-K seats opened in September 2026."
   },
   {
     "where": "queens",
     "who": "Mamdani",
     "title": "City-owned groceries",
     "cites": [
-      40
+      40,
+      35
     ],
-    "text": "A network of city-owned stores. No rent, no property tax, and wholesale prices, so the savings go to shoppers."
+    "text": "City-owned stores with no rent and no property tax, selling near wholesale. The first site, La Marqueta in East Harlem, is projected to open in 2027."
   },
   {
     "where": "queens",
@@ -1689,7 +2384,7 @@ export const PLANKS = [
     "cites": [
       40
     ],
-    "text": "Triple production of permanently affordable, union-built, rent-stabilized homes: 200,000 new units over ten years. Any project that is 100 percent affordable is fast-tracked."
+    "text": "Triple production of permanently affordable, union-built, rent-stabilized homes: 200,000 over ten years."
   },
   {
     "where": "queens",
@@ -1698,16 +2393,17 @@ export const PLANKS = [
     "cites": [
       40
     ],
-    "text": "One office for code enforcement. If the owner will not make the repair, the city does it and sends the bill. In the worst cases, the city takes the building."
+    "text": "One office for code enforcement. If the owner will not make the repair, the city does it and sends the bill."
   },
   {
     "where": "queens",
     "who": "Mamdani",
     "title": "Who pays",
     "cites": [
-      40
+      40,
+      101
     ],
-    "text": "Match New Jersey's 11.5 percent corporate tax, about $5 billion. A 2 percent city tax on income over $1 million. Another $1 billion from procurement reform, more tax auditors, and fines on corrupt landlords."
+    "text": "Match New Jersey's 11.5 percent corporate tax and add 2 percent on income over $1 million. The governor blocked the millionaires tax in 2026."
   },
   {
     "where": "queens",
@@ -1725,16 +2421,17 @@ export const PLANKS = [
     "cites": [
       42
     ],
-    "text": "Medicare for every American, cradle to grave, including vision, dental, and hearing. No premiums, copays, or deductibles. Automatic, and accepted everywhere. Extra union or employer plans can remain. He also wants medical debt abolished."
+    "text": "Medicare for every American, including vision, dental and hearing. No premiums, copays or deductibles. Medical debt abolished."
   },
   {
     "where": "detroit",
     "who": "El-Sayed",
     "title": "Money out of politics",
     "cites": [
-      43
+      43,
+      114
     ],
-    "text": "He says he has never taken a dime of corporate money and never will. Overturn Citizens United. Ban outside spending by corporate 501(c)(4)s, super PACs, and 527s. Public election funding and spending caps."
+    "text": "No corporate PAC money. Overturn Citizens United. Ban outside spending by super PACs and dark-money groups. Public election funding."
   },
   {
     "where": "detroit",
@@ -1743,7 +2440,7 @@ export const PLANKS = [
     "cites": [
       44
     ],
-    "text": "Tax capital gains over $1 million like ordinary income, close the stepped-up basis loophole, and tax wealth over $1 billion. A federal tax exemption on the first $50,000. One good job should raise a family."
+    "text": "Tax capital gains over $1 million like wages, close the stepped-up basis loophole, and exempt the first $50,000 of income from federal tax."
   },
   {
     "where": "detroit",
@@ -1752,7 +2449,7 @@ export const PLANKS = [
     "cites": [
       44
     ],
-    "text": "A building boom and a federal renter bill of rights. Ban large corporations from owning homes they speculate on, and ban software that lets landlords fix rents together."
+    "text": "A building boom and a federal renter bill of rights. Stop big corporations from speculating on homes and ban rent-fixing software."
   },
   {
     "where": "detroit",
@@ -1761,7 +2458,7 @@ export const PLANKS = [
     "cites": [
       43
     ],
-    "text": "At least 50 gallons of clean water a person a day. Bills capped at 2 percent of household income, and no shutoffs for families who cannot pay. Every lead pipe in Michigan out by 2030. Shut down Line 5."
+    "text": "Water bills capped at 2 percent of household income, no shutoffs for families who cannot pay, and every lead pipe in Michigan out by 2030."
   },
   {
     "where": "detroit",
@@ -1770,7 +2467,7 @@ export const PLANKS = [
     "cites": [
       44
     ],
-    "text": "Universal child care and pre-K. A $60,000 minimum salary for teachers. Fully fund the Individuals with Disabilities Education Act. A debt-free, tuition-free path through college or an apprenticeship."
+    "text": "Universal child care and pre-K, a $60,000 minimum teacher salary, and a tuition-free path through college or an apprenticeship."
   },
   {
     "where": "detroit",
@@ -1779,16 +2476,7 @@ export const PLANKS = [
     "cites": [
       45
     ],
-    "text": "The centers pay their own power, so household rates do not rise. Closed-loop cooling, so they do not drain or pollute the water. They deliver the local jobs they promise, built by contractors with registered apprenticeships. Neighbors get a say."
-  },
-  {
-    "where": "detroit",
-    "who": "El-Sayed",
-    "title": "Diplomacy",
-    "cites": [
-      43
-    ],
-    "text": "A foreign policy centered on diplomacy, cooperation, and human rights. No blank-check funding for foreign militaries, including Egypt, Israel, Saudi Arabia, and the UAE. He supports an immediate arms embargo on Israel."
+    "text": "Data centers pay for their own power and water so household bills do not rise, and neighbors get a say."
   },
   {
     "where": "texas",
@@ -1797,17 +2485,17 @@ export const PLANKS = [
     "cites": [
       67
     ],
-    "text": "Reject private-school voucher programs that, he says, defund public schools. Universal pre-K for 3- and 4-year-olds, more teachers, more counselors, and phonics-based reading help."
+    "text": "No private-school vouchers. Universal pre-K for 3- and 4-year-olds, more teachers, more counselors, and phonics-based reading help."
   },
   {
     "where": "texas",
     "who": "Talarico",
-    "title": "$15 an hour",
+    "title": "Raise pay",
     "cites": [
       68,
-      69
+      71
     ],
-    "text": "Raise the federal minimum wage to $15 an hour, expand overtime, and pass paid family leave. He says he has never taken corporate PAC money."
+    "text": "Raise the minimum wage, expand overtime, and pass paid family leave."
   },
   {
     "where": "texas",
@@ -1816,17 +2504,17 @@ export const PLANKS = [
     "cites": [
       69
     ],
-    "text": "Ban super PACs and corporate PACs. Ban partisan gerrymandering. Ban members of Congress from trading individual stocks."
+    "text": "Ban super PACs and corporate PACs, ban partisan gerrymandering, and ban members of Congress from trading individual stocks."
   },
   {
     "where": "texas",
     "who": "Talarico",
-    "title": "Costs",
+    "title": "Lower costs",
     "cites": [
       70,
       71
     ],
-    "text": "A public health-insurance option, insulin and drug caps, down-payment help for first-time buyers, and a halt to corporate landlords using software to hike rents together."
+    "text": "A public health-insurance option, caps on insulin and drug prices, medical-debt relief, and down-payment help for first-time buyers."
   },
   {
     "where": "texas",
@@ -1835,7 +2523,7 @@ export const PLANKS = [
     "cites": [
       71
     ],
-    "text": "Universal child care and paid family leave, plus a permanently expanded Child Tax Credit. He rolled the package out in August 2026 as a New American Dream agenda."
+    "text": "Universal child care, paid family leave and a bigger Child Tax Credit: his New American Dream agenda from August 2026."
   }
 ];
 
@@ -1869,11 +2557,6 @@ export const SOURCES = [
     "n": 6,
     "label": "Columbia Medicine, alumni profile.",
     "url": "https://www.vagelos.columbia.edu/about-us/columbia-medicine-magazine/archives/fall-winter-2016/alumni-news-notes/alumni-profile-abdul-el-sayed14"
-  },
-  {
-    "n": 7,
-    "label": "Columbia Mailman School, El-Sayed takes health reins in Detroit.",
-    "url": "https://www.publichealth.columbia.edu/news/mailmans-el-sayed-takes-health-reins-detroit"
   },
   {
     "n": 8,
@@ -1961,11 +2644,6 @@ export const SOURCES = [
     "url": "https://hellgatenyc.com/zohran-mamdani-goes-the-distance/"
   },
   {
-    "n": 25,
-    "label": "Zohran Mamdani on X, after the Manhattan walk.",
-    "url": "https://x.com/ZohranKMamdani/status/1937133937316233269"
-  },
-  {
     "n": 26,
     "label": "amNY, ranked-choice primary results.",
     "url": "https://www.amny.com/news/mamdani-democratic-primary-ranked-choice-vote-win/"
@@ -2024,11 +2702,6 @@ export const SOURCES = [
     "n": 37,
     "label": "Michigan Advance, El-Sayed wins the Senate primary.",
     "url": "https://michiganadvance.com/2026/08/05/abdul-el-sayed-squeaks-out-win-over-haley-stevens-in-hotly-contested-democratic-us-senate-primary/"
-  },
-  {
-    "n": 38,
-    "label": "CNBC, Michigan Senate primary.",
-    "url": "https://www.cnbc.com/2026/08/04/abdul-el-sayed-haley-stevens-michigan-primary.html"
   },
   {
     "n": 39,
@@ -2096,24 +2769,9 @@ export const SOURCES = [
     "url": "https://www.justice.gov/archive/opa/pr/2008/January/08_nsd_029.html"
   },
   {
-    "n": 53,
-    "label": "Public Health Post, El-Sayed on rebuilding Detroit's health department.",
-    "url": "https://publichealthpost.org/health-equity/abdul-el-sayed/"
-  },
-  {
     "n": 54,
     "label": "New York City Board of Elections, certified 2020 Assembly District 36 Democratic primary.",
     "url": "https://vote.nyc/sites/default/files/pdf/election_results/2020/20200623Primary%20Election/01402400036Queens%20Democratic%20Member%20of%20the%20Assembly%2036th%20Assembly%20District%20Recap.pdf"
-  },
-  {
-    "n": 55,
-    "label": "Associated Press, Ocasio-Cortez campaigning for El-Sayed, 2018.",
-    "url": "https://apnews.com/gubernatorial-elections-34d51f5ae23345058d368f77f41a9cb1"
-  },
-  {
-    "n": 56,
-    "label": "Associated Press, El-Sayed enters the Senate race; Sanders endorses the same day.",
-    "url": "https://apnews.com/article/michigan-senate-race-democrat-abdul-elsayed-fb8b90a59ae5df53f5c6b524968b205e"
   },
   {
     "n": 57,
@@ -2121,19 +2779,9 @@ export const SOURCES = [
     "url": "https://www.cityandstateny.com/politics/2021/10/taxi-drivers-plan-hunger-strike-debt-relief/186185/"
   },
   {
-    "n": 58,
-    "label": "Detroit News, McMorrow endorses El-Sayed after the primary is called.",
-    "url": "https://www.detroitnews.com/story/news/politics/elections/2026/08/05/mallory-mcmorrow-endorses-abdul-el-sayed-after-nbc-news-declares-him-winner/91177722007/"
-  },
-  {
     "n": 59,
     "label": "New York City Board of Elections, 2025 Democratic mayor ranked-choice recap.",
     "url": "https://www.vote.nyc/sites/default/files/pdf/election_results/2025/20250624Primary%20Election/rcv/DEM_Mayor_Citywide.pdf"
-  },
-  {
-    "n": 60,
-    "label": "Detroit Free Press, Stevens concedes and endorses El-Sayed.",
-    "url": "https://www.freep.com/story/news/politics/elections/2026/08/05/who-won-us-senate-primary-election-abdul-el-sayed-haley-stevens/91094156007/"
   },
   {
     "n": 61,
@@ -2144,11 +2792,6 @@ export const SOURCES = [
     "n": 62,
     "label": "Texas Tribune, how teaching middle school spurred Talarico's Senate bid.",
     "url": "https://www.texastribune.org/2026/01/16/james-talarico-texas-senate-democrat-teacher-election-2026/"
-  },
-  {
-    "n": 63,
-    "label": "Texas Tribune, Talarico enters the 2026 Senate race.",
-    "url": "https://www.texastribune.org/2025/09/09/james-talarico-texas-senate-democrat-primary/"
   },
   {
     "n": 64,
@@ -2192,27 +2835,257 @@ export const SOURCES = [
   },
   {
     "n": 72,
+    "label": "Christian Post, Talarico calls the Ten Commandments bill “deeply un-Christian” (May 2023 hearing).",
+    "url": "https://www.christianpost.com/news/texas-lawmaker-ten-commandments-in-schools-deeply-un-christian.html"
+  },
+  {
+    "n": 73,
+    "label": "FOX 7 Austin, Talarico reveals his diabetes while introducing insulin legislation.",
+    "url": "https://fox7austin.com/news/talarico-reveals-he-has-diabetes-while-introducing-insulin-legislation"
+  },
+  {
+    "n": 74,
+    "label": "Texas Tribune, Texas House impeaches Ken Paxton, 121–23.",
+    "url": "https://www.texastribune.org/2023/05/27/ken-paxton-texas-house-impeachment-vote"
+  },
+  {
+    "n": 75,
+    "label": "Texas Tribune, Dunn and Wilks money around the Paxton impeachment.",
+    "url": "https://www.texastribune.org/2023/07/24/ken-paxton-impeachment-dunn-wilks/"
+  },
+  {
+    "n": 76,
+    "label": "Texas Tribune, Defend Texas Liberty PAC gives Dan Patrick $1 million and lends $2 million.",
+    "url": "https://www.texastribune.org/2023/07/18/ken-paxton-impeachment-dan-patrick/"
+  },
+  {
+    "n": 77,
+    "label": "NBC News, Paxton fled home in a truck to avoid a subpoena, process server alleges.",
+    "url": "https://www.nbcnews.com/politics/politics-news/texas-ag-paxton-fled-home-truck-driven-wife-avoid-subpoena-process-ser-rcna49558"
+  },
+  {
+    "n": 78,
+    "label": "Texas Tribune, Paxton's pretrial diversion deal in the securities-fraud case.",
+    "url": "https://www.texastribune.org/2024/03/25/ken-paxton-plea-deal-securities-fraud-felony/"
+  },
+  {
+    "n": 83,
+    "label": "FOX 7 Austin, Paxton's rally remarks and Trump's call for a debate.",
+    "url": "https://www.fox7austin.com/news/texas-senate-talarico-paxton-debate-trump"
+  },
+  {
+    "n": 84,
+    "label": "TheWrap, Talarico on Morning Joe challenges Paxton to debates.",
+    "url": "https://www.thewrap.com/media-platforms/politics/morning-joe-james-talarico-ken-paxton-debate-challenge/"
+  },
+  {
+    "n": 85,
+    "label": "Washington Examiner, Talarico ad on Paxton refusing to debate.",
+    "url": "https://www.washingtonexaminer.com/?p=4709396"
+  },
+  {
+    "n": 86,
+    "label": "The Hill via Yahoo, Talarico joins the 2025 quorum break.",
+    "url": "https://www.yahoo.com/news/articles/texas-legislator-james-talarico-democratic-232949168.html"
+  },
+  {
+    "n": 87,
+    "label": "KSAT, Texas Supreme Court rejects removing Democratic lawmakers over the quorum break.",
+    "url": "https://www.ksat.com/news/texas/2026/05/15/texas-supreme-court-rejects-abbotts-request-to-remove-democratic-rep-gene-wu-from-office-over-redistricting-protest/"
+  },
+  {
+    "n": 90,
+    "label": "CNN via KVIA, Cuomo and Mamdani in the final primary debate.",
+    "url": "https://kvia.com/news/2025/06/12/cuomo-and-mamdani-tear-into-each-other-in-final-new-york-city-mayoral-debate/"
+  },
+  {
+    "n": 93,
+    "label": "JNS, Trump calls Mamdani a “100% Communist Lunatic.”",
+    "url": "https://www.jns.org/trump-post-new-york-primary-mamdani-a-100-communist-lunatic"
+  },
+  {
+    "n": 94,
+    "label": "Straight Arrow News, Mamdani responds to Trump's arrest threat.",
+    "url": "https://san.com/cc/we-wont-accept-this-intimidation-mamdani-responds-to-trump-threat/"
+  },
+  {
+    "n": 95,
+    "label": "Newsweek, Mamdani's victory speech in full.",
+    "url": "https://www.newsweek.com/zohran-mamdanis-victory-speech-in-full-10994437"
+  },
+  {
+    "n": 96,
+    "label": "CBS News, Trump and Mamdani in the Oval Office.",
+    "url": "https://www.cbsnews.com/news/trump-mamdani-biggest-points-of-praise-oval-office-meeting-white-house/"
+  },
+  {
+    "n": 97,
+    "label": "THE CITY, Mamdani's polar plunge and social videos.",
+    "url": "https://www.thecityreporter.nyc/2025/01/21/zohran-mamdani-instagram-tiktok-social-media/"
+  },
+  {
+    "n": 100,
+    "label": "Washington Times, Mamdani concedes free buses won't happen this year.",
+    "url": "https://www.washingtontimes.com/news/2026/apr/9/zohran-mamdani-concedes-free-bus-pledge-wont-fulfilled-year/"
+  },
+  {
+    "n": 101,
+    "label": "Gothamist, lawmakers back Mamdani's tax on the rich, setting up a clash with Hochul.",
+    "url": "https://gothamist.com/news/ny-lawmakers-back-mamdani-push-to-tax-the-rich-setting-up-clash-with-hochul"
+  },
+  {
+    "n": 102,
+    "label": "Bloomberg Law, landlords sue to void the rent freeze.",
+    "url": "https://news.bloomberglaw.com/new-york-brief/nyc-landlords-sue-to-invalidate-mamdani-backed-rent-freeze"
+  },
+  {
+    "n": 104,
+    "label": "Al Jazeera, Mamdani's record DoorDash settlement.",
+    "url": "https://aljazeera.com/economy/2026/9/22/nyc-mayor-mamdani-reaches-record-doordash-settlement-for-underpaid-workers"
+  },
+  {
+    "n": 105,
+    "label": "Associated Press via ADN, Cuomo stays in the race as an independent.",
+    "url": "https://www.adn.com/nation-world/2025/07/14/cuomo-stays-in-nyc-mayors-race-as-an-independent-after-losing-democratic-primary-to-mamdani/"
+  },
+  {
+    "n": 110,
+    "label": "Michigan Daily, Clinton rallies grads (2007 commencement).",
+    "url": "https://www.michigandaily.com/uncategorized/clinton-rallies-grads/"
+  },
+  {
+    "n": 111,
+    "label": "Bridge Michigan, El-Sayed's Wayne County record.",
+    "url": "https://bridgemi.com/michigan-government/abdul-el-sayed-under-the-microscope-from-public-health-to-politics/"
+  },
+  {
+    "n": 112,
+    "label": "ClickOnDetroit, El-Sayed launches his Senate campaign.",
+    "url": "https://clickondetroit.com/news/local/2025/04/17/abdul-el-sayed-launches-campaign-for-michigans-us-senate-seat"
+  },
+  {
+    "n": 113,
+    "label": "Newsweek, AIPAC money in Michigan's Senate primary.",
+    "url": "https://www.newsweek.com/aipac-soros-money-shaping-michigans-senate-race-12532088"
+  },
+  {
+    "n": 114,
+    "label": "FOX 2 Detroit, El-Sayed after his primary win.",
+    "url": "https://www.fox2detroit.com/news/senate-primary-winner-abdul-el-sayed-talks-upset-over-haley-stevens-we-shook-up-world"
+  },
+  {
+    "n": 115,
+    "label": "Michigan Public, fact check: the Florida tag follows Mike Rogers.",
+    "url": "https://www.michiganpublic.org/politics-government/2026-09-08/fact-check-florida-man-tag-follows-mike-rogers-in-new-u-s-senate-bid"
+  },
+  {
+    "n": 116,
+    "label": "Daily Beast, El-Sayed debates an empty podium on Fox 2.",
+    "url": "https://www.thedailybeast.com/dem-star-abdul-el-sayed-skewers-coward-trump-pick-mike-rogers-on-live-tv/"
+  },
+  {
+    "n": 117,
+    "label": "CBS News, Rogers skips the Fox 2 event.",
+    "url": "https://www.cbsnews.com/news/mike-rogers-senate-debate-abdul-el-sayed/"
+  },
+  {
+    "n": 118,
+    "label": "Mediaite, El-Sayed holds up two fingers.",
+    "url": "https://www.mediaite.com/politics/how-many-yachts-do-you-have-el-sayed-holds-up-two-fingers-as-mike-rogers-dodges-debate-jab/"
+  },
+  {
+    "n": 119,
+    "label": "Detroit News via KDH News, the Oct. 8 debate decoded.",
+    "url": "https://kdhnews.com/news/politics/el-sayed-rogers-debate-rife-with-interruptions-we-decoded-the-insults/article_f3f10016-ecd6-50a4-ace8-fe3d77993cf9.html"
+  },
+  {
+    "n": 120,
+    "label": "PolitiFact, fact-checking the Michigan Senate debate.",
+    "url": "https://politifact.com/article/2026/oct/08/michigan-senate-debate-fact-check-el-sayed-rogers/"
+  },
+  {
+    "n": 121,
+    "label": "Associated Press via AJC, the first Michigan Senate debate grows hostile.",
+    "url": "https://www.ajc.com/news/2026/10/rogers-and-el-sayed-attack-each-other-forcefully-as-first-michigan-senate-debate-grows-hostile/"
+  },
+  {
+    "n": 122,
+    "label": "PolitiFact, the debate exchange about El-Sayed's mother.",
+    "url": "https://politifact.com/article/2026/oct/08/michigan-senate-debate-fact-check-el-sayed-rogers/"
+  },
+  {
+    "n": 123,
+    "label": "Newsweek, the first Michigan Senate debate.",
+    "url": "https://www.newsweek.com/mike-rogers-abdul-el-sayed-first-debate-michigan-12543810"
+  },
+  {
+    "n": 124,
+    "label": "KUT, the Texas House passes school vouchers.",
+    "url": "https://www.kut.org/politics/2025-04-16/texas-house-billions-school-funding-voucher"
+  },
+  {
+    "n": 125,
+    "label": "Mediaite, Joe Rogan urges Talarico to run for president.",
+    "url": "https://www.mediaite.com/media/podcasts/joe-rogan-urges-texas-progressive-you-need-to-run-for-president"
+  },
+  {
+    "n": 126,
+    "label": "KSAT, Colbert blasts CBS for nixing the Talarico interview.",
+    "url": "https://www.ksat.com/news/texas/2026/02/17/stephen-colbert-blasts-cbs-for-nixing-james-talarico-interview/"
+  },
+  {
+    "n": 127,
+    "label": "KEDT, Kimmel's Talarico interview won't air on ABC.",
+    "url": "https://www.kedt.org/texas-news/2026-09-10/jimmy-kimmels-interview-with-james-talarico-wont-air-on-abc-will-go-to-youtube-instead"
+  },
+  {
+    "n": 128,
+    "label": "Texas Tribune, Paxton's impeachment lawyer endorses Talarico.",
+    "url": "https://www.texastribune.org/2026/06/08/texas-ken-paxton-impeachment-lawyer-dan-cogdell-james-talarico-endorsement-senate/"
+  },
+  {
+    "n": 140,
     "label": "Talarico for Texas, Meet James.",
     "url": "https://jamestalarico.com/meet-james-talarico/"
   },
   {
-    "n": 73,
+    "n": 141,
     "label": "USA Today, Talarico on what his dad taught him a man does.",
     "url": "https://www.usatoday.com/story/opinion/columnist/2026/06/06/james-talarico-texas-masculinity/90420159007/"
   },
   {
-    "n": 74,
+    "n": 142,
     "label": "Vulture, what Mira Nair taught Zohran Mamdani.",
     "url": "https://www.vulture.com/article/what-mira-nair-taught-zohran-mamdani.html"
   },
   {
-    "n": 75,
+    "n": 143,
     "label": "The Indian Eye, Mamdani on the meaning of Zohran.",
     "url": "https://theindianeye.com/2025/10/07/qa-with-zohran-mamdani-the-values-and-ideals-given-by-my-family-make-me-a-proud-indian-american/"
   },
   {
-    "n": 76,
+    "n": 144,
     "label": "James Talarico, My mom taught me how to fight.",
     "url": "https://jamestalarico.substack.com/p/my-mom-taught-me-how-to-fight"
+  },
+  {
+    "n": 145,
+    "label": "NBC News, Eric Adams backs Andrew Cuomo.",
+    "url": "https://www.nbcnews.com/politics/elections/new-york-city-mayor-eric-adams-backs-andrew-cuomo-race-succeed-rcna239364"
+  },
+  {
+    "n": 146,
+    "label": "Michigan Advance, Rogers made almost $100K advising a company that helped Maduro's regime spy on citizens.",
+    "url": "https://michiganadvance.com/2026/01/20/mike-rogers-made-almost-100k-advising-a-company-that-helped-maduro-regime-spy-on-its-citizens/"
+  },
+  {
+    "n": 147,
+    "label": "Iron Mountain Daily News, GOP super PAC commits $45M to Michigan's Senate race.",
+    "url": "https://www.ironmountaindailynews.com/news/local-news/2026/04/gop-super-pac-commits-45m-to-michigan-us-senate-race/"
+  },
+  {
+    "n": 148,
+    "label": "Yahoo News, Trump's post and El-Sayed's reply.",
+    "url": "https://www.yahoo.com/news/politics/articles/panicked-trump-loses-dem-star-084813690.html"
   }
 ];

@@ -1,16 +1,22 @@
-// Builds the comic's pages and source list from panels.js. Used by story.js in the
-// browser and by prerender.mjs, which bakes the same markup into index.html so the
-// text is readable before (and without) JavaScript. Only createElement,
-// createTextNode, setAttribute and append are used, so a tiny DOM shim can run it.
-import { PAGES, SOURCES } from "./panels.js?v=readable1";
-import { ART_SIZES } from "./art-widths.js?v=1";
+// Builds the comic's pages, platform cards and source list from panels.js. Used by
+// story.js in the browser and by prerender.mjs, which bakes the same markup into
+// index.html so the text is readable before (and without) JavaScript. Only
+// createElement, createTextNode, setAttribute and append are used, so a tiny DOM
+// shim can run it.
+//
+// Lettering is set on the art: caption boxes grouped by corner, speech bubbles
+// placed by center point with a tail toward the speaker, and SFX. On narrow
+// screens comic.css moves the lettering under the art.
+import { PAGES, PLANKS, SOURCES } from "./panels.js?v=combined1";
+import { ART_SIZES } from "./art-widths.js?v=combined1";
 
 const ART_DIR = "../art/story/chibi/";
-const ART_VER = "noglasses1";
-// The book is at most 1040px wide with 24px padding; on phones it is the viewport minus 52px.
-const SIZES = "(max-width: 760px) calc(100vw - 52px), 990px";
+const ART_VER = "combined1";
+// The book is at most 1120px wide; half panels take half of it. Phones are one column.
+const SIZES_WIDE = "(max-width: 760px) calc(100vw - 40px), 1060px";
+const SIZES_HALF = "(max-width: 760px) calc(100vw - 40px), 530px";
 
-export function renderBook(doc, book, sourcesHost) {
+export function renderBook(doc, book, sourcesHost, planksHost) {
   function el(tag, className, text) {
     const node = doc.createElement(tag);
     if (className) node.setAttribute("class", className);
@@ -18,24 +24,9 @@ export function renderBook(doc, book, sourcesHost) {
     return node;
   }
 
-  function renderLettering(panel) {
-    const lettering = el("figcaption", "lettering");
-    for (const cap of panel.captions || []) {
-      if (cap.quote) {
-        const quote = el("blockquote", "story-quote");
-        quote.append(el("p", "quote-text", `“${cap.text}”`));
-        quote.append(el("footer", "quote-speaker", cap.who));
-        lettering.append(quote);
-      } else {
-        lettering.append(el("p", "caption", cap.text));
-      }
-    }
-    return lettering;
-  }
-
-  function renderCites(panel, className) {
+  function renderCites(panel) {
     if (!panel.cites || !panel.cites.length) return null;
-    const cite = el("a", className, `src ${panel.cites.join(", ")}`);
+    const cite = el("a", "cite", `src ${panel.cites.join(", ")}`);
     cite.setAttribute("href", `#src-${panel.cites[0]}`);
     cite.setAttribute("aria-label", `Sources ${panel.cites.join(", ")}`);
     return cite;
@@ -50,34 +41,61 @@ export function renderBook(doc, book, sourcesHost) {
       const set = Object.entries(info.variants).map(([w, file]) => `${url(file)} ${w}w`);
       set.push(`${url(panel.art)} ${info.w}w`);
       img.setAttribute("srcset", set.join(", "));
-      img.setAttribute("sizes", SIZES);
+      img.setAttribute("sizes", panel.size === "half" ? SIZES_HALF : SIZES_WIDE);
       img.setAttribute("width", String(info.w));
       img.setAttribute("height", String(info.h));
     }
-    img.setAttribute("alt", panel.alt || panel.scene);
+    img.setAttribute("alt", panel.alt || panel.scene || "");
     img.setAttribute("loading", "lazy");
     img.setAttribute("decoding", "async");
     return img;
   }
 
+  // Caption boxes are grouped by corner so several can stack in one spot.
+  function renderCaptions(panel) {
+    const stacks = new Map();
+    for (const cap of panel.captions || []) {
+      const at = cap.at || "tl";
+      if (!stacks.has(at)) stacks.set(at, el("div", `caps ${at}`));
+      stacks.get(at).append(el("p", `cap${cap.voice ? " voice" : ""}`, cap.text));
+    }
+    return [...stacks.values()];
+  }
+
+  // A bubble is placed by its center (x, y in percent of the art) and points its
+  // tail at the speaker: s, sw, se, n, nw, ne, w, e or none.
+  function renderBubble(line) {
+    const bubble = el("blockquote", `bubble tail-${line.tail || "s"}${line.shout ? " shout" : ""}`);
+    bubble.setAttribute("style", `--x:${line.x ?? 50}%;--y:${line.y ?? 20}%;--w:${line.w ?? 30}%`);
+    if (line.who) bubble.append(el("span", "who", line.who));
+    bubble.append(el("span", "said", line.text));
+    return bubble;
+  }
+
   function renderPanel(panel) {
+    if (panel.kind === "person") {
+      const node = el("div", `person ${panel.where || "both"}`);
+      node.setAttribute("id", panel.id);
+      node.append(el("span", "person-name", panel.name));
+      if (panel.line) node.append(el("span", "person-line", panel.line));
+      return node;
+    }
+
     if (panel.kind === "narration") {
       const node = el("figure", `panel narration ${panel.where || "both"}`);
       node.setAttribute("id", panel.id);
       if (panel.tag) node.append(el("span", "tag", panel.tag));
-      node.append(renderLettering(panel));
-      const cite = renderCites(panel, "cite");
+      const body = el("div", "narration-body");
+      for (const cap of panel.captions || []) body.append(el("p", cap.big ? "big" : "", cap.text));
+      node.append(body);
+      const cite = renderCites(panel);
       if (cite) node.append(cite);
       return node;
     }
 
-    const size = panel.size && panel.size !== "wide" ? ` ${panel.size}` : "";
-    const extra = `${panel.tall ? " tall" : ""}${panel.splash ? " splash" : ""}`;
-    const node = el("figure", `panel ${panel.where}${size}${extra}`);
+    const node = el("figure", `panel ${panel.where || "both"} ${panel.size || "wide"}`);
     node.setAttribute("id", panel.id);
-
     const frame = el("div", "frame");
-
     if (panel.art) {
       frame.append(renderArt(panel));
     } else {
@@ -88,20 +106,22 @@ export function renderBook(doc, book, sourcesHost) {
       frame.append(scene);
     }
 
-    if (panel.tag) frame.append(el("span", "tag", panel.tag));
-
-    if (panel.sfx) frame.append(el("span", "sfx", panel.sfx.text));
-
-    const cite = renderCites(panel, "cite");
-    if (cite) frame.append(cite);
-
-    node.append(frame);
-    const copy = el("div", "panel-copy");
-    if (panel.captions && panel.captions.length) {
-      copy.append(renderLettering(panel));
+    const lettering = el("div", "lettering");
+    if (panel.tag) lettering.append(el("span", "tag", panel.tag));
+    // On phones the lettering stacks in DOM order, so `bubblesFirst` puts the
+    // spoken line ahead of the caption that answers it.
+    const caps = renderCaptions(panel);
+    const bubbles = (panel.bubbles || []).map(renderBubble);
+    for (const node2 of panel.bubblesFirst ? [...bubbles, ...caps] : [...caps, ...bubbles]) lettering.append(node2);
+    if (panel.sfx) {
+      const sfx = el("span", "sfx", panel.sfx.text);
+      sfx.setAttribute("style", `--x:${panel.sfx.x ?? 78}%;--y:${panel.sfx.y ?? 60}%;--r:${panel.sfx.rot ?? -8}deg`);
+      lettering.append(sfx);
     }
-    node.append(copy);
-
+    frame.append(lettering);
+    const cite = renderCites(panel);
+    if (cite) frame.append(cite);
+    node.append(frame);
     return node;
   }
 
@@ -110,17 +130,29 @@ export function renderBook(doc, book, sourcesHost) {
     if (page.id) section.setAttribute("id", page.id);
     if (page.chapter) {
       const head = el("h2", "chapter");
-      if (page.label) head.append(el("span", "", page.label));
-      head.append(doc.createTextNode(page.chapter));
+      if (page.label) head.append(el("span", "label", page.label));
+      head.append(el("span", "title", page.chapter));
       section.append(head);
-    }
-    if (page.id === "planks") {
-      section.append(el("p", "plank-note", "These summaries describe campaign proposals, not a list of completed programs. Each panel links to its sources. Actions taken in office are described separately in the biographies above."));
     }
     const grid = el("div", "grid");
     for (const panel of page.panels) grid.append(renderPanel(panel));
     section.append(grid);
     book.append(section);
+  }
+
+  if (planksHost) {
+    for (const plank of PLANKS) {
+      const card = el("article", `plank ${plank.where}`);
+      card.append(el("small", "", plank.who));
+      card.append(el("h3", "", plank.title));
+      card.append(el("p", "", plank.text));
+      if (plank.cites) {
+        const cite = el("a", "plank-cite", `src ${plank.cites.join(", ")}`);
+        cite.setAttribute("href", `#src-${plank.cites[0]}`);
+        card.append(cite);
+      }
+      planksHost.append(card);
+    }
   }
 
   for (const source of SOURCES) {
