@@ -22,15 +22,18 @@ const doc = { createElement: (tag) => new Element(tag), createTextNode: (text) =
 
 const book = new Element("main");
 const sources = new Element("ol");
-renderBook(doc, book, sources);
+const planks = new Element("div");
+renderBook(doc, book, sources, planks);
 
 const file = fileURLToPath(new URL("./index.html", import.meta.url));
 let html = readFileSync(file, "utf8");
 const bookRe = /<main class="book" id="book"[^>]*>[\s\S]*?<\/main>/;
 const sourcesRe = /<ol class="sources" id="sources"[^>]*>[\s\S]*?<\/ol>/;
+const planksRe = /<div class="planks" id="planks"[^>]*>[\s\S]*?<\/div>/;
 if (!bookRe.test(html) || !sourcesRe.test(html)) throw new Error("book or sources container not found in index.html");
 html = html
   .replace(bookRe, () => `<main class="book" id="book" data-prerendered="1">${book.children.map((c) => c.html()).join("")}</main>`)
-  .replace(sourcesRe, () => `<ol class="sources" id="sources">${sources.children.map((c) => c.html()).join("")}</ol>`);
+  .replace(sourcesRe, () => `<ol class="sources" id="sources">${sources.children.map((c) => c.html()).join("")}</ol>`)
+  .replace(planksRe, () => `<div class="planks" id="planks">${planks.children.map((c) => c.html()).join("")}</div>`);
 writeFileSync(file, html);
 console.log(`prerendered ${book.children.length} pages and ${sources.children.length} sources into story/index.html`);
