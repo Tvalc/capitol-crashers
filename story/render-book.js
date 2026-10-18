@@ -7,7 +7,7 @@
 // Lettering is set on the art: caption boxes grouped by corner, speech bubbles
 // placed by center point with a tail toward the speaker, and SFX. On narrow
 // screens comic.css moves the lettering under the art.
-import { PAGES, PLANKS, SOURCES } from "./panels.js?v=aoc1";
+import { PAGES, PLANKS, SOURCES } from "./panels.js?v=copy4";
 import { ART_SIZES } from "./art-widths.js?v=aoc1";
 
 const ART_DIR = "../art/story/chibi/";

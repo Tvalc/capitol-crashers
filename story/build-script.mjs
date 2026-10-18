@@ -27,7 +27,7 @@ function capKind(cap) {
 }
 
 let out = "";
-out += "# Three Roads to the Capitol: script and Makko prompts\n\n";
+out += "# Four Roads to the Capitol: script and Makko prompts\n\n";
 out += "Generated from `story/panels.js`. Edit that file, not this one.\n\n";
 out += "## How to add art\n\n";
 out += "1. Generate each panel in Makko with the style line below plus that panel's prompt.\n";

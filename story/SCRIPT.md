@@ -1,4 +1,4 @@
-# Three Roads to the Capitol: script and Makko prompts
+# Four Roads to the Capitol: script and Makko prompts
 
 Generated from `story/panels.js`. Edit that file, not this one.
 
@@ -19,8 +19,8 @@ Keep all lettering out of the art. Captions and speech bubbles are added by the 
 ### open-n · undefined · (About this issue)
 
 - **Shape:** narration page
-- **Caption:** Three people in the game. One more whose hearings we collect.
-- **Caption:** This comic follows Mamdani, El-Sayed and Talarico from childhood through the races they’re in now. It also follows Alexandria Ocasio-Cortez: Bronx to the House floor. The scenes showing them together are imagined; the facts are sourced.
+- **Caption:** Four lives. Four paths into public service.
+- **Caption:** Zohran Mamdani, Abdul El-Sayed, James Talarico and Alexandria Ocasio-Cortez: where they grew up, the work they have done, and what they want to change next. Their histories are sourced. Scenes showing them together are imagined.
 - **Sources:** [1](https://www.cnn.com/politics/zohran-mamdani-fast-facts), [3](https://bridgemi.com/michigan-government/who-is-abdul-el-sayed-what-to-know-about-michigan-democrats-us-senate-winner/), [61](https://www.britannica.com/biography/James-Talarico), [149](https://www.womenshistory.org/education-resources/biographies/alexandria-ocasio-cortez)
 
 ## Chapter 1 · Zohran Mamdani: Growing up and working in Queens
@@ -49,17 +49,6 @@ Keep all lettering out of the art. Captions and speech bubbles are added by the 
 
 > Skinny teenage South Asian boy on a patchy Bronx cricket field in white cricket kit, swinging a bat, red ball exploding off. Younger version of the adult with a full dark beard and thick styled dark hair: less beard, still dark hair with volume, not a professional cricket star. Split background Table Mountain and New York skyline. No readable text.
 
-### p07 · undefined · (Queens · 2019)
-
-- **Shape:** half
-- **Caption:** College in Maine. Then a detour: he raps as “Mr. Cardamom.”
-- **Caption:** His 2019 video “Nani” stars Madhur Jaffrey as his grandmother.
-- **Sources:** [2](https://www.theafricareport.com/386712/zohran-mamdani-10-things-about-uganda-born-democratic-nominee-for-new-york-city-mayor/), [8](https://www.vice.com/en/article/madhur-jaffrey-nani-rap-video/)
-
-**Makko prompt:**
-
-> Landscape 4:3. A young South Asian man in a bright tracksuit raps on a busy Jackson Heights, Queens street under the elevated 7 train, beside a regal elderly Indian grandmother in a sari who is clearly the star. Halal cart steam, colorful shop signs (no readable words), playful magenta and gold lighting.
-
 ### p08 · undefined · (Queens · 2018)
 
 - **Shape:** half
@@ -70,6 +59,17 @@ Keep all lettering out of the art. Captions and speech bubbles are added by the 
 **Makko prompt:**
 
 > Night in a small Queens kitchen. A young South Asian housing counselor: full dark beard, thick styled dark hair, light blue shirt, leaning over foreclosure papers. Across from him an anxious older immigrant couple who do not look like him: a gray-haired father and a mother, different faces. Warm lamp, cold blue window. He is the only young bearded man. No second politician. No short-cropped hair. No henley. No stethoscope. No lettering.
+
+### p07 · undefined · (Queens · 2019)
+
+- **Shape:** half
+- **Caption:** He also makes music, rapping as “Mr. Cardamom.”
+- **Caption:** His 2019 video “Nani” stars Madhur Jaffrey as his grandmother.
+- **Sources:** [2](https://www.theafricareport.com/386712/zohran-mamdani-10-things-about-uganda-born-democratic-nominee-for-new-york-city-mayor/), [8](https://www.vice.com/en/article/madhur-jaffrey-nani-rap-video/)
+
+**Makko prompt:**
+
+> Landscape 4:3. A young South Asian man in a bright tracksuit raps on a busy Jackson Heights, Queens street under the elevated 7 train, beside a regal elderly Indian grandmother in a sari who is clearly the star. Halal cart steam, colorful shop signs (no readable words), playful magenta and gold lighting.
 
 ## Mamdani · 2020–2023: From housing counselor to legislator
 
@@ -85,16 +85,6 @@ Keep all lettering out of the art. Captions and speech bubbles are added by the 
 
 > Night in Astoria, Queens. One young South Asian man only: full dark beard, thick styled dark hair with volume on top, dark suit and blue polka-dot tie, clipboard, knocking on a brick row-house door under the elevated train. He is the only politician. No second man. No short-cropped hair. No black henley. No stethoscope. No lettering.
 
-### p14 · undefined · (New York · 2023)
-
-- **Shape:** half
-- **Caption:** He wins a free-bus pilot on five routes. Weekday ridership jumps 30 percent.
-- **Sources:** [19](https://www.mta.info/document/177466)
-
-**Makko prompt:**
-
-> A crowded blue-and-white New York City bus at dusk, riders of every age boarding through all doors, no fare box, big smiles. Everyday riders only. No politicians. No henley. No stethoscope. No lettering.
-
 ### p15 · undefined · (City Hall · 2021)
 
 - **Shape:** wide
@@ -106,6 +96,16 @@ Keep all lettering out of the art. Captions and speech bubbles are added by the 
 **Makko prompt:**
 
 > Night outside a grand city hall. Older immigrant taxi drivers in jackets on folding chairs with blankets, yellow cabs behind them. One thin young South Asian man with a full dark beard and styled dark hair sits among them, exhausted but unbowed. He is the only young man. No second politician. No short-cropped hair. No henley. Rain, yellow cab lights. No readable text.
+
+### p14 · undefined · (New York · 2023)
+
+- **Shape:** half
+- **Caption:** He wins a free-bus pilot on five routes. Weekday ridership jumps 30 percent.
+- **Sources:** [19](https://www.mta.info/document/177466)
+
+**Makko prompt:**
+
+> A crowded blue-and-white New York City bus at dusk, riders of every age boarding through all doors, no fare box, big smiles. Everyday riders only. No politicians. No henley. No stethoscope. No lettering.
 
 ## Mamdani · 2024–2026: Running for mayor, then governing
 
@@ -215,6 +215,40 @@ Keep all lettering out of the art. Captions and speech bubbles are added by the 
 
 > Landscape 4:3. The decommissioned City Hall subway station at midnight: curved Guastavino tile arches, brass chandeliers, skylights. A young South Asian man in a dark coat raises his right hand, left hand on two Qurans held by his wife; a small circle of witnesses. Glowing gold and green tile light.
 
+### p21 · undefined · (June 2026)
+
+- **Shape:** half
+- **Caption:** The Rent Guidelines Board approves a freeze on one- and two-year rent-stabilized leases, covering about one million apartments.
+- **Caption:** The first freeze on two-year leases in city history.
+- **SFX:** FROZEN!
+- **Sources:** [161](https://www.nyc.gov/mayors-office/news/2026/06/mayor-mamdani-s-statement-on-the-rent-guidelines-board-s-final-v), [33](https://gothamist.com/news/nyc-rent-guidelines-board-approves-2-year-rent-freeze-fulfilling-mamdani-campaign-pledge)
+
+**Makko prompt:**
+
+> Tenants cheering on the steps of a city building at dusk. Frost and ice crystals breaking off an apartment facade. One young South Asian man in a dark suit and blue polka-dot tie, full dark beard, thick styled dark hair, raising a fist with the crowd. He is the only politician in the frame. No second man. No black henley. No stethoscope. Blank protest signs with no readable words. No logos, no names.
+
+### p22 · undefined · (September 2026)
+
+- **Shape:** half
+- **Caption:** Free childcare for two-year-olds begins with 2,000 seats across the first four communities.
+- **Sources:** [162](https://www.nyc.gov/mayors-office/news/2026/09/transcript--mayor-mamdani-holds-a-press-conference-with-governor)
+
+**Makko prompt:**
+
+> A bright New York toddler classroom. Two-year-olds painting and stacking blocks. One parent waving goodbye at the door with relief. Warm joyful light. No politicians. No bearded men in suits. No henley. No stethoscope. No lettering on the walls.
+
+### p24 · undefined · (September 2026)
+
+- **Shape:** wide
+- **Caption:** $131.5 million secured in a DoorDash settlement. More than $115 million is designated for over 260,000 underpaid workers.
+- **Caption:** Payments are due to begin in fall 2026. The rest covers civil penalties and costs.
+- **SFX:** WON!
+- **Sources:** [36](https://www.nyc.gov/mayors-office/news/2026/09/mayor-mamdani-wins-record--131-5-million-from-doordash-for-deliv)
+
+**Makko prompt:**
+
+> Wide 2:1. A line of food-delivery workers on e-bikes in the rain on a New York avenue, insulated bags on their backs, raising fists and cheering as gold coins rain down around them. Neon storefront reflections, cyan and gold.
+
 ### p23 · undefined · (East Harlem · Hunts Point)
 
 - **Shape:** half
@@ -226,46 +260,13 @@ Keep all lettering out of the art. Captions and speech bubbles are added by the 
 
 > La Marqueta in East Harlem under an elevated railroad viaduct at dusk, market stalls being built out, crates of fresh produce, construction lights. Everyday shoppers and workers. No politicians. No henley. No stethoscope. No lettering.
 
-### p21 · undefined · (June 2026)
-
-- **Shape:** half
-- **Caption:** The Rent Guidelines Board freezes the rent on about one million apartments.
-- **Caption:** The first freeze on two-year leases in city history.
-- **SFX:** FROZEN!
-- **Sources:** [33](https://gothamist.com/news/nyc-rent-guidelines-board-approves-2-year-rent-freeze-fulfilling-mamdani-campaign-pledge)
-
-**Makko prompt:**
-
-> Tenants cheering on the steps of a city building at dusk. Frost and ice crystals breaking off an apartment facade. One young South Asian man in a dark suit and blue polka-dot tie, full dark beard, thick styled dark hair, raising a fist with the crowd. He is the only politician in the frame. No second man. No black henley. No stethoscope. Blank protest signs with no readable words. No logos, no names.
-
-### p22 · undefined · (September 2026)
-
-- **Shape:** half
-- **Caption:** Free, full-day child care for two-year-olds starts: more than 2,000 seats in the first four neighborhoods.
-- **Sources:** [34](https://www.nyc.gov/mayors-office/news/2026/03/mayor-mamdani-and-governor-hochul-announce-first-four-communitie)
-
-**Makko prompt:**
-
-> A bright New York toddler classroom. Two-year-olds painting and stacking blocks. One parent waving goodbye at the door with relief. Warm joyful light. No politicians. No bearded men in suits. No henley. No stethoscope. No lettering on the walls.
-
-### p24 · undefined · (September 2026)
-
-- **Shape:** wide
-- **Caption:** $131.5 million from DoorDash for about 260,000 underpaid delivery workers.
-- **Caption:** DoorDash’s own statement: “Simply put, we screwed up.”
-- **SFX:** PAID!
-- **Sources:** [36](https://www.nyc.gov/mayors-office/news/2026/09/mayor-mamdani-wins-record--131-5-million-from-doordash-for-deliv), [104](https://aljazeera.com/economy/2026/9/22/nyc-mayor-mamdani-reaches-record-doordash-settlement-for-underpaid-workers)
-
-**Makko prompt:**
-
-> Wide 2:1. A line of food-delivery workers on e-bikes in the rain on a New York avenue, insulated bags on their backs, raising fists and cheering as gold coins rain down around them. Neon storefront reflections, cyan and gold.
-
-### n2b · undefined · (The score so far)
+### n2b · undefined · (What has changed, and what comes next)
 
 - **Shape:** narration page
-- **Caption:** Not everything lands.
-- **Caption:** Albany hasn’t paid for free buses. The governor blocked his tax on millionaires. Landlords are suing to undo the freeze. He keeps pushing.
-- **Sources:** [100](https://www.washingtontimes.com/news/2026/apr/9/zohran-mamdani-concedes-free-bus-pledge-wont-fulfilled-year/), [101](https://gothamist.com/news/ny-lawmakers-back-mamdani-push-to-tax-the-rich-setting-up-clash-with-hochul), [102](https://news.bloomberglaw.com/new-york-brief/nyc-landlords-sue-to-invalidate-mamdani-backed-rent-freeze)
+- **Caption:** A rent freeze. Free childcare. A win for delivery workers.
+- **Caption:** The Rent Guidelines Board approved a freeze on one- and two-year rent-stabilized leases. The first 2,000 free 2-K seats opened in September. His administration secured a $131.5 million DoorDash settlement, with more than $115 million designated for workers.
+- **Caption:** The next goals include citywide free buses and broader childcare access. His proposed tax on millionaires has faced opposition from Governor Hochul, and landlords filed a lawsuit challenging the rent freeze. Those fights continue alongside the gains already made.
+- **Sources:** [161](https://www.nyc.gov/mayors-office/news/2026/06/mayor-mamdani-s-statement-on-the-rent-guidelines-board-s-final-v), [162](https://www.nyc.gov/mayors-office/news/2026/09/transcript--mayor-mamdani-holds-a-press-conference-with-governor), [36](https://www.nyc.gov/mayors-office/news/2026/09/mayor-mamdani-wins-record--131-5-million-from-doordash-for-deliv), [40](https://web.archive.org/web/20250702081752/https://www.zohranfornyc.com/), [101](https://gothamist.com/news/ny-lawmakers-back-mamdani-push-to-tax-the-rich-setting-up-clash-with-hochul), [102](https://news.bloomberglaw.com/new-york-brief/nyc-landlords-sue-to-invalidate-mamdani-backed-rent-freeze)
 
 ## Chapter 2 · Abdul El-Sayed: Growing up in Michigan and studying medicine
 
@@ -415,10 +416,10 @@ Keep all lettering out of the art. Captions and speech bubbles are added by the 
 ### t01b · undefined · (East Austin)
 
 - **Shape:** wide
-- **Caption:** Mark Talarico adopts him. Every Saturday he mows their lawn, then the elderly widow’s next door, without being asked.
-- **Caption:** James: “He never talked about it. He just did it. Because that’s what a man does.”
-- **Caption:** No room for a nursery, so she puts his crib in her closet and decorates it with toys and pictures.
+- **Caption:** In their small East Austin apartment, Tamara has no room for a nursery. She puts James’s crib in her closet and decorates it with toys and pictures.
 - **Caption:** James: “Like my students, my mom was a fighter.”
+- **Caption:** Later, Mark Talarico adopts James. Every Saturday, Mark mows their lawn, then the elderly widow’s next door, without being asked.
+- **Caption:** James: “He never talked about it. He just did it. Because that’s what a man does.”
 - **Sources:** [140](https://jamestalarico.com/meet-james-talarico/), [141](https://www.usatoday.com/story/opinion/columnist/2026/06/06/james-talarico-texas-masculinity/90420159007/), [144](https://jamestalarico.substack.com/p/my-mom-taught-me-how-to-fight)
 
 **Makko prompt:**
@@ -637,6 +638,13 @@ Keep all lettering out of the art. Captions and speech bubbles are added by the 
 
 > Election-night Bronx: young Latina in a white blazer, arms up, confetti. No lettering.
 
+### aoc-results · undefined · (Results from her first term)
+
+- **Shape:** narration page
+- **Caption:** From the House floor to help for families.
+- **Caption:** Three of her amendments became law in her first term, including $5 million for opioid treatment and $10 million to clean up former military sites in Puerto Rico. She also worked with Senator Chuck Schumer to include funeral assistance in COVID relief.
+- **Sources:** [150](https://ocasio-cortez.house.gov/about)
+
 ### a05 · undefined · (February 7, 2019)
 
 - **Shape:** wide
@@ -687,26 +695,26 @@ Keep all lettering out of the art. Captions and speech bubbles are added by the 
 ### aoc-hits · undefined · (Greatest Hits)
 
 - **Shape:** narration page
-- **Caption:** Thirty-four of her hearings and speeches are collected, uncut, at politicalarcades.com/greatest-hits.
-- **Caption:** Original publisher edits. No added narration. Watch her, then come back.
+- **Caption:** Watch Ocasio-Cortez question witnesses and speak on the House floor in Greatest Hits.
+- **Caption:** Clips keep their original publishers’ edits, with no narration added by Political Arcades.
 - **Sources:** [158](https://politicalarcades.com/greatest-hits/)
 
-## Issue #1 · Conclusion: Three in the game, one in the House
+## Issue #1 · Conclusion: Four paths, and the work ahead
 
 ### concl · undefined · (October 2026)
 
 - **Shape:** narration page
-- **Caption:** Mamdani is mayor of New York. El-Sayed and Talarico are on the ballot for the U.S. Senate. Ocasio-Cortez is already in the House.
-- **Caption:** Their stories are separate; the scenes of them together are imagined. Capitol Crashers puts three of them in one game. Her hearings live in Greatest Hits. Now the fun part: the men with the money.
-- **Sources:** [39](https://www.washingtonpost.com/politics/2026/09/17/michigan-senate-race-poll-finds-abdul-el-sayed-has-narrow-edge-over-mike-rogers/), [66](https://apnews.com/article/texas-senate-cornyn-paxton-trump-talarico-4fa609e7ddb93b47ac4e3398a12a472e), [158](https://politicalarcades.com/greatest-hits/)
+- **Caption:** Mamdani is mayor of New York. El-Sayed and Talarico are running for the U.S. Senate. Ocasio-Cortez serves in the House.
+- **Caption:** Their work has already reached tenants, patients, students and working families. Their next goals build on that record. In the following issue, we follow the Michigan and Texas Senate races and the opponents El-Sayed and Talarico face.
+- **Sources:** [33](https://gothamist.com/news/nyc-rent-guidelines-board-approves-2-year-rent-freeze-fulfilling-mamdani-campaign-pledge), [34](https://www.nyc.gov/mayors-office/news/2026/03/mayor-mamdani-and-governor-hochul-announce-first-four-communitie), [36](https://www.nyc.gov/mayors-office/news/2026/09/mayor-mamdani-wins-record--131-5-million-from-doordash-for-deliv), [111](https://bridgemi.com/michigan-government/abdul-el-sayed-under-the-microscope-from-public-health-to-politics/), [61](https://www.britannica.com/biography/James-Talarico), [150](https://ocasio-cortez.house.gov/about)
 
 ## Issue #2: Show up and debate
 
-### open · undefined · (October 2026)
+### open · undefined · (An imagined scene · October 2026)
 
 - **Shape:** wide
-- **Caption:** October 2026. Three men are walking toward the same building.
-- **Caption:** One already runs America’s biggest city. The other two are on the ballot November 3. Standing in the way: a lot of money, and the men it backs.
+- **Caption:** October 2026. El-Sayed is running for Senate in Michigan. Talarico is running in Texas.
+- **Caption:** Mamdani’s work continues at City Hall; Ocasio-Cortez’s continues in the House. This scene brings three of our characters together in an imagined walk. The debate stories that follow are sourced.
 - **Sources:** [27](https://www.nbcnews.com/politics/2025-elections/new-york-city-mayor-results), [37](https://michiganadvance.com/2026/08/05/abdul-el-sayed-squeaks-out-win-over-haley-stevens-in-hotly-contested-democratic-us-senate-primary/), [64](https://apnews.com/article/texas-election-senate-crockett-talarico-cornyn-paxton-hunt-4d2fa601c0dab451c2cbd7c6f1483547), [66](https://apnews.com/article/texas-senate-cornyn-paxton-trump-talarico-4fa609e7ddb93b47ac4e3398a12a472e)
 
 **Makko prompt:**
@@ -1003,20 +1011,20 @@ Keep all lettering out of the art. Captions and speech bubbles are added by the 
 
 > One older Egyptian woman only, matching the attached clinic nurse: short dark hair silver at the temples, weathered brown skin, laugh lines, white coat flaring like a cape over teal scrubs, teal clogs, no hijab. She walks toward a small clinic at dawn, patients waving in the windows, gold sunrise at her back. Adult face in her late fifties, not a child. No lettering.
 
-## Issue #4: Where they’re taking us
+## Issue #4: What they want to do next
 
-### n4 · undefined · (Not yet)
+### n4 · undefined · (The next goals)
 
 - **Shape:** narration page
-- **Caption:** The next pages haven’t happened yet.
-- **Caption:** Everything on them is a promise these three put in writing. Read it. Then hold them to it.
-- **Sources:** [40](https://web.archive.org/web/20250702081752/https://www.zohranfornyc.com/), [41](https://abdulforsenate.com/priorities/), [67](https://jamestalarico.com/issue/public-education/)
+- **Caption:** They have a record to build on.
+- **Caption:** Rent protection and childcare in New York. Health programs in Michigan. An insulin copay cap in Texas. Community funding and relief work in Congress. The following pages show the broader changes they propose. These imagined futures are goals, not a claim that every policy is already in place.
+- **Sources:** [161](https://www.nyc.gov/mayors-office/news/2026/06/mayor-mamdani-s-statement-on-the-rent-guidelines-board-s-final-v), [162](https://www.nyc.gov/mayors-office/news/2026/09/transcript--mayor-mamdani-holds-a-press-conference-with-governor), [111](https://bridgemi.com/michigan-government/abdul-el-sayed-under-the-microscope-from-public-health-to-politics/), [61](https://www.britannica.com/biography/James-Talarico), [150](https://ocasio-cortez.house.gov/about)
 
-### p27 · undefined · (New York)
+### p27 · undefined · (New York · The proposed future)
 
 - **Shape:** wide
-- **Caption:** In New York: the rent stays frozen. Every city bus is free and fast. Child care is free from six weeks to five years old.
-- **Caption:** A $30 minimum wage by 2030. Paid for with a higher corporate tax and 2 percent more on income over $1 million.
+- **Caption:** Mamdani’s next goals: extend the gains from the rent freeze and free 2-K to more families, make every city bus free and fast, and offer free childcare from six weeks to five years old.
+- **Caption:** His platform also calls for a $30 minimum wage by 2030, a higher corporate tax and a 2 percent tax on income over $1 million. These are proposals, not completed changes.
 - **Mamdani:** "New York, this power, it’s yours. This city belongs to you."
 - **Sources:** [40](https://web.archive.org/web/20250702081752/https://www.zohranfornyc.com/), [46](https://volunteer.zohranfornyc.com/canvass-for-zohran-with-the-uaw), [95](https://www.newsweek.com/zohran-mamdanis-victory-speech-in-full-10994437)
 
@@ -1024,11 +1032,11 @@ Keep all lettering out of the art. Captions and speech bubbles are added by the 
 
 > Future NYC morning: a free bus in a red bus lane boarding riders of every kind through all doors, a daycare drop-off, Mamdani riding along.
 
-### p37 · undefined · (Michigan)
+### p37 · undefined · (Michigan · The proposed future)
 
 - **Shape:** wide
-- **Caption:** In Michigan: money out of politics. No corporate PAC money, and a fight to end super PACs.
-- **Caption:** Medicare for All: no premiums, no copays, no deductibles. Medical debt wiped out. Every lead pipe gone by 2030.
+- **Caption:** El-Sayed’s campaign rejects corporate PAC money. His next goals include curbing super PACs and getting money out of politics.
+- **Caption:** His platform calls for Medicare for All with no premiums, copays or deductibles, broader medical-debt relief, and replacing every lead pipe in Michigan by 2030.
 - **El-Sayed:** "Money out of politics. Money in your pocket. Medicare for All."
 - **Sources:** [42](https://abdulforsenate.com/priority/medicare-for-all-the-path-to-a-healthier-america/), [43](https://abdulforsenate.com/priority/money-out-of-politics/), [114](https://www.fox2detroit.com/news/senate-primary-winner-abdul-el-sayed-talks-upset-over-haley-stevens-we-shook-up-world)
 
@@ -1036,24 +1044,31 @@ Keep all lettering out of the art. Captions and speech bubbles are added by the 
 
 > Future Detroit morning: a family leaves a clinic smiling, a union crew swaps a lead pipe for copper, El-Sayed in a white coat waves from the steps.
 
-### ftx · undefined · (Texas)
+### ftx · undefined · (Texas · The proposed future)
 
 - **Shape:** wide
-- **Caption:** In Texas: no private-school vouchers. More teachers and counselors. Universal pre-K and child care. Caps on insulin and drug prices.
-- **Caption:** Ban super PACs. Ban members of Congress from trading stocks.
+- **Caption:** After helping pass an insulin copay cap in Texas, Talarico wants broader limits on drug costs, stronger public schools, and universal pre-K and childcare. He opposes private-school vouchers.
+- **Caption:** His Senate platform also calls for banning super PACs and congressional stock trading. These are the changes he is campaigning for.
 - **Talarico:** "I’ll fight to unrig this economy. I’ll fight to raise your pay. I’ll fight to lower your costs."
-- **Sources:** [67](https://jamestalarico.com/issue/public-education/), [69](https://jamestalarico.com/issue/corruption-democracy/), [70](https://jamestalarico.com/issue/taxes-cost-of-living/), [71](https://www.texastribune.org/2026/08/05/texas-senate-james-talarico-economic-agenda-ken-paxton/)
+- **Sources:** [61](https://www.britannica.com/biography/James-Talarico), [67](https://jamestalarico.com/issue/public-education/), [69](https://jamestalarico.com/issue/corruption-democracy/), [70](https://jamestalarico.com/issue/taxes-cost-of-living/), [71](https://www.texastribune.org/2026/08/05/texas-senate-james-talarico-economic-agenda-ken-paxton/)
 
 **Makko prompt:**
 
 > Future Texas public school: teachers welcome families at a renovated brick school; Talarico kneels to high-five a kid.
 
-### p26 · undefined · (November 3, 2026)
+### aoc-next · undefined · (Ocasio-Cortez · The proposed future)
+
+- **Shape:** narration page
+- **Caption:** The work continues in the House.
+- **Caption:** Ocasio-Cortez’s Green New Deal resolution calls for union jobs, cleaner energy and investment in infrastructure. She has introduced the resolution and related legislation; that is different from having the full agenda enacted.
+- **Sources:** [150](https://ocasio-cortez.house.gov/about), [156](https://www.cbsnews.com/news/green-new-deal-alexandria-ocasio-cortez-introduces-2020-policy-test/)
+
+### p26 · undefined · (The work continues · Imagined scene)
 
 - **Shape:** wide
-- **Caption:** November 3, 2026. Two of these roads go through the ballot box. The third goes through City Hall every day.
-- **Caption:** How the story ends is up to whoever shows up.
-- **Sources:** [27](https://www.nbcnews.com/politics/2025-elections/new-york-city-mayor-results), [37](https://michiganadvance.com/2026/08/05/abdul-el-sayed-squeaks-out-win-over-haley-stevens-in-hotly-contested-democratic-us-senate-primary/), [64](https://apnews.com/article/texas-election-senate-crockett-talarico-cornyn-paxton-hunt-4d2fa601c0dab451c2cbd7c6f1483547), [66](https://apnews.com/article/texas-senate-cornyn-paxton-trump-talarico-4fa609e7ddb93b47ac4e3398a12a472e)
+- **Caption:** Four paths into public service. Work at City Hall, in the House, and on the Senate campaign trail.
+- **Caption:** Their records show what has changed. Their proposals show what they want to do next. Follow both.
+- **Sources:** [27](https://www.nbcnews.com/politics/2025-elections/new-york-city-mayor-results), [37](https://michiganadvance.com/2026/08/05/abdul-el-sayed-squeaks-out-win-over-haley-stevens-in-hotly-contested-democratic-us-senate-primary/), [64](https://apnews.com/article/texas-election-senate-crockett-talarico-cornyn-paxton-hunt-4d2fa601c0dab451c2cbd7c6f1483547), [66](https://apnews.com/article/texas-senate-cornyn-paxton-trump-talarico-4fa609e7ddb93b47ac4e3398a12a472e), [150](https://ocasio-cortez.house.gov/about)
 
 **Makko prompt:**
 
