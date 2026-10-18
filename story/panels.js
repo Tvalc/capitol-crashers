@@ -1,4 +1,4 @@
-// Three Roads to the Capitol: the comic script.
+// Four Roads to the Capitol: the comic script.
 //
 // Each panel's `art` is a file in art/story/chibi/. Lettering is set by the
 // page, never painted into the art:
@@ -13,7 +13,7 @@
 // p15, p21, p25, p26, p27 and p37 are also shown by the game (play/src), so keep
 // those ids.
 //
-// Facts checked against the sources as of October 11, 2026.
+// Original fact check: October 11, 2026. Copy consistency and revised achievement claims reviewed October 18, 2026.
 
 export const STYLE = "Chibi comic illustration matching the Capitol Crashers comic: big heads, short bodies, clean black outlines, soft cel shading, rich painterly light. No text, no lettering, no speech bubbles, no signs with words.";
 
@@ -30,11 +30,11 @@ export const PAGES = [
         "tag": "About this issue",
         "captions": [
           {
-            "text": "Three people in the game. One more whose hearings we collect.",
+            "text": "Four lives. Four paths into public service.",
             "big": true
           },
           {
-            "text": "This comic follows Mamdani, El-Sayed and Talarico from childhood through the races they’re in now. It also follows Alexandria Ocasio-Cortez: Bronx to the House floor. The scenes showing them together are imagined; the facts are sourced."
+            "text": "Zohran Mamdani, Abdul El-Sayed, James Talarico and Alexandria Ocasio-Cortez: where they grew up, the work they have done, and what they want to change next. Their histories are sourced. Scenes showing them together are imagined."
           }
         ],
         "cites": [
@@ -111,29 +111,6 @@ export const PAGES = [
         "prompt": "Skinny teenage South Asian boy on a patchy Bronx cricket field in white cricket kit, swinging a bat, red ball exploding off. Younger version of the adult with a full dark beard and thick styled dark hair: less beard, still dark hair with volume, not a professional cricket star. Split background Table Mountain and New York skyline. No readable text."
       },
       {
-        "id": "p07",
-        "where": "queens",
-        "size": "half",
-        "art": "p07.webp",
-        "tag": "Queens · 2019",
-        "alt": "Mamdani raps in a tracksuit under the 7 train beside an elderly woman in a sari.",
-        "captions": [
-          {
-            "text": "College in Maine. Then a detour: he raps as “Mr. Cardamom.”",
-            "at": "tl"
-          },
-          {
-            "text": "His 2019 video “Nani” stars Madhur Jaffrey as his grandmother.",
-            "at": "br"
-          }
-        ],
-        "cites": [
-          2,
-          8
-        ],
-        "prompt": "Landscape 4:3. A young South Asian man in a bright tracksuit raps on a busy Jackson Heights, Queens street under the elevated 7 train, beside a regal elderly Indian grandmother in a sari who is clearly the star. Halal cart steam, colorful shop signs (no readable words), playful magenta and gold lighting."
-      },
-      {
         "id": "p08",
         "where": "queens",
         "size": "half",
@@ -155,6 +132,29 @@ export const PAGES = [
           10
         ],
         "prompt": "Night in a small Queens kitchen. A young South Asian housing counselor: full dark beard, thick styled dark hair, light blue shirt, leaning over foreclosure papers. Across from him an anxious older immigrant couple who do not look like him: a gray-haired father and a mother, different faces. Warm lamp, cold blue window. He is the only young bearded man. No second politician. No short-cropped hair. No henley. No stethoscope. No lettering."
+      },
+      {
+        "id": "p07",
+        "where": "queens",
+        "size": "half",
+        "art": "p07.webp",
+        "tag": "Queens · 2019",
+        "alt": "Mamdani raps in a tracksuit under the 7 train beside an elderly woman in a sari.",
+        "captions": [
+          {
+            "text": "He also makes music, rapping as “Mr. Cardamom.”",
+            "at": "tl"
+          },
+          {
+            "text": "His 2019 video “Nani” stars Madhur Jaffrey as his grandmother.",
+            "at": "br"
+          }
+        ],
+        "cites": [
+          2,
+          8
+        ],
+        "prompt": "Landscape 4:3. A young South Asian man in a bright tracksuit raps on a busy Jackson Heights, Queens street under the elevated 7 train, beside a regal elderly Indian grandmother in a sari who is clearly the star. Halal cart steam, colorful shop signs (no readable words), playful magenta and gold lighting."
       }
     ]
   },
@@ -193,24 +193,6 @@ export const PAGES = [
         "prompt": "Night in Astoria, Queens. One young South Asian man only: full dark beard, thick styled dark hair with volume on top, dark suit and blue polka-dot tie, clipboard, knocking on a brick row-house door under the elevated train. He is the only politician. No second man. No short-cropped hair. No black henley. No stethoscope. No lettering."
       },
       {
-        "id": "p14",
-        "where": "queens",
-        "size": "half",
-        "art": "p14.webp",
-        "tag": "New York · 2023",
-        "alt": "Riders of every age board a city bus through all its doors.",
-        "captions": [
-          {
-            "text": "He wins a free-bus pilot on five routes. Weekday ridership jumps 30 percent.",
-            "at": "tl"
-          }
-        ],
-        "cites": [
-          19
-        ],
-        "prompt": "A crowded blue-and-white New York City bus at dusk, riders of every age boarding through all doors, no fare box, big smiles. Everyday riders only. No politicians. No henley. No stethoscope. No lettering."
-      },
-      {
         "id": "p15",
         "where": "queens",
         "size": "wide",
@@ -239,6 +221,24 @@ export const PAGES = [
           57
         ],
         "prompt": "Night outside a grand city hall. Older immigrant taxi drivers in jackets on folding chairs with blankets, yellow cabs behind them. One thin young South Asian man with a full dark beard and styled dark hair sits among them, exhausted but unbowed. He is the only young man. No second politician. No short-cropped hair. No henley. Rain, yellow cab lights. No readable text."
+      },
+      {
+        "id": "p14",
+        "where": "queens",
+        "size": "half",
+        "art": "p14.webp",
+        "tag": "New York · 2023",
+        "alt": "Riders of every age board a city bus through all its doors.",
+        "captions": [
+          {
+            "text": "He wins a free-bus pilot on five routes. Weekday ridership jumps 30 percent.",
+            "at": "tl"
+          }
+        ],
+        "cites": [
+          19
+        ],
+        "prompt": "A crowded blue-and-white New York City bus at dusk, riders of every age boarding through all doors, no fare box, big smiles. Everyday riders only. No politicians. No henley. No stethoscope. No lettering."
       }
     ]
   },
@@ -548,6 +548,81 @@ export const PAGES = [
         "prompt": "Landscape 4:3. The decommissioned City Hall subway station at midnight: curved Guastavino tile arches, brass chandeliers, skylights. A young South Asian man in a dark coat raises his right hand, left hand on two Qurans held by his wife; a small circle of witnesses. Glowing gold and green tile light."
       },
       {
+        "id": "p21",
+        "where": "queens",
+        "size": "half",
+        "art": "p21.webp",
+        "tag": "June 2026",
+        "alt": "Tenants cheer on the steps of a city building as frost breaks off an apartment facade; Mamdani raises a fist.",
+        "captions": [
+          {
+            "text": "The Rent Guidelines Board approves a freeze on one- and two-year rent-stabilized leases, covering about one million apartments.",
+            "at": "tl"
+          },
+          {
+            "text": "The first freeze on two-year leases in city history.",
+            "at": "br"
+          }
+        ],
+        "sfx": {
+          "text": "FROZEN!",
+          "x": 78,
+          "y": 30,
+          "rot": -8
+        },
+        "cites": [
+          161,
+          33
+        ],
+        "prompt": "Tenants cheering on the steps of a city building at dusk. Frost and ice crystals breaking off an apartment facade. One young South Asian man in a dark suit and blue polka-dot tie, full dark beard, thick styled dark hair, raising a fist with the crowd. He is the only politician in the frame. No second man. No black henley. No stethoscope. Blank protest signs with no readable words. No logos, no names."
+      },
+      {
+        "id": "p22",
+        "where": "queens",
+        "size": "half",
+        "art": "p22.webp",
+        "tag": "September 2026",
+        "alt": "Two-year-olds paint and stack blocks in a bright classroom as a parent waves goodbye.",
+        "captions": [
+          {
+            "text": "Free childcare for two-year-olds begins with 2,000 seats across the first four communities.",
+            "at": "tl"
+          }
+        ],
+        "cites": [
+          162
+        ],
+        "prompt": "A bright New York toddler classroom. Two-year-olds painting and stacking blocks. One parent waving goodbye at the door with relief. Warm joyful light. No politicians. No bearded men in suits. No henley. No stethoscope. No lettering on the walls."
+      },
+      {
+        "id": "p24",
+        "where": "queens",
+        "size": "wide",
+        "art": "p24.webp",
+        "tag": "September 2026",
+        "alt": "Delivery workers on e-bikes cheer in the rain as gold coins fall around them.",
+        "captions": [
+          {
+            "text": "$131.5 million secured in a DoorDash settlement. More than $115 million is designated for over 260,000 underpaid workers.",
+            "at": "tl"
+          },
+          {
+            "text": "Payments are due to begin in fall 2026. The rest covers civil penalties and costs.",
+            "at": "br"
+          }
+        ],
+        "sfx": {
+          "text": "WON!",
+          "x": 66,
+          "y": 16,
+          "rot": -6
+        },
+        "cites": [
+          36
+        ],
+        "prompt": "Wide 2:1. A line of food-delivery workers on e-bikes in the rain on a New York avenue, insulated bags on their backs, raising fists and cheering as gold coins rain down around them. Neon storefront reflections, cyan and gold."
+      },
+      {
         "id": "p23",
         "where": "queens",
         "size": "half",
@@ -571,95 +646,27 @@ export const PAGES = [
         "prompt": "La Marqueta in East Harlem under an elevated railroad viaduct at dusk, market stalls being built out, crates of fresh produce, construction lights. Everyday shoppers and workers. No politicians. No henley. No stethoscope. No lettering."
       },
       {
-        "id": "p21",
-        "where": "queens",
-        "size": "half",
-        "art": "p21.webp",
-        "tag": "June 2026",
-        "alt": "Tenants cheer on the steps of a city building as frost breaks off an apartment facade; Mamdani raises a fist.",
-        "captions": [
-          {
-            "text": "The Rent Guidelines Board freezes the rent on about one million apartments.",
-            "at": "tl"
-          },
-          {
-            "text": "The first freeze on two-year leases in city history.",
-            "at": "br"
-          }
-        ],
-        "sfx": {
-          "text": "FROZEN!",
-          "x": 78,
-          "y": 30,
-          "rot": -8
-        },
-        "cites": [
-          33
-        ],
-        "prompt": "Tenants cheering on the steps of a city building at dusk. Frost and ice crystals breaking off an apartment facade. One young South Asian man in a dark suit and blue polka-dot tie, full dark beard, thick styled dark hair, raising a fist with the crowd. He is the only politician in the frame. No second man. No black henley. No stethoscope. Blank protest signs with no readable words. No logos, no names."
-      },
-      {
-        "id": "p22",
-        "where": "queens",
-        "size": "half",
-        "art": "p22.webp",
-        "tag": "September 2026",
-        "alt": "Two-year-olds paint and stack blocks in a bright classroom as a parent waves goodbye.",
-        "captions": [
-          {
-            "text": "Free, full-day child care for two-year-olds starts: more than 2,000 seats in the first four neighborhoods.",
-            "at": "tl"
-          }
-        ],
-        "cites": [
-          34
-        ],
-        "prompt": "A bright New York toddler classroom. Two-year-olds painting and stacking blocks. One parent waving goodbye at the door with relief. Warm joyful light. No politicians. No bearded men in suits. No henley. No stethoscope. No lettering on the walls."
-      },
-      {
-        "id": "p24",
-        "where": "queens",
-        "size": "wide",
-        "art": "p24.webp",
-        "tag": "September 2026",
-        "alt": "Delivery workers on e-bikes cheer in the rain as gold coins fall around them.",
-        "captions": [
-          {
-            "text": "$131.5 million from DoorDash for about 260,000 underpaid delivery workers.",
-            "at": "tl"
-          },
-          {
-            "text": "DoorDash’s own statement: “Simply put, we screwed up.”",
-            "at": "br"
-          }
-        ],
-        "sfx": {
-          "text": "PAID!",
-          "x": 66,
-          "y": 16,
-          "rot": -6
-        },
-        "cites": [
-          36,
-          104
-        ],
-        "prompt": "Wide 2:1. A line of food-delivery workers on e-bikes in the rain on a New York avenue, insulated bags on their backs, raising fists and cheering as gold coins rain down around them. Neon storefront reflections, cyan and gold."
-      },
-      {
         "id": "n2b",
         "kind": "narration",
         "where": "queens",
-        "tag": "The score so far",
+        "tag": "What has changed, and what comes next",
         "captions": [
           {
-            "text": "Not everything lands."
+            "text": "A rent freeze. Free childcare. A win for delivery workers.",
+            "big": true
           },
           {
-            "text": "Albany hasn’t paid for free buses. The governor blocked his tax on millionaires. Landlords are suing to undo the freeze. He keeps pushing."
+            "text": "The Rent Guidelines Board approved a freeze on one- and two-year rent-stabilized leases. The first 2,000 free 2-K seats opened in September. His administration secured a $131.5 million DoorDash settlement, with more than $115 million designated for workers."
+          },
+          {
+            "text": "The next goals include citywide free buses and broader childcare access. His proposed tax on millionaires has faced opposition from Governor Hochul, and landlords filed a lawsuit challenging the rent freeze. Those fights continue alongside the gains already made."
           }
         ],
         "cites": [
-          100,
+          161,
+          162,
+          36,
+          40,
           101,
           102
         ]
@@ -1031,20 +1038,20 @@ export const PAGES = [
         "alt": "A dad mows the lawn while an elderly neighbor waves and a little boy watches; a mother decorates a crib tucked in a closet.",
         "captions": [
           {
-            "text": "Mark Talarico adopts him. Every Saturday he mows their lawn, then the elderly widow’s next door, without being asked.",
-            "at": "tl"
-          },
-          {
-            "text": "James: “He never talked about it. He just did it. Because that’s what a man does.”",
-            "at": "bl"
-          },
-          {
-            "text": "No room for a nursery, so she puts his crib in her closet and decorates it with toys and pictures.",
+            "text": "In their small East Austin apartment, Tamara has no room for a nursery. She puts James’s crib in her closet and decorates it with toys and pictures.",
             "at": "tr"
           },
           {
             "text": "James: “Like my students, my mom was a fighter.”",
-            "at": "br"
+            "at": "tr"
+          },
+          {
+            "text": "Later, Mark Talarico adopts James. Every Saturday, Mark mows their lawn, then the elderly widow’s next door, without being asked.",
+            "at": "bl"
+          },
+          {
+            "text": "James: “He never talked about it. He just did it. Because that’s what a man does.”",
+            "at": "bl"
           }
         ],
         "cites": [
@@ -1416,7 +1423,7 @@ export const PAGES = [
           71
         ],
         "prompt": "Arlington rally, August 2026: Talarico with sleeves rolled up pounds the podium, a huge cheering crowd of working Texans."
-      },
+      }
     ]
   },
   {
@@ -1572,6 +1579,24 @@ export const PAGES = [
         "prompt": "Election-night Bronx: young Latina in a white blazer, arms up, confetti. No lettering."
       },
       {
+        "id": "aoc-results",
+        "kind": "narration",
+        "where": "bronx",
+        "tag": "Results from her first term",
+        "captions": [
+          {
+            "text": "From the House floor to help for families.",
+            "big": true
+          },
+          {
+            "text": "Three of her amendments became law in her first term, including $5 million for opioid treatment and $10 million to clean up former military sites in Puerto Rico. She also worked with Senator Chuck Schumer to include funeral assistance in COVID relief."
+          }
+        ],
+        "cites": [
+          150
+        ]
+      },
+      {
         "id": "a05",
         "where": "bronx",
         "size": "wide",
@@ -1690,11 +1715,11 @@ export const PAGES = [
         "tag": "Greatest Hits",
         "captions": [
           {
-            "text": "Thirty-four of her hearings and speeches are collected, uncut, at politicalarcades.com/greatest-hits.",
+            "text": "Watch Ocasio-Cortez question witnesses and speak on the House floor in Greatest Hits.",
             "big": true
           },
           {
-            "text": "Original publisher edits. No added narration. Watch her, then come back."
+            "text": "Clips keep their original publishers’ edits, with no narration added by Political Arcades."
           }
         ],
         "cites": [
@@ -1706,7 +1731,7 @@ export const PAGES = [
   {
     "id": "issue-1-end",
     "label": "Issue #1 · Conclusion",
-    "chapter": "Three in the game, one in the House",
+    "chapter": "Four paths, and the work ahead",
     "panels": [
       {
         "id": "concl",
@@ -1715,17 +1740,20 @@ export const PAGES = [
         "tag": "October 2026",
         "captions": [
           {
-            "text": "Mamdani is mayor of New York. El-Sayed and Talarico are on the ballot for the U.S. Senate. Ocasio-Cortez is already in the House.",
+            "text": "Mamdani is mayor of New York. El-Sayed and Talarico are running for the U.S. Senate. Ocasio-Cortez serves in the House.",
             "big": true
           },
           {
-            "text": "Their stories are separate; the scenes of them together are imagined. Capitol Crashers puts three of them in one game. Her hearings live in Greatest Hits. Now the fun part: the men with the money."
+            "text": "Their work has already reached tenants, patients, students and working families. Their next goals build on that record. In the following issue, we follow the Michigan and Texas Senate races and the opponents El-Sayed and Talarico face."
           }
         ],
         "cites": [
-          39,
-          66,
-          158
+          33,
+          34,
+          36,
+          111,
+          61,
+          150
         ]
       }
     ]
@@ -1740,15 +1768,15 @@ export const PAGES = [
         "where": "both",
         "size": "wide",
         "art": "open.webp",
-        "tag": "October 2026",
+        "tag": "An imagined scene · October 2026",
         "alt": "Mamdani, El-Sayed and Talarico walk side by side up a rain-slick avenue, the Capitol dome lit behind them.",
         "captions": [
           {
-            "text": "October 2026. Three men are walking toward the same building.",
+            "text": "October 2026. El-Sayed is running for Senate in Michigan. Talarico is running in Texas.",
             "at": "tl"
           },
           {
-            "text": "One already runs America’s biggest city. The other two are on the ballot November 3. Standing in the way: a lot of money, and the men it backs.",
+            "text": "Mamdani’s work continues at City Hall; Ocasio-Cortez’s continues in the House. This scene brings three of our characters together in an imagined walk. The debate stories that follow are sourced.",
             "at": "br"
           }
         ],
@@ -2466,26 +2494,28 @@ export const PAGES = [
   {
     "id": "issue-4",
     "label": "Issue #4",
-    "chapter": "Where they’re taking us",
+    "chapter": "What they want to do next",
     "panels": [
       {
         "id": "n4",
         "kind": "narration",
         "where": "both",
-        "tag": "Not yet",
+        "tag": "The next goals",
         "captions": [
           {
-            "text": "The next pages haven’t happened yet.",
+            "text": "They have a record to build on.",
             "big": true
           },
           {
-            "text": "Everything on them is a promise these three put in writing. Read it. Then hold them to it."
+            "text": "Rent protection and childcare in New York. Health programs in Michigan. An insulin copay cap in Texas. Community funding and relief work in Congress. The following pages show the broader changes they propose. These imagined futures are goals, not a claim that every policy is already in place."
           }
         ],
         "cites": [
-          40,
-          41,
-          67
+          161,
+          162,
+          111,
+          61,
+          150
         ]
       },
       {
@@ -2493,15 +2523,15 @@ export const PAGES = [
         "where": "queens",
         "size": "wide",
         "art": "fny.webp",
-        "tag": "New York",
+        "tag": "New York · The proposed future",
         "alt": "A future New York morning: riders board a free bus in a red bus lane, a dad drops a toddler at daycare, Mamdani rides along.",
         "captions": [
           {
-            "text": "In New York: the rent stays frozen. Every city bus is free and fast. Child care is free from six weeks to five years old.",
+            "text": "Mamdani’s next goals: extend the gains from the rent freeze and free 2-K to more families, make every city bus free and fast, and offer free childcare from six weeks to five years old.",
             "at": "tl"
           },
           {
-            "text": "A $30 minimum wage by 2030. Paid for with a higher corporate tax and 2 percent more on income over $1 million.",
+            "text": "His platform also calls for a $30 minimum wage by 2030, a higher corporate tax and a 2 percent tax on income over $1 million. These are proposals, not completed changes.",
             "at": "br"
           }
         ],
@@ -2527,15 +2557,15 @@ export const PAGES = [
         "where": "detroit",
         "size": "wide",
         "art": "fmi.webp",
-        "tag": "Michigan",
+        "tag": "Michigan · The proposed future",
         "alt": "A future Detroit street: a family leaves a clinic with no bill, a crew swaps lead pipes for copper, El-Sayed waves from the clinic steps.",
         "captions": [
           {
-            "text": "In Michigan: money out of politics. No corporate PAC money, and a fight to end super PACs.",
+            "text": "El-Sayed’s campaign rejects corporate PAC money. His next goals include curbing super PACs and getting money out of politics.",
             "at": "tl"
           },
           {
-            "text": "Medicare for All: no premiums, no copays, no deductibles. Medical debt wiped out. Every lead pipe gone by 2030.",
+            "text": "His platform calls for Medicare for All with no premiums, copays or deductibles, broader medical-debt relief, and replacing every lead pipe in Michigan by 2030.",
             "at": "br"
           }
         ],
@@ -2561,15 +2591,15 @@ export const PAGES = [
         "where": "texas",
         "size": "wide",
         "art": "ftx.webp",
-        "tag": "Texas",
+        "tag": "Texas · The proposed future",
         "alt": "A future Texas public school: teachers welcome families, Talarico high-fives a kid on the steps.",
         "captions": [
           {
-            "text": "In Texas: no private-school vouchers. More teachers and counselors. Universal pre-K and child care. Caps on insulin and drug prices.",
+            "text": "After helping pass an insulin copay cap in Texas, Talarico wants broader limits on drug costs, stronger public schools, and universal pre-K and childcare. He opposes private-school vouchers.",
             "at": "tl"
           },
           {
-            "text": "Ban super PACs. Ban members of Congress from trading stocks.",
+            "text": "His Senate platform also calls for banning super PACs and congressional stock trading. These are the changes he is campaigning for.",
             "at": "br"
           }
         ],
@@ -2584,6 +2614,7 @@ export const PAGES = [
           }
         ],
         "cites": [
+          61,
           67,
           69,
           70,
@@ -2592,19 +2623,38 @@ export const PAGES = [
         "prompt": "Future Texas public school: teachers welcome families at a renovated brick school; Talarico kneels to high-five a kid."
       },
       {
+        "id": "aoc-next",
+        "kind": "narration",
+        "where": "bronx",
+        "tag": "Ocasio-Cortez · The proposed future",
+        "captions": [
+          {
+            "text": "The work continues in the House.",
+            "big": true
+          },
+          {
+            "text": "Ocasio-Cortez’s Green New Deal resolution calls for union jobs, cleaner energy and investment in infrastructure. She has introduced the resolution and related legislation; that is different from having the full agenda enacted."
+          }
+        ],
+        "cites": [
+          150,
+          156
+        ]
+      },
+      {
         "id": "p26",
         "where": "both",
         "size": "wide",
         "art": "finale.webp",
-        "tag": "November 3, 2026",
+        "tag": "The work continues · Imagined scene",
         "alt": "At dawn, Mamdani, El-Sayed and Talarico stand at the foot of the Capitol steps with a huge crowd of ordinary Americans behind them.",
         "captions": [
           {
-            "text": "November 3, 2026. Two of these roads go through the ballot box. The third goes through City Hall every day.",
+            "text": "Four paths into public service. Work at City Hall, in the House, and on the Senate campaign trail.",
             "at": "tl"
           },
           {
-            "text": "How the story ends is up to whoever shows up.",
+            "text": "Their records show what has changed. Their proposals show what they want to do next. Follow both.",
             "at": "br"
           }
         ],
@@ -2612,7 +2662,8 @@ export const PAGES = [
           27,
           37,
           64,
-          66
+          66,
+          150
         ],
         "prompt": "Dawn over the Capitol after rain: Mamdani, El-Sayed and Talarico at the foot of the steps, a huge crowd of nurses, workers, teachers, farmers, parents behind them."
       }
@@ -2626,20 +2677,30 @@ export const PLANKS = [
     "who": "Mamdani",
     "title": "Freeze the rent",
     "cites": [
-      40,
-      33
+      161,
+      102
     ],
-    "text": "Freeze the rent for every stabilized tenant. The Rent Guidelines Board voted a freeze in June 2026; landlords are suing to undo it."
+    "text": "The Rent Guidelines Board approved a freeze on one- and two-year rent-stabilized leases in June 2026. Landlords filed a lawsuit challenging the decision in July."
+  },
+  {
+    "where": "queens",
+    "who": "Mamdani",
+    "title": "No-cost child care",
+    "cites": [
+      162,
+      40
+    ],
+    "text": "The first 2,000 free 2-K seats opened in September 2026. His broader goal is free childcare from six weeks to five years, with childcare workers paid like public-school teachers."
   },
   {
     "where": "queens",
     "who": "Mamdani",
     "title": "Fast, fare-free buses",
     "cites": [
-      40,
-      100
+      19,
+      40
     ],
-    "text": "End the fare on every city bus and speed them up with priority lanes, queue-jump signals and loading zones. Albany has not funded it yet."
+    "text": "A five-route fare-free pilot ran in 2023–24. His broader proposal is free, faster buses citywide, with priority lanes and signals. The pilot did not make the whole network fare-free."
   },
   {
     "where": "queens",
@@ -2649,16 +2710,6 @@ export const PLANKS = [
       40
     ],
     "text": "A Department of Community Safety: mental-health crisis response, outreach workers in 100 subway stations, gun-violence programs, and an 800 percent increase for hate-violence prevention."
-  },
-  {
-    "where": "queens",
-    "who": "Mamdani",
-    "title": "No-cost child care",
-    "cites": [
-      40,
-      34
-    ],
-    "text": "Free child care from six weeks to five years, with child-care workers paid like public-school teachers. The first 2-K seats opened in September 2026."
   },
   {
     "where": "queens",
@@ -2696,7 +2747,7 @@ export const PLANKS = [
       40,
       101
     ],
-    "text": "Match New Jersey's 11.5 percent corporate tax and add 2 percent on income over $1 million. The governor blocked the millionaires tax in 2026."
+    "text": "His platform proposes a higher corporate tax and an extra 2 percent on income over $1 million. Governor Hochul has opposed the income-tax increase; a proposal is not an enacted tax."
   },
   {
     "where": "queens",
@@ -2826,7 +2877,7 @@ export const PLANKS = [
       150,
       156
     ],
-    "text": "A ten-year national mobilization: union jobs repairing infrastructure, cutting carbon, and tying climate policy to economic and racial justice. Introduced as a resolution in 2019, not as enacted law."
+    "text": "She introduced the Green New Deal resolution with Senator Ed Markey in 2019. It proposes union jobs, infrastructure investment and lower emissions. Introducing the resolution did not make its agenda law."
   },
   {
     "where": "bronx",
@@ -3473,5 +3524,15 @@ export const SOURCES = [
     "n": 160,
     "label": "NowThis, Ocasio-Cortez questions Mark Zuckerberg, October 2019.",
     "url": "https://www.youtube.com/watch?v=LFQZFFq7sis"
+  },
+  {
+    "n": 161,
+    "label": "NYC Mayor’s Office, June 25, 2026 statement on the rent-freeze vote.",
+    "url": "https://www.nyc.gov/mayors-office/news/2026/06/mayor-mamdani-s-statement-on-the-rent-guidelines-board-s-final-v"
+  },
+  {
+    "n": 162,
+    "label": "NYC Mayor’s Office, September 10, 2026 launch of free 2-K.",
+    "url": "https://www.nyc.gov/mayors-office/news/2026/09/transcript--mayor-mamdani-holds-a-press-conference-with-governor"
   }
 ];
