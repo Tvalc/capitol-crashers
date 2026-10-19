@@ -3,6 +3,8 @@
 // adsenseClient: the publisher id from AdSense, like ca-pub-1234567890123456
 // adsenseSlot: the display-ad unit id for the banner above the game
 export const SITE = {
+  // Enable only after account approval, placement review and a verified consent integration.
+  adsEnabled: false,
   patreonUrl: "https://www.patreon.com/c/PoliticalArcade",
   adsenseClient: "ca-pub-4762698707947194",
   adsenseSlot: "",
