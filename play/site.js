@@ -11,7 +11,7 @@ for (const link of patreonLinks) {
 }
 
 const slot = document.getElementById("ad-slot");
-if (slot && SITE.adsenseClient && SITE.adsenseSlot) {
+if (slot && SITE.adsEnabled === true && window.ArcadeAdvertising?.canRequestAds === true && SITE.adsenseClient && SITE.adsenseSlot) {
   const existing = document.querySelector('script[src*="pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"]');
   const script = existing || document.createElement("script");
   script.async = true;
